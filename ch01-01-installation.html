@@ -1,0 +1,449 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Installation - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html" class="active"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+## Installation
+-->
+<h2><a class="header" href="#installation" id="installation">Installation</a></h2>
+<!--
+The first step is to install Rust. We’ll download Rust through `rustup`, a
+command line tool for managing Rust versions and associated tools. You’ll need
+an internet connection for the download.
+-->
+<p>La première étape consiste à installer Rust. Nous allons télécharger Rust via
+<code>rustup</code>, un outil en ligne de commande conçu pour gérer les versions de Rust et
+les outils qui leur sont associés. Vous allez avoir besoin d'une connexion
+Internet pour le téléchargement.</p>
+<!--
+> Note: If you prefer not to use `rustup` for some reason, please see [the Rust
+> installation page](https://www.rust-lang.org/tools/install) for other options.
+-->
+<blockquote>
+<p>Note : si vous préférez ne pas utiliser <code>rustup</code> pour une raison ou une autre,
+vous pouvez vous référer à
+<a href="https://www.rust-lang.org/tools/install">la page d'installation de Rust</a>
+pour d'autres méthodes d'installation.</p>
+</blockquote>
+<!--
+The following steps install the latest stable version of the Rust compiler.
+Rust’s stability guarantees ensure that all the examples in the book that
+compile will continue to compile with newer Rust versions. The output might
+differ slightly between versions, because Rust often improves error messages
+and warnings. In other words, any newer, stable version of Rust you install
+using these steps should work as expected with the content of this book.
+-->
+<p>L'étape suivante est d'installer la dernière version stable du compilateur Rust.
+La garantie de stabilité de Rust assurera que tous les exemples dans le livre
+qui se compilent bien vont continuer à se compiler avec les nouvelles versions
+de Rust. La sortie peut varier légèrement d'une version à une autre, car Rust
+améliore souvent les messages d'erreur et les avertissements. En résumé, toute
+nouvelle version stable de Rust que vous installez de cette manière devrait
+fonctionner en cohérence avec le contenu de ce livre.</p>
+<!--
+> ### Command Line Notation
+>
+> In this chapter and throughout the book, we’ll show some commands used in the
+> terminal. Lines that you should enter in a terminal all start with `$`. You
+> don’t need to type in the `$` character; it indicates the start of each
+> command. Lines that don’t start with `$` typically show the output of the
+> previous command. Additionally, PowerShell-specific examples will use `>`
+> rather than `$`.
+-->
+<blockquote>
+<h3><a class="header" href="#la-notation-en-ligne-de-commande" id="la-notation-en-ligne-de-commande">La notation en ligne de commande</a></h3>
+<p>Dans ce chapitre et les suivants dans le livre, nous allons montrer quelques
+commandes tapées dans le terminal. Les lignes que vous devrez écrire dans le
+terminal commencent toutes par <code>$</code>. Vous n'avez pas besoin d'écrire le
+caractère <code>$</code>; il marque le début de chaque commande. Les lignes qui ne
+commencent pas par <code>$</code> montrent généralement le résultat de la commande
+précédente. De plus, les exemples propres à PowerShell utiliseront
+<code>&gt;</code> plutôt que <code>$</code>.</p>
+</blockquote>
+<!--
+### Installing `rustup` on Linux or macOS
+-->
+<h3><a class="header" href="#installer-rustup-sur-linux-ou-macos" id="installer-rustup-sur-linux-ou-macos">Installer <code>rustup</code> sur Linux ou macOS</a></h3>
+<!--
+If you’re using Linux or macOS, open a terminal and enter the following command:
+-->
+<p>Si vous utilisez Linux ou macOS, ouvrez un terminal et écrivez la commande
+suivante :</p>
+<pre><code class="language-text">$ curl https://sh.rustup.rs -sSf | sh
+</code></pre>
+<!--
+The command downloads a script and starts the installation of the `rustup`
+tool, which installs the latest stable version of Rust. You might be prompted
+for your password. If the install is successful, the following line will appear:
+-->
+<p>Cette commande télécharge un script et lance l'installation de l'outil <code>rustup</code>,
+qui va installer la dernière version stable de Rust. Il est possible que l'on
+vous demande votre mot de passe. Si l'installation se déroule bien, vous
+devriez voir la ligne suivante s'afficher :</p>
+<pre><code class="language-text">Rust is installed now. Great!
+</code></pre>
+<!--
+If you prefer, feel free to download the script and inspect it before running
+it.
+-->
+<p>Si vous préférez, vous pouvez télécharger le script et l'examiner avant de le
+lancer.</p>
+<!--
+The installation script automatically adds Rust to your system PATH after your
+next login. If you want to start using Rust right away instead of restarting
+your terminal, run the following command in your shell to add Rust to your
+system PATH manually:
+-->
+<p>Le script d'installation va ajouter automatiquement Rust dans la variable
+<em>PATH</em> de votre système après votre prochaine connexion utilisateur.
+Si vous préférez utiliser Rust tout de suite au lieu de redémarrer votre
+terminal, lancez la commande suivante dans votre terminal pour ajouter Rust dans
+le <em>PATH</em> de votre système manuellement :</p>
+<pre><code class="language-text">$ source $HOME/.cargo/env
+</code></pre>
+<!--
+Alternatively, you can add the following line to your *~/.bash_profile*:
+-->
+<p>Vous pouvez aussi ajouter la ligne suivante dans votre <em>~/.bash_profile</em> :</p>
+<pre><code class="language-text">$ export PATH=&quot;$HOME/.cargo/bin:$PATH&quot;
+</code></pre>
+<!--
+Additionally, you’ll need a linker of some kind. It’s likely one is already
+installed, but when you try to compile a Rust program and get errors indicating
+that a linker could not execute, that means a linker isn’t installed on your
+system and you’ll need to install one manually. C compilers usually come with
+the correct linker. Check your platform’s documentation for how to install a C
+compiler. Also, some common Rust packages depend on C code and will need a C
+compiler. Therefore, it might be worth installing one now.
+-->
+<p>De plus, vous aurez peut-être besoin d'un <em>linker</em> quelconque. Il est probable
+qu'il y en ait déjà un d'installé, mais si vous essayez de compiler un
+programme Rust et que vous avez des erreurs qui disent que le <em>linker</em> ne peut
+pas être exécuté, cela veut dire qu'il n'y a pas de <em>linker</em> d'installé sur
+votre système et que vous devrez en installer un manuellement. Les
+compilateurs C sont généralement livrés avec un bon <em>linker</em>. Référez-vous à la
+documentation de votre plateforme pour savoir comment installer un compilateur
+C. De plus, certains paquets Rust communs nécessitent du code C et auront
+besoin d'un compilateur C. C'est pourquoi cela vaut la peine d'en installer un
+dès maintenant.</p>
+<!--
+### Installing `rustup` on Windows
+-->
+<h3><a class="header" href="#installer-rustup-sous-windows" id="installer-rustup-sous-windows">Installer <code>rustup</code> sous Windows</a></h3>
+<!--
+On Windows, go to [https://www.rust-lang.org/tools/install][install] and follow
+the instructions for installing Rust. At some point in the installation, you’ll
+receive a message explaining that you’ll also need the C++ build tools for
+Visual Studio 2013 or later. The easiest way to acquire the build tools is to
+install [Build Tools for Visual Studio 2019][visualstudio]. The tools are in
+the Other Tools and Frameworks section.
+-->
+<p>Sous Windows, il faut aller sur
+<a href="https://www.rust-lang.org/tools/install">https://www.rust-lang.org/tools/install</a> et suivre les instructions
+pour installer Rust. À un moment donné durant l'installation, vous aurez un
+message vous expliquant qu'il va vous falloir l'outil de compilation C++
+pour Visual Studio 2013 ou plus récent. La méthode la plus facile pour obtenir
+les outils de compilation est d'installer
+<a href="https://www.visualstudio.com/fr/downloads/#build-tools-for-visual-studio-2019">Build Tools pour Visual Studio 2019</a>.</p>
+<!--
+[visualstudio]: https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019
+FR translation: the website redirects to French version, we lose the "id" link.
+Fix is directly below:
+-->
+<!--
+The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
+If there are specific differences, we’ll explain which to use.
+-->
+<p>La suite de ce livre utilisera des commandes qui fonctionnent à la fois dans
+<em>cmd.exe</em> et PowerShell. S'il y a des différences particulières, nous vous
+expliquerons lesquelles utiliser.</p>
+<!--
+### Updating and Uninstalling
+-->
+<h3><a class="header" href="#mettre-à-jour-et-désinstaller" id="mettre-à-jour-et-désinstaller">Mettre à jour et désinstaller</a></h3>
+<!--
+After you’ve installed Rust via `rustup`, updating to the latest version is
+easy. From your shell, run the following update script:
+-->
+<p>Après avoir installé Rust avec <code>rustup</code>, la mise à jour vers la dernière version
+est facile. Dans votre terminal, lancez le script de mise à jour suivant :</p>
+<pre><code class="language-text">$ rustup update
+</code></pre>
+<!--
+To uninstall Rust and `rustup`, run the following uninstall script from your
+shell:
+-->
+<p>Pour désinstaller Rust et <code>rustup</code>, exécutez le script de désinstallation
+suivant dans votre terminal :</p>
+<pre><code class="language-text">$ rustup self uninstall
+</code></pre>
+<!--
+### Troubleshooting
+-->
+<h3><a class="header" href="#dépannage" id="dépannage">Dépannage</a></h3>
+<!--
+To check whether you have Rust installed correctly, open a shell and enter this
+line:
+-->
+<p>Pour vérifier si Rust est correctement installé, ouvrez un terminal et entrez
+cette ligne :</p>
+<pre><code class="language-text">$ rustc --version
+</code></pre>
+<!--
+You should see the version number, commit hash, and commit date for the latest
+stable version that has been released in the following format:
+-->
+<p>Vous devriez voir le numéro de version, le <em>hash</em> de <em>commit</em>,
+et la date de <em>commit</em> de la dernière version stable qui a été publiée,
+au format suivant :</p>
+<pre><code class="language-text">rustc x.y.z (abcabcabc yyyy-mm-dd)
+</code></pre>
+<!--
+If you see this information, you have installed Rust successfully! If you don’t
+see this information and you’re on Windows, check that Rust is in your `%PATH%`
+system variable. If that’s all correct and Rust still isn’t working, there are
+a number of places you can get help. The easiest is the #beginners channel on
+[the official Rust Discord][discord]. There, you can chat with other Rustaceans
+(a silly nickname we call ourselves) who can help you out. Other great
+resources include [the Users forum][users] and [Stack Overflow][stackoverflow].
+-->
+<p>Si vous voyez cette information, c'est que vous avez installé Rust avec succès !
+Si vous ne voyez pas cette information et que vous êtes sous Windows, vérifiez
+que Rust est présent dans votre variable d'environnement système <code>%PATH%</code>. Si
+tout est correct et que Rust ne fonctionne toujours pas, il y a quelques
+endroits où vous pourrez trouver de l'aide. Le plus accessible est le
+canal #beginners sur le <a href="https://discord.gg/rust-lang">Discord officiel de Rust</a>. Là-bas, vous pouvez
+dialoguer en ligne avec d'autres <em>Rustacés</em> (un surnom ridicule que nous nous
+donnons entre nous) qui pourront vous aider. D'autres bonnes sources de données
+sont <a href="https://users.rust-lang.org/">le forum d'utilisateurs</a> et <a href="http://stackoverflow.com/questions/tagged/rust">Stack Overflow</a>.</p>
+<!--
+### Local Documentation
+-->
+<h3><a class="header" href="#documentation-en-local" id="documentation-en-local">Documentation en local</a></h3>
+<!--
+The installer also includes a copy of the documentation locally, so you can
+read it offline. Run `rustup doc` to open the local documentation in your
+browser.
+-->
+<p>L'installateur embarque aussi une copie de la documentation en local pour que
+vous puissiez la lire hors ligne. Lancez <code>rustup doc</code> afin
+d'ouvrir la documentation locale dans votre navigateur.</p>
+<!--
+Any time a type or function is provided by the standard library and you’re not
+sure what it does or how to use it, use the application programming interface
+(API) documentation to find out!
+-->
+<p>À chaque fois que vous n'êtes pas sûr de ce que fait un type ou une fonction
+fournie par la bibliothèque standard ou que vous ne savez pas comment
+l'utiliser, utilisez cette documentation de l'interface de programmation
+applicative <em>(API)</em> pour le savoir !</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch01-00-getting-started.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch01-02-hello-world.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch01-00-getting-started.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch01-02-hello-world.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>

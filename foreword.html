@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Avant-propos - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html" class="active">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+# Foreword
+-->
+<h1><a class="header" href="#avant-propos" id="avant-propos">Avant-propos</a></h1>
+<!--
+It wasn’t always so clear, but the Rust programming language is fundamentally
+about *empowerment*: no matter what kind of code you are writing now, Rust
+empowers you to reach farther, to program with confidence in a wider variety of
+domains than you did before.
+-->
+<p>Cela n'a pas toujours été aussi évident, mais le langage de programmation Rust
+apporte avant tout plus de <em>puissance</em> : peu importe le type de code que vous
+écrivez en ce moment, Rust vous permet d'aller plus loin et de
+programmer en toute confiance dans une plus grande diversité de domaines
+qu'auparavant.</p>
+<!--
+Take, for example, “systems-level” work that deals with low-level details of
+memory management, data representation, and concurrency. Traditionally, this
+realm of programming is seen as arcane, accessible only to a select few who
+have devoted the necessary years learning to avoid its infamous pitfalls. And
+even those who practice it do so with caution, lest their code be open to
+exploits, crashes, or corruption.
+-->
+<p>Prenez par exemple la gestion des éléments au “niveau système” qui traite de
+détails bas niveau de gestion de mémoire, de modèles de données, et de
+concurrence. Traditionnellement, ce domaine de la programmation est jugé
+ésotérique, compréhensible uniquement par une poignée de personnes qui ont
+consacré des années d'apprentissage à en déjouer les pièges infâmes.
+Et même ceux qui travaillent dans ce domaine le font avec beaucoup de prudence,
+de crainte que leur code soit soumis à des failles ou des plantages,
+ou qu'il soit corrompu.</p>
+<!--
+Rust breaks down these barriers by eliminating the old pitfalls and providing a
+friendly, polished set of tools to help you along the way. Programmers who need
+to “dip down” into lower-level control can do so with Rust, without taking on
+the customary risk of crashes or security holes, and without having to learn
+the fine points of a fickle toolchain. Better yet, the language is designed to
+guide you naturally towards reliable code that is efficient in terms of speed
+and memory usage.
+-->
+<p>Rust fait tomber ces obstacles en éliminant les vieux pièges et en apportant un
+ensemble d'outils soignés et conviviaux pour vous aider sur votre chemin.
+Les développeurs qui ont besoin de &quot;se plonger&quot; dans le contrôle de plus
+bas niveau peuvent ainsi le faire avec Rust, sans prendre le risque habituel
+de plantages ou de failles de sécurité, et sans avoir à apprendre les subtilités
+d'un enchevêtrement d'outils capricieux. Encore mieux, le langage est conçu pour
+vous guider naturellement vers un code fiable et efficace en termes de rapidité
+d'exécution et d'utilisation de la mémoire.</p>
+<!--
+Programmers who are already working with low-level code can use Rust to raise
+their ambitions. For example, introducing parallelism in Rust is a relatively
+low-risk operation: the compiler will catch the classical mistakes for you. And
+you can tackle more aggressive optimizations in your code with the confidence
+that you won’t accidentally introduce crashes or vulnerabilities.
+-->
+<p>Les développeurs qui travaillent déjà avec du code bas niveau peuvent utiliser
+Rust pour accroître leurs ambitions. Par exemple, introduire du parallélisme en
+Rust est une opération à faible risque : le compilateur va détecter les erreurs
+classiques pour vous. Et vous pourrez vous lancer dans des améliorations plus
+agressives de votre code avec la certitude que vous n'introduirez pas
+accidentellement des causes de plantage ou des vulnérabilités.</p>
+<!--
+But Rust isn’t limited to low-level systems programming. It’s expressive and
+ergonomic enough to make CLI apps, web servers, and many other kinds of code
+quite pleasant to write — you’ll find simple examples of both later in the
+book. Working with Rust allows you to build skills that transfer from one
+domain to another; you can learn Rust by writing a web app, then apply those
+same skills to target your Raspberry Pi.
+-->
+<p>Mais Rust n'est pas cantonné à la programmation de bas niveau. C'est un langage
+suffisamment expressif et ergonomique pour rendre les applications en ligne
+de commande, les serveurs web et bien d'autres types de code agréables à écrire
+— vous trouverez plus tard des exemples simples de chacun dans ce livre.
+Travailler avec Rust vous permet d'acquérir des compétences qui sont
+transposables d'un domaine à un autre ; vous pouvez apprendre Rust en écrivant
+une application web, puis appliquer les mêmes notions pour les utiliser avec
+votre Raspberry Pi.</p>
+<!--
+This book fully embraces the potential of Rust to empower its users. It’s a
+friendly and approachable text intended to help you level up not just your
+knowledge of Rust, but also your reach and confidence as a programmer in
+general. So dive in, get ready to learn—and welcome to the Rust community!
+-->
+<p>Ce livre exploite pleinement le potentiel de Rust pour permettre à ses
+utilisateurs de se développer. C'est une documentation conviviale et accessible
+destinée à améliorer vos connaissances en Rust, mais aussi à améliorer vos
+capacités et votre assurance en tant que développeur en général. Alors foncez,
+et préparez-vous à apprendre — et bienvenue dans la communauté Rust !</p>
+<!--
+— Nicholas Matsakis and Aaron Turon
+-->
+<p>— Nicholas Matsakis et Aaron Turon</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="title-page.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch00-00-introduction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="title-page.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch00-00-introduction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>

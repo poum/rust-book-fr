@@ -1,0 +1,620 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html" class="active">Introduction</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+# Introduction
+-->
+<h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<!--
+> Note: This edition of the book is the same as [The Rust Programming
+> Language][nsprust] available in print and ebook format from [No Starch
+> Press][nsp].
+-->
+<blockquote>
+<p>Note : la version anglaise de ce livre est disponible au format papier et
+ebook chez <a href="https://nostarch.com/">No Starch Press</a> à cette adresse :
+<a href="https://nostarch.com/rust">The Rust Programming Language</a></p>
+</blockquote>
+<!--
+Welcome to *The Rust Programming Language*, an introductory book about Rust.
+The Rust programming language helps you write faster, more reliable software.
+High-level ergonomics and low-level control are often at odds in programming
+language design; Rust challenges that conflict. Through balancing powerful
+technical capacity and a great developer experience, Rust gives you the option
+to control low-level details (such as memory usage) without all the hassle
+traditionally associated with such control.
+-->
+<p>Bienvenue sur <em>Le langage de programmation Rust</em>, un livre d'initiation à Rust.
+Le langage de programmation Rust vous aide à écrire plus rapidement des
+logiciels plus fiables. L'ergonomie de haut-niveau et la maîtrise de bas-niveau
+sont souvent en opposition dans la conception des langages de programmation ;
+Rust remet en cause ce conflit. Grâce à l'équilibre entre ses puissantes
+capacités techniques et une bonne ergonomie de développement, Rust vous donne
+la possibilité de contrôler les détails de bas-niveau (comme l'utilisation de
+la mémoire) sans tous les soucis traditionnellement associés à ce genre de
+pratique.</p>
+<!--
+## Who Rust Is For
+-->
+<h2><a class="header" href="#À-qui-sadresse-rust" id="À-qui-sadresse-rust">À qui s'adresse Rust</a></h2>
+<!--
+Rust is ideal for many people for a variety of reasons. Let’s look at a few of
+the most important groups.
+-->
+<p>Rust est idéal pour de nombreuses personnes pour diverses raisons. Analysons
+quelques-uns des groupes les plus importants.</p>
+<!--
+### Teams of Developers
+-->
+<h3><a class="header" href="#Équipes-de-développeurs" id="Équipes-de-développeurs">Équipes de développeurs</a></h3>
+<!--
+Rust is proving to be a productive tool for collaborating among large teams of
+developers with varying levels of systems programming knowledge. Low-level code
+is prone to a variety of subtle bugs, which in most other languages can be
+caught only through extensive testing and careful code review by experienced
+developers. In Rust, the compiler plays a gatekeeper role by refusing to
+compile code with these elusive bugs, including concurrency bugs. By working
+alongside the compiler, the team can spend their time focusing on the program’s
+logic rather than chasing down bugs.
+-->
+<p>Rust se révèle être un outil productif pour la collaboration entre de grandes
+équipes de développeurs ayant différents niveaux de connaissances en
+programmation système. Le code de bas-niveau est sujet à une multitude de bogues
+subtils, qui, dans la plupart des autres langages, ne peuvent être prévenus
+qu'au moyen de campagnes de test étendues et de minutieuses revues de
+code menées par des développeurs chevronnés. Avec Rust, le compilateur joue le
+rôle de gardien en refusant de compiler du code qui comprend ces bogues
+discrets et vicieux, y compris les bogues de concurrence. En travaillant avec
+le compilateur, l'équipe peut se concentrer sur la logique du programme plutôt
+que de traquer les bogues.</p>
+<!--
+Rust also brings contemporary developer tools to the systems programming world:
+-->
+<p>Rust offre aussi des outils de développement modernes au monde de la
+programmation système :</p>
+<!--
+* Cargo, the included dependency manager and build tool, makes adding,
+  compiling, and managing dependencies painless and consistent across the Rust
+  ecosystem.
+* Rustfmt ensures a consistent coding style across developers.
+* The Rust Language Server powers Integrated Development Environment (IDE)
+  integration for code completion and inline error messages.
+-->
+<ul>
+<li>Cargo, l'outil intégré de gestion de dépendances et de compilation, qui
+uniformise et facilite l'ajout, la compilation, et la gestion des dépendances
+dans l'écosystème Rust.</li>
+<li>Rustfmt, qui assure une cohérence de style de codage pour tous les
+développeurs.</li>
+<li>Le <em>Rust Langage Server</em> alimente les environnements de développement
+intégrés (IDE) pour la complétion du code et l'affichage direct des messages
+d'erreur.</li>
+</ul>
+<!--
+By using these and other tools in the Rust ecosystem, developers can be
+productive while writing systems-level code.
+-->
+<p>En utilisant ces outils ainsi que d'autres dans l'écosystème Rust, les
+développeurs peuvent être plus productifs quand ils écrivent du code système.</p>
+<!--
+### Students
+-->
+<h3><a class="header" href="#Étudiants" id="Étudiants">Étudiants</a></h3>
+<!--
+Rust is for students and those who are interested in learning about systems
+concepts. Using Rust, many people have learned about topics like operating
+systems development. The community is very welcoming and happy to answer
+student questions. Through efforts such as this book, the Rust teams want to
+make systems concepts more accessible to more people, especially those new to
+programming.
+-->
+<p>Rust est conçu pour les étudiants et ceux qui s'intéressent à l'apprentissage
+des concepts système. En utilisant Rust, de nombreuses personnes ont appris
+des domaines comme le développement de systèmes d'exploitation. La communauté
+est très accueillante et répond volontiers aux questions des étudiants. Grâce à
+des initiatives comme ce livre, les équipes de Rust veulent rendre les notions
+système accessibles au plus grand nombre, particulièrement à ceux qui débutent
+dans la programmation.</p>
+<!--
+### Companies
+-->
+<h3><a class="header" href="#entreprises" id="entreprises">Entreprises</a></h3>
+<!--
+Hundreds of companies, large and small, use Rust in production for a variety of
+tasks. Those tasks include command line tools, web services, DevOps tooling,
+embedded devices, audio and video analysis and transcoding, cryptocurrencies,
+bioinformatics, search engines, Internet of Things applications, machine
+learning, and even major parts of the Firefox web browser.
+-->
+<p>Des centaines d'entreprises, petites et grosses, utilisent Rust en production
+pour différentes missions. Ils l'utilisent pour des outils en ligne de commande,
+des services web, des outils DevOps, des systèmes embarqués, de l'analyse et de
+la conversion audio et vidéo, des cryptomonnaies, de la bio-informatique, des
+moteurs de recherche, de l'internet des objets <em>(IoT)</em>, de l'apprentissage
+automatique <em>(marchine learning)</em>, et même des parties importantes du navigateur
+internet Firefox.</p>
+<!--
+### Open Source Developers
+-->
+<h3><a class="header" href="#développeurs-de-logiciel-libre" id="développeurs-de-logiciel-libre">Développeurs de logiciel libre</a></h3>
+<!--
+Rust is for people who want to build the Rust programming language, community,
+developer tools, and libraries. We’d love to have you contribute to the Rust
+language.
+-->
+<p>Rust est ouvert aux personnes qui veulent développer le langage de programmation
+Rust, la communauté, les outils de développement et les bibliothèques. Nous
+serions ravis que vous contribuiez au langage Rust.</p>
+<!--
+### People Who Value Speed and Stability
+-->
+<h3><a class="header" href="#les-personnes-qui-recherchent-la-rapidité-et-la-stabilité" id="les-personnes-qui-recherchent-la-rapidité-et-la-stabilité">Les personnes qui recherchent la rapidité et la stabilité</a></h3>
+<!--
+Rust is for people who crave speed and stability in a language. By speed, we
+mean the speed of the programs that you can create with Rust and the speed at
+which Rust lets you write them. The Rust compiler’s checks ensure stability
+through feature additions and refactoring. This is in contrast to the brittle
+legacy code in languages without these checks, which developers are often
+afraid to modify. By striving for zero-cost abstractions, higher-level features
+that compile to lower-level code as fast as code written manually, Rust
+endeavors to make safe code be fast code as well.
+-->
+<p>Rust est une solution pour les personnes qui chérissent la rapidité et la
+stabilité dans un langage. Par rapidité, nous entendons la vitesse des
+programmes que vous pouvez créer avec Rust et la rapidité avec laquelle Rust
+vous permet de les écrire. Les vérifications du compilateur de Rust assurent la
+stabilité durant l'ajout de fonctionnalités ou le remaniement du code. Cela
+le démarque des langages qui ne font pas ces contrôles sur du code instable que
+le programme a hérité avec le temps, et que bien souvent les développeurs ont
+peur de modifier. En s'efforçant de mettre en place des abstractions sans coût,
+des fonctionnalités de haut-niveau qui compilent vers du code bas-niveau aussi
+rapide que s'il avait été écrit à la main, Rust fait en sorte que le
+code sûr soit aussi du code rapide.</p>
+<!--
+The Rust language hopes to support many other users as well; those mentioned
+here are merely some of the biggest stakeholders. Overall, Rust’s greatest
+ambition is to eliminate the trade-offs that programmers have accepted for
+decades by providing safety *and* productivity, speed *and* ergonomics. Give
+Rust a try and see if its choices work for you.
+-->
+<p>Le langage Rust espère aider beaucoup d'autres utilisateurs ; ceux cités ici ne
+font partie que d'un univers bien plus grand. Globalement, la plus grande
+ambition de Rust est d'éradiquer les compromis auxquels les développeurs
+se soumettaient depuis des décennies en leur apportant sécurité <em>et</em>
+productivité, rapidité <em>et</em> ergonomie. Essayez Rust et vérifiez si ses décisions
+vous conviennent.</p>
+<!--
+## Who This Book Is For
+-->
+<h2><a class="header" href="#À-qui-est-destiné-ce-livre" id="À-qui-est-destiné-ce-livre">À qui est destiné ce livre</a></h2>
+<!--
+This book assumes that you’ve written code in another programming language but
+doesn’t make any assumptions about which one. We’ve tried to make the material
+broadly accessible to those from a wide variety of programming backgrounds. We
+don’t spend a lot of time talking about what programming *is* or how to think
+about it. If you’re entirely new to programming, you would be better served by
+reading a book that specifically provides an introduction to programming.
+-->
+<p>Ce livre suppose que vous avez écrit du code dans un autre langage de
+programmation mais ne suppose pas lequel. Nous avons essayé de rendre son
+contenu le plus accessible au plus grand nombre d'expériences de programmation
+possible. Nous ne nous évertuons pas à nous questionner sur <em>ce qu'est</em> la
+programmation ou comment l'envisager. Si vous êtes débutant en programmation,
+vous seriez mieux avisé en lisant un livre qui vous initie à la programmation.</p>
+<!--
+## How to Use This Book
+-->
+<h2><a class="header" href="#comment-utiliser-ce-livre" id="comment-utiliser-ce-livre">Comment utiliser ce livre</a></h2>
+<!--
+In general, this book assumes that you’re reading it in sequence from front to
+back. Later chapters build on concepts in earlier chapters, and earlier
+chapters might not delve into details on a topic; we typically revisit the
+topic in a later chapter.
+-->
+<p>Globalement, ce livre est prévu pour être lu dans l'ordre. Les chapitres
+suivants s'appuient sur les notions abordées dans les chapitres précédents, et
+lorsque les chapitres précédents ne peuvent pas approfondir un sujet, ce sera
+généralement fait dans un chapitre suivant.</p>
+<!--
+You’ll find two kinds of chapters in this book: concept chapters and project
+chapters. In concept chapters, you’ll learn about an aspect of Rust. In project
+chapters, we’ll build small programs together, applying what you’ve learned so
+far. Chapters 2, 12, and 20 are project chapters; the rest are concept chapters.
+-->
+<p>Vous allez rencontrer deux différents types de chapitres dans ce livre : les
+chapitres théoriques et les chapitres de projet. Dans les chapitres théoriques,
+vous allez apprendre un sujet à propos de Rust. Dans un chapitre de projet, nous
+allons construire ensemble des petits programmes, pour appliquer ce que vous
+avez appris précédemment. Les chapitres 2, 12 et 20 sont des chapitres de
+projet ; les autres sont des chapitres théoriques.</p>
+<!--
+Chapter 1 explains how to install Rust, how to write a Hello, world! program,
+and how to use Cargo, Rust’s package manager and build tool. Chapter 2 is a
+hands-on introduction to the Rust language. Here we cover concepts at a high
+level, and later chapters will provide additional detail. If you want to get
+your hands dirty right away, Chapter 2 is the place for that. At first, you
+might even want to skip Chapter 3, which covers Rust features similar to those
+of other programming languages, and head straight to Chapter 4 to learn about
+Rust’s ownership system. However, if you’re a particularly meticulous learner
+who prefers to learn every detail before moving on to the next, you might want
+to skip Chapter 2 and go straight to Chapter 3, returning to Chapter 2 when
+you’d like to work on a project applying the details you’ve learned.
+-->
+<p>Le chapitre 1 explique comment installer Rust, comment écrire un programme
+&quot;Hello, world!&quot; et comment utiliser Cargo, le gestionnaire de paquets et outil
+de compilation. Le chapitre 2 est une initiation pratique au langage Rust. Nous
+y aborderons des concepts de haut-niveau, et les chapitres suivants apporteront
+plus de détails. Si vous voulez vous <em>salir les mains</em> tout de suite,
+le chapitre 2 est l'endroit pour cela. Au début, vous pouvez même sauter le
+chapitre 3, qui aborde les fonctionnalités de Rust semblables aux autres
+langages de programmation, et passer directement au chapitre 4 pour en savoir
+plus sur le système de possession <em>(ownership)</em> de Rust. Toutefois, si vous êtes
+un apprenti particulièrement minutieux qui préfère apprendre chaque
+particularité avant de passer à la suivante, vous pouvez sauter le chapitre 2 et
+passer directement au chapitre 3, puis revenir au chapitre 2 lorsque vous
+souhaitez travailler sur un projet en appliquant les notions que vous avez
+apprises.</p>
+<!--
+Chapter 5 discusses structs and methods, and Chapter 6 covers enums, `match`
+expressions, and the `if let` control flow construct. You’ll use structs and
+enums to make custom types in Rust.
+-->
+<p>Le chapitre 5 traite des structures et des méthodes, et le chapitre 6 couvre les
+énumérations, les expressions <code>match</code>, et la structure de contrôle <code>if let</code>.
+Vous emploierez les structures et les énumérations pour créer des types
+personnalisés avec Rust.</p>
+<!--
+In Chapter 7, you’ll learn about Rust’s module system and about privacy rules
+for organizing your code and its public Application Programming Interface
+(API). Chapter 8 discusses some common collection data structures that the
+standard library provides, such as vectors, strings, and hash maps. Chapter 9
+explores Rust’s error-handling philosophy and techniques.
+-->
+<p>Au chapitre 7, vous apprendrez le système de modules de Rust et les règles de
+visibilité, afin d'organiser votre code et son interface de programmation
+applicative (API) publique. Le chapitre 8 traitera des structures de collections
+de données usuelles fournies par la bibliothèque standard, comme les vecteurs,
+les chaînes de caractères et les tables de hachage <em>(hash maps)</em>. Le chapitre 9
+explorera la philosophie et les techniques de gestion d'erreurs de Rust.</p>
+<!--
+Chapter 10 digs into generics, traits, and lifetimes, which give you the power
+to define code that applies to multiple types. Chapter 11 is all about testing,
+which even with Rust’s safety guarantees is necessary to ensure your program’s
+logic is correct. In Chapter 12, we’ll build our own implementation of a subset
+of functionality from the `grep` command line tool that searches for text
+within files. For this, we’ll use many of the concepts we discussed in the
+previous chapters.
+-->
+<p>Le chapitre 10 nous plongera dans la généricité, les <em>traits</em> et
+les durées de vie, qui vous donneront la capacité de créer du code qui s'adapte
+à différents types. Le chapitre 11 traitera des techniques de test, qui restent
+nécessaires malgré les garanties de sécurité de Rust, pour s'assurer que
+la logique de votre programme est valide. Au chapitre 12, nous écrirons
+notre propre implémentation d'un sous-ensemble des fonctionnalités du programme
+en ligne de commande <code>grep</code>, qui recherche du texte dans des fichiers.
+Pour ce faire, nous utiliserons de nombreuses notions abordées dans les
+chapitres précédents.</p>
+<!--
+Chapter 13 explores closures and iterators: features of Rust that come from
+functional programming languages. In Chapter 14, we’ll examine Cargo in more
+depth and talk about best practices for sharing your libraries with others.
+Chapter 15 discusses smart pointers that the standard library provides and the
+traits that enable their functionality.
+-->
+<p>Le chapitre 13 explorera les fermetures <em>(closures)</em> et itérateurs : ce sont les
+fonctionnalités de Rust inspirées des langages de programmation fonctionnels.
+Au chapitre 14, nous explorerons plus en profondeur Cargo et les bonnes
+pratiques pour partager vos propres bibliothèques avec les autres. Le chapitre
+15 parlera de pointeurs intelligents qu'apporte la bibliothèque standard et des
+<em>traits</em> qui activent leurs fonctionnalités.</p>
+<!--
+In Chapter 16, we’ll walk through different models of concurrent programming
+and talk about how Rust helps you to program in multiple threads fearlessly.
+Chapter 17 looks at how Rust idioms compare to object-oriented programming
+principles you might be familiar with.
+-->
+<p>Au chapitre 16, nous passerons en revue les différents modes de programmation
+concurrente et comment Rust nous aide à développer dans des processus parallèles
+sans crainte. Le chapitre 17 comparera les fonctionnalités de Rust aux
+principes de programmation orientée objet, que vous connaissez peut-être.</p>
+<!--
+Chapter 18 is a reference on patterns and pattern matching, which are powerful
+ways of expressing ideas throughout Rust programs. Chapter 19 contains a
+smorgasbord of advanced topics of interest, including unsafe Rust, macros, and
+more about lifetimes, traits, types, functions, and closures.
+-->
+<p>Le chapitre 18 est une référence sur les motifs et le filtrage de motif
+<em>(pattern matching)</em>, qui sont des moyens puissants permettant de communiquer
+des idées dans les programmes Rust. Le chapitre 19 contient une foultitude de
+sujets avancés intéressants, comme le code Rust non sécurisé <em>(unsafe)</em>, les
+macros et plus de détails sur les durées de vie, les <em>traits</em>, les types, les
+fonctions et les fermetures <em>(closures)</em>.</p>
+<!--
+In Chapter 20, we’ll complete a project in which we’ll implement a low-level
+multithreaded web server!
+-->
+<p>Au chapitre 20, nous terminerons un projet dans lequel nous allons
+implémenter en bas-niveau un serveur web multi-processus !</p>
+<!--
+Finally, some appendixes contain useful information about the language in a
+more reference-like format. Appendix A covers Rust’s keywords, Appendix B
+covers Rust’s operators and symbols, Appendix C covers derivable traits
+provided by the standard library, Appendix D covers some useful development
+tools, and Appendix E explains Rust editions.
+-->
+<p>Et finalement, quelques annexes qui contiennent des informations utiles sur le
+langage sous forme de référentiels qui renvoient à d'autres documents. L'annexe
+A liste les mots-clés de Rust, l'annexe B couvre les opérateurs et symboles de
+Rust, l'annexe C parle des <em>traits</em> dérivables qu'apporte la bibliothèque
+standard, l'annexe D référence certains outils de développement utiles, et
+l'annexe E explique les différentes éditions de Rust.</p>
+<!--
+There is no wrong way to read this book: if you want to skip ahead, go for it!
+You might have to jump back to earlier chapters if you experience any
+confusion. But do whatever works for you.
+-->
+<p>Il n'y a pas de mauvaise manière de lire ce livre : si vous voulez sauter des
+étapes, allez-y !
+Vous devrez alors peut-être revenir sur les chapitres précédents si vous
+éprouvez des difficultés. Mais faites comme bon vous semble.</p>
+<p><span id="ferris"></span></p>
+<!--
+An important part of the process of learning Rust is learning how to read the
+error messages the compiler displays: these will guide you toward working code.
+As such, we’ll provide many examples that don’t compile along with the error
+message the compiler will show you in each situation. Know that if you enter
+and run a random example, it may not compile! Make sure you read the
+surrounding text to see whether the example you’re trying to run is meant to
+error. Ferris will also help you distinguish code that isn’t meant to work:
+-->
+<p>Une composante importante du processus d'apprentissage de Rust est de comprendre
+comment lire les messages d'erreur qu'affiche le compilateur : ils vous
+guideront vers du code correct.
+Ainsi, nous citerons de nombreux exemples qui ne compilent pas, avec le message
+d'erreur que le compilateur devrait vous afficher dans chaque cas. C'est donc
+normal que dans certains cas, si vous copiez et exécutez un exemple au hasard,
+il ne compile pas ! Assurez-vous d'avoir lu le texte autour pour savoir si
+l'exemple que vous tentez de compiler doit échouer. Ferris va aussi vous aider
+à identifier du code qui ne devrait pas fonctionner :</p>
+<!--
+| Ferris                                                                 | Meaning                                          |
+|------------------------------------------------------------------------|--------------------------------------------------|
+| <img src="img/ferris/does_not_compile.svg" class="ferris-explain"/>    | This code does not compile!                      |
+| <img src="img/ferris/panics.svg" class="ferris-explain"/>              | This code panics!                                |
+| <img src="img/ferris/unsafe.svg" class="ferris-explain"/>              | This code block contains unsafe code.            |
+| <img src="img/ferris/not_desired_behavior.svg" class="ferris-explain"/>| This code does not produce the desired behavior. |
+-->
+<table><thead><tr><th>Ferris</th><th>Signification</th></tr></thead><tbody>
+<tr><td><img src="img/ferris/does_not_compile.svg" class="ferris-explain"/></td><td>Ce code ne compile pas !</td></tr>
+<tr><td><img src="img/ferris/panics.svg" class="ferris-explain"/></td><td>Ce code panique !</td></tr>
+<tr><td><img src="img/ferris/unsafe.svg" class="ferris-explain"/></td><td>Ce bloc de code contient du code non sécurisé.</td></tr>
+<tr><td><img src="img/ferris/not_desired_behavior.svg" class="ferris-explain"/></td><td>Ce code ne se comporte pas comme voulu.</td></tr>
+</tbody></table>
+<!--
+In most situations, we’ll lead you to the correct version of any code that
+doesn’t compile.
+-->
+<p>Dans la plupart des cas, nous vous guiderons vers la version du code qui devrait
+fonctionner.</p>
+<!--
+## Source Code
+-->
+<h2><a class="header" href="#code-source" id="code-source">Code source</a></h2>
+<!--
+The source files from which this book is generated can be found on
+[GitHub][book].
+-->
+<p>Les fichiers du code source qui a généré ce livre en anglais sont disponibles
+sur <a href="https://github.com/rust-lang/book/tree/master/src">GitHub</a>.</p>
+<p>La version française est aussi disponible sur <a href="https://github.com/Jimskapt/rust-book-fr">GitHub</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="foreword.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch01-00-getting-started.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="foreword.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch01-00-getting-started.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>
