@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li></ol>
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li></ol></li><li><strong aria-hidden="true">4.</strong> Understanding Ownership</li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -750,6 +750,8 @@ sur <a href="https://github.com/rust-lang/book/tree/master/src">GitHub</a>.</p>
 français.</p>
 <table><thead><tr><th>Anglais</th><th>Français</th><th>Remarques</th></tr></thead><tbody>
 <tr><td>ahead-of-time compilation</td><td>compilation anticipée</td><td>sigle : AOT</td></tr>
+<tr><td>allocated</td><td>alloué</td><td>-</td></tr>
+<tr><td>annotate</td><td>indiquer</td><td>-</td></tr>
 <tr><td>Appendix</td><td>annexe</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>Application Programming Interface (API)</td><td>interface de programmation applicative (API)</td><td>-</td></tr>
 <tr><td>argument</td><td>argument / paramètre</td><td>-</td></tr>
@@ -757,6 +759,7 @@ français.</p>
 <tr><td>array</td><td>tableau</td><td>-</td></tr>
 <tr><td>artifact</td><td>artéfact</td><td>-</td></tr>
 <tr><td>associated function</td><td>fonction associée</td><td>-</td></tr>
+<tr><td>attributes</td><td>attributs</td><td>-</td></tr>
 <tr><td>binary crate</td><td>crate binaire</td><td>s'utilise au féminin</td></tr>
 <tr><td><em>n</em>-bit number</td><td>nombre encodé sur <em>n</em> bits</td><td>-</td></tr>
 <tr><td>boolean</td><td>booléen</td><td>-</td></tr>
@@ -769,15 +772,19 @@ français.</p>
 <tr><td>Chapter</td><td>chapitre</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>closure</td><td>fermeture</td><td>-</td></tr>
 <tr><td>code review</td><td>revue de code</td><td>-</td></tr>
+<tr><td>collection</td><td>collection</td><td>-</td></tr>
 <tr><td>command</td><td>commande</td><td>dans un terminal</td></tr>
 <tr><td>commit</td><td>commit</td><td>-</td></tr>
+<tr><td>compound</td><td>composé</td><td>-</td></tr>
 <tr><td>concept chapter</td><td>chapitre théorique</td><td>-</td></tr>
 <tr><td>concurrency</td><td>concurrence</td><td>-</td></tr>
 <tr><td>concurrent</td><td>concurrent</td><td>-</td></tr>
+<tr><td>conditional</td><td>structure conditionnelle</td><td>-</td></tr>
 <tr><td>constant</td><td>constant / constante</td><td>-</td></tr>
 <tr><td>control flow construct</td><td>structure de contrôle</td><td>-</td></tr>
 <tr><td>core of the error</td><td>message d'erreur</td><td>-</td></tr>
 <tr><td>corruption</td><td>corruption / être corrompu</td><td>-</td></tr>
+<tr><td>CPU</td><td>processeur</td><td>-</td></tr>
 <tr><td>crash</td><td>plantage</td><td>-</td></tr>
 <tr><td>crate</td><td>crate</td><td>nom féminin (une <em>crate</em>)</td></tr>
 <tr><td>curly bracket</td><td>accolade</td><td>-</td></tr>
@@ -795,9 +802,12 @@ français.</p>
 <tr><td>expression</td><td>expression</td><td>-</td></tr>
 <tr><td>field</td><td>champ</td><td>d'une structure</td></tr>
 <tr><td>flag</td><td>drapeau</td><td>pour les programmes en ligne de commande</td></tr>
+<tr><td>float</td><td>nombre à virgule flottante</td><td>-</td></tr>
 <tr><td>floating-point number</td><td>nombre à virgule flottante</td><td>-</td></tr>
 <tr><td>function</td><td>fonction</td><td>-</td></tr>
+<tr><td>functional programming</td><td>programmation fonctionnelle</td><td>-</td></tr>
 <tr><td>generics</td><td>génériques / généricité</td><td>-</td></tr>
+<tr><td>global scope</td><td>portée globale</td><td>-</td></tr>
 <tr><td>guessing game</td><td>jeu de devinettes</td><td>-</td></tr>
 <tr><td>handle</td><td>référence abstraite</td><td>-</td></tr>
 <tr><td>hash</td><td>hash / relatif au hachage</td><td>-</td></tr>
@@ -808,9 +818,12 @@ français.</p>
 <tr><td>identifier</td><td>identificateur</td><td>-</td></tr>
 <tr><td>immutability</td><td>immuabilité</td><td>-</td></tr>
 <tr><td>immutable</td><td>immuable</td><td>-</td></tr>
+<tr><td>index</td><td>indice</td><td>-</td></tr>
+<tr><td>indexing</td><td>indexation</td><td>-</td></tr>
 <tr><td>input/output</td><td>entrée/sortie</td><td>sigle : IO</td></tr>
 <tr><td>instance</td><td>instance</td><td>-</td></tr>
 <tr><td>instantiate</td><td>instancier</td><td>créer une instance</td></tr>
+<tr><td>integer literal</td><td>littéral d'entiers</td><td>-</td></tr>
 <tr><td>integer overflow</td><td>dépassement d'entier</td><td>-</td></tr>
 <tr><td>Integrated Development Environment (IDE)</td><td>environnement de développement intégré (IDE)</td><td>-</td></tr>
 <tr><td>IOT</td><td>internet des objets (IOT)</td><td>-</td></tr>
@@ -829,11 +842,14 @@ français.</p>
 <tr><td>main</td><td>main</td><td>-</td></tr>
 <tr><td>memory management</td><td>gestion de mémoire</td><td>-</td></tr>
 <tr><td>method</td><td>méthode</td><td>-</td></tr>
+<tr><td>modern</td><td>récent</td><td>-</td></tr>
 <tr><td>module</td><td>module</td><td>-</td></tr>
 <tr><td>mutability</td><td>mutabilité</td><td>-</td></tr>
 <tr><td>mutable</td><td>mutable</td><td>modifiable</td></tr>
+<tr><td>mutate</td><td>muter</td><td>-</td></tr>
 <tr><td>Note</td><td>remarque</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>numerical characters</td><td>chiffres</td><td>-</td></tr>
+<tr><td>object-oriented language</td><td>langage orienté objet</td><td>-</td></tr>
 <tr><td>operating system</td><td>système d'exploitation</td><td>-</td></tr>
 <tr><td>ownership</td><td>possession</td><td>-</td></tr>
 <tr><td>package manager</td><td>système de gestion de paquets</td><td>-</td></tr>
@@ -857,6 +873,10 @@ français.</p>
 <tr><td>return</td><td>retourner</td><td>-</td></tr>
 <tr><td>run</td><td>exécuter</td><td>pour les programmes</td></tr>
 <tr><td>Rustacean</td><td>Rustacé</td><td>-</td></tr>
+<tr><td>section header</td><td>entête de section</td><td>-</td></tr>
+<tr><td>semantic version</td><td>version sémantique</td><td>-</td></tr>
+<tr><td>scalar</td><td>scalaire</td><td>-</td></tr>
+<tr><td>scope</td><td>portée</td><td>-</td></tr>
 <tr><td>script</td><td>script</td><td>-</td></tr>
 <tr><td>section header</td><td>en-tête de section</td><td>-</td></tr>
 <tr><td>semantic version</td><td>version sémantique</td><td>-</td></tr>
@@ -871,6 +891,7 @@ français.</p>
 <tr><td>smart pointer</td><td>pointeur intelligent</td><td>-</td></tr>
 <tr><td>snip</td><td>code inchangé masqué ici</td><td>dans un encart</td></tr>
 <tr><td>space</td><td>espace</td><td>ce mot est féminin quand on parle du caractère typographique</td></tr>
+<tr><td>square brackets</td><td>crochets</td><td>-</td></tr>
 <tr><td>stack</td><td>pile</td><td>-</td></tr>
 <tr><td>standard</td><td>standard <em>(adj. inv.)</em> / norme <em>(n.f.)</em></td><td>-</td></tr>
 <tr><td>standard error</td><td>erreur standard</td><td>-</td></tr>
@@ -878,6 +899,7 @@ français.</p>
 <tr><td>standard library</td><td>bibliothèque standard</td><td>-</td></tr>
 <tr><td>standard output</td><td>sortie standard</td><td>-</td></tr>
 <tr><td>statement</td><td>instruction</td><td>-</td></tr>
+<tr><td>statically typed</td><td>statiquement typé</td><td>-</td></tr>
 <tr><td>string</td><td>chaîne de caractères</td><td>-</td></tr>
 <tr><td><code>String</code></td><td><code>String</code></td><td>nom féminin (une <code>String</code>)</td></tr>
 <tr><td>struct</td><td>structure</td><td>-</td></tr>
@@ -890,13 +912,18 @@ français.</p>
 <tr><td>troubleshooting</td><td>dépannage</td><td>-</td></tr>
 <tr><td>tuple</td><td>tuple</td><td>-</td></tr>
 <tr><td>tuple struct</td><td>structure tuple</td><td>-</td></tr>
+<tr><td>type</td><td>type</td><td>-</td></tr>
+<tr><td>type annotation</td><td>annotation de type</td><td>-</td></tr>
 <tr><td>type inference</td><td>inférence de types</td><td>-</td></tr>
+<tr><td>two’s complement</td><td>complément à deux</td><td>-</td></tr>
+<tr><td>two’s complement wrapping</td><td>rebouclage du complément à deux</td><td>-</td></tr>
 <tr><td>underlying operating system</td><td>système d'exploitation sous-jacent</td><td>-</td></tr>
 <tr><td>underscore</td><td>tiret bas</td><td>le caractère <code>_</code></td></tr>
 <tr><td>unit-like struct</td><td>structure unitaire</td><td>-</td></tr>
 <tr><td>unit type</td><td>type unité</td><td>-</td></tr>
 <tr><td>unit value</td><td>valeur unité</td><td>-</td></tr>
 <tr><td>unsafe</td><td>non sécurisé</td><td>-</td></tr>
+<tr><td>unsigned</td><td>sans signe (toujours positif)</td><td>-</td></tr>
 <tr><td>unsigned</td><td>non signé</td><td>-</td></tr>
 <tr><td>user input</td><td>saisie utilisateur</td><td>-</td></tr>
 <tr><td>variable</td><td>variable</td><td>-</td></tr>
@@ -3924,6 +3951,1374 @@ fonctionnent.</p>
 [variables-and-mutability]:
 ch03-01-variables-and-mutability.html#variables-and-mutability
 -->
+<!--
+# Common Programming Concepts
+-->
+<h1><a class="header" href="#les-concepts-courants-de-programmation" id="les-concepts-courants-de-programmation">Les concepts courants de programmation</a></h1>
+<!--
+This chapter covers concepts that appear in almost every programming language
+and how they work in Rust. Many programming languages have much in common at
+their core. None of the concepts presented in this chapter are unique to Rust,
+but we’ll discuss them in the context of Rust and explain the conventions
+around using these concepts.
+-->
+<p>Ce chapitre explique des concepts qui apparaissent dans presque tous les
+langages de programmation, et la manière dont ils fonctionnent en Rust. De
+nombreux langages sont basés sur des concepts communs. Les concepts présentés
+dans ce chapitre ne sont pas spécifiques à Rust, mais nous les appliquerons
+à Rust et nous expliquerons les conventions qui leur sont liées.</p>
+<!--
+Specifically, you’ll learn about variables, basic types, functions, comments,
+and control flow. These foundations will be in every Rust program, and learning
+them early will give you a strong core to start from.
+-->
+<p>Plus précisément, vous allez apprendre les concepts de variables, les types de
+base, les fonctions, les commentaires, et les structures de contrôle. Ces
+notions fondamentales seront présentes dans tous les programmes Rust, et les
+apprendre dès le début vous procurera de solides bases pour débuter.</p>
+<!--
+> #### Keywords
+>
+> The Rust language has a set of *keywords* that are reserved for use by
+> the language only, much as in other languages. Keep in mind that you cannot
+> use these words as names of variables or functions. Most of the keywords have
+> special meanings, and you’ll be using them to do various tasks in your Rust
+> programs; a few have no current functionality associated with them but have
+> been reserved for functionality that might be added to Rust in the future. You
+> can find a list of the keywords in Appendix A.
+-->
+<blockquote>
+<h4><a class="header" href="#mots-clés" id="mots-clés">Mots-clés</a></h4>
+<p>Le langage Rust possède un ensemble de <em>mots-clés</em> qui ont été réservés pour
+l'usage exclusif du langage, tout comme le font d'autres langages. Gardez à
+l'esprit que vous ne pouvez pas utiliser ces mots pour des noms de variables
+ou de fonctions. La plupart des mots-clés ont une signification spéciale, et
+vous les utiliserez pour réaliser de différentes tâches dans vos programmes
+Rust ; quelques-uns n'ont aucune fonctionnalité active pour le moment, mais
+ont été réservés pour être ajoutés plus tard à Rust.
+Vous pouvez trouver la liste de ces mots-clés dans l'annexe A.</p>
+</blockquote>
+<!--
+## Variables and Mutability
+-->
+<h2><a class="header" href="#les-variables-et-la-mutabilité" id="les-variables-et-la-mutabilité">Les variables et la mutabilité</a></h2>
+<!--
+As mentioned in Chapter 2, by default variables are immutable. This is one of
+many nudges Rust gives you to write your code in a way that takes advantage of
+the safety and easy concurrency that Rust offers. However, you still have the
+option to make your variables mutable. Let’s explore how and why Rust
+encourages you to favor immutability and why sometimes you might want to opt
+out.
+-->
+<p>Tel qu'abordé au chapitre 2, par défaut, les variables sont <em>immuables</em>. C'est
+un des nombreux coups de pouce de Rust pour écrire votre code de façon à
+garantir la sécurité et la concurrence sans problème. Cependant, vous avez quand
+même la possibilité de rendre vos variables mutables <em>(modifiables)</em>. Explorons
+comment et pourquoi Rust vous encourage à favoriser l'immuabilité, et pourquoi
+parfois vous pourriez choisir d'y renoncer.</p>
+<!--
+When a variable is immutable, once a value is bound to a name, you can’t change
+that value. To illustrate this, let’s generate a new project called *variables*
+in your *projects* directory by using `cargo new variables`.
+-->
+<p>Lorsqu'une variable est immuable, cela signifie qu'une fois qu'une valeur est
+liée à un nom, vous ne pouvez pas changer cette valeur. À titre d'illustration,
+générons un nouveau projet appelé <em>variables</em> dans votre dossier <em>projects</em> en
+utilisant <code>cargo new variables</code>.</p>
+<!--
+Then, in your new *variables* directory, open *src/main.rs* and replace its
+code with the following code that won’t compile just yet:
+-->
+<p>Ensuite, dans votre nouveau dossier <em>variables</em>, ouvrez <em>src/main.rs</em> et
+remplacez son code par le code suivant qui ne compile pas pour le moment :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let x = 5;
+    println!("The value of x is: {}", x);
+    x = 6;
+    println!("The value of x is: {}", x);
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let x = 5;
+    println!(&quot;La valeur de x est : {}&quot;, x);
+    x = 6;
+    println!(&quot;La valeur de x est : {}&quot;, x);
+}
+</code></pre>
+<!--
+Save and run the program using `cargo run`. You should receive an error
+message, as shown in this output:
+-->
+<p>Sauvegardez et lancez le programme en utilisant <code>cargo run</code>. Vous devriez
+avoir un message d'erreur comme celui-ci :</p>
+<!--
+```text
+error[E0384]: cannot assign twice to immutable variable `x`
+ -- > src/main.rs:4:5
+  |
+2 |     let x = 5;
+  |         - first assignment to `x`
+3 |     println!("The value of x is: {}", x);
+4 |     x = 6;
+  |     ^^^^^ cannot assign twice to immutable variable
+```
+-->
+<pre><code class="language-text">error[E0384]: cannot assign twice to immutable variable `x`
+ --&gt; src/main.rs:4:5
+  |
+2 |     let x = 5;
+  |         - first assignment to `x`
+3 |     println!(&quot;La valeur de x est : {}&quot;, x);
+4 |     x = 6;
+  |     ^^^^^ cannot assign twice to immutable variable
+</code></pre>
+<!--
+This example shows how the compiler helps you find errors in your programs.
+Even though compiler errors can be frustrating, they only mean your program
+isn’t safely doing what you want it to do yet; they do *not* mean that you’re
+not a good programmer! Experienced Rustaceans still get compiler errors.
+-->
+<p>Cet exemple montre comment le compilateur vous aide à trouver les erreurs dans
+vos programmes. Même si les erreurs de compilation peuvent s'avérer frustrantes,
+elles signifient uniquement que, pour le moment, votre programme n'est pas en
+train de faire ce que vous voulez qu'il fasse en toute sécurité ; elles ne
+signifient <em>pas</em> que vous êtes un mauvais développeur ! Même les Rustacés
+expérimentés continuent d'avoir des erreurs de compilation.</p>
+<!--
+The error message indicates that the cause of the error is that you `cannot
+assign twice to immutable variable x`, because you tried to assign a second
+value to the immutable `x` variable.
+-->
+<p>Ce message d'erreur indique que la cause du problème est qu'il est <em>impossible
+d'assigner à deux reprises la variable immuable <code>x</code></em> (<code>cannot assign twice to immutable variable x</code>).</p>
+<!--
+It’s important that we get compile-time errors when we attempt to change a
+value that we previously designated as immutable because this very situation
+can lead to bugs. If one part of our code operates on the assumption that a
+value will never change and another part of our code changes that value, it’s
+possible that the first part of the code won’t do what it was designed to do.
+The cause of this kind of bug can be difficult to track down after the fact,
+especially when the second piece of code changes the value only *sometimes*.
+-->
+<p>Il est important que nous obtenions des erreurs au moment de la compilation
+lorsque nous essayons de changer une valeur qui a précédemment été déclarée
+comme immuable, car cette situation particulière peut donner lieu à des bogues.
+Si une partie de notre code part du principe qu'une valeur ne changera jamais et
+qu'une autre partie de notre code modifie cette valeur, il est possible que la
+première partie du code ne fasse pas ce pour quoi elle a été conçue. La cause de
+ce genre de bogue peut être difficile à localiser après coup, en particulier
+lorsque la seconde partie du code ne modifie que <em>parfois</em> cette valeur.</p>
+<!--
+In Rust, the compiler guarantees that when you state that a value won’t change,
+it really won’t change. That means that when you’re reading and writing code,
+you don’t have to keep track of how and where a value might change. Your code
+is thus easier to reason through.
+-->
+<p>Avec Rust, le compilateur garantit que lorsque nous déclarons qu'une variable ne
+changera pas, elle ne changera vraiment pas. Cela signifie que lorsque vous
+lisez et écrivez du code, vous n'avez pas à vous soucier d'où et comment la
+valeur pourrait changer. Votre code est ainsi plus facile à comprendre.</p>
+<!--
+But mutability can be very useful. Variables are immutable only by default; as
+you did in Chapter 2, you can make them mutable by adding `mut` in front of the
+variable name. In addition to allowing this value to change, `mut` conveys
+intent to future readers of the code by indicating that other parts of the code
+will be changing this variable value.
+-->
+<p>Mais la mutabilité peut s'avérer très utile. Les variables sont immuables par
+défaut ; mais comme vous l'avez fait au chapitre 2, vous pouvez les rendre
+mutables en ajoutant <code>mut</code> devant le nom de la variable. En plus de permettre à
+cette valeur de changer, <code>mut</code> va signaler l'intention aux futurs lecteurs de ce
+code que d'autres parties du code vont modifier la valeur de cette variable.</p>
+<!--
+For example, let’s change *src/main.rs* to the following:
+-->
+<p>Par exemple, modifions <em>src/main.rs</em> ainsi :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let mut x = 5;
+    println!("The value of x is: {}", x);
+    x = 6;
+    println!("The value of x is: {}", x);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut x = 5;
+    println!(&quot;La valeur de x est : {}&quot;, x);
+    x = 6;
+    println!(&quot;La valeur de x est : {}&quot;, x);
+}
+</code></pre></pre>
+<!--
+When we run the program now, we get this:
+-->
+<p>Lorsque nous exécutons le programme, nous obtenons :</p>
+<!--
+```text
+$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+     Running `target/debug/variables`
+The value of x is: 5
+The value of x is: 6
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+     Running `target/debug/variables`
+La valeur de x est : 5
+La valeur de x est : 6
+</code></pre>
+<!--
+We’re allowed to change the value that `x` binds to from `5` to `6` when `mut`
+is used. In some cases, you’ll want to make a variable mutable because it makes
+the code more convenient to write than if it had only immutable variables.
+-->
+<p>En utilisant <code>mut</code>, nous avons permis à la valeur de <code>x</code> de passer de <code>5</code> à <code>6</code>.
+Dans certains cas, on voudra rendre une variable mutable car cela
+rendra le code plus pratique à écrire que s'il n'utilisait que des variables
+immuables.</p>
+<!--
+There are multiple trade-offs to consider in addition to the prevention of
+bugs. For example, in cases where you’re using large data structures, mutating
+an instance in place may be faster than copying and returning newly allocated
+instances. With smaller data structures, creating new instances and writing in
+a more functional programming style may be easier to think through, so lower
+performance might be a worthwhile penalty for gaining that clarity.
+-->
+<p>Il y a d'autres compromis à envisager, en plus de la prévention des bogues. Par
+exemple, dans le cas où vous utiliseriez des grosses structures de données,
+muter une instance déjà existante peut être plus rapide que copier et retourner
+une instance nouvellement allouée. Avec des structures de données plus petites,
+créer de nouvelles instances avec un style de programmation fonctionnelle peut
+rendre le code plus facile à comprendre, donc il peut valoir le coup de
+sacrifier un peu de performance pour que le code gagne en clarté.</p>
+<!--
+### Differences Between Variables and Constants
+-->
+<h3><a class="header" href="#différences-entre-les-variables-et-les-constantes" id="différences-entre-les-variables-et-les-constantes">Différences entre les variables et les constantes</a></h3>
+<!--
+Being unable to change the value of a variable might have reminded you of
+another programming concept that most other languages have: *constants*. Like
+immutable variables, constants are values that are bound to a name and are not
+allowed to change, but there are a few differences between constants and
+variables.
+-->
+<p>Rendre impossible de changer la valeur d'une variable peut vous avoir rappelé un
+autre concept de programmation que de nombreux autres langages possèdent : les
+<em>constantes</em>. Comme les variables immuables, les constantes sont des valeurs qui
+sont liées à un nom et qui ne peuvent être modifiées, mais il y a quelques
+différences entre les constantes et les variables.</p>
+<!--
+First, you aren’t allowed to use `mut` with constants. Constants aren’t just
+immutable by default—they’re always immutable.
+-->
+<p>D'abord, vous ne pouvez pas utiliser <code>mut</code> avec les constantes. Les constantes
+ne sont pas seulement immuables par défaut − elles sont toujours immuables.</p>
+<!--
+You declare constants using the `const` keyword instead of the `let` keyword,
+and the type of the value *must* be annotated. We’re about to cover types and
+type annotations in the next section, [“Data Types,”][data-types]<!-- ignore
+-- > so don’t worry about the details right now. Just know that you must always
+annotate the type.
+-->
+<p>On déclare les constantes en utilisant le mot-clé <code>const</code> à la place du
+mot-clé <code>let</code>, et le type de la valeur <em>doit</em> être indiqué. Nous allons aborder
+les types et les annotations de types dans la prochaine section,
+<a href="ch03-02-data-types.html#les-types-de-donn%C3%A9es">“Les types de données”</a><!-- ignore -->, donc ne vous souciez pas
+des détails pour le moment. Sachez seulement que vous devez toujours indiquer le
+type.</p>
+<!--
+Constants can be declared in any scope, including the global scope, which makes
+them useful for values that many parts of code need to know about.
+-->
+<p>Les constantes peuvent être déclarées à n'importe quel endroit du code, y
+compris la portée globale, ce qui les rend très utiles pour des valeurs que de
+nombreuses parties de votre code ont besoin de connaître.</p>
+<!--
+The last difference is that constants may be set only to a constant expression,
+not the result of a function call or any other value that could only be
+computed at runtime.
+-->
+<p>La dernière différence est que les constantes ne peuvent être définies que par
+une expression constante, et non pas le résultat d'un appel de fonction ou toute
+autre valeur qui ne pourrait être calculée qu'à l'exécution.</p>
+<!--
+Here’s an example of a constant declaration where the constant’s name is
+`MAX_POINTS` and its value is set to 100,000. (Rust’s naming convention for
+constants is to use all uppercase with underscores between words, and
+underscores can be inserted in numeric literals to improve readability):
+-->
+<p>Voici un exemple d'une déclaration de constante où le nom de la constante est
+<code>MAX_POINTS</code> et où sa valeur est définie à 100 000. (En Rust, la convention de
+nommage des constantes est de les écrire tout en majuscule avec des tirets bas
+entre les mots, et des tirets bas peuvent être ajoutés entre les nombres pour
+améliorer la lisibilité) :</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+const MAX_POINTS: u32 = 100_000;
+#}</code></pre></pre>
+<!--
+Constants are valid for the entire time a program runs, within the scope they
+were declared in, making them a useful choice for values in your application
+domain that multiple parts of the program might need to know about, such as the
+maximum number of points any player of a game is allowed to earn or the speed
+of light.
+-->
+<p>Les constantes sont valables pendant toute la durée d'exécution du programme
+au sein de la portée dans laquelle elles sont déclarées, ce qui en fait de
+très bons choix lorsque plusieurs parties du programme doivent connaître
+certaines valeurs, comme par exemple le nombre maximum de points qu'un joueur
+est autorisé à gagner ou encore la vitesse de la lumière.</p>
+<!--
+Naming hardcoded values used throughout your program as constants is useful in
+conveying the meaning of that value to future maintainers of the code. It also
+helps to have only one place in your code you would need to change if the
+hardcoded value needed to be updated in the future.
+-->
+<p>Déclarer des valeurs codées en dur et utilisées tout le long de votre programme
+en tant que constantes est utile pour faire comprendre la signification de ces
+valeurs dans votre code aux futurs développeurs. Cela permet également de
+n'avoir qu'un seul endroit de votre code à modifier si cette valeur codée en dur
+doit être mise à jour à l'avenir.</p>
+<!--
+### Shadowing
+-->
+<h3><a class="header" href="#le-masquage" id="le-masquage">Le masquage</a></h3>
+<!--
+As you saw in the guessing game tutorial in the [“Comparing the Guess to the
+Secret Number”][comparing-the-guess-to-the-secret-number]<!-- ignore -- >
+section in Chapter 2, you can declare a new variable with the same name as a
+previous variable, and the new variable shadows the previous variable.
+Rustaceans say that the first variable is *shadowed* by the second, which means
+that the second variable’s value is what appears when the variable is used. We
+can shadow a variable by using the same variable’s name and repeating the use
+of the `let` keyword as follows:
+-->
+<p>Comme nous l'avons vu dans la section
+<a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre secret”</a><!-- ignore -->
+du jeu de devinettes au chapitre 2, on peut déclarer une nouvelle variable
+avec le même nom qu'une variable précédente, et la nouvelle variable
+masquera la première. Les Rustacés disent que la première variable est <em>masquée</em>
+par la seconde, ce qui signifie que la valeur de la seconde variable sera ce que
+nous obtiendrons lorsque nous utiliserons cette variable. Nous pouvons créer un
+masque d'une variable en utilisant le même nom de variable et en réutilisant le
+mot-clé <code>let</code> comme ci-dessous :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let x = 5;
+
+    let x = x + 1;
+
+    let x = x * 2;
+
+    println!("The value of x is: {}", x);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x = 5;
+
+    let x = x + 1;
+
+    let x = x * 2;
+
+    println!(&quot;La valeur de x est : {}&quot;, x);
+}
+</code></pre></pre>
+<!--
+This program first binds `x` to a value of `5`. Then it shadows `x` by
+repeating `let x =`, taking the original value and adding `1` so the value of
+`x` is then `6`. The third `let` statement also shadows `x`, multiplying the
+previous value by `2` to give `x` a final value of `12`. When we run this
+program, it will output the following:
+-->
+<p>Au début, ce programme lie <code>x</code> à la valeur <code>5</code>. Puis il crée un masque de <code>x</code>
+en répétant <code>let x =</code>, en récupérant la valeur d'origine et lui ajoutant <code>1</code> :
+la valeur de <code>x</code> est désormais <code>6</code>. La troisième instruction <code>let</code> crée un autre
+masque de <code>x</code>, en récupérant la précédente valeur et en la multipliant par <code>2</code>
+pour donner à <code>x</code> la valeur finale de <code>12</code>. Lorsque nous exécutons ce programme,
+nous obtenons ceci :</p>
+<!--
+```text
+$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/variables`
+The value of x is: 12
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/variables`
+La valeur de x est : 12
+</code></pre>
+<!--
+Shadowing is different from marking a variable as `mut`, because we’ll get a
+compile-time error if we accidentally try to reassign to this variable without
+using the `let` keyword. By using `let`, we can perform a few transformations
+on a value but have the variable be immutable after those transformations have
+been completed.
+-->
+<p>Créer un masque est différent que de marquer une variable comme étant <code>mut</code>,
+car à moins d'utiliser une nouvelle fois le mot-clé <code>let</code>, nous obtiendrons une
+erreur de compilation si nous essayons de réassigner cette variable par
+accident. Nous pouvons effectuer quelques transformations sur une valeur en
+utilisant <code>let</code>, mais faire en sorte que la variable soit immuable après que ces
+transformations ont été appliquées.</p>
+<!--
+The other difference between `mut` and shadowing is that because we’re
+effectively creating a new variable when we use the `let` keyword again, we can
+change the type of the value but reuse the same name. For example, say our
+program asks a user to show how many spaces they want between some text by
+inputting space characters, but we really want to store that input as a number:
+-->
+<p>Comme nous créons une nouvelle variable lorsque nous utilisons le mot-clé <code>let</code>
+une nouvelle fois, l'autre différence entre le <code>mut</code> et la création d'un masque
+est que cela nous permet de changer le type de la valeur, mais en réutilisant
+le même nom. Par exemple, imaginons un programme qui demande à l'utilisateur
+le nombre d'espaces qu'il souhaite entre deux portions de texte en saisissant
+des espaces, mais que nous voulons plutôt stocker cela sous forme de nombre :</p>
+<!--
+```rust
+let spaces = "   ";
+let spaces = spaces.len();
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let espaces = &quot;   &quot;;
+let espaces = espaces.len();
+#}</code></pre></pre>
+<!--
+This construct is allowed because the first `spaces` variable is a string type
+and the second `spaces` variable, which is a brand-new variable that happens to
+have the same name as the first one, is a number type. Shadowing thus spares us
+from having to come up with different names, such as `spaces_str` and
+`spaces_num`; instead, we can reuse the simpler `spaces` name. However, if we
+try to use `mut` for this, as shown here, we’ll get a compile-time error:
+-->
+<p>Cette solution est autorisée car la première variable <code>espaces</code> est du type
+chaîne de caractères <em>(string)</em>, alors que la seconde variable <code>espaces</code>, qui
+est une toute nouvelle variable qui se trouve avoir le même nom que la première,
+est du type nombre. L'utilisation du masquage nous évite ainsi d'avoir à trouver
+des noms différents, comme <code>espaces_str</code> et <code>espaces_num</code> ; nous pouvons plutôt
+simplement réutiliser le nom <code>espaces</code>. Cependant, si nous essayons d'utiliser
+<code>mut</code> pour faire ceci, comme ci-dessous, nous avons une erreur de compilation :</p>
+<!--
+```rust,ignore,does_not_compile
+let mut spaces = "   ";
+spaces = spaces.len();
+```
+-->
+<pre><code class="language-rust ignore">let mut espaces = &quot;   &quot;;
+espaces = espaces.len();
+</code></pre>
+<!--
+The error says we’re not allowed to mutate a variable’s type:
+-->
+<p>L'erreur indique que nous ne pouvons pas muter le type d'une variable :</p>
+<!--
+```text
+error[E0308]: mismatched types
+ -- > src/main.rs:3:14
+  |
+3 |     spaces = spaces.len();
+  |              ^^^^^^^^^^^^ expected &str, found usize
+  |
+  = note: expected type `&str`
+             found type `usize`
+```
+-->
+<pre><code class="language-text">error[E0308]: mismatched types
+ -- &gt; src/main.rs:3:14
+  |
+3 |     espaces = espaces.len();
+  |               ^^^^^^^^^^^^^ expected &amp;str, found usize
+  |
+  = note: expected type `&amp;str`
+             found type `usize`
+</code></pre>
+<!--
+Now that we’ve explored how variables work, let’s look at more data types they
+can have.
+-->
+<p>Maintenant que nous avons découvert comment fonctionnent les variables, étudions
+les types de données qu'elles peuvent prendre.</p>
+<!--
+[comparing-the-guess-to-the-secret-number]:
+ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
+[data-types]: ch03-02-data-types.html#data-types
+-->
+<!--
+## Data Types
+-->
+<h2><a class="header" href="#les-types-de-données" id="les-types-de-données">Les types de données</a></h2>
+<!--
+Every value in Rust is of a certain *data type*, which tells Rust what kind of
+data is being specified so it knows how to work with that data. We’ll look at
+two data type subsets: scalar and compound.
+-->
+<p>Chaque valeur en Rust est d'un <em>type</em> bien déterminé, qui indique à Rust quel
+genre de données il manipule pour qu'il sache comment traiter ces données.
+Nous allons nous intéresser à deux catégories de types de données : les
+scalaires et les composés.</p>
+<!--
+Keep in mind that Rust is a *statically typed* language, which means that it
+must know the types of all variables at compile time. The compiler can usually
+infer what type we want to use based on the value and how we use it. In cases
+when many types are possible, such as when we converted a `String` to a numeric
+type using `parse` in the [“Comparing the Guess to the Secret
+Number”][comparing-the-guess-to-the-secret-number]<!-- ignore -- > section in
+Chapter 2, we must add a type annotation, like this:
+-->
+<p>Gardez à l'esprit que Rust est langage <em>statiquement typé</em>, ce qui signifie
+qu'il doit connaître les types de toutes les variables au moment de la
+compilation. Le compilateur peut souvent déduire quel type utiliser en se basant
+sur la valeur et sur la façon dont elle est utilisée. Dans les cas où plusieurs
+types sont envisageables, comme lorsque nous avons converti une chaîne de
+caractères en un type numérique en utilisant <code>parse</code> dans la section
+<a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre secret”</a><!-- ignore -->
+du chapitre 2, nous devons ajouter une annotation de type, comme ceci :</p>
+<!--
+```rust
+let guess: u32 = "42".parse().expect("Not a number!");
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let supposition: u32 = &quot;42&quot;.parse().expect(&quot;Ce n'est pas un nombre !&quot;);
+#}</code></pre></pre>
+<!--
+If we don’t add the type annotation here, Rust will display the following
+error, which means the compiler needs more information from us to know which
+type we want to use:
+-->
+<p>Si nous n'ajoutons pas l'annotation de type ici, Rust affichera l'erreur
+suivante, signifiant que le compilateur a besoin de plus d'informations pour
+déterminer quel type nous souhaitons utiliser :</p>
+<!--
+```text
+error[E0282]: type annotations needed
+ -- > src/main.rs:2:9
+  |
+2 |     let guess = "42".parse().expect("Not a number!");
+  |         ^^^^^
+  |         |
+  |         cannot infer type for `_`
+  |         consider giving `guess` a type
+```
+-->
+<pre><code class="language-text">error[E0282]: type annotations needed
+ --&gt; src/main.rs:2:9
+  |
+2 |     let supposition = &quot;42&quot;.parse().expect(&quot;Ce n'est pas un nombre !&quot;);
+  |         ^^^^^^^^^^^
+  |         |
+  |         cannot infer type for `_`
+  |         consider giving `supposition` a type
+</code></pre>
+<!--
+You’ll see different type annotations for other data types.
+-->
+<p>Vous découvrirez différentes annotations de type au fur et à mesure que nous
+aborderons les autres types de données.</p>
+<!--
+### Scalar Types
+-->
+<h3><a class="header" href="#types-scalaires" id="types-scalaires">Types scalaires</a></h3>
+<!--
+A *scalar* type represents a single value. Rust has four primary scalar types:
+integers, floating-point numbers, Booleans, and characters. You may recognize
+these from other programming languages. Let’s jump into how they work in Rust.
+-->
+<p>Un type <em>scalaire</em> représente une seule valeur. Rust possède quatre types
+principaux de scalaires : les entiers, les nombres à virgule flottante, les
+booléens et les caractères. Vous les connaissez sûrement d'autres langages de
+programmation. Regardons comment ils fonctionnent avec Rust.</p>
+<!--
+#### Integer Types
+-->
+<h4><a class="header" href="#types-de-nombres-entiers" id="types-de-nombres-entiers">Types de nombres entiers</a></h4>
+<!--
+An *integer* is a number without a fractional component. We used one integer
+type in Chapter 2, the `u32` type. This type declaration indicates that the
+value it’s associated with should be an unsigned integer (signed integer types
+start with `i`, instead of `u`) that takes up 32 bits of space. Table 3-1 shows
+the built-in integer types in Rust. Each variant in the Signed and Unsigned
+columns (for example, `i16`) can be used to declare the type of an integer
+value.
+-->
+<p>Un <em>entier</em> est un nombre sans partie décimale. Nous avons utilisé un entier
+précédemment dans le chapitre 2, le type <code>u32</code>. Cette déclaration de type
+indique que la valeur à laquelle elle est associée doit être un entier non signé
+encodé sur 32 bits dans la mémoire (les entiers pouvant prendre des valeurs
+négatives commencent par un <code>i</code> (comme <em>integer</em> : “entier”), plutôt que par un
+<code>u</code> comme <em>unsigned</em> : “non signé”). Le tableau 3-1 montre les types
+d'entiers intégrés au langage. Chaque variante dans les colonnes “Signé” et
+“Non signé” (par exemple <code>i16</code>) peut être utilisée pour déclarer le type d'une
+valeur entière.</p>
+<!--
+<span class="caption">Table 3-1: Integer Types in Rust</span>
+-->
+<p><span class="caption">Tableau 3-1 : les types d'entiers en Rust</span></p>
+<!--
+| Length  | Signed  | Unsigned |
+|---------|---------|----------|
+| 8-bit   | `i8`    | `u8`     |
+| 16-bit  | `i16`   | `u16`    |
+| 32-bit  | `i32`   | `u32`    |
+| 64-bit  | `i64`   | `u64`    |
+| 128-bit | `i128`  | `u128`   |
+| arch    | `isize` | `usize`  |
+-->
+<table><thead><tr><th>Taille</th><th>Signé</th><th>Non signé</th></tr></thead><tbody>
+<tr><td>8 bits</td><td><code>i8</code></td><td><code>u8</code></td></tr>
+<tr><td>16 bits</td><td><code>i16</code></td><td><code>u16</code></td></tr>
+<tr><td>32 bits</td><td><code>i32</code></td><td><code>u32</code></td></tr>
+<tr><td>64 bits</td><td><code>i64</code></td><td><code>u64</code></td></tr>
+<tr><td>128 bits</td><td><code>i128</code></td><td><code>u128</code></td></tr>
+<tr><td>archi</td><td><code>isize</code></td><td><code>usize</code></td></tr>
+</tbody></table>
+<!--
+Each variant can be either signed or unsigned and has an explicit size.
+*Signed* and *unsigned* refer to whether it’s possible for the number to be
+negative or positive—in other words, whether the number needs to have a sign
+with it (signed) or whether it will only ever be positive and can therefore be
+represented without a sign (unsigned). It’s like writing numbers on paper: when
+the sign matters, a number is shown with a plus sign or a minus sign; however,
+when it’s safe to assume the number is positive, it’s shown with no sign.
+Signed numbers are stored using [two’s complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
+-->
+<p>Chaque variante peut-être signée ou non signée et possède une taille explicite.
+<em>Signé</em> et <em>non signé</em> veut dire respectivement que le nombre peut prendre ou
+non des valeurs négatives ou positives — en d'autres termes, si l'on peut lui
+attribuer un signe (signé) ou s'il sera toujours positif et que l'on peut donc
+le représenter sans signe (non signé). C'est comme écrire des nombres sur du
+papier : quand le signe est important, le nombre est écrit avec un signe plus
+ou un signe moins ; en revanche, quand le nombre est forcément positif, on peut
+l'écrire sans son signe. Les nombres signés sont stockés en utilisant le
+<a href="https://fr.wikipedia.org/wiki/Compl%C3%A9ment_%C3%A0_deux">complément à deux</a>.</p>
+<!--
+Each signed variant can store numbers from -(2<sup>n - 1</sup>) to 2<sup>n -
+1</sup> - 1 inclusive, where *n* is the number of bits that variant uses. So an
+`i8` can store numbers from -(2<sup>7</sup>) to 2<sup>7</sup> - 1, which equals
+-128 to 127. Unsigned variants can store numbers from 0 to 2<sup>n</sup> - 1,
+so a `u8` can store numbers from 0 to 2<sup>8</sup> - 1, which equals 0 to 255.
+-->
+<p>Chaque variante signée peut stocker des nombres allant de −(2<sup><em>n</em> − 1</sup>)
+à 2<sup><em>n</em> − 1</sup> − 1 inclus, où <em>n</em> est le nombre de bits que cette
+variante utilise.
+Un <code>i8</code> peut donc stocker des nombres allant de −(2<sup>7</sup>) à
+2<sup>7</sup> − 1, c'est-à-dire de −128 à 127. Les variantes non signées peuvent
+stocker des nombres de 0 à 2<sup><em>n</em></sup> − 1, donc un <code>u8</code> peut stocker
+des nombres allant de 0 à 2<sup>8</sup> − 1, c'est-à-dire de 0 à 255.</p>
+<!--
+Additionally, the `isize` and `usize` types depend on the kind of computer your
+program is running on: 64 bits if you’re on a 64-bit architecture and 32 bits
+if you’re on a 32-bit architecture.
+-->
+<p>De plus, les types <code>isize</code> et <code>usize</code> dépendent du type d'ordinateur sur lequel
+votre programme va s'exécuter : 64 bits si vous utilisez une architecture
+64 bits ou 32 bits si vous utilisez une architecture 32 bits.</p>
+<!--
+You can write integer literals in any of the forms shown in Table 3-2. Note
+that all number literals except the byte literal allow a type suffix, such as
+`57u8`, and `_` as a visual separator, such as `1_000`.
+-->
+<p>Vous pouvez écrire des littéraux d'entiers dans chacune des formes décrites dans
+le tableau 3-2. Notez que chaque littéral numérique excepté l'octet accepte un
+suffixe de type, comme <code>57u8</code>, et <code>_</code> comme séparateur visuel, comme par exemple
+<code>1_000</code>.</p>
+<!--
+<span class="caption">Table 3-2: Integer Literals in Rust</span>
+-->
+<p><span class="caption">Tableau 3-2 : Les littéraux d'entiers en Rust</span></p>
+<!--
+| Number literals  | Example       |
+|------------------|---------------|
+| Decimal          | `98_222`      |
+| Hex              | `0xff`        |
+| Octal            | `0o77`        |
+| Binary           | `0b1111_0000` |
+| Byte (`u8` only) | `b'A'`        |
+-->
+<table><thead><tr><th>Littéral numérique</th><th>Exemple</th></tr></thead><tbody>
+<tr><td>Décimal</td><td><code>98_222</code></td></tr>
+<tr><td>Hexadécimal</td><td><code>0xff</code></td></tr>
+<tr><td>Octal</td><td><code>0o77</code></td></tr>
+<tr><td>Binaire</td><td><code>0b1111_0000</code></td></tr>
+<tr><td>Octet (<code>u8</code> seulement)</td><td><code>b'A'</code></td></tr>
+</tbody></table>
+<!--
+So how do you know which type of integer to use? If you’re unsure, Rust’s
+defaults are generally good choices, and integer types default to `i32`: this
+type is generally the fastest, even on 64-bit systems. The primary situation in
+which you’d use `isize` or `usize` is when indexing some sort of collection.
+-->
+<p>Comment pouvez-vous déterminer le type d'entier à utiliser ? Si vous n'êtes pas
+sûr, les choix par défaut de Rust sont généralement de bons choix, et le type
+d'entier par défaut est le <code>i32</code> : c'est souvent le plus rapide, même sur les
+systèmes 64 bits. La principale utilisation d'un <code>isize</code> ou d'un <code>usize</code> est
+lorsque l'on indexe une quelconque collection.</p>
+<!--
+> ##### Integer Overflow
+>
+> Let’s say you have a variable of type `u8` that can hold values between 0 and 255.
+> If you try to change the variable to a value outside of that range, such
+> as 256, *integer overflow* will occur. Rust has some interesting rules
+> involving this behavior. When you’re compiling in debug mode, Rust includes
+> checks for integer overflow that cause your program to *panic* at runtime if
+> this behavior occurs. Rust uses the term panicking when a program exits with
+> an error; we’ll discuss panics in more depth in the [“Unrecoverable Errors
+> with `panic!`”][unrecoverable-errors-with-panic]<!-- ignore -- > section in
+> Chapter 9.
+>
+> When you’re compiling in release mode with the `--release` flag, Rust does
+> *not* include checks for integer overflow that cause panics. Instead, if
+> overflow occurs, Rust performs *two’s complement wrapping*. In short, values
+> greater than the maximum value the type can hold “wrap around” to the minimum
+> of the values the type can hold. In the case of a `u8`, 256 becomes 0, 257
+> becomes 1, and so on. The program won’t panic, but the variable will have a
+> value that probably isn’t what you were expecting it to have. Relying on
+> integer overflow’s wrapping behavior is considered an error. If you want to
+> wrap explicitly, you can use the standard library type [`Wrapping`][wrapping].
+-->
+<blockquote>
+<h5><a class="header" href="#dépassement-dentier" id="dépassement-dentier">Dépassement d'entier</a></h5>
+<p>Imaginons que vous avez une variable de type <code>u8</code> qui peut stocker des
+valeurs entre 0 et 255. Si vous essayez de changer la variable pour une valeur
+en dehors de cet intervalle, comme 256, vous aurez un dépassement
+d'entier <em>(integer overflow)</em>. Rust possède quelques règles intéressantes
+concernant ce comportement. Quand vous compilez en mode débogage, Rust
+embarque des vérifications pour détecter les cas de dépassements d'entiers qui
+pourraient faire <em>paniquer</em> votre programme à l'exécution si ce phénomène se
+produit. Rust utilise le terme <em>paniquer</em> quand un programme se termine
+avec une erreur ; nous verrons plus en détail les <em>paniques</em> dans une section
+du <a href="ch09-01-unrecoverable-errors-with-panic.html">chapitre 9</a>.</p>
+<p>Lorsque vous compilez en mode publication <em>(release)</em> avec le drapeau
+<code>--release</code>, Rust ne va <em>pas</em> vérifier les potentiels dépassements d'entiers
+qui peuvent faire paniquer le programme. En revanche, en cas de dépassement,
+Rust va effectuer un <em>rebouclage du complément à deux</em>. Pour faire simple, les
+valeurs supérieures à la valeur maximale du type seront “rebouclées” depuis la
+valeur minimale que le type peut stocker. Dans cas d'un <code>u8</code>, 256 devient 0,
+257 devient 1, et ainsi de suite. Le programme ne va paniquer, mais
+la variable va avoir une valeur qui n'est probablement pas ce que vous
+attendez à avoir. Se fier au comportement du rebouclage lors du
+dépassement d'entier est considéré comme une faute. Si vous voulez reboucler
+explicitement, vous pouvez utiliser le type <a href="https://doc.rust-lang.org/std/num/struct.Wrapping.html"><code>Wrapping</code></a> de la
+bibliothèque standard.</p>
+</blockquote>
+<!--
+#### Floating-Point Types
+-->
+<h4><a class="header" href="#types-de-nombres-à-virgule-flottante" id="types-de-nombres-à-virgule-flottante">Types de nombres à virgule flottante</a></h4>
+<!--
+Rust also has two primitive types for *floating-point numbers*, which are
+numbers with decimal points. Rust’s floating-point types are `f32` and `f64`,
+which are 32 bits and 64 bits in size, respectively. The default type is `f64`
+because on modern CPUs it’s roughly the same speed as `f32` but is capable of
+more precision.
+-->
+<p>Rust possède également deux types primitifs pour les <em>nombres à virgule
+flottante</em> (ou <em>flottants</em>), qui sont des nombres avec des décimales. Les types
+de flottants en Rust sont les <code>f32</code> et les <code>f64</code>, qui ont respectivement une
+taille en mémoire de 32 bits et 64 bits. Le type par défaut est le <code>f64</code> car sur
+les processeurs récents ce type est quasiment aussi rapide qu'un <code>f32</code> mais est
+plus précis.</p>
+<!--
+Here’s an example that shows floating-point numbers in action:
+-->
+<p>Voici un exemple montrant l'utilisation de nombres à virgule flottante :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Nom du ficher: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x = 2.0; // f64
+
+    let y: f32 = 3.0; // f32
+}
+</code></pre></pre>
+<!--
+Floating-point numbers are represented according to the IEEE-754 standard. The
+`f32` type is a single-precision float, and `f64` has double precision.
+-->
+<p>Les nombres à virgule flottante sont représentés selon la norme IEEE-754. Le
+type <code>f32</code> est un flottant à simple précision, et le <code>f64</code> est à double
+précision.</p>
+<!--
+#### Numeric Operations
+-->
+<h4><a class="header" href="#les-opérations-numériques" id="les-opérations-numériques">Les opérations numériques</a></h4>
+<!--
+Rust supports the basic mathematical operations you’d expect for all of the
+number types: addition, subtraction, multiplication, division, and remainder.
+The following code shows how you’d use each one in a `let` statement:
+-->
+<p>Rust offre les opérations mathématiques de base dont vous auriez besoin pour
+tous les types de nombres : addition, soustraction, multiplication, division et
+modulo. Le code suivant montre comment utiliser chacune d'elles avec une
+instruction <code>let</code> :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    // addition
+    let sum = 5 + 10;
+
+    // subtraction
+    let difference = 95.5 - 4.3;
+
+    // multiplication
+    let product = 4 * 30;
+
+    // division
+    let quotient = 56.7 / 32.2;
+
+    // remainder
+    let remainder = 43 % 5;
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    // addition
+    let somme = 5 + 10;
+
+    // soustraction
+    let difference = 95.5 - 4.3;
+
+    // multiplication
+    let produit = 4 * 30;
+
+    // division
+    let quotient = 56.7 / 32.2;
+
+    // modulo
+    let reste = 43 % 5;
+}
+</code></pre></pre>
+<!--
+Each expression in these statements uses a mathematical operator and evaluates
+to a single value, which is then bound to a variable. Appendix B contains a
+list of all operators that Rust provides.
+-->
+<p>Chaque expression de ces instructions utilise un opérateur mathématique et
+calcule une valeur unique, qui est ensuite attribuée à une variable. L'annexe B
+présente une liste de tous les opérateurs que Rust fournit.</p>
+<!--
+#### The Boolean Type
+-->
+<h4><a class="header" href="#le-type-booléen" id="le-type-booléen">Le type booléen</a></h4>
+<!--
+As in most other programming languages, a Boolean type in Rust has two possible
+values: `true` and `false`. Booleans are one byte in size. The Boolean type in
+Rust is specified using `bool`. For example:
+-->
+<p>Comme dans la plupart des langages de programmation, un type booléen a deux
+valeurs possibles en Rust : <code>true</code> (vrai) et <code>false</code> (faux). Les booléens
+prennent un octet en mémoire. Le type booléen est désigné en utilisant <code>bool</code>.
+Par exemple :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let t = true;
+
+    let f: bool = false; // with explicit type annotation
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let t = true;
+
+    let f: bool = false; // avec une annotation de type explicite
+}
+</code></pre></pre>
+<!--
+The main way to use Boolean values is through conditionals, such as an `if`
+expression. We’ll cover how `if` expressions work in Rust in the [“Control
+Flow”][control-flow]<!-- ignore -- > section.
+-->
+<p>Les valeurs booléennes sont principalement utilisées par les structures
+conditionnelles, comme l'expression <code>if</code>. Nous aborderons le fonctionnement
+de <code>if</code> en Rust dans la section
+<a href="ch03-05-control-flow.html#les-structures-de-contr%C3%B4le">“Les structures de contrôle”</a><!-- ignore -->.</p>
+<!--
+#### The Character Type
+-->
+<h4><a class="header" href="#le-type-caractère" id="le-type-caractère">Le type caractère</a></h4>
+<!--
+So far we’ve worked only with numbers, but Rust supports letters too. Rust’s
+`char` type is the language’s most primitive alphabetic type, and the following
+code shows one way to use it. (Note that `char` literals are specified with
+single quotes, as opposed to string literals, which use double quotes.)
+-->
+<p>Jusqu'à présent, nous avons utilisé uniquement des nombres, mais Rust peut aussi
+travailler avec des lettres. Le type <code>char</code> (comme <em>character</em>) est le type de
+caractère le plus rudimentaire, et le code suivant va vous montrer une façon de
+l'utiliser. (A noter que les <code>char</code> sont écrits avec des guillemets simples,
+contrairement aux chaînes, qui utilisent des guillemets doubles.)</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let c = 'z';
+    let z = 'ℤ';
+    let heart_eyed_cat = '😻';
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let c = 'z';
+    let z = 'ℤ';
+    let chat_aux_yeux_de_coeur = '😻';
+}
+</code></pre></pre>
+<!--
+Rust’s `char` type is four bytes in size and represents a Unicode Scalar Value,
+which means it can represent a lot more than just ASCII. Accented letters;
+Chinese, Japanese, and Korean characters; emoji; and zero-width spaces are all
+valid `char` values in Rust. Unicode Scalar Values range from `U+0000` to
+`U+D7FF` and `U+E000` to `U+10FFFF` inclusive. However, a “character” isn’t
+really a concept in Unicode, so your human intuition for what a “character” is
+may not match up with what a `char` is in Rust. We’ll discuss this topic in
+detail in [“Storing UTF-8 Encoded Text with Strings”][strings]<!-- ignore -- >
+in Chapter 8.
+-->
+<p>Le type <code>char</code> de Rust prend quatre octets en mémoire et représente une valeur
+scalaire Unicode, ce qui veut dire que cela représente plus de caractères que
+l'ASCII. Les lettres accentuées ; les caractères chinois, japonais et coréens ;
+les emoji ; les espaces de largeur nulle ont tous une valeur pour <code>char</code> avec
+Rust. Les valeurs scalaires Unicode vont de <code>U+0000</code> à <code>U+D7FF</code> et de <code>U+E000</code> à
+<code>U+10FFFF</code> inclus. Cependant, le concept de “caractère” n'est pas clairement
+défini par Unicode, donc votre notion de “caractère” peut ne pas correspondre
+à ce qu'est un <code>char</code> en Rust. Nous aborderons ce sujet plus en détail au
+<a href="ch08-02-strings.html">chapitre 8</a>.</p>
+<!--
+### Compound Types
+-->
+<h3><a class="header" href="#les-types-composés" id="les-types-composés">Les types composés</a></h3>
+<!--
+*Compound types* can group multiple values into one type. Rust has two
+primitive compound types: tuples and arrays.
+-->
+<p>Les <em>types composés</em> peuvent regrouper plusieurs valeurs dans un seul type. Rust
+a deux types composés de base : les <em>tuples</em> et les tableaux <em>(arrays)</em>.</p>
+<!--
+#### The Tuple Type
+-->
+<h4><a class="header" href="#le-type-tuple" id="le-type-tuple">Le type <em>tuple</em></a></h4>
+<!--
+A tuple is a general way of grouping together some number of other values
+with a variety of types into one compound type. Tuples have a fixed length:
+once declared, they cannot grow or shrink in size.
+-->
+<p>Un <em>tuple</em> est une manière générale de regrouper plusieurs valeurs
+de types différents en un seul type composé. Les tuples ont une taille fixée :
+à partir du moment où ils ont été déclarés, on ne peut pas y ajouter ou enlever
+des valeurs.</p>
+<!--
+We create a tuple by writing a comma-separated list of values inside
+parentheses. Each position in the tuple has a type, and the types of the
+different values in the tuple don’t have to be the same. We’ve added optional
+type annotations in this example:
+-->
+<p>Nous créons un <em>tuple</em> en écrivant une liste séparée par des virgules entre des
+parenthèses. Chaque emplacement dans le tuple a un type, et les types de chacune
+des valeurs dans le tuple n'ont pas forcément besoin d'être les mêmes.
+Nous avons ajouté des annotations de type dans cet exemple, mais c'est
+optionnel :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+}
+</code></pre></pre>
+<!--
+The variable `tup` binds to the entire tuple, because a tuple is considered a
+single compound element. To get the individual values out of a tuple, we can
+use pattern matching to destructure a tuple value, like this:
+-->
+<p>La variable <code>tup</code> est liée à tout le tuple, car un tuple est considéré
+comme étant un unique élément composé. Pour obtenir un élément précis de ce
+tuple, nous pouvons utiliser un filtrage par motif <em>(pattern matching)</em> pour
+déstructurer ce tuple, comme ceci :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!("The value of y is: {}", y);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let tup = (500, 6.4, 1);
+
+    let (x, y, z) = tup;
+
+    println!(&quot;La valeur de y est : {}&quot;, y);
+}
+</code></pre></pre>
+<!--
+This program first creates a tuple and binds it to the variable `tup`. It then
+uses a pattern with `let` to take `tup` and turn it into three separate
+variables, `x`, `y`, and `z`. This is called *destructuring*, because it breaks
+the single tuple into three parts. Finally, the program prints the value of
+`y`, which is `6.4`.
+-->
+<p>Le programme commence par créer un tuple et il l'assigne à la variable <code>tup</code>.
+Il utilise ensuite un motif avec <code>let</code> pour prendre <code>tup</code> et le scinder en
+trois variables distinctes : <code>x</code>, <code>y</code>, et <code>z</code>.
+On appelle cela <em>déstructurer</em>, car il divise le tuple en trois parties.
+Puis finalement, le programme affiche la valeur de <code>y</code>, qui est <code>6.4</code>.</p>
+<!--
+In addition to destructuring through pattern matching, we can access a tuple
+element directly by using a period (`.`) followed by the index of the value we
+want to access. For example:
+-->
+<p>En plus de pouvoir déstructurer avec un filtrage par motif, nous pouvons accéder
+directement à chaque élément du tuple en utilisant un point (<code>.</code>) suivi de
+l'indice de la valeur que nous souhaitons obtenir. Par exemple :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+
+    let five_hundred = x.0;
+
+    let six_point_four = x.1;
+
+    let one = x.2;
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let x: (i32, f64, u8) = (500, 6.4, 1);
+
+    let cinq_cents = x.0;
+
+    let six_virgule_quatre = x.1;
+
+    let un = x.2;
+}
+</code></pre></pre>
+<!--
+This program creates a tuple, `x`, and then makes new variables for each
+element by using their index. As with most programming languages, the first
+index in a tuple is 0.
+-->
+<p>Ce programme crée un tuple, <code>x</code>, puis crée une nouvelle variable pour
+chaque élément en utilisant leur indice. Comme dans de nombreux langages de
+programmation, le premier indice d'un tuple est 0.</p>
+<!--
+#### The Array Type
+-->
+<h4><a class="header" href="#le-type-tableau" id="le-type-tableau">Le type tableau</a></h4>
+<!--
+Another way to have a collection of multiple values is with an *array*. Unlike
+a tuple, every element of an array must have the same type. Arrays in Rust are
+different from arrays in some other languages because arrays in Rust have a
+fixed length, like tuples.
+-->
+<p>Un autre moyen d'avoir une collection de plusieurs valeurs est d'utiliser
+un <em>tableau</em>. Contrairement aux tuples, chaque élément d'un tableau doit être du
+même type. Les tableaux de Rust diffèrent de ceux de certains autres langages
+car les tableaux de Rust ont une taille fixe, comme les tuples.</p>
+<!--
+In Rust, the values going into an array are written as a comma-separated list
+inside square brackets:
+-->
+<p>Avec Rust, les valeurs stockées dans un tableau sont écrites dans une
+liste séparée par des virgules entre des crochets :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a = [1, 2, 3, 4, 5];
+}
+</code></pre></pre>
+<!--
+Arrays are useful when you want your data allocated on the stack rather than
+the heap (we will discuss the stack and the heap more in Chapter 4) or when
+you want to ensure you always have a fixed number of elements. An array isn’t
+as flexible as the vector type, though. A vector is a similar collection type
+provided by the standard library that *is* allowed to grow or shrink in size.
+If you’re unsure whether to use an array or a vector, you should probably use a
+vector. Chapter 8 discusses vectors in more detail.
+-->
+<p>Les tableaux sont utiles quand vous voulez que vos données soient allouées sur
+la pile <em>(stack)</em> plutôt que sur le tas <em>(heap)</em> (nous expliquerons la pile et
+le tas au chapitre 4) ou lorsque vous voulez vous assurer que vous avez toujours
+un nombre fixe d'éléments. Cependant, un tableau n'est pas aussi flexible qu'un
+vecteur <em>(vector)</em>. Un vecteur est un type de collection de données
+similaire qui est fourni par la bibliothèque standard qui, lui, peut
+grandir ou rétrécir en taille. Si vous ne savez pas si vous devez utiliser un
+tableau ou un vecteur, vous devriez probablement utiliser un vecteur. Le
+chapitre 8 expliquera les vecteurs.</p>
+<!--
+An example of when you might want to use an array rather than a vector is in a
+program that needs to know the names of the months of the year. It’s very
+unlikely that such a program will need to add or remove months, so you can use
+an array because you know it will always contain 12 items:
+-->
+<p>Un exemple de cas où vous pourriez avoir recours à un tableau plutôt qu'à un
+vecteur est un programme qui nécessite de connaître les noms des mois de
+l'année.
+Il est très improbable qu'un tel programme ait besoin d'ajouter ou de supprimer
+des mois, donc vous pouvez utiliser un tableau car vous savez qu'il contiendra
+toujours 12 éléments :</p>
+<!--
+```rust
+let months = ["January", "February", "March", "April", "May", "June", "July",
+              "August", "September", "October", "November", "December"];
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let mois = [&quot;Janvier&quot;, &quot;Février&quot;, &quot;Mars&quot;, &quot;Avril&quot;, &quot;Mai&quot;, &quot;Juin&quot;, &quot;Juillet&quot;,
+            &quot;Août&quot;, &quot;Septembre&quot;, &quot;Octobre&quot;, &quot;Novembre&quot;, &quot;Décembre&quot;];
+#}</code></pre></pre>
+<!--
+You would write an array’s type by using square brackets, and within the
+brackets include the type of each element, a semicolon, and then the number of
+elements in the array, like so:
+-->
+<p>Vous pouvez écrire le type d'un tableau en utilisant des crochets, et entre ces
+crochets y ajouter le type de chaque élément, un point-virgule, et ensuite le
+nombre d'éléments dans le tableau, comme ceci :</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+#}</code></pre></pre>
+<!--
+Here, `i32` is the type of each element. After the semicolon, the number `5`
+indicates the element contains five items.
+-->
+<p>Ici, <code>i32</code> est le type de chaque élément. Après le point-virgule, le nombre <code>5</code>
+indique que le tableau contient cinq éléments.</p>
+<!--
+Writing an array’s type this way looks similar to an alternative syntax for
+initializing an array: if you want to create an array that contains the same
+value for each element, you can specify the initial value, followed by a
+semicolon, and then the length of the array in square brackets, as shown here:
+-->
+<p>L'écriture d'un type de tableau de cette manière ressemble à une autre syntaxe
+pour initialiser un tableau : si vous voulez créer un tableau qui contient la
+même valeur pour chaque élément, vous pouvez préciser la valeur initiale, suivie
+par un point-virgule, et ensuite la taille du tableau, le tout entre crochets,
+comme ci-dessous :</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let a = [3; 5];
+#}</code></pre></pre>
+<!--
+The array named `a` will contain `5` elements that will all be set to the value
+`3` initially. This is the same as writing `let a = [3, 3, 3, 3, 3];` but in a
+more concise way.
+-->
+<p>Le tableau <code>a</code> va contenir <code>5</code> éléments qui auront tous la valeur
+initiale <code>3</code>. C'est la même chose que d'écrire <code>let a = [3, 3, 3, 3, 3];</code> mais
+de manière plus concise.</p>
+<!--
+##### Accessing Array Elements
+-->
+<h5><a class="header" href="#accéder-aux-éléments-dun-tableau" id="accéder-aux-éléments-dun-tableau">Accéder aux éléments d'un tableau</a></h5>
+<!--
+An array is a single chunk of memory allocated on the stack. You can access
+elements of an array using indexing, like this:
+-->
+<p>Un tableau est un simple bloc de mémoire alloué sur la pile. Vous pouvez accéder
+aux éléments d'un tableau en utilisant l'indexation, comme ceci :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let first = a[0];
+    let second = a[1];
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+    let premier = a[0];
+    let second = a[1];
+}
+</code></pre></pre>
+<!--
+In this example, the variable named `first` will get the value `1`, because
+that is the value at index `[0]` in the array. The variable named `second` will
+get the value `2` from index `[1]` in the array.
+-->
+<p>Dans cet exemple, la variable qui s'appelle <code>premier</code> aura la valeur <code>1</code>, car
+c'est la valeur à l'indice <code>[0]</code> dans le tableau. La variable <code>second</code>
+récupèrera la valeur <code>2</code> depuis l'indice <code>[1]</code> du tableau.</p>
+<!--
+##### Invalid Array Element Access
+-->
+<h5><a class="header" href="#accès-incorrect-à-un-élément-dun-tableau" id="accès-incorrect-à-un-élément-dun-tableau">Accès incorrect à un élément d'un tableau</a></h5>
+<!--
+What happens if you try to access an element of an array that is past the end
+of the array? Say you change the example to the following code, which will
+compile but exit with an error when it runs:
+-->
+<p>Que se passe-t-il quand vous essayez d'accéder à un élément d'un tableau qui se
+trouve après la fin du tableau ? Imaginons que vous changiez l'exemple par le
+code suivant, qui va compiler mais qui va quitter avec une erreur quand il sera
+exécuté :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,panics
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+    let index = 10;
+
+    let element = a[index];
+
+    println!("The value of element is: {}", element);
+}
+```
+-->
+<pre><code class="language-rust ignore panics">fn main() {
+    let a = [1, 2, 3, 4, 5];
+    let indice = 10;
+
+    let element = a[indice];
+
+    println!(&quot;La valeur de l'élément est : {}&quot;, element);
+}
+</code></pre>
+<!--
+Running this code using `cargo run` produces the following result:
+-->
+<p>Exécuter ce code en utilisant <code>cargo run</code> va donner le résultat suivant :</p>
+<pre><code class="language-text">$ cargo run
+   Compiling arrays v0.1.0 (file:///projects/arrays)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/arrays`
+thread 'main' panicked at 'index out of bounds: the len is 5 but the index is
+ 10', src/main.rs:5:19
+note: Run with `RUST_BACKTRACE=1` for a backtrace.
+</code></pre>
+<!--
+The compilation didn’t produce any errors, but the program resulted in a
+*runtime* error and didn’t exit successfully. When you attempt to access an
+element using indexing, Rust will check that the index you’ve specified is less
+than the array length. If the index is greater than or equal to the array
+length, Rust will panic.
+-->
+<p>La compilation n'a pas produit d'erreur, mais le programme a rencontré une
+erreur <em>à l'exécution</em> et ne s'est pas terminé avec succès. Quand vous essayez
+d'accéder à un élément en utilisant l'indexation, Rust va vérifier que l'indice
+que vous avez demandé est plus petit que la taille du tableau. Si l'indice est
+supérieur ou égal à la taille du tableau, Rust va <em>paniquer</em>.</p>
+<!--
+This is the first example of Rust’s safety principles in action. In many
+low-level languages, this kind of check is not done, and when you provide an
+incorrect index, invalid memory can be accessed. Rust protects you against this
+kind of error by immediately exiting instead of allowing the memory access and
+continuing. Chapter 9 discusses more of Rust’s error handling.
+-->
+<p>C'est un premier exemple pratique des principes de sécurité de Rust. Dans de
+nombreux langages de bas niveau, ce genre de vérification n'est pas effectuée,
+et quand vous utilisez un indice incorrect, de la mémoire invalide peut être
+récupérée. Rust vous protège de ce genre d'erreur en quittant immédiatement
+l'exécution au lieu de permettre l'accès en mémoire et
+continuer son déroulement. Le chapitre 9 expliquera la gestion d'erreurs de
+Rust.</p>
+<!--
+[comparing-the-guess-to-the-secret-number]:
+ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
+[control-flow]: ch03-05-control-flow.html#control-flow
+[unrecoverable-errors-with-panic]: ch09-01-unrecoverable-errors-with-panic.html
+[strings]: ch08-02-strings.html#storing-utf-8-encoded-text-with-strings
+[wrapping]: ../std/num/struct.Wrapping.html
+-->
+<h1><a class="header" href="#understanding-ownership" id="understanding-ownership">Understanding Ownership</a></h1>
+<!-- # Using Structs to Structure Related Data -->
+<h1><a class="header" href="#utiliser-les-structures-pour-structurer-des-données-apparentées" id="utiliser-les-structures-pour-structurer-des-données-apparentées">Utiliser les structures pour structurer des données apparentées</a></h1>
+<!--
+A *struct*, or *structure*, is a custom data type that lets you name and
+package together multiple related values that make up a meaningful group. If
+you’re familiar with an object-oriented language, a *struct* is like an
+object’s data attributes. In this chapter, we’ll compare and contrast tuples
+with structs, demonstrate how to use structs, and discuss how to define methods
+and associated functions to specify behavior associated with a struct’s data.
+Structs and enums (discussed in Chapter 6) are the building blocks for creating
+new types in your program’s domain to take full advantage of Rust’s compile
+time type checking.
+-->
+<p>Une <em>struct</em>, ou <em>structure</em>, est un type de données personnalisé qui vous
+permet de nommer et de rassembler plusieurs valeurs associées qui forment
+un groupe cohérent.
+Si vous êtes familier avec un langage orienté objet, une structure est en
+quelque sorte l'ensemble des attributs d'un objet.
+Dans ce chapitre, nous comparerons les tuples avec les structures, nous
+montrerons comment utiliser les structures et nous aborderons la définition des
+méthodes et des fonctions associées pour spécifier le comportement associé aux
+données d'une structure.
+Les structures et les énumérations (traitées au chapitre 6) sont les fondements
+de la création de nouveaux types au sein de votre programme pour tirer
+pleinement parti des vérifications de types effectuées par Rust à la
+compilation.</p>
 
                     </main>
 

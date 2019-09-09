@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Prise en main - Le langage de programmation Rust</title>
+        <title>Utiliser les structures pour structurer des données apparentées - Le langage de programmation Rust</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html" class="active"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li></ol></li><li><strong aria-hidden="true">4.</strong> Understanding Ownership</li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li></ol></li><li><strong aria-hidden="true">4.</strong> Understanding Ownership</li><li><a href="ch05-00-structs.html" class="active"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,42 +149,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!--
-# Getting Started
--->
-<h1><a class="header" href="#prise-en-main" id="prise-en-main">Prise en main</a></h1>
+                        <!-- # Using Structs to Structure Related Data -->
+<h1><a class="header" href="#utiliser-les-structures-pour-structurer-des-données-apparentées" id="utiliser-les-structures-pour-structurer-des-données-apparentées">Utiliser les structures pour structurer des données apparentées</a></h1>
 <!--
-Let’s start your Rust journey! There’s a lot to learn, but every journey starts
-somewhere. In this chapter, we’ll discuss:
+A *struct*, or *structure*, is a custom data type that lets you name and
+package together multiple related values that make up a meaningful group. If
+you’re familiar with an object-oriented language, a *struct* is like an
+object’s data attributes. In this chapter, we’ll compare and contrast tuples
+with structs, demonstrate how to use structs, and discuss how to define methods
+and associated functions to specify behavior associated with a struct’s data.
+Structs and enums (discussed in Chapter 6) are the building blocks for creating
+new types in your program’s domain to take full advantage of Rust’s compile
+time type checking.
 -->
-<p>Démarrons notre périple avec Rust ! Il y a beaucoup à apprendre, mais chaque
-aventure doit commencer quelque part. Dans ce chapitre, nous allons aborder :</p>
-<!--
-* Installing Rust on Linux, macOS, and Windows
-* Writing a program that prints `Hello, world!`
-* Using `cargo`, Rust’s package manager and build system
--->
-<ul>
-<li>L'installation de Rust sur Linux, macOS et Windows</li>
-<li>L'écriture d'un programme qui affiche <code>Hello, world!</code></li>
-<li>L'utilisation de <code>cargo</code>, le gestionnaire de paquets et système de compilation
-de Rust</li>
-</ul>
+<p>Une <em>struct</em>, ou <em>structure</em>, est un type de données personnalisé qui vous
+permet de nommer et de rassembler plusieurs valeurs associées qui forment
+un groupe cohérent.
+Si vous êtes familier avec un langage orienté objet, une structure est en
+quelque sorte l'ensemble des attributs d'un objet.
+Dans ce chapitre, nous comparerons les tuples avec les structures, nous
+montrerons comment utiliser les structures et nous aborderons la définition des
+méthodes et des fonctions associées pour spécifier le comportement associé aux
+données d'une structure.
+Les structures et les énumérations (traitées au chapitre 6) sont les fondements
+de la création de nouveaux types au sein de votre programme pour tirer
+pleinement parti des vérifications de types effectuées par Rust à la
+compilation.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="translation-terms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="#.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="ch01-01-installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -194,15 +195,11 @@ de Rust</li>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="translation-terms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="#.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a href="ch01-01-installation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 

@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html" class="active">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li></ol>
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html" class="active">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li></ol></li><li><strong aria-hidden="true">4.</strong> Understanding Ownership</li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,6 +154,8 @@
 français.</p>
 <table><thead><tr><th>Anglais</th><th>Français</th><th>Remarques</th></tr></thead><tbody>
 <tr><td>ahead-of-time compilation</td><td>compilation anticipée</td><td>sigle : AOT</td></tr>
+<tr><td>allocated</td><td>alloué</td><td>-</td></tr>
+<tr><td>annotate</td><td>indiquer</td><td>-</td></tr>
 <tr><td>Appendix</td><td>annexe</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>Application Programming Interface (API)</td><td>interface de programmation applicative (API)</td><td>-</td></tr>
 <tr><td>argument</td><td>argument / paramètre</td><td>-</td></tr>
@@ -161,6 +163,7 @@ français.</p>
 <tr><td>array</td><td>tableau</td><td>-</td></tr>
 <tr><td>artifact</td><td>artéfact</td><td>-</td></tr>
 <tr><td>associated function</td><td>fonction associée</td><td>-</td></tr>
+<tr><td>attributes</td><td>attributs</td><td>-</td></tr>
 <tr><td>binary crate</td><td>crate binaire</td><td>s'utilise au féminin</td></tr>
 <tr><td><em>n</em>-bit number</td><td>nombre encodé sur <em>n</em> bits</td><td>-</td></tr>
 <tr><td>boolean</td><td>booléen</td><td>-</td></tr>
@@ -173,15 +176,19 @@ français.</p>
 <tr><td>Chapter</td><td>chapitre</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>closure</td><td>fermeture</td><td>-</td></tr>
 <tr><td>code review</td><td>revue de code</td><td>-</td></tr>
+<tr><td>collection</td><td>collection</td><td>-</td></tr>
 <tr><td>command</td><td>commande</td><td>dans un terminal</td></tr>
 <tr><td>commit</td><td>commit</td><td>-</td></tr>
+<tr><td>compound</td><td>composé</td><td>-</td></tr>
 <tr><td>concept chapter</td><td>chapitre théorique</td><td>-</td></tr>
 <tr><td>concurrency</td><td>concurrence</td><td>-</td></tr>
 <tr><td>concurrent</td><td>concurrent</td><td>-</td></tr>
+<tr><td>conditional</td><td>structure conditionnelle</td><td>-</td></tr>
 <tr><td>constant</td><td>constant / constante</td><td>-</td></tr>
 <tr><td>control flow construct</td><td>structure de contrôle</td><td>-</td></tr>
 <tr><td>core of the error</td><td>message d'erreur</td><td>-</td></tr>
 <tr><td>corruption</td><td>corruption / être corrompu</td><td>-</td></tr>
+<tr><td>CPU</td><td>processeur</td><td>-</td></tr>
 <tr><td>crash</td><td>plantage</td><td>-</td></tr>
 <tr><td>crate</td><td>crate</td><td>nom féminin (une <em>crate</em>)</td></tr>
 <tr><td>curly bracket</td><td>accolade</td><td>-</td></tr>
@@ -199,9 +206,12 @@ français.</p>
 <tr><td>expression</td><td>expression</td><td>-</td></tr>
 <tr><td>field</td><td>champ</td><td>d'une structure</td></tr>
 <tr><td>flag</td><td>drapeau</td><td>pour les programmes en ligne de commande</td></tr>
+<tr><td>float</td><td>nombre à virgule flottante</td><td>-</td></tr>
 <tr><td>floating-point number</td><td>nombre à virgule flottante</td><td>-</td></tr>
 <tr><td>function</td><td>fonction</td><td>-</td></tr>
+<tr><td>functional programming</td><td>programmation fonctionnelle</td><td>-</td></tr>
 <tr><td>generics</td><td>génériques / généricité</td><td>-</td></tr>
+<tr><td>global scope</td><td>portée globale</td><td>-</td></tr>
 <tr><td>guessing game</td><td>jeu de devinettes</td><td>-</td></tr>
 <tr><td>handle</td><td>référence abstraite</td><td>-</td></tr>
 <tr><td>hash</td><td>hash / relatif au hachage</td><td>-</td></tr>
@@ -212,9 +222,12 @@ français.</p>
 <tr><td>identifier</td><td>identificateur</td><td>-</td></tr>
 <tr><td>immutability</td><td>immuabilité</td><td>-</td></tr>
 <tr><td>immutable</td><td>immuable</td><td>-</td></tr>
+<tr><td>index</td><td>indice</td><td>-</td></tr>
+<tr><td>indexing</td><td>indexation</td><td>-</td></tr>
 <tr><td>input/output</td><td>entrée/sortie</td><td>sigle : IO</td></tr>
 <tr><td>instance</td><td>instance</td><td>-</td></tr>
 <tr><td>instantiate</td><td>instancier</td><td>créer une instance</td></tr>
+<tr><td>integer literal</td><td>littéral d'entiers</td><td>-</td></tr>
 <tr><td>integer overflow</td><td>dépassement d'entier</td><td>-</td></tr>
 <tr><td>Integrated Development Environment (IDE)</td><td>environnement de développement intégré (IDE)</td><td>-</td></tr>
 <tr><td>IOT</td><td>internet des objets (IOT)</td><td>-</td></tr>
@@ -233,11 +246,14 @@ français.</p>
 <tr><td>main</td><td>main</td><td>-</td></tr>
 <tr><td>memory management</td><td>gestion de mémoire</td><td>-</td></tr>
 <tr><td>method</td><td>méthode</td><td>-</td></tr>
+<tr><td>modern</td><td>récent</td><td>-</td></tr>
 <tr><td>module</td><td>module</td><td>-</td></tr>
 <tr><td>mutability</td><td>mutabilité</td><td>-</td></tr>
 <tr><td>mutable</td><td>mutable</td><td>modifiable</td></tr>
+<tr><td>mutate</td><td>muter</td><td>-</td></tr>
 <tr><td>Note</td><td>remarque</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>numerical characters</td><td>chiffres</td><td>-</td></tr>
+<tr><td>object-oriented language</td><td>langage orienté objet</td><td>-</td></tr>
 <tr><td>operating system</td><td>système d'exploitation</td><td>-</td></tr>
 <tr><td>ownership</td><td>possession</td><td>-</td></tr>
 <tr><td>package manager</td><td>système de gestion de paquets</td><td>-</td></tr>
@@ -261,6 +277,10 @@ français.</p>
 <tr><td>return</td><td>retourner</td><td>-</td></tr>
 <tr><td>run</td><td>exécuter</td><td>pour les programmes</td></tr>
 <tr><td>Rustacean</td><td>Rustacé</td><td>-</td></tr>
+<tr><td>section header</td><td>entête de section</td><td>-</td></tr>
+<tr><td>semantic version</td><td>version sémantique</td><td>-</td></tr>
+<tr><td>scalar</td><td>scalaire</td><td>-</td></tr>
+<tr><td>scope</td><td>portée</td><td>-</td></tr>
 <tr><td>script</td><td>script</td><td>-</td></tr>
 <tr><td>section header</td><td>en-tête de section</td><td>-</td></tr>
 <tr><td>semantic version</td><td>version sémantique</td><td>-</td></tr>
@@ -275,6 +295,7 @@ français.</p>
 <tr><td>smart pointer</td><td>pointeur intelligent</td><td>-</td></tr>
 <tr><td>snip</td><td>code inchangé masqué ici</td><td>dans un encart</td></tr>
 <tr><td>space</td><td>espace</td><td>ce mot est féminin quand on parle du caractère typographique</td></tr>
+<tr><td>square brackets</td><td>crochets</td><td>-</td></tr>
 <tr><td>stack</td><td>pile</td><td>-</td></tr>
 <tr><td>standard</td><td>standard <em>(adj. inv.)</em> / norme <em>(n.f.)</em></td><td>-</td></tr>
 <tr><td>standard error</td><td>erreur standard</td><td>-</td></tr>
@@ -282,6 +303,7 @@ français.</p>
 <tr><td>standard library</td><td>bibliothèque standard</td><td>-</td></tr>
 <tr><td>standard output</td><td>sortie standard</td><td>-</td></tr>
 <tr><td>statement</td><td>instruction</td><td>-</td></tr>
+<tr><td>statically typed</td><td>statiquement typé</td><td>-</td></tr>
 <tr><td>string</td><td>chaîne de caractères</td><td>-</td></tr>
 <tr><td><code>String</code></td><td><code>String</code></td><td>nom féminin (une <code>String</code>)</td></tr>
 <tr><td>struct</td><td>structure</td><td>-</td></tr>
@@ -294,13 +316,18 @@ français.</p>
 <tr><td>troubleshooting</td><td>dépannage</td><td>-</td></tr>
 <tr><td>tuple</td><td>tuple</td><td>-</td></tr>
 <tr><td>tuple struct</td><td>structure tuple</td><td>-</td></tr>
+<tr><td>type</td><td>type</td><td>-</td></tr>
+<tr><td>type annotation</td><td>annotation de type</td><td>-</td></tr>
 <tr><td>type inference</td><td>inférence de types</td><td>-</td></tr>
+<tr><td>two’s complement</td><td>complément à deux</td><td>-</td></tr>
+<tr><td>two’s complement wrapping</td><td>rebouclage du complément à deux</td><td>-</td></tr>
 <tr><td>underlying operating system</td><td>système d'exploitation sous-jacent</td><td>-</td></tr>
 <tr><td>underscore</td><td>tiret bas</td><td>le caractère <code>_</code></td></tr>
 <tr><td>unit-like struct</td><td>structure unitaire</td><td>-</td></tr>
 <tr><td>unit type</td><td>type unité</td><td>-</td></tr>
 <tr><td>unit value</td><td>valeur unité</td><td>-</td></tr>
 <tr><td>unsafe</td><td>non sécurisé</td><td>-</td></tr>
+<tr><td>unsigned</td><td>sans signe (toujours positif)</td><td>-</td></tr>
 <tr><td>unsigned</td><td>non signé</td><td>-</td></tr>
 <tr><td>user input</td><td>saisie utilisateur</td><td>-</td></tr>
 <tr><td>variable</td><td>variable</td><td>-</td></tr>

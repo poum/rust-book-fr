@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Prise en main - Le langage de programmation Rust</title>
+        <title>Les concepts courants de programmation - Le langage de programmation Rust</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html" class="active"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li></ol></li><li><strong aria-hidden="true">4.</strong> Understanding Ownership</li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
+                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html" class="active"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li></ol></li><li><strong aria-hidden="true">4.</strong> Understanding Ownership</li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,39 +150,65 @@
                 <div id="content" class="content">
                     <main>
                         <!--
-# Getting Started
+# Common Programming Concepts
 -->
-<h1><a class="header" href="#prise-en-main" id="prise-en-main">Prise en main</a></h1>
+<h1><a class="header" href="#les-concepts-courants-de-programmation" id="les-concepts-courants-de-programmation">Les concepts courants de programmation</a></h1>
 <!--
-Let’s start your Rust journey! There’s a lot to learn, but every journey starts
-somewhere. In this chapter, we’ll discuss:
+This chapter covers concepts that appear in almost every programming language
+and how they work in Rust. Many programming languages have much in common at
+their core. None of the concepts presented in this chapter are unique to Rust,
+but we’ll discuss them in the context of Rust and explain the conventions
+around using these concepts.
 -->
-<p>Démarrons notre périple avec Rust ! Il y a beaucoup à apprendre, mais chaque
-aventure doit commencer quelque part. Dans ce chapitre, nous allons aborder :</p>
+<p>Ce chapitre explique des concepts qui apparaissent dans presque tous les
+langages de programmation, et la manière dont ils fonctionnent en Rust. De
+nombreux langages sont basés sur des concepts communs. Les concepts présentés
+dans ce chapitre ne sont pas spécifiques à Rust, mais nous les appliquerons
+à Rust et nous expliquerons les conventions qui leur sont liées.</p>
 <!--
-* Installing Rust on Linux, macOS, and Windows
-* Writing a program that prints `Hello, world!`
-* Using `cargo`, Rust’s package manager and build system
+Specifically, you’ll learn about variables, basic types, functions, comments,
+and control flow. These foundations will be in every Rust program, and learning
+them early will give you a strong core to start from.
 -->
-<ul>
-<li>L'installation de Rust sur Linux, macOS et Windows</li>
-<li>L'écriture d'un programme qui affiche <code>Hello, world!</code></li>
-<li>L'utilisation de <code>cargo</code>, le gestionnaire de paquets et système de compilation
-de Rust</li>
-</ul>
+<p>Plus précisément, vous allez apprendre les concepts de variables, les types de
+base, les fonctions, les commentaires, et les structures de contrôle. Ces
+notions fondamentales seront présentes dans tous les programmes Rust, et les
+apprendre dès le début vous procurera de solides bases pour débuter.</p>
+<!--
+> #### Keywords
+>
+> The Rust language has a set of *keywords* that are reserved for use by
+> the language only, much as in other languages. Keep in mind that you cannot
+> use these words as names of variables or functions. Most of the keywords have
+> special meanings, and you’ll be using them to do various tasks in your Rust
+> programs; a few have no current functionality associated with them but have
+> been reserved for functionality that might be added to Rust in the future. You
+> can find a list of the keywords in Appendix A.
+-->
+<blockquote>
+<h4><a class="header" href="#mots-clés" id="mots-clés">Mots-clés</a></h4>
+<p>Le langage Rust possède un ensemble de <em>mots-clés</em> qui ont été réservés pour
+l'usage exclusif du langage, tout comme le font d'autres langages. Gardez à
+l'esprit que vous ne pouvez pas utiliser ces mots pour des noms de variables
+ou de fonctions. La plupart des mots-clés ont une signification spéciale, et
+vous les utiliserez pour réaliser de différentes tâches dans vos programmes
+Rust ; quelques-uns n'ont aucune fonctionnalité active pour le moment, mais
+ont été réservés pour être ajoutés plus tard à Rust.
+Vous pouvez trouver la liste de ces mots-clés dans l'annexe A.</p>
+</blockquote>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="translation-terms.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch02-00-guessing-game-tutorial.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="ch01-01-installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="ch03-01-variables-and-mutability.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -194,13 +220,13 @@ de Rust</li>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="translation-terms.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="ch02-00-guessing-game-tutorial.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch01-01-installation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="ch03-01-variables-and-mutability.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
