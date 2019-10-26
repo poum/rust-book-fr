@@ -42,7 +42,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -83,8 +83,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="affix"><a href="title-page.html">Le langage de programmation Rust</a></li><li class="affix"><a href="foreword.html">Avant-propos</a></li><li class="affix"><a href="ch00-00-introduction.html">Introduction</a></li><li class="affix"><a href="translation-terms.html">Traduction des termes</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li></ol></li><li><a href="#"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li></ol>
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -754,6 +754,7 @@ français.</p>
 <tr><td>annotate</td><td>indiquer</td><td>-</td></tr>
 <tr><td>Appendix</td><td>annexe</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>Application Programming Interface (API)</td><td>interface de programmation applicative (API)</td><td>-</td></tr>
+<tr><td>assign</td><td>assigner</td><td>-</td></tr>
 <tr><td>argument</td><td>argument / paramètre</td><td>-</td></tr>
 <tr><td>arm</td><td>branche</td><td>dans une expression <code>match</code></td></tr>
 <tr><td>array</td><td>tableau</td><td>-</td></tr>
@@ -762,6 +763,7 @@ français.</p>
 <tr><td>attributes</td><td>attributs</td><td>-</td></tr>
 <tr><td>binary crate</td><td>crate binaire</td><td>s'utilise au féminin</td></tr>
 <tr><td><em>n</em>-bit number</td><td>nombre encodé sur <em>n</em> bits</td><td>-</td></tr>
+<tr><td>blob</td><td>blob</td><td>-</td></tr>
 <tr><td>boolean</td><td>booléen</td><td>-</td></tr>
 <tr><td>borrow</td><td>emprunt(er)</td><td>-</td></tr>
 <tr><td>bug</td><td>bogue</td><td>-</td></tr>
@@ -781,6 +783,7 @@ français.</p>
 <tr><td>concurrent</td><td>concurrent</td><td>-</td></tr>
 <tr><td>conditional</td><td>structure conditionnelle</td><td>-</td></tr>
 <tr><td>constant</td><td>constant / constante</td><td>-</td></tr>
+<tr><td>construct</td><td>instruction</td><td>-</td></tr>
 <tr><td>control flow construct</td><td>structure de contrôle</td><td>-</td></tr>
 <tr><td>core of the error</td><td>message d'erreur</td><td>-</td></tr>
 <tr><td>corruption</td><td>corruption / être corrompu</td><td>-</td></tr>
@@ -791,21 +794,25 @@ français.</p>
 <tr><td>data representation</td><td>modèle de données</td><td>-</td></tr>
 <tr><td>debug</td><td>déboguer</td><td>-</td></tr>
 <tr><td>debugging</td><td>débogage</td><td>-</td></tr>
+<tr><td>deep copy</td><td>copie en profondeur</td><td>-</td></tr>
 <tr><td>dependency</td><td>dépendance</td><td>-</td></tr>
 <tr><td>destructure</td><td>déstructurer</td><td>-</td></tr>
 <tr><td>DevOps</td><td>DevOps</td><td>-</td></tr>
 <tr><td>dot notation</td><td>la notation avec un point</td><td>-</td></tr>
+<tr><td>double free</td><td>double libération</td><td>-</td></tr>
 <tr><td>enum</td><td>énumération</td><td>-</td></tr>
 <tr><td>enumeration</td><td>énumération</td><td>-</td></tr>
 <tr><td>enum’s variant</td><td>variante d'énumération</td><td>-</td></tr>
 <tr><td>exploit</td><td>faille</td><td>-</td></tr>
 <tr><td>expression</td><td>expression</td><td>-</td></tr>
 <tr><td>field</td><td>champ</td><td>d'une structure</td></tr>
+<tr><td>Figure</td><td>Illustration</td><td>-</td></tr>
 <tr><td>flag</td><td>drapeau</td><td>pour les programmes en ligne de commande</td></tr>
 <tr><td>float</td><td>nombre à virgule flottante</td><td>-</td></tr>
 <tr><td>floating-point number</td><td>nombre à virgule flottante</td><td>-</td></tr>
 <tr><td>function</td><td>fonction</td><td>-</td></tr>
 <tr><td>functional programming</td><td>programmation fonctionnelle</td><td>-</td></tr>
+<tr><td>garbage collector</td><td>ramasse-miettes</td><td>-</td></tr>
 <tr><td>generics</td><td>génériques / généricité</td><td>-</td></tr>
 <tr><td>global scope</td><td>portée globale</td><td>-</td></tr>
 <tr><td>guessing game</td><td>jeu de devinettes</td><td>-</td></tr>
@@ -826,6 +833,8 @@ français.</p>
 <tr><td>integer literal</td><td>littéral d'entiers</td><td>-</td></tr>
 <tr><td>integer overflow</td><td>dépassement d'entier</td><td>-</td></tr>
 <tr><td>Integrated Development Environment (IDE)</td><td>environnement de développement intégré (IDE)</td><td>-</td></tr>
+<tr><td>interrupt signal</td><td>signal d'arrêt</td><td>-</td></tr>
+<tr><td>invalidate</td><td>neutraliser</td><td>-</td></tr>
 <tr><td>IOT</td><td>internet des objets (IOT)</td><td>-</td></tr>
 <tr><td>iterator</td><td>itérateur</td><td>-</td></tr>
 <tr><td>just-in-time compilation</td><td>compilation à la volée</td><td>sigle : JIT</td></tr>
@@ -836,6 +845,7 @@ français.</p>
 <tr><td>lifetime</td><td>durée de vie</td><td>-</td></tr>
 <tr><td>linker</td><td>linker</td><td>-</td></tr>
 <tr><td>Listing</td><td>encart</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
+<tr><td>loop</td><td>boucle</td><td>-</td></tr>
 <tr><td>low-level</td><td>bas niveau</td><td>-</td></tr>
 <tr><td>machine learning</td><td>apprentissage automatique</td><td>-</td></tr>
 <tr><td>macro</td><td>macro</td><td>-</td></tr>
@@ -844,13 +854,17 @@ français.</p>
 <tr><td>method</td><td>méthode</td><td>-</td></tr>
 <tr><td>modern</td><td>récent</td><td>-</td></tr>
 <tr><td>module</td><td>module</td><td>-</td></tr>
+<tr><td>move</td><td>déplacement</td><td>-</td></tr>
 <tr><td>mutability</td><td>mutabilité</td><td>-</td></tr>
 <tr><td>mutable</td><td>mutable</td><td>modifiable</td></tr>
+<tr><td>namespace</td><td>espace de nom</td><td>-</td></tr>
+<tr><td>namespacing</td><td>l'espace de nom</td><td>-</td></tr>
 <tr><td>mutate</td><td>muter</td><td>-</td></tr>
 <tr><td>Note</td><td>remarque</td><td>tout en minuscule (sauf en début de phrase)</td></tr>
 <tr><td>numerical characters</td><td>chiffres</td><td>-</td></tr>
 <tr><td>object-oriented language</td><td>langage orienté objet</td><td>-</td></tr>
 <tr><td>operating system</td><td>système d'exploitation</td><td>-</td></tr>
+<tr><td>owner</td><td>propriétaire</td><td>-</td></tr>
 <tr><td>ownership</td><td>possession</td><td>-</td></tr>
 <tr><td>package manager</td><td>système de gestion de paquets</td><td>-</td></tr>
 <tr><td>panic</td><td>panique(r)</td><td>-</td></tr>
@@ -860,9 +874,12 @@ français.</p>
 <tr><td>pattern</td><td>motif</td><td>-</td></tr>
 <tr><td>pattern-matching</td><td>filtrage par motif</td><td>-</td></tr>
 <tr><td>placeholder</td><td>espace réservé</td><td><code>{}</code> pour <code>fmt</code></td></tr>
+<tr><td>pointer</td><td>pointeur</td><td>-</td></tr>
+<tr><td>popping off the stack</td><td>dépiler</td><td>-</td></tr>
 <tr><td>prelude</td><td>étape préliminaire</td><td>-</td></tr>
 <tr><td>procedural macro</td><td>macro procédurale</td><td>-</td></tr>
 <tr><td>project chapter</td><td>chapitre de projet</td><td>-</td></tr>
+<tr><td>pushing onto the stack</td><td>empiler</td><td>-</td></tr>
 <tr><td>raw identifier</td><td>identificateur brut</td><td>-</td></tr>
 <tr><td>README</td><td>README</td><td>-</td></tr>
 <tr><td>refactoring</td><td>remaniement</td><td>-</td></tr>
@@ -871,6 +888,7 @@ français.</p>
 <tr><td>regression</td><td>régression</td><td>-</td></tr>
 <tr><td>remainder</td><td>modulo</td><td>opération <code>%</code></td></tr>
 <tr><td>reproducible build</td><td>compilation reproductible</td><td>-</td></tr>
+<tr><td>Resource Acquisition Is Initialization (RAII)</td><td>l'acquisition d'une ressource est une initialisation (RAII)</td><td>-</td></tr>
 <tr><td>return</td><td>retourner</td><td>-</td></tr>
 <tr><td>run</td><td>exécuter</td><td>pour les programmes</td></tr>
 <tr><td>Rustacean</td><td>Rustacé</td><td>-</td></tr>
@@ -884,12 +902,14 @@ français.</p>
 <tr><td>semantic versioning</td><td>versionnage sémantique</td><td>abréviation : SemVer</td></tr>
 <tr><td>shadow</td><td>masquer</td><td>remplacer une variable par une autre de même nom</td></tr>
 <tr><td>shadowing</td><td>masquage</td><td>-</td></tr>
+<tr><td>shallow copy</td><td>copie superficielle</td><td>-</td></tr>
 <tr><td>shell</td><td>terminal / invite de commande</td><td>-</td></tr>
 <tr><td>shorthand</td><td>abréviation</td><td>-</td></tr>
 <tr><td>sidebar</td><td>volet latéral</td><td>-</td></tr>
 <tr><td>signature</td><td>signature</td><td>d'une fonction</td></tr>
 <tr><td>signed</td><td>signé</td><td>-</td></tr>
 <tr><td>slash</td><td>barre oblique</td><td>-</td></tr>
+<tr><td>slice</td><td>slice</td><td>-</td></tr>
 <tr><td>smart pointer</td><td>pointeur intelligent</td><td>-</td></tr>
 <tr><td>snake case</td><td>snake case</td><td>-</td></tr>
 <tr><td>snip</td><td>partie masquée ici</td><td>dans un encart</td></tr>
@@ -904,6 +924,7 @@ français.</p>
 <tr><td>statement</td><td>instruction</td><td>-</td></tr>
 <tr><td>statically typed</td><td>statiquement typé</td><td>-</td></tr>
 <tr><td>string</td><td>chaîne de caractères</td><td>-</td></tr>
+<tr><td>string literal</td><td>un littéral de chaîne de caractères</td><td>-</td></tr>
 <tr><td><code>String</code></td><td><code>String</code></td><td>nom féminin (une <code>String</code>)</td></tr>
 <tr><td>struct</td><td>structure</td><td>-</td></tr>
 <tr><td>submodule</td><td>sous-module</td><td>-</td></tr>
@@ -922,7 +943,7 @@ français.</p>
 <tr><td>two’s complement wrapping</td><td>rebouclage du complément à deux</td><td>-</td></tr>
 <tr><td>underlying operating system</td><td>système d'exploitation sous-jacent</td><td>-</td></tr>
 <tr><td>underscore</td><td>tiret bas</td><td>le caractère <code>_</code></td></tr>
-<tr><td>unit-like struct</td><td>structure unitaire</td><td>-</td></tr>
+<tr><td>unit-like struct</td><td>structure unité</td><td>-</td></tr>
 <tr><td>unit type</td><td>type unité</td><td>-</td></tr>
 <tr><td>unit value</td><td>valeur unité</td><td>-</td></tr>
 <tr><td>unsafe</td><td>non sécurisé</td><td>-</td></tr>
@@ -1387,10 +1408,11 @@ Inside the `main` function is the following code:
 -->
 <p>À l'intérieur de la fonction <code>main</code>, nous avons le code suivant :</p>
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-    println!(&quot;Hello, world!&quot;);
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>    println!(&quot;Hello, world!&quot;);
+<span class="boring">}
+</code></pre></pre>
 <!--
 This line does all the work in this little program: it prints text to the
 screen. There are four important details to notice here. First, Rust style is
@@ -2265,11 +2287,12 @@ let mut bar = 5; // mutable
 ```
 -->
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let foo = 5; // immuable
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let foo = 5; // immuable
 let mut bar = 5; // mutable, modifiable
-#}</code></pre></pre>
+<span class="boring">}
+</code></pre></pre>
 <!--
 > Note: The `//` syntax starts a comment that continues until the end of the
 > line. Rust ignores everything in comments, which are discussed in more detail
@@ -2588,13 +2611,14 @@ println!("x = {} and y = {}", x, y);
 ```
 -->
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let x = 5;
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let x = 5;
 let y = 10;
 
 println!(&quot;x = {} et y = {}&quot;, x, y);
-#}</code></pre></pre>
+<span class="boring">}
+</code></pre></pre>
 <!--
 This code would print `x = 5 and y = 10`.
 -->
@@ -4272,10 +4296,11 @@ nommage des constantes est de les écrire tout en majuscule avec des tirets bas
 entre les mots, et des tirets bas peuvent être ajoutés entre les nombres pour
 améliorer la lisibilité) :</p>
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-const MAX_POINTS: u32 = 100_000;
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>const MAX_POINTS: u32 = 100_000;
+<span class="boring">}
+</code></pre></pre>
 <!--
 Constants are valid for the entire time a program runs, within the scope they
 were declared in, making them a useful choice for values in your application
@@ -4410,11 +4435,12 @@ let spaces = spaces.len();
 ```
 -->
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let espaces = &quot;   &quot;;
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let espaces = &quot;   &quot;;
 let espaces = espaces.len();
-#}</code></pre></pre>
+<span class="boring">}
+</code></pre></pre>
 <!--
 This construct is allowed because the first `spaces` variable is a string type
 and the second `spaces` variable, which is a brand-new variable that happens to
@@ -4511,10 +4537,11 @@ let guess: u32 = "42".parse().expect("Not a number!");
 ```
 -->
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let supposition: u32 = &quot;42&quot;.parse().expect(&quot;Ce n'est pas un nombre !&quot;);
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let supposition: u32 = &quot;42&quot;.parse().expect(&quot;Ce n'est pas un nombre !&quot;);
+<span class="boring">}
+</code></pre></pre>
 <!--
 If we don’t add the type annotation here, Rust will display the following
 error, which means the compiler needs more information from us to know which
@@ -5124,11 +5151,12 @@ let months = ["January", "February", "March", "April", "May", "June", "July",
 ```
 -->
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let mois = [&quot;Janvier&quot;, &quot;Février&quot;, &quot;Mars&quot;, &quot;Avril&quot;, &quot;Mai&quot;, &quot;Juin&quot;, &quot;Juillet&quot;,
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let mois = [&quot;Janvier&quot;, &quot;Février&quot;, &quot;Mars&quot;, &quot;Avril&quot;, &quot;Mai&quot;, &quot;Juin&quot;, &quot;Juillet&quot;,
             &quot;Août&quot;, &quot;Septembre&quot;, &quot;Octobre&quot;, &quot;Novembre&quot;, &quot;Décembre&quot;];
-#}</code></pre></pre>
+<span class="boring">}
+</code></pre></pre>
 <!--
 You would write an array’s type by using square brackets, and within the
 brackets include the type of each element, a semicolon, and then the number of
@@ -5138,10 +5166,11 @@ elements in the array, like so:
 crochets y ajouter le type de chaque élément, un point-virgule, et ensuite le
 nombre d'éléments dans le tableau, comme ceci :</p>
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let a: [i32; 5] = [1, 2, 3, 4, 5];
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let a: [i32; 5] = [1, 2, 3, 4, 5];
+<span class="boring">}
+</code></pre></pre>
 <!--
 Here, `i32` is the type of each element. After the semicolon, the number `5`
 indicates the element contains five items.
@@ -5160,10 +5189,11 @@ même valeur pour chaque élément, vous pouvez préciser la valeur initiale, su
 par un point-virgule, et ensuite la taille du tableau, le tout entre crochets,
 comme ci-dessous :</p>
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let a = [3; 5];
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let a = [3; 5];
+<span class="boring">}
+</code></pre></pre>
 <!--
 The array named `a` will contain `5` elements that will all be set to the value
 `3` initially. This is the same as writing `let a = [3, 3, 3, 3, 3];` but in a
@@ -5817,10 +5847,11 @@ importants : premièrement, la ligne <code>let x = cinq();</code> dit que nous 
 la valeur de retour de la fonction pour initialiser la variable. Comme la
 fonction <code>cinq</code> retourne un <code>5</code>, cette ligne revient à faire ceci :</p>
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-let x = 5;
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let x = 5;
+<span class="boring">}
+</code></pre></pre>
 <!--
 Second, the `five` function has no parameters and defines the type of the
 return value, but the body of the function is a lonely `5` with no semicolon
@@ -5964,10 +5995,11 @@ Here’s a simple comment:
 -->
 <p>Voici un simple commentaire :</p>
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-// hello, world
-#}</code></pre></pre>
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>// hello, world
+<span class="boring">}
+</code></pre></pre>
 <!--
 In Rust, comments must start with two slashes and continue until the end of the
 line. For comments that extend beyond a single line, you’ll need to include
@@ -5984,12 +6016,13 @@ ligne, vous aurez besoin d'ajouter <code>//</code> sur chaque ligne, comme ceci�
 ```
 -->
 <pre><pre class="playpen"><code class="language-rust">
-# #![allow(unused_variables)]
-#fn main() {
-// Donc ici on fait quelque chose de compliqué, tellement long que nous avons
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>// Donc ici on fait quelque chose de compliqué, tellement long que nous avons
 // besoin de plusieurs lignes de commentaires pour le faire ! Heureusement,
 // ce commentaire va expliquer ce qui se passe.
-#}</code></pre></pre>
+<span class="boring">}
+</code></pre></pre>
 <!--
 Comments can also be placed at the end of lines containing code:
 -->
@@ -6039,7 +6072,2147 @@ discuss in the “Publishing a Crate to Crates.io” section of Chapter 14.
 -->
 <p>Rust a aussi un autre type de commentaire, les commentaires de documentation,
 que nous aborderons au chapitre 14.</p>
+<!--
+## Control Flow
+-->
+<h2><a class="header" href="#les-structures-de-contrôle" id="les-structures-de-contrôle">Les structures de contrôle</a></h2>
+<!--
+Deciding whether or not to run some code depending on if a condition is true
+and deciding to run some code repeatedly while a condition is true are basic
+building blocks in most programming languages. The most common constructs that
+let you control the flow of execution of Rust code are `if` expressions and
+loops.
+-->
+<p>Choisir d'exécuter ou non du code selon qu'une condition est vérifiée et
+choisir d'exécuter du code de façon répétée tant qu'une condition est vérifiée
+sont des constructions élémentaires dans la plupart des langages de
+programmation. Les structures de contrôle les plus courantes en Rust sont les
+expressions <code>if</code> et les boucles.</p>
+<!--
+### `if` Expressions
+-->
+<h3><a class="header" href="#les-expressions-if" id="les-expressions-if">Les expressions <code>if</code></a></h3>
+<!--
+An `if` expression allows you to branch your code depending on conditions. You
+provide a condition and then state, “If this condition is met, run this block
+of code. If the condition is not met, do not run this block of code.”
+-->
+<p>Une expression <code>if</code> vous permet de diviser votre code en fonction de conditions.
+Vous précisez une condition et vous choisissez ensuite : “Si cette condition est
+remplie, alors exécuter ce bloc de code. Si la condition n'est pas remplie,
+ne pas exécuter ce bloc de code.”</p>
+<!--
+Create a new project called *branches* in your *projects* directory to explore
+the `if` expression. In the *src/main.rs* file, input the following:
+-->
+<p>Créez un nouveau projet appelé <em>branches</em> dans votre dossier <em>projects</em> pour
+découvrir les expressions <code>if</code>. Dans le fichier <em>src/main.rs</em>, écrivez ceci :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let number = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } else {
+        println!("condition was false");
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let nombre = 3;
+
+    if nombre &lt; 5 {
+        println!(&quot;La condition est vérifiée&quot;);
+    } else {
+        println!(&quot;La condition n'est pas vérifiée&quot;);
+    }
+}
+</code></pre></pre>
+<!--
+All `if` expressions start with the keyword `if`, which is followed by a
+condition. In this case, the condition checks whether or not the variable
+`number` has a value less than 5. The block of code we want to execute if the
+condition is true is placed immediately after the condition inside curly
+brackets. Blocks of code associated with the conditions in `if` expressions are
+sometimes called *arms*, just like the arms in `match` expressions that we
+discussed in the [“Comparing the Guess to the Secret
+Number”][comparing-the-guess-to-the-secret-number]<!-- ignore -- > section of
+Chapter 2.
+-->
+<p>Une expression <code>if</code> commence par le mot-clé <code>if</code>, suivi d'une condition.
+Dans notre cas, la condition vérifie si oui ou non la variable <code>nombre</code> a une
+valeur inférieure à 5. Le bloc de code que nous voulons exécuter si la condition
+est vérifiée est placé immédiatement après la condition entre des accolades.
+Les blocs de code associés à une condition dans une expression <code>if</code> sont parfois
+appelés des <em>branches</em>, exactement comme les branches dans les expressions
+<code>match</code> que nous avons vu dans la section <a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au
+nombre secret”</a><!-- ignore --> du
+chapitre 2.</p>
+<!--
+Optionally, we can also include an `else` expression, which we chose
+to do here, to give the program an alternative block of code to execute should
+the condition evaluate to false. If you don’t provide an `else` expression and
+the condition is false, the program will just skip the `if` block and move on
+to the next bit of code.
+-->
+<p>Éventuellement, vous pouvez aussi ajouter une expression <code>else</code>, ce que nous
+avons fait ici, pour préciser un bloc alternatif de code qui sera exécuté dans
+le cas où la condition est fausse (elle n'est pas vérifiée). Si
+vous ne renseignez pas d'expression <code>else</code> et que la condition n'est pas
+vérifiée, le programme va simplement sauter le bloc de <code>if</code> et passer au
+prochain morceau de code.</p>
+<!--
+Try running this code; you should see the following output:
+-->
+<p>Essayez d'exécuter ce code ; vous verrez ceci :</p>
+<!--
+```text
+$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/branches`
+condition was true
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/branches`
+La condition est vérifiée
+</code></pre>
+<!--
+Let’s try changing the value of `number` to a value that makes the condition
+`false` to see what happens:
+-->
+<p>Essayons de changer la valeur de <code>nombre</code> pour une valeur qui rend la condition
+non vérifiée pour voir ce qui se passe :</p>
+<!--
+```rust,ignore
+let number = 7;
+```
+-->
+<pre><code class="language-rust ignore">let nombre = 7;
+</code></pre>
+<!--
+Run the program again, and look at the output:
+-->
+<p>Exécutez à nouveau le programme, et regardez le résultat :</p>
+<!--
+```text
+$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/branches`
+condition was false
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/branches`
+La condition n'est pas vérifiée
+</code></pre>
+<!--
+It’s also worth noting that the condition in this code *must* be a `bool`. If
+the condition isn’t a `bool`, we’ll get an error. For example, try running the
+following code:
+-->
+<p>Il est aussi intéressant de noter que la condition dans ce code <em>doit</em> être un
+<code>bool</code>. Si la condition n'est pas un <code>bool</code>, nous aurons une erreur. Par
+exemple, essayez d'exécuter le code suivant :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let number = 3;
+
+    if number {
+        println!("number was three");
+    }
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let nombre = 3;
+
+    if nombre {
+        println!(&quot;Le nombre était trois&quot;);
+    }
+}
+</code></pre>
+<!--
+The `if` condition evaluates to a value of `3` this time, and Rust throws an
+error:
+-->
+<p>La condition <code>if</code> vaut <code>3</code> cette fois, et Rust lève une erreur :</p>
+<!--
+```text
+error[E0308]: mismatched types
+ -- > src/main.rs:4:8
+  |
+4 |     if number {
+  |        ^^^^^^ expected bool, found integer
+  |
+  = note: expected type `bool`
+             found type `{integer}`
+```
+-->
+<pre><code class="language-text">error[E0308]: mismatched types
+ -- &gt; src/main.rs:4:8
+  |
+4 |     if nombre {
+  |        ^^^^^^ expected bool, found integer
+  |
+  = note: expected type `bool`
+             found type `{integer}`
+</code></pre>
+<!--
+The error indicates that Rust expected a `bool` but got an integer. Unlike
+languages such as Ruby and JavaScript, Rust will not automatically try to
+convert non-Boolean types to a Boolean. You must be explicit and always provide
+`if` with a Boolean as its condition. If we want the `if` code block to run
+only when a number is not equal to `0`, for example, we can change the `if`
+expression to the following:
+-->
+<p>Cette erreur explique que Rust attendait un <code>bool</code> mais a obtenu un entier
+<em>(integer)</em>. Contrairement à des langages comme Ruby et JavaScript, Rust
+ne va pas essayer de convertir automatiquement les types non booléens en
+booléens. Vous devez être précis et toujours fournir un booléen à la condition
+d'un <code>if</code>. Si nous voulons que le bloc de code du <code>if</code> soit exécuté quand le
+nombre est différent de <code>0</code>, par exemple, nous pouvons changer l'expression <code>if</code>
+par la suivante :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier: src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let number = 3;
+
+    if number != 0 {
+        println!("number was something other than zero");
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let nombre = 3;
+
+    if nombre != 0 {
+        println!(&quot;Le nombre valait autre chose que zéro&quot;);
+    }
+}
+</code></pre></pre>
+<!--
+Running this code will print `number was something other than zero`.
+-->
+<p>Exécuter ce code va bien afficher <code>Le nombre valait autre chose que zéro</code>.</p>
+<!--
+#### Handling Multiple Conditions with `else if`
+-->
+<h4><a class="header" href="#gérer-plusieurs-conditions-avec-else-if" id="gérer-plusieurs-conditions-avec-else-if">Gérer plusieurs conditions avec <code>else if</code></a></h4>
+<!--
+You can have multiple conditions by combining `if` and `else` in an `else if`
+expression. For example:
+-->
+<p>Vous pouvez utiliser plusieurs conditions en combinant <code>if</code> et <code>else</code> dans une
+expression <code>else if</code>. Par exemple :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    } else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is not divisible by 4, 3, or 2");
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let nombre = 6;
+
+    if nombre % 4 == 0 {
+        println!(&quot;Le nombre est divisible par 4&quot;);
+    } else if nombre % 3 == 0 {
+        println!(&quot;Le nombre est divisible par 3&quot;);
+    } else if nombre % 2 == 0 {
+        println!(&quot;Le nombre est divisible par 2&quot;);
+    } else {
+        println!(&quot;Le nombre n'est pas divisible par 4, 3 ou 2&quot;);
+    }
+}
+</code></pre></pre>
+<!--
+This program has four possible paths it can take. After running it, you should
+see the following output:
+-->
+<p>Ce programme peut choisir entre quatre chemins différents. Après l'avoir
+exécuté, vous devriez voir le résultat suivant :</p>
+<!--
+```text
+$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/branches`
+number is divisible by 3
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+     Running `target/debug/branches`
+Le nombre est divisible par 3
+</code></pre>
+<!--
+When this program executes, it checks each `if` expression in turn and executes
+the first body for which the condition holds true. Note that even though 6 is
+divisible by 2, we don’t see the output `number is divisible by 2`, nor do we
+see the `number is not divisible by 4, 3, or 2` text from the `else` block.
+That’s because Rust only executes the block for the first true condition, and
+once it finds one, it doesn’t even check the rest.
+-->
+<p>Quand ce programme s'exécute, il vérifie chaque expression <code>if</code> à tour de rôle
+et exécute le premier bloc dont la condition est vérifiée. Notez que même si 6
+est divisible par 2, nous ne voyons pas le message <code>Le nombre est divisible par 2</code>, ni le message <code>Le nombre n'est pas divisible par 4, 3 ou 2</code> du bloc <code>else</code>.
+C'est parce que Rust n'exécute que le bloc de la première condition vérifiée,
+et dès lors qu'il en a trouvé une, il ne va pas chercher à vérifier les
+suivantes.</p>
+<!--
+Using too many `else if` expressions can clutter your code, so if you have more
+than one, you might want to refactor your code. Chapter 6 describes a powerful
+Rust branching construct called `match` for these cases.
+-->
+<p>Utiliser trop d'expressions <code>else if</code> peut encombrer votre code, donc si vous
+en avez plus d'une, vous devriez envisager de remanier votre code. Le chapitre 6
+présente une construction puissante appelée <code>match</code> pour de tels cas.</p>
+<!--
+#### Using `if` in a `let` Statement
+-->
+<h4><a class="header" href="#utiliser-if-dans-une-instruction-let" id="utiliser-if-dans-une-instruction-let">Utiliser <code>if</code> dans une instruction <code>let</code></a></h4>
+<!--
+Because `if` is an expression, we can use it on the right side of a `let`
+statement, as in Listing 3-2.
+-->
+<p>Comme <code>if</code> est une expression, nous pouvons l'utiliser à droite d'une
+instruction <code>let</code>, comme dans l'encart 3-2.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let condition = true;
+    let number = if condition {
+        5
+    } else {
+        6
+    };
+
+    println!("The value of number is: {}", number);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let condition = true;
+    let nombre = if condition {
+        5
+    } else {
+        6
+    };
+
+    println!(&quot;La valeur du nombre est : {}&quot;, nombre);
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 3-2: Assigning the result of an `if` expression
+to a variable</span>
+-->
+<p><span class="caption">Encart 3-2 : assigner le résultat d'une expression <code>if</code> à
+une variable</span></p>
+<!--
+The `number` variable will be bound to a value based on the outcome of the `if`
+expression. Run this code to see what happens:
+-->
+<p>La variable <code>nombre</code> va avoir la valeur du résultat de l'expression <code>if</code>.
+Exécutez ce code pour découvrir ce qui va se passer :</p>
+<!--
+```text
+$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+     Running `target/debug/branches`
+The value of number is: 5
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling branches v0.1.0 (file:///projects/branches)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+     Running `target/debug/branches`
+La valeur du nombre est : 5
+</code></pre>
+<!--
+Remember that blocks of code evaluate to the last expression in them, and
+numbers by themselves are also expressions. In this case, the value of the
+whole `if` expression depends on which block of code executes. This means the
+values that have the potential to be results from each arm of the `if` must be
+the same type; in Listing 3-2, the results of both the `if` arm and the `else`
+arm were `i32` integers. If the types are mismatched, as in the following
+example, we’ll get an error:
+-->
+<p>Souvenez-vous que les blocs de code s'exécutent jusqu'à la dernière expression
+qu'ils contiennent, et que les nombres tout seuls sont aussi des expressions.
+Dans notre cas, la valeur de toute l'expression <code>if</code> dépend de quel bloc de code
+elle va exécuter. Cela veut dire que chaque valeur qui peut être le résultat de
+chaque branche du <code>if</code> doivent être du même type ; dans l'encart 3-2, les
+résultats des branches <code>if</code> et <code>else</code> sont tous deux des entiers <code>i32</code>. Si
+les types ne sont pas identiques, comme dans l'exemple suivant, nous allons
+obtenir une erreur :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let condition = true;
+
+    let number = if condition {
+        5
+    } else {
+        "six"
+    };
+
+    println!("The value of number is: {}", number);
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let condition = true;
+
+    let nombre = if condition {
+        5
+    } else {
+        &quot;six&quot;
+    };
+
+    println!(&quot;La valeur du nombre est : {}&quot;, nombre);
+}
+</code></pre>
+<!--
+When we try to compile this code, we’ll get an error. The `if` and `else` arms
+have value types that are incompatible, and Rust indicates exactly where to
+find the problem in the program:
+-->
+<p>Lorsque nous essayons de compiler ce code, nous obtenons une erreur. Les
+branches <code>if</code> et <code>else</code> ont des types de valeurs qui ne sont pas compatibles, et
+Rust indique exactement où trouver le problème dans le programme :</p>
+<!--
+```text
+error[E0308]: if and else have incompatible types
+ -- > src/main.rs:4:18
+  |
+4 |       let number = if condition {
+  |  __________________^
+5 | |         5
+6 | |     } else {
+7 | |         "six"
+8 | |     };
+  | |_____^ expected integer, found &str
+  |
+  = note: expected type `{integer}`
+             found type `&str`
+```
+-->
+<pre><code class="language-text">error[E0308]: if and else have incompatible types
+ -- &gt; src/main.rs:4:18
+  |
+4 |       let nombre = if condition {
+  |  __________________^
+5 | |         5
+6 | |     } else {
+7 | |         &quot;six&quot;
+8 | |     };
+  | |_____^ expected integer, found &amp;str
+  |
+  = note: expected type `{integer}`
+             found type `&amp;str`
+</code></pre>
+<!--
+The expression in the `if` block evaluates to an integer, and the expression in
+the `else` block evaluates to a string. This won’t work because variables must
+have a single type. Rust needs to know at compile time what type the `number`
+variable is, definitively, so it can verify at compile time that its type is
+valid everywhere we use `number`. Rust wouldn’t be able to do that if the type
+of `number` was only determined at runtime; the compiler would be more complex
+and would make fewer guarantees about the code if it had to keep track of
+multiple hypothetical types for any variable.
+-->
+<p>L'expression dans le bloc <code>if</code> donne un entier, et l'expression dans le bloc
+<code>else</code> donne une chaîne de caractères. Ceci ne fonctionne pas car les variables
+doivent avoir un seul type. Rust a besoin de savoir de quel type est la variable
+<code>nombre</code> au moment de la compilation, assurément, afin de vérifier au moment
+de la compilation que son type est valable n'importe où nous utilisons <code>nombre</code>.
+Rust ne serait pas capable de faire cela si le type de <code>nombre</code> était déterminé
+uniquement à l'exécution ; car le compilateur deviendrait plus complexe et nous
+donnerait moins de garanties sur le code s'il devait prendre en compte tous les
+types hypothétiques pour une variable.</p>
+<!--
+### Repetition with Loops
+-->
+<h3><a class="header" href="#les-répétitions-avec-les-boucles" id="les-répétitions-avec-les-boucles">Les répétitions avec les boucles</a></h3>
+<!--
+It’s often useful to execute a block of code more than once. For this task,
+Rust provides several *loops*. A loop runs through the code inside the loop
+body to the end and then starts immediately back at the beginning. To
+experiment with loops, let’s make a new project called *loops*.
+-->
+<p>Il est parfois utile d'exécuter un bloc de code plus d'une seule fois. Dans ce
+but, Rust propose plusieurs types de <em>boucles</em>. Une boucle parcourt le code à
+l'intérieur du corps de la boucle jusqu'à la fin et recommence immédiatement du
+début. Pour tester les boucles, créons un nouveau projet appelé <em>loops</em>.</p>
+<!--
+Rust has three kinds of loops: `loop`, `while`, and `for`. Let’s try each one.
+-->
+<p>Rust a trois types de boucles : <code>loop</code>, <code>while</code>, et <code>for</code>. Essayons chacune
+d'elles.</p>
+<!--
+#### Repeating Code with `loop`
+-->
+<h4><a class="header" href="#répéter-du-code-avec-loop" id="répéter-du-code-avec-loop">Répéter du code avec <code>loop</code></a></h4>
+<!--
+The `loop` keyword tells Rust to execute a block of code over and over again
+forever or until you explicitly tell it to stop.
+-->
+<p>Le mot-clé <code>loop</code> demande à Rust d'exécuter un bloc de code encore et encore
+jusqu'à l'infini ou jusqu'à ce que vous lui demandiez explicitement de
+s'arrêter.</p>
+<!--
+As an example, change the *src/main.rs* file in your *loops* directory to look
+like this:
+-->
+<p>Par exemple, changez le fichier <em>src/main.rs</em> dans votre dossier <em>loops</em> comme
+ceci :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore
+fn main() {
+    loop {
+        println!("again!");
+    }
+}
+```
+-->
+<pre><code class="language-rust ignore">fn main() {
+    loop {
+        println!(&quot;À nouveau !&quot;);
+    }
+}
+</code></pre>
+<!--
+When we run this program, we’ll see `again!` printed over and over continuously
+until we stop the program manually. Most terminals support a keyboard shortcut,
+<span class="keystroke">ctrl-c</span>, to interrupt a program that is stuck in
+a continual loop. Give it a try:
+-->
+<p>Quand nous exécutons ce programme, nous voyons <code>À nouveau !</code> s'afficher encore
+et encore en continu jusqu'à ce qu'on arrête le programme manuellement. La
+plupart des terminaux utilisent un raccourci clavier, <span class="keystroke">
+ctrl-c</span>, pour arrêter un programme qui est bloqué dans une boucle infinie.
+Essayons cela :</p>
+<!--
+```text
+$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.29 secs
+     Running `target/debug/loops`
+again!
+again!
+again!
+again!
+^Cagain!
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.29 secs
+     Running `target/debug/loops`
+À nouveau !
+À nouveau !
+À nouveau !
+À nouveau !
+^CÀ nouveau !
+</code></pre>
+<!--
+The symbol `^C` represents where you pressed <span class="keystroke">ctrl-c
+</span>. You may or may not see the word `again!` printed after the `^C`,
+depending on where the code was in the loop when it received the interrupt
+signal.
+-->
+<p>Le symbole <code>^C</code> représente le moment où vous avez appuyé sur
+<span class="keystroke">ctrl-c</span>. Vous devriez voir ou non le texte
+<code>À nouveau !</code> après le <code>^C</code>, en fonction de là où la boucle en était dans votre
+code quand elle a reçu le signal d'arrêt.</p>
+<!--
+Fortunately, Rust provides another, more reliable way to break out of a loop.
+You can place the `break` keyword within the loop to tell the program when to
+stop executing the loop. Recall that we did this in the guessing game in the
+[“Quitting After a Correct Guess”][quitting-after-a-correct-guess]<!-- ignore
+-- > section of Chapter 2 to exit the program when the user won the game by
+guessing the correct number.
+-->
+<p>Heureusement, Rust fournit un autre moyen, plus fiable, de sortir d'une boucle.
+Vous pouvez ajouter le mot-clé <code>break</code> à l'intérieur de la boucle pour demander
+au programme d'arrêter la boucle. Souvenez-vous que nous avions fait ceci dans
+le jeu de devinettes, dans la section
+<a href="ch02-00-guessing-game-tutorial.html#arr%C3%AAter-le-programme-apr%C3%A8s-avoir-gagn%C3%A9">“Arrêter le programme après avoir gagné”</a><!-- ignore -->
+du chapitre 2 afin de quitter le programme quand l'utilisateur gagne le jeu en
+devinant le bon nombre.</p>
+<!--
+#### Returning Values from Loops
+-->
+<h4><a class="header" href="#retourner-des-valeurs-dune-boucle" id="retourner-des-valeurs-dune-boucle">Retourner des valeurs d'une boucle</a></h4>
+<!--
+One of the uses of a `loop` is to retry an operation you know might fail, such
+as checking whether a thread has completed its job. However, you might need to
+pass the result of that operation to the rest of your code. To do this, you can
+add the value you want returned after the `break` expression you use to stop
+the loop; that value will be returned out of the loop so you can use it, as
+shown here:
+-->
+<p>L'une des utilisations d'une boucle <code>loop</code> est de réessayer une opération qui
+peut échouer, comme vérifier si une tâche a terminé son travail. Cependant, vous
+aurez peut-être besoin de passer le résultat de l'opération au reste de votre
+code. Pour ce faire, vous pouvez ajouter la valeur que vous voulez retourner
+après l'expression <code>break</code> que vous utilisez pour stopper la boucle ; cette
+valeur sera retournée de la boucle pour que vous puissiez l'utiliser, comme
+ci-dessous :</p>
+<!--
+```rust
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!("The result is {}", result);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut compteur = 0;
+
+    let resultat = loop {
+        compteur += 1;
+
+        if compteur == 10 {
+            break compteur * 2;
+        }
+    };
+
+    println!(&quot;Le résultat est {}&quot;, resultat);
+}
+</code></pre></pre>
+<!--
+Before the loop, we declare a variable named `counter` and initialize it to
+`0`. Then we declare a variable named `result` to hold the value returned from
+the loop. On every iteration of the loop, we add `1` to the `counter` variable,
+and then check whether the counter is equal to `10`. When it is, we use the
+`break` keyword with the value `counter * 2`. After the loop, we use a
+semicolon to end the statement that assigns the value to `result`. Finally, we
+print the value in `result`, which in this case is 20.
+-->
+<p>Avant la boucle, nous déclarons une variable avec le nom <code>compteur</code> et nous
+l'initialisons à <code>0</code>. Ensuite, nous déclarons une variable <code>resultat</code> pour
+stocker la valeur retournée de la boucle. À chaque itération de la boucle, nous
+ajoutons <code>1</code> à la variable <code>compteur</code>, et ensuite nous vérifions si le compteur
+est égal à <code>10</code>. Lorsque c'est le cas, nous utilisons le mot-clé <code>break</code> avec la
+valeur <code>compteur * 2</code>. Après la boucle, nous utilisons un point-virgule pour
+terminer l'instruction qui assigne la valeur à <code>resultat</code>. Enfin, nous
+affichons la valeur de <code>resultat</code>, qui est 20 dans ce cas-ci.</p>
+<!--
+#### Conditional Loops with `while`
+-->
+<h4><a class="header" href="#les-boucles-conditionnelles-avec-while" id="les-boucles-conditionnelles-avec-while">Les boucles conditionnelles avec <code>while</code></a></h4>
+<!--
+It’s often useful for a program to evaluate a condition within a loop. While
+the condition is true, the loop runs. When the condition ceases to be true, the
+program calls `break`, stopping the loop. This loop type could be implemented
+using a combination of `loop`, `if`, `else`, and `break`; you could try that
+now in a program, if you’d like.
+-->
+<p>Il est souvent utile pour un programme d'évaluer une condition dans une boucle.
+Tant que la condition est vraie, la boucle tourne. Quand la condition arrête
+d'être vraie, le programme appelle <code>break</code>, ce qui arrête la boucle. Ce type de
+boucle peut être implémenté en combinant <code>loop</code>, <code>if</code>, <code>else</code> et <code>break</code> ; vous
+pouvez essayer de le faire, si vous voulez.</p>
+<!--
+However, this pattern is so common that Rust has a built-in language construct
+for it, called a `while` loop. Listing 3-3 uses `while`: the program loops
+three times, counting down each time, and then, after the loop, it prints
+another message and exits.
+-->
+<p>Cependant, cette utilisation est si fréquente que Rust a une construction pour
+cela, intégrée dans le langage, qui s'appelle une boucle <code>while</code>. L'encart 3-3
+utilise <code>while</code> : le programme va boucler trois fois, en décrémentant à chaque
+fois, et ensuite, après la boucle, il va afficher un message et se fermer.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{}!", number);
+
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!");
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut nombre = 3;
+
+    while nombre != 0 {
+        println!(&quot;{} !&quot;, nombre);
+
+        nombre -= 1;
+    }
+
+    println!(&quot;DÉCOLLAGE !!!&quot;);
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 3-3: Using a `while` loop to run code while a
+condition holds true</span>
+-->
+<p><span class="caption">Encart 3-3: utiliser une boucle <code>while</code> pour exécuter du
+code tant qu'une condition est vraie</span></p>
+<!--
+This construct eliminates a lot of nesting that would be necessary if you used
+`loop`, `if`, `else`, and `break`, and it’s clearer. While a condition holds
+true, the code runs; otherwise, it exits the loop.
+-->
+<p>Cette construction élimine beaucoup d'imbrications qui seraient nécessaires si
+vous utilisiez <code>loop</code>, <code>if</code>, <code>else</code> et <code>break</code>, et c'est aussi plus clair. Tant
+que la condition est vraie, le code est exécuté ; sinon, il quitte la boucle.</p>
+<!--
+#### Looping Through a Collection with `for`
+-->
+<h4><a class="header" href="#boucler-dans-une-collection-avec-for" id="boucler-dans-une-collection-avec-for">Boucler dans une collection avec <code>for</code></a></h4>
+<!--
+You could use the `while` construct to loop over the elements of a collection,
+such as an array. For example, let’s look at Listing 3-4.
+-->
+<p>Vous pouvez utiliser la construction <code>while</code> pour itérer sur les
+éléments d'une collection, comme les tableaux. Par exemple, analysons l'encart
+3-4.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+
+    while index < 5 {
+        println!("the value is: {}", a[index]);
+
+        index += 1;
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a = [10, 20, 30, 40, 50];
+    let mut indice = 0;
+
+    while indice &lt; 5 {
+        println!(&quot;La valeur est : {}&quot;, a[indice]);
+
+        indice += 1;
+    }
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 3-4: Looping through each element of a collection
+using a `while` loop</span>
+-->
+<p><span class="caption">Encart 3-4 : itération sur les éléments d'une collection
+en utilisant une boucle <code>while</code></span></p>
+<!--
+Here, the code counts up through the elements in the array. It starts at index
+`0`, and then loops until it reaches the final index in the array (that is,
+when `index < 5` is no longer true). Running this code will print every element
+in the array:
+-->
+<p>Ici, le code parcourt le tableau élément par élément.
+Il commence à l'indice <code>0</code>, et ensuite boucle jusqu'à ce qu'il atteigne l'indice
+final du tableau (ce qui correspond au moment où la condition <code>index &lt; 5</code> n'est
+plus vraie). Exécuter ce code va afficher chaque élément du tableau :</p>
+<!--
+```text
+$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
+     Running `target/debug/loops`
+the value is: 10
+the value is: 20
+the value is: 30
+the value is: 40
+the value is: 50
+```
+-->
+<pre><code class="language-text">$ cargo run
+   Compiling loops v0.1.0 (file:///projects/loops)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
+     Running `target/debug/loops`
+La valeur est : 10
+La valeur est : 20
+La valeur est : 30
+La valeur est : 40
+La valeur est : 50
+</code></pre>
+<!--
+All five array values appear in the terminal, as expected. Even though `index`
+will reach a value of `5` at some point, the loop stops executing before trying
+to fetch a sixth value from the array.
+-->
+<p>Les cinq valeurs du tableau s'affichent toutes dans le terminal, comme attendu.
+Même si <code>indice</code> va atteindre la valeur <code>5</code> à un moment, la boucle arrêtera de
+s'exécuter avant d'essayer de récupérer une sixième valeur du tableau.</p>
+<!--
+But this approach is error prone; we could cause the program to panic if the
+index length is incorrect. It’s also slow, because the compiler adds runtime
+code to perform the conditional check on every element on every iteration
+through the loop.
+-->
+<p>Mais cette approche pousse à l'erreur ; nous pourrions faire paniquer le
+programme si l'indice est trop grand. De plus, c'est lent, car le compilateur
+ajoute du code à l'exécution pour effectuer des vérifications sur chaque élément
+à chaque itération de la boucle.</p>
+<!--
+As a more concise alternative, you can use a `for` loop and execute some code
+for each item in a collection. A `for` loop looks like the code in Listing 3-5.
+-->
+<p>Pour une alternative plus concise, vous pouvez utiliser une boucle <code>for</code> et
+exécuter du code pour chaque élément dans une collection. Une boucle <code>for</code>
+s'utilise comme dans le code de l'encart 3-5.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a.iter() {
+        println!("the value is: {}", element);
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a.iter() {
+        println!(&quot;La valeur est : {}&quot;, element);
+    }
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 3-5: Looping through each element of a collection
+using a `for` loop</span>
+-->
+<p><span class="caption">Encart 3-5 : itérer sur chaque élément d'une collection
+en utilisant une boucle <code>for</code></span></p>
+<!--
+When we run this code, we’ll see the same output as in Listing 3-4. More
+importantly, we’ve now increased the safety of the code and eliminated the
+chance of bugs that might result from going beyond the end of the array or not
+going far enough and missing some items.
+-->
+<p>Lorsque nous exécutons ce code, nous obtenons les mêmes messages que dans
+l'encart 3-4. Mais ce qui est plus important, c'est que nous avons amélioré la
+sécurité de notre code et éliminé le risque de bogues qui pourraient survenir
+si on dépassait la fin du tableau, ou si on n'allait pas jusqu'au bout
+et qu'on ratait quelques éléments.</p>
+<!--
+For example, in the code in Listing 3-4, if you removed an item from the `a`
+array but forgot to update the condition to `while index < 4`, the code would
+panic. Using the `for` loop, you wouldn’t need to remember to change any other
+code if you changed the number of values in the array.
+-->
+<p>Par exemple, dans le code de l'encart 3-4, si vous enlevez un élément du
+tableau <code>a</code> mais que vous oubliez de mettre à jour la condition tel que
+<code>while indice &lt; 4</code>, le code va paniquer. En utilisant la boucle <code>for</code>, vous
+n'aurez pas à vous rappeler de changer le code si vous changez le nombre de
+valeurs dans le tableau.</p>
+<!--
+The safety and conciseness of `for` loops make them the most commonly used loop
+construct in Rust. Even in situations in which you want to run some code a
+certain number of times, as in the countdown example that used a `while` loop
+in Listing 3-3, most Rustaceans would use a `for` loop. The way to do that
+would be to use a `Range`, which is a type provided by the standard library
+that generates all numbers in sequence starting from one number and ending
+before another number.
+-->
+<p>La sécurité et la concision de la boucle <code>for</code> en font la construction de boucle
+la plus utilisée avec Rust. Même dans des situations dans lesquelles vous
+voudriez exécuter du code plusieurs fois, comme l'exemple du décompte qui
+utilisait une boucle <code>while</code> dans l'encart 3-3, la plupart des Rustacés
+utiliseraient une boucle <code>for</code>. Il faut pour cela utiliser un intervalle
+<code>Range</code>, qui est un type fourni par la bibliothèque standard qui génère dans
+l'ordre tous les nombres compris entre un certain nombre et un autre nombre.</p>
+<!--
+Here’s what the countdown would look like using a `for` loop and another method
+we’ve not yet talked about, `rev`, to reverse the range:
+-->
+<p>Voici ce que le décompte aurait donné en utilisant une boucle <code>for</code> et une autre
+méthode que nous n'avons pas encore vue, <code>rev</code>, qui inverse l'intervalle :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    for nombre in (1..4).rev() {
+        println!(&quot;{} !&quot;, nombre);
+    }
+    println!(&quot;DÉCOLLAGE !!!&quot;);
+}
+</code></pre></pre>
+<!--
+This code is a bit nicer, isn’t it?
+-->
+<p>Ce code est un peu plus sympa, non ?</p>
+<!--
+## Summary
+-->
+<h2><a class="header" href="#résumé-2" id="résumé-2">Résumé</a></h2>
+<!--
+You made it! That was a sizable chapter: you learned about variables, scalar
+and compound data types, functions, comments, `if` expressions, and loops! If
+you want to practice with the concepts discussed in this chapter, try building
+programs to do the following:
+-->
+<p>Vous y êtes arrivé ! C'était un chapitre important : vous avez appris les
+variables, les types scalaires et composés, les fonctions, les commentaires, les
+expressions <code>if</code>, et les boucles ! Si vous voulez pratiquer un peu les concepts
+abordés dans ce chapitre, voici quelques programmes que vous pouvez essayer de
+créer :</p>
+<!--
+* Convert temperatures between Fahrenheit and Celsius.
+* Generate the nth Fibonacci number.
+* Print the lyrics to the Christmas carol “The Twelve Days of Christmas,”
+  taking advantage of the repetition in the song.
+-->
+<ul>
+<li>Convertir des températures entre les degrés Fahrenheit et Celsius.</li>
+<li>Générer le <em>n</em>-ième nombre de Fibonacci.</li>
+<li>Afficher les paroles de la chanson de Noël <em>The Twelve Days of Christmas</em> en
+profitant de l'aspect répétitif de la chanson.</li>
+</ul>
+<!--
+When you’re ready to move on, we’ll talk about a concept in Rust that *doesn’t*
+commonly exist in other programming languages: ownership.
+-->
+<p>Quand vous serez prêt à aller plus loin, nous aborderons une notion de Rust
+qui n'existe <em>pas</em> dans les autres langages de programmation : la possession
+<em>(ownership)</em>.</p>
+<!--
+[comparing-the-guess-to-the-secret-number]:
+ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
+[quitting-after-a-correct-guess]:
+ch02-00-guessing-game-tutorial.html#quitting-after-a-correct-guess
+-->
+<!--
+# Understanding Ownership
+-->
 <h1><a class="header" href="#comprendre-la-possession" id="comprendre-la-possession">Comprendre la possession</a></h1>
+<!--
+Ownership is Rust’s most unique feature, and it enables Rust to make memory
+safety guarantees without needing a garbage collector. Therefore, it’s
+important to understand how ownership works in Rust. In this chapter, we’ll
+talk about ownership as well as several related features: borrowing, slices,
+and how Rust lays data out in memory.
+-->
+<p>La possession (<em>ownership</em>) est la fonctionnalité la plus remarquable de Rust,
+et elle permet à Rust de garantir la sécurité de la mémoire sans avoir besoin
+d'un ramasse-miettes (<em>garbage collector</em>). Par conséquent, il est important de
+comprendre comment la possession fonctionne en Rust. Dans ce chapitre, nous
+aborderons la possession, ainsi que d'autres fonctionnalités associées :
+l'emprunt, les <em>slices</em> et la façon dont Rust agence les données en mémoire.</p>
+<!--
+## What Is Ownership?
+-->
+<h2><a class="header" href="#quest-ce-que-la-possession-" id="quest-ce-que-la-possession-">Qu'est-ce que la possession ?</a></h2>
+<!--
+Rust’s central feature is *ownership*. Although the feature is straightforward
+to explain, it has deep implications for the rest of the language.
+-->
+<p>La principale spécificité de Rust est <em>la possession</em>. Bien que cette
+fonctionnalité soit simple à expliquer, elle a de profondes conséquences sur le
+reste du langage.</p>
+<!--
+All programs have to manage the way they use a computer’s memory while running.
+Some languages have garbage collection that constantly looks for no longer used
+memory as the program runs; in other languages, the programmer must explicitly
+allocate and free the memory. Rust uses a third approach: memory is managed
+through a system of ownership with a set of rules that the compiler checks at
+compile time. None of the ownership features slow down your program while it’s
+running.
+-->
+<p>Tous les programmes doivent gérer la façon dont ils utilisent la mémoire
+lorsqu'ils s'exécutent. Certains langages ont un ramasse-miettes qui scrute
+constamment la mémoire qui n'est plus utilisée pendant qu'il s'exécute ; dans
+d'autres langages, le développeur doit explicitement allouer et libérer la
+mémoire. Rust adopte une troisième approche : la mémoire est gérée avec un
+système de possession qui repose sur un jeu de règles que le compilateur vérifie
+au moment de la compilation. Aucune des fonctionnalités de possession ne
+ralentit votre programme à l'exécution.</p>
+<!--
+Because ownership is a new concept for many programmers, it does take some time
+to get used to. The good news is that the more experienced you become with Rust
+and the rules of the ownership system, the more you’ll be able to naturally
+develop code that is safe and efficient. Keep at it!
+-->
+<p>Comme la possession est un nouveau principe pour de nombreux développeurs,
+cela prend un certain temps pour s'y familiariser. La bonne nouvelle est que
+plus vous devenez expérimenté avec Rust et ses règles de possession, plus vous
+développerez naturellement du code sûr et efficace. Gardez bien cela à
+l'esprit !</p>
+<!--
+When you understand ownership, you’ll have a solid foundation for understanding
+the features that make Rust unique. In this chapter, you’ll learn ownership by
+working through some examples that focus on a very common data structure:
+strings.
+-->
+<p>Lorsque vous comprendrez la possession, vous aurez des bases solides pour
+comprendre les fonctionnalités qui font la particularité de Rust. Dans ce
+chapitre, vous allez apprendre la possession en pratiquant avec plusieurs
+exemples qui se concentrent sur une structure de données très courante : les
+chaînes de caractères.</p>
+<!--
+> ### The Stack and the Heap
+>
+> In many programming languages, you don’t have to think about the stack and
+> the heap very often. But in a systems programming language like Rust, whether
+> a value is on the stack or the heap has more of an effect on how the language
+> behaves and why you have to make certain decisions. Parts of ownership will
+> be described in relation to the stack and the heap later in this chapter, so
+> here is a brief explanation in preparation.
+>
+> Both the stack and the heap are parts of memory that are available to your code
+> to use at runtime, but they are structured in different ways. The stack stores
+> values in the order it gets them and removes the values in the opposite order.
+> This is referred to as *last in, first out*. Think of a stack of plates: when
+> you add more plates, you put them on top of the pile, and when you need a
+> plate, you take one off the top. Adding or removing plates from the middle or
+> bottom wouldn’t work as well! Adding data is called *pushing onto the stack*,
+> and removing data is called *popping off the stack*.
+>
+> All data stored on the stack must have a known, fixed size. Data with an
+> unknown size at compile time or a size that might change must be stored on
+> the heap instead. The heap is less organized: when you put data on the heap,
+> you request a certain amount of space. The operating system finds an empty
+> spot in the heap that is big enough, marks it as being in use, and returns a
+> *pointer*, which is the address of that location. This process is called
+> *allocating on the heap* and is sometimes abbreviated as just *allocating*.
+> Pushing values onto the stack is not considered allocating. Because the
+> pointer is a known, fixed size, you can store the pointer on the stack, but
+> when you want the actual data, you must follow the pointer.
+>
+> Think of being seated at a restaurant. When you enter, you state the number of
+> people in your group, and the staff finds an empty table that fits everyone
+> and leads you there. If someone in your group comes late, they can ask where
+> you’ve been seated to find you.
+>
+> Pushing to the stack is faster than allocating on the heap because the
+> operating system never has to search for a place to store new data; that
+> location is always at the top of the stack. Comparatively, allocating space
+> on the heap requires more work, because the operating system must first find
+> a big enough space to hold the data and then perform bookkeeping to prepare
+> for the next allocation.
+>
+> Accessing data in the heap is slower than accessing data on the stack because
+> you have to follow a pointer to get there. Contemporary processors are faster
+> if they jump around less in memory. Continuing the analogy, consider a server
+> at a restaurant taking orders from many tables. It’s most efficient to get
+> all the orders at one table before moving on to the next table. Taking an
+> order from table A, then an order from table B, then one from A again, and
+> then one from B again would be a much slower process. By the same token, a
+> processor can do its job better if it works on data that’s close to other
+> data (as it is on the stack) rather than farther away (as it can be on the
+> heap). Allocating a large amount of space on the heap can also take time.
+>
+> When your code calls a function, the values passed into the function
+> (including, potentially, pointers to data on the heap) and the function’s
+> local variables get pushed onto the stack. When the function is over, those
+> values get popped off the stack.
+>
+> Keeping track of what parts of code are using what data on the heap,
+> minimizing the amount of duplicate data on the heap, and cleaning up unused
+> data on the heap so you don’t run out of space are all problems that ownership
+> addresses. Once you understand ownership, you won’t need to think about the
+> stack and the heap very often, but knowing that managing heap data is why
+> ownership exists can help explain why it works the way it does.
+-->
+<blockquote>
+<h3><a class="header" href="#la-pile-et-le-tas" id="la-pile-et-le-tas">La pile et le tas</a></h3>
+<p>Dans de nombreux langages, il n'est pas nécessaire de se préoccuper de la
+pile (<em>stack</em>) et du tas (<em>heap</em>). Mais dans un langage de programmation
+système comme Rust, qu'une donnée soit sur la pile ou sur le tas influe
+sur le comportement du langage et explique pourquoi nous devons faire certains
+choix. Nous décrirons plus loin dans ce chapitre comment la possession
+fonctionne vis-à-vis de la pile et du tas, voici donc une brève explication au
+préalable.</p>
+<p>La pile et le tas sont tous les deux des emplacements de la mémoire qui
+sont à disposition de votre code lors de son exécution, mais sont organisés de
+façon différente. La pile enregistre les valeurs dans l'ordre qu'elle les
+reçoit et enlève les valeurs dans l'autre sens. C'est ce que l'on appelle le
+principe de <em>dernier entré, premier sorti</em>. C'est comme une pile d'assiettes :
+quand vous ajoutez des nouvelles assiettes, vous les déposez sur le dessus de
+la pile, et quand vous avez besoin d'une assiette, vous en prenez une sur le
+dessus. Ajouter ou enlever des assiettes au milieu ou en bas ne serait pas
+aussi efficace ! Ajouter une donnée sur la pile se dit <em>empiler</em> et en retirer
+une se dit <em>dépiler</em>.</p>
+<p>Toutes les données stockées dans la pile doivent avoir une taille connue et
+fixe. Les données avec une taille inconnue au moment de la compilation ou une
+taille qui peut changer doivent plutôt être stockées sur le tas. Le tas est
+moins bien organisé : lorsque vous ajoutez des données sur le tas, vous
+demandez une certaine quantité d'espace mémoire. Le système d'exploitation va
+trouver un emplacement dans le tas qui est suffisamment grand, va le marquer
+comme étant en cours d'utilisation, et va retourner un <em>pointeur</em>, qui est
+l'adresse de cet emplacement. Cette procédure est appelée <em>allocation sur le
+tas</em>, ce qu'on abrège parfois en <em>allocation</em> tout court. L'ajout de valeurs
+sur la pile n'est pas considéré comme une allocation. Comme le pointeur a une
+taille connue et fixe, on peut stocker ce pointeur sur la pile, mais quand on
+veut la vraie donnée, il faut suivre le pointeur.</p>
+<p>C'est comme si vous vouliez manger au restaurant. Quand vous entrez, vous
+indiquez le nombre de personnes dans votre groupe, et le personnel trouve une
+table vide qui peut recevoir tout le monde, et vous y conduit. Si quelqu'un
+dans votre groupe arrive en retard, il peut leur demander où vous êtes assis
+pour vous rejoindre.</p>
+<p>Empiler sur la pile est plus rapide qu'allouer sur le tas car le système
+d'exploitation ne va jamais avoir besoin de chercher un emplacement pour y
+stocker les nouvelles données ; il le fait toujours au sommet de la pile. En
+comparaison, allouer de la place sur le tas demande plus de travail, car le
+système d'exploitation doit d'abord trouver un espace assez grand pour stocker
+les données et mettre à jour son suivi pour préparer la prochaine allocation.</p>
+<p>Accéder à des données dans le tas est plus lent que d'accéder aux données sur
+la pile car nous devons suivre un pointeur pour les obtenir. Les processeurs
+modernes sont plus rapides s'ils se déplacent moins dans la mémoire. Pour
+continuer avec notre analogie, imaginez un serveur dans un restaurant qui
+prend les commandes de nombreuses tables. C'est plus efficace de récupérer
+toutes les commandes à une seule table avant de passer à la table suivante.
+Prendre une commande à la table A, puis prendre une commande à la table B,
+puis ensuite une autre à la table A, puis une autre à la table B serait un
+processus bien plus lent. De la même manière, un processeur sera plus efficace
+dans sa tâche s'il travaille sur des données qui sont proches les unes des
+autres (comme c'est le cas sur la pile) plutôt que si elles sont plus
+éloignées (comme cela peut être le cas sur le tas). Allouer une grande
+quantité de mémoire sur le tas peut aussi prendre beaucoup de temps.</p>
+<p>Quand notre code utilise une fonction, les valeurs passées à la fonction
+(incluant, potentiellement, des pointeurs de données sur le tas) et les
+variables locales à la fonction sont déposées sur la pile. Quand l'utilisation
+de la fonction est terminée, ces données sont retirées de la pile.</p>
+<p>La possession nous aide à ne pas nous préoccuper de faire attention à quelles
+parties du code utilisent quelles données sur le tas, de minimiser la
+quantité de données en double sur le tas, ou encore de veiller à libérer les
+données inutilisées sur le tas pour que nous ne soyons pas à court d'espace.
+Quand vous aurez compris la possession, vous n'aurez plus besoin de vous
+préoccuper de la pile et du tas très souvent, mais savoir que la possession
+existe pour gérer les données du tas peut vous aider à comprendre pourquoi
+elle fonctionne de cette manière.</p>
+</blockquote>
+<!--
+### Ownership Rules
+-->
+<h3><a class="header" href="#les-règles-de-la-possession" id="les-règles-de-la-possession">Les règles de la possession</a></h3>
+<!--
+First, let’s take a look at the ownership rules. Keep these rules in mind as we
+work through the examples that illustrate them:
+-->
+<p>Tout d'abord, définissons les règles de la possession. Gardez à l'esprit ces
+règles pendant que nous travaillons sur des exemples qui les illustrent :</p>
+<!--
+* Each value in Rust has a variable that’s called its *owner*.
+* There can only be one owner at a time.
+* When the owner goes out of scope, the value will be dropped.
+-->
+<ul>
+<li>Chaque valeur en Rust a une variable qui s'appelle son <em>propriétaire</em>.</li>
+<li>Il ne peut y avoir qu'un seul propriétaire à la fois.</li>
+<li>Quand le propriétaire sortira de la portée, la valeur sera supprimée.</li>
+</ul>
+<!--
+### Variable Scope
+-->
+<h3><a class="header" href="#portée-de-la-variable" id="portée-de-la-variable">Portée de la variable</a></h3>
+<!--
+We’ve walked through an example of a Rust program already in Chapter 2. Now
+that we’re past basic syntax, we won’t include all the `fn main() {` code in
+examples, so if you’re following along, you’ll have to put the following
+examples inside a `main` function manually. As a result, our examples will be a
+bit more concise, letting us focus on the actual details rather than
+boilerplate code.
+-->
+<p>Nous avons déjà vu un exemple de programme Rust au chapitre 2. Maintenant
+que nous avons vu la syntaxe Rust de base, nous n'allons plus ajouter tout le
+code du style <code>fn main() {</code> dans les exemples, donc si vous voulez reproduire
+les exemples, vous devrez les mettre manuellement dans une fonction <code>main</code>. Par
+conséquent, nos exemples seront plus concis, nous permettant de nous concentrer
+sur les détails de la situation plutôt que sur du code normalisé.</p>
+<!--
+As a first example of ownership, we’ll look at the *scope* of some variables. A
+scope is the range within a program for which an item is valid. Let’s say we
+have a variable that looks like this:
+-->
+<p>Pour le premier exemple de possession, nous allons analyser la <em>portée</em> de
+certaines variables. Une portée est une zone dans un programme dans laquelle un
+élément est en vigueur. Imaginons que nous ayons la variable suivante :</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let s = &quot;hello&quot;;
+<span class="boring">}
+</code></pre></pre>
+<!--
+The variable `s` refers to a string literal, where the value of the string is
+hardcoded into the text of our program. The variable is valid from the point at
+which it’s declared until the end of the current *scope*. Listing 4-1 has
+comments annotating where the variable `s` is valid.
+-->
+<p>La variable <code>s</code> fait référence à un littéral de chaîne de caractères, où la
+valeur de la chaîne est codée en dur dans notre programme. La variable est en
+vigueur à partir du moment où elle est déclarée jusqu'à la fin de la <em>portée</em>
+actuelle. L'encart 4-1 a des commentaires pour indiquer quand la variable <code>s</code>
+est en vigueur :</p>
+<!--
+```rust
+{                      // s is not valid here, it’s not yet declared
+    let s = "hello";   // s is valid from this point forward
+
+    // do stuff with s
+}                      // this scope is now over, and s is no longer valid
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>{            // s n'est pas en vigueur ici, elle n'est pas encore déclarée
+    let s = &quot;hello&quot;;   // s est en vigueur à partir de ce point
+
+    // on fait des choses avec s ici
+}            // cette portée est maintenant terminée, et s n'est plus en vigueur
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 4-1: A variable and the scope in which it is
+valid</span>
+-->
+<p><span class="caption">Encart 4-1 : Une variable et la portée dans laquelle elle
+est en vigueur.</span></p>
+<!--
+In other words, there are two important points in time here:
+-->
+<p>Autrement dit, il y a ici deux étapes importantes :</p>
+<!--
+* When `s` comes *into scope*, it is valid.
+* It remains valid until it goes *out of scope*.
+-->
+<ul>
+<li>Quand <code>s</code> rentre <em>dans la portée</em>, elle est en vigueur.</li>
+<li>Cela reste ainsi jusqu'à ce qu'elle <em>sort de la portée</em>.</li>
+</ul>
+<!--
+At this point, the relationship between scopes and when variables are valid is
+similar to that in other programming languages. Now we’ll build on top of this
+understanding by introducing the `String` type.
+-->
+<p>Pour le moment, la relation entre les portées et les conditions pour lesquelles
+les variables sont en vigueur sont similaires à d'autres langages de
+programmation. Maintenant, nous allons aller plus loin en y ajoutant le type
+<code>String</code>.</p>
+<!--
+### The `String` Type
+-->
+<h3><a class="header" href="#le-type-string" id="le-type-string">Le type <code>String</code></a></h3>
+<!--
+To illustrate the rules of ownership, we need a data type that is more complex
+than the ones we covered in the [“Data Types”][data-types]<!-- ignore -- >
+section of Chapter 3. The types covered previously are all stored on the stack
+and popped off the stack when their scope is over, but we want to look at data
+that is stored on the heap and explore how Rust knows when to clean up that
+data.
+-->
+<p>Pour illustrer les règles de la possession, nous avons besoin d'un type de
+donnée qui est plus complexe que ceux que nous avons rencontrés dans la section
+<a href="ch03-02-data-types.html">“Types de données”</a><!-- ignore --> du chapitre 3. Les types que
+nous avons vus précédemment sont tous stockés sur la pile et sont retirés de la
+pile quand ils sortent de la portée, mais nous voulons expérimenter le stockage
+de données sur le tas et découvrir comment Rust sait quand il doit nettoyer ces
+données.</p>
+<!--
+We’ll use `String` as the example here and concentrate on the parts of `String`
+that relate to ownership. These aspects also apply to other complex data types,
+whether they are provided by the standard library or created by you. We’ll
+discuss `String` in more depth in Chapter 8.
+-->
+<p>Nous allons utiliser ici <code>String</code> pour l'exemple et nous concentrer sur les
+caractéristiques de <code>String</code> qui sont liées à la possession. Ces aspects
+s'appliquent également à d'autres types de données complexes, qu'ils soient
+fournis par la bibliothèque standard ou qu'ils soient créés par vous. Nous
+verrons <code>String</code> plus en détail dans le chapitre 8.</p>
+<!--
+We’ve already seen string literals, where a string value is hardcoded into our
+program. String literals are convenient, but they aren’t suitable for every
+situation in which we may want to use text. One reason is that they’re
+immutable. Another is that not every string value can be known when we write
+our code: for example, what if we want to take user input and store it? For
+these situations, Rust has a second string type, `String`. This type is
+allocated on the heap and as such is able to store an amount of text that is
+unknown to us at compile time. You can create a `String` from a string literal
+using the `from` function, like so:
+-->
+<p>Nous avons déjà vu les littéraux de chaînes de caractères, quand une valeur de
+chaîne est codée en dur dans notre programme. Les littéraux de chaînes sont
+pratiques, mais ils ne conviennent pas toujours à tous les cas où on veut
+utiliser du texte. Une des raisons est qu'ils sont immuables. Une autre raison
+est qu'on ne connaît pas forcément le contenu des chaînes de caractères quand
+nous écrivons notre code : par exemple, comment faire si nous voulons récupérer
+du texte saisi par l'utilisateur et l'enregistrer ? Pour ces cas-ci, Rust a un
+second type de chaîne de caractères, <code>String</code>. Ce type est alloué sur le tas et
+est ainsi capable de stocker une quantité de texte qui nous est inconnue au
+moment de la compilation. Vous pouvez créer une <code>String</code> à partir d'un littéral
+de chaîne de caractères en utilisant la fonction <code>from</code>, comme ceci :</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let s = String::from(&quot;hello&quot;);
+<span class="boring">}
+</code></pre></pre>
+<!--
+The double colon (`::`) is an operator that allows us to namespace this
+particular `from` function under the `String` type rather than using some sort
+of name like `string_from`. We’ll discuss this syntax more in the [“Method
+Syntax”][method-syntax]<!-- ignore -- > section of Chapter 5 and when we talk
+about namespacing with modules in [“Paths for Referring to an Item in the
+Module Tree”][paths-module-tree]<!-- ignore -- > in Chapter 7.
+-->
+<p>Le double deux-points (<code>::</code>) est un opérateur qui nous permet d'appeler cette
+fonction spécifique dans l'espace de nom du type <code>String</code> plutôt que d'utiliser
+un nom comme <code>string_from</code>. Nous verrons cette syntaxe plus en détail dans la
+section <a href="ch05-03-method-syntax.html">“Syntaxe de méthode”</a><!-- ignore --> du chapitre 5 et
+lorsque nous aborderons les espaces de noms dans la section
+<a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">“Les chemins pour désigner un élément dans l'arborescence de module”</a><!-- ignore -->
+du chapitre 7.</p>
+<!--
+This kind of string *can* be mutated:
+-->
+<p>Ce type de chaîne de caractères <em>peut</em> être mutable :</p>
+<!--
+```rust
+let mut s = String::from("hello");
+
+s.push_str(", world!"); // push_str() appends a literal to a String
+
+println!("{}", s); // This will print `hello, world!`
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let mut s = String::from(&quot;hello&quot;);
+
+s.push_str(&quot;, world!&quot;); // push_str() ajoute un littéral de chaîne dans une String
+
+println!(&quot;{}&quot;, s); // Cela va afficher `hello, world!`
+<span class="boring">}
+</code></pre></pre>
+<!--
+So, what’s the difference here? Why can `String` be mutated but literals
+cannot? The difference is how these two types deal with memory.
+-->
+<p>Donc, quelle est la différence ici ? Pourquoi <code>String</code> peut être mutable, mais
+pourquoi les littéraux de chaînes ne peuvent pas l'être ? La différence
+se trouve dans la façon dont ces deux types travaillent avec la mémoire.</p>
+<!--
+### Memory and Allocation
+-->
+<h3><a class="header" href="#mémoire-et-allocation" id="mémoire-et-allocation">Mémoire et allocation</a></h3>
+<!--
+In the case of a string literal, we know the contents at compile time, so the
+text is hardcoded directly into the final executable. This is why string
+literals are fast and efficient. But these properties only come from the string
+literal’s immutability. Unfortunately, we can’t put a blob of memory into the
+binary for each piece of text whose size is unknown at compile time and whose
+size might change while running the program.
+-->
+<p>Dans le cas d'un littéral de chaîne de caractères, nous connaissons le contenu
+au moment de la compilation donc le texte est codé en dur directement dans
+l'exécutable final. Voilà pourquoi ces littéraux de chaînes de caractères sont
+performants et rapides. Mais ces caractéristiques viennent de leur immuabilité.
+Malheureusement, on ne peut pas accorder une grosse région de mémoire dans le
+binaire pour chaque morceau de texte qui n'a pas de taille connue au moment de
+la compilation et dont la taille pourrait changer pendant l'exécution de ce
+programme.</p>
+<!--
+With the `String` type, in order to support a mutable, growable piece of text,
+we need to allocate an amount of memory on the heap, unknown at compile time,
+to hold the contents. This means:
+-->
+<p>Avec le type <code>String</code>, pour nous permettre d'avoir un texte mutable et qui peut
+s'agrandir, nous devons allouer une quantité de mémoire sur le tas, inconnue
+au moment de la compilation, pour stocker le contenu. Cela signifie que :</p>
+<!--
+* The memory must be requested from the operating system at runtime.
+* We need a way of returning this memory to the operating system when we’re
+  done with our `String`.
+-->
+<ul>
+<li>La mémoire doit être demandée auprès du système d'exploitation lors de
+l'exécution.</li>
+<li>Nous avons besoin d'un moyen de rendre cette mémoire au système
+d'exploitation lorsque nous aurons fini d'utiliser notre <code>String</code>.</li>
+</ul>
+<!--
+That first part is done by us: when we call `String::from`, its implementation
+requests the memory it needs. This is pretty much universal in programming
+languages.
+-->
+<p>Nous nous occupons de ce premier point : quand nous appelons <code>String::from</code>, son
+implémentation demande la mémoire dont elle a besoin. C'est pratiquement
+toujours ainsi dans la majorité des langages de programmation.</p>
+<!--
+However, the second part is different. In languages with a *garbage collector
+(GC)*, the GC keeps track and cleans up memory that isn’t being used anymore,
+and we don’t need to think about it. Without a GC, it’s our responsibility to
+identify when memory is no longer being used and call code to explicitly return
+it, just as we did to request it. Doing this correctly has historically been a
+difficult programming problem. If we forget, we’ll waste memory. If we do it
+too early, we’ll have an invalid variable. If we do it twice, that’s a bug too.
+We need to pair exactly one `allocate` with exactly one `free`.
+-->
+<p>Cependant, le deuxième point est différent. Dans des langages avec un
+<em>ramasse-miettes</em>, le ramasse-miettes surveille et nettoie la mémoire qui n'est
+plus utilisée, sans que nous n'ayons à nous en préoccuper. Sans un
+ramasse-miettes, c'est de notre responsabilité d'identifier quand cette mémoire
+n'est plus utilisée et d'appeler du code pour explicitement la libérer, comme
+nous l'avons fait pour la demander auparavant. Historiquement, faire ceci
+correctement a toujours été une difficulté pour les développeurs. Si nous
+oublions de le faire, nous allons gaspiller de la mémoire. Si nous le faisons
+trop tôt, nous allons avoir une variable invalide. Si nous le faisons deux fois,
+cela produit aussi un bogue. Nous devons associer exactement un <code>allocate</code> avec
+exactement un <code>free</code>.</p>
+<!--
+Rust takes a different path: the memory is automatically returned once the
+variable that owns it goes out of scope. Here’s a version of our scope example
+from Listing 4-1 using a `String` instead of a string literal:
+-->
+<p>Rust prend un chemin différent : la mémoire est automatiquement libérée dès
+que la variable qui la possède sort de la portée. Voici une version de notre
+exemple de portée de l'encart 4-1 qui utilise une <code>String</code> plutôt qu'un littéral
+de chaîne de caractères :</p>
+<!--
+```rust
+{
+    let s = String::from("hello"); // s is valid from this point forward
+
+    // do stuff with s
+}                                  // this scope is now over, and s is no
+                                   // longer valid
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>{
+    let s = String::from(&quot;hello&quot;); // s est en vigueur à partir de ce point
+
+    // on fait des choses avec s ici
+}                                  // cette portée est désormais terminée, et s
+                                   // n'est plus en vigueur maintenant
+<span class="boring">}
+</code></pre></pre>
+<!--
+There is a natural point at which we can return the memory our `String` needs
+to the operating system: when `s` goes out of scope. When a variable goes out
+of scope, Rust calls a special function for us. This function is called `drop`,
+and it’s where the author of `String` can put the code to return the memory.
+Rust calls `drop` automatically at the closing curly bracket.
+-->
+<p>Il y a un moment naturel où nous devons rendre la mémoire de notre
+<code>String</code> au système d'exploitation : quand <code>s</code> sort de la portée. Quand une
+variable sort de la portée, Rust appelle une fonction spéciale pour nous. Cette
+fonction s'appelle <code>drop</code>, et c'est dans celle-ci que l'auteur de <code>String</code> a pu
+mettre le code pour libérer la mémoire. Rust appelle automatiquement <code>drop</code> à
+l'accolade fermante <code>}</code>.</p>
+<!--
+> Note: In C++, this pattern of deallocating resources at the end of an item’s
+> lifetime is sometimes called *Resource Acquisition Is Initialization (RAII)*.
+> The `drop` function in Rust will be familiar to you if you’ve used RAII
+> patterns.
+-->
+<blockquote>
+<p>Remarque : en C++, cette façon de libérer des ressources à la fin de la
+durée de vie d'un élément est parfois appelée <em>l'acquisition d'une ressource
+est une initialisation (RAII)</em>. La fonction <code>drop</code> de Rust vous sera familière
+si vous avez déjà utilisé des techniques de RAII.</p>
+</blockquote>
+<!--
+This pattern has a profound impact on the way Rust code is written. It may seem
+simple right now, but the behavior of code can be unexpected in more
+complicated situations when we want to have multiple variables use the data
+we’ve allocated on the heap. Let’s explore some of those situations now.
+-->
+<p>Cette façon de faire a un impact profond sur la façon dont le code Rust est
+écrit. Cela peut sembler simple dans notre cas, mais le comportement du code
+peut être surprenant dans des situations plus compliquées où nous voulons
+avoir plusieurs variables utilisant des données que nous avons affectées sur le
+tas. Examinons une de ces situations dès à présent.</p>
+<!--
+#### Ways Variables and Data Interact: Move
+-->
+<h4><a class="header" href="#les-interactions-entre-les-variables-et-les-données--le-déplacement" id="les-interactions-entre-les-variables-et-les-données--le-déplacement">Les interactions entre les variables et les données : le déplacement</a></h4>
+<!--
+Multiple variables can interact with the same data in different ways in Rust.
+Let’s look at an example using an integer in Listing 4-2.
+-->
+<p>Plusieurs variables peuvent interagir avec les mêmes données de différentes
+manières en Rust. Regardons un exemple avec un entier dans l'encart 4-2 :</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let x = 5;
+let y = x;
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 4-2: Assigning the integer value of variable `x`
+to `y`</span>
+-->
+<p><span class="caption">Encart 4-2 : Assigner l'entier de la variable <code>x</code> à <code>y</code>
+</span></p>
+<!--
+We can probably guess what this is doing: “bind the value `5` to `x`; then make
+a copy of the value in `x` and bind it to `y`.” We now have two variables, `x`
+and `y`, and both equal `5`. This is indeed what is happening, because integers
+are simple values with a known, fixed size, and these two `5` values are pushed
+onto the stack.
+-->
+<p>Nous pouvons probablement deviner ce que ce code fait : “Assigner la valeur <code>5</code>
+à <code>x</code> ; ensuite faire une copie de cette valeur de <code>x</code> et l'assigner à <code>y</code>.”
+Nous avons maintenant deux variables, <code>x</code> et <code>y</code>, et chacune vaut <code>5</code>. C'est
+effectivement ce qui se passe, car les entiers sont des valeurs simples avec une
+taille connue et fixée, et ces deux valeurs <code>5</code> sont stockées sur la pile.</p>
+<!--
+Now let’s look at the `String` version:
+-->
+<p>Maintenant, essayons une nouvelle version avec <code>String</code> :</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let s1 = String::from(&quot;hello&quot;);
+let s2 = s1;
+<span class="boring">}
+</code></pre></pre>
+<!--
+This looks very similar to the previous code, so we might assume that the way
+it works would be the same: that is, the second line would make a copy of the
+value in `s1` and bind it to `s2`. But this isn’t quite what happens.
+-->
+<p>Cela ressemble beaucoup au code précédent, donc nous allons supposer que cela
+fonctionne pareil que précédemment : ainsi, la seconde ligne va faire une copie
+de la valeur de <code>s1</code> et l'assigner à <code>s2</code>. Mais ce n'est pas tout à fait ce
+qu'il se passe.</p>
+<!--
+Take a look at Figure 4-1 to see what is happening to `String` under the
+covers. A `String` is made up of three parts, shown on the left: a pointer to
+the memory that holds the contents of the string, a length, and a capacity.
+This group of data is stored on the stack. On the right is the memory on the
+heap that holds the contents.
+-->
+<p>Regardons l'illustration 4-1 pour découvrir ce qui arrive à <code>String</code> sous le
+capot. Une <code>String</code> est constituée de trois éléments, présents sur la gauche :
+un pointeur vers la mémoire qui contient le contenu de la chaîne de caractères,
+une taille, et une capacité. Ce groupe de données est stocké sur la pile. À
+droite, nous avons la mémoire sur le tas qui contient les données.</p>
+<img alt="String in memory" src="img/trpl04-01.svg" class="center" style="width: 50%;" />
+<!--
+<span class="caption">Figure 4-1: Representation in memory of a `String`
+holding the value `"hello"` bound to `s1`</span>
+-->
+<p><span class="caption">Illustration 4-1 : Représentation en mémoire d'une
+<code>String</code> qui contient la valeur <code>&quot;hello&quot;</code> assignée à <code>s1</code>.</span></p>
+<!--
+The length is how much memory, in bytes, the contents of the `String` is
+currently using. The capacity is the total amount of memory, in bytes, that the
+`String` has received from the operating system. The difference between length
+and capacity matters, but not in this context, so for now, it’s fine to ignore
+the capacity.
+-->
+<p>La taille est la quantité de mémoire, en octets, que le contenu de la <code>String</code>
+utilise actuellement. La capacité est la quantité totale de mémoire, en octets,
+que la <code>String</code> a reçue du système d'exploitation. La différence entre la taille
+et la capacité est importante, mais pas pour notre exemple, donc pour l'instant,
+ce n'est pas grave d'ignorer la capacité.</p>
+<!--
+When we assign `s1` to `s2`, the `String` data is copied, meaning we copy the
+pointer, the length, and the capacity that are on the stack. We do not copy the
+data on the heap that the pointer refers to. In other words, the data
+representation in memory looks like Figure 4-2.
+-->
+<p>Quand nous assignons <code>s1</code> à <code>s2</code>, les données de la <code>String</code> sont copiées, ce
+qui veut dire que nous copions le pointeur, la taille et la capacité qui sont
+stockés sur la pile. Nous ne copions pas les données stockées sur le tas
+auxquelles le pointeur se réfère. Autrement dit, la représentation des données
+dans la mémoire ressemble à l'illustration 4-2.</p>
+<img alt="s1 and s2 pointing to the same value" src="img/trpl04-02.svg" class="center" style="width: 50%;" />
+<!--
+<span class="caption">Figure 4-2: Representation in memory of the variable `s2`
+that has a copy of the pointer, length, and capacity of `s1`</span>
+-->
+<p><span class="caption">Illustration 4-2 : Représentation en mémoire de la
+variable <code>s2</code> qui a une copie du pointeur, de la taille et de la capacité de
+<code>s1</code></span></p>
+<!--
+The representation does *not* look like Figure 4-3, which is what memory would
+look like if Rust instead copied the heap data as well. If Rust did this, the
+operation `s2 = s1` could be very expensive in terms of runtime performance if
+the data on the heap were large.
+-->
+<p>Cette représentation <em>n'est pas</em> comme l'illustration 4-3, qui représenterait la
+mémoire si Rust avait aussi copié les données sur le tas. Si Rust faisait ceci,
+l'opération <code>s2 = s1</code> pourrait potentiellement être très coûteuse en termes de
+performances d'exécution si les données sur le tas étaient volumineuses.</p>
+<img alt="s1 and s2 to two places" src="img/trpl04-03.svg" class="center" style="width: 50%;" />
+<!--
+<span class="caption">Figure 4-3: Another possibility for what `s2 = s1` might
+do if Rust copied the heap data as well</span>
+-->
+<p><span class="caption">Illustration 4-3 : Une autre possibilité de ce que
+pourrait faire <code>s2 = s1</code> si Rust copiait aussi les données du tas</span></p>
+<!--
+Earlier, we said that when a variable goes out of scope, Rust automatically
+calls the `drop` function and cleans up the heap memory for that variable. But
+Figure 4-2 shows both data pointers pointing to the same location. This is a
+problem: when `s2` and `s1` go out of scope, they will both try to free the
+same memory. This is known as a *double free* error and is one of the memory
+safety bugs we mentioned previously. Freeing memory twice can lead to memory
+corruption, which can potentially lead to security vulnerabilities.
+-->
+<p>Précédemment, nous avons dit que quand une variable sortait de la portée, Rust
+appelait automatiquement la fonction <code>drop</code> et nettoyait la mémoire sur le tas
+allouée pour cette variable. Mais l'illustration 4-2 montre que les deux
+pointeurs de données pointeraient au même endroit. C'est un problème : quand
+<code>s2</code> et <code>s1</code> sortent de la portée, elles vont essayer toutes les deux de
+libérer la même mémoire. C'est ce qu'on appelle une erreur de <em>double
+libération</em> et c'est un des bogues de sécurité de mémoire que nous avons
+mentionnés précédemment. Libérer la mémoire deux fois peut mener à des
+corruptions de mémoire, ce qui peut potentiellement mener à des vulnérabilités
+de sécurité.</p>
+<!--
+To ensure memory safety, there’s one more detail to what happens in this
+situation in Rust. Instead of trying to copy the allocated memory, Rust
+considers `s1` to no longer be valid and, therefore, Rust doesn’t need to free
+anything when `s1` goes out of scope. Check out what happens when you try to
+use `s1` after `s2` is created; it won’t work:
+-->
+<p>Pour garantir la sécurité de la mémoire, il y a un autre petit détail qui se
+produit dans cette situation avec Rust. Plutôt qu'essayer de copier la mémoire
+allouée, Rust considère que <code>s1</code> n'est plus en vigueur et donc, Rust n'a pas
+besoin de libérer quoi que ce soit lorsque <code>s1</code> sort de la portée. Regardez ce
+qu'il se passe quand vous essayez d'utiliser <code>s1</code> après que <code>s2</code> est créé,
+cela ne va pas fonctionner :</p>
+<pre><code class="language-rust ignore does_not_compile">let s1 = String::from(&quot;hello&quot;);
+let s2 = s1;
+
+println!(&quot;{}, world!&quot;, s1);
+</code></pre>
+<!--
+You’ll get an error like this because Rust prevents you from using the
+invalidated reference:
+-->
+<p>Vous allez avoir une erreur comme celle-ci, car Rust vous défend d'utiliser la
+référence qui n'est plus en vigueur :</p>
+<pre><code class="language-text">error[E0382]: use of moved value: `s1`
+ -- &gt; src/main.rs:5:28
+  |
+3 |     let s2 = s1;
+  |         -- value moved here
+4 |
+5 |     println!(&quot;{}, world!&quot;, s1);
+  |                            ^^ value used here after move
+  |
+  = note: move occurs because `s1` has type `std::string::String`, which does
+  not implement the `Copy` trait
+</code></pre>
+<!--
+If you’ve heard the terms *shallow copy* and *deep copy* while working with
+other languages, the concept of copying the pointer, length, and capacity
+without copying the data probably sounds like making a shallow copy. But
+because Rust also invalidates the first variable, instead of being called a
+shallow copy, it’s known as a *move*. In this example, we would say that
+`s1` was *moved* into `s2`. So what actually happens is shown in Figure 4-4.
+-->
+<p>Si vous avez déjà entendu parler de <em>copie superficielle</em> et de <em>copie
+profonde</em> en utilisant d'autres langages, l'idée de copier le pointeur, la
+taille et la capacité sans copier les données peut vous faire penser à de la
+copie superficielle. Mais comme Rust neutralise aussi la première variable, au
+lieu d'appeler cela une copie superficielle, on appelle cela un <em>déplacement</em>.
+Ici, nous pourrions dire que <code>s1</code> a été <em>déplacé</em> dans <code>s2</code>. Donc ce qui se
+passe réellement est décrit par l'illustration 4-4.</p>
+<img alt="s1 moved to s2" src="img/trpl04-04.svg" class="center" style="width: 50%;" />
+<!--
+<span class="caption">Figure 4-4: Representation in memory after `s1` has been
+invalidated</span>
+-->
+<p><span class="caption">Illustration 4-4 : Représentation de la mémoire après que
+<code>s1</code> a été neutralisée</span></p>
+<!--
+That solves our problem! With only `s2` valid, when it goes out of scope, it
+alone will free the memory, and we’re done.
+-->
+<p>Cela résout notre problème ! Avec seulement <code>s2</code> en vigueur, quand elle
+sortira de la portée, elle seule va libérer la mémoire, et c'est tout.</p>
+<!--
+In addition, there’s a design choice that’s implied by this: Rust will never
+automatically create “deep” copies of your data. Therefore, any *automatic*
+copying can be assumed to be inexpensive in terms of runtime performance.
+-->
+<p>De plus, cela signifie qu'il y a eu un choix de conception : Rust ne va jamais
+créer automatiquement de copie “profonde” de vos données. Par conséquent, toute
+copie <em>automatique</em> peut être considérée comme peu coûteuse en termes de
+performances d'exécution.</p>
+<!--
+#### Ways Variables and Data Interact: Clone
+-->
+<h4><a class="header" href="#les-interactions-entre-les-variables-et-les-données--le-clonage" id="les-interactions-entre-les-variables-et-les-données--le-clonage">Les interactions entre les variables et les données : le clonage</a></h4>
+<!--
+If we *do* want to deeply copy the heap data of the `String`, not just the
+stack data, we can use a common method called `clone`. We’ll discuss method
+syntax in Chapter 5, but because methods are a common feature in many
+programming languages, you’ve probably seen them before.
+-->
+<p>Si nous <em>voulons</em> faire une copie profonde des données sur le tas d'une
+<code>String</code>, et pas seulement des données sur la pile, nous pouvons utiliser une 
+méthode commune qui s'appelle <code>clone</code>. Nous aborderons la syntaxe des méthodes
+au chapitre 5, mais comme les méthodes sont des outils courants dans de
+nombreux langages, vous les avez probablement utilisées auparavant.</p>
+<!--
+Here’s an example of the `clone` method in action:
+-->
+<p>Voici un exemple d'utilisation de la méthode <code>clone</code> :</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let s1 = String::from(&quot;hello&quot;);
+let s2 = s1.clone();
+
+println!(&quot;s1 = {}, s2 = {}&quot;, s1, s2);
+<span class="boring">}
+</code></pre></pre>
+<!--
+This works just fine and explicitly produces the behavior shown in Figure 4-3,
+where the heap data *does* get copied.
+-->
+<p>Cela fonctionne très bien et c'est ainsi que vous pouvez reproduire le
+comportement décrit dans l'illustration 4-3, où les données du tas sont copiées.</p>
+<!--
+When you see a call to `clone`, you know that some arbitrary code is being
+executed and that code may be expensive. It’s a visual indicator that something
+different is going on.
+-->
+<p>Quand vous voyez un appel à <code>clone</code>, vous savez que du code arbitraire est
+exécuté et que ce code peut être coûteux. C'est un indicateur visuel qu'il se
+passe quelque chose de différent.</p>
+<!--
+#### Stack-Only Data: Copy
+-->
+<h4><a class="header" href="#données-uniquement-sur-la-pile--la-copie" id="données-uniquement-sur-la-pile--la-copie">Données uniquement sur la pile : la copie</a></h4>
+<!--
+There’s another wrinkle we haven’t talked about yet. This code using integers,
+part of which was shown in Listing 4-2, works and is valid:
+-->
+<p>Il y a un autre détail dont on n'a pas encore parlé. Le code suivant utilise
+des entiers, et on en a vu une partie dans l'encart 4-2 ; il fonctionne et
+est correct :</p>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let x = 5;
+let y = x;
+
+println!(&quot;x = {}, y = {}&quot;, x, y);
+<span class="boring">}
+</code></pre></pre>
+<!--
+But this code seems to contradict what we just learned: we don’t have a call to
+`clone`, but `x` is still valid and wasn’t moved into `y`.
+-->
+<p>Mais ce code semble contredire ce que nous venons d'apprendre : nous n'avons
+pas appelé <code>clone</code>, mais <code>x</code> est toujours en vigueur et n'a pas été déplacé
+dans <code>y</code>.</p>
+<!--
+The reason is that types such as integers that have a known size at compile
+time are stored entirely on the stack, so copies of the actual values are quick
+to make. That means there’s no reason we would want to prevent `x` from being
+valid after we create the variable `y`. In other words, there’s no difference
+between deep and shallow copying here, so calling `clone` wouldn’t do anything
+different from the usual shallow copying and we can leave it out.
+-->
+<p>La raison est que les types comme les entiers ont une taille connue au moment de
+la compilation et sont entièrement stockés sur la pile, donc la copie des
+vraies valeurs est rapide à faire. Cela signifie qu'il n'y a pas de raison que
+nous voudrions neutraliser <code>x</code> après avoir créé la variable <code>y</code>. En d'autres
+termes, il n'y a pas ici de différence entre la copie superficielle et profonde,
+donc appeler <code>clone</code> ne ferait rien d'autre qu'une copie superficielle classique
+et on peut s'en passer.</p>
+<!--
+Rust has a special annotation called the `Copy` trait that we can place on
+types like integers that are stored on the stack (we’ll talk more about traits
+in Chapter 10). If a type has the `Copy` trait, an older variable is still
+usable after assignment. Rust won’t let us annotate a type with the `Copy`
+trait if the type, or any of its parts, has implemented the `Drop` trait. If
+the type needs something special to happen when the value goes out of scope and
+we add the `Copy` annotation to that type, we’ll get a compile-time error. To
+learn about how to add the `Copy` annotation to your type, see [“Derivable
+Traits”][derivable-traits]<!-- ignore -- > in Appendix C.
+-->
+<p>Rust a une annotation spéciale appelée le trait <code>Copy</code> que nous pouvons utiliser
+sur des types comme les entiers qui sont stockés sur la pile (nous verrons les
+traits dans le chapitre 10). Si un type a le trait <code>Copy</code>, l'ancienne variable
+sera toujours utilisable après avoir été affectée. Rust ne nous autorisera pas à
+annoter un type avec le trait <code>Copy</code> si ce type, ou un de ses éléments, a
+implémenté le trait <code>Drop</code>. Si ce type a besoin que quelque chose de spécial se
+produise quand la valeur sort de la portée et que nous ajoutons l'annotation
+<code>Copy</code> sur ce type, nous aurons une erreur au moment de la compilation. Pour
+savoir comment ajouter l'annotation <code>Copy</code> sur votre type, référez-vous à
+<a href="appendix-03-derivable-traits.html">l'annexe C</a><!-- ignore --> sur les traits dérivables.</p>
+<!--
+So what types are `Copy`? You can check the documentation for the given type to
+be sure, but as a general rule, any group of simple scalar values can be
+`Copy`, and nothing that requires allocation or is some form of resource is
+`Copy`. Here are some of the types that are `Copy`:
+-->
+<p>Donc, quels sont les types qui sont <code>Copy</code> ? Vous pouvez regarder dans la
+documentation pour un type donné pour vous en assurer, mais de manière générale,
+tout groupe de valeur scalaire peut être <code>Copy</code>, et tout ce qui ne nécessite pas
+d'allocation de mémoire ou tout autre forme de ressource est <code>Copy</code>.
+Voici quelques types qui sont <code>Copy</code> :</p>
+<!--
+* All the integer types, such as `u32`.
+* The Boolean type, `bool`, with values `true` and `false`.
+* All the floating point types, such as `f64`.
+* The character type, `char`.
+* Tuples, if they only contain types that are also `Copy`. For example,
+  `(i32, i32)` is `Copy`, but `(i32, String)` is not.
+-->
+<ul>
+<li>Tous les types d'entiers, comme <code>u32</code>.</li>
+<li>Le type booléen, <code>bool</code>, avec les valeurs <code>true</code> et <code>false</code>.</li>
+<li>Tous les types de flottants, comme <code>f64</code>.</li>
+<li>Le type de caractère, <code>char</code>.</li>
+<li>Les tuples, mais uniquement s'ils contiennent des types qui sont aussi <code>Copy</code>.
+Par exemple, le <code>(i32, i32)</code> est <code>Copy</code>, mais pas <code>(i32, String)</code>.</li>
+</ul>
+<!--
+### Ownership and Functions
+-->
+<h3><a class="header" href="#la-possession-et-les-fonctions" id="la-possession-et-les-fonctions">La possession et les fonctions</a></h3>
+<!--
+The semantics for passing a value to a function are similar to those for
+assigning a value to a variable. Passing a variable to a function will move or
+copy, just as assignment does. Listing 4-3 has an example with some annotations
+showing where variables go into and out of scope.
+-->
+<p>La syntaxe pour passer une valeur à une fonction est similaire à celle pour
+assigner une valeur à une variable. Passer une variable à une fonction va la
+déplacer ou la copier, comme l'assignation. L'encart 4-3 est un exemple avec
+quelques commentaires qui montrent où les variables rentrent et sortent de la
+portée :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let s = String::from("hello");  // s comes into scope
+
+    takes_ownership(s);             // s's value moves into the function...
+                                    // ... and so is no longer valid here
+
+    let x = 5;                      // x comes into scope
+
+    makes_copy(x);                  // x would move into the function,
+                                    // but i32 is Copy, so it’s okay to still
+                                    // use x afterward
+
+} // Here, x goes out of scope, then s. But because s's value was moved, nothing
+  // special happens.
+
+fn takes_ownership(some_string: String) { // some_string comes into scope
+    println!("{}", some_string);
+} // Here, some_string goes out of scope and `drop` is called. The backing
+  // memory is freed.
+
+fn makes_copy(some_integer: i32) { // some_integer comes into scope
+    println!("{}", some_integer);
+} // Here, some_integer goes out of scope. Nothing special happens.
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() { 
+    let s = String::from(&quot;hello&quot;);  // s rentre dans la portée.
+
+    prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
+                            // … et n'est plus en vigueur à partir d'ici
+
+    let x = 5;              // x rentre dans la portée.
+
+    creer_copie(x);         // x va être déplacée dans la fonction,
+                            // mais i32 est Copy, donc on peut
+                            // utiliser x ensuite.
+
+} // Ici, x sort de la portée, puis ensuite s. Mais puisque la valeur de s a
+  // été déplacée, il ne se passe rien de spécial.
+
+fn prendre_possession(texte: String) { // texte rentre dans la portée.
+    println!(&quot;{}&quot;, texte);
+} // Ici, texte sort de la portée et `drop` est appelé. La mémoire est libérée.
+
+fn creer_copie(entier: i32) { // entier rentre dans la portée.
+    println!(&quot;{}&quot;, entier);
+} // Ici, entier sort de la portée. Il ne se passe rien de spécial.
+</code></pre></pre>
+<!--
+<span class="caption">Listing 4-3: Functions with ownership and scope
+annotated</span>
+-->
+<p><span class="caption">Encart 4-3 : Les fonctions avec les possessions et les
+portées qui sont commentées</span></p>
+<!--
+If we tried to use `s` after the call to `takes_ownership`, Rust would throw a
+compile-time error. These static checks protect us from mistakes. Try adding
+code to `main` that uses `s` and `x` to see where you can use them and where
+the ownership rules prevent you from doing so.
+-->
+<p>Si on essayait d'utiliser <code>s</code> après l'appel à <code>prendre_possession</code>, Rust
+déclencherait une erreur à la compilation. Ces vérifications statiques
+nous protègent des erreurs. Essayez d'ajouter du code au <code>main</code> qui utilise <code>s</code>
+et <code>x</code> pour découvrir lorsque vous pouvez les utiliser et lorsque les règles de
+la possession vous empêchent de le faire.</p>
+<!--
+### Return Values and Scope
+-->
+<h3><a class="header" href="#les-valeurs-de-retour-et-les-portées" id="les-valeurs-de-retour-et-les-portées">Les valeurs de retour et les portées</a></h3>
+<!--
+Returning values can also transfer ownership. Listing 4-4 is an example with
+similar annotations to those in Listing 4-3.
+-->
+<p>Retourner des valeurs peut aussi transférer leur possession. L'encart 4-4 est un
+exemple avec des annotations similaires à celles de l'encart 4-3 :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let s1 = gives_ownership();         // gives_ownership moves its return
+                                        // value into s1
+
+    let s2 = String::from("hello");     // s2 comes into scope
+
+    let s3 = takes_and_gives_back(s2);  // s2 is moved into
+                                        // takes_and_gives_back, which also
+                                        // moves its return value into s3
+} // Here, s3 goes out of scope and is dropped. s2 goes out of scope but was
+  // moved, so nothing happens. s1 goes out of scope and is dropped.
+
+fn gives_ownership() -> String {             // gives_ownership will move its
+                                             // return value into the function
+                                             // that calls it
+
+    let some_string = String::from("hello"); // some_string comes into scope
+
+    some_string                              // some_string is returned and
+                                             // moves out to the calling
+                                             // function
+}
+
+// takes_and_gives_back will take a String and return one
+fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
+                                                      // scope
+
+    a_string  // a_string is returned and moves out to the calling function
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let s1 = donne_possession();     // donne_possession déplace sa valeur de
+                                     // retour dans s1
+
+    let s2 = String::from(&quot;hello&quot;);  // s2 rentre dans la portée
+
+    let s3 = prend_et_rend(s2);      // s2 est déplacée dans
+                                     // prend_et_rend, qui elle aussi
+                                     // déplace sa valeur de retour dans s3.
+} // Ici, s3 sort de la portée et est éliminée. s2 sort de la portée mais a été
+  // déplacée donc il ne se passe rien. s1 sort aussi de la portée et est
+  // éliminée.
+
+fn donne_possession() -&gt; String {        // donne_possession va déplacer sa
+                                         // valeur de retour dans la
+                                         // fonction qui l'appelle.
+
+    let texte = String::from(&quot;hello&quot;);   // texte rentre dans la portée.
+
+    texte                                // texte est retournée et
+                                         // est déplacée vers le code qui
+                                         // l'appelle.
+}
+
+// prend_et_rend va prendre une String et en retourne aussi une.
+fn prend_et_rend(texte: String) -&gt; String { // texte rentre dans la portée.
+
+    texte  // texte est retournée et déplacée vers le code qui l'appelle.
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 4-4: Transferring ownership of return
+values</span>
+-->
+<p><span class="caption">Encart 4-4 : Transferts de possession des valeurs de
+retour</span></p>
+<!--
+The ownership of a variable follows the same pattern every time: assigning a
+value to another variable moves it. When a variable that includes data on the
+heap goes out of scope, the value will be cleaned up by `drop` unless the data
+has been moved to be owned by another variable.
+-->
+<p>La possession d'une variable suit toujours le même schéma à chaque fois :
+assigner une valeur à une autre variable la déplace. Quand une variable qui
+contient des données sur le tas sort de la portée, la valeur sera nettoyée
+avec <code>drop</code> à moins que la donnée ait été déplacée pour être possédée par une
+autre variable.</p>
+<!--
+Taking ownership and then returning ownership with every function is a bit
+tedious. What if we want to let a function use a value but not take ownership?
+It’s quite annoying that anything we pass in also needs to be passed back if we
+want to use it again, in addition to any data resulting from the body of the
+function that we might want to return as well.
+-->
+<p>Il est un peu fastidieux de prendre la possession puis ensuite de retourner la
+possession à chaque fonction. Et qu'est-ce qu'il se passe si nous voulons
+qu'une fonction utilise une valeur, mais n'en prenne pas possession ? C'est
+assez pénible que tout ce que nous passons doit être retourné si nous voulons
+l'utiliser à nouveau, en plus de toutes les données qui découlent du corps
+de la fonction que nous voulons aussi récupérer.</p>
+<!--
+It’s possible to return multiple values using a tuple, as shown in Listing 4-5.
+-->
+<p>Il est possible de retourner plusieurs valeurs à l'aide d'un tuple, comme ceci :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let s1 = String::from("hello");
+
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of '{}' is {}.", s2, len);
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
+
+    (s, length)
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let s1 = String::from(&quot;hello&quot;);
+
+    let (s2, taille) = calculer_taille(s1);
+
+    println!(&quot;La taille de '{}' est {}.&quot;, s2, taille);
+}
+
+fn calculer_taille(s: String) -&gt; (String, usize) {
+    let taille = s.len(); // len() retourne la taille d'une String.
+
+    (s, taille)
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 4-5: Returning ownership of parameters</span>
+-->
+<p><span class="caption">Encart 4-5 : Retourner la possession des paramètres</span></p>
+<!--
+But this is too much ceremony and a lot of work for a concept that should be
+common. Luckily for us, Rust has a feature for this concept, called
+*references*.
+-->
+<p>Mais c'est trop laborieux et beaucoup de travail pour un principe qui devrait
+être banal. Heureusement pour nous, Rust a une fonctionnalité pour ce principe,
+c'est ce qu'on appelle les <em>références</em>.</p>
+<!--
+[data-types]: ch03-02-data-types.html#data-types
+[derivable-traits]: appendix-03-derivable-traits.html
+[method-syntax]: ch05-03-method-syntax.html#method-syntax
+[paths-module-tree]: ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html
+-->
 <!-- # Using Structs to Structure Related Data -->
 <h1><a class="header" href="#utiliser-les-structures-pour-structurer-des-données-apparentées" id="utiliser-les-structures-pour-structurer-des-données-apparentées">Utiliser les structures pour structurer des données apparentées</a></h1>
 <!--
@@ -6066,6 +8239,667 @@ Les structures et les énumérations (traitées au chapitre 6) sont les fondemen
 de la création de nouveaux types au sein de votre programme pour tirer
 pleinement parti des vérifications de types effectuées par Rust à la
 compilation.</p>
+<!--
+## Defining and Instantiating Structs
+-->
+<h2><a class="header" href="#définir-et-instancier-des-structures" id="définir-et-instancier-des-structures">Définir et instancier des structures</a></h2>
+<!--
+Structs are similar to tuples, which were discussed in Chapter 3. Like tuples,
+the pieces of a struct can be different types. Unlike with tuples, you’ll name
+each piece of data so it’s clear what the values mean. As a result of these
+names, structs are more flexible than tuples: you don’t have to rely on the
+order of the data to specify or access the values of an instance.
+-->
+<p>Les structures sont similaires aux tuples, qu'on a vus au chapitre 3. Comme pour
+les tuples, les éléments d'une structure peuvent être de différents types.
+Contrairement aux tuples, on doit nommer chaque élément des données afin de
+clarifier le rôle de chaque valeur. Grâce à ces noms, les structures sont plus
+flexibles que les tuples : on n'a pas à utiliser l'ordre des données pour
+spécifier ou accéder aux valeurs d'une instance.</p>
+<!--
+To define a struct, we enter the keyword `struct` and name the entire struct. A
+struct’s name should describe the significance of the pieces of data being
+grouped together. Then, inside curly brackets, we define the names and types of
+the pieces of data, which we call *fields*. For example, Listing 5-1 shows a
+struct that stores information about a user account.
+-->
+<p>Pour définir une structure, on tape le mot-clé <code>struct</code> et on donne un nom à
+toute la structure. Le nom d'une structure devrait décrire l'utilisation des
+éléments des données regroupés. Ensuite, entre des accolades, on définit le nom
+et le type de chaque élément des données, qu'on appelle un <em>champ</em>. Par exemple,
+l'encart 5-1 montre une structure qui stocke des informations à propos d'un
+compte d'utilisateur.</p>
+<!--
+```rust
+struct User {
+    username: String,
+    email: String,
+    sign_in_count: u64,
+    active: bool,
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-1: A `User` struct definition</span>
+-->
+<p><span class="caption">Encart 5-1 : La définition d'une structure
+<code>Utilisateur</code></span></p>
+<!--
+To use a struct after we’ve defined it, we create an *instance* of that struct
+by specifying concrete values for each of the fields. We create an instance by
+stating the name of the struct and then add curly brackets containing `key:
+value` pairs, where the keys are the names of the fields and the values are the
+data we want to store in those fields. We don’t have to specify the fields in
+the same order in which we declared them in the struct. In other words, the
+struct definition is like a general template for the type, and instances fill
+in that template with particular data to create values of the type. For
+example, we can declare a particular user as shown in Listing 5-2.
+-->
+<p>Pour utiliser une structure après l'avoir définie, on crée une <em>instance</em> de
+cette structure en indiquant des valeurs concrètes pour chacun des champs.
+On crée une instance en indiquant le nom de la structure puis en ajoutant des
+accolades qui contiennent des paires de <code>clé: valeur</code>, où les clés sont les noms
+des champs et les valeurs sont les données que l'on souhaite stocker dans ces
+champs. Nous n'avons pas à préciser les champs dans le même ordre qu'on les a
+déclarés dans la structure. En d'autres termes, la définition de la structure
+décrit un gabarit pour le type, et les instances remplissent ce gabarit avec des
+données précises pour créer des valeurs de ce type. Par exemple, nous pouvons
+déclarer un utilisateur précis comme dans l'encart 5-2.</p>
+<!--
+```rust
+# struct User {
+#     username: String,
+#     email: String,
+#     sign_in_count: u64,
+#     active: bool,
+# }
+#
+let user1 = User {
+    email: String::from("someone@example.com"),
+    username: String::from("someusername123"),
+    active: true,
+    sign_in_count: 1,
+};
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+</span>#
+let utilisateur1 = Utilisateur {
+    email: String::from(&quot;quelquun@example.com&quot;),
+    pseudo: String::from(&quot;pseudoquelconque123&quot;),
+    actif: true,
+    nombre_de_connexions: 1,
+};
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-2: Creating an instance of the `User`
+struct</span>
+-->
+<p><span class="caption">Encart 5-2 : Création d'une instance de la structure
+<code>Utilisateur</code></span></p>
+<!--
+To get a specific value from a struct, we can use dot notation. If we wanted
+just this user’s email address, we could use `user1.email` wherever we wanted
+to use this value. If the instance is mutable, we can change a value by using
+the dot notation and assigning into a particular field. Listing 5-3 shows how
+to change the value in the `email` field of a mutable `User` instance.
+-->
+<p>Pour obtenir une valeur spécifique depuis une structure, on utilise la notation
+avec le point. Si nous voulions seulement l'adresse e-mail de cet utilisateur,
+on pourrait utiliser <code>utilisateur1.email</code> partout où on voudrait utiliser cette
+valeur. Si l'instance est mutable, nous pourrions changer une valeur en
+utilisant la notation avec le point et assigner une valeur à ce champ en
+particulier. L'encart 5-3 montre comment changer la valeur du champ <code>email</code>
+d'une instance mutable de <code>Utilisateur</code>.</p>
+<!--
+```rust
+# struct User {
+#     username: String,
+#     email: String,
+#     sign_in_count: u64,
+#     active: bool,
+# }
+#
+let mut user1 = User {
+    email: String::from("someone@example.com"),
+    username: String::from("someusername123"),
+    active: true,
+    sign_in_count: 1,
+};
+
+user1.email = String::from("anotheremail@example.com");
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+</span>#
+let mut utilisateur1 = Utilisateur {
+    email: String::from(&quot;quelquun@example.com&quot;),
+    pseudo: String::from(&quot;pseudoquelconque123&quot;),
+    actif: true,
+    nombre_de_connexions: 1,
+};
+
+utilisateur1.email = String::from(&quot;unautremail@example.com&quot;);
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-3: Changing the value in the `email` field of a
+`User` instance</span>
+-->
+<p><span class="caption">Encart 5-3 : Changement de la valeur du champ <code>email</code>
+d'une instance de <code>Utilisateur</code></span></p>
+<!--
+Note that the entire instance must be mutable; Rust doesn’t allow us to mark
+only certain fields as mutable. As with any expression, we can construct a new
+instance of the struct as the last expression in the function body to
+implicitly return that new instance.
+-->
+<p>À noter que l'instance tout entière doit être mutable ; Rust ne nous permet pas
+de marquer seulement certains champs comme mutables. Comme pour toute
+expression, nous pouvons construire une nouvelle instance de la structure comme
+dernière expression du corps d'une fonction pour retourner implicitement cette
+nouvelle instance.</p>
+<!--
+Listing 5-4 shows a `build_user` function that returns a `User` instance with
+the given email and username. The `active` field gets the value of `true`, and
+the `sign_in_count` gets a value of `1`.
+-->
+<p>L'encart 5-4 montre une fonction <code>creer_utilisateur</code> qui retourne une instance
+de <code>Utilisateur</code> avec l'adresse e-mail et le pseudo fournis. Le champ <code>actif</code>
+prend la valeur <code>true</code> et le <code>nombre_de_connexions</code> prend la valeur <code>1</code>.</p>
+<!--
+```rust
+# struct User {
+#     username: String,
+#     email: String,
+#     sign_in_count: u64,
+#     active: bool,
+# }
+#
+fn build_user(email: String, username: String) -> User {
+    User {
+        email: email,
+        username: username,
+        active: true,
+        sign_in_count: 1,
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+</span>#
+fn creer_utilisateur(email: String, pseudo: String) -&gt; Utilisateur {
+    Utilisateur {
+        email: email,
+        pseudo: pseudo,
+        actif: true,
+        nombre_de_connexions: 1,
+    }
+}
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-4: A `build_user` function that takes an email
+and username and returns a `User` instance</span>
+-->
+<p><span class="caption">Encart 5-4 : Une fonction <code>creer_utilisateur</code> qui prend
+en entrée une adresse e-mail et un pseudo et retourne une instance de
+<code>Utilisateur</code></span></p>
+<!--
+It makes sense to name the function parameters with the same name as the struct
+fields, but having to repeat the `email` and `username` field names and
+variables is a bit tedious. If the struct had more fields, repeating each name
+would get even more annoying. Luckily, there’s a convenient shorthand!
+-->
+<p>Il est logique de nommer les paramètres de fonction avec le même nom que les
+champs de la structure, mais devoir répéter les noms de variables et de champs
+<code>email</code> et <code>pseudo</code> est un peu pénible. Si la structure avait plus de champs,
+répéter chaque nom serait encore plus fatigant. Heureusement, il existe un
+raccourci pratique !</p>
+<!--
+### Using the Field Init Shorthand when Variables and Fields Have the Same Name
+-->
+<h3><a class="header" href="#utiliser-le-raccourci-dinitialisation-des-champs-lorsque-les-variables-et-les-champs-ont-le-même-nom" id="utiliser-le-raccourci-dinitialisation-des-champs-lorsque-les-variables-et-les-champs-ont-le-même-nom">Utiliser le raccourci d'initialisation des champs lorsque les variables et les champs ont le même nom</a></h3>
+<!--
+Because the parameter names and the struct field names are exactly the same in
+Listing 5-4, we can use the *field init shorthand* syntax to rewrite
+`build_user` so that it behaves exactly the same but doesn’t have the
+repetition of `email` and `username`, as shown in Listing 5-5.
+-->
+<p>Puisque les noms des paramètres et les noms de champs de la structure sont
+exactement les mêmes dans l'encart 5-4, on peut utiliser la syntaxe de
+<em>raccourci d'initialisation des champs</em> pour réécrire <code>creer_utilisateur</code> de
+sorte qu'elle se comporte exactement de la même façon sans avoir à répéter
+<code>email</code> et <code>pseudo</code>, comme le montre l'encart 5-5.</p>
+<!--
+```rust
+# struct User {
+#     username: String,
+#     email: String,
+#     sign_in_count: u64,
+#     active: bool,
+# }
+#
+fn build_user(email: String, username: String) -> User {
+    User {
+        email,
+        username,
+        active: true,
+        sign_in_count: 1,
+    }
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+</span>#
+fn creer_utilisateur(email: String, pseudo: String) -&gt; Utilisateur {
+    Utilisateur {
+        email,
+        pseudo,
+        actif: true,
+        nombre_de_connexions: 1,
+    }
+}
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-5: A `build_user` function that uses field init
+shorthand because the `email` and `username` parameters have the same name as
+struct fields</span>
+-->
+<p><span class="caption">Encart 5-5 : Une fonction <code>creer_utilisateur</code> qui utilise
+le raccourci d'initialisation des champs parce que les paramètres <code>email</code> et
+<code>pseudo</code> ont le même nom que les champs de la structure</span></p>
+<!--
+Here, we’re creating a new instance of the `User` struct, which has a field
+named `email`. We want to set the `email` field’s value to the value in the
+`email` parameter of the `build_user` function. Because the `email` field and
+the `email` parameter have the same name, we only need to write `email` rather
+than `email: email`.
+-->
+<p>Ici, on crée une nouvelle instance de la structure <code>Utilisateur</code>, qui possède
+un champ nommé <code>email</code>. On veut donner au champ <code>email</code> la valeur du paramètre
+<code>email</code> de la fonction <code>creer_utilisateur</code>. Comme le champ <code>email</code> et le
+paramètre <code>email</code> ont le même nom, on a uniquement besoin d'écrire <code>email</code>
+plutôt que <code>email: email</code>.</p>
+<!--
+### Creating Instances From Other Instances With Struct Update Syntax
+-->
+<h3><a class="header" href="#créer-des-instances-à-partir-dautres-instances-avec-la-syntaxe-de-mise-à-jour-de-structure" id="créer-des-instances-à-partir-dautres-instances-avec-la-syntaxe-de-mise-à-jour-de-structure">Créer des instances à partir d'autres instances avec la syntaxe de mise à jour de structure</a></h3>
+<!--
+It’s often useful to create a new instance of a struct that uses most of an old
+instance’s values but changes some. You’ll do this using *struct update syntax*.
+-->
+<p>Il est souvent utile de créer une nouvelle instance de structure qui utilise la
+plupart des valeurs d'une ancienne instance tout en en changeant certaines. On
+utilisera pour cela la <em>syntaxe de mise à jour de structure</em>.</p>
+<!--
+First, Listing 5-6 shows how we create a new `User` instance in `user2` without
+the update syntax. We set new values for `email` and `username` but otherwise
+use the same values from `user1` that we created in Listing 5-2.
+-->
+<p>Tout d'abord, l'encart 5-6 nous montre comment créer une nouvelle instance de
+<code>Utilisateur</code> dans <code>utilisateur2</code> sans la syntaxe de mise à jour de structure.
+On donne de nouvelles valeurs à <code>email</code> et <code>pseudo</code> mais on utilise pour les
+autres champs les mêmes valeurs que dans <code>utilisateur1</code> qu'on a créé à
+l'encart 5-2.</p>
+<!--
+```rust
+# struct User {
+#     username: String,
+#     email: String,
+#     sign_in_count: u64,
+#     active: bool,
+# }
+#
+# let user1 = User {
+#     email: String::from("someone@example.com"),
+#     username: String::from("someusername123"),
+#     active: true,
+#     sign_in_count: 1,
+# };
+#
+let user2 = User {
+    email: String::from("another@example.com"),
+    username: String::from("anotherusername567"),
+    active: user1.active,
+    sign_in_count: user1.sign_in_count,
+};
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+</span>#
+<span class="boring">let utilisateur1 = Utilisateur {
+    email: String::from(&quot;quelquun@example.com&quot;),
+    pseudo: String::from(&quot;pseudoquelconque123&quot;),
+    actif: true,
+    nombre_de_connexions: 1,
+};
+</span>#
+let utilisateur2 = Utilisateur {
+    email: String::from(&quot;quelquundautre@example.com&quot;),
+    pseudo: String::from(&quot;autrepseudo567&quot;),
+    actif: utilisateur1.actif,
+    nombre_de_connexions: utilisateur1.nombre_de_connexions,
+};
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-6: Creating a new `User` instance using some of
+the values from `user1`</span>
+-->
+<p><span class="caption">Encart 5-6 : Création d'une nouvelle instance de
+<code>Utilisateur</code> en utilisant certaines valeurs de <code>utilisateur1</code>.</span></p>
+<!--
+Using struct update syntax, we can achieve the same effect with less code, as
+shown in Listing 5-7. The syntax `..` specifies that the remaining fields not
+explicitly set should have the same value as the fields in the given instance.
+-->
+<p>En utilisant la syntaxe de mise à jour de structure, on peut produire le même
+résultat avec moins de code, comme le montre l'encart 5-7. La syntaxe <code>..</code>
+indique que les autres champs auxquels on ne donne pas explicitement de valeur
+devraient avoir la même valeur que dans l'instance précisée.</p>
+<!--
+```rust
+# struct User {
+#     username: String,
+#     email: String,
+#     sign_in_count: u64,
+#     active: bool,
+# }
+#
+# let user1 = User {
+#     email: String::from("someone@example.com"),
+#     username: String::from("someusername123"),
+#     active: true,
+#     sign_in_count: 1,
+# };
+#
+let user2 = User {
+    email: String::from("another@example.com"),
+    username: String::from("anotherusername567"),
+    ..user1
+};
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+struct Utilisateur {
+    pseudo: String,
+    email: String,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+</span>#
+<span class="boring">let utilisateur1 = Utilisateur {
+    email: String::from(&quot;quelquun@example.com&quot;),
+    pseudo: String::from(&quot;pseudoquelconque123&quot;),
+    actif: true,
+    nombre_de_connexions: 1,
+};
+</span>#
+let utilisateur2 = Utilisateur {
+    email: String::from(&quot;quelquundautre@example.com&quot;),
+    pseudo: String::from(&quot;autrepseudo567&quot;),
+    ..utilisateur1
+};
+<span class="boring">}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-7: Using struct update syntax to set new
+`email` and `username` values for a `User` instance but use the rest of the
+values from the fields of the instance in the `user1` variable</span>
+-->
+<p><span class="caption">Encart 5-7 : Utilisation de la syntaxe de mise à jour de
+structure pour assigner de nouvelles valeurs à <code>email</code> et <code>pseudo</code> à une
+nouvelle instance de <code>Utilisateur</code> tout en utilisant les autres valeurs des
+champs de l'instance de la variable <code>utilisateur1</code></span></p>
+<!--
+The code in Listing 5-7 also creates an instance in `user2` that has a
+different value for `email` and `username` but has the same values for the
+`active` and `sign_in_count` fields from `user1`.
+-->
+<p>Le code dans l'encart 5-7 crée aussi une instance dans <code>utilisateur2</code> qui a une
+valeur différente pour <code>email</code> et <code>pseudo</code> mais qui a les mêmes valeurs pour les
+champs <code>actif</code> et <code>nombre_de_connexions</code> que <code>utilisateur1</code>.</p>
+<!--
+### Using Tuple Structs without Named Fields to Create Different Types
+-->
+<h3><a class="header" href="#utilisation-de-structures-tuples-sans-champ-nommé-pour-créer-des-types-différents" id="utilisation-de-structures-tuples-sans-champ-nommé-pour-créer-des-types-différents">Utilisation de structures tuples sans champ nommé pour créer des types différents</a></h3>
+<!--
+You can also define structs that look similar to tuples, called *tuple
+structs*. Tuple structs have the added meaning the struct name provides but
+don’t have names associated with their fields; rather, they just have the types
+of the fields. Tuple structs are useful when you want to give the whole tuple a
+name and make the tuple be a different type from other tuples, and naming each
+field as in a regular struct would be verbose or redundant.
+-->
+<p>On peut aussi définir des structures qui ressemblent à des tuples, appelées
+<em>structures tuples</em>. La signification d'une structure tuple est donnée par son
+nom. En revanche, ses champs ne sont pas nommés ; on ne précise que leurs types.
+Les structures tuples servent lorsqu'on veut donner un nom à un tuple pour qu'il
+ait un type différent des autres tuples, mais que nommer chaque champ comme dans
+une structure classique serait trop verbeux ou redondant.</p>
+<!--
+To define a tuple struct, start with the `struct` keyword and the struct name
+followed by the types in the tuple. For example, here are definitions and
+usages of two tuple structs named `Color` and `Point`:
+-->
+<p>La définition d'une structure tuple commence par le mot-clé <code>struct</code> et le nom
+de la structure suivis des types des champs du tuple. Par exemple, voici une
+définition et une utilisation de deux structures tuples nommées <code>Couleur</code> et
+<code>Point</code> :</p>
+<!--
+```rust
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+let black = Color(0, 0, 0);
+let origin = Point(0, 0, 0);
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>struct Couleur(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+let noir = Couleur(0, 0, 0);
+let origine = Point(0, 0, 0);
+<span class="boring">}
+</code></pre></pre>
+<!--
+Note that the `black` and `origin` values are different types, because they’re
+instances of different tuple structs. Each struct you define is its own type,
+even though the fields within the struct have the same types. For example, a
+function that takes a parameter of type `Color` cannot take a `Point` as an
+argument, even though both types are made up of three `i32` values. Otherwise,
+tuple struct instances behave like tuples: you can destructure them into their
+individual pieces, you can use a `.` followed by the index to access an
+individual value, and so on.
+-->
+<p>Notez que les valeurs <code>noir</code> et <code>origine</code> sont de types différents parce que ce
+sont des instances de structures tuples différentes. Chaque structure que l'on
+définit constitue son propre type, même si les champs au sein de la structure
+ont les mêmes types. Par exemple, une fonction qui prend un paramètre de type
+<code>Couleur</code> ne peut pas prendre un argument de type <code>Point</code> à la place, bien que
+ces deux types soient tous les deux constitués de trois valeurs <code>i32</code>. Mis à
+part cela, les instances de stuctures tuples se comportent comme des tuples : on
+peut les déstructurer en éléments individuels, on peut utiliser un <code>.</code> suivi de
+l'indice pour accéder individuellement à une valeur, et ainsi de suite.</p>
+<!--
+### Unit-Like Structs Without Any Fields
+-->
+<h3><a class="header" href="#les-structures-unité-sans-champs" id="les-structures-unité-sans-champs">Les structures unité sans champs</a></h3>
+<!--
+You can also define structs that don’t have any fields! These are called
+*unit-like structs* because they behave similarly to `()`, the unit type.
+Unit-like structs can be useful in situations in which you need to implement a
+trait on some type but don’t have any data that you want to store in the type
+itself. We’ll discuss traits in Chapter 10.
+-->
+<p>On peut aussi définir des structures qui n'ont pas de champs ! Cela s'appelle
+des <em>structures unité</em> parce qu'elles se comportent d'une façon analogue au type
+unité, <code>()</code>. Les structures unité sont utiles lorsqu'on doit implémenter un
+trait sur un type mais qu'on n'a aucune donnée à stocker dans le type en
+lui-même. Nous aborderons les traits au chapitre 10.</p>
+<!--
+> ### Ownership of Struct Data
+>
+> In the `User` struct definition in Listing 5-1, we used the owned `String`
+> type rather than the `&str` string slice type. This is a deliberate choice
+> because we want instances of this struct to own all of its data and for that
+> data to be valid for as long as the entire struct is valid.
+>
+> It’s possible for structs to store references to data owned by something else,
+> but to do so requires the use of *lifetimes*, a Rust feature that we’ll
+> discuss in Chapter 10. Lifetimes ensure that the data referenced by a struct
+> is valid for as long as the struct is. Let’s say you try to store a reference
+> in a struct without specifying lifetimes, like this, which won’t work:
+>
+> <span class="filename">Filename: src/main.rs</span>
+>
+> ```rust,ignore,does_not_compile
+> struct User {
+>     username: &str,
+>     email: &str,
+>     sign_in_count: u64,
+>     active: bool,
+> }
+>
+> fn main() {
+>     let user1 = User {
+>         email: "someone@example.com",
+>         username: "someusername123",
+>         active: true,
+>         sign_in_count: 1,
+>     };
+> }
+> ```
+>
+>
+> The compiler will complain that it needs lifetime specifiers:
+>
+> ```text
+> error[E0106]: missing lifetime specifier
+>  -- >
+>   |
+> 2 |     username: &str,
+>   |               ^ expected lifetime parameter
+>
+> error[E0106]: missing lifetime specifier
+>  -- >
+>   |
+> 3 |     email: &str,
+>   |            ^ expected lifetime parameter
+> ```
+>
+> In Chapter 10, we’ll discuss how to fix these errors so you can store
+> references in structs, but for now, we’ll fix errors like these using owned
+> types like `String` instead of references like `&str`.
+-->
+<blockquote>
+<h3><a class="header" href="#la-possession-des-données-dune-structure" id="la-possession-des-données-dune-structure">La possession des données d'une structure</a></h3>
+<p>Dans la définition de la structure <code>Utilisateur</code> de l'encart 5-1, nous avions
+utilisé le type possédé <code>String</code> plutôt que le type de <em>slice</em> de chaîne de
+caractères <code>&amp;str</code>. Il s'agit d'un choix délibéré puisque nous voulons que les
+instances de cette structure possèdent toutes leurs données et que ces données
+restent valides tant que la structure tout entière est valide.</p>
+<p>Il est possible pour les structures de stocker des références vers des données
+possédées par autre chose, mais cela nécessiterait d'utiliser des
+<em>durées de vie</em>, une fonctionnalité de Rust que nous aborderons au
+chapitre 10. Les durées de vie assurent que les données référencées par une
+structure restent valides tant que la structure l'est aussi. Disons que vous
+essayiez de stocker une référence dans une structure sans indiquer de durées
+de vie, comme ceci, ce qui ne fonctionnera pas :</p>
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">struct Utilisateur {
+    pseudo: &amp;str,
+    email: &amp;str,
+    nombre_de_connexions: u64,
+    actif: bool,
+}
+
+fn main() {
+    let utilisateur1 = Utilisateur {
+        email: &quot;quelquun@example.com&quot;,
+        pseudo: &quot;pseudoquelconque123&quot;,
+        actif: true,
+        nombre_de_connexions: 1,
+    };
+}
+</code></pre>
+<p>Le compilateur réclamera l'ajout des durées de vie :</p>
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt;
+  |
+2 |     username: &amp;str,
+  |               ^ expected lifetime parameter
+
+error[E0106]: missing lifetime specifier
+ --&gt;
+  |
+3 |     email: &amp;str,
+  |            ^ expected lifetime parameter
+</code></pre>
+<p>Au chapitre 10, nous aborderons la façon de corriger ces erreurs pour qu'on
+puisse stocker des références dans des structures, mais pour le moment, nous
+résoudrons les erreurs comme celles-ci en utilisant des types possédés comme
+<code>String</code> plutôt que des références comme <code>&amp;str</code>.</p>
+</blockquote>
 
                     </main>
 
@@ -6090,6 +8924,14 @@ compilation.</p>
 
         
 
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
         
 
         
