@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -38,7 +38,7 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
@@ -66,8 +66,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -84,7 +87,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -566,7 +569,7 @@ allons construire ensemble des petits programmes, pour appliquer ce que vous
 avez appris précédemment. Les chapitres 2, 12 et 20 sont des chapitres de
 projet ; les autres sont des chapitres théoriques.</p>
 <!--
-Chapter 1 explains how to install Rust, how to write a Hello, world! program,
+Chapter 1 explains how to install Rust, how to write a “Hello, world!” program,
 and how to use Cargo, Rust’s package manager and build tool. Chapter 2 is a
 hands-on introduction to the Rust language. Here we cover concepts at a high
 level, and later chapters will provide additional detail. If you want to get
@@ -714,6 +717,7 @@ normal que dans certains cas, si vous copiez et exécutez un exemple au hasard,
 il ne compile pas ! Assurez-vous d'avoir lu le texte autour pour savoir si
 l'exemple que vous tentez de compiler doit échouer. Ferris va aussi vous aider
 à identifier du code qui ne devrait pas fonctionner :</p>
+<!-- markdownlint-disable -->
 <!--
 | Ferris                                                                 | Meaning                                          |
 |------------------------------------------------------------------------|--------------------------------------------------|
@@ -722,6 +726,7 @@ l'exemple que vous tentez de compiler doit échouer. Ferris va aussi vous aider
 | <img src="img/ferris/unsafe.svg" class="ferris-explain"/>              | This code block contains unsafe code.            |
 | <img src="img/ferris/not_desired_behavior.svg" class="ferris-explain"/>| This code does not produce the desired behavior. |
 -->
+<!-- markdownlint-restore -->
 <table><thead><tr><th>Ferris</th><th>Signification</th></tr></thead><tbody>
 <tr><td><img src="img/ferris/does_not_compile.svg" class="ferris-explain"/></td><td>Ce code ne compile pas !</td></tr>
 <tr><td><img src="img/ferris/panics.svg" class="ferris-explain"/></td><td>Ce code panique !</td></tr>
@@ -791,11 +796,15 @@ français.</p>
 <tr><td>crash</td><td>plantage</td><td>-</td></tr>
 <tr><td>crate</td><td>crate</td><td>nom féminin (une <em>crate</em>)</td></tr>
 <tr><td>curly bracket</td><td>accolade</td><td>-</td></tr>
+<tr><td>dangling</td><td>pendouillant</td><td>-</td></tr>
+<tr><td>data race</td><td>accès concurrent</td><td>-</td></tr>
 <tr><td>data representation</td><td>modèle de données</td><td>-</td></tr>
+<tr><td>deallocate</td><td>désalloué</td><td>-</td></tr>
 <tr><td>debug</td><td>déboguer</td><td>-</td></tr>
 <tr><td>debugging</td><td>débogage</td><td>-</td></tr>
 <tr><td>deep copy</td><td>copie en profondeur</td><td>-</td></tr>
 <tr><td>dependency</td><td>dépendance</td><td>-</td></tr>
+<tr><td>dereferencing</td><td>déréférencement</td><td>-</td></tr>
 <tr><td>destructure</td><td>déstructurer</td><td>-</td></tr>
 <tr><td>DevOps</td><td>DevOps</td><td>-</td></tr>
 <tr><td>dot notation</td><td>la notation avec un point</td><td>-</td></tr>
@@ -879,6 +888,7 @@ français.</p>
 <tr><td>prelude</td><td>étape préliminaire</td><td>-</td></tr>
 <tr><td>procedural macro</td><td>macro procédurale</td><td>-</td></tr>
 <tr><td>project chapter</td><td>chapitre de projet</td><td>-</td></tr>
+<tr><td>race condition</td><td>situation de concurrence</td><td>-</td></tr>
 <tr><td>pushing onto the stack</td><td>empiler</td><td>-</td></tr>
 <tr><td>raw identifier</td><td>identificateur brut</td><td>-</td></tr>
 <tr><td>README</td><td>README</td><td>-</td></tr>
@@ -1121,11 +1131,14 @@ message vous expliquant qu'il va vous falloir l'outil de compilation C++
 pour Visual Studio 2013 ou plus récent. La méthode la plus facile pour obtenir
 les outils de compilation est d'installer
 <a href="https://www.visualstudio.com/fr/downloads/#build-tools-for-visual-studio-2019">Build Tools pour Visual Studio 2019</a>.</p>
+<!-- markdownlint-disable -->
 <!--
+[install]: https://www.rust-lang.org/tools/install
 [visualstudio]: https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019
 FR translation: the website redirects to French version, we lose the "id" link.
 Fix is directly below:
 -->
+<!-- markdownlint-restore -->
 <!--
 The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
 If there are specific differences, we’ll explain which to use.
@@ -1197,13 +1210,13 @@ sont <a href="https://users.rust-lang.org/">le forum d'utilisateurs</a> et <a hr
 -->
 <h3><a class="header" href="#documentation-en-local" id="documentation-en-local">Documentation en local</a></h3>
 <!--
-The installer also includes a copy of the documentation locally, so you can
-read it offline. Run `rustup doc` to open the local documentation in your
-browser.
+The installation of Rust also includes a copy of the documentation locally, so
+you can read it offline. Run `rustup doc` to open the local documentation in
+your browser.
 -->
-<p>L'installateur embarque aussi une copie de la documentation en local pour que
-vous puissiez la lire hors ligne. Lancez <code>rustup doc</code> afin
-d'ouvrir la documentation locale dans votre navigateur.</p>
+<p>L'installation de Rust embarque aussi une copie de la documentation en local
+pour que vous puissiez la lire hors ligne. Lancez <code>rustup doc</code> afin d'ouvrir la
+documentation locale dans votre navigateur.</p>
 <!--
 Any time a type or function is provided by the standard library and you’re not
 sure what it does or how to use it, use the application programming interface
@@ -1262,10 +1275,10 @@ projets de ce livre, nous vous suggérons de créer un dossier <em>projects</em>
 votre dossier utilisateur et de ranger tous vos projets là-dedans.</p>
 <!--
 Open a terminal and enter the following commands to make a *projects* directory
-and a directory for the Hello, world! project within the *projects* directory.
+and a directory for the “Hello, world!” project within the *projects* directory.
 -->
 <p>Ouvrez un terminal et écrivez les commandes suivantes pour créer un
-dossier <em>projects</em> et un dossier pour le projet <em>Hello, world!</em> à l'intérieur
+dossier <em>projects</em> et un dossier pour le projet “Hello, world!” à l'intérieur
 de ce dossier <em>projects</em>.</p>
 <!--
 For Linux, macOS, and PowerShell on Windows, enter this:
@@ -1357,10 +1370,10 @@ programme Rust. Cela fait de vous un développeur Rust — bienvenue !</p>
 -->
 <h3><a class="header" href="#structure-dun-programme-rust" id="structure-dun-programme-rust">Structure d'un programme Rust</a></h3>
 <!--
-Let’s review in detail what just happened in your Hello, world! program.
+Let’s review in detail what just happened in your “Hello, world!” program.
 Here’s the first piece of the puzzle:
 -->
-<p>Regardons en détail ce qui s'est passé dans votre programme <em>Hello, world!</em>.
+<p>Regardons en détail ce qui s'est passé dans votre programme “Hello, world!”.
 Voici le premier morceau du puzzle :</p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
 
@@ -1523,10 +1536,10 @@ $ ./main # or .\main.exe on Windows
 <pre><code class="language-text">$ ./main # ou .\main.exe sous Windows
 </code></pre>
 <!--
-If *main.rs* was your Hello, world! program, this line would print `Hello,
+If *main.rs* was your “Hello, world!” program, this line would print `Hello,
 world!` to your terminal.
 -->
-<p>Si <em>main.rs</em> était votre programme <em>Hello, world!</em>, cette ligne devrait afficher
+<p>Si <em>main.rs</em> était votre programme “Hello, world!”, cette ligne devrait afficher
 <code>Hello, world!</code> dans votre terminal.</p>
 <!--
 If you’re more familiar with a dynamic language, such as Ruby, Python, or
@@ -1576,13 +1589,13 @@ les bibliothèques dont votre code dépend, et compiler ces bibliothèques. (On
 appelle <em>dépendance</em> une bibliothèque nécessaire pour votre code.)</p>
 <!--
 The simplest Rust programs, like the one we’ve written so far, don’t have any
-dependencies. So if we had built the Hello, world! project with Cargo, it would
-only use the part of Cargo that handles building your code. As you write more
-complex Rust programs, you’ll add dependencies, and if you start a project
+dependencies. So if we had built the “Hello, world!” project with Cargo, it
+would only use the part of Cargo that handles building your code. As you write
+more complex Rust programs, you’ll add dependencies, and if you start a project
 using Cargo, adding dependencies will be much easier to do.
 -->
 <p>Des programmes Rust très simples, comme le petit que nous avons précédemment,
-n'ont pas de dépendance. Donc si nous avions compilé le projet <em>Hello, world!</em>
+n'ont pas de dépendance. Donc si nous avions compilé le projet “Hello, world!”
 avec Cargo, cela n'aurait fait appel qu'à la fonctionnalité de Cargo qui
 s'occupe de la compilation de votre code. Quand vous écrirez des programmes Rust
 plus complexes, vous ajouterez des dépendances, et si vous créez un projet en
@@ -1618,12 +1631,12 @@ séparément Cargo.</p>
 <h3><a class="header" href="#créer-un-projet-avec-cargo" id="créer-un-projet-avec-cargo">Créer un projet avec Cargo</a></h3>
 <!--
 Let’s create a new project using Cargo and look at how it differs from our
-original Hello, world! project. Navigate back to your *projects* directory (or
+original “Hello, world!” project. Navigate back to your *projects* directory (or
 wherever you decided to store your code). Then, on any operating system, run
 the following:
 -->
 <p>Créons un nouveau projet en utilisant Cargo et analysons les différences avec
-notre projet initial <em>Hello, world!</em>. Retournez dans votre dossier <em>projects</em>
+notre projet initial “Hello, world!”. Retournez dans votre dossier <em>projects</em>
 (ou là où vous avez décidé d'enregistrer votre code). Ensuite, sur n'importe
 quel système d'exploitation, lancez les commandes suivantes :</p>
 <pre><code class="language-text">$ cargo new hello_cargo
@@ -1734,12 +1747,12 @@ Now open *src/main.rs* and take a look:
 }
 </code></pre></pre>
 <!--
-Cargo has generated a Hello, world! program for you, just like the one we wrote
-in Listing 1-1! So far, the differences between our previous project and the
-project Cargo generates are that Cargo placed the code in the *src* directory,
-and we have a *Cargo.toml* configuration file in the top directory.
+Cargo has generated a “Hello, world!” program for you, just like the one we
+wrote in Listing 1-1! So far, the differences between our previous project and
+the project Cargo generates are that Cargo placed the code in the *src*
+directory, and we have a *Cargo.toml* configuration file in the top directory.
 -->
-<p>Cargo a généré un programme <em>Hello, world!</em> pour vous, exactement comme celui
+<p>Cargo a généré un programme “Hello, world!” pour vous, exactement comme celui
 que nous avons écrit dans l'encart 1-1 ! Pour le moment, les seules différences
 entre notre projet précédent et le projet que Cargo a généré sont que Cargo a
 placé le code dans le dossier <em>src</em>, et que nous avons un fichier de
@@ -1757,13 +1770,13 @@ propos de la licence, pour les fichiers de configuration et tout ce qui n'est
 pas directement relié à votre code. Utiliser Cargo vous aide à structurer vos
 projets. Il y a un endroit pour tout, et tout est à sa place.</p>
 <!--
-If you started a project that doesn’t use Cargo, as we did with the Hello,
-world! project, you can convert it to a project that does use Cargo. Move the
+If you started a project that doesn’t use Cargo, as we did with the “Hello,
+world!” project, you can convert it to a project that does use Cargo. Move the
 project code into the *src* directory and create an appropriate *Cargo.toml*
 file.
 -->
 <p>Si vous commencez un projet sans utiliser Cargo, comme nous l'avons fait avec
-le projet <em>Hello, world!</em>, vous pouvez le transformer en projet qui
+le projet “Hello, world!”, vous pouvez le transformer en projet qui
 utilise Cargo. Déplacez le code de votre projet dans un dossier <em>src</em> et créez
 un fichier <em>Cargo.toml</em> adéquat.</p>
 <!--
@@ -1771,12 +1784,12 @@ un fichier <em>Cargo.toml</em> adéquat.</p>
 -->
 <h3><a class="header" href="#compiler-et-exécuter-un-projet-cargo" id="compiler-et-exécuter-un-projet-cargo">Compiler et exécuter un projet Cargo</a></h3>
 <!--
-Now let’s look at what’s different when we build and run the Hello, world!
+Now let’s look at what’s different when we build and run the “Hello, world!”
 program with Cargo! From your *hello_cargo* directory, build your project by
 entering the following command:
 -->
 <p>Maintenant, regardons ce qu'il y a de différent quand nous compilons et
-exécutons le programme <em>Hello, world!</em> avec Cargo ! À l'intérieur de votre
+exécutons le programme “Hello, world!” avec Cargo ! À l'intérieur de votre
 dossier <em>hello_cargo</em>, compilez votre projet en utilisant la commande suivante :</p>
 <pre><code class="language-text">$ cargo build
    Compiling hello_cargo v0.1.0 (file:///projects/hello_cargo)
@@ -1980,14 +1993,14 @@ avez appris comment :</p>
 * Install the latest stable version of Rust using `rustup`
 * Update to a newer Rust version
 * Open locally installed documentation
-* Write and run a Hello, world! program using `rustc` directly
+* Write and run a “Hello, world!” program using `rustc` directly
 * Create and run a new project using the conventions of Cargo
 -->
 <ul>
 <li>Installer la dernière version stable de Rust en utilisant <code>rustup</code></li>
 <li>Mettre à jour Rust vers une nouvelle version</li>
 <li>Ouvrir la documentation installée en local</li>
-<li>Écrire et exécuter un programme <em>Hello, world!</em> en utilisant directement
+<li>Écrire et exécuter un programme “Hello, world!” en utilisant directement
 <code>rustc</code></li>
 <li>Créer et exécuter un nouveau projet en utilisant les conventions de Cargo</li>
 </ul>
@@ -2365,7 +2378,7 @@ io::stdin().read_line(&mut guess)
     .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 </code></pre>
 <!--
-If we hadn’t listed the `use std::io` line at the beginning of the program, we
+If we hadn’t put the `use std::io` line at the beginning of the program, we
 could have written this function call as `std::io::stdin`. The `stdin` function
 returns an instance of [`std::io::Stdin`][iostdin]<!-- ignore -- >, which is a
 type that represents a handle to the standard input for your terminal.
@@ -2704,35 +2717,40 @@ Avant d'écrire le code qui utilisera <code>rand</code>, il nous faut éditer le
 <em>Cargo.toml</em> pour y spécifier <code>rand</code> en tant que dépendance. Ouvrez donc
 maintenant ce fichier et ajoutez la ligne suivante à la fin, en dessous de
 l'en-tête de section <code>[dependencies]</code> que Cargo a créé pour vous :</p>
+<!-- When updating the version of `rand` used, also update the version of
+`rand` used in these files so they all match:
+* ch07-04-bringing-paths-into-scope-with-the-use-keyword.md
+* ch14-03-cargo-workspaces.md
+-->
 <!--
 <span class="filename">Filename: Cargo.toml</span>
 -->
 <p><span class="filename">Fichier : Cargo.toml</span></p>
 <pre><code class="language-toml">[dependencies]
 
-rand = &quot;0.3.14&quot;
+rand = &quot;0.5.5&quot;
 </code></pre>
 <!--
 In the *Cargo.toml* file, everything that follows a header is part of a section
 that continues until another section starts. The `[dependencies]` section is
 where you tell Cargo which external crates your project depends on and which
 versions of those crates you require. In this case, we’ll specify the `rand`
-crate with the semantic version specifier `0.3.14`. Cargo understands [Semantic
+crate with the semantic version specifier `0.5.5`. Cargo understands [Semantic
 Versioning][semver]<!-- ignore -- > (sometimes called *SemVer*), which is a
-standard for writing version numbers. The number `0.3.14` is actually shorthand
-for `^0.3.14`, which means “any version that has a public API compatible with
-version 0.3.14.”
+standard for writing version numbers. The number `0.5.5` is actually shorthand
+for `^0.5.5`, which means “any version that has a public API compatible with
+version 0.5.5.”
 -->
 <p>Dans le fichier <em>Cargo.toml</em>, tout ce qui suit une en-tête fait partie de cette
 section, et ce jusqu'à ce qu'une autre section débute. La section
 <code>[dependencies]</code> permet d'indiquer à Cargo de quelles <em>crates</em> externes votre
 projet dépend, et de quelle version de ces <em>crates</em> vous avez besoin.
 Dans notre cas, on ajoute comme dépendance la crate <code>rand</code> avec la version
-sémantique <code>0.3.14</code>. Cargo arrive à interpréter le
+sémantique <code>0.5.5</code>. Cargo arrive à interpréter le
 <a href="http://semver.org">versionnage sémantique</a><!-- ignore --> (aussi appelé <em>SemVer</em>), qui
-est une convention d'écriture de numéros de version. En réalité, <code>0.3.14</code> est
-une abréviation pour <code>^0.3.14</code>, ce qui signifie “toute version qui propose une
-API publique compatible avec la version 0.3.14”.</p>
+est une convention d'écriture de numéros de version. En réalité, <code>0.5.5</code> est
+une abréviation pour <code>^0.5.5</code>, ce qui signifie “toute version qui propose une
+API publique compatible avec la version 0.5.5”.</p>
 <!--
 Now, without changing any of the code, let’s build the project, as shown in
 Listing 2-2.
@@ -2740,13 +2758,19 @@ Listing 2-2.
 <p>Maintenant, sans apporter le moindre changement au code, lançons une compilation
 du projet, comme dans l'encart 2-2 :</p>
 <pre><code class="language-text">$ cargo build
-    Updating registry `https://github.com/rust-lang/crates.io-index`
- Downloading rand v0.3.14
- Downloading libc v0.2.14
-   Compiling libc v0.2.14
-   Compiling rand v0.3.14
+    Updating crates.io index
+  Downloaded rand v0.5.5
+  Downloaded libc v0.2.62
+  Downloaded rand_core v0.2.2
+  Downloaded rand_core v0.3.1
+  Downloaded rand_core v0.4.2
+   Compiling rand_core v0.4.2
+   Compiling libc v0.2.62
+   Compiling rand_core v0.3.1
+   Compiling rand_core v0.2.2
+   Compiling rand v0.5.5
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53 s
 </code></pre>
 <!--
 <span class="caption">Listing 2-2: The output from running `cargo build` after
@@ -2776,16 +2800,16 @@ disponibles aux autres.</p>
 <!--
 After updating the registry, Cargo checks the `[dependencies]` section and
 downloads any crates you don’t have yet. In this case, although we only listed
-`rand` as a dependency, Cargo also grabbed a copy of `libc`, because `rand`
-depends on `libc` to work. After downloading the crates, Rust compiles them and
-then compiles the project with the dependencies available.
+`rand` as a dependency, Cargo also grabbed `libc` and `rand_core`, because
+`rand` depends on those to work. After downloading the crates, Rust compiles
+them and then compiles the project with the dependencies available.
 -->
 <p>Une fois le registre mis à jour, Cargo lit la section <code>[dependencies]</code> et se
 charge de télécharger les <em>crates</em> que vous n'avez pas encore. Dans notre cas,
 bien que nous n'ayons spécifié qu'une seule dépendance, <code>rand</code>, Cargo a aussi
-téléchargé la <em>crate</em> <code>libc</code>, car <code>rand</code> dépend de <code>libc</code> pour fonctionner. Une
-fois le téléchargement terminé des <em>crates</em>, Rust les compile, puis compile
-notre projet avec les dépendances disponibles.</p>
+téléchargé la <em>crate</em> <code>libc</code> et <code>rand_core</code>, car <code>rand</code> dépend d'elles pour
+fonctionner. Une fois le téléchargement terminé des <em>crates</em>, Rust les compile,
+puis compile notre projet avec les dépendances disponibles.</p>
 <!--
 If you immediately run `cargo build` again without making any changes, you
 won’t get any output aside from the `Finished` line. Cargo knows it has already
@@ -2809,7 +2833,7 @@ enregistrez le fichier, et relancez la compilation, vous verrez s'afficher
 uniquement deux lignes :</p>
 <pre><code class="language-text">$ cargo build
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
 </code></pre>
 <!--
 These lines show Cargo only updates the build with your tiny change to the
@@ -2830,7 +2854,7 @@ du code.</p>
 Cargo has a mechanism that ensures you can rebuild the same artifact every time
 you or anyone else builds your code: Cargo will use only the versions of the
 dependencies you specified until you indicate otherwise. For example, what
-happens if next week version 0.3.15 of the `rand` crate comes out and
+happens if next week version 0.5.6 of the `rand` crate comes out and
 contains an important bug fix but also contains a regression that will break
 your code?
 -->
@@ -2838,7 +2862,7 @@ your code?
 même artéfact à chaque fois que vous ou quelqu'un d'autre compile votre code :
 Cargo va utiliser uniquement les versions de dépendances que vous avez
 utilisées jusqu'à ce que vous indiquiez le contraire.
-Par exemple, que se passe-t-il si la semaine prochaine, la version 0.3.15 de la
+Par exemple, que se passe-t-il si la semaine prochaine, la version 0.5.6 de la
 <em>crate</em> <code>rand</code> est publiée et qu'elle apporte une correction importante, mais
 aussi qu'elle produit une régression qui va casser votre code ?</p>
 <!--
@@ -2850,7 +2874,7 @@ the *Cargo.lock* file. When you build your project in the future, Cargo will
 see that the *Cargo.lock* file exists and use the versions specified there
 rather than doing all the work of figuring out versions again. This lets you
 have a reproducible build automatically. In other words, your project will
-remain at `0.3.14` until you explicitly upgrade, thanks to the *Cargo.lock*
+remain at `0.5.5` until you explicitly upgrade, thanks to the *Cargo.lock*
 file.
 -->
 <p>La réponse à ce problème est le fichier <em>Cargo.lock</em>, qui a été créé la première
@@ -2862,7 +2886,7 @@ Quand vous recompilerez votre projet plus tard, Cargo verra que le fichier
 <em>Cargo.lock</em> existe et utilisera les versions précisées à l'intérieur au lieu
 de recommencer à déterminer toutes les versions demandées.
 Ceci vous permet d'avoir automatiquement des compilations reproductibles.
-En d'autres termes, votre projet va rester sur la version <code>0.3.14</code> jusqu'à ce
+En d'autres termes, votre projet va rester sur la version <code>0.5.5</code> jusqu'à ce
 que vous le mettiez à jour explicitement, grâce au fichier <em>Cargo.lock</em>.</p>
 <!--
 #### Updating a Crate to Get a New Version
@@ -2880,35 +2904,34 @@ rechercher toutes les versions qui correspondent à vos critères dans
 <em>Cargo.toml</em>. Si cela se passe bien, Cargo va écrire ces versions dans le
 fichier <em>Cargo.lock</em>.</p>
 <!--
-But by default, Cargo will only look for versions greater than `0.3.0` and less
-than `0.4.0`. If the `rand` crate has released two new versions, `0.3.15` and
-`0.4.0`, you would see the following if you ran `cargo update`:
+But by default, Cargo will only look for versions greater than `0.5.5` and less
+than `0.6.0`. If the `rand` crate has released two new versions, `0.5.6` and
+`0.6.0`, you would see the following if you ran `cargo update`:
 -->
 <p>Mais par défaut, Cargo va rechercher uniquement les versions plus grandes que
-<code>0.3.0</code> et inférieures à <code>0.4.0</code>. Si la <em>crate</em> <code>rand</code> a été publiée en deux
-nouvelles versions, <code>0.3.15</code> et <code>0.4.0</code>, alors vous verrez ceci si vous
+<code>0.5.5</code> et inférieures à <code>0.6.0</code>. Si la <em>crate</em> <code>rand</code> a été publiée en deux
+nouvelles versions, <code>0.5.6</code> et <code>0.6.0</code>, alors vous verrez ceci si vous
 lancez <code>cargo update</code> :</p>
 <pre><code class="language-text">$ cargo update
-    Updating registry `https://github.com/rust-lang/crates.io-index`
-    Updating rand v0.3.14 -&gt; v0.3.15
+    Updating crates.io index
+    Updating rand v0.5.5 -&gt; v0.5.6
 </code></pre>
 <!--
 At this point, you would also notice a change in your *Cargo.lock* file noting
-that the version of the `rand` crate you are now using is `0.3.15`.
+that the version of the `rand` crate you are now using is `0.5.6`.
 -->
 <p>À partir de ce moment, vous pouvez aussi constater un changement dans le fichier
 <em>Cargo.lock</em> indiquant que la version de la <em>crate</em> <code>rand</code> que vous utilisez
-maintenant est la <code>0.3.15</code>.</p>
+maintenant est la <code>0.5.6</code>.</p>
 <!--
-If you wanted to use `rand` version `0.4.0` or any version in the `0.4.x`
+If you wanted to use `rand` version `0.6.0` or any version in the `0.6.x`
 series, you’d have to update the *Cargo.toml* file to look like this instead:
 -->
 <p>Si vous vouliez utiliser <code>rand</code> en version <code>0.4.0</code> ou toute autre version dans
 la série des <code>0.4.x</code>, il vous faut mettre à jour le fichier <em>Cargo.toml</em> comme
 ceci :</p>
 <pre><code class="language-toml">[dependencies]
-
-rand = &quot;0.4.0&quot;
+rand = &quot;0.6.0&quot;
 </code></pre>
 <!--
 The next time you run `cargo build`, Cargo will update the registry of crates
@@ -3243,6 +3266,7 @@ However, the code in Listing 2-4 won’t compile yet. Let’s try it:
 -->
 <p>Cependant, notre code dans l'encart 2-4 ne compile pas encore. Essayons de le
 faire :</p>
+<!-- markdownlint-disable -->
 <!--
 ```text
 $ cargo build
@@ -3260,6 +3284,7 @@ error: aborting due to previous error
 Could not compile `guessing_game`.
 ```
 -->
+<!-- markdownlint-restore -->
 <pre><code class="language-text">$ cargo build
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
 error[E0308]: mismatched types
@@ -3457,7 +3482,8 @@ number that we want from the `Ok` value.
 le texte contient <code>A👍%</code>, il ne sera pas possible de le convertir en nombre.
 Comme elle peut échouer, la méthode <code>parse</code> retourne un type <code>Result</code>, comme
 celui que la méthode <code>read_line</code> retourne (comme nous l'avons vu plus tôt dans
-<a href="ch02-00-guessing-game-tutorial.html#g%C3%A9rer-les-erreurs-potentielles-avec-le-type-result">“Gérer les erreurs potentielles avec le type <code>Result</code>”</a><!-- ignore-->).
+<a href="ch02-00-guessing-game-tutorial.html#g%C3%A9rer-les-erreurs-potentielles-avec-le-type-result">“Gérer les erreurs potentielles avec le type
+<code>Result</code>”</a><!-- ignore-->).
 Nous allons gérer ce <code>Result</code> de la même manière, avec à nouveau la méthode
 <code>expect</code>. Si <code>parse</code> retourne une variante <code>Err</code> de <code>Result</code> car elle ne peut
 pas créer un nombre à partir de la chaîne de caractères, l'appel à
@@ -3588,10 +3614,11 @@ user can take advantage of that in order to quit, as shown here:
 <p>L'utilisateur pourrait quand même interrompre le programme en utilisant le
 raccourci clavier <span class="keystroke">ctrl-c</span>.
 Mais il y a une autre façon d'échapper à ce monstre insatiable, comme nous
-l'avons abordé dans la partie
-<a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre secret”</a><!-- ignore --> :
-si l'utilisateur saisit quelque chose qui n'est pas un nombre, le programme va
+l'avons abordé dans la partie <a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre
+secret”</a><!-- ignore --> : si
+l'utilisateur saisit quelque chose qui n'est pas un nombre, le programme va
 planter. L'utilisateur peut procéder ainsi pour le quitter, comme ci-dessous :</p>
+<!-- markdownlint-disable -->
 <!--
 ```text
 $ cargo run
@@ -3619,6 +3646,7 @@ note: Run with `RUST_BACKTRACE=1` for a backtrace.
 error: Process didn't exit successfully: `target/debug/guess` (exit code: 101)
 ```
 -->
+<!-- markdownlint-restore -->
 <pre><code class="language-text">$ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished dev [unoptimized + debuginfo] target(s) in 1.50 secs
@@ -4338,8 +4366,8 @@ that the second variable’s value is what appears when the variable is used. We
 can shadow a variable by using the same variable’s name and repeating the use
 of the `let` keyword as follows:
 -->
-<p>Comme nous l'avons vu dans la section
-<a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre secret”</a><!-- ignore -->
+<p>Comme nous l'avons vu dans la section <a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre
+secret”</a><!-- ignore -->
 du jeu de devinettes au chapitre 2, on peut déclarer une nouvelle variable
 avec le même nom qu'une variable précédente, et la nouvelle variable
 masquera la première. Les Rustacés disent que la première variable est <em>masquée</em>
@@ -4529,7 +4557,8 @@ compilation. Le compilateur peut souvent déduire quel type utiliser en se basan
 sur la valeur et sur la façon dont elle est utilisée. Dans les cas où plusieurs
 types sont envisageables, comme lorsque nous avons converti une chaîne de
 caractères en un type numérique en utilisant <code>parse</code> dans la section
-<a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre secret”</a><!-- ignore -->
+<a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre
+secret”</a><!-- ignore -->
 du chapitre 2, nous devons ajouter une annotation de type, comme ceci :</p>
 <!--
 ```rust
@@ -4633,6 +4662,7 @@ valeur entière.</p>
 <tr><td>128 bits</td><td><code>i128</code></td><td><code>u128</code></td></tr>
 <tr><td>archi</td><td><code>isize</code></td><td><code>usize</code></td></tr>
 </tbody></table>
+<!-- markdownlint-disable -->
 <!--
 Each variant can be either signed or unsigned and has an explicit size.
 *Signed* and *unsigned* refer to whether it’s possible for the number to be
@@ -4643,6 +4673,7 @@ the sign matters, a number is shown with a plus sign or a minus sign; however,
 when it’s safe to assume the number is positive, it’s shown with no sign.
 Signed numbers are stored using [two’s complement](https://en.wikipedia.org/wiki/Two%27s_complement) representation.
 -->
+<!-- markdownlint-restore -->
 <p>Chaque variante peut-être signée ou non signée et possède une taille explicite.
 <em>Signé</em> et <em>non signé</em> veut dire respectivement que le nombre peut prendre ou
 non des valeurs négatives ou positives — en d'autres termes, si l'on peut lui
@@ -4972,9 +5003,9 @@ a deux types composés de base : les <em>tuples</em> et les tableaux <em>(array
 -->
 <h4><a class="header" href="#le-type-tuple" id="le-type-tuple">Le type <em>tuple</em></a></h4>
 <!--
-A tuple is a general way of grouping together some number of other values
-with a variety of types into one compound type. Tuples have a fixed length:
-once declared, they cannot grow or shrink in size.
+A tuple is a general way of grouping together a number of values with a variety
+of types into one compound type. Tuples have a fixed length: once declared,
+they cannot grow or shrink in size.
 -->
 <p>Un <em>tuple</em> est une manière générale de regrouper plusieurs valeurs
 de types différents en un seul type composé. Les tuples ont une taille fixée :
@@ -5080,12 +5111,12 @@ fn main() {
 </code></pre></pre>
 <!--
 This program creates a tuple, `x`, and then makes new variables for each
-element by using their index. As with most programming languages, the first
-index in a tuple is 0.
+element by using their respective indices. As with most programming languages,
+the first index in a tuple is 0.
 -->
 <p>Ce programme crée un tuple, <code>x</code>, puis crée une nouvelle variable pour
-chaque élément en utilisant leur indice. Comme dans de nombreux langages de
-programmation, le premier indice d'un tuple est 0.</p>
+chaque élément en utilisant leur indices respectifs. Comme dans de nombreux
+langages de programmation, le premier indice d'un tuple est 0.</p>
 <!--
 #### The Array Type
 -->
@@ -5136,7 +5167,7 @@ chapitre 8 expliquera les vecteurs.</p>
 An example of when you might want to use an array rather than a vector is in a
 program that needs to know the names of the months of the year. It’s very
 unlikely that such a program will need to add or remove months, so you can use
-an array because you know it will always contain 12 items:
+an array because you know it will always contain 12 elements:
 -->
 <p>Un exemple de cas où vous pourriez avoir recours à un tableau plutôt qu'à un
 vecteur est un programme qui nécessite de connaître les noms des mois de
@@ -5173,7 +5204,7 @@ fn main() {
 </code></pre></pre>
 <!--
 Here, `i32` is the type of each element. After the semicolon, the number `5`
-indicates the element contains five items.
+indicates the array contains five elements.
 -->
 <p>Ici, <code>i32</code> est le type de chaque élément. Après le point-virgule, le nombre <code>5</code>
 indique que le tableau contient cinq éléments.</p>
@@ -5636,9 +5667,11 @@ une instruction. Dans l'encart 3-1, <code>let y = 6;</code> est une instruction.
     let y = 6;
 }
 </code></pre></pre>
+<!-- markdownlint-disable -->
 <!--
 <span class="caption">Listing 3-1: A `main` function declaration containing one statement</span>
 -->
+<!-- markdownlint-restore -->
 <p><span class="caption">Encart 3-1 : une fonction <code>main</code> qui contient une
 instruction</span></p>
 <!--
@@ -6687,10 +6720,9 @@ guessing the correct number.
 <p>Heureusement, Rust fournit un autre moyen, plus fiable, de sortir d'une boucle.
 Vous pouvez ajouter le mot-clé <code>break</code> à l'intérieur de la boucle pour demander
 au programme d'arrêter la boucle. Souvenez-vous que nous avions fait ceci dans
-le jeu de devinettes, dans la section
-<a href="ch02-00-guessing-game-tutorial.html#arr%C3%AAter-le-programme-apr%C3%A8s-avoir-gagn%C3%A9">“Arrêter le programme après avoir gagné”</a><!-- ignore -->
-du chapitre 2 afin de quitter le programme quand l'utilisateur gagne le jeu en
-devinant le bon nombre.</p>
+le jeu de devinettes, dans la section <a href="ch02-00-guessing-game-tutorial.html#arr%C3%AAter-le-programme-apr%C3%A8s-avoir-gagn%C3%A9">“Arrêter le programme après avoir
+gagné”</a><!-- ignore --> du chapitre 2 afin de
+quitter le programme quand l'utilisateur gagne le jeu en devinant le bon nombre.</p>
 <!--
 #### Returning Values from Loops
 -->
@@ -7451,8 +7483,8 @@ fonction spécifique dans l'espace de nom du type <code>String</code> plutôt qu
 un nom comme <code>string_from</code>. Nous verrons cette syntaxe plus en détail dans la
 section <a href="ch05-03-method-syntax.html">“Syntaxe de méthode”</a><!-- ignore --> du chapitre 5 et
 lorsque nous aborderons les espaces de noms dans la section
-<a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">“Les chemins pour désigner un élément dans l'arborescence de module”</a><!-- ignore -->
-du chapitre 7.</p>
+<a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">“Les chemins pour désigner un élément dans l'arborescence de
+module”</a><!-- ignore --> du chapitre 7.</p>
 <!--
 This kind of string *can* be mutated:
 -->
@@ -7684,7 +7716,13 @@ capot. Une <code>String</code> est constituée de trois éléments, présents su
 un pointeur vers la mémoire qui contient le contenu de la chaîne de caractères,
 une taille, et une capacité. Ce groupe de données est stocké sur la pile. À
 droite, nous avons la mémoire sur le tas qui contient les données.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="String in memory" src="img/trpl04-01.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="Une string en mémoire" src="img/trpl04-01.svg" class="center"
+style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-1: Representation in memory of a `String`
 holding the value `"hello"` bound to `s1`</span>
@@ -7714,7 +7752,13 @@ qui veut dire que nous copions le pointeur, la taille et la capacité qui sont
 stockés sur la pile. Nous ne copions pas les données stockées sur le tas
 auxquelles le pointeur se réfère. Autrement dit, la représentation des données
 dans la mémoire ressemble à l'illustration 4-2.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="s1 and s2 pointing to the same value" src="img/trpl04-02.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="s1 et s2 qui pointent vers la même valeur" src="img/trpl04-02.svg"
+class="center" style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-2: Representation in memory of the variable `s2`
 that has a copy of the pointer, length, and capacity of `s1`</span>
@@ -7732,7 +7776,13 @@ the data on the heap were large.
 mémoire si Rust avait aussi copié les données sur le tas. Si Rust faisait ceci,
 l'opération <code>s2 = s1</code> pourrait potentiellement être très coûteuse en termes de
 performances d'exécution si les données sur le tas étaient volumineuses.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="s1 and s2 to two places" src="img/trpl04-03.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="s1 et s2 à deux endroits" src="img/trpl04-03.svg" class="center"
+style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-3: Another possibility for what `s2 = s1` might
 do if Rust copied the heap data as well</span>
@@ -7809,7 +7859,13 @@ copie superficielle. Mais comme Rust neutralise aussi la première variable, au
 lieu d'appeler cela une copie superficielle, on appelle cela un <em>déplacement</em>.
 Ici, nous pourrions dire que <code>s1</code> a été <em>déplacé</em> dans <code>s2</code>. Donc ce qui se
 passe réellement est décrit par l'illustration 4-4.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="s1 moved to s2" src="img/trpl04-04.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="s1 déplacé dans s2" src="img/trpl04-04.svg" class="center"
+style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-4: Representation in memory after `s1` has been
 invalidated</span>
@@ -7842,7 +7898,7 @@ syntax in Chapter 5, but because methods are a common feature in many
 programming languages, you’ve probably seen them before.
 -->
 <p>Si nous <em>voulons</em> faire une copie profonde des données sur le tas d'une
-<code>String</code>, et pas seulement des données sur la pile, nous pouvons utiliser une 
+<code>String</code>, et pas seulement des données sur la pile, nous pouvons utiliser une
 méthode commune qui s'appelle <code>clone</code>. Nous aborderons la syntaxe des méthodes
 au chapitre 5, mais comme les méthodes sont des outils courants dans de
 nombreux langages, vous les avez probablement utilisées auparavant.</p>
@@ -8009,7 +8065,7 @@ fn makes_copy(some_integer: i32) { // some_integer comes into scope
 } // Here, some_integer goes out of scope. Nothing special happens.
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">fn main() { 
+<pre><pre class="playpen"><code class="language-rust">fn main() {
     let s = String::from(&quot;hello&quot;);  // s rentre dans la portée.
 
     prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
@@ -8207,12 +8263,733 @@ common. Luckily for us, Rust has a feature for this concept, called
 <p>Mais c'est trop laborieux et beaucoup de travail pour un principe qui devrait
 être banal. Heureusement pour nous, Rust a une fonctionnalité pour ce principe,
 c'est ce qu'on appelle les <em>références</em>.</p>
+<!-- markdownlint-disable -->
 <!--
 [data-types]: ch03-02-data-types.html#data-types
 [derivable-traits]: appendix-03-derivable-traits.html
 [method-syntax]: ch05-03-method-syntax.html#method-syntax
 [paths-module-tree]: ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html
 -->
+<!-- markdownlint-restore -->
+<!--
+## References and Borrowing
+-->
+<h2><a class="header" href="#les-références-et-lemprunt" id="les-références-et-lemprunt">Les références et l'emprunt</a></h2>
+<!--
+The issue with the tuple code in Listing 4-5 is that we have to return the
+`String` to the calling function so we can still use the `String` after the
+call to `calculate_length`, because the `String` was moved into
+`calculate_length`.
+-->
+<p>La difficulté avec le code du tuple à la fin de la section précédente est que
+nous avons besoin de retourner la <code>String</code> au code appelant pour qu'il puisse
+continuer à utiliser la <code>String</code> après l'appel à <code>calculer_taille</code>, car la
+<code>String</code> a été déplacée dans <code>calculer_taille</code>.</p>
+<!--
+Here is how you would define and use a `calculate_length` function that has a
+reference to an object as a parameter instead of taking ownership of the
+value:
+-->
+<p>Voici comment définir et utiliser une fonction <code>calculer_taille</code> qui prend une
+<em>référence</em> à un objet en paramètre plutôt que de prendre possession de la
+valeur :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let s1 = String::from("hello");
+
+    let len = calculate_length(&s1);
+
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let s1 = String::from(&quot;hello&quot;);
+
+    let long = calculer_taille(&amp;s1);
+
+    println!(&quot;La taille de '{}' est {}.&quot;, s1, long);
+}
+
+fn calculer_taille(s: &amp;String) -&gt; usize {
+    s.len()
+}
+</code></pre></pre>
+<!--
+First, notice that all the tuple code in the variable declaration and the
+function return value is gone. Second, note that we pass `&s1` into
+`calculate_length` and, in its definition, we take `&String` rather than
+`String`.
+-->
+<p>Premièrement, on peut observer que tout le code des <em>tuples</em> dans la déclaration
+des variables et dans la valeur de retour de la fonction a été enlevé.
+Deuxièmement, remarquez que nous passons <code>&amp;s1</code> à <code>calculer_taille</code>, et que dans
+sa définition, nous utilisons <code>&amp;String</code> plutôt que <code>String</code>.</p>
+<!--
+These ampersands are *references*, and they allow you to refer to some value
+without taking ownership of it. Figure 4-5 shows a diagram.
+-->
+<p>Ces esperluettes sont des <em>références</em>, et elles permettent de vous référer à
+une valeur sans en prendre possession. L'illustration 4-5 nous montre cela dans
+un schéma.</p>
+<!-- markdownlint-disable -->
+<!--
+<img alt="&String s pointing at String s1" src="img/trpl04-05.svg" class="center" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="&String s qui pointe vers la String s1" src="img/trpl04-05.svg"
+class="center" /></p>
+<!--
+<span class="caption">Figure 4-5: A diagram of `&String s` pointing at `String
+s1`</span>
+-->
+<p><span class="caption">Illustration 4-5 : Un schéma de la <code>&amp;String s</code> qui pointe
+vers la <code>String s1</code></span></p>
+<!--
+> Note: The opposite of referencing by using `&` is *dereferencing*, which is
+> accomplished with the dereference operator, `*`. We’ll see some uses of the
+> dereference operator in Chapter 8 and discuss details of dereferencing in
+> Chapter 15.
+-->
+<blockquote>
+<p>Remarque : l'opposé de la création de références avec <code>&amp;</code> est le
+<em>déréférencement</em>, qui s'effectue avec l'opérateur de déréférencement, <code>*</code>.
+Nous allons voir quelques utilisations de l'opérateur de déréférencement dans
+le chapitre 8 et nous aborderons les détails du déréférencement dans le
+chapitre 15.</p>
+</blockquote>
+<!--
+Let’s take a closer look at the function call here:
+-->
+<p>Regardons de plus près l'appel à la fonction :</p>
+<!--
+```rust
+# fn calculate_length(s: &String) -> usize {
+#     s.len()
+# }
+let s1 = String::from("hello");
+
+let len = calculate_length(&s1);
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+fn calculer_taille(s: &amp;String) -&gt; usize {
+    s.len()
+}
+</span>let s1 = String::from(&quot;hello&quot;);
+
+let long = calculer_taille(&amp;s1);
+<span class="boring">}
+</code></pre></pre>
+<!--
+The `&s1` syntax lets us create a reference that *refers* to the value of `s1`
+but does not own it. Because it does not own it, the value it points to will
+not be dropped when the reference goes out of scope.
+-->
+<p>La syntaxe <code>&amp;s1</code> nous permet de créer une référence qui se <em>réfère</em> à la valeur
+de <code>s1</code> mais n'en prend pas possession. Et comme elle ne la possède pas, la
+valeur vers laquelle elle pointe ne sera pas libérée quand cette référence
+sortira de la portée.</p>
+<!--
+Likewise, the signature of the function uses `&` to indicate that the type of
+the parameter `s` is a reference. Let’s add some explanatory annotations:
+-->
+<p>De la même manière, la signature de la fonction utilise <code>&amp;</code> pour indiquer que
+le type du paramètre <code>s</code> est une référence. Ajoutons quelques commentaires
+explicatifs :</p>
+<!--
+```rust
+fn calculate_length(s: &String) -> usize { // s is a reference to a String
+    s.len()
+} // Here, s goes out of scope. But because it does not have ownership of what
+  // it refers to, nothing happens.
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>fn calculer_taille(s: &amp;String) -&gt; usize { // s est une référence à une String
+    s.len()
+} // Ici, s sort de la portée. Mais comme elle ne prend pas possession de ce
+  // à quoi elle fait référence, il ne se passe rien.
+<span class="boring">}
+</code></pre></pre>
+<!--
+The scope in which the variable `s` is valid is the same as any function
+parameter’s scope, but we don’t drop what the reference points to when it goes
+out of scope because we don’t have ownership. When functions have references as
+parameters instead of the actual values, we won’t need to return the values in
+order to give back ownership, because we never had ownership.
+-->
+<p>La portée dans laquelle la variable <code>s</code> est en vigueur est la même que toute
+portée d'un paramètre de fonction, mais nous ne libérons pas ce sur quoi cette
+référence pointe quand elle sort de la portée, car nous n'en prenons pas
+possession. Lorsque les fonctions ont des références en paramètres au lieu des
+valeurs réelles, nous n'avons pas besoin de retourner les valeurs pour les
+rendre, car nous n'en avons jamais pris possession.</p>
+<!--
+We call having references as function parameters *borrowing*. As in real life,
+if a person owns something, you can borrow it from them. When you’re done, you
+have to give it back.
+-->
+<p>Quand nous avons des références dans les paramètres d'une fonction, nous
+appelons cela <em>l'emprunt</em>. Comme dans la vie réelle, quand un objet appartient
+à quelqu'un, vous pouvez le lui emprunter. Et quand vous avez fini, vous devez
+le lui rendre.</p>
+<!--
+So what happens if we try to modify something we’re borrowing? Try the code in
+Listing 4-6. Spoiler alert: it doesn’t work!
+-->
+<p>Donc qu'est-ce qui se passe si nous essayons de modifier quelque chose que nous
+empruntons ? Essayez le code dans l'encart 4-6. Attention, spoiler : cela ne
+fonctionne pas !</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let s = String::from("hello");
+
+    change(&s);
+}
+
+fn change(some_string: &String) {
+    some_string.push_str(", world");
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let s = String::from(&quot;hello&quot;);
+
+    changer(&amp;s);
+}
+
+fn changer(texte: &amp;String) {
+    texte.push_str(&quot;, world&quot;);
+}
+</code></pre>
+<!--
+<span class="caption">Listing 4-6: Attempting to modify a borrowed value</span>
+-->
+<p><span class="caption">Entrée 4-6 : Tentative de modification d'une valeur
+empruntée.</span></p>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<!--
+```text
+error[E0596]: cannot borrow immutable borrowed content `*some_string` as mutable
+ -- > error.rs:8:5
+  |
+7 | fn change(some_string: &String) {
+  |                        ------- use `&mut String` here to make mutable
+8 |     some_string.push_str(", world");
+  |     ^^^^^^^^^^^ cannot borrow as mutable
+```
+-->
+<pre><code class="language-text">error[E0596]: cannot borrow immutable borrowed content `*texte` as mutable
+ --&gt; error.rs:8:5
+  |
+7 | fn changer(texte: &amp;String) {
+  |                   ------- use `&amp;mut String` here to make mutable
+8 |     texte.push_str(&quot;, world&quot;);
+  |     ^^^^^ cannot borrow as mutable
+</code></pre>
+<!--
+Just as variables are immutable by default, so are references. We’re not
+allowed to modify something we have a reference to.
+-->
+<p>Comme les variables sont immuables par défaut, les références le sont aussi.
+Nous ne sommes pas autorisés à modifier une chose quand nous avons une référence
+vers elle.</p>
+<!--
+### Mutable References
+-->
+<h3><a class="header" href="#les-références-mutables" id="les-références-mutables">Les références mutables</a></h3>
+<!--
+We can fix the error in the code from Listing 4-6 with just a small tweak:
+-->
+<p>Nous pouvons résoudre l'erreur du code de l'encart 4-6 avec une petite
+modification :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let mut s = String::from("hello");
+
+    change(&mut s);
+}
+
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut s = String::from(&quot;hello&quot;);
+
+    changer(&amp;mut s);
+}
+
+fn changer(texte: &amp;mut String) {
+    texte.push_str(&quot;, world&quot;);
+}
+</code></pre></pre>
+<!--
+First, we had to change `s` to be `mut`. Then we had to create a mutable
+reference with `&mut s` and accept a mutable reference with `some_string: &mut
+String`.
+-->
+<p>D'abord, nous avons dû préciser que <code>s</code> est <code>mut</code>. Ensuite, nous avons dû
+créer une référence mutable avec <code>&amp;mut s</code> et accepter de prendre une référence
+mutable avec <code>texte: &amp;mut String</code>.</p>
+<!--
+But mutable references have one big restriction: you can have only one mutable
+reference to a particular piece of data in a particular scope. This code will
+fail:
+-->
+<p>Mais les références mutables ont une grosse contrainte : vous ne pouvez avoir
+qu'une seule référence mutable pour chaque donnée dans chaque portée. Le code
+suivant va échouer :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+let mut s = String::from("hello");
+
+let r1 = &mut s;
+let r2 = &mut s;
+
+println!("{}, {}", r1, r2);
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">let mut s = String::from(&quot;hello&quot;);
+
+let r1 = &amp;mut s;
+let r2 = &amp;mut s;
+
+println!(&quot;{}, {}&quot;, r1, r2);
+</code></pre>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<pre><code class="language-text">error[E0499]: cannot borrow `s` as mutable more than once at a time
+ -- &gt; src/main.rs:5:14
+  |
+4 |     let r1 = &amp;mut s;
+  |              ------ first mutable borrow occurs here
+5 |     let r2 = &amp;mut s;
+  |              ^^^^^^ second mutable borrow occurs here
+6 |
+7 |     println!(&quot;{}, {}&quot;, r1, r2);
+  |                        -- first borrow later used here
+</code></pre>
+<!--
+This restriction allows for mutation but in a very controlled fashion. It’s
+something that new Rustaceans struggle with, because most languages let you
+mutate whenever you’d like.
+-->
+<p>Cette contrainte autorise les mutations, mais de manière très contrôlée. C'est
+quelque chose que les nouveaux Rustacés ont du mal à surmonter, car la plupart
+des langages vous permettent de modifier les données quand vous le voulez.</p>
+<!--
+The benefit of having this restriction is that Rust can prevent data races at
+compile time. A *data race* is similar to a race condition and happens when
+these three behaviors occur:
+-->
+<p>L'avantage d'avoir cette contrainte est que Rust peut empêcher les accès
+concurrents au moment de la compilation. Un <em>accès concurrent</em> est une situation
+de concurrence qui se produit lorsque ces trois facteurs se combinent :</p>
+<!--
+* Two or more pointers access the same data at the same time.
+* At least one of the pointers is being used to write to the data.
+* There’s no mechanism being used to synchronize access to the data.
+-->
+<ul>
+<li>Deux pointeurs ou plus accèdent à la même donnée au même moment.</li>
+<li>Au moins un des pointeurs est utilisé pour écrire dans cette donnée.</li>
+<li>On n'utilise aucun mécanisme pour synchroniser l'accès aux données.</li>
+</ul>
+<!--
+Data races cause undefined behavior and can be difficult to diagnose and fix
+when you’re trying to track them down at runtime; Rust prevents this problem
+from happening because it won’t even compile code with data races!
+-->
+<p>L'accès concurrent provoque des comportements indéfinis et rend difficile le
+diagnostic et la résolution de problèmes lorsque vous essayez de les reproduire
+au moment de l'exécution ; Rust évite ce problème parce qu'il ne va pas compiler
+du code avec des accès concurrents !</p>
+<!--
+As always, we can use curly brackets to create a new scope, allowing for
+multiple mutable references, just not *simultaneous* ones:
+-->
+<p>Comme d'habitude, nous pouvons utiliser des accolades pour créer une nouvelle
+portée, pour nous permettre d'avoir plusieurs références mutables, mais pas
+<em>en même temps</em> :</p>
+<!--
+```rust
+let mut s = String::from("hello");
+
+{
+    let r1 = &mut s;
+
+} // r1 goes out of scope here, so we can make a new reference with no problems.
+
+let r2 = &mut s;
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let mut s = String::from(&quot;hello&quot;);
+
+{
+    let r1 = &amp;mut s;
+
+} // r1 sort de la portée ici, donc nous pouvons créer une nouvelle référence
+  // sans problèmes.
+
+let r2 = &amp;mut s;
+<span class="boring">}
+</code></pre></pre>
+<!--
+A similar rule exists for combining mutable and immutable references. This code
+results in an error:
+-->
+<p>Une règle similaire existe pour combiner les références immuables et mutables.
+Ce code va mener à une erreur :</p>
+<!--
+```rust,ignore,does_not_compile
+let mut s = String::from("hello");
+
+let r1 = &s; // no problem
+let r2 = &s; // no problem
+let r3 = &mut s; // BIG PROBLEM
+
+println!("{}, {}, and {}", r1, r2, r3);
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">let mut s = String::from(&quot;hello&quot;);
+
+let r1 = &amp;s; // sans problème
+let r2 = &amp;s; // sans problème
+let r3 = &amp;mut s; // GROS PROBLEME
+
+println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
+</code></pre>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<!--
+```text
+error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
+ -- > src/main.rs:6:14
+  |
+4 |     let r1 = &s; // no problem
+  |              -- immutable borrow occurs here
+5 |     let r2 = &s; // no problem
+6 |     let r3 = &mut s; // BIG PROBLEM
+  |              ^^^^^^ mutable borrow occurs here
+7 |
+8 |     println!("{}, {}, and {}", r1, r2, r3);
+  |                                -- immutable borrow later used here
+```
+-->
+<pre><code class="language-text">error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
+ -- &gt; src/main.rs:6:14
+  |
+4 |     let r1 = &amp;s; // sans problème
+  |              -- immutable borrow occurs here
+5 |     let r2 = &amp;s; // sans problème
+6 |     let r3 = &amp;mut s; // GROS PROBLEME
+  |              ^^^^^^ mutable borrow occurs here
+7 |
+8 |     println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
+  |                                -- immutable borrow later used here
+</code></pre>
+<!--
+Whew! We *also* cannot have a mutable reference while we have an immutable one.
+Users of an immutable reference don’t expect the values to suddenly change out
+from under them! However, multiple immutable references are okay because no one
+who is just reading the data has the ability to affect anyone else’s reading of
+the data.
+-->
+<p>Ouah ! Nous ne pouvons pas <em>non plus</em> avoir une référence mutable pendant que
+nous en avons une autre immuable. Les utilisateurs d'une référence immuable ne
+s'attendent pas à ce que sa valeur change soudainement ! Cependant,
+l'utilisation de plusieurs références immuables ne pose pas de problème, car
+simplement lire une donnée ne va pas affecter la lecture de la donnée par les
+autres.</p>
+<!--
+Note that a reference’s scope starts from where it is introduced and continues
+through the last time that reference is used. For instance, this code will
+compile because the last usage of the immutable references occurs before the
+mutable reference is introduced:
+-->
+<p>Notez bien que la portée d'une référence commence dès qu'elle est introduite et
+se poursuit jusqu'au dernier endroit où cette référence est utilisée. Par
+exemple, le code suivant va se compiler car la dernière utilisation de la
+référence immuable est située avant l'introduction de la référence mutable :</p>
+<!-- This example is being ignored because there's a bug in rustdoc making the
+edition2018 not work. The bug is currently fixed in nightly, so when we update
+the book to >= 1.35, `ignore` can be removed from this example. -->
+<!--
+```rust,edition2018,ignore
+let mut s = String::from("hello");
+
+let r1 = &s; // no problem
+let r2 = &s; // no problem
+println!("{} and {}", r1, r2);
+// r1 and r2 are no longer used after this point
+
+let r3 = &mut s; // no problem
+println!("{}", r3);
+```
+-->
+<pre><code class="language-rust edition2018 ignore">let mut s = String::from(&quot;hello&quot;);
+
+let r1 = &amp;s; // sans problème
+let r2 = &amp;s; // sans problème
+println!(&quot;{} et {}&quot;, r1, r2);
+// r1 et r2 ne sont plus utilisés à partir d'ici
+
+let r3 = &amp;mut s; // sans problème
+println!(&quot;{}&quot;, r3);
+</code></pre>
+<!--
+The scopes of the immutable references `r1` and `r2` end after the `println!`
+where they are last used, which is before the mutable reference `r3` is
+created. These scopes don’t overlap, so this code is allowed.
+-->
+<p>Les portées des références immuables <code>r1</code> et <code>r2</code> se terminent après le
+<code>println!</code> où elles sont utilisées pour la dernière fois, c'est-à-dire avant que
+la référence mutable <code>r3</code> soit créée. Ces portées ne se chevauchent pas, donc ce
+code est autorisé.</p>
+<!--
+Even though borrowing errors may be frustrating at times, remember that it’s
+the Rust compiler pointing out a potential bug early (at compile time rather
+than at runtime) and showing you exactly where the problem is. Then you don’t
+have to track down why your data isn’t what you thought it was.
+-->
+<p>Même si ces erreurs d'emprunt peuvent parfois être frustrantes, n'oubliez pas
+que le compilateur de Rust nous signale un bogue potentiel en avance (au moment
+de la compilation plutôt que l'exécution) et vous montre où se situe exactement
+le problème. Ainsi, vous n'avez pas à chercher pourquoi vos données ne
+correspondent pas à ce que vous pensiez qu'elles devraient être.</p>
+<!--
+### Dangling References
+-->
+<h3><a class="header" href="#les-références-pendouillantes" id="les-références-pendouillantes">Les références pendouillantes</a></h3>
+<!--
+In languages with pointers, it’s easy to erroneously create a *dangling
+pointer*, a pointer that references a location in memory that may have been
+given to someone else, by freeing some memory while preserving a pointer to
+that memory. In Rust, by contrast, the compiler guarantees that references will
+never be dangling references: if you have a reference to some data, the
+compiler will ensure that the data will not go out of scope before the
+reference to the data does.
+-->
+<p>Avec les langages qui utilisent les pointeurs, il est facile de créer par erreur
+un <em>pointeur pendouillant</em> (<em>dangling pointer</em>), qui est un pointeur qui pointe
+vers un emplacement mémoire qui a été donné à quelqu'un d'autre, en libérant de
+la mémoire tout en conservant un pointeur vers cette mémoire. En revanche, avec
+Rust, le compilateur garantit que les références ne seront jamais des références
+pendouillantes : si nous avons une référence vers une donnée, le compilateur va
+s'assurer que cette donnée ne va pas sortir de la portée avant que la référence
+vers cette donnée en soit elle-même sortie.</p>
+<!--
+Let’s try to create a dangling reference, which Rust will prevent with a
+compile-time error:
+-->
+<p>Essayons de créer une référence pendouillante, ce que Rust va empêcher avec une
+erreur au moment de la compilation :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let reference_to_nothing = dangle();
+}
+
+fn dangle() -> &String {
+    let s = String::from("hello");
+
+    &s
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let reference_vers_rien = pendouille();
+}
+
+fn pendouille() -&gt; &amp;String {
+    let s = String::from(&quot;hello&quot;);
+
+    &amp;s
+}
+</code></pre>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<!--
+```text
+error[E0106]: missing lifetime specifier
+ -- > main.rs:5:16
+  |
+5 | fn dangle() -> &String {
+  |                ^ expected lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is
+  no value for it to be borrowed from
+  = help: consider giving it a 'static lifetime
+```
+-->
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; main.rs:5:16
+  |
+5 | fn pendouille() -&gt; &amp;String {
+  |                    ^ expected lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is
+  no value for it to be borrowed from
+  = help: consider giving it a 'static lifetime
+</code></pre>
+<!--
+This error message refers to a feature we haven’t covered yet: lifetimes. We’ll
+discuss lifetimes in detail in Chapter 10. But, if you disregard the parts
+about lifetimes, the message does contain the key to why this code is a problem:
+-->
+<p>Ce message d'erreur fait référence à une fonctionnalité que nous n'avons pas
+encore vue : les <em>durées de vie</em>. Nous aborderons les durées de vie dans le
+chapitre 10. Mais, si vous mettez de côté les parties qui parlent de durées de
+vie, le message explique pourquoi le code pose problème :</p>
+<!--
+```text
+this function's return type contains a borrowed value, but there is no value
+for it to be borrowed from.
+```
+-->
+<pre><code class="language-text">this function's return type contains a borrowed value, but there is no value
+for it to be borrowed from.
+</code></pre>
+<p>Ce qui peut se traduire par :</p>
+<pre><code class="language-text">Le type de retour de cette fonction contient une valeur empruntée, mais il n'y a
+plus aucune valeur qui peut être empruntée.
+</code></pre>
+<!--
+Let’s take a closer look at exactly what’s happening at each stage of our
+`dangle` code:
+-->
+<p>Regardons de plus près ce qui se passe exactement à chaque étape de notre code
+de <code>pendouille</code> :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn dangle() -> &String { // dangle returns a reference to a String
+
+    let s = String::from("hello"); // s is a new String
+
+    &s // we return a reference to the String, s
+} // Here, s goes out of scope, and is dropped. Its memory goes away.
+  // Danger!
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn pendouille() -&gt; &amp;String { // pendouille retourne une référence vers une String
+
+    let s = String::from(&quot;hello&quot;); // s est une nouvelle String
+
+    &amp;s // nous retournons une référence vers la String, s
+} // Ici, s sort de la portée, et est libéré. Sa mémoire disparaît.
+  // Attention, danger !
+</code></pre>
+<!--
+Because `s` is created inside `dangle`, when the code of `dangle` is finished,
+`s` will be deallocated. But we tried to return a reference to it. That means
+this reference would be pointing to an invalid `String`. That’s no good! Rust
+won’t let us do this.
+-->
+<p>Comme <code>s</code> est créé dans <code>pendouille</code>, lorsque le code de <code>pendouille</code> est
+terminé, la variable <code>s</code> sera désallouée. Mais nous avons essayé de retourner
+une référence vers elle. Cela veut dire que cette référence va pointer vers une
+<code>String</code> invalide. Ce n'est pas bon ! Rust ne nous laissera pas faire cela.</p>
+<!--
+The solution here is to return the `String` directly:
+-->
+<p>Ici la solution est de renvoyer la <code>String</code> directement :</p>
+<!--
+```rust
+fn no_dangle() -> String {
+    let s = String::from("hello");
+
+    s
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>fn ne_pendouille_pas() -&gt; String {
+    let s = String::from(&quot;hello&quot;);
+
+    s
+}
+<span class="boring">}
+</code></pre></pre>
+<!--
+This works without any problems. Ownership is moved out, and nothing is
+deallocated.
+-->
+<p>Cela fonctionne sans problème. La possession est transférée à la valeur de
+retour de la fonction, et rien n'est désalloué.</p>
+<!--
+### The Rules of References
+-->
+<h3><a class="header" href="#les-règles-de-référencement" id="les-règles-de-référencement">Les règles de référencement</a></h3>
+<!--
+Let’s recap what we’ve discussed about references:
+-->
+<p>Récapitulons ce que nous avons vu à propos des références :</p>
+<!--
+* At any given time, you can have *either* one mutable reference *or* any
+  number of immutable references.
+* References must always be valid.
+-->
+<ul>
+<li>À un instant donné, vous pouvez avoir <em>soit</em> une référence mutable, <em>soit</em> un
+nombre quelconque de références immuables.</li>
+<li>Les références doivent toujours être en vigueur.</li>
+</ul>
+<!--
+Next, we’ll look at a different kind of reference: slices.
+-->
+<p>Ensuite, nous aborderons un autre type de référence : les <em>slices</em>.</p>
 <!-- # Using Structs to Structure Related Data -->
 <h1><a class="header" href="#utiliser-les-structures-pour-structurer-des-données-apparentées" id="utiliser-les-structures-pour-structurer-des-données-apparentées">Utiliser les structures pour structurer des données apparentées</a></h1>
 <!--
@@ -8900,6 +9677,518 @@ puisse stocker des références dans des structures, mais pour le moment, nous
 résoudrons les erreurs comme celles-ci en utilisant des types possédés comme
 <code>String</code> plutôt que des références comme <code>&amp;str</code>.</p>
 </blockquote>
+<!--
+## An Example Program Using Structs
+-->
+<h2><a class="header" href="#un-exemple-de-programme-qui-utilise-des-structures" id="un-exemple-de-programme-qui-utilise-des-structures">Un exemple de programme qui utilise des structures</a></h2>
+<!--
+To understand when we might want to use structs, let’s write a program that
+calculates the area of a rectangle. We’ll start with single variables, and then
+refactor the program until we’re using structs instead.
+-->
+<p>Pour comprendre dans quels cas nous voudrions utiliser des structures, écrivons
+un programme qui calcule l'aire d'un rectangle. Nous commencerons avec de
+simples variables, puis on remaniera le code jusqu'à utiliser des structures à
+la place.</p>
+<!--
+Let’s make a new binary project with Cargo called *rectangles* that will take
+the width and height of a rectangle specified in pixels and calculate the area
+of the rectangle. Listing 5-8 shows a short program with one way of doing
+exactly that in our project’s *src/main.rs*.
+-->
+<p>Créons un nouveau projet binaire avec Cargo nommé <em>rectangles</em> qui prendra la
+largeur et la hauteur en pixels d'un rectangle et qui calculera l'aire de ce
+rectangle. L'encart 5-8 montre un petit programme qui effectue cette tâche d'une
+certaine manière dans le <em>src/main.rs</em> de notre projet.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier: src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let width1 = 30;
+    let height1 = 50;
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(width1, height1)
+    );
+}
+
+fn area(width: u32, height: u32) -> u32 {
+    width * height
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let largeur1 = 30;
+    let hauteur1 = 50;
+
+    println!(
+        &quot;L'aire du rectangle est de {} pixels carrés.&quot;,
+        aire(largeur1, hauteur1)
+    );
+}
+
+fn aire(largeur: u32, hauteur: u32) -&gt; u32 {
+    largeur * hauteur
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-8: Calculating the area of a rectangle
+specified by separate width and height variables</span>
+-->
+<p><span class="caption">Encart 5-8 : Calcul de l'aire d'un rectangle défini par
+les variables distinctes <code>largeur</code> et <code>hauteur</code></span></p>
+<!--
+Now, run this program using `cargo run`:
+-->
+<p>Maintenant, lancez ce programme avec <code>cargo run</code> :</p>
+<!--
+```text
+The area of the rectangle is 1500 square pixels.
+```
+-->
+<pre><code class="language-text">L'aire du rectangle est de 1500 pixels carrés.
+</code></pre>
+<!--
+Even though Listing 5-8 works and figures out the area of the rectangle by
+calling the `area` function with each dimension, we can do better. The width
+and the height are related to each other because together they describe one
+rectangle.
+-->
+<p>Bien que l'encart 5-8 fonctionne et détermine l'aire du rectangle en appelant
+la fonction <code>aire</code> avec chaque dimension, on peut faire mieux. La largeur et la
+hauteur sont couplées entre elles car elles décrivent toutes les deux un rectangle.</p>
+<!--
+The issue with this code is evident in the signature of `area`:
+-->
+<p>Le problème de ce code se voit dans la signature de <code>aire</code> :</p>
+<!--
+```rust,ignore
+fn area(width: u32, height: u32) -> u32 {
+```
+-->
+<pre><code class="language-rust ignore">fn aire(largeur: u32, hauteur: u32) -&gt; u32 {
+</code></pre>
+<!--
+The `area` function is supposed to calculate the area of one rectangle, but the
+function we wrote has two parameters. The parameters are related, but that’s
+not expressed anywhere in our program. It would be more readable and more
+manageable to group width and height together. We’ve already discussed one way
+we might do that in [“The Tuple Type”][the-tuple-type]<!−− ignore −− > section
+of Chapter 3: by using tuples.
+-->
+<p>La fonction <code>aire</code> est censée calculer l'aire d'un rectangle, mais la fonction
+que nous avons écrite a deux paramètres. Les paramètres sont liés, mais ce n'est
+exprimé nulle part dans notre programme. Il serait plus lisible et plus gérable
+de regrouper ensemble la largeur et la hauteur. Nous avons déjà vu dans la
+section <a href="ch03-02-data-types.html#le-type-tuple">“Le type <em>tuple</em>”</a><!-- ignore --> du chapitre 3 une
+façon qui nous permettrait de le faire : en utilisant des tuples.</p>
+<!--
+### Refactoring with Tuples
+-->
+<h3><a class="header" href="#remanier-le-code-avec-des-tuples" id="remanier-le-code-avec-des-tuples">Remanier le code avec des tuples</a></h3>
+<!--
+Listing 5-9 shows another version of our program that uses tuples.
+-->
+<p>L'encart 5-9 nous montre une autre version de notre programme qui utilise des
+tuples.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let rect1 = (30, 50);
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(rect1)
+    );
+}
+
+fn area(dimensions: (u32, u32)) -> u32 {
+    dimensions.0 * dimensions.1
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let rect1 = (30, 50);
+
+    println!(
+        &quot;L'aire du rectangle est de {} pixels carrés.&quot;,
+        aire(rect1)
+    );
+}
+
+fn aire(dimensions: (u32, u32)) -&gt; u32 {
+    dimensions.0 * dimensions.1
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-9: Specifying the width and height of the
+rectangle with a tuple</span>
+-->
+<p><span class="caption">Encart 5-9 : Renseigner la largeur et la hauteur du
+rectangle dans un tuple</span></p>
+<!--
+In one way, this program is better. Tuples let us add a bit of structure, and
+we’re now passing just one argument. But in another way, this version is less
+clear: tuples don’t name their elements, so our calculation has become more
+confusing because we have to index into the parts of the tuple.
+-->
+<p>D'une certaine façon, ce programme est meilleur. Les tuples nous permettent de
+structurer un peu plus et nous ne passons plus qu'un argument. Mais d'une autre
+façon, cette version est moins claire : les tuples ne donnent pas de noms à
+leurs éléments, donc notre calcul est devenu plus déroutant puisqu'il faut
+accéder aux éléments du tuple via leur indice.</p>
+<!--
+It doesn’t matter if we mix up width and height for the area calculation, but
+if we want to draw the rectangle on the screen, it would matter! We would have
+to keep in mind that `width` is the tuple index `0` and `height` is the tuple
+index `1`. If someone else worked on this code, they would have to figure this
+out and keep it in mind as well. It would be easy to forget or mix up these
+values and cause errors, because we haven’t conveyed the meaning of our data in
+our code.
+-->
+<p>Ce n'est pas grave de confondre la largeur et la hauteur pour calculer l'aire,
+mais si on voulait afficher le rectangle à l'écran, cela serait problématique !
+Il nous faut garder à l'esprit que la <code>largeur</code> est l'élément à l'indice 0 du
+tuple et que la <code>hauteur</code> est l'élément à l'indice 1. Si quelqu'un d'autre
+travaillait sur ce code, il devrait le déduire et s'en souvenir aussi. Il est
+facile d'oublier ou de confondre ces valeurs et par conséquent provoquer des
+erreurs, parce qu'on n'a pas exprimé la signification de nos données dans notre
+code.</p>
+<!--
+### Refactoring with Structs: Adding More Meaning
+-->
+<h3><a class="header" href="#remanier-avec-des-structures--donner-plus-de-sens" id="remanier-avec-des-structures--donner-plus-de-sens">Remanier avec des structures : donner plus de sens</a></h3>
+<!--
+We use structs to add meaning by labeling the data. We can transform the tuple
+we’re using into a data type with a name for the whole as well as names for the
+parts, as shown in Listing 5-10.
+-->
+<p>On utilise des structures pour rendre les données plus expressives en leur
+donnant des noms. On peut transformer le tuple que nous avons utilisé en un type
+de donnée nommé dont ses éléments sont aussi nommés, comme le montre l'encart
+5-10.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(&rect1)
+    );
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">struct Rectangle {
+    largeur: u32,
+    hauteur: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
+
+    println!(
+        &quot;L'aire du rectangle est de {} pixels carrés.&quot;,
+        aire(&amp;rect1)
+    );
+}
+
+fn aire(rectangle: &amp;Rectangle) -&gt; u32 {
+    rectangle.largeur * rectangle.hauteur
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-10: Defining a `Rectangle` struct</span>
+-->
+<p><span class="caption">Encart 5-10 : Définition d'une structure
+<code>Rectangle</code></span></p>
+<!--
+Here we’ve defined a struct and named it `Rectangle`. Inside the curly
+brackets, we defined the fields as `width` and `height`, both of which have
+type `u32`. Then in `main`, we created a particular instance of `Rectangle`
+that has a width of 30 and a height of 50.
+-->
+<p>Ici, on a défini une structure et on l'a appelée <code>Rectangle</code>. Entre les
+accolades, on a défini les champs <code>largeur</code> et <code>hauteur</code>, tous deux du type
+<code>u32</code>. Puis dans <code>main</code>, on crée une instance de <code>Rectangle</code> de largeur 30 et de
+hauteur 50.</p>
+<!--
+Our `area` function is now defined with one parameter, which we’ve named
+`rectangle`, whose type is an immutable borrow of a struct `Rectangle`
+instance. As mentioned in Chapter 4, we want to borrow the struct rather than
+take ownership of it. This way, `main` retains its ownership and can continue
+using `rect1`, which is the reason we use the `&` in the function signature and
+where we call the function.
+-->
+<p>Notre fonction <code>aire</code> est désormais définie avec un unique paramètre, nommé
+<code>rectangle</code>, et dont le type est une référence immuable vers une instance de la
+structure <code>Rectangle</code>. Comme mentionné au chapitre 4, on préfère emprunter la
+structure au lieu d'en prendre possession. Ainsi, elle reste en possession de
+<code>main</code> qui peut continuer à utiliser <code>rect1</code> ; c'est pourquoi on utilise le <code>&amp;</code>
+dans la signature de la fonction ainsi que dans l'appel de fonction.</p>
+<!--
+The `area` function accesses the `width` and `height` fields of the `Rectangle`
+instance. Our function signature for `area` now says exactly what we mean:
+calculate the area of `Rectangle`, using its `width` and `height` fields. This
+conveys that the width and height are related to each other, and it gives
+descriptive names to the values rather than using the tuple index values of `0`
+and `1`. This is a win for clarity.
+-->
+<p>La fonction <code>aire</code> accède aux champs <code>largeur</code> et <code>hauteur</code> de l'instance de
+<code>Rectangle</code>. Notre signature de fonction pour <code>aire</code> est enfin explicite :
+calculer l'aire d'un <code>Rectangle</code> en utilisant ses champs <code>largeur</code> et <code>hauteur</code>.
+Cela explique que la largeur et la hauteur sont liées entre elles, et cela donne
+des noms descriptifs aux valeurs plutôt que d'utiliser les valeurs du tuple avec
+les indices <code>0</code> et <code>1</code>. On gagne en clarté.</p>
+<!--
+### Adding Useful Functionality with Derived Traits
+-->
+<h3><a class="header" href="#ajouter-des-fonctionnalités-utiles-avec-les-traits-dérivés" id="ajouter-des-fonctionnalités-utiles-avec-les-traits-dérivés">Ajouter des fonctionnalités utiles avec les traits dérivés</a></h3>
+<!--
+It’d be nice to be able to print an instance of `Rectangle` while we’re
+debugging our program and see the values for all its fields. Listing 5-11 tries
+using the `println!` macro as we have used in previous chapters. This won’t
+work, however.
+-->
+<p>Cela serait bien de pouvoir afficher une instance de <code>Rectangle</code> pendant qu'on
+débogue notre programme et de voir la valeur de chacun de ses champs. L'encart
+5-11 essaye de le faire en utilisant la macro <code>println!</code> comme on l'a fait
+dans les chapitres précédents. Cependant, cela ne fonctionne pas.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!("rect1 is {}", rect1);
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">struct Rectangle {
+    largeur: u32,
+    hauteur: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
+
+    println!(&quot;rect1 est {}&quot;, rect1);
+}
+</code></pre>
+<!--
+<span class="caption">Listing 5-11: Attempting to print a `Rectangle`
+instance</span>
+-->
+<p><span class="caption">Encart 5-11 : Tentative d'afficher une instance de
+<code>Rectangle</code></span></p>
+<!--
+When we run this code, we get an error with this core message:
+-->
+<p>Lorsqu'on exécute ce code, on obtient ce message d'erreur qui nous informe que
+<code>Rectangle</code> n'implémente pas le trait <code>std::fmt::Display</code> :</p>
+<pre><code class="language-text">error[E0277]: `Rectangle` doesn't implement `std::fmt::Display`
+</code></pre>
+<!--
+The `println!` macro can do many kinds of formatting, and by default, the curly
+brackets tell `println!` to use formatting known as `Display`: output intended
+for direct end user consumption. The primitive types we’ve seen so far
+implement `Display` by default, because there’s only one way you’d want to show
+a `1` or any other primitive type to a user. But with structs, the way
+`println!` should format the output is less clear because there are more
+display possibilities: Do you want commas or not? Do you want to print the
+curly brackets? Should all the fields be shown? Due to this ambiguity, Rust
+doesn’t try to guess what we want, and structs don’t have a provided
+implementation of `Display`.
+-->
+<p>La macro <code>println!</code> peut faire toutes sortes de formatages textuels, et par
+défaut, les accolades demandent à <code>println!</code> d'utiliser le formatage appelé
+<code>Display</code>, pour convertir en texte destiné à être vu par l'utilisateur final.
+Les types primitifs qu'on a vus jusqu'ici implémentent <code>Display</code> par défaut
+puisqu'il n'existe qu'une seule façon d'afficher un <code>1</code> ou tout autre type
+primitif à l'utilisateur. Mais pour les structures, la façon dont <code>println!</code>
+devrait formater son résultat est moins claire car il y a plus de possibilités
+d'affichage : Voulez-vous des virgules ? Voulez-vous afficher les accolades ?
+Est-ce que tous les champs devraient être affichés ? À cause de ces ambiguïtés,
+Rust n'essaye pas de deviner ce qu'on veut, et les structures n'implémentent pas
+<code>Display</code> par défaut.</p>
+<!--
+If we continue reading the errors, we’ll find this helpful note:
+-->
+<p>Si nous continuons de lire les erreurs, nous trouvons cette remarque utile :</p>
+<pre><code class="language-text">= help: the trait `std::fmt::Display` is not implemented for `Rectangle`
+= note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+</code></pre>
+<p>Le compilateur nous informe que dans notre chaîne de formatage, on est peut-être
+en mesure d'utiliser <code>{:?}</code> (ou <code>{:#?}</code> pour un affichage plus élégant).</p>
+<!--
+Let’s try it! The `println!` macro call will now look like `println!("rect1 is
+{:?}", rect1);`. Putting the specifier `:?` inside the curly brackets tells
+`println!` we want to use an output format called `Debug`. The `Debug` trait
+enables us to print our struct in a way that is useful for developers so we can
+see its value while we’re debugging our code.
+-->
+<p>Essayons cela ! L'appel de la macro <code>println!</code> ressemble maintenant à
+<code>println!(&quot;rect1 est {:?}&quot;, rect1);</code>. Insérer le sélecteur <code>:?</code> entre les
+accolades permet d'indiquer à <code>println!</code> que nous voulons utiliser le formatage
+appelé <code>Debug</code>. Le trait <code>Debug</code> nous permet d'afficher notre structure d'une
+manière utile aux développeurs pour qu'on puisse voir sa valeur pendant qu'on
+débogue le code.</p>
+<!--
+Run the code with this change. Drat! We still get an error:
+-->
+<p>Exécutez le code avec ce changement. Zut ! On a encore une erreur, nous
+informant cette fois-ci que <code>Rectangle</code> n'implémente pas <code>std::fmt::Debug</code> :</p>
+<pre><code class="language-text">error[E0277]: `Rectangle` doesn't implement `std::fmt::Debug`
+</code></pre>
+<!--
+But again, the compiler gives us a helpful note:
+-->
+<p>Mais une nouvelle fois, le compilateur nous fait une remarque utile :</p>
+<pre><code class="language-text">= help: the trait `std::fmt::Debug` is not implemented for `Rectangle`
+= note: add `#[derive(Debug)]` or manually implement `std::fmt::Debug`
+</code></pre>
+<p>Il nous conseille d'ajouter <code>#[derive(Debug)]</code> ou d'implémenter manuellement
+<code>std::fmt::Debug</code>.</p>
+<!--
+Rust *does* include functionality to print out debugging information, but we
+have to explicitly opt in to make that functionality available for our struct.
+To do that, we add the annotation `#[derive(Debug)]` just before the struct
+definition, as shown in Listing 5-12.
+-->
+<p>Rust <em>inclut</em> bel et bien une fonctionnalité pour afficher des informations de
+débogage, mais nous devons l'activer explicitement pour la rendre disponible sur
+notre structure. Pour ce faire, on ajoute l'annotation <code>#[derive(Debug)]</code> juste
+avant la définition de la structure, comme le montre l'encart 5-12.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!("rect1 is {:?}", rect1);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">[derive(Debug)]
+</span>struct Rectangle {
+    largeur: u32,
+    hauteur: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
+
+    println!(&quot;rect1 est {:?}&quot;, rect1);
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-12: Adding the annotation to derive the `Debug`
+trait and printing the `Rectangle` instance using debug formatting</span>
+-->
+<p><span class="caption">Encart 5-12 : L'ajout de l'annotation pour dériver le
+trait <code>Debug</code> et afficher l'instance de <code>Rectangle</code> en utilisant le formatage
+de débogage</span></p>
+<!--
+Now when we run the program, we won’t get any errors, and we’ll see the
+following output:
+-->
+<p>Maintenant, quand on exécute le programme, nous n'avons plus d'erreurs et ce
+texte s'affiche à l'écran :</p>
+<!--
+```text
+rect1 is Rectangle { width: 30, height: 50 }
+```
+-->
+<pre><code class="language-text">rect1 est Rectangle { largeur: 30, hauteur: 50 }
+</code></pre>
+<!--
+Nice! It’s not the prettiest output, but it shows the values of all the fields
+for this instance, which would definitely help during debugging. When we have
+larger structs, it’s useful to have output that’s a bit easier to read; in
+those cases, we can use `{:#?}` instead of `{:?}` in the `println!` string.
+When we use the `{:#?}` style in the example, the output will look like this:
+-->
+<p>Super ! Ce n'est pas le plus beau des affichages, mais cela montre les
+valeurs de tous les champs de cette instance, ce qui serait assurément utile
+lors du débogage. Quand on a des structures plus grandes, il serait bien d'avoir
+un affichage un peu plus lisible ; dans ces cas-là, on pourra utiliser <code>{:#?}</code>
+au lieu de <code>{:?}</code> dans la chaîne de formatage. Quand on utilise <code>{:#?}</code> dans cet
+exemple, l'affichage donnera plutôt ceci :</p>
+<!--
+```text
+rect1 is Rectangle {
+    width: 30,
+    height: 50
+}
+```
+-->
+<pre><code class="language-text">rect1 est Rectangle {
+    largeur: 30,
+    hauteur: 50,
+}
+</code></pre>
+<!--
+Rust has provided a number of traits for us to use with the `derive` annotation
+that can add useful behavior to our custom types. Those traits and their
+behaviors are listed in Appendix C. We’ll cover how to implement these traits
+with custom behavior as well as how to create your own traits in Chapter 10.
+-->
+<p>Rust nous fournit un certain nombre de traits qu'on peut utiliser avec
+l'annotation <code>derive</code> qui peuvent ajouter des comportements utiles à nos propres
+types. Ces traits et leurs comportements sont listés à l'annexe C. Nous
+expliquerons comment implémenter ces traits avec des comportements personnalisés
+et comment créer vos propres traits au chapitre 10.</p>
+<!--
+Our `area` function is very specific: it only computes the area of rectangles.
+It would be helpful to tie this behavior more closely to our `Rectangle`
+struct, because it won’t work with any other type. Let’s look at how we can
+continue to refactor this code by turning the `area` function into an `area`
+*method* defined on our `Rectangle` type.
+-->
+<p>Notre fonction <code>aire</code> est très spécifique : elle ne fait que calculer l'aire
+d'un rectangle. Il serait utile de lier un peu plus ce comportement à notre
+structure <code>Rectangle</code>, puisque cela ne fonctionnera pas avec un autre type.
+Voyons comment on peut continuer de remanier ce code en transformant la fonction
+<code>aire</code> en <em>méthode</em> <code>aire</code> définie sur notre type <code>Rectangle</code>.</p>
+<!-- [the-tuple-type]: ch03-02-data-types.html#the-tuple-type -->
 
                     </main>
 

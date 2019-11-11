@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -36,7 +36,7 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
@@ -64,8 +64,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -82,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html" class="active"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html" class="active"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -511,7 +514,7 @@ io::stdin().read_line(&mut guess)
     .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 </code></pre>
 <!--
-If we hadn’t listed the `use std::io` line at the beginning of the program, we
+If we hadn’t put the `use std::io` line at the beginning of the program, we
 could have written this function call as `std::io::stdin`. The `stdin` function
 returns an instance of [`std::io::Stdin`][iostdin]<!-- ignore -- >, which is a
 type that represents a handle to the standard input for your terminal.
@@ -850,35 +853,40 @@ Avant d'écrire le code qui utilisera <code>rand</code>, il nous faut éditer le
 <em>Cargo.toml</em> pour y spécifier <code>rand</code> en tant que dépendance. Ouvrez donc
 maintenant ce fichier et ajoutez la ligne suivante à la fin, en dessous de
 l'en-tête de section <code>[dependencies]</code> que Cargo a créé pour vous :</p>
+<!-- When updating the version of `rand` used, also update the version of
+`rand` used in these files so they all match:
+* ch07-04-bringing-paths-into-scope-with-the-use-keyword.md
+* ch14-03-cargo-workspaces.md
+-->
 <!--
 <span class="filename">Filename: Cargo.toml</span>
 -->
 <p><span class="filename">Fichier : Cargo.toml</span></p>
 <pre><code class="language-toml">[dependencies]
 
-rand = &quot;0.3.14&quot;
+rand = &quot;0.5.5&quot;
 </code></pre>
 <!--
 In the *Cargo.toml* file, everything that follows a header is part of a section
 that continues until another section starts. The `[dependencies]` section is
 where you tell Cargo which external crates your project depends on and which
 versions of those crates you require. In this case, we’ll specify the `rand`
-crate with the semantic version specifier `0.3.14`. Cargo understands [Semantic
+crate with the semantic version specifier `0.5.5`. Cargo understands [Semantic
 Versioning][semver]<!-- ignore -- > (sometimes called *SemVer*), which is a
-standard for writing version numbers. The number `0.3.14` is actually shorthand
-for `^0.3.14`, which means “any version that has a public API compatible with
-version 0.3.14.”
+standard for writing version numbers. The number `0.5.5` is actually shorthand
+for `^0.5.5`, which means “any version that has a public API compatible with
+version 0.5.5.”
 -->
 <p>Dans le fichier <em>Cargo.toml</em>, tout ce qui suit une en-tête fait partie de cette
 section, et ce jusqu'à ce qu'une autre section débute. La section
 <code>[dependencies]</code> permet d'indiquer à Cargo de quelles <em>crates</em> externes votre
 projet dépend, et de quelle version de ces <em>crates</em> vous avez besoin.
 Dans notre cas, on ajoute comme dépendance la crate <code>rand</code> avec la version
-sémantique <code>0.3.14</code>. Cargo arrive à interpréter le
+sémantique <code>0.5.5</code>. Cargo arrive à interpréter le
 <a href="http://semver.org">versionnage sémantique</a><!-- ignore --> (aussi appelé <em>SemVer</em>), qui
-est une convention d'écriture de numéros de version. En réalité, <code>0.3.14</code> est
-une abréviation pour <code>^0.3.14</code>, ce qui signifie “toute version qui propose une
-API publique compatible avec la version 0.3.14”.</p>
+est une convention d'écriture de numéros de version. En réalité, <code>0.5.5</code> est
+une abréviation pour <code>^0.5.5</code>, ce qui signifie “toute version qui propose une
+API publique compatible avec la version 0.5.5”.</p>
 <!--
 Now, without changing any of the code, let’s build the project, as shown in
 Listing 2-2.
@@ -886,13 +894,19 @@ Listing 2-2.
 <p>Maintenant, sans apporter le moindre changement au code, lançons une compilation
 du projet, comme dans l'encart 2-2 :</p>
 <pre><code class="language-text">$ cargo build
-    Updating registry `https://github.com/rust-lang/crates.io-index`
- Downloading rand v0.3.14
- Downloading libc v0.2.14
-   Compiling libc v0.2.14
-   Compiling rand v0.3.14
+    Updating crates.io index
+  Downloaded rand v0.5.5
+  Downloaded libc v0.2.62
+  Downloaded rand_core v0.2.2
+  Downloaded rand_core v0.3.1
+  Downloaded rand_core v0.4.2
+   Compiling rand_core v0.4.2
+   Compiling libc v0.2.62
+   Compiling rand_core v0.3.1
+   Compiling rand_core v0.2.2
+   Compiling rand v0.5.5
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53 s
 </code></pre>
 <!--
 <span class="caption">Listing 2-2: The output from running `cargo build` after
@@ -922,16 +936,16 @@ disponibles aux autres.</p>
 <!--
 After updating the registry, Cargo checks the `[dependencies]` section and
 downloads any crates you don’t have yet. In this case, although we only listed
-`rand` as a dependency, Cargo also grabbed a copy of `libc`, because `rand`
-depends on `libc` to work. After downloading the crates, Rust compiles them and
-then compiles the project with the dependencies available.
+`rand` as a dependency, Cargo also grabbed `libc` and `rand_core`, because
+`rand` depends on those to work. After downloading the crates, Rust compiles
+them and then compiles the project with the dependencies available.
 -->
 <p>Une fois le registre mis à jour, Cargo lit la section <code>[dependencies]</code> et se
 charge de télécharger les <em>crates</em> que vous n'avez pas encore. Dans notre cas,
 bien que nous n'ayons spécifié qu'une seule dépendance, <code>rand</code>, Cargo a aussi
-téléchargé la <em>crate</em> <code>libc</code>, car <code>rand</code> dépend de <code>libc</code> pour fonctionner. Une
-fois le téléchargement terminé des <em>crates</em>, Rust les compile, puis compile
-notre projet avec les dépendances disponibles.</p>
+téléchargé la <em>crate</em> <code>libc</code> et <code>rand_core</code>, car <code>rand</code> dépend d'elles pour
+fonctionner. Une fois le téléchargement terminé des <em>crates</em>, Rust les compile,
+puis compile notre projet avec les dépendances disponibles.</p>
 <!--
 If you immediately run `cargo build` again without making any changes, you
 won’t get any output aside from the `Finished` line. Cargo knows it has already
@@ -955,7 +969,7 @@ enregistrez le fichier, et relancez la compilation, vous verrez s'afficher
 uniquement deux lignes :</p>
 <pre><code class="language-text">$ cargo build
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
 </code></pre>
 <!--
 These lines show Cargo only updates the build with your tiny change to the
@@ -976,7 +990,7 @@ du code.</p>
 Cargo has a mechanism that ensures you can rebuild the same artifact every time
 you or anyone else builds your code: Cargo will use only the versions of the
 dependencies you specified until you indicate otherwise. For example, what
-happens if next week version 0.3.15 of the `rand` crate comes out and
+happens if next week version 0.5.6 of the `rand` crate comes out and
 contains an important bug fix but also contains a regression that will break
 your code?
 -->
@@ -984,7 +998,7 @@ your code?
 même artéfact à chaque fois que vous ou quelqu'un d'autre compile votre code :
 Cargo va utiliser uniquement les versions de dépendances que vous avez
 utilisées jusqu'à ce que vous indiquiez le contraire.
-Par exemple, que se passe-t-il si la semaine prochaine, la version 0.3.15 de la
+Par exemple, que se passe-t-il si la semaine prochaine, la version 0.5.6 de la
 <em>crate</em> <code>rand</code> est publiée et qu'elle apporte une correction importante, mais
 aussi qu'elle produit une régression qui va casser votre code ?</p>
 <!--
@@ -996,7 +1010,7 @@ the *Cargo.lock* file. When you build your project in the future, Cargo will
 see that the *Cargo.lock* file exists and use the versions specified there
 rather than doing all the work of figuring out versions again. This lets you
 have a reproducible build automatically. In other words, your project will
-remain at `0.3.14` until you explicitly upgrade, thanks to the *Cargo.lock*
+remain at `0.5.5` until you explicitly upgrade, thanks to the *Cargo.lock*
 file.
 -->
 <p>La réponse à ce problème est le fichier <em>Cargo.lock</em>, qui a été créé la première
@@ -1008,7 +1022,7 @@ Quand vous recompilerez votre projet plus tard, Cargo verra que le fichier
 <em>Cargo.lock</em> existe et utilisera les versions précisées à l'intérieur au lieu
 de recommencer à déterminer toutes les versions demandées.
 Ceci vous permet d'avoir automatiquement des compilations reproductibles.
-En d'autres termes, votre projet va rester sur la version <code>0.3.14</code> jusqu'à ce
+En d'autres termes, votre projet va rester sur la version <code>0.5.5</code> jusqu'à ce
 que vous le mettiez à jour explicitement, grâce au fichier <em>Cargo.lock</em>.</p>
 <!--
 #### Updating a Crate to Get a New Version
@@ -1026,35 +1040,34 @@ rechercher toutes les versions qui correspondent à vos critères dans
 <em>Cargo.toml</em>. Si cela se passe bien, Cargo va écrire ces versions dans le
 fichier <em>Cargo.lock</em>.</p>
 <!--
-But by default, Cargo will only look for versions greater than `0.3.0` and less
-than `0.4.0`. If the `rand` crate has released two new versions, `0.3.15` and
-`0.4.0`, you would see the following if you ran `cargo update`:
+But by default, Cargo will only look for versions greater than `0.5.5` and less
+than `0.6.0`. If the `rand` crate has released two new versions, `0.5.6` and
+`0.6.0`, you would see the following if you ran `cargo update`:
 -->
 <p>Mais par défaut, Cargo va rechercher uniquement les versions plus grandes que
-<code>0.3.0</code> et inférieures à <code>0.4.0</code>. Si la <em>crate</em> <code>rand</code> a été publiée en deux
-nouvelles versions, <code>0.3.15</code> et <code>0.4.0</code>, alors vous verrez ceci si vous
+<code>0.5.5</code> et inférieures à <code>0.6.0</code>. Si la <em>crate</em> <code>rand</code> a été publiée en deux
+nouvelles versions, <code>0.5.6</code> et <code>0.6.0</code>, alors vous verrez ceci si vous
 lancez <code>cargo update</code> :</p>
 <pre><code class="language-text">$ cargo update
-    Updating registry `https://github.com/rust-lang/crates.io-index`
-    Updating rand v0.3.14 -&gt; v0.3.15
+    Updating crates.io index
+    Updating rand v0.5.5 -&gt; v0.5.6
 </code></pre>
 <!--
 At this point, you would also notice a change in your *Cargo.lock* file noting
-that the version of the `rand` crate you are now using is `0.3.15`.
+that the version of the `rand` crate you are now using is `0.5.6`.
 -->
 <p>À partir de ce moment, vous pouvez aussi constater un changement dans le fichier
 <em>Cargo.lock</em> indiquant que la version de la <em>crate</em> <code>rand</code> que vous utilisez
-maintenant est la <code>0.3.15</code>.</p>
+maintenant est la <code>0.5.6</code>.</p>
 <!--
-If you wanted to use `rand` version `0.4.0` or any version in the `0.4.x`
+If you wanted to use `rand` version `0.6.0` or any version in the `0.6.x`
 series, you’d have to update the *Cargo.toml* file to look like this instead:
 -->
 <p>Si vous vouliez utiliser <code>rand</code> en version <code>0.4.0</code> ou toute autre version dans
 la série des <code>0.4.x</code>, il vous faut mettre à jour le fichier <em>Cargo.toml</em> comme
 ceci :</p>
 <pre><code class="language-toml">[dependencies]
-
-rand = &quot;0.4.0&quot;
+rand = &quot;0.6.0&quot;
 </code></pre>
 <!--
 The next time you run `cargo build`, Cargo will update the registry of crates
@@ -1389,6 +1402,7 @@ However, the code in Listing 2-4 won’t compile yet. Let’s try it:
 -->
 <p>Cependant, notre code dans l'encart 2-4 ne compile pas encore. Essayons de le
 faire :</p>
+<!-- markdownlint-disable -->
 <!--
 ```text
 $ cargo build
@@ -1406,6 +1420,7 @@ error: aborting due to previous error
 Could not compile `guessing_game`.
 ```
 -->
+<!-- markdownlint-restore -->
 <pre><code class="language-text">$ cargo build
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
 error[E0308]: mismatched types
@@ -1603,7 +1618,8 @@ number that we want from the `Ok` value.
 le texte contient <code>A👍%</code>, il ne sera pas possible de le convertir en nombre.
 Comme elle peut échouer, la méthode <code>parse</code> retourne un type <code>Result</code>, comme
 celui que la méthode <code>read_line</code> retourne (comme nous l'avons vu plus tôt dans
-<a href="#g%C3%A9rer-les-erreurs-potentielles-avec-le-type-result">“Gérer les erreurs potentielles avec le type <code>Result</code>”</a><!-- ignore-->).
+<a href="#g%C3%A9rer-les-erreurs-potentielles-avec-le-type-result">“Gérer les erreurs potentielles avec le type
+<code>Result</code>”</a><!-- ignore-->).
 Nous allons gérer ce <code>Result</code> de la même manière, avec à nouveau la méthode
 <code>expect</code>. Si <code>parse</code> retourne une variante <code>Err</code> de <code>Result</code> car elle ne peut
 pas créer un nombre à partir de la chaîne de caractères, l'appel à
@@ -1734,10 +1750,11 @@ user can take advantage of that in order to quit, as shown here:
 <p>L'utilisateur pourrait quand même interrompre le programme en utilisant le
 raccourci clavier <span class="keystroke">ctrl-c</span>.
 Mais il y a une autre façon d'échapper à ce monstre insatiable, comme nous
-l'avons abordé dans la partie
-<a href="#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre secret”</a><!-- ignore --> :
-si l'utilisateur saisit quelque chose qui n'est pas un nombre, le programme va
+l'avons abordé dans la partie <a href="#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre
+secret”</a><!-- ignore --> : si
+l'utilisateur saisit quelque chose qui n'est pas un nombre, le programme va
 planter. L'utilisateur peut procéder ainsi pour le quitter, comme ci-dessous :</p>
+<!-- markdownlint-disable -->
 <!--
 ```text
 $ cargo run
@@ -1765,6 +1782,7 @@ note: Run with `RUST_BACKTRACE=1` for a backtrace.
 error: Process didn't exit successfully: `target/debug/guess` (exit code: 101)
 ```
 -->
+<!-- markdownlint-restore -->
 <pre><code class="language-text">$ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
     Finished dev [unoptimized + debuginfo] target(s) in 1.50 secs

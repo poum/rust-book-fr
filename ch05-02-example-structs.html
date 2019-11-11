@@ -1,0 +1,729 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Un exemple de programme qui utilise des structures - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html" class="active"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+## An Example Program Using Structs
+-->
+<h2><a class="header" href="#un-exemple-de-programme-qui-utilise-des-structures" id="un-exemple-de-programme-qui-utilise-des-structures">Un exemple de programme qui utilise des structures</a></h2>
+<!--
+To understand when we might want to use structs, let’s write a program that
+calculates the area of a rectangle. We’ll start with single variables, and then
+refactor the program until we’re using structs instead.
+-->
+<p>Pour comprendre dans quels cas nous voudrions utiliser des structures, écrivons
+un programme qui calcule l'aire d'un rectangle. Nous commencerons avec de
+simples variables, puis on remaniera le code jusqu'à utiliser des structures à
+la place.</p>
+<!--
+Let’s make a new binary project with Cargo called *rectangles* that will take
+the width and height of a rectangle specified in pixels and calculate the area
+of the rectangle. Listing 5-8 shows a short program with one way of doing
+exactly that in our project’s *src/main.rs*.
+-->
+<p>Créons un nouveau projet binaire avec Cargo nommé <em>rectangles</em> qui prendra la
+largeur et la hauteur en pixels d'un rectangle et qui calculera l'aire de ce
+rectangle. L'encart 5-8 montre un petit programme qui effectue cette tâche d'une
+certaine manière dans le <em>src/main.rs</em> de notre projet.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier: src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let width1 = 30;
+    let height1 = 50;
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(width1, height1)
+    );
+}
+
+fn area(width: u32, height: u32) -> u32 {
+    width * height
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let largeur1 = 30;
+    let hauteur1 = 50;
+
+    println!(
+        &quot;L'aire du rectangle est de {} pixels carrés.&quot;,
+        aire(largeur1, hauteur1)
+    );
+}
+
+fn aire(largeur: u32, hauteur: u32) -&gt; u32 {
+    largeur * hauteur
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-8: Calculating the area of a rectangle
+specified by separate width and height variables</span>
+-->
+<p><span class="caption">Encart 5-8 : Calcul de l'aire d'un rectangle défini par
+les variables distinctes <code>largeur</code> et <code>hauteur</code></span></p>
+<!--
+Now, run this program using `cargo run`:
+-->
+<p>Maintenant, lancez ce programme avec <code>cargo run</code> :</p>
+<!--
+```text
+The area of the rectangle is 1500 square pixels.
+```
+-->
+<pre><code class="language-text">L'aire du rectangle est de 1500 pixels carrés.
+</code></pre>
+<!--
+Even though Listing 5-8 works and figures out the area of the rectangle by
+calling the `area` function with each dimension, we can do better. The width
+and the height are related to each other because together they describe one
+rectangle.
+-->
+<p>Bien que l'encart 5-8 fonctionne et détermine l'aire du rectangle en appelant
+la fonction <code>aire</code> avec chaque dimension, on peut faire mieux. La largeur et la
+hauteur sont couplées entre elles car elles décrivent toutes les deux un rectangle.</p>
+<!--
+The issue with this code is evident in the signature of `area`:
+-->
+<p>Le problème de ce code se voit dans la signature de <code>aire</code> :</p>
+<!--
+```rust,ignore
+fn area(width: u32, height: u32) -> u32 {
+```
+-->
+<pre><code class="language-rust ignore">fn aire(largeur: u32, hauteur: u32) -&gt; u32 {
+</code></pre>
+<!--
+The `area` function is supposed to calculate the area of one rectangle, but the
+function we wrote has two parameters. The parameters are related, but that’s
+not expressed anywhere in our program. It would be more readable and more
+manageable to group width and height together. We’ve already discussed one way
+we might do that in [“The Tuple Type”][the-tuple-type]<!−− ignore −− > section
+of Chapter 3: by using tuples.
+-->
+<p>La fonction <code>aire</code> est censée calculer l'aire d'un rectangle, mais la fonction
+que nous avons écrite a deux paramètres. Les paramètres sont liés, mais ce n'est
+exprimé nulle part dans notre programme. Il serait plus lisible et plus gérable
+de regrouper ensemble la largeur et la hauteur. Nous avons déjà vu dans la
+section <a href="ch03-02-data-types.html#le-type-tuple">“Le type <em>tuple</em>”</a><!-- ignore --> du chapitre 3 une
+façon qui nous permettrait de le faire : en utilisant des tuples.</p>
+<!--
+### Refactoring with Tuples
+-->
+<h3><a class="header" href="#remanier-le-code-avec-des-tuples" id="remanier-le-code-avec-des-tuples">Remanier le code avec des tuples</a></h3>
+<!--
+Listing 5-9 shows another version of our program that uses tuples.
+-->
+<p>L'encart 5-9 nous montre une autre version de notre programme qui utilise des
+tuples.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let rect1 = (30, 50);
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(rect1)
+    );
+}
+
+fn area(dimensions: (u32, u32)) -> u32 {
+    dimensions.0 * dimensions.1
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let rect1 = (30, 50);
+
+    println!(
+        &quot;L'aire du rectangle est de {} pixels carrés.&quot;,
+        aire(rect1)
+    );
+}
+
+fn aire(dimensions: (u32, u32)) -&gt; u32 {
+    dimensions.0 * dimensions.1
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-9: Specifying the width and height of the
+rectangle with a tuple</span>
+-->
+<p><span class="caption">Encart 5-9 : Renseigner la largeur et la hauteur du
+rectangle dans un tuple</span></p>
+<!--
+In one way, this program is better. Tuples let us add a bit of structure, and
+we’re now passing just one argument. But in another way, this version is less
+clear: tuples don’t name their elements, so our calculation has become more
+confusing because we have to index into the parts of the tuple.
+-->
+<p>D'une certaine façon, ce programme est meilleur. Les tuples nous permettent de
+structurer un peu plus et nous ne passons plus qu'un argument. Mais d'une autre
+façon, cette version est moins claire : les tuples ne donnent pas de noms à
+leurs éléments, donc notre calcul est devenu plus déroutant puisqu'il faut
+accéder aux éléments du tuple via leur indice.</p>
+<!--
+It doesn’t matter if we mix up width and height for the area calculation, but
+if we want to draw the rectangle on the screen, it would matter! We would have
+to keep in mind that `width` is the tuple index `0` and `height` is the tuple
+index `1`. If someone else worked on this code, they would have to figure this
+out and keep it in mind as well. It would be easy to forget or mix up these
+values and cause errors, because we haven’t conveyed the meaning of our data in
+our code.
+-->
+<p>Ce n'est pas grave de confondre la largeur et la hauteur pour calculer l'aire,
+mais si on voulait afficher le rectangle à l'écran, cela serait problématique !
+Il nous faut garder à l'esprit que la <code>largeur</code> est l'élément à l'indice 0 du
+tuple et que la <code>hauteur</code> est l'élément à l'indice 1. Si quelqu'un d'autre
+travaillait sur ce code, il devrait le déduire et s'en souvenir aussi. Il est
+facile d'oublier ou de confondre ces valeurs et par conséquent provoquer des
+erreurs, parce qu'on n'a pas exprimé la signification de nos données dans notre
+code.</p>
+<!--
+### Refactoring with Structs: Adding More Meaning
+-->
+<h3><a class="header" href="#remanier-avec-des-structures--donner-plus-de-sens" id="remanier-avec-des-structures--donner-plus-de-sens">Remanier avec des structures : donner plus de sens</a></h3>
+<!--
+We use structs to add meaning by labeling the data. We can transform the tuple
+we’re using into a data type with a name for the whole as well as names for the
+parts, as shown in Listing 5-10.
+-->
+<p>On utilise des structures pour rendre les données plus expressives en leur
+donnant des noms. On peut transformer le tuple que nous avons utilisé en un type
+de donnée nommé dont ses éléments sont aussi nommés, comme le montre l'encart
+5-10.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(&rect1)
+    );
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">struct Rectangle {
+    largeur: u32,
+    hauteur: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
+
+    println!(
+        &quot;L'aire du rectangle est de {} pixels carrés.&quot;,
+        aire(&amp;rect1)
+    );
+}
+
+fn aire(rectangle: &amp;Rectangle) -&gt; u32 {
+    rectangle.largeur * rectangle.hauteur
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-10: Defining a `Rectangle` struct</span>
+-->
+<p><span class="caption">Encart 5-10 : Définition d'une structure
+<code>Rectangle</code></span></p>
+<!--
+Here we’ve defined a struct and named it `Rectangle`. Inside the curly
+brackets, we defined the fields as `width` and `height`, both of which have
+type `u32`. Then in `main`, we created a particular instance of `Rectangle`
+that has a width of 30 and a height of 50.
+-->
+<p>Ici, on a défini une structure et on l'a appelée <code>Rectangle</code>. Entre les
+accolades, on a défini les champs <code>largeur</code> et <code>hauteur</code>, tous deux du type
+<code>u32</code>. Puis dans <code>main</code>, on crée une instance de <code>Rectangle</code> de largeur 30 et de
+hauteur 50.</p>
+<!--
+Our `area` function is now defined with one parameter, which we’ve named
+`rectangle`, whose type is an immutable borrow of a struct `Rectangle`
+instance. As mentioned in Chapter 4, we want to borrow the struct rather than
+take ownership of it. This way, `main` retains its ownership and can continue
+using `rect1`, which is the reason we use the `&` in the function signature and
+where we call the function.
+-->
+<p>Notre fonction <code>aire</code> est désormais définie avec un unique paramètre, nommé
+<code>rectangle</code>, et dont le type est une référence immuable vers une instance de la
+structure <code>Rectangle</code>. Comme mentionné au chapitre 4, on préfère emprunter la
+structure au lieu d'en prendre possession. Ainsi, elle reste en possession de
+<code>main</code> qui peut continuer à utiliser <code>rect1</code> ; c'est pourquoi on utilise le <code>&amp;</code>
+dans la signature de la fonction ainsi que dans l'appel de fonction.</p>
+<!--
+The `area` function accesses the `width` and `height` fields of the `Rectangle`
+instance. Our function signature for `area` now says exactly what we mean:
+calculate the area of `Rectangle`, using its `width` and `height` fields. This
+conveys that the width and height are related to each other, and it gives
+descriptive names to the values rather than using the tuple index values of `0`
+and `1`. This is a win for clarity.
+-->
+<p>La fonction <code>aire</code> accède aux champs <code>largeur</code> et <code>hauteur</code> de l'instance de
+<code>Rectangle</code>. Notre signature de fonction pour <code>aire</code> est enfin explicite :
+calculer l'aire d'un <code>Rectangle</code> en utilisant ses champs <code>largeur</code> et <code>hauteur</code>.
+Cela explique que la largeur et la hauteur sont liées entre elles, et cela donne
+des noms descriptifs aux valeurs plutôt que d'utiliser les valeurs du tuple avec
+les indices <code>0</code> et <code>1</code>. On gagne en clarté.</p>
+<!--
+### Adding Useful Functionality with Derived Traits
+-->
+<h3><a class="header" href="#ajouter-des-fonctionnalités-utiles-avec-les-traits-dérivés" id="ajouter-des-fonctionnalités-utiles-avec-les-traits-dérivés">Ajouter des fonctionnalités utiles avec les traits dérivés</a></h3>
+<!--
+It’d be nice to be able to print an instance of `Rectangle` while we’re
+debugging our program and see the values for all its fields. Listing 5-11 tries
+using the `println!` macro as we have used in previous chapters. This won’t
+work, however.
+-->
+<p>Cela serait bien de pouvoir afficher une instance de <code>Rectangle</code> pendant qu'on
+débogue notre programme et de voir la valeur de chacun de ses champs. L'encart
+5-11 essaye de le faire en utilisant la macro <code>println!</code> comme on l'a fait
+dans les chapitres précédents. Cependant, cela ne fonctionne pas.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!("rect1 is {}", rect1);
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">struct Rectangle {
+    largeur: u32,
+    hauteur: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
+
+    println!(&quot;rect1 est {}&quot;, rect1);
+}
+</code></pre>
+<!--
+<span class="caption">Listing 5-11: Attempting to print a `Rectangle`
+instance</span>
+-->
+<p><span class="caption">Encart 5-11 : Tentative d'afficher une instance de
+<code>Rectangle</code></span></p>
+<!--
+When we run this code, we get an error with this core message:
+-->
+<p>Lorsqu'on exécute ce code, on obtient ce message d'erreur qui nous informe que
+<code>Rectangle</code> n'implémente pas le trait <code>std::fmt::Display</code> :</p>
+<pre><code class="language-text">error[E0277]: `Rectangle` doesn't implement `std::fmt::Display`
+</code></pre>
+<!--
+The `println!` macro can do many kinds of formatting, and by default, the curly
+brackets tell `println!` to use formatting known as `Display`: output intended
+for direct end user consumption. The primitive types we’ve seen so far
+implement `Display` by default, because there’s only one way you’d want to show
+a `1` or any other primitive type to a user. But with structs, the way
+`println!` should format the output is less clear because there are more
+display possibilities: Do you want commas or not? Do you want to print the
+curly brackets? Should all the fields be shown? Due to this ambiguity, Rust
+doesn’t try to guess what we want, and structs don’t have a provided
+implementation of `Display`.
+-->
+<p>La macro <code>println!</code> peut faire toutes sortes de formatages textuels, et par
+défaut, les accolades demandent à <code>println!</code> d'utiliser le formatage appelé
+<code>Display</code>, pour convertir en texte destiné à être vu par l'utilisateur final.
+Les types primitifs qu'on a vus jusqu'ici implémentent <code>Display</code> par défaut
+puisqu'il n'existe qu'une seule façon d'afficher un <code>1</code> ou tout autre type
+primitif à l'utilisateur. Mais pour les structures, la façon dont <code>println!</code>
+devrait formater son résultat est moins claire car il y a plus de possibilités
+d'affichage : Voulez-vous des virgules ? Voulez-vous afficher les accolades ?
+Est-ce que tous les champs devraient être affichés ? À cause de ces ambiguïtés,
+Rust n'essaye pas de deviner ce qu'on veut, et les structures n'implémentent pas
+<code>Display</code> par défaut.</p>
+<!--
+If we continue reading the errors, we’ll find this helpful note:
+-->
+<p>Si nous continuons de lire les erreurs, nous trouvons cette remarque utile :</p>
+<pre><code class="language-text">= help: the trait `std::fmt::Display` is not implemented for `Rectangle`
+= note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+</code></pre>
+<p>Le compilateur nous informe que dans notre chaîne de formatage, on est peut-être
+en mesure d'utiliser <code>{:?}</code> (ou <code>{:#?}</code> pour un affichage plus élégant).</p>
+<!--
+Let’s try it! The `println!` macro call will now look like `println!("rect1 is
+{:?}", rect1);`. Putting the specifier `:?` inside the curly brackets tells
+`println!` we want to use an output format called `Debug`. The `Debug` trait
+enables us to print our struct in a way that is useful for developers so we can
+see its value while we’re debugging our code.
+-->
+<p>Essayons cela ! L'appel de la macro <code>println!</code> ressemble maintenant à
+<code>println!(&quot;rect1 est {:?}&quot;, rect1);</code>. Insérer le sélecteur <code>:?</code> entre les
+accolades permet d'indiquer à <code>println!</code> que nous voulons utiliser le formatage
+appelé <code>Debug</code>. Le trait <code>Debug</code> nous permet d'afficher notre structure d'une
+manière utile aux développeurs pour qu'on puisse voir sa valeur pendant qu'on
+débogue le code.</p>
+<!--
+Run the code with this change. Drat! We still get an error:
+-->
+<p>Exécutez le code avec ce changement. Zut ! On a encore une erreur, nous
+informant cette fois-ci que <code>Rectangle</code> n'implémente pas <code>std::fmt::Debug</code> :</p>
+<pre><code class="language-text">error[E0277]: `Rectangle` doesn't implement `std::fmt::Debug`
+</code></pre>
+<!--
+But again, the compiler gives us a helpful note:
+-->
+<p>Mais une nouvelle fois, le compilateur nous fait une remarque utile :</p>
+<pre><code class="language-text">= help: the trait `std::fmt::Debug` is not implemented for `Rectangle`
+= note: add `#[derive(Debug)]` or manually implement `std::fmt::Debug`
+</code></pre>
+<p>Il nous conseille d'ajouter <code>#[derive(Debug)]</code> ou d'implémenter manuellement
+<code>std::fmt::Debug</code>.</p>
+<!--
+Rust *does* include functionality to print out debugging information, but we
+have to explicitly opt in to make that functionality available for our struct.
+To do that, we add the annotation `#[derive(Debug)]` just before the struct
+definition, as shown in Listing 5-12.
+-->
+<p>Rust <em>inclut</em> bel et bien une fonctionnalité pour afficher des informations de
+débogage, mais nous devons l'activer explicitement pour la rendre disponible sur
+notre structure. Pour ce faire, on ajoute l'annotation <code>#[derive(Debug)]</code> juste
+avant la définition de la structure, comme le montre l'encart 5-12.</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 30, height: 50 };
+
+    println!("rect1 is {:?}", rect1);
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">[derive(Debug)]
+</span>struct Rectangle {
+    largeur: u32,
+    hauteur: u32,
+}
+
+fn main() {
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
+
+    println!(&quot;rect1 est {:?}&quot;, rect1);
+}
+</code></pre></pre>
+<!--
+<span class="caption">Listing 5-12: Adding the annotation to derive the `Debug`
+trait and printing the `Rectangle` instance using debug formatting</span>
+-->
+<p><span class="caption">Encart 5-12 : L'ajout de l'annotation pour dériver le
+trait <code>Debug</code> et afficher l'instance de <code>Rectangle</code> en utilisant le formatage
+de débogage</span></p>
+<!--
+Now when we run the program, we won’t get any errors, and we’ll see the
+following output:
+-->
+<p>Maintenant, quand on exécute le programme, nous n'avons plus d'erreurs et ce
+texte s'affiche à l'écran :</p>
+<!--
+```text
+rect1 is Rectangle { width: 30, height: 50 }
+```
+-->
+<pre><code class="language-text">rect1 est Rectangle { largeur: 30, hauteur: 50 }
+</code></pre>
+<!--
+Nice! It’s not the prettiest output, but it shows the values of all the fields
+for this instance, which would definitely help during debugging. When we have
+larger structs, it’s useful to have output that’s a bit easier to read; in
+those cases, we can use `{:#?}` instead of `{:?}` in the `println!` string.
+When we use the `{:#?}` style in the example, the output will look like this:
+-->
+<p>Super ! Ce n'est pas le plus beau des affichages, mais cela montre les
+valeurs de tous les champs de cette instance, ce qui serait assurément utile
+lors du débogage. Quand on a des structures plus grandes, il serait bien d'avoir
+un affichage un peu plus lisible ; dans ces cas-là, on pourra utiliser <code>{:#?}</code>
+au lieu de <code>{:?}</code> dans la chaîne de formatage. Quand on utilise <code>{:#?}</code> dans cet
+exemple, l'affichage donnera plutôt ceci :</p>
+<!--
+```text
+rect1 is Rectangle {
+    width: 30,
+    height: 50
+}
+```
+-->
+<pre><code class="language-text">rect1 est Rectangle {
+    largeur: 30,
+    hauteur: 50,
+}
+</code></pre>
+<!--
+Rust has provided a number of traits for us to use with the `derive` annotation
+that can add useful behavior to our custom types. Those traits and their
+behaviors are listed in Appendix C. We’ll cover how to implement these traits
+with custom behavior as well as how to create your own traits in Chapter 10.
+-->
+<p>Rust nous fournit un certain nombre de traits qu'on peut utiliser avec
+l'annotation <code>derive</code> qui peuvent ajouter des comportements utiles à nos propres
+types. Ces traits et leurs comportements sont listés à l'annexe C. Nous
+expliquerons comment implémenter ces traits avec des comportements personnalisés
+et comment créer vos propres traits au chapitre 10.</p>
+<!--
+Our `area` function is very specific: it only computes the area of rectangles.
+It would be helpful to tie this behavior more closely to our `Rectangle`
+struct, because it won’t work with any other type. Let’s look at how we can
+continue to refactor this code by turning the `area` function into an `area`
+*method* defined on our `Rectangle` type.
+-->
+<p>Notre fonction <code>aire</code> est très spécifique : elle ne fait que calculer l'aire
+d'un rectangle. Il serait utile de lier un peu plus ce comportement à notre
+structure <code>Rectangle</code>, puisque cela ne fonctionnera pas avec un autre type.
+Voyons comment on peut continuer de remanier ce code en transformant la fonction
+<code>aire</code> en <em>méthode</em> <code>aire</code> définie sur notre type <code>Rectangle</code>.</p>
+<!-- [the-tuple-type]: ch03-02-data-types.html#the-tuple-type -->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch05-01-defining-structs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch05-01-defining-structs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>

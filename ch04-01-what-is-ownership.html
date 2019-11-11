@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -36,7 +36,7 @@
 
         
     </head>
-    <body class="light">
+    <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
@@ -64,8 +64,11 @@
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            document.body.className = theme;
-            document.querySelector('html').className = theme + ' js';
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
@@ -82,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html" class="active"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html" class="active"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -512,8 +515,8 @@ fonction spécifique dans l'espace de nom du type <code>String</code> plutôt qu
 un nom comme <code>string_from</code>. Nous verrons cette syntaxe plus en détail dans la
 section <a href="ch05-03-method-syntax.html">“Syntaxe de méthode”</a><!-- ignore --> du chapitre 5 et
 lorsque nous aborderons les espaces de noms dans la section
-<a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">“Les chemins pour désigner un élément dans l'arborescence de module”</a><!-- ignore -->
-du chapitre 7.</p>
+<a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html">“Les chemins pour désigner un élément dans l'arborescence de
+module”</a><!-- ignore --> du chapitre 7.</p>
 <!--
 This kind of string *can* be mutated:
 -->
@@ -745,7 +748,13 @@ capot. Une <code>String</code> est constituée de trois éléments, présents su
 un pointeur vers la mémoire qui contient le contenu de la chaîne de caractères,
 une taille, et une capacité. Ce groupe de données est stocké sur la pile. À
 droite, nous avons la mémoire sur le tas qui contient les données.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="String in memory" src="img/trpl04-01.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="Une string en mémoire" src="img/trpl04-01.svg" class="center"
+style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-1: Representation in memory of a `String`
 holding the value `"hello"` bound to `s1`</span>
@@ -775,7 +784,13 @@ qui veut dire que nous copions le pointeur, la taille et la capacité qui sont
 stockés sur la pile. Nous ne copions pas les données stockées sur le tas
 auxquelles le pointeur se réfère. Autrement dit, la représentation des données
 dans la mémoire ressemble à l'illustration 4-2.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="s1 and s2 pointing to the same value" src="img/trpl04-02.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="s1 et s2 qui pointent vers la même valeur" src="img/trpl04-02.svg"
+class="center" style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-2: Representation in memory of the variable `s2`
 that has a copy of the pointer, length, and capacity of `s1`</span>
@@ -793,7 +808,13 @@ the data on the heap were large.
 mémoire si Rust avait aussi copié les données sur le tas. Si Rust faisait ceci,
 l'opération <code>s2 = s1</code> pourrait potentiellement être très coûteuse en termes de
 performances d'exécution si les données sur le tas étaient volumineuses.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="s1 and s2 to two places" src="img/trpl04-03.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="s1 et s2 à deux endroits" src="img/trpl04-03.svg" class="center"
+style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-3: Another possibility for what `s2 = s1` might
 do if Rust copied the heap data as well</span>
@@ -870,7 +891,13 @@ copie superficielle. Mais comme Rust neutralise aussi la première variable, au
 lieu d'appeler cela une copie superficielle, on appelle cela un <em>déplacement</em>.
 Ici, nous pourrions dire que <code>s1</code> a été <em>déplacé</em> dans <code>s2</code>. Donc ce qui se
 passe réellement est décrit par l'illustration 4-4.</p>
+<!-- markdownlint-disable -->
+<!--
 <img alt="s1 moved to s2" src="img/trpl04-04.svg" class="center" style="width: 50%;" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="s1 déplacé dans s2" src="img/trpl04-04.svg" class="center"
+style="width: 50%;" /></p>
 <!--
 <span class="caption">Figure 4-4: Representation in memory after `s1` has been
 invalidated</span>
@@ -903,7 +930,7 @@ syntax in Chapter 5, but because methods are a common feature in many
 programming languages, you’ve probably seen them before.
 -->
 <p>Si nous <em>voulons</em> faire une copie profonde des données sur le tas d'une
-<code>String</code>, et pas seulement des données sur la pile, nous pouvons utiliser une 
+<code>String</code>, et pas seulement des données sur la pile, nous pouvons utiliser une
 méthode commune qui s'appelle <code>clone</code>. Nous aborderons la syntaxe des méthodes
 au chapitre 5, mais comme les méthodes sont des outils courants dans de
 nombreux langages, vous les avez probablement utilisées auparavant.</p>
@@ -1070,7 +1097,7 @@ fn makes_copy(some_integer: i32) { // some_integer comes into scope
 } // Here, some_integer goes out of scope. Nothing special happens.
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">fn main() { 
+<pre><pre class="playpen"><code class="language-rust">fn main() {
     let s = String::from(&quot;hello&quot;);  // s rentre dans la portée.
 
     prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
@@ -1268,12 +1295,14 @@ common. Luckily for us, Rust has a feature for this concept, called
 <p>Mais c'est trop laborieux et beaucoup de travail pour un principe qui devrait
 être banal. Heureusement pour nous, Rust a une fonctionnalité pour ce principe,
 c'est ce qu'on appelle les <em>références</em>.</p>
+<!-- markdownlint-disable -->
 <!--
 [data-types]: ch03-02-data-types.html#data-types
 [derivable-traits]: appendix-03-derivable-traits.html
 [method-syntax]: ch05-03-method-syntax.html#method-syntax
 [paths-module-tree]: ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html
 -->
+<!-- markdownlint-restore -->
 
                     </main>
 
@@ -1286,7 +1315,7 @@ c'est ce qu'on appelle les <em>références</em>.</p>
                         
 
                         
-                            <a rel="next" href="ch05-00-structs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="ch04-02-references-and-borrowing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -1304,7 +1333,7 @@ c'est ce qu'on appelle les <em>références</em>.</p>
                 
 
                 
-                    <a href="ch05-00-structs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="ch04-02-references-and-borrowing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

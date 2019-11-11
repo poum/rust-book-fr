@@ -1,0 +1,944 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Les références et l'emprunt - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html" class="active"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+## References and Borrowing
+-->
+<h2><a class="header" href="#les-références-et-lemprunt" id="les-références-et-lemprunt">Les références et l'emprunt</a></h2>
+<!--
+The issue with the tuple code in Listing 4-5 is that we have to return the
+`String` to the calling function so we can still use the `String` after the
+call to `calculate_length`, because the `String` was moved into
+`calculate_length`.
+-->
+<p>La difficulté avec le code du tuple à la fin de la section précédente est que
+nous avons besoin de retourner la <code>String</code> au code appelant pour qu'il puisse
+continuer à utiliser la <code>String</code> après l'appel à <code>calculer_taille</code>, car la
+<code>String</code> a été déplacée dans <code>calculer_taille</code>.</p>
+<!--
+Here is how you would define and use a `calculate_length` function that has a
+reference to an object as a parameter instead of taking ownership of the
+value:
+-->
+<p>Voici comment définir et utiliser une fonction <code>calculer_taille</code> qui prend une
+<em>référence</em> à un objet en paramètre plutôt que de prendre possession de la
+valeur :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let s1 = String::from("hello");
+
+    let len = calculate_length(&s1);
+
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let s1 = String::from(&quot;hello&quot;);
+
+    let long = calculer_taille(&amp;s1);
+
+    println!(&quot;La taille de '{}' est {}.&quot;, s1, long);
+}
+
+fn calculer_taille(s: &amp;String) -&gt; usize {
+    s.len()
+}
+</code></pre></pre>
+<!--
+First, notice that all the tuple code in the variable declaration and the
+function return value is gone. Second, note that we pass `&s1` into
+`calculate_length` and, in its definition, we take `&String` rather than
+`String`.
+-->
+<p>Premièrement, on peut observer que tout le code des <em>tuples</em> dans la déclaration
+des variables et dans la valeur de retour de la fonction a été enlevé.
+Deuxièmement, remarquez que nous passons <code>&amp;s1</code> à <code>calculer_taille</code>, et que dans
+sa définition, nous utilisons <code>&amp;String</code> plutôt que <code>String</code>.</p>
+<!--
+These ampersands are *references*, and they allow you to refer to some value
+without taking ownership of it. Figure 4-5 shows a diagram.
+-->
+<p>Ces esperluettes sont des <em>références</em>, et elles permettent de vous référer à
+une valeur sans en prendre possession. L'illustration 4-5 nous montre cela dans
+un schéma.</p>
+<!-- markdownlint-disable -->
+<!--
+<img alt="&String s pointing at String s1" src="img/trpl04-05.svg" class="center" />
+-->
+<!-- markdownlint-restore -->
+<p><img alt="&String s qui pointe vers la String s1" src="img/trpl04-05.svg"
+class="center" /></p>
+<!--
+<span class="caption">Figure 4-5: A diagram of `&String s` pointing at `String
+s1`</span>
+-->
+<p><span class="caption">Illustration 4-5 : Un schéma de la <code>&amp;String s</code> qui pointe
+vers la <code>String s1</code></span></p>
+<!--
+> Note: The opposite of referencing by using `&` is *dereferencing*, which is
+> accomplished with the dereference operator, `*`. We’ll see some uses of the
+> dereference operator in Chapter 8 and discuss details of dereferencing in
+> Chapter 15.
+-->
+<blockquote>
+<p>Remarque : l'opposé de la création de références avec <code>&amp;</code> est le
+<em>déréférencement</em>, qui s'effectue avec l'opérateur de déréférencement, <code>*</code>.
+Nous allons voir quelques utilisations de l'opérateur de déréférencement dans
+le chapitre 8 et nous aborderons les détails du déréférencement dans le
+chapitre 15.</p>
+</blockquote>
+<!--
+Let’s take a closer look at the function call here:
+-->
+<p>Regardons de plus près l'appel à la fonction :</p>
+<!--
+```rust
+# fn calculate_length(s: &String) -> usize {
+#     s.len()
+# }
+let s1 = String::from("hello");
+
+let len = calculate_length(&s1);
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+fn calculer_taille(s: &amp;String) -&gt; usize {
+    s.len()
+}
+</span>let s1 = String::from(&quot;hello&quot;);
+
+let long = calculer_taille(&amp;s1);
+<span class="boring">}
+</code></pre></pre>
+<!--
+The `&s1` syntax lets us create a reference that *refers* to the value of `s1`
+but does not own it. Because it does not own it, the value it points to will
+not be dropped when the reference goes out of scope.
+-->
+<p>La syntaxe <code>&amp;s1</code> nous permet de créer une référence qui se <em>réfère</em> à la valeur
+de <code>s1</code> mais n'en prend pas possession. Et comme elle ne la possède pas, la
+valeur vers laquelle elle pointe ne sera pas libérée quand cette référence
+sortira de la portée.</p>
+<!--
+Likewise, the signature of the function uses `&` to indicate that the type of
+the parameter `s` is a reference. Let’s add some explanatory annotations:
+-->
+<p>De la même manière, la signature de la fonction utilise <code>&amp;</code> pour indiquer que
+le type du paramètre <code>s</code> est une référence. Ajoutons quelques commentaires
+explicatifs :</p>
+<!--
+```rust
+fn calculate_length(s: &String) -> usize { // s is a reference to a String
+    s.len()
+} // Here, s goes out of scope. But because it does not have ownership of what
+  // it refers to, nothing happens.
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>fn calculer_taille(s: &amp;String) -&gt; usize { // s est une référence à une String
+    s.len()
+} // Ici, s sort de la portée. Mais comme elle ne prend pas possession de ce
+  // à quoi elle fait référence, il ne se passe rien.
+<span class="boring">}
+</code></pre></pre>
+<!--
+The scope in which the variable `s` is valid is the same as any function
+parameter’s scope, but we don’t drop what the reference points to when it goes
+out of scope because we don’t have ownership. When functions have references as
+parameters instead of the actual values, we won’t need to return the values in
+order to give back ownership, because we never had ownership.
+-->
+<p>La portée dans laquelle la variable <code>s</code> est en vigueur est la même que toute
+portée d'un paramètre de fonction, mais nous ne libérons pas ce sur quoi cette
+référence pointe quand elle sort de la portée, car nous n'en prenons pas
+possession. Lorsque les fonctions ont des références en paramètres au lieu des
+valeurs réelles, nous n'avons pas besoin de retourner les valeurs pour les
+rendre, car nous n'en avons jamais pris possession.</p>
+<!--
+We call having references as function parameters *borrowing*. As in real life,
+if a person owns something, you can borrow it from them. When you’re done, you
+have to give it back.
+-->
+<p>Quand nous avons des références dans les paramètres d'une fonction, nous
+appelons cela <em>l'emprunt</em>. Comme dans la vie réelle, quand un objet appartient
+à quelqu'un, vous pouvez le lui emprunter. Et quand vous avez fini, vous devez
+le lui rendre.</p>
+<!--
+So what happens if we try to modify something we’re borrowing? Try the code in
+Listing 4-6. Spoiler alert: it doesn’t work!
+-->
+<p>Donc qu'est-ce qui se passe si nous essayons de modifier quelque chose que nous
+empruntons ? Essayez le code dans l'encart 4-6. Attention, spoiler : cela ne
+fonctionne pas !</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let s = String::from("hello");
+
+    change(&s);
+}
+
+fn change(some_string: &String) {
+    some_string.push_str(", world");
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let s = String::from(&quot;hello&quot;);
+
+    changer(&amp;s);
+}
+
+fn changer(texte: &amp;String) {
+    texte.push_str(&quot;, world&quot;);
+}
+</code></pre>
+<!--
+<span class="caption">Listing 4-6: Attempting to modify a borrowed value</span>
+-->
+<p><span class="caption">Entrée 4-6 : Tentative de modification d'une valeur
+empruntée.</span></p>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<!--
+```text
+error[E0596]: cannot borrow immutable borrowed content `*some_string` as mutable
+ -- > error.rs:8:5
+  |
+7 | fn change(some_string: &String) {
+  |                        ------- use `&mut String` here to make mutable
+8 |     some_string.push_str(", world");
+  |     ^^^^^^^^^^^ cannot borrow as mutable
+```
+-->
+<pre><code class="language-text">error[E0596]: cannot borrow immutable borrowed content `*texte` as mutable
+ --&gt; error.rs:8:5
+  |
+7 | fn changer(texte: &amp;String) {
+  |                   ------- use `&amp;mut String` here to make mutable
+8 |     texte.push_str(&quot;, world&quot;);
+  |     ^^^^^ cannot borrow as mutable
+</code></pre>
+<!--
+Just as variables are immutable by default, so are references. We’re not
+allowed to modify something we have a reference to.
+-->
+<p>Comme les variables sont immuables par défaut, les références le sont aussi.
+Nous ne sommes pas autorisés à modifier une chose quand nous avons une référence
+vers elle.</p>
+<!--
+### Mutable References
+-->
+<h3><a class="header" href="#les-références-mutables" id="les-références-mutables">Les références mutables</a></h3>
+<!--
+We can fix the error in the code from Listing 4-6 with just a small tweak:
+-->
+<p>Nous pouvons résoudre l'erreur du code de l'encart 4-6 avec une petite
+modification :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let mut s = String::from("hello");
+
+    change(&mut s);
+}
+
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let mut s = String::from(&quot;hello&quot;);
+
+    changer(&amp;mut s);
+}
+
+fn changer(texte: &amp;mut String) {
+    texte.push_str(&quot;, world&quot;);
+}
+</code></pre></pre>
+<!--
+First, we had to change `s` to be `mut`. Then we had to create a mutable
+reference with `&mut s` and accept a mutable reference with `some_string: &mut
+String`.
+-->
+<p>D'abord, nous avons dû préciser que <code>s</code> est <code>mut</code>. Ensuite, nous avons dû
+créer une référence mutable avec <code>&amp;mut s</code> et accepter de prendre une référence
+mutable avec <code>texte: &amp;mut String</code>.</p>
+<!--
+But mutable references have one big restriction: you can have only one mutable
+reference to a particular piece of data in a particular scope. This code will
+fail:
+-->
+<p>Mais les références mutables ont une grosse contrainte : vous ne pouvez avoir
+qu'une seule référence mutable pour chaque donnée dans chaque portée. Le code
+suivant va échouer :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+let mut s = String::from("hello");
+
+let r1 = &mut s;
+let r2 = &mut s;
+
+println!("{}, {}", r1, r2);
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">let mut s = String::from(&quot;hello&quot;);
+
+let r1 = &amp;mut s;
+let r2 = &amp;mut s;
+
+println!(&quot;{}, {}&quot;, r1, r2);
+</code></pre>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<pre><code class="language-text">error[E0499]: cannot borrow `s` as mutable more than once at a time
+ -- &gt; src/main.rs:5:14
+  |
+4 |     let r1 = &amp;mut s;
+  |              ------ first mutable borrow occurs here
+5 |     let r2 = &amp;mut s;
+  |              ^^^^^^ second mutable borrow occurs here
+6 |
+7 |     println!(&quot;{}, {}&quot;, r1, r2);
+  |                        -- first borrow later used here
+</code></pre>
+<!--
+This restriction allows for mutation but in a very controlled fashion. It’s
+something that new Rustaceans struggle with, because most languages let you
+mutate whenever you’d like.
+-->
+<p>Cette contrainte autorise les mutations, mais de manière très contrôlée. C'est
+quelque chose que les nouveaux Rustacés ont du mal à surmonter, car la plupart
+des langages vous permettent de modifier les données quand vous le voulez.</p>
+<!--
+The benefit of having this restriction is that Rust can prevent data races at
+compile time. A *data race* is similar to a race condition and happens when
+these three behaviors occur:
+-->
+<p>L'avantage d'avoir cette contrainte est que Rust peut empêcher les accès
+concurrents au moment de la compilation. Un <em>accès concurrent</em> est une situation
+de concurrence qui se produit lorsque ces trois facteurs se combinent :</p>
+<!--
+* Two or more pointers access the same data at the same time.
+* At least one of the pointers is being used to write to the data.
+* There’s no mechanism being used to synchronize access to the data.
+-->
+<ul>
+<li>Deux pointeurs ou plus accèdent à la même donnée au même moment.</li>
+<li>Au moins un des pointeurs est utilisé pour écrire dans cette donnée.</li>
+<li>On n'utilise aucun mécanisme pour synchroniser l'accès aux données.</li>
+</ul>
+<!--
+Data races cause undefined behavior and can be difficult to diagnose and fix
+when you’re trying to track them down at runtime; Rust prevents this problem
+from happening because it won’t even compile code with data races!
+-->
+<p>L'accès concurrent provoque des comportements indéfinis et rend difficile le
+diagnostic et la résolution de problèmes lorsque vous essayez de les reproduire
+au moment de l'exécution ; Rust évite ce problème parce qu'il ne va pas compiler
+du code avec des accès concurrents !</p>
+<!--
+As always, we can use curly brackets to create a new scope, allowing for
+multiple mutable references, just not *simultaneous* ones:
+-->
+<p>Comme d'habitude, nous pouvons utiliser des accolades pour créer une nouvelle
+portée, pour nous permettre d'avoir plusieurs références mutables, mais pas
+<em>en même temps</em> :</p>
+<!--
+```rust
+let mut s = String::from("hello");
+
+{
+    let r1 = &mut s;
+
+} // r1 goes out of scope here, so we can make a new reference with no problems.
+
+let r2 = &mut s;
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>let mut s = String::from(&quot;hello&quot;);
+
+{
+    let r1 = &amp;mut s;
+
+} // r1 sort de la portée ici, donc nous pouvons créer une nouvelle référence
+  // sans problèmes.
+
+let r2 = &amp;mut s;
+<span class="boring">}
+</code></pre></pre>
+<!--
+A similar rule exists for combining mutable and immutable references. This code
+results in an error:
+-->
+<p>Une règle similaire existe pour combiner les références immuables et mutables.
+Ce code va mener à une erreur :</p>
+<!--
+```rust,ignore,does_not_compile
+let mut s = String::from("hello");
+
+let r1 = &s; // no problem
+let r2 = &s; // no problem
+let r3 = &mut s; // BIG PROBLEM
+
+println!("{}, {}, and {}", r1, r2, r3);
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">let mut s = String::from(&quot;hello&quot;);
+
+let r1 = &amp;s; // sans problème
+let r2 = &amp;s; // sans problème
+let r3 = &amp;mut s; // GROS PROBLEME
+
+println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
+</code></pre>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<!--
+```text
+error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
+ -- > src/main.rs:6:14
+  |
+4 |     let r1 = &s; // no problem
+  |              -- immutable borrow occurs here
+5 |     let r2 = &s; // no problem
+6 |     let r3 = &mut s; // BIG PROBLEM
+  |              ^^^^^^ mutable borrow occurs here
+7 |
+8 |     println!("{}, {}, and {}", r1, r2, r3);
+  |                                -- immutable borrow later used here
+```
+-->
+<pre><code class="language-text">error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
+ -- &gt; src/main.rs:6:14
+  |
+4 |     let r1 = &amp;s; // sans problème
+  |              -- immutable borrow occurs here
+5 |     let r2 = &amp;s; // sans problème
+6 |     let r3 = &amp;mut s; // GROS PROBLEME
+  |              ^^^^^^ mutable borrow occurs here
+7 |
+8 |     println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
+  |                                -- immutable borrow later used here
+</code></pre>
+<!--
+Whew! We *also* cannot have a mutable reference while we have an immutable one.
+Users of an immutable reference don’t expect the values to suddenly change out
+from under them! However, multiple immutable references are okay because no one
+who is just reading the data has the ability to affect anyone else’s reading of
+the data.
+-->
+<p>Ouah ! Nous ne pouvons pas <em>non plus</em> avoir une référence mutable pendant que
+nous en avons une autre immuable. Les utilisateurs d'une référence immuable ne
+s'attendent pas à ce que sa valeur change soudainement ! Cependant,
+l'utilisation de plusieurs références immuables ne pose pas de problème, car
+simplement lire une donnée ne va pas affecter la lecture de la donnée par les
+autres.</p>
+<!--
+Note that a reference’s scope starts from where it is introduced and continues
+through the last time that reference is used. For instance, this code will
+compile because the last usage of the immutable references occurs before the
+mutable reference is introduced:
+-->
+<p>Notez bien que la portée d'une référence commence dès qu'elle est introduite et
+se poursuit jusqu'au dernier endroit où cette référence est utilisée. Par
+exemple, le code suivant va se compiler car la dernière utilisation de la
+référence immuable est située avant l'introduction de la référence mutable :</p>
+<!-- This example is being ignored because there's a bug in rustdoc making the
+edition2018 not work. The bug is currently fixed in nightly, so when we update
+the book to >= 1.35, `ignore` can be removed from this example. -->
+<!--
+```rust,edition2018,ignore
+let mut s = String::from("hello");
+
+let r1 = &s; // no problem
+let r2 = &s; // no problem
+println!("{} and {}", r1, r2);
+// r1 and r2 are no longer used after this point
+
+let r3 = &mut s; // no problem
+println!("{}", r3);
+```
+-->
+<pre><code class="language-rust edition2018 ignore">let mut s = String::from(&quot;hello&quot;);
+
+let r1 = &amp;s; // sans problème
+let r2 = &amp;s; // sans problème
+println!(&quot;{} et {}&quot;, r1, r2);
+// r1 et r2 ne sont plus utilisés à partir d'ici
+
+let r3 = &amp;mut s; // sans problème
+println!(&quot;{}&quot;, r3);
+</code></pre>
+<!--
+The scopes of the immutable references `r1` and `r2` end after the `println!`
+where they are last used, which is before the mutable reference `r3` is
+created. These scopes don’t overlap, so this code is allowed.
+-->
+<p>Les portées des références immuables <code>r1</code> et <code>r2</code> se terminent après le
+<code>println!</code> où elles sont utilisées pour la dernière fois, c'est-à-dire avant que
+la référence mutable <code>r3</code> soit créée. Ces portées ne se chevauchent pas, donc ce
+code est autorisé.</p>
+<!--
+Even though borrowing errors may be frustrating at times, remember that it’s
+the Rust compiler pointing out a potential bug early (at compile time rather
+than at runtime) and showing you exactly where the problem is. Then you don’t
+have to track down why your data isn’t what you thought it was.
+-->
+<p>Même si ces erreurs d'emprunt peuvent parfois être frustrantes, n'oubliez pas
+que le compilateur de Rust nous signale un bogue potentiel en avance (au moment
+de la compilation plutôt que l'exécution) et vous montre où se situe exactement
+le problème. Ainsi, vous n'avez pas à chercher pourquoi vos données ne
+correspondent pas à ce que vous pensiez qu'elles devraient être.</p>
+<!--
+### Dangling References
+-->
+<h3><a class="header" href="#les-références-pendouillantes" id="les-références-pendouillantes">Les références pendouillantes</a></h3>
+<!--
+In languages with pointers, it’s easy to erroneously create a *dangling
+pointer*, a pointer that references a location in memory that may have been
+given to someone else, by freeing some memory while preserving a pointer to
+that memory. In Rust, by contrast, the compiler guarantees that references will
+never be dangling references: if you have a reference to some data, the
+compiler will ensure that the data will not go out of scope before the
+reference to the data does.
+-->
+<p>Avec les langages qui utilisent les pointeurs, il est facile de créer par erreur
+un <em>pointeur pendouillant</em> (<em>dangling pointer</em>), qui est un pointeur qui pointe
+vers un emplacement mémoire qui a été donné à quelqu'un d'autre, en libérant de
+la mémoire tout en conservant un pointeur vers cette mémoire. En revanche, avec
+Rust, le compilateur garantit que les références ne seront jamais des références
+pendouillantes : si nous avons une référence vers une donnée, le compilateur va
+s'assurer que cette donnée ne va pas sortir de la portée avant que la référence
+vers cette donnée en soit elle-même sortie.</p>
+<!--
+Let’s try to create a dangling reference, which Rust will prevent with a
+compile-time error:
+-->
+<p>Essayons de créer une référence pendouillante, ce que Rust va empêcher avec une
+erreur au moment de la compilation :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let reference_to_nothing = dangle();
+}
+
+fn dangle() -> &String {
+    let s = String::from("hello");
+
+    &s
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let reference_vers_rien = pendouille();
+}
+
+fn pendouille() -&gt; &amp;String {
+    let s = String::from(&quot;hello&quot;);
+
+    &amp;s
+}
+</code></pre>
+<!--
+Here’s the error:
+-->
+<p>Voici l'erreur :</p>
+<!--
+```text
+error[E0106]: missing lifetime specifier
+ -- > main.rs:5:16
+  |
+5 | fn dangle() -> &String {
+  |                ^ expected lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is
+  no value for it to be borrowed from
+  = help: consider giving it a 'static lifetime
+```
+-->
+<pre><code class="language-text">error[E0106]: missing lifetime specifier
+ --&gt; main.rs:5:16
+  |
+5 | fn pendouille() -&gt; &amp;String {
+  |                    ^ expected lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is
+  no value for it to be borrowed from
+  = help: consider giving it a 'static lifetime
+</code></pre>
+<!--
+This error message refers to a feature we haven’t covered yet: lifetimes. We’ll
+discuss lifetimes in detail in Chapter 10. But, if you disregard the parts
+about lifetimes, the message does contain the key to why this code is a problem:
+-->
+<p>Ce message d'erreur fait référence à une fonctionnalité que nous n'avons pas
+encore vue : les <em>durées de vie</em>. Nous aborderons les durées de vie dans le
+chapitre 10. Mais, si vous mettez de côté les parties qui parlent de durées de
+vie, le message explique pourquoi le code pose problème :</p>
+<!--
+```text
+this function's return type contains a borrowed value, but there is no value
+for it to be borrowed from.
+```
+-->
+<pre><code class="language-text">this function's return type contains a borrowed value, but there is no value
+for it to be borrowed from.
+</code></pre>
+<p>Ce qui peut se traduire par :</p>
+<pre><code class="language-text">Le type de retour de cette fonction contient une valeur empruntée, mais il n'y a
+plus aucune valeur qui peut être empruntée.
+</code></pre>
+<!--
+Let’s take a closer look at exactly what’s happening at each stage of our
+`dangle` code:
+-->
+<p>Regardons de plus près ce qui se passe exactement à chaque étape de notre code
+de <code>pendouille</code> :</p>
+<!--
+<span class="filename">Filename: src/main.rs</span>
+-->
+<p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn dangle() -> &String { // dangle returns a reference to a String
+
+    let s = String::from("hello"); // s is a new String
+
+    &s // we return a reference to the String, s
+} // Here, s goes out of scope, and is dropped. Its memory goes away.
+  // Danger!
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">fn pendouille() -&gt; &amp;String { // pendouille retourne une référence vers une String
+
+    let s = String::from(&quot;hello&quot;); // s est une nouvelle String
+
+    &amp;s // nous retournons une référence vers la String, s
+} // Ici, s sort de la portée, et est libéré. Sa mémoire disparaît.
+  // Attention, danger !
+</code></pre>
+<!--
+Because `s` is created inside `dangle`, when the code of `dangle` is finished,
+`s` will be deallocated. But we tried to return a reference to it. That means
+this reference would be pointing to an invalid `String`. That’s no good! Rust
+won’t let us do this.
+-->
+<p>Comme <code>s</code> est créé dans <code>pendouille</code>, lorsque le code de <code>pendouille</code> est
+terminé, la variable <code>s</code> sera désallouée. Mais nous avons essayé de retourner
+une référence vers elle. Cela veut dire que cette référence va pointer vers une
+<code>String</code> invalide. Ce n'est pas bon ! Rust ne nous laissera pas faire cela.</p>
+<!--
+The solution here is to return the `String` directly:
+-->
+<p>Ici la solution est de renvoyer la <code>String</code> directement :</p>
+<!--
+```rust
+fn no_dangle() -> String {
+    let s = String::from("hello");
+
+    s
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+fn main() {
+</span>fn ne_pendouille_pas() -&gt; String {
+    let s = String::from(&quot;hello&quot;);
+
+    s
+}
+<span class="boring">}
+</code></pre></pre>
+<!--
+This works without any problems. Ownership is moved out, and nothing is
+deallocated.
+-->
+<p>Cela fonctionne sans problème. La possession est transférée à la valeur de
+retour de la fonction, et rien n'est désalloué.</p>
+<!--
+### The Rules of References
+-->
+<h3><a class="header" href="#les-règles-de-référencement" id="les-règles-de-référencement">Les règles de référencement</a></h3>
+<!--
+Let’s recap what we’ve discussed about references:
+-->
+<p>Récapitulons ce que nous avons vu à propos des références :</p>
+<!--
+* At any given time, you can have *either* one mutable reference *or* any
+  number of immutable references.
+* References must always be valid.
+-->
+<ul>
+<li>À un instant donné, vous pouvez avoir <em>soit</em> une référence mutable, <em>soit</em> un
+nombre quelconque de références immuables.</li>
+<li>Les références doivent toujours être en vigueur.</li>
+</ul>
+<!--
+Next, we’ll look at a different kind of reference: slices.
+-->
+<p>Ensuite, nous aborderons un autre type de référence : les <em>slices</em>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch04-01-what-is-ownership.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch05-00-structs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch04-01-what-is-ownership.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch05-00-structs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>
