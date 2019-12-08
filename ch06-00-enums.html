@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Utiliser les structures pour structurer des données apparentées - Le langage de programmation Rust</title>
+        <title>Les énumérations et le filtrage par motif - Le langage de programmation Rust</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html" class="active"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li></ol>
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html" class="active"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -152,47 +152,52 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!-- # Using Structs to Structure Related Data -->
-<h1><a class="header" href="#utiliser-les-structures-pour-structurer-des-données-apparentées" id="utiliser-les-structures-pour-structurer-des-données-apparentées">Utiliser les structures pour structurer des données apparentées</a></h1>
-<!--
-A *struct*, or *structure*, is a custom data type that lets you name and
-package together multiple related values that make up a meaningful group. If
-you’re familiar with an object-oriented language, a *struct* is like an
-object’s data attributes. In this chapter, we’ll compare and contrast tuples
-with structs, demonstrate how to use structs, and discuss how to define methods
-and associated functions to specify behavior associated with a struct’s data.
-Structs and enums (discussed in Chapter 6) are the building blocks for creating
-new types in your program’s domain to take full advantage of Rust’s compile
-time type checking.
+                        <!--
+# Enums and Pattern Matching
 -->
-<p>Une <em>struct</em>, ou <em>structure</em>, est un type de données personnalisé qui vous
-permet de nommer et de rassembler plusieurs valeurs associées qui forment
-un groupe cohérent.
-Si vous êtes familier avec un langage orienté objet, une structure est en
-quelque sorte l'ensemble des attributs d'un objet.
-Dans ce chapitre, nous comparerons les tuples avec les structures, nous
-montrerons comment utiliser les structures et nous aborderons la définition des
-méthodes et des fonctions associées pour spécifier le comportement associé aux
-données d'une structure.
-Les structures et les énumérations (traitées au chapitre 6) sont les fondements
-de la création de nouveaux types au sein de votre programme pour tirer
-pleinement parti des vérifications de types effectuées par Rust à la
-compilation.</p>
+<h1><a class="header" href="#les-énumérations-et-le-filtrage-par-motif" id="les-énumérations-et-le-filtrage-par-motif">Les énumérations et le filtrage par motif</a></h1>
+<!--
+In this chapter we’ll look at *enumerations*, also referred to as *enums*.
+Enums allow you to define a type by enumerating its possible *variants*. First,
+we’ll define and use an enum to show how an enum can encode meaning along with
+data. Next, we’ll explore a particularly useful enum, called `Option`, which
+expresses that a value can be either something or nothing. Then we’ll look at
+how pattern matching in the `match` expression makes it easy to run different
+code for different values of an enum. Finally, we’ll cover how the `if let`
+construct is another convenient and concise idiom available to you to handle
+enums in your code.
+-->
+<p>Dans ce chapitre, nous allons aborder les <em>énumérations</em>, aussi appelées
+<em>enums</em>. Les énumérations vous permettent de définir un type en énumérant ses
+<em>variantes</em> possibles. Pour commencer, nous allons définir et utiliser une
+énumération pour voir comment une énumération peut donner du sens aux données.
+Ensuite, nous examinerons une énumération particulièrement utile qui s'appelle
+<code>Option</code> et qui permet de décrire des situations où la valeur peut être soit
+quelque chose, soit rien. Ensuite, nous regarderons comment le filtrage par
+motif avec l'expression <code>match</code> peut faciliter l'exécution de codes différents
+pour chaque valeur d'une énumération. Enfin, nous analyserons pourquoi la
+construction <code>if let</code> est un autre outil commode et concis à votre disposition
+pour traiter les énumérations dans votre code.</p>
+<!--
+Enums are a feature in many languages, but their capabilities differ in each
+language. Rust’s enums are most similar to *algebraic data types* in functional
+languages, such as F#, OCaml, and Haskell.
+-->
+<p>Les énumérations sont des fonctionnalités présentes dans de nombreux langages,
+mais leurs aptitudes varient d'un langage à l'autre. Les énumérations de Rust
+sont plus proches des <em>types de données algébriques</em> des langages fonctionnels,
+comme F#, OCaml et Haskell.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="ch04-03-slices.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch05-03-method-syntax.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="ch05-01-defining-structs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -202,15 +207,11 @@ compilation.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch04-03-slices.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="ch05-03-method-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a href="ch05-01-defining-structs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
