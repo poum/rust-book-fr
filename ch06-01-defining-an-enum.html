@@ -1,0 +1,1089 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Définir une énumération - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer un jeu de devinettes</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html" class="active"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+## Defining an Enum
+-->
+<h2><a class="header" href="#définir-une-énumération" id="définir-une-énumération">Définir une énumération</a></h2>
+<!--
+Let’s look at a situation we might want to express in code and see why enums
+are useful and more appropriate than structs in this case. Say we need to work
+with IP addresses. Currently, two major standards are used for IP addresses:
+version four and version six. These are the only possibilities for an IP
+address that our program will come across: we can *enumerate* all possible
+variants, which is where enumeration gets its name.
+-->
+<p>Imaginons une situation que nous voudrions exprimer avec du code et regardons
+pourquoi les énumérations sont utiles et plus appropriées que les structures
+dans ce cas. Disons que nous avons besoin de travailler avec des adresses IP.
+Pour le moment, il existe deux normes principales pour les adresses IP : la
+version quatre et la version six. Ce seront les seules possibilités d'adresse
+IP que notre programme va rencontrer : nous pouvons <em>énumérer</em> toutes les
+variantes possibles, d'où vient le nom de l'énumération.</p>
+<!--
+Any IP address can be either a version four or a version six address, but not
+both at the same time. That property of IP addresses makes the enum data
+structure appropriate, because enum values can only be one of its variants.
+Both version four and version six addresses are still fundamentally IP
+addresses, so they should be treated as the same type when the code is handling
+situations that apply to any kind of IP address.
+-->
+<p>N'importe quelle adresse IP peut être soit une adresse en version quatre, soit
+en version six, mais pas les deux en même temps. Cette propriété des adresses IP
+est appropriée à la structure de données d'énumérations, car les valeurs de
+l'énumération ne peuvent être qu'une de ses variantes. Les adresses en version
+quatre et six sont toujours fondamentalement des adresses IP, donc elles doivent
+être traitées comme étant du même type lorsque le code travaille avec des
+situations qui s'appliquent à n'importe quelle sorte d'adresse IP.</p>
+<!--
+We can express this concept in code by defining an `IpAddrKind` enumeration and
+listing the possible kinds an IP address can be, `V4` and `V6`. These are the
+variants of the enum:
+-->
+<p>Nous pouvons exprimer ce concept dans le code en définissant une énumération
+<code>SorteAdresseIp</code> et en listant les différentes sortes possibles d'adresses IP
+qu'elle peut avoir, <code>V4</code> et <code>V6</code>. Ce sont les variantes de l'énumération :</p>
+<!--
+```rust
+enum IpAddrKind {
+    V4,
+    V6,
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum SorteAdresseIp {
+    V4,
+    V6,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+`IpAddrKind` is now a custom data type that we can use elsewhere in our code.
+-->
+<p><code>SorteAdresseIp</code> est maintenant un type de données personnalisé que nous pouvons
+utiliser n'importe où dans notre code.</p>
+<!--
+### Enum Values
+-->
+<h3><a class="header" href="#les-valeurs-dénumérations" id="les-valeurs-dénumérations">Les valeurs d'énumérations</a></h3>
+<!--
+We can create instances of each of the two variants of `IpAddrKind` like this:
+-->
+<p>Nous pouvons créer des instances de chacune des deux variantes de
+<code>SorteAdresseIp</code> de cette manière :</p>
+<!--
+```rust
+# enum IpAddrKind {
+#     V4,
+#     V6,
+# }
+#
+let four = IpAddrKind::V4;
+let six = IpAddrKind::V6;
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">enum SorteAdresseIp {
+</span><span class="boring">    V4,
+</span><span class="boring">    V6,
+</span><span class="boring">}
+</span><span class="boring">
+</span>let quatre = SorteAdresseIp::V4;
+let six = SorteAdresseIp::V6;
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+Note that the variants of the enum are namespaced under its identifier, and we
+use a double colon to separate the two. The reason this is useful is that now
+both values `IpAddrKind::V4` and `IpAddrKind::V6` are of the same type:
+`IpAddrKind`. We can then, for instance, define a function that takes any
+`IpAddrKind`:
+-->
+<p>Remarquez que les variantes de l'énumération sont dans un espace de nom qui se
+situe avant leur nom, et nous utilisons un double deux-points pour les séparer
+tous les deux. C'est utile car maintenant les deux valeurs <code>SorteAdresseIp::V4</code>
+et <code>SorteAdresseIp::V6</code> sont du même type : <code>SorteAdresseIp</code>. Ensuite, nous
+pouvons, par exemple, définir une fonction qui accepte n'importe quelle
+<code>SorteAdresseIp</code> :</p>
+<!--
+```rust
+# enum IpAddrKind {
+#     V4,
+#     V6,
+# }
+#
+fn route(ip_kind: IpAddrKind) { }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">enum SorteAdresseIp {
+</span><span class="boring">    V4,
+</span><span class="boring">    V6,
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn router(sorte_ip: SorteAdresseIp) { }
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+And we can call this function with either variant:
+-->
+<p>Et nous pouvons appeler cette fonction avec chacune des variantes :</p>
+<!--
+```rust
+# enum IpAddrKind {
+#     V4,
+#     V6,
+# }
+#
+# fn route(ip_kind: IpAddrKind) { }
+#
+route(IpAddrKind::V4);
+route(IpAddrKind::V6);
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">enum SorteAdresseIp {
+</span><span class="boring">    V4,
+</span><span class="boring">    V6,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn router(sorte_ip: SorteAdresseIp) { }
+</span><span class="boring">
+</span>router(SorteAdresseIp::V4);
+router(SorteAdresseIp::V6);
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+Using enums has even more advantages. Thinking more about our IP address type,
+at the moment we don’t have a way to store the actual IP address *data*; we
+only know what *kind* it is. Given that you just learned about structs in
+Chapter 5, you might tackle this problem as shown in Listing 6-1.
+-->
+<p>L'utilisation des énumérations a encore plus d'avantages. En étudiant un peu
+plus notre type d'adresse IP, nous constatons que pour le moment, nous ne
+pouvons pas stocker <em>la donnée</em> de l'adresse IP ; nous savons seulement de
+quelle sorte elle est. Avec ce que vous avez appris au chapitre 5, vous pouvez
+résoudre ce problème comme dans l'encart 6-1.</p>
+<!--
+```rust
+enum IpAddrKind {
+    V4,
+    V6,
+}
+
+struct IpAddr {
+    kind: IpAddrKind,
+    address: String,
+}
+
+let home = IpAddr {
+    kind: IpAddrKind::V4,
+    address: String::from("127.0.0.1"),
+};
+
+let loopback = IpAddr {
+    kind: IpAddrKind::V6,
+    address: String::from("::1"),
+};
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum SorteAdresseIp {
+    V4,
+    V6,
+}
+
+struct AdresseIp {
+    sorte: SorteAdresseIp,
+    adresse: String,
+}
+
+let local = AdresseIp {
+    sorte: SorteAdresseIp::V4,
+    adresse: String::from(&quot;127.0.0.1&quot;),
+};
+
+let rebouclage = AdresseIp {
+    sorte: SorteAdresseIp::V6,
+    adresse: String::from(&quot;::1&quot;),
+};
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+<span class="caption">Listing 6-1: Storing the data and `IpAddrKind` variant of
+an IP address using a `struct`</span>
+-->
+<p><span class="caption">Encart 6-1 : Stockage de la donnée et de la variante de
+<code>SorteAdresseIp</code> d'une adresse IP en utilisant une <code>struct</code></span></p>
+<!--
+Here, we’ve defined a struct `IpAddr` that has two fields: a `kind` field that
+is of type `IpAddrKind` (the enum we defined previously) and an `address` field
+of type `String`. We have two instances of this struct. The first, `home`, has
+the value `IpAddrKind::V4` as its `kind` with associated address data of
+`127.0.0.1`. The second instance, `loopback`, has the other variant of
+`IpAddrKind` as its `kind` value, `V6`, and has address `::1` associated with
+it. We’ve used a struct to bundle the `kind` and `address` values together, so
+now the variant is associated with the value.
+-->
+<p>Ainsi, nous avons défini une structure <code>AdresseIp</code> qui a deux champs : un champ
+<code>sorte</code> qui est du type <code>SorteAdresseIp</code> (l'énumération que nous avons définie
+précédemment) et un champ <code>adresse</code> qui est du type <code>String</code>. Nous avons deux
+instances de cette structure. La première, <code>local</code>, a la valeur
+<code>SorteAdresseIp::V4</code> pour son champ <code>sorte</code>, associé à la donnée d'adresse qui
+est <code>127.0.0.1</code>. La seconde instance, <code>rebouclage</code>, a comme valeur de champ
+<code>sorte</code> l'autre variante de <code>SorteAdresseIp</code>, <code>V6</code>, et a l'adresse<code>::1</code> qui lui
+est associée. Nous avons utilisé une structure pour relier ensemble la <code>sorte</code>
+et l'<code>adresse</code>, donc maintenant la variante est liée à la valeur.</p>
+<!--
+We can represent the same concept in a more concise way using just an enum,
+rather than an enum inside a struct, by putting data directly into each enum
+variant. This new definition of the `IpAddr` enum says that both `V4` and `V6`
+variants will have associated `String` values:
+-->
+<p>Nous pouvons appliquer le même principe de manière plus concise en utilisant
+uniquement une énumération, plutôt que d'utiliser une énumération dans une
+structure, en insérant directement la donnée dans chaque variante de
+l'énumération. Cette nouvelle définition de l'énumération <code>AdresseIp</code> indique
+que chacune des variantes <code>V4</code> et <code>V6</code> auront des valeurs associées de type
+<code>String</code> :</p>
+<!--
+```rust
+enum IpAddr {
+    V4(String),
+    V6(String),
+}
+
+let home = IpAddr::V4(String::from("127.0.0.1"));
+
+let loopback = IpAddr::V6(String::from("::1"));
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum AdresseIp {
+    V4(String),
+    V6(String),
+}
+
+let local = AdresseIp::V4(String::from(&quot;127.0.0.1&quot;));
+
+let rebouclage = AdresseIp::V6(String::from(&quot;::1&quot;));
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+We attach data to each variant of the enum directly, so there is no need for an
+extra struct.
+-->
+<p>Nous relions les données de chaque variante directement à l'énumération, donc il
+n'est pas nécessaire d'avoir une structure en plus.</p>
+<!--
+There’s another advantage to using an enum rather than a struct: each variant
+can have different types and amounts of associated data. Version four type IP
+addresses will always have four numeric components that will have values
+between 0 and 255. If we wanted to store `V4` addresses as four `u8` values but
+still express `V6` addresses as one `String` value, we wouldn’t be able to with
+a struct. Enums handle this case with ease:
+-->
+<p>Il y a un autre avantage à utiliser une énumération plutôt qu'une structure :
+chaque variante peut stocker des types différents, et aussi avoir une quantité
+différente de données associées. Les adresses IP version quatre vont toujours
+avoir quatre composantes numériques qui auront une valeur entre 0 et 255. Si
+nous voulions stocker les adresses <code>V4</code> avec quatre valeurs de type <code>u8</code> mais
+continuer à stocker les adresses <code>V6</code> dans une <code>String</code>, nous ne pourrions pas
+le faire avec une structure. Les énumérations permettent de faire cela
+facilement :</p>
+<!--
+```rust
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+
+let home = IpAddr::V4(127, 0, 0, 1);
+
+let loopback = IpAddr::V6(String::from("::1"));
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum AdresseIp {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+
+let local = AdresseIp::V4(127, 0, 0, 1);
+
+let rebouclage = AdresseIp::V6(String::from(&quot;::1&quot;));
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+We’ve shown several different ways to define data structures to store version
+four and version six IP addresses. However, as it turns out, wanting to store
+IP addresses and encode which kind they are is so common that [the standard
+library has a definition we can use!][IpAddr]<!-- ignore -- > Let’s look at how
+the standard library defines `IpAddr`: it has the exact enum and variants that
+we’ve defined and used, but it embeds the address data inside the variants in
+the form of two different structs, which are defined differently for each
+variant:
+-->
+<p>Nous avons vu différentes manières de définir des structures de données pour
+enregistrer des adresses IP en version quatre et version six. Cependant, il
+s'avère que vouloir stocker des adresses IP et identifier de quelle sorte elles
+sont est si fréquent que <a href="https://doc.rust-lang.org/std/net/enum.IpAddr.html">la bibliothèque standard a une définition que nous
+pouvons utiliser !</a><!-- ignore --> Analysons comment la bibliothèque
+standard a défini <code>IpAddr</code> (l'équivalent de notre <code>AdresseIp</code>) : nous retrouvons
+la même énumération et les variantes que nous avons définies et utilisées, mais
+stocke les données d'adresse dans des variantes dans deux structures
+différentes, qui sont définies chacune pour chaque variante :</p>
+<!--
+[IpAddr]: ../std/net/enum.IpAddr.html
+-->
+<!--
+```rust
+struct Ipv4Addr {
+    // --snip--
+}
+
+struct Ipv6Addr {
+    // --snip--
+}
+
+enum IpAddr {
+    V4(Ipv4Addr),
+    V6(Ipv6Addr),
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>struct Ipv4Addr {
+    // -- code masqué ici --
+}
+
+struct Ipv6Addr {
+    // -- code masqué ici --
+}
+
+enum IpAddr {
+    V4(Ipv4Addr),
+    V6(Ipv6Addr),
+}
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+This code illustrates that you can put any kind of data inside an enum variant:
+strings, numeric types, or structs, for example. You can even include another
+enum! Also, standard library types are often not much more complicated than
+what you might come up with.
+-->
+<p>Ce code montre comment vous pouvez insérer n'importe quel type de données dans
+une variante d'énumération : des chaînes de caractères, des nombres ou des
+structures, par exemple. Vous pouvez même y intégrer d'autres énumérations ! Par
+ailleurs, les types de la bibliothèque standard ne sont parfois pas plus
+compliqués que ce que vous pourriez inventer.</p>
+<!--
+Note that even though the standard library contains a definition for `IpAddr`,
+we can still create and use our own definition without conflict because we
+haven’t brought the standard library’s definition into our scope. We’ll talk
+more about bringing types into scope in Chapter 7.
+-->
+<p>Notez aussi que même si la bibliothèque standard embarque une définition de
+<code>IpAddr</code>, nous pouvons quand même créer et utiliser notre propre définition de
+ce type sans avoir de conflit de nom car nous n'avons pas importé cette
+définition de la bibliothèque standard dans la portée. Nous verrons plus en
+détail comment importer les types dans la portée au chapitre 7.</p>
+<!--
+Let’s look at another example of an enum in Listing 6-2: this one has a wide
+variety of types embedded in its variants.
+-->
+<p>Analysons un autre exemple d'une énumération dans l'encart 6-2 : celle-ci a une
+grande diversité de types dans ses variantes.</p>
+<!--
+```rust
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum Message {
+    Quitter,
+    Deplacer { x: i32, y: i32 },
+    Ecrire(String),
+    ChangerCouleur(i32, i32, i32),
+}
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+<span class="caption">Listing 6-2: A `Message` enum whose variants each store
+different amounts and types of values</span>
+-->
+<p><span class="caption">Encart 6-2 : Une énumération <code>Message</code> dont chaque
+variante stocke des valeurs de différents types et en différentes
+quantités</span></p>
+<!--
+This enum has four variants with different types:
+-->
+<p>Cette énumération a quatre variantes avec des types différents :</p>
+<!--
+* `Quit` has no data associated with it at all.
+* `Move` includes an anonymous struct inside it.
+* `Write` includes a single `String`.
+* `ChangeColor` includes three `i32` values.
+-->
+<ul>
+<li><code>Quitter</code> n'a pas du tout de donnée associée.</li>
+<li><code>Deplacer</code> intègre une structure anonyme.</li>
+<li><code>Ecrire</code> intègre une seule <code>String</code>.</li>
+<li><code>ChangerCouleur</code> intègre trois valeurs de type <code>i32</code>.</li>
+</ul>
+<!--
+Defining an enum with variants such as the ones in Listing 6-2 is similar to
+defining different kinds of struct definitions, except the enum doesn’t use the
+`struct` keyword and all the variants are grouped together under the `Message`
+type. The following structs could hold the same data that the preceding enum
+variants hold:
+-->
+<p>Définir une énumération avec des variantes comme celles dans l'encart 6-2
+ressemble à la définition de différentes sortes de structures, sauf que
+l'énumération n'utilise pas le mot-clé <code>struct</code> et que toutes les variantes sont
+regroupées ensemble sous le type <code>Message</code>. Les structures suivantes peuvent
+stocker les mêmes données que celles stockées par les variantes précédentes :</p>
+<!--
+```rust
+struct QuitMessage; // unit struct
+struct MoveMessage {
+    x: i32,
+    y: i32,
+}
+struct WriteMessage(String); // tuple struct
+struct ChangeColorMessage(i32, i32, i32); // tuple struct
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>struct MessageQuitter; // une structure unité
+struct MessageDeplacer {
+    x: i32,
+    y: i32,
+}
+struct MessageEcrire(String); // une structure tuple
+struct MessageChangerCouleur(i32, i32, i32); // une structure tuple
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+But if we used the different structs, which each have their own type, we
+couldn’t as easily define a function to take any of these kinds of messages as
+we could with the `Message` enum defined in Listing 6-2, which is a single type.
+-->
+<p>Mais si nous utilisions les différentes structures, qui ont chacune leur propre
+type, nous ne pourrions pas définir facilement une fonction qui prend en
+paramètre toutes les sortes de messages, tel que nous pourrions le faire avec
+l'énumération <code>Message</code> que nous avons définie dans l'encart 6-2, qui est un
+seul type.</p>
+<!--
+There is one more similarity between enums and structs: just as we’re able to
+define methods on structs using `impl`, we’re also able to define methods on
+enums. Here’s a method named `call` that we could define on our `Message` enum:
+-->
+<p>Il y a un autre point commun entre les énumérations et les structures : tout
+comme on peut définir des méthodes sur les structures en utilisant <code>impl</code>, on
+peut aussi définir des méthodes sur des énumérations. Voici une méthode appelée
+<code>appeler</code> que nous pouvons définir sur notre énumération <code>Message</code> :</p>
+<!--
+```rust
+# enum Message {
+#     Quit,
+#     Move { x: i32, y: i32 },
+#     Write(String),
+#     ChangeColor(i32, i32, i32),
+# }
+#
+impl Message {
+    fn call(&self) {
+        // method body would be defined here
+    }
+}
+
+let m = Message::Write(String::from("hello"));
+m.call();
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span><span class="boring">enum Message {
+</span><span class="boring">    Quitter,
+</span><span class="boring">    Deplacer { x: i32, y: i32 },
+</span><span class="boring">    Ecrire(String),
+</span><span class="boring">    ChangerCouleur(i32, i32, i32),
+</span><span class="boring">}
+</span><span class="boring">
+</span>impl Message {
+    fn appeler(&amp;self) {
+        // le corps de la méthode sera défini ici
+    }
+}
+
+let m = Message::Ecrire(String::from(&quot;hello&quot;));
+m.appeler();
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+The body of the method would use `self` to get the value that we called the
+method on. In this example, we’ve created a variable `m` that has the value
+`Message::Write(String::from("hello"))`, and that is what `self` will be in the
+body of the `call` method when `m.call()` runs.
+-->
+<p>Le corps de la méthode va utiliser <code>self</code> pour obtenir la valeur sur laquelle
+nous avons utilisé la méthode. Dans cet exemple, nous avons créé une variable
+<code>m</code> qui a la valeur <code>Message::Ecrire(String::from(&quot;hello&quot;))</code>, et cela sera ce
+que <code>self</code> aura comme valeur dans le corps de la méthode <code>appeler</code> quand nous
+lancerons <code>m.appeler()</code>.</p>
+<!--
+Let’s look at another enum in the standard library that is very common and
+useful: `Option`.
+-->
+<p>Regardons maintenant une autre énumération de la bibliothèque standard qui est
+très utilisée et utile : <code>Option</code>.</p>
+<!--
+### The `Option` Enum and Its Advantages Over Null Values
+-->
+<h3><a class="header" href="#lénumération-option-et-ses-avantages-par-rapport-à-la-valeur-null" id="lénumération-option-et-ses-avantages-par-rapport-à-la-valeur-null">L'énumération <code>Option</code> et ses avantages par rapport à la valeur null</a></h3>
+<!--
+In the previous section, we looked at how the `IpAddr` enum let us use Rust’s
+type system to encode more information than just the data into our program.
+This section explores a case study of `Option`, which is another enum defined
+by the standard library. The `Option` type is used in many places because it
+encodes the very common scenario in which a value could be something or it
+could be nothing. Expressing this concept in terms of the type system means the
+compiler can check whether you’ve handled all the cases you should be handling;
+this functionality can prevent bugs that are extremely common in other
+programming languages.
+-->
+<p>Dans la section précédente, nous avons découvert comment l'énumération
+<code>AdresseIp</code> nous permet d'utiliser le système de types de Rust pour enregistrer
+dans nos programmes encore plus d'informations qu'uniquement la donnée. Cette
+section étudie le cas de <code>Option</code>, qui est une autre énumération définie dans la
+bibliothèque standard. Le type <code>Option</code> est utilisé dans de nombreux endroits
+car il décrit un scénario très courant où une valeur peut être soit quelque
+chose, soit rien du tout. Exprimer ce concept avec le système de types implique
+que le compilateur peut vérifier si vous avez géré tous les cas que vous
+pourriez rencontrer ; cette fonctionnalité peut éviter des bogues qui sont très
+courants dans d'autres langages de programmation.</p>
+<!--
+Programming language design is often thought of in terms of which features you
+include, but the features you exclude are important too. Rust doesn’t have the
+null feature that many other languages have. *Null* is a value that means there
+is no value there. In languages with null, variables can always be in one of
+two states: null or not-null.
+-->
+<p>La conception d'un langage de programmation est souvent pensée en fonction des
+fonctionnalités qu'on inclut, mais les fonctionnalités qu'on refuse sont elles
+aussi importantes. Rust n'a pas de fonctionnalité <em>null</em> qu'ont de nombreux
+langages. <em>Null</em> est une valeur qui signifie qu'il n'y a pas de valeur à cet
+endroit. Avec les langages qui utilisent null, les variables peuvent toujours
+être dans deux états : null ou non null.</p>
+<!--
+In his 2009 presentation “Null References: The Billion Dollar Mistake,” Tony
+Hoare, the inventor of null, has this to say:
+-->
+<p>Dans sa thèse de 2009 “Null References: The Billion Dollar Mistake” (les
+références nulles : l'erreur à un milliard de dollars), Tony Hoare, l'inventeur
+de null, a écrit ceci :</p>
+<!--
+> I call it my billion-dollar mistake. At that time, I was designing the first
+> comprehensive type system for references in an object-oriented language. My
+> goal was to ensure that all use of references should be absolutely safe, with
+> checking performed automatically by the compiler. But I couldn’t resist the
+> temptation to put in a null reference, simply because it was so easy to
+> implement. This has led to innumerable errors, vulnerabilities, and system
+> crashes, which have probably caused a billion dollars of pain and damage in
+> the last forty years.
+-->
+<blockquote>
+<p>Je l'appelle mon erreur à un milliard de dollars. À cette époque, je concevais
+le premier système de type complet pour des références dans un langage orienté
+objet. Mon objectif était de garantir que toutes les utilisations des
+références soient totalement sûres, et soient vérifiées automatiquement par le
+compilateur. Mais je n'ai pas pu résister à la tentation d'inclure la
+référence nulle, simplement parce que c'était si simple à implémenter. Cela a
+conduit à d'innombrables erreurs, vulnérabilités, et pannes systèmes, qui ont
+probablement causé un milliard de dollars de dommages au cours des quarante
+dernières années.</p>
+</blockquote>
+<!--
+The problem with null values is that if you try to use a null value as a
+not-null value, you’ll get an error of some kind. Because this null or not-null
+property is pervasive, it’s extremely easy to make this kind of error.
+-->
+<p>Le problème avec les valeurs nulles, c'est que si vous essayez d'utiliser une
+valeur nulle comme si elle n'était pas nulle, vous obtiendrez une erreur d'une
+façon ou d'une autre. Comme cette propriété nulle ou non nulle est omniprésente,
+il est très facile de faire cette erreur.</p>
+<!--
+However, the concept that null is trying to express is still a useful one: a
+null is a value that is currently invalid or absent for some reason.
+-->
+<p>Cependant, le concept que null essaye d'exprimer reste utile : une valeur nulle
+est une valeur qui est actuellement invalide ou absente pour une raison ou une
+autre.</p>
+<!--
+The problem isn’t really with the concept but with the particular
+implementation. As such, Rust does not have nulls, but it does have an enum
+that can encode the concept of a value being present or absent. This enum is
+`Option<T>`, and it is [defined by the standard library][option]<!-- ignore -- >
+as follows:
+-->
+<p>Le problème ne vient pas vraiment du concept, mais de son implémentation. C'est
+pourquoi Rust n'a pas de valeurs nulles, mais il a une énumération qui décrit le
+concept d'une valeur qui peut être soit présente, soit absente. Cette
+énumération est <code>Option&lt;T&gt;</code>, et elle est <a href="https://doc.rust-lang.org/std/option/enum.Option.html">définie dans la bibliothèque
+standard</a><!-- ignore --> comme ci-dessous :</p>
+<!--
+[option]: ../std/option/enum.Option.html
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>enum Option&lt;T&gt; {
+    Some(T),
+    None,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+The `Option<T>` enum is so useful that it’s even included in the prelude; you
+don’t need to bring it into scope explicitly. In addition, so are its variants:
+you can use `Some` and `None` directly without the `Option::` prefix. The
+`Option<T>` enum is still just a regular enum, and `Some(T)` and `None` are
+still variants of type `Option<T>`.
+-->
+<p>L'énumération <code>Option&lt;T&gt;</code> est tellement utile qu'elle est intégrée dans l'étape
+préliminaire ; vous n'avez pas besoin de l'importer explicitement dans la
+portée. De plus, voici ses variantes : vous pouvez utiliser directement <code>Some</code>
+(<em>quelque chose</em>) et <code>None</code> (<em>rien</em>) sans les préfixer par <code>Option::</code>.
+L'énumération <code>Option&lt;T&gt;</code> reste une énumération normale, et <code>Some(T)</code> ainsi que
+<code>None</code> sont toujours des variantes de type <code>Option&lt;T&gt;</code>.</p>
+<!--
+The `<T>` syntax is a feature of Rust we haven’t talked about yet. It’s a
+generic type parameter, and we’ll cover generics in more detail in Chapter 10.
+For now, all you need to know is that `<T>` means the `Some` variant of the
+`Option` enum can hold one piece of data of any type. Here are some examples of
+using `Option` values to hold number types and string types
+-->
+<p>La syntaxe <code>&lt;T&gt;</code> est une fonctionnalité de Rust que nous n'avons pas encore
+abordée. Il s'agit d'un paramètre de type générique, et nous verrons la
+généricité plus en détail au chapitre 10. Pour le moment, dites-vous que ce
+<code>&lt;T&gt;</code> signifie que la variante <code>Some</code> de l'énumération <code>Option</code> peut stocker un
+élément de donnée de n'importe quel type. Voici quelques exemples d'utilisation
+de valeurs de <code>Option</code> pour stocker des types de nombres et des types de chaînes
+de caractères :</p>
+<!--
+```rust
+let some_number = Some(5);
+let some_string = Some("a string");
+
+let absent_number: Option<i32> = None;
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>let un_nombre = Some(5);
+let une_chaine = Some(&quot;une chaîne&quot;);
+
+let nombre_absent: Option&lt;i32&gt; = None;
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+If we use `None` rather than `Some`, we need to tell Rust what type of
+`Option<T>` we have, because the compiler can’t infer the type that the `Some`
+variant will hold by looking only at a `None` value.
+-->
+<p>Si nous utilisons <code>None</code> plutôt que <code>Some</code>, nous devons indiquer à Rust quel
+type de <code>Option&lt;T&gt;</code> nous avons, car le compilateur ne peut pas déduire le type
+que cette variante <code>Some</code> va stocker en considérant uniquement une valeur
+<code>None</code>.</p>
+<!--
+When we have a `Some` value, we know that a value is present and the value is
+held within the `Some`. When we have a `None` value, in some sense, it means
+the same thing as null: we don’t have a valid value. So why is having
+`Option<T>` any better than having null?
+-->
+<p>Lorsque nous avons une valeur <code>Some</code>, nous savons que la valeur est présente et
+que la valeur est stockée dans le <code>Some</code>. Lorsque nous avons une valeur <code>None</code>,
+en quelque sorte, cela veut dire la même chose que null : nous n'avons pas une
+valeur valide. Donc pourquoi obtenir <code>Option&lt;T&gt;</code> est meilleur que d'avoir null ?</p>
+<!--
+In short, because `Option<T>` and `T` (where `T` can be any type) are different
+types, the compiler won’t let us use an `Option<T>` value as if it were
+definitely a valid value. For example, this code won’t compile because it’s
+trying to add an `i8` to an `Option<i8>`:
+-->
+<p>En bref, comme <code>Option&lt;T&gt;</code> et <code>T</code> (où <code>T</code> représente n'importe quel type) sont
+de types différents, le compilateur ne va pas nous autoriser à utiliser une
+valeur <code>Option&lt;T&gt;</code> comme si cela était bien une valeur valide. Par exemple, le
+code suivant ne se compile pas car il essaye d'additionner un <code>i8</code> et une
+<code>Option&lt;i8&gt;</code> :</p>
+<!--
+```rust,ignore,does_not_compile
+let x: i8 = 5;
+let y: Option<i8> = Some(5);
+
+let sum = x + y;
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">let x: i8 = 5;
+let y: Option&lt;i8&gt; = Some(5);
+
+let somme = x + y;
+</code></pre>
+<!--
+If we run this code, we get an error message like this:
+-->
+<p>Si nous lançons ce code, nous aurons un message d'erreur comme celui-ci :</p>
+<!--
+```text
+error[E0277]: the trait bound `i8: std::ops::Add<std::option::Option<i8>>` is
+not satisfied
+ -- >
+  |
+5 |     let sum = x + y;
+  |                 ^ no implementation for `i8 + std::option::Option<i8>`
+  |
+```
+-->
+<pre><code class="language-text">error[E0277]: the trait bound `i8: std::ops::Add&lt;std::option::Option&lt;i8&gt;&gt;` is
+not satisfied
+ -- &gt;
+  |
+5 |     let somme = x + y;
+  |                   ^ no implementation for `i8 + std::option::Option&lt;i8&gt;`
+  |
+</code></pre>
+<!--
+Intense! In effect, this error message means that Rust doesn’t understand how
+to add an `i8` and an `Option<i8>`, because they’re different types. When we
+have a value of a type like `i8` in Rust, the compiler will ensure that we
+always have a valid value. We can proceed confidently without having to check
+for null before using that value. Only when we have an `Option<i8>` (or
+whatever type of value we’re working with) do we have to worry about possibly
+not having a value, and the compiler will make sure we handle that case before
+using the value.
+-->
+<p>Intense ! Effectivement, ce message d'erreur signifie que Rust ne comprend pas
+comment additionner un <code>i8</code> et une <code>Option&lt;i8&gt;</code>, car ils sont de types
+différents. Quand nous avons une valeur d'un type comme <code>i8</code> avec Rust, le
+compilateur va s'assurer que nous avons toujours une valeur valide. Nous pouvons
+continuer en toute confiance sans avoir à vérifier que cette valeur n'est pas
+nulle avant de l'utiliser. Ce n'est que lorsque nous avons une <code>Option&lt;i8&gt;</code> (ou
+tout autre type de valeur avec lequel nous travaillons) que nous devons nous
+inquiéter de ne pas avoir de valeur, et le compilateur va s'assurer que nous
+gérons ce cas avant d'utiliser la valeur.</p>
+<!--
+In other words, you have to convert an `Option<T>` to a `T` before you can
+perform `T` operations with it. Generally, this helps catch one of the most
+common issues with null: assuming that something isn’t null when it actually
+is.
+-->
+<p>Autrement dit, vous devez convertir une <code>Option&lt;T&gt;</code> en <code>T</code> pour pouvoir faire
+avec elle des opérations du type <code>T</code>. Généralement, cela permet de résoudre l'un
+des problèmes les plus courants avec null : supposer qu'une valeur n'est pas
+nulle alors qu'en réalité, elle l'est.</p>
+<!--
+Not having to worry about incorrectly assuming a not-null value helps you to be
+more confident in your code. In order to have a value that can possibly be
+null, you must explicitly opt in by making the type of that value `Option<T>`.
+Then, when you use that value, you are required to explicitly handle the case
+when the value is null. Everywhere that a value has a type that isn’t an
+`Option<T>`, you *can* safely assume that the value isn’t null. This was a
+deliberate design decision for Rust to limit null’s pervasiveness and increase
+the safety of Rust code.
+-->
+<p>Ne pas avoir à s'inquiéter que des valeurs nulles puissent être mal gérées vous
+aide à être plus confiant en votre code. Pour avoir une valeur qui peut
+potentiellement être nulle, vous devez l'indiquer explicitement en déclarant que
+le type de cette valeur est <code>Option&lt;T&gt;</code>. Ensuite, quand vous utiliserez cette
+valeur, il vous faudra gérer explicitement le cas où cette valeur est nulle. Si
+vous utilisez une valeur qui n'est pas une <code>Option&lt;T&gt;</code>, alors vous <em>pouvez</em>
+considérer que cette valeur ne sera jamais nulle sans prendre de risques. Il
+s'agit d'un choix de conception délibéré de Rust pour limiter l'omniprésence de
+null et augmenter la sécurité du code en Rust.</p>
+<!--
+So, how do you get the `T` value out of a `Some` variant when you have a value
+of type `Option<T>` so you can use that value? The `Option<T>` enum has a large
+number of methods that are useful in a variety of situations; you can check
+them out in [its documentation][docs]<!-- ignore -- >. Becoming familiar with
+the methods on `Option<T>` will be extremely useful in your journey with Rust.
+-->
+<p>Donc, comment récupérer la valeur de type <code>T</code> d'une variante <code>Some</code> quand vous
+avez une valeur de type <code>Option&lt;T&gt;</code> afin de l'utiliser ? L'énumération
+<code>Option&lt;T&gt;</code> a un large choix de méthodes qui sont plus ou moins utiles selon les
+cas ; vous pouvez les découvrir dans <a href="https://doc.rust-lang.org/std/option/enum.Option.html">sa documentation</a><!-- ignore -->. Se
+familiariser avec les méthodes de <code>Option&lt;T&gt;</code> peut être très utile dans votre
+aventure avec Rust.</p>
+<!--
+[docs]: ../std/option/enum.Option.html
+-->
+<!--
+In general, in order to use an `Option<T>` value, you want to have code that
+will handle each variant. You want some code that will run only when you have a
+`Some(T)` value, and this code is allowed to use the inner `T`. You want some
+other code to run if you have a `None` value, and that code doesn’t have a `T`
+value available. The `match` expression is a control flow construct that does
+just this when used with enums: it will run different code depending on which
+variant of the enum it has, and that code can use the data inside the matching
+value.
+-->
+<p>De manière générale, pour pouvoir utiliser une valeur de <code>Option&lt;T&gt;</code>, votre code
+doit gérer chaque variante. On veut que du code soit exécuté uniquement quand on
+a une valeur <code>Some(T)</code>, et que ce code soit autorisé à utiliser la valeur de
+type <code>T</code> à l'intérieur. On veut aussi qu'un autre code soit exécuté si on a une
+valeur <code>None</code>, et ce code n'aura pas de valeur de type <code>T</code> de disponible.
+L'expression <code>match</code> est une structure de contrôle qui fait bien ceci
+lorsqu'elle est utilisée avec les énumérations : elle va exécuter du code
+différent en fonction de quelle variante de l'énumération elle obtient, et ce
+code pourra utiliser la donnée présente dans la valeur correspondante.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch06-00-enums.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch06-02-match.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch06-00-enums.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch06-02-match.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>
