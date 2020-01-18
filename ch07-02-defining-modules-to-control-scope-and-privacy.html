@@ -1,0 +1,431 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Définir des modules pour gérer la portée et la protection - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html" class="active"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+## Defining Modules to Control Scope and Privacy
+-->
+<h2><a class="header" href="#définir-des-modules-pour-gérer-la-portée-et-la-protection" id="définir-des-modules-pour-gérer-la-portée-et-la-protection">Définir des modules pour gérer la portée et la protection</a></h2>
+<!--
+In this section, we’ll talk about modules and other parts of the module system,
+namely *paths* that allow you to name items; the `use` keyword that brings a
+path into scope; and the `pub` keyword to make items public. We’ll also discuss
+the `as` keyword, external packages, and the glob operator. For now, let’s
+focus on modules!
+-->
+<p>Dans cette section, nous allons aborder les modules et les autres outils du
+système de modules, à savoir les <em>chemins</em> qui nous permettent de nommer les
+éléments; l'utilisation du mot-clé <code>use</code> qui importe un chemin dans la portée;
+et le mot-clé <code>pub</code> qui rend publics les éléments. Nous verrons aussi le mot-clé
+<code>as</code>, les paquets externes, et l'opérateur glob. Pour commencer, penchons-nous
+sur les modules !</p>
+<!--
+*Modules* let us organize code within a crate into groups for readability and
+easy reuse. Modules also control the *privacy* of items, which is whether an
+item can be used by outside code (*public*) or is an internal implementation
+detail and not available for outside use (*private*).
+-->
+<p>Les <em>modules</em> nous permettent de regrouper le code d'une crate pour une
+meilleure lisibilité et pour la facilité de réutilisation. Les modules
+permettent aussi de gérer la <em>protection</em> des éléments, qui précise si un
+élément peut être utilisé à l'extérieur du module (<em>c'est public</em>) ou s'il est
+un constituant interne et n'est pas disponible pour une utilisation externe
+(<em>c'est privé</em>).</p>
+<!--
+As an example, let’s write a library crate that provides the functionality of a
+restaurant. We’ll define the signatures of functions but leave their bodies
+empty to concentrate on the organization of the code, rather than actually
+implement a restaurant in code.
+-->
+<p>Voici un exemple, écrivons une crate de bibliothèque qui permet de simuler un
+restaurant. Nous allons définir les signatures des fonctions mais nous allons
+laisser leurs corps vides pour nous concentrer sur l'organisation du code,
+plutôt que de coder pour de vrai un restaurant.</p>
+<!--
+In the restaurant industry, some parts of a restaurant are referred to as
+*front of house* and others as *back of house*. Front of house is where
+customers are; this is where hosts seat customers, servers take orders and
+payment, and bartenders make drinks. Back of house is where the chefs and cooks
+work in the kitchen, dishwashers clean up, and managers do administrative work.
+-->
+<p>Dans le secteur de la restauration, certaines parties d'un restaurant sont
+assimilées à la <em>salle à manger</em> et d'autres <em>aux cuisines</em>. La partie salle à
+manger est l'endroit où se trouvent les clients; c'est l'endroit où les hôtes
+installent les clients, où les serveurs prennent les commandes et encaissent les
+clients, et où les barmans préparent des boissons. Dans la partie cuisines, nous
+retrouvons les chefs et les cuisiniers qui travaillent dans la cuisine, mais
+aussi les plongeurs qui nettoient la vaisselle et les gestionnaires qui
+s'occupent des tâches administratives.</p>
+<!--
+To structure our crate in the same way that a real restaurant works, we can
+organize the functions into nested modules. Create a new library named
+`restaurant` by running `cargo new --lib restaurant`; then put the code in
+Listing 7-1 into *src/lib.rs* to define some modules and function signatures.
+-->
+<p>Pour organiser notre crate de la même manière qu'un vrai restaurant, nous
+pouvons organiser les fonctions avec des modules imbriqués. Créez une nouvelle
+bibliothèque qui s'appelle <code>restaurant</code> en utilisant
+<code>cargo new --lib restaurant</code>; puis écrivez le code de l'encart 7-1 dans
+<em>src/lib.rs</em> afin de définir quelques modules et quelques signatures de
+fonctions.</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust,ignore
+mod front_of_house {
+    mod hosting {
+        fn add_to_waitlist() {}
+
+        fn seat_at_table() {}
+    }
+
+    mod serving {
+        fn take_order() {}
+
+        fn serve_order() {}
+
+        fn take_payment() {}
+    }
+}
+```
+-->
+<pre><code class="language-rust ignore">mod salle_a_manger {
+    mod accueil {
+        fn ajouter_a_la_liste_attente() {}
+
+        fn installer_a_une_table() {}
+    }
+
+    mod service {
+        fn prendre_commande() {}
+
+        fn servir_commande() {}
+
+        fn encaisser() {}
+    }
+}
+</code></pre>
+<!--
+<span class="caption">Listing 7-1: A `front_of_house` module containing other
+modules that then contain functions</span>
+-->
+<p><span class="caption">Encart 7-1 : Un module <code>salle_a_manger</code> qui contient
+d'autres modules qui contiennent eux-mêmes des fonctions</span></p>
+<!--
+We define a module by starting with the `mod` keyword and then specify the
+name of the module (in this case, `front_of_house`) and place curly brackets
+around the body of the module. Inside modules, we can have other modules, as in
+this case with the modules `hosting` and `serving`. Modules can also hold
+definitions for other items, such as structs, enums, constants, traits, or—as
+in Listing 7-1—functions.
+-->
+<p>Nous définissons un module en commençant avec le mot-clé <code>mod</code> et nous précisons
+ensuite le nom du module (dans notre cas, <code>salle_a_manger</code>) et nous ajoutons des
+accolades autour du corps du module. Dans les modules, nous pouvons avoir
+d'autres modules, comme dans notre cas avec les modules <code>accueil</code> et <code>service</code>.
+Les modules peuvent aussi contenir des définitions pour d'autres éléments, comme
+des structures, des énumérations, des constantes, des traits, ou des fonctions
+(comme c'est le cas dans l'encart 7-1).</p>
+<!--
+By using modules, we can group related definitions together and name why
+they’re related. Programmers using this code would have an easier time finding
+the definitions they wanted to use because they could navigate the code based
+on the groups rather than having to read through all the definitions.
+Programmers adding new functionality to this code would know where to place the
+code to keep the program organized.
+-->
+<p>Grâce aux modules, nous pouvons regrouper ensemble des définitions qui sont
+liées et donner un nom à ce lien. Les développeurs qui utiliseront ce code
+pourront plus facilement trouver les définitions dont ils ont besoin car ils
+peuvent parcourir le code en fonction des groupes plutôt que d'avoir à lire
+toutes les définitions. Les développeurs qui veulent rajouter des nouvelles
+fonctionnalités à ce code sauront maintenant où placer le code tout en gardant
+le programme organisé.</p>
+<!--
+Earlier, we mentioned that *src/main.rs* and *src/lib.rs* are called crate
+roots. The reason for their name is that the contents of either of these two
+files form a module named `crate` at the root of the crate’s module structure,
+known as the *module tree*.
+-->
+<p>Précédemment, nous avons dit que <em>src/main.rs</em> et <em>src/lib.rs</em> étaient des
+racines de crates. Nous les appelons ainsi car le contenu de chacun de ces
+deux fichiers constituent un module qui s'appelle <code>crate</code> à la racine de
+<em>l'arborescence du module</em>.</p>
+<!--
+Listing 7-2 shows the module tree for the structure in Listing 7-1.
+-->
+<p>L'encart 7-2 présente l'arborescence du module pour la structure de
+l'encart 7-1.</p>
+<!--
+```text
+crate
+ └── front_of_house
+     ├── hosting
+     │   ├── add_to_waitlist
+     │   └── seat_at_table
+     └── serving
+         ├── take_order
+         ├── serve_order
+         └── take_payment
+```
+-->
+<pre><code class="language-text">crate
+ └── salle_a_manger
+     ├── accueil
+     │   ├── ajouter_a_la_liste_attente
+     │   └── installer_a_une_table
+     └── service
+         ├── prendre_commande
+         ├── servir_commande
+         └── encaisser
+</code></pre>
+<!--
+<span class="caption">Listing 7-2: The module tree for the code in Listing
+7-1</span>
+-->
+<p><span class="caption">Encart 7-2 : L'arborescence des modules pour le code de
+l'encart 7-1</span></p>
+<!--
+This tree shows how some of the modules nest inside one another (for example,
+`hosting` nests inside `front_of_house`). The tree also shows that some modules
+are *siblings* to each other, meaning they’re defined in the same module
+(`hosting` and `serving` are defined within `front_of_house`). To continue the
+family metaphor, if module A is contained inside module B, we say that module A
+is the *child* of module B and that module B is the *parent* of module A.
+Notice that the entire module tree is rooted under the implicit module named
+`crate`.
+-->
+<p>Cette arborescence montre comment les modules sont imbriqués entre eux (par
+exemple, <code>accueil</code> est imbriqué dans <code>salle_a_manger</code>). L'arborescence montre
+aussi que certains modules sont les <em>frères</em> d'autres modules, ce qui veut dire
+qu'ils sont définis dans le même module (<code>accueil</code> et <code>service</code> sont définis
+dans <code>salle_a_manger</code>). Pour prolonger la métaphore familiale, si le module A
+est contenu dans le module B, on dit que le module A est <em>l'enfant</em> du module B
+et que ce module B est le <em>parent</em> du module A. Notez aussi que tout le module
+implicite <code>crate</code> est le parent de toute cette arborescence.</p>
+<!--
+The module tree might remind you of the filesystem’s directory tree on your
+computer; this is a very apt comparison! Just like directories in a filesystem,
+you use modules to organize your code. And just like files in a directory, we
+need a way to find our modules.
+-->
+<p>L'arborescence des modules peut rappeler les dossiers du système de fichiers de
+votre ordinateur; et c'est une excellente comparaison ! Comme les dossier dans
+un système de fichiers, vous utilisez les modules pour organiser votre code. Et
+comme pour les fichiers dans un dossier, nous avons besoin d'un moyen de trouver
+nos modules.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch07-01-packages-and-crates.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch07-01-packages-and-crates.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>
