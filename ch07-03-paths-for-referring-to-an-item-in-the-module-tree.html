@@ -1,0 +1,983 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Désigner un élément dans l'arborescence de modules - Le langage de programmation Rust</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../ferris.css">
+        
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
+                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html" class="active"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!--
+## Paths for Referring to an Item in the Module Tree
+-->
+<h2><a class="header" href="#désigner-un-élément-dans-larborescence-de-modules" id="désigner-un-élément-dans-larborescence-de-modules">Désigner un élément dans l'arborescence de modules</a></h2>
+<!--
+To show Rust where to find an item in a module tree, we use a path in the same
+way we use a path when navigating a filesystem. If we want to call a function,
+we need to know its path.
+-->
+<p>Pour indiquer à Rust où trouver un élément dans l'arborescence de modules, nous
+utilisons un chemin à l'instar des chemins que nous utilisons lorsque nous
+naviguons dans un système de fichiers. Si nous voulons appeler une fonction,
+nous avons besoin de connaître son chemin.</p>
+<!--
+A path can take two forms:
+-->
+<p>Il existe deux types de chemins :</p>
+<!--
+* An *absolute path* starts from a crate root by using a crate name or a
+  literal `crate`.
+* A *relative path* starts from the current module and uses `self`, `super`, or
+  an identifier in the current module.
+-->
+<ul>
+<li>Un <em>chemin absolu</em> qui commence à partir de la racine de la crate en utilisant
+le nom d'une crate, ou le mot <code>crate</code>.</li>
+<li>Un <em>chemin relatif</em> qui commence à partir du module courant et qui utilise
+<code>self</code>, <code>super</code>, ou un identificateur à l'intérieur du module.</li>
+</ul>
+<!--
+Both absolute and relative paths are followed by one or more identifiers
+separated by double colons (`::`).
+-->
+<p>Les chemins absolus et relatifs sont suivis par un ou plusieurs identificateurs
+séparés par <code>::</code>.</p>
+<!--
+Let’s return to the example in Listing 7-1. How do we call the
+`add_to_waitlist` function? This is the same as asking, what’s the path of the
+`add_to_waitlist` function? In Listing 7-3, we simplified our code a bit by
+removing some of the modules and functions. We’ll show two ways to call the
+`add_to_waitlist` function from a new function `eat_at_restaurant` defined in
+the crate root. The `eat_at_restaurant` function is part of our library crate’s
+public API, so we mark it with the `pub` keyword. In the [”Exposing Paths with
+the `pub` Keyword”][pub]<!-- ignore -- > section, we’ll go into more detail
+about `pub`. Note that this example won’t compile just yet; we’ll explain why
+in a bit.
+-->
+<p>Reprenons notre exemple de l'encart 7-1. Comment utiliserions-nous la fonction
+<code>ajouter_a_la_liste_attente</code> ? Cela revient à se demander : quel est le chemin
+de la fonction <code>ajouter_a_la_liste_attente</code> ? Dans l'encart 7-3, nous avons un
+peu simplifié notre code en enlevant quelques modules et quelques fonctions.
+Nous allons voir deux façons d'appeler la fonction <code>ajouter_a_la_liste_attente</code>
+à partir d'une nouvelle fonction <code>manger_au_restaurant</code> définie dans la crate
+racine. La fonction <code>manger_au_restaurant</code> fait partie de l'API publique de
+notre crate de bibliothèque, donc nous la marquons avec le mot-clé <code>pub</code>. Dans
+la section <a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#exposer-des-chemins-avec-le-mot-cl%C3%A9-pub">”Exposer les chemins avec le mot-clé <code>pub</code>”</a><!-- ignore -->,
+nous en apprendrons plus sur <code>pub</code>. Notez que cet exemple ne se compile pas pour
+le moment; nous allons l'expliquer un peu plus tard.</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+mod front_of_house {
+    mod hosting {
+        fn add_to_waitlist() {}
+    }
+}
+
+pub fn eat_at_restaurant() {
+    // Absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // Relative path
+    front_of_house::hosting::add_to_waitlist();
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">mod salle_a_manger {
+    mod accueil {
+        fn ajouter_a_la_liste_attente() {}
+    }
+}
+
+pub fn manger_au_restaurant() {
+    // Chemin absolu
+    crate::salle_a_manger::accueil::ajouter_a_la_liste_attente();
+
+    // Chemin relatif
+    salle_a_manger::accueil::ajouter_a_la_liste_attente();
+}
+</code></pre>
+<!--
+<span class="caption">Listing 7-3: Calling the `add_to_waitlist` function using
+absolute and relative paths</span>
+-->
+<p><span class="caption">Encart 7-3 : appel à la fonction
+<code>ajouter_a_la_liste_attente</code> en utilisant un chemin absolu et relatif</span></p>
+<!--
+The first time we call the `add_to_waitlist` function in `eat_at_restaurant`,
+we use an absolute path. The `add_to_waitlist` function is defined in the same
+crate as `eat_at_restaurant`, which means we can use the `crate` keyword to
+start an absolute path.
+-->
+<p>Au premier appel de la fonction <code>ajouter_a_la_liste_attente</code> dans
+<code>manger_au_restaurant</code>, nous utilisons un chemin absolu. La fonction
+<code>ajouter_a_la_liste_attente</code> est définie dans la même crate que
+<code>manger_au_restaurant</code>, ce qui veut dire que nous pouvons utiliser le mot-clé
+<code>crate</code> pour démarrer un chemin absolu.</p>
+<!--
+After `crate`, we include each of the successive modules until we make our way
+to `add_to_waitlist`. You can imagine a filesystem with the same structure, and
+we’d specify the path `/front_of_house/hosting/add_to_waitlist` to run the
+`add_to_waitlist` program; using the `crate` name to start from the crate root
+is like using `/` to start from the filesystem root in your shell.
+-->
+<p>Après <code>crate</code>, nous ajoutons chacun des modules successifs jusqu'à
+<code>ajouter_a_la_liste_attente</code>. Nous pouvons faire l'analogie avec un système de
+fichiers qui a la même structure, où nous pourrions utiliser le chemin
+<code>/salle_a_manger/accueil/ajouter_a_la_liste_attente</code> pour lancer le programme
+<code>ajouter_a_la_liste_attente</code>; utiliser le nom <code>crate</code> pour partir de la crate
+racine revient à utiliser <code>/</code> pour partir de la racine de votre système de
+fichiers dans votre invite de commande.</p>
+<!--
+The second time we call `add_to_waitlist` in `eat_at_restaurant`, we use a
+relative path. The path starts with `front_of_house`, the name of the module
+defined at the same level of the module tree as `eat_at_restaurant`. Here the
+filesystem equivalent would be using the path
+`front_of_house/hosting/add_to_waitlist`. Starting with a name means that the
+path is relative.
+-->
+<p>Lors du second appel à <code>ajouter_a_la_liste_attente</code> dans <code>manger_au_restaurant</code>,
+nous utilisons un chemin relatif. Le chemin commence par <code>salle_a_manger</code>, le
+nom du module qui est défini au même niveau que <code>manger_au_restaurant</code> dans
+l'arborescence de modules. Ici, l'équivalent en terme de système de fichier
+serait le chemin <code>salle_a_manger/accueil/ajouter_a_la_liste_attente</code>. Commencer
+par un nom signifie que le chemin est relatif.</p>
+<!--
+Choosing whether to use a relative or absolute path is a decision you’ll make
+based on your project. The decision should depend on whether you’re more likely
+to move item definition code separately from or together with the code that
+uses the item. For example, if we move the `front_of_house` module and the
+`eat_at_restaurant` function into a module named `customer_experience`, we’d
+need to update the absolute path to `add_to_waitlist`, but the relative path
+would still be valid. However, if we moved the `eat_at_restaurant` function
+separately into a module named `dining`, the absolute path to the
+`add_to_waitlist` call would stay the same, but the relative path would need to
+be updated. Our preference is to specify absolute paths because it’s more
+likely to move code definitions and item calls independently of each other.
+-->
+<p>Choisir entre utiliser un chemin relatif ou absolu sera une décision que vous
+ferez en fonction de votre projet. Le choix se fera en fonction de si vous êtes
+susceptible de déplacer la définition de l'élément souhaité séparément ou en
+même temps que le code qui l'utilise. Par exemple, si nous déplaçons le module
+<code>salle_a_manger</code> ainsi que la fonction <code>manger_au_restaurant</code> dans un module qui
+s'appelle <code>experience_client</code>, nous aurons besoin de mettre à jour le chemin
+absolu vers <code>ajouter_a_la_liste_attente</code>, mais le chemin relatif restera valide.
+Cependant, si nous avions déplacé uniquement la fonction <code>manger_au_restaurant</code>
+dans un module <code>repas</code> séparé, le chemin absolu de l'appel à
+<code>ajouter_a_la_liste_attente</code> restera le même, mais le chemin relatif aura besoin
+d'être mis à jour. Notre préférence est d'utiliser un chemin absolu car il est
+plus facile de déplacer les codes de définitions et les appels aux éléments
+indépendamment les uns des autres.</p>
+<!--
+Let’s try to compile Listing 7-3 and find out why it won’t compile yet! The
+error we get is shown in Listing 7-4.
+-->
+<p>Essayons de compiler l'encart 7-3 et essayons de comprendre pourquoi il ne se
+compile pas pour le moment ! L'erreur que nous obtenons est affichée dans
+l'encart 7-4.</p>
+<!--
+```text
+$ cargo build
+   Compiling restaurant v0.1.0 (file:///projects/restaurant)
+error[E0603]: module `hosting` is private
+ -- > src/lib.rs:9:28
+  |
+9 |     crate::front_of_house::hosting::add_to_waitlist();
+  |                            ^^^^^^^
+
+error[E0603]: module `hosting` is private
+  -- > src/lib.rs:12:21
+   |
+12 |     front_of_house::hosting::add_to_waitlist();
+   |                     ^^^^^^^
+```
+-->
+<pre><code class="language-text">$ cargo build
+   Compiling restaurant v0.1.0 (file:///projects/restaurant)
+error[E0603]: module `accueil` is private
+ -- &gt; src/lib.rs:9:28
+  |
+9 |     crate::salle_a_manger::accueil::ajouter_a_la_liste_attente();
+  |                            ^^^^^^^
+
+error[E0603]: module `accueil` is private
+  -- &gt; src/lib.rs:12:21
+   |
+12 |     salle_a_manger::accueil::ajouter_a_la_liste_attente();
+   |                     ^^^^^^^
+</code></pre>
+<!--
+<span class="caption">Listing 7-4: Compiler errors from building the code in
+Listing 7-3</span>
+-->
+<p><span class="caption">Encart 7-4 : les erreurs de compilation du code de
+l'encart 7-3</span></p>
+<!--
+The error messages say that module `hosting` is private. In other words, we
+have the correct paths for the `hosting` module and the `add_to_waitlist`
+function, but Rust won’t let us use them because it doesn’t have access to the
+private sections.
+-->
+<p>Le message d'erreur nous rappelle que ce module <code>accueil</code> est privé. Autrement
+dit, nous avons des chemins corrects pour le module <code>accueil</code> et pour la
+fonction <code>ajouter_a_la_liste_attente</code>, mais Rust ne nous laisse pas les utiliser
+car il n'a pas accès aux sections privées.</p>
+<!--
+Modules aren’t useful only for organizing your code. They also define Rust’s
+*privacy boundary*: the line that encapsulates the implementation details
+external code isn’t allowed to know about, call, or rely on. So, if you want to
+make an item like a function or struct private, you put it in a module.
+-->
+<p>Les modules ne servent pas uniquement à organiser votre code. Ils définissent
+aussi les <em>limites de protection</em> de Rust : le code externe n'est pas autorisé
+à connaître, à appeler ou à se fier à des éléments internes au module. Donc, si
+vous voulez rendre un élément privé comme une fonction ou une structure, vous
+devez le placer dans un module.</p>
+<!--
+The way privacy works in Rust is that all items (functions, methods, structs,
+enums, modules, and constants) are private by default. Items in a parent module
+can’t use the private items inside child modules, but items in child modules
+can use the items in their ancestor modules. The reason is that child modules
+wrap and hide their implementation details, but the child modules can see the
+context in which they’re defined. To continue with the restaurant metaphor,
+think of the privacy rules as being like the back office of a restaurant: what
+goes on in there is private to restaurant customers, but office managers can
+see and do everything in the restaurant in which they operate.
+-->
+<p>La protection avec Rust fait en sorte que tous les éléments (fonctions,
+méthodes, structures, énumérations, modules et constantes) sont privés par
+défaut. Les éléments dans un module parent ne peuvent pas utiliser les éléments
+privés dans les modules enfants, mais les éléments dans les modules enfants
+peuvent utiliser les éléments dans les modules parents. C'est parce que les
+modules enfants englobent et cachent les détails de leur implémentation, mais
+les modules enfants peuvent voir dans quel contexte ils sont définis. Pour
+continuer la métaphore du restaurant, considérez que les règles de protection
+sont comme les cuisines d'un restaurant : ce qui s'y passe n'est pas connu des
+clients, mais les gestionnaires peuvent tout voir et tout faire dans le
+restaurant dans lequel ils travaillent.</p>
+<!--
+Rust chose to have the module system function this way so that hiding inner
+implementation details is the default. That way, you know which parts of the
+inner code you can change without breaking outer code. But you can expose inner
+parts of child modules code to outer ancestor modules by using the `pub`
+keyword to make an item public.
+-->
+<p>Rust a décidé de faire fonctionner le système de modules de façon à ce que les
+détails d'implémentation interne sont cachés par défaut. Ainsi, vous savez
+quelles parties du code interne vous pouvez changer sans casser le code externe.
+Mais vous pouvez exposer aux parents des parties internes des modules enfants en
+utilisant le mot-clé <code>pub</code> afin de les rendre public.</p>
+<!--
+### Exposing Paths with the `pub` Keyword
+-->
+<h3><a class="header" href="#exposer-des-chemins-avec-le-mot-clé-pub" id="exposer-des-chemins-avec-le-mot-clé-pub">Exposer des chemins avec le mot-clé <code>pub</code></a></h3>
+<!--
+Let’s return to the error in Listing 7-4 that told us the `hosting` module is
+private. We want the `eat_at_restaurant` function in the parent module to have
+access to the `add_to_waitlist` function in the child module, so we mark the
+`hosting` module with the `pub` keyword, as shown in Listing 7-5.
+-->
+<p>Retournons à l'erreur de l'encart 7-4 qui nous informe que le module <code>accueil</code>
+est privé. Nous voulons que la fonction <code>manger_au_restaurant</code> du module parent
+ait accès à la fonction <code>ajouter_a_la_liste_attente</code> du module enfant, donc nous
+utilisons le mot-clé <code>pub</code> sur le module <code>accueil</code>, comme dans l'encart 7-5.</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+mod front_of_house {
+    pub mod hosting {
+        fn add_to_waitlist() {}
+    }
+}
+
+pub fn eat_at_restaurant() {
+    // Absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // Relative path
+    front_of_house::hosting::add_to_waitlist();
+}
+```
+-->
+<pre><code class="language-rust ignore does_not_compile">mod salle_a_manger {
+    pub mod accueil {
+        fn ajouter_a_la_liste_attente() {}
+    }
+}
+
+pub fn manger_au_restaurant() {
+    // Chemin absolu
+    crate::salle_a_manger::accueil::ajouter_a_la_liste_attente();
+
+    // Chemin relatif
+    salle_a_manger::accueil::ajouter_a_la_liste_attente();
+}
+</code></pre>
+<!--
+<span class="caption">Listing 7-5: Declaring the `hosting` module as `pub` to
+use it from `eat_at_restaurant`</span>
+-->
+<p><span class="caption">Encart 7-5 : utiliser <code>pub</code> sur le module <code>accueil</code> permet
+de l'utiliser dans <code>manger_au_restaurant</code></span></p>
+<!--
+Unfortunately, the code in Listing 7-5 still results in an error, as shown in
+Listing 7-6.
+-->
+<p>Malheureusement, il reste une erreur dans le code de l'encart 7-5, la voici dans
+l'encart 7-6.</p>
+<!--
+```text
+$ cargo build
+   Compiling restaurant v0.1.0 (file:///projects/restaurant)
+error[E0603]: function `add_to_waitlist` is private
+ -- > src/lib.rs:9:37
+  |
+9 |     crate::front_of_house::hosting::add_to_waitlist();
+  |                                     ^^^^^^^^^^^^^^^
+
+error[E0603]: function `add_to_waitlist` is private
+  -- > src/lib.rs:12:30
+   |
+12 |     front_of_house::hosting::add_to_waitlist();
+   |                              ^^^^^^^^^^^^^^^
+```
+-->
+<pre><code class="language-text">$ cargo build
+   Compiling restaurant v0.1.0 (file:///projects/restaurant)
+error[E0603]: function `ajouter_a_la_liste_attente` is private
+ -- &gt; src/lib.rs:9:37
+  |
+9 |     crate::salle_a_manger::accueil::ajouter_a_la_liste_attente();
+  |                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error[E0603]: function `ajouter_a_la_liste_attente` is private
+  -- &gt; src/lib.rs:12:30
+   |
+12 |     salle_a_manger::accueil::ajouter_a_la_liste_attente();
+   |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre>
+<!--
+<span class="caption">Listing 7-6: Compiler errors from building the code in
+Listing 7-5</span>
+-->
+<p><span class="caption">Encart 7-6 : erreurs de compilation du code de l'encart
+7-5</span></p>
+<!--
+What happened? Adding the `pub` keyword in front of `mod hosting` makes the
+module public. With this change, if we can access `front_of_house`, we can
+access `hosting`. But the *contents* of `hosting` are still private; making the
+module public doesn’t make its contents public. The `pub` keyword on a module
+only lets code in its ancestor modules refer to it.
+-->
+<p>Que s'est-il passé ? Ajouter le mot-clé <code>pub</code> devant <code>mod accueil</code> rend public
+le module. Avec cette modification, si nous pouvons accéder à <code>salle_a_manger</code>,
+alors nous pouvons accéder à <code>accueil</code>. Mais le <em>contenu</em> de <code>accueil</code> reste
+privé ; rendre le module public ne rend pas son contenu public. Le mot-clé <code>pub</code>
+sur un module permet uniquement au code de ses parents d'y faire référence.</p>
+<!--
+The errors in Listing 7-6 say that the `add_to_waitlist` function is private.
+The privacy rules apply to structs, enums, functions, and methods as well as
+modules.
+-->
+<p>Les erreurs dans l'encart 7-6 nous informent que la fonction
+<code>ajouter_a_la_liste_attente</code> est privée. Les règles de protection s'appliquent
+aussi bien aux modules qu'aux structures, énumérations, fonctions et méthodes.</p>
+<!--
+Let’s also make the `add_to_waitlist` function public by adding the `pub`
+keyword before its definition, as in Listing 7-7.
+-->
+<p>Rendons publique la fonction <code>ajouter_a_la_liste_attente</code>, en ajoutant le
+mot-clé <code>pub</code> devant sa définition, comme dans l'encart 7-7.</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+pub fn eat_at_restaurant() {
+    // Absolute path
+    crate::front_of_house::hosting::add_to_waitlist();
+
+    // Relative path
+    front_of_house::hosting::add_to_waitlist();
+}
+# fn main() {}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">mod salle_a_manger {
+    pub mod accueil {
+        pub fn ajouter_a_la_liste_attente() {}
+    }
+}
+
+pub fn manger_au_restaurant() {
+    // Chemin absolu
+    crate::salle_a_manger::accueil::ajouter_a_la_liste_attente();
+
+    // Chemin relatif
+    salle_a_manger::accueil::ajouter_a_la_liste_attente();
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<!--
+<span class="caption">Listing 7-7: Adding the `pub` keyword to `mod hosting`
+and `fn add_to_waitlist` lets us call the function from
+`eat_at_restaurant`</span>
+-->
+<p><span class="caption">Encart 7-7 : ajout du mot-clé <code>pub</code> devant <code>mod accueil</code>
+et <code>fn ajouter_a_la_liste_attente</code> pour nous permettre d'appeler la fonction à
+partir de <code>manger_au_restaurant</code></span></p>
+<!--
+Now the code will compile! Let’s look at the absolute and the relative path and
+double-check why adding the `pub` keyword lets us use these paths in
+`add_to_waitlist` with respect to the privacy rules.
+-->
+<p>Maintenant, le code va compiler ! Analysons les chemins relatifs et absolus et
+vérifions pourquoi l'ajout du mot-clé <code>pub</code> nous permet d'utiliser ces chemins
+dans <code>ajouter_a_la_liste_attente</code> tout en respectant les règles de protection.</p>
+<!--
+In the absolute path, we start with `crate`, the root of our crate’s module
+tree. Then the `front_of_house` module is defined in the crate root. The
+`front_of_house` module isn’t public, but because the `eat_at_restaurant`
+function is defined in the same module as `front_of_house` (that is,
+`eat_at_restaurant` and `front_of_house` are siblings), we can refer to
+`front_of_house` from `eat_at_restaurant`. Next is the `hosting` module marked
+with `pub`. We can access the parent module of `hosting`, so we can access
+`hosting`. Finally, the `add_to_waitlist` function is marked with `pub` and we
+can access its parent module, so this function call works!
+-->
+<p>Dans le chemin absolu, nous commençons avec <code>crate</code>, la racine de notre
+arborescence de modules de notre crate. Ensuite, le module <code>salle_a_manger</code> est
+défini dans la crate racine. Le module <code>salle_a_manger</code> n'est pas public, mais
+comme la fonction <code>manger_au_restaurant</code> est définie dans le même module que
+<code>salle_a_manger</code> (car <code>manger_au_restaurant</code> et <code>salle_a_manger</code> sont frères),
+nous pouvons utiliser <code>salle_a_manger</code> à partir de <code>manger_au_restaurant</code>.
+Ensuite, nous avons le module <code>accueil</code>, défini avec <code>pub</code>. Nous pouvons accéder
+au module parent de <code>accueil</code>, donc nous pouvons accéder à <code>accueil</code>. Enfin, la
+fonction <code>ajouter_a_la_liste_attente</code> est elle aussi définie avec <code>pub</code> et nous
+pouvons accéder à son module parent, donc au final cet appel à la fonction
+fonctionne bien !</p>
+<!--
+In the relative path, the logic is the same as the absolute path except for the
+first step: rather than starting from the crate root, the path starts from
+`front_of_house`. The `front_of_house` module is defined within the same module
+as `eat_at_restaurant`, so the relative path starting from the module in which
+`eat_at_restaurant` is defined works. Then, because `hosting` and
+`add_to_waitlist` are marked with `pub`, the rest of the path works, and this
+function call is valid!
+-->
+<p>Dans le chemin relatif, le fonctionnement est le même que le chemin absolu sauf
+pour la première étape : plutôt que de démarrer de la crate racine, le chemin
+commence à partir de <code>salle_a_manger</code>. Le module <code>salle_a_manger</code> est défini
+dans le même module que <code>manger_au_restaurant</code>, donc le chemin relatif qui
+commence à partir du module où est défini <code>manger_au_restaurant</code> fonctionne
+bien. Ensuite, comme <code>accueil</code> et <code>ajouter_a_la_liste_attente</code> sont définis avec
+<code>pub</code>, le reste du chemin fonctionne, et cet appel à la fonction est donc
+valide !</p>
+<!--
+### Starting Relative Paths with `super`
+-->
+<h3><a class="header" href="#commencer-les-chemins-relatifs-avec-super" id="commencer-les-chemins-relatifs-avec-super">Commencer les chemins relatifs avec <code>super</code></a></h3>
+<!--
+We can also construct relative paths that begin in the parent module by using
+`super` at the start of the path. This is like starting a filesystem path with
+the `..` syntax. Why would we want to do this?
+-->
+<p>Nous pouvons aussi créer des chemins relatifs qui commencent à partir du module
+parent en utilisant <code>super</code> au début du chemin. C'est comme débuter un chemin
+dans le système de fichiers avec la syntaxe <code>..</code>. Mais pourquoi voudrions-nous
+faire cela ?</p>
+<!--
+Consider the code in Listing 7-8 that models the situation in which a chef
+fixes an incorrect order and personally brings it out to the customer. The
+function `fix_incorrect_order` calls the function `serve_order` by specifying
+the path to `serve_order` starting with `super`:
+-->
+<p>Imaginons le code dans l'encart 7-8 qui représente le cas où le chef corrige une
+commande erronée et l'apporte personnellement au client pour s'excuser. La
+fonction <code>corriger_commande_erronee</code> appelle la fonction <code>servir_commande</code> en
+commençant le chemin de <code>servir_commande</code> avec <code>super</code> :</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust
+fn serve_order() {}
+
+mod back_of_house {
+    fn fix_incorrect_order() {
+        cook_order();
+        super::serve_order();
+    }
+
+    fn cook_order() {}
+}
+# fn main() {}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn servir_commande() {}
+
+mod cuisines {
+    fn corriger_commande_erronee() {
+        cuisiner_commande();
+        super::servir_commande();
+    }
+
+    fn cuisiner_commande() {}
+}
+<span class="boring">fn main() {}
+</span></code></pre></pre>
+<!--
+<span class="caption">Listing 7-8: Calling a function using a relative path
+starting with `super`</span>
+-->
+<p><span class="caption">Encart 7-8 : appel d'une fonction en utilisant un chemin
+relatif qui commence par <code>super</code></span></p>
+<!--
+The `fix_incorrect_order` function is in the `back_of_house` module, so we can
+use `super` to go to the parent module of `back_of_house`, which in this case
+is `crate`, the root. From there, we look for `serve_order` and find it.
+Success! We think the `back_of_house` module and the `serve_order` function are
+likely to stay in the same relationship to each other and get moved together
+should we decide to reorganize the crate’s module tree. Therefore, we used
+`super` so we’ll have fewer places to update code in the future if this code
+gets moved to a different module.
+-->
+<p>La fonction <code>corriger_commande_erronee</code> est dans le module <code>cuisines</code>, donc nous
+pouvons utiliser <code>super</code> pour nous rendre au module parent de <code>cuisines</code>, qui
+dans notre cas est <code>crate</code>, la racine. De là, nous cherchons <code>servir_commande</code>
+et nous la trouvons. Avec succès ! Nous pensons que le module <code>cuisines</code> et la
+fonction <code>servir_commande</code> vont toujours garder la même relation et devrons être
+déplacés ensemble si nous réorganisons l'arborescence de modules de la crate.
+Ainsi, nous avons utilisé <code>super</code> pour avoir moins de code à mettre à jour le
+code à l'avenir si le code est déplacé dans un module différent.</p>
+<!--
+### Making Structs and Enums Public
+-->
+<h3><a class="header" href="#rendre-publiques-des-structures-et-des-énumérations" id="rendre-publiques-des-structures-et-des-énumérations">Rendre publiques des structures et des énumérations</a></h3>
+<!--
+We can also use `pub` to designate structs and enums as public, but there are a
+few extra details. If we use `pub` before a struct definition, we make the
+struct public, but the struct’s fields will still be private. We can make each
+field public or not on a case-by-case basis. In Listing 7-9, we’ve defined a
+public `back_of_house::Breakfast` struct with a public `toast` field but a
+private `seasonal_fruit` field. This models the case in a restaurant where the
+customer can pick the type of bread that comes with a meal, but the chef
+decides which fruit accompanies the meal based on what’s in season and in
+stock. The available fruit changes quickly, so customers can’t choose the fruit
+or even see which fruit they’ll get.
+-->
+<p>Nous pouvons aussi utiliser <code>pub</code> pour déclarer des structures et des
+énumérations publiquement, mais il y a d'autres points à prendre en compte. Si
+nous utilisons <code>pub</code> avant la définition d'une structure, nous rendons la
+structure publique, mais les champs de la structure restent privés. Nous pouvons
+rendre chaque champ public ou non au cas par cas. Dans l'encart 7-9, nous avons
+défini une structure publique <code>cuisines::PetitDejeuner</code> avec un champ public
+<code>tartine_grillee</code> mais avec un champ privé <code>fruit_de_saison</code>. Cela simule un
+restaurant où le client peut choisir le type de pain qui accompagne le repas,
+mais le chef décide des fruits qui accompagnent le repas en fonction de la
+saison et ce qu'il y a en stock. Les fruits disponibles changent rapidement,
+donc les clients ne peuvent pas choisir le fruit ou même voir quel fruit ils
+obtiendront.</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust
+mod back_of_house {
+    pub struct Breakfast {
+        pub toast: String,
+        seasonal_fruit: String,
+    }
+
+    impl Breakfast {
+        pub fn summer(toast: &str) -> Breakfast {
+            Breakfast {
+                toast: String::from(toast),
+                seasonal_fruit: String::from("peaches"),
+            }
+        }
+    }
+}
+
+pub fn eat_at_restaurant() {
+    // Order a breakfast in the summer with Rye toast
+    let mut meal = back_of_house::Breakfast::summer("Rye");
+    // Change our mind about what bread we'd like
+    meal.toast = String::from("Wheat");
+    println!("I'd like {} toast please", meal.toast);
+
+    // The next line won't compile if we uncomment it; we're not allowed
+    // to see or modify the seasonal fruit that comes with the meal
+    // meal.seasonal_fruit = String::from("blueberries");
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>mod cuisines {
+    pub struct PetitDejeuner {
+        pub tartine_grillee: String,
+        fruit_de_saison: String,
+    }
+
+    impl PetitDejeuner {
+        pub fn en_ete(tartine_grillee: &amp;str) -&gt; PetitDejeuner {
+            PetitDejeuner {
+                tartine_grillee: String::from(tartine_grillee),
+                fruit_de_saison: String::from(&quot;pêches&quot;),
+            }
+        }
+    }
+}
+
+pub fn manger_au_restaurant() {
+    // On commande un petit-déjeuner en été avec tartine grillée au seigle
+    let mut repas = cuisines::PetitDejeuner::en_ete(&quot;seigle&quot;);
+    // On change d'avis sur le pain que nous souhaitons
+    repas.tartine_grillée = String::from(&quot;blé&quot;);
+    println!( &quot;Je voudrait une tartine grillée au {}, s'il vous plaît.&quot;,
+              repas.tartine_grillee);
+
+    // La prochaine ligne ne va pas se compiler si nous ne la commentons pas;
+    // car nous ne sommes pas autorisé à voir ou modifier le fruit de saison
+    // qui accompagne le repas.
+
+    // repas.fruit_de_saison = String::from(&quot;myrtilles&quot;);
+}
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+<span class="caption">Listing 7-9: A struct with some public fields and some
+private fields</span>
+-->
+<p><span class="caption">Encart 7-9 : une structure avec certains champs publics et
+d'autres privés</span></p>
+<!--
+Because the `toast` field in the `back_of_house::Breakfast` struct is public,
+in `eat_at_restaurant` we can write and read to the `toast` field using dot
+notation. Notice that we can’t use the `seasonal_fruit` field in
+`eat_at_restaurant` because `seasonal_fruit` is private. Try uncommenting the
+line modifying the `seasonal_fruit` field value to see what error you get!
+-->
+<p>Comme le champ <code>tartine_grillee</code> est public dans la structure
+<code>cuisines::PetitDejeuner</code>, nous pouvons lire et écrire dans le champ
+<code>tartine_grillee</code> à partir de <code>manger_au_restaurant</code> en utilisant <code>.</code>. Notez
+aussi que nous ne pouvons pas utiliser le champ <code>fruit_de_saison</code> dans
+<code>manger_au_restaurant</code> car <code>fruit_de_saison</code> est privé. Essayez de dé-commenter
+la ligne qui tente de modifier la valeur du champ <code>fruit_de_saison</code> et voyez
+l'erreur que vous obtenez !</p>
+<!--
+Also, note that because `back_of_house::Breakfast` has a private field, the
+struct needs to provide a public associated function that constructs an
+instance of `Breakfast` (we’ve named it `summer` here). If `Breakfast` didn’t
+have such a function, we couldn’t create an instance of `Breakfast` in
+`eat_at_restaurant` because we couldn’t set the value of the private
+`seasonal_fruit` field in `eat_at_restaurant`.
+-->
+<p>Aussi, remarquez que comme <code>cuisines::PetitDejeuner</code> a un champ privé, la
+structure a besoin de fournir une fonction publique qui construit une instance
+de <code>PetitDejeuner</code> (que nous avons nommé <code>en_ete</code> ici). Si <code>PetitDejeuner</code>
+n'avait pas une fonction comme celle-ci, nous ne pourrions pas créer une
+instance de <code>PetitDejeuner</code> dans <code>manger_au_restaurant</code> car nous ne pourrions
+pas donner une valeur au champ privé <code>fruit_de_saison</code> dans
+<code>manger_au_restaurant</code>.</p>
+<!--
+In contrast, if we make an enum public, all of its variants are then public. We
+only need the `pub` before the `enum` keyword, as shown in Listing 7-10.
+-->
+<p>Par contre, si nous rendons publique une énumération, toutes ses variantes
+seront publiques. Nous avons simplement besoin d'un <code>pub</code> devant le mot-clé
+<code>enum</code>, comme dans l'encart 7-10.</p>
+<!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust
+mod back_of_house {
+    pub enum Appetizer {
+        Soup,
+        Salad,
+    }
+}
+
+pub fn eat_at_restaurant() {
+    let order1 = back_of_house::Appetizer::Soup;
+    let order2 = back_of_house::Appetizer::Salad;
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>mod cuisines {
+    pub enum AmuseBouche {
+        Soupe,
+        Salade,
+    }
+}
+
+pub fn manger_au_restaurant() {
+    let commande1 = cuisines::AmuseBouche::Soupe;
+    let commande2 = cuisines::AmuseBouche::Salade;
+}
+<span class="boring">}
+</span></code></pre></pre>
+<!--
+<span class="caption">Listing 7-10: Designating an enum as public makes all its
+variants public</span>
+-->
+<p><span class="caption">Encart 7-10 : on rend publique une énumération et cela
+rend aussi toutes ses variantes publiques</span></p>
+<!--
+Because we made the `Appetizer` enum public, we can use the `Soup` and `Salad`
+variants in `eat_at_restaurant`. Enums aren’t very useful unless their variants
+are public; it would be annoying to have to annotate all enum variants with
+`pub` in every case, so the default for enum variants is to be public. Structs
+are often useful without their fields being public, so struct fields follow the
+general rule of everything being private by default unless annotated with `pub`.
+-->
+<p>Comme nous rendons l'énumération <code>AmuseBouche</code> publique, nous pouvons utiliser
+les variantes <code>Soupe</code> et <code>Salade</code> dans <code>manger_au_restaurant</code>. Les énumérations
+ne sont pas très utiles si elles n'ont pas leurs variantes publiques ; et cela
+serait pénible d'avoir à marquer toutes les variantes de l'énumération avec
+<code>pub</code>, donc par défaut les variantes d'énumérations sont publiques. Les
+structures peuvent être utiles sans avoir de champs publics, donc les champs des
+structures sont tous privés par défaut, sauf si ces éléments sont marqués d'un
+<code>pub</code>.</p>
+<!--
+There’s one more situation involving `pub` that we haven’t covered, and that is
+our last module system feature: the `use` keyword. We’ll cover `use` by itself
+first, and then we’ll show how to combine `pub` and `use`.
+-->
+<p>Il y a encore une chose que nous n'avons pas abordé concernant <code>pub</code>, et c'est
+la dernière fonctionnalité du système de modules : le mot-clé <code>use</code>. Nous
+commencerons par parler de l'utilisation de <code>use</code> de manière générale, puis nous
+verrons comment combiner <code>pub</code> et <code>use</code>.</p>
+<!--
+[pub]: ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#exposing-paths-with-the-pub-keyword
+-->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch07-02-defining-modules-to-control-scope-and-privacy.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch07-02-defining-modules-to-control-scope-and-privacy.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../ferris.js"></script>
+        
+
+        
+
+    </body>
+</html>
