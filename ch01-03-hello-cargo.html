@@ -194,6 +194,11 @@ avez utilisé l'installateur officiel présenté dans la section
 <a href="ch01-01-installation.html#installation">“Installation”</a><!-- ignore -->. Si vous avez installé Rust
 autrement, vérifiez que Cargo est installé en utilisant la commande suivante
 dans votre terminal :</p>
+<!--
+```text
+$ cargo --version
+```
+-->
 <pre><code class="language-text">$ cargo --version
 </code></pre>
 <!--
@@ -219,6 +224,12 @@ the following:
 notre projet initial “Hello, world!”. Retournez dans votre dossier <em>projects</em>
 (ou là où vous avez décidé d'enregistrer votre code). Ensuite, sur n'importe
 quel système d'exploitation, lancez les commandes suivantes :</p>
+<!--
+```text
+$ cargo new hello_cargo
+$ cd hello_cargo
+```
+-->
 <pre><code class="language-text">$ cargo new hello_cargo
 $ cd hello_cargo
 </code></pre>
@@ -233,14 +244,21 @@ avec le même nom.</p>
 <!--
 Go into the *hello_cargo* directory and list the files. You’ll see that Cargo
 has generated two files and one directory for us: a *Cargo.toml* file and a
-*src* directory with a *main.rs* file inside. It has also initialized a new Git
-repository along with a *.gitignore* file.
+*src* directory with a *main.rs* file inside.
 -->
 <p>Rendez-vous dans le dossier <em>hello_cargo</em> et afficher la liste des fichiers.
 Vous constaterez que Cargo a généré deux fichiers et un dossier pour nous : un
 fichier <em>Cargo.toml</em> et un dossier <em>src</em> avec un fichier <em>main.rs</em> à
-l'intérieur. Il a aussi créé un nouveau dépôt Git ainsi qu'un fichier
-<em>.gitignore</em>.</p>
+l'intérieur.</p>
+<!--
+It has also initialized a new Git repository along with a *.gitignore* file.
+Git files won’t be generated if you run `cargo new` within an existing Git
+repository; you can override this behavior by using `cargo new --vcs=git`.
+-->
+<p>Il a aussi créé un nouveau dépôt Git ainsi qu'un fichier <em>.gitignore</em>. Les
+fichiers de Git ne seront pas générés si vous lancez <code>cargo new</code> au sein d'un
+dépôt Git ; vous pouvez désactiver ce comportement temporairement en utilisant
+<code>cargo new --vcs=git</code>.</p>
 <!--
 > Note: Git is a common version control system. You can change `cargo new` to
 > use a different version control system or no version control system by using
@@ -262,6 +280,17 @@ code in Listing 1-2.
 <span class="filename">Filename: Cargo.toml</span>
 -->
 <p><span class="filename">Fichier : Cargo.toml</span></p>
+<!--
+```toml
+[package]
+name = "hello_cargo"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2018"
+
+[dependencies]
+```
+-->
 <pre><code class="language-toml">[package]
 name = &quot;hello_cargo&quot;
 version = &quot;0.1.0&quot;
@@ -281,6 +310,9 @@ Language*) format, which is Cargo’s configuration format.
 -->
 <p>Ce fichier est au format <a href="https://github.com/toml-lang/toml"><em>TOML</em></a><!-- ignore --> (<em>Tom’s Obvious, Minimal
 Language</em>), qui est le format de configuration de Cargo.</p>
+<!--
+[toml]: https://github.com/toml-lang/toml
+-->
 <!--
 The first line, `[package]`, is a section heading that indicates that the
 following statements are configuring a package. As we add more information to
@@ -322,6 +354,13 @@ Now open *src/main.rs* and take a look:
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     println!(&quot;Hello, world!&quot;);
 }
@@ -371,6 +410,13 @@ entering the following command:
 <p>Maintenant, regardons ce qu'il y a de différent quand nous compilons et
 exécutons le programme “Hello, world!” avec Cargo ! À l'intérieur de votre
 dossier <em>hello_cargo</em>, compilez votre projet en utilisant la commande suivante :</p>
+<!--
+```text
+$ cargo build
+   Compiling hello_cargo v0.1.0 (file:///projects/hello_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.85 secs
+```
+-->
 <pre><code class="language-text">$ cargo build
    Compiling hello_cargo v0.1.0 (file:///projects/hello_cargo)
     Finished dev [unoptimized + debuginfo] target(s) in 2.85 secs
@@ -416,6 +462,14 @@ code and then run the resulting executable all in one command:
 <code>./target/debug/hello_cargo</code>, mais nous pouvons aussi utiliser <code>cargo run</code> pour
 compiler le code et ensuite lancer l'exécutable dans une seule et même
 commande :</p>
+<!--
+```text
+$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
+     Running `target/debug/hello_cargo`
+Hello, world!
+```
+-->
 <pre><code class="language-text">$ cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.0 secs
      Running `target/debug/hello_cargo`
@@ -432,6 +486,15 @@ compilé <code>hello_cargo</code>. Cargo a détecté que les fichiers n'avaient 
 donc il a juste exécuté le binaire. Si vous aviez modifié votre code source,
 Cargo aurait recompilé le projet avant de le lancer, et vous auriez eu les
 messages suivants :</p>
+<!--
+```text
+$ cargo run
+   Compiling hello_cargo v0.1.0 (file:///projects/hello_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.33 secs
+     Running `target/debug/hello_cargo`
+Hello, world!
+```
+-->
 <pre><code class="language-text">$ cargo run
    Compiling hello_cargo v0.1.0 (file:///projects/hello_cargo)
     Finished dev [unoptimized + debuginfo] target(s) in 0.33 secs
@@ -445,6 +508,13 @@ your code to make sure it compiles but doesn’t produce an executable:
 <p>Cargo fournit aussi une commande appelée <code>cargo check</code>. Elle vérifie rapidement
 votre code pour s'assurer qu'il est compilable, mais ne produit pas
 d'exécutable :</p>
+<!--
+```text
+$ cargo check
+   Checking hello_cargo v0.1.0 (file:///projects/hello_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
+```
+-->
 <pre><code class="language-text">$ cargo check
    Checking hello_cargo v0.1.0 (file:///projects/hello_cargo)
     Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
@@ -560,6 +630,9 @@ For more information about Cargo, check out [its documentation].
 <p>Pour plus d'informations à propos de Cargo, vous pouvez consulter <a href="https://doc.rust-lang.org/cargo/">sa
 documentation</a>.</p>
 <!--
+[its documentation]: https://doc.rust-lang.org/cargo/
+-->
+<!--
 ## Summary
 -->
 <h2><a class="header" href="#résumé" id="résumé">Résumé</a></h2>
@@ -596,6 +669,9 @@ s'habituer à lire et écrire du code Rust. Donc, au chapitre 2, nous allons
 Si vous préférez commencer par apprendre comment les principes de programmation
 de base fonctionnent avec Rust, rendez-vous au chapitre 3, puis revenez au
 chapitre 2.</p>
+<!--
+[installation]: ch01-01-installation.html#installation
+-->
 
                     </main>
 

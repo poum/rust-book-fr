@@ -168,21 +168,21 @@ Imaginons le programme dans l'encart 6-6 qui fait un <code>match</code> sur une 
 <code>Option&lt;u8&gt;</code> mais n'a besoin d'exécuter du code que si la valeur est 3.</p>
 <!--
 ```rust
-let some_u8_value = Some(0u8);
-match some_u8_value {
-    Some(3) => println!("three"),
-    _ => (),
-}
+# fn main() {
+    let une_valeur_u8 = Some(0u8);
+    match une_valeur_u8 {
+        Some(3) => println!("trois"),
+        _ => (),
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let une_valeur_u8 = Some(0u8);
-match une_valeur_u8 {
-    Some(3) =&gt; println!(&quot;trois&quot;),
-    _ =&gt; (),
-}
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let une_valeur_u8 = Some(0u8);
+    match une_valeur_u8 {
+        Some(3) =&gt; println!(&quot;trois&quot;),
+        _ =&gt; (),
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -210,19 +210,19 @@ utilisant <code>if let</code>. Le code suivant se comporte comme le <code>match<
 6-6 :</p>
 <!--
 ```rust
-# let some_u8_value = Some(0u8);
-if let Some(3) = some_u8_value {
-    println!("three");
-}
+# fn main() {
+#     let une_valeur_u8 = Some(0u8);
+    if let Some(3) = une_valeur_u8 {
+        println!("trois");
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">let une_valeur_u8 = Some(0u8);
-</span>if let Some(3) = une_valeur_u8 {
-    println!(&quot;trois&quot;);
-}
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span><span class="boring">    let une_valeur_u8 = Some(0u8);
+</span>    if let Some(3) = une_valeur_u8 {
+        println!(&quot;trois&quot;);
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -270,46 +270,50 @@ une expression <code>match</code> comme ceci :</p>
 <!--
 ```rust
 # #[derive(Debug)]
-# enum UsState {
-#    Alabama,
-#    Alaska,
+# enum USAState {
+#     Alabama,
+#     Alaska,
+#     // -- partie masquée ici --
 # }
-#
-# enum Coin {
-#    Penny,
-#    Nickel,
-#    Dime,
-#    Quarter(UsState),
+# 
+# enum USACoin {
+#     Penny,
+#     Nickel,
+#     Dime,
+#     Quarter(USAState),
 # }
-# let coin = Coin::Penny;
-let mut count = 0;
-match coin {
-    Coin::Quarter(state) => println!("State quarter from {:?}!", state),
-    _ => count += 1,
-}
+# 
+# fn main() {
+#     let piece = USACoin::Penny;
+    let mut compteur = 0;
+    match piece {
+        USACoin::Quarter(etat) => println!("Il s'agit d'un Quarter de l'état de {:?} !", etat),
+        _ => compteur += 1,
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">#[derive(Debug)]
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">#[derive(Debug)]
 </span><span class="boring">enum USAState {
-</span><span class="boring">   Alabama,
-</span><span class="boring">   Alaska,
+</span><span class="boring">    Alabama,
+</span><span class="boring">    Alaska,
+</span><span class="boring">    // -- partie masquée ici --
 </span><span class="boring">}
 </span><span class="boring">
 </span><span class="boring">enum USACoin {
-</span><span class="boring">   Penny,
-</span><span class="boring">   Nickel,
-</span><span class="boring">   Dime,
-</span><span class="boring">   Quarter(USAState),
+</span><span class="boring">    Penny,
+</span><span class="boring">    Nickel,
+</span><span class="boring">    Dime,
+</span><span class="boring">    Quarter(USAState),
 </span><span class="boring">}
-</span><span class="boring">let piece = USACoin::Penny;
-</span>let mut compteur = 0;
-match piece {
-    USACoin::Quarter(etat) =&gt; println!(&quot;Il s'agit d'un Quarter de l'état de {:?} !&quot;, etat),
-    _ =&gt; compteur += 1,
-}
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let piece = USACoin::Penny;
+</span>    let mut compteur = 0;
+    match piece {
+        USACoin::Quarter(etat) =&gt; println!(&quot;Il s'agit d'un Quarter de l'état de {:?} !&quot;, etat),
+        _ =&gt; compteur += 1,
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -319,48 +323,52 @@ Or we could use an `if let` and `else` expression like this:
 <!--
 ```rust
 # #[derive(Debug)]
-# enum UsState {
-#    Alabama,
-#    Alaska,
+# enum USAState {
+#     Alabama,
+#     Alaska,
+#     // -- partie masquée ici --
 # }
-#
-# enum Coin {
-#    Penny,
-#    Nickel,
-#    Dime,
-#    Quarter(UsState),
+# 
+# enum USACoin {
+#     Penny,
+#     Nickel,
+#     Dime,
+#     Quarter(USAState),
 # }
-# let coin = Coin::Penny;
-let mut count = 0;
-if let Coin::Quarter(state) = coin {
-    println!("State quarter from {:?}!", state);
-} else {
-    count += 1;
-}
+# 
+# fn main() {
+#     let piece = USACoin::Penny;
+    let mut compteur = 0;
+    if let USACoin::Quarter(etat) = piece {
+        println!("Il s'agit d'un Quarter de l'état de {:?}!", etat);
+    } else {
+        compteur += 1;
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">#[derive(Debug)]
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">#[derive(Debug)]
 </span><span class="boring">enum USAState {
-</span><span class="boring">   Alabama,
-</span><span class="boring">   Alaska,
+</span><span class="boring">    Alabama,
+</span><span class="boring">    Alaska,
+</span><span class="boring">    // -- partie masquée ici --
 </span><span class="boring">}
 </span><span class="boring">
 </span><span class="boring">enum USACoin {
-</span><span class="boring">   Penny,
-</span><span class="boring">   Nickel,
-</span><span class="boring">   Dime,
-</span><span class="boring">   Quarter(USAState),
+</span><span class="boring">    Penny,
+</span><span class="boring">    Nickel,
+</span><span class="boring">    Dime,
+</span><span class="boring">    Quarter(USAState),
 </span><span class="boring">}
-</span><span class="boring">let piece = USACoin::Penny;
-</span>let mut compteur = 0;
-if let USACoin::Quarter(etat) = piece {
-    println!(&quot;Il s'agit d'un Quarter de l'état de {:?}!&quot;, etat);
-} else {
-    compteur += 1;
-}
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let piece = USACoin::Penny;
+</span>    let mut compteur = 0;
+    if let USACoin::Quarter(etat) = piece {
+        println!(&quot;Il s'agit d'un Quarter de l'état de {:?}!&quot;, etat);
+    } else {
+        compteur += 1;
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--

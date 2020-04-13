@@ -184,11 +184,11 @@ qui est un exemple de définition de fonction :</p>
 fn main() {
     println!("Hello, world!");
 
-    another_function();
+    une_autre_fonction();
 }
 
-fn another_function() {
-    println!("Another function.");
+fn une_autre_fonction() {
+    println!("Une autre fonction.");
 }
 ```
 -->
@@ -237,15 +237,15 @@ apprendre plus sur les fonctions. Ajoutez l'exemple <code>une_autre_fonction</co
 ```text
 $ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.28 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
      Running `target/debug/functions`
 Hello, world!
-Another function.
+Une autre fonction.
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.28 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.28s
      Running `target/debug/functions`
 Hello, world!
 Une autre fonction.
@@ -292,11 +292,11 @@ avec Rust :</p>
 <!--
 ```rust
 fn main() {
-    another_function(5);
+    une_autre_fonction(5);
 }
 
-fn another_function(x: i32) {
-    println!("The value of x is: {}", x);
+fn une_autre_fonction(x: i32) {
+    println!("La valeur de x est : {}", x);
 }
 ```
 -->
@@ -316,14 +316,14 @@ Try running this program; you should get the following output:
 ```text
 $ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 1.21 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 1.21s
      Running `target/debug/functions`
-The value of x is: 5
+La valeur de x est : 5
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 1.21 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 1.21s
      Running `target/debug/functions`
 La valeur de x est : 5
 </code></pre>
@@ -361,12 +361,12 @@ paramètres avec des virgules, comme ceci :</p>
 <!--
 ```rust
 fn main() {
-    another_function(5, 6);
+    une_autre_fonction(5, 6);
 }
 
-fn another_function(x: i32, y: i32) {
-    println!("The value of x is: {}", x);
-    println!("The value of y is: {}", y);
+fn une_autre_fonction(x: i32, y: i32) {
+    println!("La valeur de x est : {}", x);
+    println!("La valeur de y est : {}", y);
 }
 ```
 -->
@@ -401,18 +401,18 @@ et lancez-le en utilisant <code>cargo run</code> :</p>
 ```text
 $ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/functions`
-The value of x is: 5
-The value of y is: 6
+La valeur de x est : 5
+La valeur de x est : 6
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/functions`
 La valeur de x est : 5
-La valeur de y est : 6
+La valeur de x est : 6
 </code></pre>
 <!--
 Because we called the function with `5` as the value for  `x` and `6` is passed
@@ -459,6 +459,13 @@ une instruction. Dans l'encart 3-1, <code>let y = 6;</code> est une instruction.
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    let y = 6;
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     let y = 6;
 }
@@ -487,6 +494,13 @@ essaye de le faire, car vous obtiendrez une erreur :</p>
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust,ignore,does_not_compile
+fn main() {
+    let x = (let y = 6);
+}
+```
+-->
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = (let y = 6);
 }
@@ -496,10 +510,24 @@ When you run this program, the error you’ll get looks like this:
 -->
 <p>Quand vous exécutez ce programme, l'erreur que vous obtenez devrait ressembler à
 ceci :</p>
-<pre><code class="language-text">$ cargo run
+<!--
+```text
+$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
 error: expected expression, found statement (`let`)
- -- &gt; src/main.rs:2:14
+ --> src/main.rs:2:14
+<p>|
+2 |     let x = (let y = 6);
+|              ^^^
+|
+= note: variable declaration using <code>let</code> is a statement</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+error: expected expression, found statement (`let`)
+ --&gt; src/main.rs:2:14
   |
 2 |     let x = (let y = 6);
   |              ^^^
@@ -549,7 +577,7 @@ fn main() {
         x + 1
     };
 
-    println!("The value of y is: {}", y);
+    println!("La valeur de y est : {}", y);
 }
 ```
 -->
@@ -568,6 +596,14 @@ fn main() {
 This expression:
 -->
 <p>L'expression suivante…</p>
+<!--
+```rust,ignore
+{
+    let x = 3;
+    x + 1
+}
+```
+-->
 <pre><code class="language-rust ignore">{
     let x = 3;
     x + 1
@@ -616,14 +652,14 @@ Voici un exemple d'une fonction qui retourne une valeur :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-fn five() -> i32 {
+fn cinq() -> i32 {
     5
 }
 
 fn main() {
-    let x = five();
+    let x = cinq();
 
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
 }
 ```
 -->
@@ -652,14 +688,14 @@ devrait ressembler à ceci :</p>
 ```text
 $ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
      Running `target/debug/functions`
-The value of x is: 5
+La valeur de x est : 5
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling functions v0.1.0 (file:///projects/functions)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
      Running `target/debug/functions`
 La valeur de x est : 5
 </code></pre>
@@ -675,6 +711,11 @@ type de retour de <code>i32</code>. Regardons cela plus en détail. Il y a deux 
 importants : premièrement, la ligne <code>let x = cinq();</code> dit que nous utilisons
 la valeur de retour de la fonction pour initialiser la variable. Comme la
 fonction <code>cinq</code> retourne un <code>5</code>, cette ligne revient à faire ceci :</p>
+<!--
+```rust
+let x = 5;
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -700,12 +741,12 @@ Let’s look at another example:
 <!--
 ```rust
 fn main() {
-    let x = plus_one(5);
+    let x = plus_un(5);
 
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
 }
 
-fn plus_one(x: i32) -> i32 {
+fn plus_un(x: i32) -> i32 {
     x + 1
 }
 ```
@@ -735,12 +776,12 @@ d'une expression à une instruction, nous obtenons une erreur.</p>
 <!--
 ```rust,ignore,does_not_compile
 fn main() {
-    let x = plus_one(5);
+    let x = plus_un(5);
 
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
 }
 
-fn plus_one(x: i32) -> i32 {
+fn plus_un(x: i32) -> i32 {
     x + 1;
 }
 ```
@@ -761,32 +802,42 @@ Compiling this code produces an error, as follows:
 <p>Compiler ce code va produire une erreur, comme ci-dessous :</p>
 <!--
 ```text
+$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
 error[E0308]: mismatched types
- -- > src/main.rs:7:28
+ --> src/main.rs:7:24
+<p>|
+7 | fn plus_un(x: i32) -&gt; i32 {
+|    -------            ^^^ expected <code>i32</code>, found <code>()</code>
+|    |
+|    implicitly returns <code>()</code> as its body has no tail or <code>return</code> expression
+8 |     x + 1;
+|          - help: consider removing this semicolon</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0308</code>.
+error: could not compile <code>functions</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling functions v0.1.0 (file:///projects/functions)
+error[E0308]: mismatched types
+ --&gt; src/main.rs:7:24
   |
-7 |   fn plus_one(x: i32) -> i32 {
-  |  ____________________________^
-8 | |     x + 1;
-  | |          - help: consider removing this semicolon
-9 | | }
-  | |_^ expected i32, found ()
-  |
-  = note: expected type `i32`
-             found type `()`
-```
--->
-<pre><code class="language-text">error[E0308]: mismatched types
- -- &gt; src/main.rs:7:28
-  |
-7 |   fn plus_un(x: i32) -&gt; i32 {
-  |  ___________________________^
-8 | |     x + 1;
-  | |          - help: consider removing this semicolon
-9 | | }
-  | |_^ expected i32, found ()
-  |
-  = note: expected type `i32`
-             found type `()`
+7 | fn plus_un(x: i32) -&gt; i32 {
+  |    -------            ^^^ expected `i32`, found `()`
+  |    |
+  |    implicitly returns `()` as its body has no tail or `return` expression
+8 |     x + 1;
+  |          - help: consider removing this semicolon
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `functions`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 The main error message, “mismatched types,” reveals the core issue with this

@@ -184,14 +184,14 @@ la racine de la crate est <em>src/main.rs</em>.</p>
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust,ignore
-mod front_of_house;
+mod salle_a_manger;
 
-pub use crate::front_of_house::hosting;
+pub use crate::salle_a_manger::accueil;
 
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
+pub fn manger_au_restaurant() {
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
 }
 ```
 -->
@@ -222,20 +222,16 @@ And *src/front_of_house.rs* gets the definitions from the body of the
 -->
 <p><span class="filename">Fichier : src/salle_a_manger.rs</span></p>
 <!--
-```rust
-pub mod hosting {
-    pub fn add_to_waitlist() {}
+```rust,ignore
+pub mod accueil {
+    pub fn ajouter_a_la_liste_attente() {}
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>pub mod accueil {
+<pre><code class="language-rust ignore">pub mod accueil {
     pub fn ajouter_a_la_liste_attente() {}
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre>
 <!--
 <span class="caption">Listing 7-22: Definitions inside the `front_of_house`
 module in *src/front_of_house.rs*</span>
@@ -260,11 +256,11 @@ le même nom que le module. Pour continuer avec notre exemple et déplacer
 -->
 <p><span class="filename">Fichier : src/salle_a_manger.rs</span></p>
 <!--
-```
-pub mod hosting;
+```rust,ignore
+pub mod accueil;
 ```
 -->
-<pre><code>pub mod accueil;
+<pre><code class="language-rust ignore">pub mod accueil;
 </code></pre>
 <!--
 Then we create a *src/front_of_house* directory and a file
@@ -279,12 +275,16 @@ Then we create a *src/front_of_house* directory and a file
 -->
 <p><span class="filename">Fichier : src/salle_a_manger/accueil.rs</span></p>
 <!--
-```
-pub fn add_to_waitlist() {}
+```rust
+{{# rustdoc_include ../listings/ch07-managing-growing-projects/no-listing-02-extracting-hosting/src/front_of_house/hosting.rs}}
 ```
 -->
-<pre><code>pub fn ajouter_a_la_liste_attente() {}
-</code></pre>
+<pre><pre class="playpen"><code class="language-rust">
+<span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {
+</span>pub fn ajouter_a_la_liste_attente() {}
+<span class="boring">}
+</span></code></pre></pre>
 <!--
 The module tree remains the same, and the function calls in `eat_at_restaurant`
 will work without any modification, even though the definitions live in

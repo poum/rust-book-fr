@@ -210,6 +210,14 @@ de ce dossier <em>projects</em>.</p>
 For Linux, macOS, and PowerShell on Windows, enter this:
 -->
 <p>Sous Linux, macOS et PowerShell sous Windows, écrivez ceci :</p>
+<!--
+```text
+$ mkdir ~/projects
+$ cd ~/projects
+$ mkdir hello_world
+$ cd hello_world
+```
+-->
 <pre><code class="language-text">$ mkdir ~/projects
 $ cd ~/projects
 $ mkdir hello_world
@@ -219,6 +227,14 @@ $ cd hello_world
 For Windows CMD, enter this:
 -->
 <p>Avec CMD sous Windows, écrivez ceci :</p>
+<!--
+```cmd
+> mkdir "%USERPROFILE%\projects"
+> cd /d "%USERPROFILE%\projects"
+> mkdir hello_world
+> cd hello_world
+```
+-->
 <pre><code class="language-cmd">&gt; mkdir &quot;%USERPROFILE%\projects&quot;
 &gt; cd /d &quot;%USERPROFILE%\projects&quot;
 &gt; mkdir hello_world
@@ -248,6 +264,13 @@ code de l'encart 1-1.</p>
 <span class="filename">Filename: main.rs</span>
 -->
 <p><span class="filename">Fichier : main.rs</span></p>
+<!--
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     println!(&quot;Hello, world!&quot;);
 }
@@ -263,6 +286,13 @@ the following commands to compile and run the file:
 -->
 <p>Enregistrez le fichier et retournez dans votre terminal. Sur Linux
 ou macOS, écrivez les commandes suivantes pour compiler et exécuter le fichier :</p>
+<!--
+```text
+$ rustc main.rs
+$ ./main
+Hello, world!
+```
+-->
 <pre><code class="language-text">$ rustc main.rs
 $ ./main
 Hello, world!
@@ -271,6 +301,13 @@ Hello, world!
 On Windows, enter the command `.\main.exe` instead of `./main`:
 -->
 <p>Sur Windows, écrivez la commande <code>.\main.exe</code> à la place de <code>.\main</code> :</p>
+<!--
+```powershell
+> rustc main.rs
+> .\main.exe
+Hello, world!
+```
+-->
 <pre><code class="language-powershell">&gt; rustc main.rs
 &gt; .\main.exe
 Hello, world!
@@ -283,7 +320,7 @@ section for ways to get help.
 -->
 <p>Peu importe votre système d'exploitation, la chaîne de caractères
 <code>Hello, world!</code> devrait s'écrire dans votre terminal. Si cela ne s'affiche pas,
-référez-vous à la partie <a href="ch01-01-installation.html#troubleshooting">&quot;Dépannage&quot;</a><!-- ignore --> du
+référez-vous à la partie <a href="ch01-01-installation.html#d%C3%A9pannage">&quot;Dépannage&quot;</a><!-- ignore --> du
 chapitre d'installation pour vous aider.</p>
 <!--
 If `Hello, world!` did print, congratulations! You’ve officially written a Rust
@@ -301,6 +338,13 @@ Here’s the first piece of the puzzle:
 -->
 <p>Regardons en détail ce qui s'est passé dans votre programme “Hello, world!”.
 Voici le premier morceau du puzzle :</p>
+<!--
+```rust
+fn main() {
+
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">fn main() {
 
 }
@@ -346,6 +390,11 @@ documentation en ligne pour en savoir plus.</p>
 Inside the `main` function is the following code:
 -->
 <p>À l'intérieur de la fonction <code>main</code>, nous avons le code suivant :</p>
+<!--
+```rust
+    println!("Hello, world!");
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -404,6 +453,11 @@ this:
 <p>Avant de lancer un programme Rust, vous devez le compiler en utilisant le
 compilateur Rust en entrant la commande <code>rustc</code> et en lui passant le nom de
 votre fichier source, comme ceci :</p>
+<!--
+```text
+$ rustc main.rs
+```
+-->
 <pre><code class="language-text">$ rustc main.rs
 </code></pre>
 <!--
@@ -423,6 +477,12 @@ would see using CMD.
 utilisant la commande <code>ls</code> dans votre terminal. Avec Linux et macOS,
 vous devriez voir deux fichiers. Avec PowerShell sous Windows, vous devriez voir
 les trois mêmes fichiers que vous verriez en utilisant CMD.</p>
+<!--
+```text
+$ ls
+main  main.rs
+```
+-->
 <pre><code class="language-text">$ ls
 main  main.rs
 </code></pre>
@@ -498,6 +558,9 @@ mesure que votre programme grandit, vous allez avoir besoin de régler plus
 d'options et faciliter le partage de votre code. À la page suivante, nous allons
 découvrir l'outil Cargo, qui va vous aider à écrire des programmes Rust à
 l'épreuve de la réalité.</p>
+<!--
+[troubleshooting]: ch01-01-installation.html#troubleshooting
+-->
 
                     </main>
 

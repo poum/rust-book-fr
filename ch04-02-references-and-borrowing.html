@@ -183,12 +183,12 @@ valeur :</p>
 fn main() {
     let s1 = String::from("hello");
 
-    let len = calculate_length(&s1);
+    let long = calculer_taille(&s1);
 
-    println!("The length of '{}' is {}.", s1, len);
+    println!("La taille de '{}' est {}.", s1, long);
 }
 
-fn calculate_length(s: &String) -> usize {
+fn calculer_taille(s: &String) -> usize {
     s.len()
 }
 ```
@@ -254,24 +254,30 @@ Let’s take a closer look at the function call here:
 <p>Regardons de plus près l'appel à la fonction :</p>
 <!--
 ```rust
-# fn calculate_length(s: &String) -> usize {
+# fn main() {
+    let s1 = String::from("hello");
+
+    let long = calculer_taille(&s1);
+# 
+#     println!("La taille de '{}' est {}.", s1, long);
+# }
+# 
+# fn calculer_taille(s: &String) -> usize {
 #     s.len()
 # }
-let s1 = String::from("hello");
-
-let len = calculate_length(&s1);
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let s1 = String::from(&quot;hello&quot;);
+
+    let long = calculer_taille(&amp;s1);
+<span class="boring">
+</span><span class="boring">    println!(&quot;La taille de '{}' est {}.&quot;, s1, long);
+</span><span class="boring">}
+</span><span class="boring">
 </span><span class="boring">fn calculer_taille(s: &amp;String) -&gt; usize {
 </span><span class="boring">    s.len()
 </span><span class="boring">}
-</span>let s1 = String::from(&quot;hello&quot;);
-
-let long = calculer_taille(&amp;s1);
-<span class="boring">}
 </span></code></pre></pre>
 <!--
 The `&s1` syntax lets us create a reference that *refers* to the value of `s1`
@@ -291,21 +297,33 @@ le type du paramètre <code>s</code> est une référence. Ajoutons quelques comm
 explicatifs :</p>
 <!--
 ```rust
-fn calculate_length(s: &String) -> usize { // s is a reference to a String
-    s.len()
-} // Here, s goes out of scope. But because it does not have ownership of what
-  // it refers to, nothing happens.
-```
--->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>fn calculer_taille(s: &amp;String) -&gt; usize { // s est une référence à une String
-    s.len()
+# fn main() {
+#     let s1 = String::from("hello");
+# 
+#     let long = calculer_taille(&s1);
+# 
+#     println!("La taille de '{}' est {}.", s1, long);
+# }
+# 
+fn calculer_taille(s: &String) -> usize { // s est une référence à une String
+  s.len()
 } // Ici, s sort de la portée. Mais comme elle ne prend pas possession de ce
   // à quoi elle fait référence, il ne se passe rien.
-<span class="boring">}
-</span></code></pre></pre>
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span><span class="boring">    let s1 = String::from(&quot;hello&quot;);
+</span><span class="boring">
+</span><span class="boring">    let long = calculer_taille(&amp;s1);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;La taille de '{}' est {}.&quot;, s1, long);
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn calculer_taille(s: &amp;String) -&gt; usize { // s est une référence à une String
+  s.len()
+} // Ici, s sort de la portée. Mais comme elle ne prend pas possession de ce
+  // à quoi elle fait référence, il ne se passe rien.
+</code></pre></pre>
 <!--
 The scope in which the variable `s` is valid is the same as any function
 parameter’s scope, but we don’t drop what the reference points to when it goes
@@ -344,11 +362,11 @@ fonctionne pas !</p>
 fn main() {
     let s = String::from("hello");
 
-    change(&s);
+    changer(&s);
 }
 
-fn change(some_string: &String) {
-    some_string.push_str(", world");
+fn changer(texte: &String) {
+    texte.push_str(", world");
 }
 ```
 -->
@@ -373,22 +391,38 @@ Here’s the error:
 <p>Voici l'erreur :</p>
 <!--
 ```text
-error[E0596]: cannot borrow immutable borrowed content `*some_string` as mutable
- -- > error.rs:8:5
-  |
-7 | fn change(some_string: &String) {
-  |                        ------- use `&mut String` here to make mutable
-8 |     some_string.push_str(", world");
-  |     ^^^^^^^^^^^ cannot borrow as mutable
-```
--->
-<pre><code class="language-text">error[E0596]: cannot borrow immutable borrowed content `*texte` as mutable
- --&gt; error.rs:8:5
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0596]: cannot borrow `*texte` as mutable, as it is behind a `&` reference
+ --> src/main.rs:8:5
+<p>|
+7 | fn changer(texte: &amp;String) {
+|                   ------- help: consider changing this to be a mutable reference: <code>&amp;mut std::string::String</code>
+8 |     texte.push_str(&quot;, world&quot;);
+|     ^^^^^ <code>texte</code> is a <code>&amp;</code> reference, so the data it refers to cannot be borrowed as mutable</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0596</code>.
+error: could not compile <code>ownership</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0596]: cannot borrow `*texte` as mutable, as it is behind a `&amp;` reference
+ --&gt; src/main.rs:8:5
   |
 7 | fn changer(texte: &amp;String) {
-  |                   ------- use `&amp;mut String` here to make mutable
+  |                   ------- help: consider changing this to be a mutable reference: `&amp;mut std::string::String`
 8 |     texte.push_str(&quot;, world&quot;);
-  |     ^^^^^ cannot borrow as mutable
+  |     ^^^^^ `texte` is a `&amp;` reference, so the data it refers to cannot be borrowed as mutable
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0596`.
+error: could not compile `ownership`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 Just as variables are immutable by default, so are references. We’re not
@@ -415,11 +449,11 @@ modification :</p>
 fn main() {
     let mut s = String::from("hello");
 
-    change(&mut s);
+    changer(&mut s);
 }
 
-fn change(some_string: &mut String) {
-    some_string.push_str(", world");
+fn changer(texte: &mut String) {
+    texte.push_str(", world");
 }
 ```
 -->
@@ -455,35 +489,69 @@ suivant va échouer :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore,does_not_compile
-let mut s = String::from("hello");
+# fn main() {
+    let mut s = String::from("hello");
 
-let r1 = &mut s;
-let r2 = &mut s;
+    let r1 = &mut s;
+    let r2 = &mut s;
 
-println!("{}, {}", r1, r2);
+    println!("{}, {}", r1, r2);
+# }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">let mut s = String::from(&quot;hello&quot;);
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span>    let mut s = String::from(&quot;hello&quot;);
 
-let r1 = &amp;mut s;
-let r2 = &amp;mut s;
+    let r1 = &amp;mut s;
+    let r2 = &amp;mut s;
 
-println!(&quot;{}, {}&quot;, r1, r2);
-</code></pre>
+    println!(&quot;{}, {}&quot;, r1, r2);
+<span class="boring">}
+</span></code></pre>
 <!--
 Here’s the error:
 -->
 <p>Voici l'erreur :</p>
-<pre><code class="language-text">error[E0499]: cannot borrow `s` as mutable more than once at a time
- -- &gt; src/main.rs:5:14
+<!--
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0499]: cannot borrow `s` as mutable more than once at a time
+ --> src/main.rs:5:14
+<p>|
+4 |     let r1 = &amp;mut s;
+|              ------ first mutable borrow occurs here
+5 |     let r2 = &amp;mut s;
+|              ^^^^^^ second mutable borrow occurs here
+6 | 
+7 |     println!(&quot;{}, {}&quot;, r1, r2);
+|                        -- first borrow later used here</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0499</code>.
+error: could not compile <code>ownership</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0499]: cannot borrow `s` as mutable more than once at a time
+ --&gt; src/main.rs:5:14
   |
 4 |     let r1 = &amp;mut s;
   |              ------ first mutable borrow occurs here
 5 |     let r2 = &amp;mut s;
   |              ^^^^^^ second mutable borrow occurs here
-6 |
+6 | 
 7 |     println!(&quot;{}, {}&quot;, r1, r2);
   |                        -- first borrow later used here
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0499`.
+error: could not compile `ownership`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 This restriction allows for mutation but in a very controlled fashion. It’s
@@ -529,28 +597,27 @@ portée, pour nous permettre d'avoir plusieurs références mutables, mais pas
 <em>en même temps</em> :</p>
 <!--
 ```rust
-let mut s = String::from("hello");
+# fn main() {
+    let mut s = String::from("hello");
 
-{
-    let r1 = &mut s;
+    {
+        let r1 = &mut s;
+    } // r1 sort de la portée ici, donc nous pouvons créer une nouvelle référence
+      // sans problèmes.
 
-} // r1 goes out of scope here, so we can make a new reference with no problems.
-
-let r2 = &mut s;
+    let r2 = &mut s;
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut s = String::from(&quot;hello&quot;);
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let mut s = String::from(&quot;hello&quot;);
 
-{
-    let r1 = &amp;mut s;
+    {
+        let r1 = &amp;mut s;
+    } // r1 sort de la portée ici, donc nous pouvons créer une nouvelle référence
+      // sans problèmes.
 
-} // r1 sort de la portée ici, donc nous pouvons créer une nouvelle référence
-  // sans problèmes.
-
-let r2 = &amp;mut s;
+    let r2 = &amp;mut s;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -561,44 +628,57 @@ results in an error:
 Ce code va mener à une erreur :</p>
 <!--
 ```rust,ignore,does_not_compile
-let mut s = String::from("hello");
+# fn main() {
+    let mut s = String::from("hello");
 
-let r1 = &s; // no problem
-let r2 = &s; // no problem
-let r3 = &mut s; // BIG PROBLEM
-
-println!("{}, {}, and {}", r1, r2, r3);
+    let r1 = &s; // sans problème
+    let r2 = &s; // sans problème
+    let r3 = &mut s; // GROS PROBLEME
+    
+    println!("{}, {}, and {}", r1, r2, r3);
+# }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">let mut s = String::from(&quot;hello&quot;);
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span>    let mut s = String::from(&quot;hello&quot;);
 
-let r1 = &amp;s; // sans problème
-let r2 = &amp;s; // sans problème
-let r3 = &amp;mut s; // GROS PROBLEME
-
-println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
-</code></pre>
+    let r1 = &amp;s; // sans problème
+    let r2 = &amp;s; // sans problème
+    let r3 = &amp;mut s; // GROS PROBLEME
+    
+    println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
+<span class="boring">}
+</span></code></pre>
 <!--
 Here’s the error:
 -->
 <p>Voici l'erreur :</p>
 <!--
 ```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
 error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
- -- > src/main.rs:6:14
-  |
-4 |     let r1 = &s; // no problem
-  |              -- immutable borrow occurs here
-5 |     let r2 = &s; // no problem
-6 |     let r3 = &mut s; // BIG PROBLEM
-  |              ^^^^^^ mutable borrow occurs here
+ --> src/main.rs:6:14
+<p>|
+4 |     let r1 = &amp;s; // sans problème
+|              -- immutable borrow occurs here
+5 |     let r2 = &amp;s; // sans problème
+6 |     let r3 = &amp;mut s; // GROS PROBLEME
+|              ^^^^^^ mutable borrow occurs here
 7 |
-8 |     println!("{}, {}, and {}", r1, r2, r3);
-  |                                -- immutable borrow later used here
-```
--->
-<pre><code class="language-text">error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
- -- &gt; src/main.rs:6:14
+8 |     println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
+|                                -- immutable borrow later used here</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0502</code>.
+error: could not compile <code>ownership</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
+ --&gt; src/main.rs:6:14
   |
 4 |     let r1 = &amp;s; // sans problème
   |              -- immutable borrow occurs here
@@ -608,6 +688,13 @@ error[E0502]: cannot borrow `s` as mutable because it is also borrowed as immuta
 7 |
 8 |     println!(&quot;{}, {}, and {}&quot;, r1, r2, r3);
   |                                -- immutable borrow later used here
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0502`.
+error: could not compile `ownership`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 Whew! We *also* cannot have a mutable reference while we have an immutable one.
@@ -634,27 +721,31 @@ exemple, le code suivant va se compiler car la dernière utilisation de la
 référence immuable est située avant l'introduction de la référence mutable :</p>
 <!--
 ```rust,edition2018
-let mut s = String::from("hello");
+# fn main() {
+    let mut s = String::from("hello");
 
-let r1 = &s; // no problem
-let r2 = &s; // no problem
-println!("{} and {}", r1, r2);
-// r1 and r2 are no longer used after this point
-
-let r3 = &mut s; // no problem
-println!("{}", r3);
+    let r1 = &s; // sans problème
+    let r2 = &s; // sans problème
+    println!("{} et {}", r1, r2);
+    // r1 et r2 ne sont plus utilisés à partir d'ici
+    
+    let r3 = &mut s; // sans problème
+    println!("{}", r3);
+# }
 ```
 -->
-<pre><code class="language-rust edition2018 ignore">let mut s = String::from(&quot;hello&quot;);
+<pre><pre class="playpen"><code class="language-rust edition2018"><span class="boring">fn main() {
+</span>    let mut s = String::from(&quot;hello&quot;);
 
-let r1 = &amp;s; // sans problème
-let r2 = &amp;s; // sans problème
-println!(&quot;{} et {}&quot;, r1, r2);
-// r1 et r2 ne sont plus utilisés à partir d'ici
-
-let r3 = &amp;mut s; // sans problème
-println!(&quot;{}&quot;, r3);
-</code></pre>
+    let r1 = &amp;s; // sans problème
+    let r2 = &amp;s; // sans problème
+    println!(&quot;{} et {}&quot;, r1, r2);
+    // r1 et r2 ne sont plus utilisés à partir d'ici
+    
+    let r3 = &amp;mut s; // sans problème
+    println!(&quot;{}&quot;, r3);
+<span class="boring">}
+</span></code></pre></pre>
 <!--
 The scopes of the immutable references `r1` and `r2` end after the `println!`
 where they are last used, which is before the mutable reference `r3` is
@@ -709,6 +800,15 @@ erreur au moment de la compilation :</p>
 <!--
 ```rust,ignore,does_not_compile
 fn main() {
+    let reference_vers_rien = pendouille();
+}
+
+fn pendouille() -> &String {
+    let s = String::from("hello");
+
+    &s
+}
+fn main() {
     let reference_to_nothing = dangle();
 }
 
@@ -735,26 +835,38 @@ Here’s the error:
 <p>Voici l'erreur :</p>
 <!--
 ```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
 error[E0106]: missing lifetime specifier
- -- > main.rs:5:16
-  |
-5 | fn dangle() -> &String {
-  |                ^ expected lifetime parameter
-  |
-  = help: this function's return type contains a borrowed value, but there is
-  no value for it to be borrowed from
-  = help: consider giving it a 'static lifetime
-```
--->
-<pre><code class="language-text">error[E0106]: missing lifetime specifier
- --&gt; main.rs:5:16
+ --> src/main.rs:5:16
+<p>|
+5 | fn pendouille() -&gt; &amp;String {
+|                    ^ expected lifetime parameter
+|
+= help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0106</code>.
+error: could not compile <code>ownership</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0106]: missing lifetime specifier
+ --&gt; src/main.rs:5:16
   |
 5 | fn pendouille() -&gt; &amp;String {
   |                    ^ expected lifetime parameter
   |
-  = help: this function's return type contains a borrowed value, but there is
-  no value for it to be borrowed from
-  = help: consider giving it a 'static lifetime
+  = help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0106`.
+error: could not compile `ownership`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 This error message refers to a feature we haven’t covered yet: lifetimes. We’ll
@@ -790,20 +902,28 @@ de <code>pendouille</code> :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore,does_not_compile
-fn dangle() -> &String { // dangle returns a reference to a String
+# fn main() {
+#     let reference_vers_rien = pendouille();
+# }
+# 
+fn pendouille() -> &String { // pendouille retourne une référence vers une String
 
-    let s = String::from("hello"); // s is a new String
+  let s = String::from("hello"); // s est une nouvelle String
 
-    &s // we return a reference to the String, s
-} // Here, s goes out of scope, and is dropped. Its memory goes away.
-  // Danger!
+  &s // nous retournons une référence vers la String, s
+} // Ici, s sort de la portée, et est libéré. Sa mémoire disparaît.
+  // Attention, danger !
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">fn pendouille() -&gt; &amp;String { // pendouille retourne une référence vers une String
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span><span class="boring">    let reference_vers_rien = pendouille();
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn pendouille() -&gt; &amp;String { // pendouille retourne une référence vers une String
 
-    let s = String::from(&quot;hello&quot;); // s est une nouvelle String
+  let s = String::from(&quot;hello&quot;); // s est une nouvelle String
 
-    &amp;s // nous retournons une référence vers la String, s
+  &amp;s // nous retournons une référence vers la String, s
 } // Ici, s sort de la portée, et est libéré. Sa mémoire disparaît.
   // Attention, danger !
 </code></pre>
@@ -823,23 +943,27 @@ The solution here is to return the `String` directly:
 <p>Ici la solution est de renvoyer la <code>String</code> directement :</p>
 <!--
 ```rust
-fn no_dangle() -> String {
+# fn main() {
+#     let string = no_dangle();
+# }
+# 
+fn ne_pendouille_pas() -> String {
     let s = String::from("hello");
 
     s
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span><span class="boring">    let string = no_dangle();
+</span><span class="boring">}
+</span><span class="boring">
 </span>fn ne_pendouille_pas() -&gt; String {
     let s = String::from(&quot;hello&quot;);
 
     s
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 This works without any problems. Ownership is moved out, and nothing is
 deallocated.

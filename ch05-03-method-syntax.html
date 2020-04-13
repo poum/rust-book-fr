@@ -193,22 +193,22 @@ l'encart 5-13.</p>
 ```rust
 #[derive(Debug)]
 struct Rectangle {
-    width: u32,
-    height: u32,
+    largeur: u32,
+    hauteur: u32,
 }
 
 impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
+    fn aire(&self) -> u32 {
+        self.largeur * self.hauteur
     }
 }
 
 fn main() {
-    let rect1 = Rectangle { width: 30, height: 50 };
+    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
 
     println!(
-        "The area of the rectangle is {} square pixels.",
-        rect1.area()
+        "L'aire du rectangle est de {} pixels carrés.",
+        rect1.aire()
     );
 }
 ```
@@ -326,6 +326,7 @@ la bibliothèque que nous fournissons.</p>
 > automatically adds in `&`, `&mut`, or `*` so `object` matches the signature of
 > the method. In other words, the following are the same:
 >
+<!-- CAN'T EXTRACT SEE BUG TODO -- >
 > ```rust
 > # #[derive(Debug,Copy,Clone)]
 > # struct Point {
@@ -369,6 +370,9 @@ comportement.</p>
 <code>objet.methode()</code>, Rust ajoute automatiquement le <code>&amp;</code>, <code>&amp;mut</code> ou <code>*</code> pour que
 <code>objet</code> corresponde à la signature de la méthode. Autrement dit, ces deux
 lignes sont identiques :</p>
+</blockquote>
+<!-- CAN'T EXTRACT SEE BUG TODO -->
+<blockquote>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -427,19 +431,37 @@ programme de l'encart 5-14 une fois qu'on aura défini la méthode
 <!--
 ```rust,ignore
 fn main() {
-    let rect1 = Rectangle { width: 30, height: 50 };
-    let rect2 = Rectangle { width: 10, height: 40 };
-    let rect3 = Rectangle { width: 60, height: 45 };
+    let rect1 = Rectangle {
+        largeur: 30,
+        hauteur: 50
+    };
+    let rect2 = Rectangle {
+        largeur: 10,
+        hauteur: 40
+    };
+    let rect3 = Rectangle {
+        largeur: 60,
+        hauteur: 45
+    };
 
-    println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
-    println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
+    println!("rect1 peut-il contenir rect2 ? {}", rect1.peut_contenir(&rect2));
+    println!("rect1 peut-il contenir rect3 ? {}", rect1.peut_contenir(&rect3));
 }
 ```
 -->
 <pre><code class="language-rust ignore">fn main() {
-    let rect1 = Rectangle { largeur: 30, hauteur: 50 };
-    let rect2 = Rectangle { largeur: 10, hauteur: 40 };
-    let rect3 = Rectangle { largeur: 60, hauteur: 45 };
+    let rect1 = Rectangle {
+        largeur: 30,
+        hauteur: 50
+    };
+    let rect2 = Rectangle {
+        largeur: 10,
+        hauteur: 40
+    };
+    let rect3 = Rectangle {
+        largeur: 60,
+        hauteur: 45
+    };
 
     println!(&quot;rect1 peut-il contenir rect2 ? {}&quot;, rect1.peut_contenir(&amp;rect2));
     println!(&quot;rect1 peut-il contenir rect3 ? {}&quot;, rect1.peut_contenir(&amp;rect3));
@@ -505,25 +527,40 @@ montre l'encart 5-15.</p>
 ```rust
 # #[derive(Debug)]
 # struct Rectangle {
-#     width: u32,
-#     height: u32,
+#     largeur: u32,
+#     hauteur: u32,
 # }
-#
+# 
 impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
+    fn aire(&self) -> u32 {
+        self.largeur * self.hauteur
     }
 
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
+    fn peut_contenir(&self, autre: &Rectangle) -> bool {
+        self.largeur > autre.largeur && self.hauteur > autre.hauteur
     }
 }
+# 
+# fn main() {
+#     let rect1 = Rectangle {
+#         largeur: 30,
+#         hauteur: 50
+#     };
+#     let rect2 = Rectangle {
+#         largeur: 10,
+#         hauteur: 40
+#     };
+#     let rect3 = Rectangle {
+#         largeur: 60,
+#         hauteur: 45
+#     };
+# 
+#     println!("rect1 peut-il contenir rect2 ? {}", rect1.peut_contenir(&rect2));
+#     println!("rect1 peut-il contenir rect3 ? {}", rect1.peut_contenir(&rect3));
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">#[derive(Debug)]
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Rectangle {
 </span><span class="boring">    largeur: u32,
 </span><span class="boring">    hauteur: u32,
@@ -538,7 +575,24 @@ impl Rectangle {
         self.largeur &gt; autre.largeur &amp;&amp; self.hauteur &gt; autre.hauteur
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let rect1 = Rectangle {
+</span><span class="boring">        largeur: 30,
+</span><span class="boring">        hauteur: 50
+</span><span class="boring">    };
+</span><span class="boring">    let rect2 = Rectangle {
+</span><span class="boring">        largeur: 10,
+</span><span class="boring">        hauteur: 40
+</span><span class="boring">    };
+</span><span class="boring">    let rect3 = Rectangle {
+</span><span class="boring">        largeur: 60,
+</span><span class="boring">        hauteur: 45
+</span><span class="boring">    };
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;rect1 peut-il contenir rect2 ? {}&quot;, rect1.peut_contenir(&amp;rect2));
+</span><span class="boring">    println!(&quot;rect1 peut-il contenir rect3 ? {}&quot;, rect1.peut_contenir(&amp;rect3));
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 5-15: Implementing the `can_hold` method on
@@ -594,21 +648,25 @@ d'un <code>Rectangle</code> carré plutôt que d'avoir à indiquer la même vale
 ```rust
 # #[derive(Debug)]
 # struct Rectangle {
-#     width: u32,
-#     height: u32,
+#     largeur: u32,
+#     hauteur: u32,
 # }
-#
+# 
 impl Rectangle {
-    fn square(size: u32) -> Rectangle {
-        Rectangle { width: size, height: size }
+    fn carre(cote: u32) -> Rectangle {
+        Rectangle {
+            largeur: cote,
+            hauteur: cote
+        }
     }
 }
+# 
+# fn main() {
+#     let mon_carre = Rectangle::carre(3);
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">#[derive(Debug)]
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Rectangle {
 </span><span class="boring">    largeur: u32,
 </span><span class="boring">    hauteur: u32,
@@ -616,10 +674,16 @@ impl Rectangle {
 </span><span class="boring">
 </span>impl Rectangle {
     fn carre(cote: u32) -&gt; Rectangle {
-        Rectangle { largeur: cote, hauteur: cote }
+        Rectangle {
+            largeur: cote,
+            hauteur: cote
+        }
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let mon_carre = Rectangle::carre(3);
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 To call this associated function, we use the `::` syntax with the struct name;
@@ -648,27 +712,42 @@ bloc <code>impl</code>.</p>
 ```rust
 # #[derive(Debug)]
 # struct Rectangle {
-#     width: u32,
-#     height: u32,
+#     largeur: u32,
+#     hauteur: u32,
 # }
-#
+# 
 impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
+    fn aire(&self) -> u32 {
+        self.largeur * self.hauteur
     }
 }
 
 impl Rectangle {
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.height > other.height
+    fn peut_contenir(&self, autre: &Rectangle) -> bool {
+        self.largeur > autre.largeur && self.hauteur > autre.hauteur
     }
 }
+# 
+# fn main() {
+#     let rect1 = Rectangle {
+#         largeur: 30,
+#         hauteur: 50
+#     };
+#     let rect2 = Rectangle {
+#         largeur: 10,
+#         hauteur: 40
+#     };
+#     let rect3 = Rectangle {
+#         largeur: 60,
+#         hauteur: 45
+#     };
+# 
+#     println!("rect1 peut-il contenir rect2 ? {}", rect1.peut_contenir(&rect2));
+#     println!("rect1 peut-il contenir rect3 ? {}", rect1.peut_contenir(&rect3));
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">#[derive(Debug)]
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">#[derive(Debug)]
 </span><span class="boring">struct Rectangle {
 </span><span class="boring">    largeur: u32,
 </span><span class="boring">    hauteur: u32,
@@ -685,7 +764,24 @@ impl Rectangle {
         self.largeur &gt; autre.largeur &amp;&amp; self.hauteur &gt; autre.hauteur
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let rect1 = Rectangle {
+</span><span class="boring">        largeur: 30,
+</span><span class="boring">        hauteur: 50
+</span><span class="boring">    };
+</span><span class="boring">    let rect2 = Rectangle {
+</span><span class="boring">        largeur: 10,
+</span><span class="boring">        hauteur: 40
+</span><span class="boring">    };
+</span><span class="boring">    let rect3 = Rectangle {
+</span><span class="boring">        largeur: 60,
+</span><span class="boring">        hauteur: 45
+</span><span class="boring">    };
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;rect1 peut-il contenir rect2 ? {}&quot;, rect1.peut_contenir(&amp;rect2));
+</span><span class="boring">    println!(&quot;rect1 peut-il contenir rect3 ? {}&quot;, rect1.peut_contenir(&amp;rect3));
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 5-16: Rewriting Listing 5-15 using multiple `impl`

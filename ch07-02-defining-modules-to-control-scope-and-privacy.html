@@ -223,25 +223,8 @@ fonctions.</p>
 -->
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
-```rust,ignore
-mod front_of_house {
-    mod hosting {
-        fn add_to_waitlist() {}
-
-        fn seat_at_table() {}
-    }
-
-    mod serving {
-        fn take_order() {}
-
-        fn serve_order() {}
-
-        fn take_payment() {}
-    }
-}
-```
--->
-<pre><code class="language-rust ignore">mod salle_a_manger {
+```rust
+mod salle_a_manger {
     mod accueil {
         fn ajouter_a_la_liste_attente() {}
 
@@ -256,7 +239,28 @@ mod front_of_house {
         fn encaisser() {}
     }
 }
-</code></pre>
+# 
+# fn main() {}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">mod salle_a_manger {
+    mod accueil {
+        fn ajouter_a_la_liste_attente() {}
+
+        fn installer_a_une_table() {}
+    }
+
+    mod service {
+        fn prendre_commande() {}
+
+        fn servir_commande() {}
+
+        fn encaisser() {}
+    }
+}
+<span class="boring">
+</span><span class="boring">fn main() {}
+</span></code></pre></pre>
 <!--
 <span class="caption">Listing 7-1: A `front_of_house` module containing other
 modules that then contain functions</span>

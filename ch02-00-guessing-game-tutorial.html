@@ -195,6 +195,12 @@ Chapter 1 and make a new project using Cargo, like so:
 <p>Pour créer un nouveau projet, rendez-vous dans le dossier <em>projects</em> que
 vous avez créé au chapitre 1 et utilisez Cargo pour créer votre projet, comme
 ceci :</p>
+<!--
+```text
+$ cargo new guessing_game
+$ cd guessing_game
+```
+-->
 <pre><code class="language-text">$ cargo new jeu_du_plus_ou_du_moins
 $ cd jeu_du_plus_ou_du_moins
 </code></pre>
@@ -217,10 +223,12 @@ Look at the generated *Cargo.toml* file:
 <!--
 ```toml
 [package]
-name = "guessing_game"
+name = "jeu_du_plus_ou_du_moins"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
+authors = ["Votre nom <adresse@exemple.com>"]
 edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 ```
@@ -230,6 +238,8 @@ name = &quot;jeu_du_plus_ou_du_moins&quot;
 version = &quot;0.1.0&quot;
 authors = [&quot;Votre nom &lt;adresse@exemple.com&gt;&quot;]
 edition = &quot;2018&quot;
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 </code></pre>
@@ -249,6 +259,13 @@ programme <em>“Hello, world!”</em> pour vous. Ouvrez le fichier <em>src/main
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     println!(&quot;Hello, world!&quot;);
 }
@@ -262,15 +279,15 @@ son exécution en une seule commande avec <code>cargo run</code> :</p>
 <!--
 ```text
 $ cargo run
-   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 1.50 secs
-     Running `target/debug/guessing_game`
+   Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.50s
+     Running `target/debug/jeu_du_plus_ou_du_moins`
 Hello, world!
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-    Finished dev [unoptimized + debuginfo] target(s) in 1.50 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 1.50s
      Running `target/debug/jeu_du_plus_ou_du_moins`
 Hello, world!
 </code></pre>
@@ -311,16 +328,17 @@ code de l'encart 2-1 dans le fichier <em>src/main.rs</em>.</p>
 use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Devinez le nombre !");
 
-    println!("Please input your guess.");
+    println!("Veuillez entrer un nombre.");
 
-    let mut guess = String::new();
+    let mut supposition = String::new();
 
-    io::stdin().read_line(&mut guess)
-        .expect("Failed to read line");
+    io::stdin()
+        .read_line(&mut supposition)
+        .expect("Échec de la lecture de l'entrée utilisateur");
 
-    println!("You guessed: {}", guess);
+    println!("Votre nombre : {}", supposition);
 }
 ```
 -->
@@ -333,7 +351,8 @@ fn main() {
 
     let mut supposition = String::new();
 
-    io::stdin().read_line(&amp;mut supposition)
+    io::stdin()
+        .read_line(&amp;mut supposition)
         .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 
     println!(&quot;Votre nombre : {}&quot;, supposition);
@@ -356,8 +375,41 @@ standard library (which is known as `std`):
 besoin d'importer la bibliothèque <code>io</code> (pour <em>input/output</em>, entrée/sortie) afin
 de pouvoir l'utiliser. La bibliothèque <code>io</code> provient de la bibliothèque standard
 (qui est aussi connue sous le nom de <code>std</code>).</p>
+<!--
+```rust,ignore
+use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# }
+```
+-->
 <pre><code class="language-rust ignore">use std::io;
-</code></pre>
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 By default, Rust brings only a few types into the scope of every program in
 [the *prelude*][prelude]<!-- ignore -- >. If a type you want to use isn’t in the
@@ -371,15 +423,50 @@ vous voulez utiliser un type qui ne s'y trouve pas, vous devrez l'importer
 explicitement avec l'instruction <code>use</code>. L'utilisation de la bibliothèque
 <code>std::io</code> vous apporte de nombreuses fonctionnalités utiles, comme ici la
 possibilité de récupérer une saisie utilisateur.</p>
-<!-- [prelude]: ../std/prelude/index.html -->
+<!--
+[prelude]: ../std/prelude/index.html
+-->
 <!--
 As you saw in Chapter 1, the `main` function is the entry point into the
 program:
 -->
 <p>Comme vous l'avez vu au chapitre 1, la fonction <code>main</code> est le point d'entrée
 du programme :</p>
-<pre><code class="language-rust ignore">fn main() {
-</code></pre>
+<!--
+```rust,ignore
+# use std::io;
+# 
+fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# }
+```
+-->
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span><span class="boring">
+</span>fn main() {
+<span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 The `fn` syntax declares a new function, the parentheses, `()`, indicate there
 are no parameters, and the curly bracket, `{`, starts the body of the function.
@@ -395,15 +482,39 @@ the screen:
 affiche une chaîne de caractères à l'écran :</p>
 <!--
 ```rust,ignore
-println!("Guess the number!");
+# use std::io;
+# 
+# fn main() {
+    println!("Devinez le nombre !");
 
-println!("Please input your guess.");
+    println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# }
 ```
 -->
-<pre><code class="language-rust ignore">println!(&quot;Devinez le nombre !&quot;);
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>    println!(&quot;Devinez le nombre !&quot;);
 
-println!(&quot;Veuillez entrer un nombre.&quot;);
-</code></pre>
+    println!(&quot;Veuillez entrer un nombre.&quot;);
+<span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 This code is printing a prompt stating what the game is and requesting input
 from the user.
@@ -420,11 +531,39 @@ Next, we’ll create a place to store the user input, like this:
 <p>Ensuite, on crée un endroit où stocker la saisie de l'utilisateur, comme ceci :</p>
 <!--
 ```rust,ignore
-let mut guess = String::new();
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+    let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# }
 ```
 -->
-<pre><code class="language-rust ignore">let mut supposition = String::new();
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span>    let mut supposition = String::new();
+<span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 Now the program is getting interesting! There’s a lot going on in this little
 line. Notice that this is a `let` statement, which is used to create a
@@ -433,6 +572,11 @@ line. Notice that this is a `let` statement, which is used to create a
 <p>Le programme commence à devenir intéressant ! Il se passe beaucoup de choses
 dans cette petite ligne. Vous remarquerez qu'elle commence par le mot-clé <code>let</code>,
 qui sert à créer une <em>variable</em>. Voici un autre exemple :</p>
+<!--
+```rust,ignore
+let foo = bar;
+```
+-->
 <pre><code class="language-rust ignore">let foo = bar;
 </code></pre>
 <!--
@@ -488,7 +632,9 @@ est une fonction qui retourne une nouvelle instance de <code>String</code>.
 <a href="https://doc.rust-lang.org/std/string/struct.String.html"><code>String</code></a><!-- ignore --> est un type de chaîne de caractères fourni
 par la bibliothèque standard, qui est une portion de texte encodée en UTF-8 et
 dont la longueur peut augmenter.</p>
-<!-- [string]: ../std/string/struct.String.html -->
+<!--
+[string]: ../std/string/struct.String.html
+-->
 <!--
 The `::` syntax in the `::new` line indicates that `new` is an *associated
 function* of the `String` type. An associated function is implemented on a type,
@@ -526,13 +672,39 @@ programme. Nous allons maintenant appeler la fonction <code>stdin</code> du
 module <code>io</code> :</p>
 <!--
 ```rust,ignore
-io::stdin().read_line(&mut guess)
-    .expect("Failed to read line");
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+    io::stdin()
+        .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# }
 ```
 -->
-<pre><code class="language-rust ignore">io::stdin().read_line(&amp;mut supposition)
-    .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span>    io::stdin()
+        .read_line(&amp;mut supposition)
+<span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 If we hadn’t put the `use std::io` line at the beginning of the program, we
 could have written this function call as `std::io::stdin`. The `stdin` function
@@ -544,7 +716,9 @@ dû écrire l'appel à la fonction de cette manière : <code>std::io::stdin</co
 <code>stdin</code> retourne une instance de <a href="https://doc.rust-lang.org/std/io/struct.Stdin.html"><code>std::io::Stdin</code></a><!-- ignore -->, qui
 est un type qui représente une référence abstraite <em>(handle)</em> vers l'entrée
 standard du terminal dans lequel vous avez lancé le programme.</p>
-<!-- [iostdin]: ../std/io/struct.Stdin.html -->
+<!--
+[iostdin]: ../std/io/struct.Stdin.html
+-->
 <!--
 The next part of the code, `.read_line(&mut guess)`, calls the
 [`read_line`][read_line]<!-- ignore -- > method on the standard input handle to
@@ -555,7 +729,9 @@ guess`.
 <a href="https://doc.rust-lang.org/std/io/struct.Stdin.html#method.read_line"><code>read_line</code></a><!-- ignore --> sur l'entrée standard afin d'obtenir
 la saisie utilisateur. De plus, on passe à cette méthode l'argument
 <code>&amp;mut supposition</code>.</p>
-<!-- [read_line]: ../std/io/struct.Stdin.html#method.read_line -->
+<!--
+[read_line]: ../std/io/struct.Stdin.html#method.read_line
+-->
 <!--
 The job of `read_line` is to take whatever the user types into standard input
 and place that into a string, so it takes that string as an argument. The
@@ -593,21 +769,48 @@ rendre mutable. (Le chapitre 4 expliquera plus en détail les références.)</p>
 -->
 <h3><a class="header" href="#gérer-les-erreurs-potentielles-avec-le-type-result" id="gérer-les-erreurs-potentielles-avec-le-type-result">Gérer les erreurs potentielles avec le type <code>Result</code></a></h3>
 <!--
-We’re not quite done with this line of code. Although what we’ve discussed so
-far is a single line of text, it’s only the first part of the single logical
-line of code. The second part is this method:
+We’re still working on this line of code. Although we’re now discussing a third
+line of text, it’s still part of a single logical line of code. The next part
+is this method:
 -->
-<p>Nous n'en avons pas tout à fait fini avec cette ligne de code.
-Nous avons abordé jusqu'ici une seule ligne de texte, mais ce n'est que la
-première partie de la ligne de code.
-La deuxième partie est cette méthode :</p>
+<p>Nous avons encore du travail sur cette ligne de code. Même si nous allons
+rajouter une troisième ligne de code, elle ne fait partie que d'une seule ligne
+de code. Cette nouvelle partie rajoute cette méthode :</p>
 <!--
 ```rust,ignore
-.expect("Failed to read line");
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+        .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# }
 ```
 -->
-<pre><code class="language-rust ignore">.expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span>        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+<span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 When you call a method with the `.foo()` syntax, it’s often wise to introduce a
 newline and other whitespace to help break up long lines. We could have
@@ -625,12 +828,11 @@ io::stdin().read_line(&mut guess).expect("Failed to read line");
 <pre><code class="language-rust ignore">io::stdin().read_line(&amp;mut supposition).expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 </code></pre>
 <!--
-However, one long line is difficult to read, so it’s best to divide it: two
-lines for two method calls. Now let’s discuss what this line does.
+However, one long line is difficult to read, so it’s best to divide it. Now
+let’s discuss what this line does.
 -->
 <p>Cependant, une longue ligne de code n'est pas toujours facile à lire, c'est donc
-une bonne pratique de la diviser : deux lignes de texte pour deux appels de
-méthodes. Mais maintenant, voyons à quoi sert cette ligne.</p>
+une bonne pratique de la diviser. Maintenant, voyons à quoi sert cette ligne.</p>
 <!--
 As mentioned earlier, `read_line` puts what the user types into the string
 we’re passing it, but it also returns a value—in this case, an
@@ -645,8 +847,10 @@ aussi une valeur − dans notre cas, de type
 <code>Result</code> dans la bibliothèque standard de Rust : un type générique
 <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a><!-- ignore --> ainsi que des déclinaisons spécifiques à
 des sous-modules, comme <code>io::Result</code>.</p>
-<!-- [ioresult]: ../std/io/type.Result.html -->
-<!-- [result]: ../std/result/enum.Result.html -->
+<!--
+[ioresult]: ../std/io/type.Result.html
+[result]: ../std/result/enum.Result.html
+-->
 <!--
 The `Result` types are [*enumerations*][enums]<!-- ignore -- >, often referred
 to as *enums*. An enumeration is a type that can have a fixed set of values,
@@ -657,6 +861,9 @@ in more detail.
 appelées <em>enums</em>. Une énumération est un type qui peut avoir un certain nombre
 de valeurs prédéfinies, et ces valeurs sont appelées des <em>variantes</em>
 d'énumération. Le chapitre 6 explorera les énumérations plus en détail.</p>
+<!--
+[enums]: ch06-00-enums.html
+-->
 <!--
 For `Result`, the variants are `Ok` or `Err`. The `Ok` variant indicates the
 operation was successful, and inside `Ok` is the successfully generated value.
@@ -693,7 +900,9 @@ sera probablement dû à une erreur du système d'exploitation. Si en revanche
 contenu du <code>Ok</code>, qui est le résultat de l'opération, et vous le retournera afin
 que vous puissiez l'utiliser. Dans notre exemple, ce résultat est le nombre
 d'octets que l'utilisateur a saisi dans l'entrée standard.</p>
-<!-- [expect]: ../std/result/enum.Result.html#method.expect -->
+<!--
+[expect]: ../std/result/enum.Result.html#method.expect
+-->
 <!--
 If you don’t call `expect`, the program will compile, but you’ll get a warning:
 -->
@@ -703,24 +912,31 @@ avertissement :</p>
 ```text
 $ cargo build
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-warning: unused `std::result::Result` which must be used
-  -- > src/main.rs:10:5
-   |
-10 |     io::stdin().read_line(&mut guess);
-   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
-   = note: #[warn(unused_must_use)] on by default
-```
--->
-<pre><code class="language-text">$ cargo build
+warning: unused `std::result::Result` that must be used
+  --> src/main.rs:10:5
+<p>|
+10 |     io::stdin().read_line(&amp;mut supposition);
+|     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+|
+= note: <code>#[warn(unused_must_use)]</code> on by default
+= note: this <code>Result</code> may be an <code>Err</code> variant, which should be handled</p>
+<pre><code>Finished dev [unoptimized + debuginfo] target(s) in 0.59s
+</code></pre>
+<pre><code>--&gt;
+
+```text
+$ cargo build
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-warning: unused `std::result::Result` which must be used
-  -- &gt; src/main.rs:10:5
+warning: unused `std::result::Result` that must be used
+  --&gt; src/main.rs:10:5
    |
 10 |     io::stdin().read_line(&amp;mut supposition);
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    |
-   = note: #[warn(unused_must_use)] on by default
+   = note: `#[warn(unused_must_use)]` on by default
+   = note: this `Result` may be an `Err` variant, which should be handled
+
+    Finished dev [unoptimized + debuginfo] target(s) in 0.59s
 </code></pre>
 <!--
 Rust warns that you haven’t used the `Result` value returned from `read_line`,
@@ -743,18 +959,46 @@ Nous verrons dans le chapitre 9 comment gérer correctement les erreurs.</p>
 -->
 <h3><a class="header" href="#afficher-des-valeurs-grâce-aux-espaces-réservés-de-println" id="afficher-des-valeurs-grâce-aux-espaces-réservés-de-println">Afficher des valeurs grâce aux espaces réservés de <code>println!</code></a></h3>
 <!--
-Aside from the closing curly brackets, there’s only one more line to discuss in
+Aside from the closing curly bracket, there’s only one more line to discuss in
 the code added so far, which is the following:
 -->
 <p>Mis à part l'accolade fermante, il ne nous reste plus qu'une seule ligne à
 étudier dans le code que nous avons pour l'instant :</p>
 <!--
 ```rust,ignore
-println!("You guessed: {}", guess);
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+    println!("Votre nombre : {}", supposition);
+# }
 ```
 -->
-<pre><code class="language-rust ignore">println!(&quot;Votre nombre : {}&quot;, supposition);
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span>    println!(&quot;Votre nombre : {}&quot;, supposition);
+<span class="boring">}
+</span></code></pre>
 <!--
 This line prints the string we saved the user’s input in. The set of curly
 brackets, `{}`, is a placeholder: think of `{}` as little crab pincers that
@@ -802,10 +1046,17 @@ Let’s test the first part of the guessing game. Run it using `cargo run`:
 <p>Pour tester notre début de programme, lançons-le à l'aide de la commande
 <code>cargo run</code> :</p>
 <!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/listing-02-01/
+cargo clean
+cargo run
+input 6 -- >
+-->
+<!--
 ```text
 $ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 6.44s
      Running `target/debug/guessing_game`
 Guess the number!
 Please input your guess.
@@ -815,7 +1066,7 @@ You guessed: 6
 -->
 <pre><code class="language-text">$ cargo run
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 6.44s
      Running `target/debug/jeu_du_plus_ou_du_moins`
 Devinez le nombre !
 Veuillez entrer un nombre.
@@ -847,6 +1098,9 @@ l'instant de fonctionnalité de génération de nombres aléatoires dans sa
 bibliothèque standard. Cependant, l'équipe de Rust propose une
 <a href="https://crates.io/crates/rand"><em>crate</em> <code>rand</code></a>.</p>
 <!--
+[randcrate]: https://crates.io/crates/rand
+-->
+<!--
 ### Using a Crate to Get More Functionality
 -->
 <h3><a class="header" href="#Étendre-les-fonctionnalités-de-rust-avec-une-crate" id="Étendre-les-fonctionnalités-de-rust-avec-une-crate">Étendre les fonctionnalités de Rust avec une <em>crate</em></a></h3>
@@ -873,17 +1127,24 @@ Avant d'écrire le code qui utilisera <code>rand</code>, il nous faut éditer le
 <em>Cargo.toml</em> pour y spécifier <code>rand</code> en tant que dépendance. Ouvrez donc
 maintenant ce fichier et ajoutez la ligne suivante à la fin, en dessous de
 l'en-tête de section <code>[dependencies]</code> que Cargo a créé pour vous :</p>
+<!--
 <!-- When updating the version of `rand` used, also update the version of
 `rand` used in these files so they all match:
 * ch07-04-bringing-paths-into-scope-with-the-use-keyword.md
 * ch14-03-cargo-workspaces.md
+-- >
 -->
 <!--
 <span class="filename">Filename: Cargo.toml</span>
 -->
 <p><span class="filename">Fichier : Cargo.toml</span></p>
+<!--
+```toml
+[dependencies]
+rand = "0.5.5"
+```
+-->
 <pre><code class="language-toml">[dependencies]
-
 rand = &quot;0.5.5&quot;
 </code></pre>
 <!--
@@ -908,11 +1169,20 @@ est une convention d'écriture de numéros de version. En réalité, <code>0.5.5
 une abréviation pour <code>^0.5.5</code>, ce qui signifie “toute version qui propose une
 API publique compatible avec la version 0.5.5”.</p>
 <!--
+[semver]: http://semver.org
+-->
+<!--
 Now, without changing any of the code, let’s build the project, as shown in
 Listing 2-2.
 -->
 <p>Maintenant, sans apporter le moindre changement au code, lançons une compilation
 du projet, comme dans l'encart 2-2 :</p>
+<!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/listing-02-02/
+cargo clean
+cargo build -- >
+-->
 <!--
 ```text
 $ cargo build
@@ -928,7 +1198,7 @@ $ cargo build
    Compiling rand_core v0.2.2
    Compiling rand v0.5.5
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 s
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
 ```
 -->
 <pre><code class="language-text">$ cargo build
@@ -944,7 +1214,7 @@ $ cargo build
    Compiling rand_core v0.2.2
    Compiling rand v0.5.5
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 s
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
 </code></pre>
 <!--
 <span class="caption">Listing 2-2: The output from running `cargo build` after
@@ -971,6 +1241,9 @@ version de tout ce qui nous faut depuis le <em>registre</em>, qui est une copie 
 données de <a href="https://crates.io/">Crates.io</a>. Crates.io est là où les développeurs de
 l'écosystème Rust publient leurs projets open source afin de les rendre
 disponibles aux autres.</p>
+<!--
+[cratesio]: https://crates.io/
+-->
 <!--
 After updating the registry, Cargo checks the `[dependencies]` section and
 downloads any crates you don’t have yet. In this case, although we only listed
@@ -1006,15 +1279,21 @@ and build again, you’ll only see two lines of output:
 enregistrez le fichier, et relancez la compilation, vous verrez s'afficher
 uniquement deux lignes :</p>
 <!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/listing-02-02/
+touch src/main.rs
+cargo build -- >
+-->
+<!--
 ```text
 $ cargo build
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
 ```
 -->
 <pre><code class="language-text">$ cargo build
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
 </code></pre>
 <!--
 These lines show Cargo only updates the build with your tiny change to the
@@ -1093,6 +1372,20 @@ than `0.6.0`. If the `rand` crate has released two new versions, `0.5.6` and
 <code>0.5.5</code> et inférieures à <code>0.6.0</code>. Si la <em>crate</em> <code>rand</code> a été publiée en deux
 nouvelles versions, <code>0.5.6</code> et <code>0.6.0</code>, alors vous verrez ceci si vous
 lancez <code>cargo update</code> :</p>
+<!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/listing-02-02/
+cargo update
+assuming there is a new 0.5.x version of rand; otherwise use another update
+as a guide to creating the hypothetical output shown here -- >
+-->
+<!--
+```text
+$ cargo update
+    Updating crates.io index
+    Updating rand v0.5.5 -> v0.5.6
+```
+-->
 <pre><code class="language-text">$ cargo update
     Updating crates.io index
     Updating rand v0.5.5 -&gt; v0.5.6
@@ -1111,6 +1404,12 @@ series, you’d have to update the *Cargo.toml* file to look like this instead:
 <p>Si vous vouliez utiliser <code>rand</code> en version <code>0.6.0</code> ou toute autre version dans
 la série des <code>0.6.x</code>, il vous faut mettre à jour le fichier <em>Cargo.toml</em> comme
 ceci :</p>
+<!--
+```toml
+[dependencies]
+rand = "0.6.0"
+```
+-->
 <pre><code class="language-toml">[dependencies]
 rand = &quot;0.6.0&quot;
 </code></pre>
@@ -1136,6 +1435,10 @@ facilite la réutilisation des bibliothèques, pour que les Rustacés soient
 capables d'écrire des petits projets issus d'un assemblage d'un certain
 nombre de paquets.</p>
 <!--
+[doccargo]: http://doc.crates.io
+[doccratesio]: http://doc.crates.io/crates-io.html
+-->
+<!--
 ### Generating a Random Number
 -->
 <h3><a class="header" href="#générer-un-nombre-aléatoire" id="générer-un-nombre-aléatoire">Générer un nombre aléatoire</a></h3>
@@ -1156,20 +1459,21 @@ use std::io;
 use rand::Rng;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Devinez le nombre !");
 
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let nombre_secret = rand::thread_rng().gen_range(1, 101);
 
-    println!("The secret number is: {}", secret_number);
+    println!("Le nombre secret est : {}", nombre_secret);
 
-    println!("Please input your guess.");
+    println!("Veuillez entrer un nombre.");
 
-    let mut guess = String::new();
+    let mut supposition = String::new();
 
-    io::stdin().read_line(&mut guess)
-        .expect("Failed to read line");
+    io::stdin()
+        .read_line(&mut supposition)
+        .expect("Échec de la lecture de l'entrée utilisateur");
 
-    println!("You guessed: {}", guess);
+        println!("Votre nombre : {}", supposition);
 }
 ```
 -->
@@ -1187,10 +1491,11 @@ fn main() {
 
     let mut supposition = String::new();
 
-    io::stdin().read_line(&amp;mut supposition)
+    io::stdin()
+        .read_line(&amp;mut supposition)
         .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 
-    println!(&quot;Votre nombre : {}&quot;, supposition);
+        println!(&quot;Votre nombre : {}&quot;, supposition);
 }
 </code></pre>
 <!--
@@ -1264,17 +1569,28 @@ Try running the program a few times:
 -->
 <p>Essayez de lancer le programme plusieurs fois :</p>
 <!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/listing-02-03/
+cargo run
+4
+cargo run
+5
+-- >
+-->
+<!--
 ```text
 $ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
      Running `target/debug/guessing_game`
 Guess the number!
 The secret number is: 7
 Please input your guess.
 4
 You guessed: 4
+
 $ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target/debug/guessing_game`
 Guess the number!
 The secret number is: 83
@@ -1285,14 +1601,16 @@ You guessed: 5
 -->
 <pre><code class="language-text">$ cargo run
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.53 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 2.53s
      Running `target/debug/jeu_du_plus_ou_du_moins`
 Devinez le nombre !
 Le nombre secret est : 7
 Veuillez entrer un nombre.
 4
 Votre nombre : 4
+
 $ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.02s
      Running `target/debug/jeu_du_plus_ou_du_moins`
 Devinez le nombre !
 Le nombre secret est : 83
@@ -1324,32 +1642,56 @@ que le code ne se compile pas encore, nous allons l'expliquer par la suite.</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore,does_not_compile
-use std::io;
-use std::cmp::Ordering;
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 fn main() {
+    // -- partie masquée ici --
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
 
-    // ---snip---
+    println!("Votre nombre : {}", supposition);
 
-    println!("You guessed: {}", guess);
-
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => println!("You win!"),
+    match supposition.cmp(&nombre_secret) {
+        Ordering::Less => println!("C'est plus !"),
+        Ordering::Greater => println!("C'est moins !"),
+        Ordering::Equal => println!("Vous avez gagné !"),
     }
 }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">use std::io;
+<pre><code class="language-rust ignore does_not_compile">use rand::Rng;
 use std::cmp::Ordering;
-use rand::Rng;
+use std::io;
 
 fn main() {
-
-    // --- code inchangé masqué ici ---
-
+    // -- partie masquée ici --
+<span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span>
     println!(&quot;Votre nombre : {}&quot;, supposition);
 
     match supposition.cmp(&amp;nombre_secret) {
@@ -1397,6 +1739,9 @@ importée avec l'instruction <code>use</code>. Nous utilisons une expression
 <a href="ch06-02-match.html"><code>match</code></a><!-- ignore --> pour décider quoi faire ensuite en fonction de
 quelle variante de <code>Ordering</code> a été retournée à l'appel de <code>cmp</code> avec
 <code>supposition</code> et <code>nombre_secret</code>.</p>
+<!--
+[match]: ch06-02-match.html
+-->
 <!--
 A `match` expression is made up of *arms*. An arm consists of a *pattern* and
 the code that should be run if the value given to the beginning of the `match`
@@ -1447,38 +1792,50 @@ However, the code in Listing 2-4 won’t compile yet. Let’s try it:
 -->
 <p>Cependant, notre code dans l'encart 2-4 ne compile pas encore. Essayons de le
 faire :</p>
-<!-- markdownlint-disable -->
 <!--
 ```text
 $ cargo build
-   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-error[E0308]: mismatched types
-  -- > src/main.rs:23:21
-   |
-23 |     match guess.cmp(&secret_number) {
-   |                     ^^^^^^^^^^^^^^ expected struct `std::string::String`, found integer
-   |
-   = note: expected type `&std::string::String`
-   = note:    found type `&{integer}`
-
-error: aborting due to previous error
-Could not compile `guessing_game`.
-```
--->
-<!-- markdownlint-restore -->
-<pre><code class="language-text">$ cargo build
+   Compiling libc v0.2.51
+   Compiling rand_core v0.4.0
+   Compiling rand_core v0.3.1
+   Compiling rand v0.5.6
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
 error[E0308]: mismatched types
-  -- &gt; src/main.rs:23:21
+  --> src/main.rs:22:21
+<p>|
+22 |     match supposition.cmp(&amp;nombre_secret) {
+|                           ^^^^^^^^^^^^^^ expected struct <code>std::string::String</code>, found integer
+|
+= note: expected reference <code>&amp;std::string::String</code>
+found reference <code>&amp;{integer}</code></p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0308</code>.
+error: could not compile <code>jeu_du_plus_ou_du_moins</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo build
+   Compiling libc v0.2.51
+   Compiling rand_core v0.4.0
+   Compiling rand_core v0.3.1
+   Compiling rand v0.5.6
+   Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
+error[E0308]: mismatched types
+  --&gt; src/main.rs:22:21
    |
-23 |     match supposition.cmp(&amp;nombre_secret) {
+22 |     match supposition.cmp(&amp;nombre_secret) {
    |                           ^^^^^^^^^^^^^^ expected struct `std::string::String`, found integer
    |
-   = note: expected type `&amp;std::string::String`
-   = note:    found type `&amp;{integer}`
+   = note: expected reference `&amp;std::string::String`
+              found reference `&amp;{integer}`
 
 error: aborting due to previous error
-Could not compile `jeu_du_plus_ou_du_moins`.
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `jeu_du_plus_ou_du_moins`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 The core of the error states that there are *mismatched types*. Rust has a
@@ -1521,35 +1878,61 @@ lignes suivantes dans le corps de la fonction <code>main</code> :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore
-// --snip--
+# use rand::Rng;
+# use std::cmp::Ordering;
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+    // -- partie masquée ici --
 
-    let mut guess = String::new();
+    let mut supposition = String::new();
 
-    io::stdin().read_line(&mut guess)
-        .expect("Failed to read line");
+    io::stdin()
+        .read_line(&mut supposition)
+        .expect("Échec de la lecture de l'entrée utilisateur");
 
-    let guess: u32 = guess.trim().parse()
-        .expect("Please type a number!");
+    let supposition: u32 = supposition.trim().parse().expect("Veuillez entrer un nombre !");
 
-    println!("You guessed: {}", guess);
+    println!("Votre nombre : {}", supposition);
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => println!("You win!"),
+    match supposition.cmp(&nombre_secret) {
+        Ordering::Less => println!("C'est plus !"),
+        Ordering::Greater => println!("C'est moins !"),
+        Ordering::Equal => println!("Vous avez gagné !"),
     }
 }
 ```
 -->
-<pre><code class="language-rust ignore">// -- code inchangé masqué ici --
+<pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
+</span><span class="boring">use std::cmp::Ordering;
+</span><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span>    // -- partie masquée ici --
 
     let mut supposition = String::new();
 
-    io::stdin().read_line(&amp;mut supposition)
+    io::stdin()
+        .read_line(&amp;mut supposition)
         .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 
-    let supposition: u32 = supposition.trim().parse()
-        .expect(&quot;Veuillez entrer un nombre !&quot;);
+    let supposition: u32 = supposition.trim().parse().expect(&quot;Veuillez entrer un nombre !&quot;);
 
     println!(&quot;Votre nombre : {}&quot;, supposition);
 
@@ -1645,7 +2028,9 @@ De plus, l'annotation <code>u32</code> dans ce programme d'exemple et la
 comparaison avec <code>nombre_secret</code> permet à Rust d'en déduire que <code>nombre_secret</code>
 doit être lui aussi un <code>u32</code>. Donc maintenant, la comparaison se fera
 entre deux valeurs du même type !</p>
-<!-- [parse]: ../std/primitive.str.html#method.parse -->
+<!--
+[parse]: ../std/primitive.str.html#method.parse
+-->
 <!--
 The call to `parse` could easily cause an error. If, for example, the string
 contained `A👍%`, there would be no way to convert that to a number. Because it
@@ -1677,10 +2062,17 @@ Let’s run the program now!
 -->
 <p>Exécutons ce programme, maintenant !</p>
 <!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/no-listing-03-convert-string-to-number/
+cargo run
+  76
+-- >
+-->
+<!--
 ```text
 $ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.43 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.43s
      Running `target/debug/guessing_game`
 Guess the number!
 The secret number is: 58
@@ -1692,7 +2084,7 @@ Too big!
 -->
 <pre><code class="language-text">$ cargo run
    Compiling jeu_du_plus_ou_du_moins v0.1.0 (file:///projects/jeu_du_plus_ou_du_moins)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.43 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.43s
      Running `target/debug/jeu_du_plus_ou_du_moins`
 Devinez le nombre !
 Le nombre secret est : 58
@@ -1735,34 +2127,74 @@ donner aux utilisateurs plus de chances de deviner le nombre :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore
-// --snip--
+# use rand::Rng;
+# use std::cmp::Ordering;
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+    // -- partie masquée ici --
 
-    println!("The secret number is: {}", secret_number);
+    println!("Le nombre secret est : {}", nombre_secret);
 
     loop {
-        println!("Please input your guess.");
+        println!("Veuillez entrer un nombre.");
 
-        // --snip--
+        // -- partie masquée ici --
 
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => println!("You win!"),
+# 
+#         let mut supposition = String::new();
+# 
+#         io::stdin()
+#             .read_line(&mut supposition)
+#             .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#         let supposition: u32 = supposition.trim().parse().expect("Veuillez entrer un nombre !");
+# 
+#         println!("Votre nombre : {}", supposition);
+# 
+        match supposition.cmp(&nombre_secret) {
+            Ordering::Less => println!("C'est plus !"),
+            Ordering::Greater => println!("C'est moins !"),
+            Ordering::Equal => println!("Vous avez gagné !"),
         }
     }
 }
 ```
 -->
-<pre><code class="language-rust ignore">// -- code inchangé masqué ici --
+<pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
+</span><span class="boring">use std::cmp::Ordering;
+</span><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span>    // -- partie masquée ici --
 
     println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
 
     loop {
         println!(&quot;Veuillez entrer un nombre.&quot;);
 
-        // -- code inchangé masqué ici --
+        // -- partie masquée ici --
 
-        match supposition.cmp(&amp;nombre_secret) {
+<span class="boring">
+</span><span class="boring">        let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">        io::stdin()
+</span><span class="boring">            .read_line(&amp;mut supposition)
+</span><span class="boring">            .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">        let supposition: u32 = supposition.trim().parse().expect(&quot;Veuillez entrer un nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">        println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">
+</span>        match supposition.cmp(&amp;nombre_secret) {
             Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
             Ordering::Greater =&gt; println!(&quot;C'est moins !&quot;),
             Ordering::Equal =&gt; println!(&quot;Vous avez gagné !&quot;),
@@ -1799,12 +2231,22 @@ l'avons abordé dans la partie <a href="#comparer-le-nombre-saisi-au-nombre-secr
 secret”</a><!-- ignore --> : si
 l'utilisateur saisit quelque chose qui n'est pas un nombre, le programme va
 planter. L'utilisateur peut procéder ainsi pour le quitter, comme ci-dessous :</p>
+<!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/no-listing-04-looping/
+cargo run
+(too small guess)
+(too big guess)
+(correct guess)
+quit
+-- >
+-->
 <!-- markdownlint-disable -->
 <!--
 ```text
 $ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 1.50 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 1.50s
      Running `target/debug/guessing_game`
 Guess the number!
 The secret number is: 59
@@ -1822,9 +2264,8 @@ You guessed: 59
 You win!
 Please input your guess.
 quit
-thread 'main' panicked at 'Please type a number!: ParseIntError { kind: InvalidDigit }', src/libcore/result.rs:785
-note: Run with `RUST_BACKTRACE=1` for a backtrace.
-error: Process didn't exit successfully: `target/debug/guess` (exit code: 101)
+thread 'main' panicked at 'Please type a number!: ParseIntError { kind: InvalidDigit }', src/libcore/result.rs:999:5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
 ```
 -->
 <!-- markdownlint-restore -->
@@ -1850,7 +2291,6 @@ Veuillez entrer un nombre.
 quitter
 thread 'main' panicked at 'Veuillez entrer un nombre !: ParseIntError { kind: InvalidDigit }', src/libcore/result.rs:785
 note: Run with `RUST_BACKTRACE=1` for a backtrace.
-error: Process didn't exit successfully: `target/debug/supposition` (exit code: 101)
 </code></pre>
 <!--
 Typing `quit` actually quits the game, but so will any other non-number input.
@@ -1876,13 +2316,37 @@ l'instruction <code>break</code> :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore
-// --snip--
+# use rand::Rng;
+# use std::cmp::Ordering;
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     loop {
+#         println!("Veuillez entrer un nombre.");
+# 
+#         let mut supposition = String::new();
+# 
+#         io::stdin()
+#             .read_line(&mut supposition)
+#             .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#         let supposition: u32 = supposition.trim().parse().expect("Veuillez entrer un nombre !");
+# 
+#         println!("Votre nombre : {}", supposition);
+# 
+        // -- partie masquée ici --
 
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
+        match supposition.cmp(&nombre_secret) {
+            Ordering::Less => println!("C'est plus !"),
+            Ordering::Greater => println!("C'est moins !"),
             Ordering::Equal => {
-                println!("You win!");
+                println!("Vous avez gagné !");
                 break;
             }
         }
@@ -1890,7 +2354,31 @@ l'instruction <code>break</code> :</p>
 }
 ```
 -->
-<pre><code class="language-rust ignore">// -- code inchangé masqué ici --
+<pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
+</span><span class="boring">use std::cmp::Ordering;
+</span><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    loop {
+</span><span class="boring">        println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">        let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">        io::stdin()
+</span><span class="boring">            .read_line(&amp;mut supposition)
+</span><span class="boring">            .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">        let supposition: u32 = supposition.trim().parse().expect(&quot;Veuillez entrer un nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">        println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">
+</span>        // -- partie masquée ici --
 
         match supposition.cmp(&amp;nombre_secret) {
             Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
@@ -1933,35 +2421,91 @@ continuer à essayer de deviner. Nous pouvons faire ceci en modifiant la ligne o
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore
-// --snip--
+# use rand::Rng;
+# use std::cmp::Ordering;
+# use std::io;
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     loop {
+#         println!("Veuillez entrer un nombre.");
+# 
+#         let mut supposition = String::new();
+# 
+        // -- partie masquée ici --
 
-io::stdin().read_line(&mut guess)
-    .expect("Failed to read line");
+        io::stdin()
+            .read_line(&mut supposition)
+            .expect("Échec de la lecture de l'entrée utilisateur");
 
-let guess: u32 = match guess.trim().parse() {
-    Ok(num) => num,
-    Err(_) => continue,
-};
+        let supposition: u32 = match supposition.trim().parse() {
+            Ok(nombre) => nombre,
+            Err(_) => continue,
+        };
 
-println!("You guessed: {}", guess);
+        println!("Votre nombre : {}", supposition);
 
-// --snip--
+        // -- partie masquée ici --
+# 
+#         match supposition.cmp(&nombre_secret) {
+#             Ordering::Less => println!("C'est plus !"),
+#             Ordering::Greater => println!("C'est moins !"),
+#             Ordering::Equal => {
+#                 println!("Vous avez gagné !");
+#                 break;
+#             }
+#         }
+#     }
+# }
 ```
 -->
-<pre><code class="language-rust ignore">// -- code inchangé masqué ici --
+<pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
+</span><span class="boring">use std::cmp::Ordering;
+</span><span class="boring">use std::io;
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    loop {
+</span><span class="boring">        println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">        let mut supposition = String::new();
+</span><span class="boring">
+</span>        // -- partie masquée ici --
 
-io::stdin().read_line(&amp;mut supposition)
-    .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+        io::stdin()
+            .read_line(&amp;mut supposition)
+            .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 
-let supposition: u32 = match supposition.trim().parse() {
-    Ok(nombre) =&gt; nombre,
-    Err(_) =&gt; continue,
-};
+        let supposition: u32 = match supposition.trim().parse() {
+            Ok(nombre) =&gt; nombre,
+            Err(_) =&gt; continue,
+        };
 
-println!(&quot;Votre nombre : {}&quot;, supposition);
+        println!(&quot;Votre nombre : {}&quot;, supposition);
 
-// -- code inchangé masqué ici --
-</code></pre>
+        // -- partie masquée ici --
+<span class="boring">
+</span><span class="boring">        match supposition.cmp(&amp;nombre_secret) {
+</span><span class="boring">            Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
+</span><span class="boring">            Ordering::Greater =&gt; println!(&quot;C'est moins !&quot;),
+</span><span class="boring">            Ordering::Equal =&gt; {
+</span><span class="boring">                println!(&quot;Vous avez gagné !&quot;);
+</span><span class="boring">                break;
+</span><span class="boring">            }
+</span><span class="boring">        }
+</span><span class="boring">    }
+</span><span class="boring">}
+</span></code></pre>
 <!--
 <span class="caption">Listing 2-5: Ignoring a non-number guess and asking for
 another guess instead of crashing the program</span>
@@ -2021,6 +2565,16 @@ Now everything in the program should work as expected. Let’s try it:
 -->
 <p>Maintenant, le programme devrait fonctionner correctement. Essayons-le :</p>
 <!--
+<!-- manual-regeneration
+cd listings/ch02-guessing-game-tutorial/listing-02-05/
+cargo run
+(too small guess)
+(too big guess)
+foo
+(correct guess)
+-- >
+-->
+<!--
 ```text
 $ cargo run
    Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
@@ -2079,35 +2633,36 @@ affiche le nombre secret. L'encart 2-6 représente le code final.</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore
-use std::io;
-use std::cmp::Ordering;
 use rand::Rng;
+use std::cmp::Ordering;
+use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Devinez le nombre !");
 
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    let nombre_secret = rand::thread_rng().gen_range(1, 101);
 
     loop {
-        println!("Please input your guess.");
+        println!("Veuillez entrer un nombre.");
 
-        let mut guess = String::new();
+        let mut supposition = String::new();
 
-        io::stdin().read_line(&mut guess)
-            .expect("Failed to read line");
+        io::stdin()
+            .read_line(&mut supposition)
+            .expect("Échec de la lecture de l'entrée utilisateur");
 
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
+        let supposition: u32 = match supposition.trim().parse() {
+            Ok(nombre) => nombre,
             Err(_) => continue,
         };
 
-        println!("You guessed: {}", guess);
+        println!("Votre nombre : {}", supposition);
 
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
+        match supposition.cmp(&nombre_secret) {
+            Ordering::Less => println!("C'est plus !"),
+            Ordering::Greater => println!("C'est moins !"),
             Ordering::Equal => {
-                println!("You win!");
+                println!("Vous avez gagné !");
                 break;
             }
         }
@@ -2115,9 +2670,9 @@ fn main() {
 }
 ```
 -->
-<pre><code class="language-rust ignore">use std::io;
+<pre><code class="language-rust ignore">use rand::Rng;
 use std::cmp::Ordering;
-use rand::Rng;
+use std::io;
 
 fn main() {
     println!(&quot;Devinez le nombre !&quot;);
@@ -2129,7 +2684,8 @@ fn main() {
 
         let mut supposition = String::new();
 
-        io::stdin().read_line(&amp;mut supposition)
+        io::stdin()
+            .read_line(&amp;mut supposition)
             .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
 
         let supposition: u32 = match supposition.trim().parse() {

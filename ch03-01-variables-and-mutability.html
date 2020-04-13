@@ -193,9 +193,9 @@ remplacez son code par le code suivant qui ne compile pas pour le moment :</p>
 ```rust,ignore,does_not_compile
 fn main() {
     let x = 5;
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
     x = 6;
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
 }
 ```
 -->
@@ -214,24 +214,46 @@ message, as shown in this output:
 avoir un message d'erreur comme celui-ci :</p>
 <!--
 ```text
+$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
 error[E0384]: cannot assign twice to immutable variable `x`
- -- > src/main.rs:4:5
-  |
+ --> src/main.rs:4:5
+<p>|
 2 |     let x = 5;
-  |         - first assignment to `x`
-3 |     println!("The value of x is: {}", x);
+|         -
+|         |
+|         first assignment to <code>x</code>
+|         help: make this binding mutable: <code>mut x</code>
+3 |     println!(&quot;La valeur de x est : {}&quot;, x);
 4 |     x = 6;
-  |     ^^^^^ cannot assign twice to immutable variable
-```
--->
-<pre><code class="language-text">error[E0384]: cannot assign twice to immutable variable `x`
+|     ^^^^^ cannot assign twice to immutable variable</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0384</code>.
+error: could not compile <code>variables</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+error[E0384]: cannot assign twice to immutable variable `x`
  --&gt; src/main.rs:4:5
   |
 2 |     let x = 5;
-  |         - first assignment to `x`
+  |         -
+  |         |
+  |         first assignment to `x`
+  |         help: make this binding mutable: `mut x`
 3 |     println!(&quot;La valeur de x est : {}&quot;, x);
 4 |     x = 6;
   |     ^^^^^ cannot assign twice to immutable variable
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0384`.
+error: could not compile `variables`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 This example shows how the compiler helps you find errors in your programs.
@@ -303,9 +325,9 @@ For example, let’s change *src/main.rs* to the following:
 ```rust
 fn main() {
     let mut x = 5;
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
     x = 6;
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
 }
 ```
 -->
@@ -324,10 +346,10 @@ When we run the program now, we get this:
 ```text
 $ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.30 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
      Running `target/debug/variables`
-The value of x is: 5
-The value of x is: 6
+La valeur de x est : 5
+La valeur de x est : 6
 ```
 -->
 <pre><code class="language-text">$ cargo run
@@ -422,6 +444,11 @@ underscores can be inserted in numeric literals to improve readability):
 nommage des constantes est de les écrire tout en majuscule avec des tirets bas
 entre les mots, et des tirets bas peuvent être ajoutés entre les nombres pour
 améliorer la lisibilité) :</p>
+<!--
+```rust
+const MAX_POINTS: u32 = 100_000;
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -487,7 +514,7 @@ fn main() {
 
     let x = x * 2;
 
-    println!("The value of x is: {}", x);
+    println!("La valeur de x est : {}", x);
 }
 ```
 -->
@@ -518,14 +545,14 @@ nous obtenons ceci :</p>
 ```text
 $ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/variables`
-The value of x is: 12
+La valeur de x est : 12
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31 secs
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/variables`
 La valeur de x est : 12
 </code></pre>
@@ -557,15 +584,15 @@ le nombre d'espaces qu'il souhaite entre deux portions de texte en saisissant
 des espaces, mais que nous voulons plutôt stocker cela sous forme de nombre :</p>
 <!--
 ```rust
-let spaces = "   ";
-let spaces = spaces.len();
+# fn main() {
+    let espaces = "   ";
+    let espaces = espaces.len();
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let espaces = &quot;   &quot;;
-let espaces = espaces.len();
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let espaces = &quot;   &quot;;
+    let espaces = espaces.len();
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -585,37 +612,51 @@ simplement réutiliser le nom <code>espaces</code>. Cependant, si nous essayons 
 <code>mut</code> pour faire ceci, comme ci-dessous, nous avons une erreur de compilation :</p>
 <!--
 ```rust,ignore,does_not_compile
-let mut spaces = "   ";
-spaces = spaces.len();
+# fn main() {
+    let mut espaces = "   ";
+    espaces = espaces.len();
+# }
 ```
 -->
-<pre><code class="language-rust ignore">let mut espaces = &quot;   &quot;;
-espaces = espaces.len();
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">fn main() {
+</span>    let mut espaces = &quot;   &quot;;
+    espaces = espaces.len();
+<span class="boring">}
+</span></code></pre>
 <!--
 The error says we’re not allowed to mutate a variable’s type:
 -->
 <p>L'erreur indique que nous ne pouvons pas muter le type d'une variable :</p>
 <!--
 ```text
+$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
 error[E0308]: mismatched types
- -- > src/main.rs:3:14
-  |
-3 |     spaces = spaces.len();
-  |              ^^^^^^^^^^^^ expected &str, found usize
-  |
-  = note: expected type `&str`
-             found type `usize`
-```
--->
-<pre><code class="language-text">error[E0308]: mismatched types
- -- &gt; src/main.rs:3:14
+ --> src/main.rs:3:14
+<p>|
+3 |     espaces = espaces.len();
+|               ^^^^^^^^^^^^^ expected <code>&amp;str</code>, found <code>usize</code></p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0308</code>.
+error: could not compile <code>variables</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling variables v0.1.0 (file:///projects/variables)
+error[E0308]: mismatched types
+ --&gt; src/main.rs:3:14
   |
 3 |     espaces = espaces.len();
-  |               ^^^^^^^^^^^^^ expected &amp;str, found usize
-  |
-  = note: expected type `&amp;str`
-             found type `usize`
+  |               ^^^^^^^^^^^^^ expected `&amp;str`, found `usize`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.
+error: could not compile `variables`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 Now that we’ve explored how variables work, let’s look at more data types they

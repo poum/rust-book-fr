@@ -180,10 +180,15 @@ Listing 8-1.
 -->
 <p>Pour créer un nouveau vecteur vide, nous pouvons appeler la fonction
 <code>Vec::new</code>, comme dans l'encart 8-1.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let v: Vec&lt;i32&gt; = Vec::new();
+<!--
+```rust
+# fn main() {
+    let v: Vec<i32> = Vec::new();
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let v: Vec&lt;i32&gt; = Vec::new();
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -217,7 +222,9 @@ store once you insert values, so you rarely need to do this type annotation.
 It’s more common to create a `Vec<T>` that has initial values, and Rust
 provides the `vec!` macro for convenience. The macro will create a new vector
 that holds the values you give it. Listing 8-2 creates a new `Vec<i32>` that
-holds the values `1`, `2`, and `3`.
+holds the values `1`, `2`, and `3`. The integer type is `i32` because that’s
+the default integer type, as we discussed in the [“Data Types”][data-types]<!--
+ignore -- > section of Chapter 3.
 -->
 <p>Dans du code plus réaliste, Rust peut parfois deviner le type de la valeur que
 vous souhaitez stocker lorsque vous ajouterez des valeurs, donc vous n'aurez pas
@@ -225,16 +232,18 @@ souvent besoin de faire cette annotation de type. Il est plus fréquent de crée
 un <code>Vec&lt;T&gt;</code> qui a des valeurs initiales, et Rust fournit la macro <code>vec!</code> par
 commodité. La macro va créer un nouveau vecteur qui stockera les valeurs que
 vous lui donnerez. L'encart 8-2 crée un nouveau <code>Vec&lt;i32&gt;</code> qui stocke les
-valeurs <code>1</code>, <code>2</code> et <code>3</code>.</p>
+valeurs <code>1</code>, <code>2</code> et <code>3</code>. Le type d'entier est <code>i32</code> car c'est le type d'entier
+par défaut, comme nous l'avons évoqué dans la section <a href="ch03-02-data-types.html">“Les types de
+données”</a><!-- ignore --> du chapitre 3.</p>
 <!--
 ```rust
-let v = vec![1, 2, 3];
+# fn main() {
+    let v = vec![1, 2, 3];
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let v = vec![1, 2, 3];
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let v = vec![1, 2, 3];
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -261,15 +270,25 @@ as shown in Listing 8-3.
 -->
 <p>Pour créer un vecteur et ensuite lui ajouter des éléments, nous pouvons utiliser
 la méthode <code>push</code>, comme dans l'encart 8-3.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut v = Vec::new();
+<!--
+```rust
+# fn main() {
+    let mut v = Vec::new();
 
-v.push(5);
-v.push(6);
-v.push(7);
-v.push(8);
+    v.push(5);
+    v.push(6);
+    v.push(7);
+    v.push(8);
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let mut v = Vec::new();
+
+    v.push(5);
+    v.push(6);
+    v.push(7);
+    v.push(8);
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -301,23 +320,23 @@ annotated in Listing 8-4.
 portée, comme précisé dans l'encart 8-4.</p>
 <!--
 ```rust
-{
-    let v = vec![1, 2, 3, 4];
-
-    // do stuff with v
-
-} // <- v goes out of scope and is freed here
+# fn main() {
+    {
+        let v = vec![1, 2, 3, 4];
+    
+        // on fait des choses avec v
+    
+    } // <- v sort de la portée et est libéré ici
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>{
-    let v = vec![1, 2, 3, 4];
-
-    // on fait des choses avec v
-
-} // &lt;- v sort de la portée et est libéré ici
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    {
+        let v = vec![1, 2, 3, 4];
+    
+        // on fait des choses avec v
+    
+    } // &lt;- v sort de la portée et est libéré ici
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -360,29 +379,29 @@ indexing syntax or the `get` method.
 soit la syntaxe d'indexation, soit avec la méthode <code>get</code>.</p>
 <!--
 ```rust
-let v = vec![1, 2, 3, 4, 5];
+# fn main() {
+    let v = vec![1, 2, 3, 4, 5];
 
-let third: &i32 = &v[2];
-println!("The third element is {}", third);
+    let troisieme: &i32 = &v[2];
+    println!("Le troisième élément est {}", troisieme);
 
-match v.get(2) {
-    Some(third) => println!("The third element is {}", third),
-    None => println!("There is no third element."),
-}
+    match v.get(2) {
+        Some(troisieme) => println!("Le troisième élément est {}", troisieme),
+        None => println!("Il n'y a pas de troisième élément."),
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let v = vec![1, 2, 3, 4, 5];
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let v = vec![1, 2, 3, 4, 5];
 
-let troisieme: &amp;i32 = &amp;v[2];
-println!(&quot;Le troisième élément est {}&quot;, troisieme);
+    let troisieme: &amp;i32 = &amp;v[2];
+    println!(&quot;Le troisième élément est {}&quot;, troisieme);
 
-match v.get(2) {
-    Some(troisieme) =&gt; println!(&quot;Le troisième élément est {}&quot;, troisieme),
-    None =&gt; println!(&quot;Il n'y a pas de troisième élément.&quot;),
-}
+    match v.get(2) {
+        Some(troisieme) =&gt; println!(&quot;Le troisième élément est {}&quot;, troisieme),
+        None =&gt; println!(&quot;Il n'y a pas de troisième élément.&quot;),
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -418,19 +437,19 @@ ce qu'un programme fait s'il a vecteur qui contient cinq éléments et qu'il
 essaye d'accéder à l'élément à l'indice 100, comme dans l'encart 8-6.</p>
 <!--
 ```rust,should_panic,panics
-let v = vec![1, 2, 3, 4, 5];
+# fn main() {
+    let v = vec![1, 2, 3, 4, 5];
 
-let does_not_exist = &v[100];
-let does_not_exist = v.get(100);
+    let existe_pas = &v[100];
+    let existe_pas = v.get(100);
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust should_panic panics">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let v = vec![1, 2, 3, 4, 5];
+<pre><pre class="playpen"><code class="language-rust should_panic panics"><span class="boring">fn main() {
+</span>    let v = vec![1, 2, 3, 4, 5];
 
-let existe_pas = &amp;v[100];
-let existe_pas = v.get(100);
+    let existe_pas = &amp;v[100];
+    let existe_pas = v.get(100);
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -490,23 +509,27 @@ référence immuable vers le premier élément d'un vecteur et nous essayons
 d'ajouter un élément à la fin, ce qui ne fonctionne pas.</p>
 <!--
 ```rust,ignore,does_not_compile
-let mut v = vec![1, 2, 3, 4, 5];
+# fn main() {
+    let mut v = vec![1, 2, 3, 4, 5];
 
-let first = &v[0];
+    let premier = &v[0];
 
-v.push(6);
+    v.push(6);
 
-println!("The first element is: {}", first);
+    println!("Le premier élément est : {}", premier);
+# }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">let mut v = vec![1, 2, 3, 4, 5];
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span>    let mut v = vec![1, 2, 3, 4, 5];
 
-let premier = &amp;v[0];
+    let premier = &amp;v[0];
 
-v.push(6);
+    v.push(6);
 
-println!(&quot;Le premier élément est : {}&quot;, premier);
-</code></pre>
+    println!(&quot;Le premier élément est : {}&quot;, premier);
+<span class="boring">}
+</span></code></pre>
 <!--
 <span class="caption">Listing 8-7: Attempting to add an element to a vector
 while holding a reference to an item</span>
@@ -519,20 +542,47 @@ Compiling this code will result in this error:
 <p>Compiler ce code va nous mener à cette erreur :</p>
 <!--
 ```text
+$ cargo run
+   Compiling collections v0.1.0 (file:///projects/collections)
 error[E0502]: cannot borrow `v` as mutable because it is also borrowed as immutable
- -- > src/main.rs:6:5
+ --> src/main.rs:6:5
+<p>|
+4 |     let premier = &amp;v[0];
+|                    - immutable borrow occurs here
+5 | 
+6 |     v.push(6);
+|     ^^^^^^^^^ mutable borrow occurs here
+7 | 
+8 |     println!(&quot;Le premier élément est : {}&quot;, premier);
+|                                             ------- immutable borrow later used here</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0502</code>.
+error: could not compile <code>collections</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling collections v0.1.0 (file:///projects/collections)
+error[E0502]: cannot borrow `v` as mutable because it is also borrowed as immutable
+ --&gt; src/main.rs:6:5
   |
-4 |     let first = &v[0];
-  |                  - immutable borrow occurs here
-5 |
+4 |     let premier = &amp;v[0];
+  |                    - immutable borrow occurs here
+5 | 
 6 |     v.push(6);
   |     ^^^^^^^^^ mutable borrow occurs here
-7 |
-8 |     println!("The first element is: {}", first);
-  |                                          ----- immutable borrow later used here
-```
--->
-<pre><code class="language-text">error[E0502]: cannot borrow `v` as mutable because it is also borrowed as immutable
+7 | 
+8 |     println!(&quot;Le premier élément est : {}&quot;, premier);
+  |                                             ------- immutable borrow later used here
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0502`.
+error: could not compile `collections`.
+
+To learn more, run the command again with --verbose.
+error[E0502]: cannot borrow `v` as mutable because it is also borrowed as immutable
  --&gt; src/main.rs:6:5
   |
 4 |     let premier = &amp;v[0];
@@ -564,12 +614,12 @@ la mémoire où se trouve actuellement le vecteur. Dans notre cas, la référenc
 au premier élément pourrait pointer sur de la mémoire supprimée. Les règles
 d'emprunt évitent aux programmes de se retrouver dans cette situation.</p>
 <!--
-> Note: For more on the implementation details of the `Vec<T>` type, see “The
-> Rustonomicon” at https://doc.rust-lang.org/stable/nomicon/vec.html.
+> Note: For more on the implementation details of the `Vec<T>` type, see [“The
+> Rustonomicon”][nomicon].
 -->
 <blockquote>
 <p>Remarque : pour plus de détails sur l'implémentation du type <code>Vec&lt;T&gt;</code>,
-consultez <a href="https://doc.rust-lang.org/stable/nomicon/vec.html">“The Rustonomicon”</a></p>
+consultez <a href="https://doc.rust-lang.org/nomicon/vec.html">“The Rustonomicon”</a>.</p>
 </blockquote>
 <!--
 ### Iterating over the Values in a Vector
@@ -586,13 +636,21 @@ pouvons itérer sur tous les éléments plutôt que d'utiliser individuellement 
 indices. L'encart 8-8 nous montre comment utiliser une boucle <code>for</code> pour obtenir
 des références immuables pour chacun des éléments dans un vecteur de <code>i32</code>, et
 les afficher.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let v = vec![100, 32, 57];
-for i in &amp;v {
-    println!(&quot;{}&quot;, i);
-}
+<!--
+```rust
+# fn main() {
+    let v = vec![100, 32, 57];
+    for i in &v {
+        println!("{}", i);
+    }
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let v = vec![100, 32, 57];
+    for i in &amp;v {
+        println!(&quot;{}&quot;, i);
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -609,13 +667,21 @@ will add `50` to each element.
 <p>Nous pouvons aussi itérer avec des références mutables pour chacun des éléments
 d'un vecteur mutable afin de modifier tous les éléments. La boucle <code>for</code> de
 l'encart 8-9 va ajouter <code>50</code> à chacun des éléments.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut v = vec![100, 32, 57];
-for i in &amp;mut v {
-    *i += 50;
-}
+<!--
+```rust
+# fn main() {
+    let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50;
+    }
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let mut v = vec![100, 32, 57];
+    for i in &amp;mut v {
+        *i += 50;
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -671,33 +737,33 @@ l'énumération. Ensuite, nous pouvons créer un vecteur qui stocke cette
 cette technique est dans l'encart 8-10.</p>
 <!--
 ```rust
-enum SpreadsheetCell {
-    Int(i32),
-    Float(f64),
-    Text(String),
-}
-
-let row = vec![
-    SpreadsheetCell::Int(3),
-    SpreadsheetCell::Text(String::from("blue")),
-    SpreadsheetCell::Float(10.12),
-];
+# fn main() {
+    enum Cellule {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+    
+    let ligne = vec![
+        Cellule::Int(3),
+        Cellule::Text(String::from("bleu")),
+        Cellule::Float(10.12),
+    ];
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>enum Cellule {
-    Int(i32),
-    Float(f64),
-    Text(String),
-}
-
-let ligne = vec![
-    Cellule::Int(3),
-    Cellule::Text(String::from(&quot;bleu&quot;)),
-    Cellule::Float(10.12),
-];
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    enum Cellule {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+    
+    let ligne = vec![
+        Cellule::Int(3),
+        Cellule::Text(String::from(&quot;bleu&quot;)),
+        Cellule::Float(10.12),
+    ];
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -749,6 +815,8 @@ toutes les méthodes très utiles définies dans la bibliothèque standard pour
 retire et retourne le dernier élément. Intéressons-nous maintenant au prochain
 type de collection : les <code>String</code> !</p>
 <!--
+[data-types]: ch03-02-data-types.html#data-types
+[nomicon]: ../nomicon/vec.html
 [deref]: ch15-02-deref.html#following-the-pointer-to-the-value-with-the-dereference-operator
 -->
 

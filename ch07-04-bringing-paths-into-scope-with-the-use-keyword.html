@@ -189,19 +189,20 @@ qu'à utiliser <code>accueil::ajouter_a_la_liste_attente</code> pour appeler la 
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
+mod salle_a_manger {
+    pub mod accueil {
+        pub fn ajouter_a_la_liste_attente() {}
     }
 }
 
-use crate::front_of_house::hosting;
+use crate::salle_a_manger::accueil;
 
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
+pub fn manger_au_restaurant() {
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
 }
+# 
 # fn main() {}
 ```
 -->
@@ -218,7 +219,8 @@ pub fn manger_au_restaurant() {
     accueil::ajouter_a_la_liste_attente();
     accueil::ajouter_a_la_liste_attente();
 }
-<span class="boring">fn main() {}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 7-11: Bringing a module into scope with
@@ -253,19 +255,20 @@ chemin relatif pour obtenir le même résultat que l'encart 7-11.</p>
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
+mod salle_a_manger {
+    pub mod accueil {
+        pub fn ajouter_a_la_liste_attente() {}
     }
 }
 
-use front_of_house::hosting;
+use salle_a_manger::accueil;
 
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
+pub fn manger_au_restaurant() {
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
 }
+# 
 # fn main() {}
 ```
 -->
@@ -282,7 +285,8 @@ pub fn manger_au_restaurant() {
     accueil::ajouter_a_la_liste_attente();
     accueil::ajouter_a_la_liste_attente();
 }
-<span class="boring">fn main() {}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 7-12: Bringing a module into scope with `use` and
@@ -311,19 +315,20 @@ pour avoir le même résultat, comme dans l'encart 7-13.</p>
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
+mod salle_a_manger {
+    pub mod accueil {
+        pub fn ajouter_a_la_liste_attente() {}
     }
 }
 
-use crate::front_of_house::hosting::add_to_waitlist;
+use crate::salle_a_manger::accueil::ajouter_a_la_liste_attente;
 
-pub fn eat_at_restaurant() {
-    add_to_waitlist();
-    add_to_waitlist();
-    add_to_waitlist();
+pub fn manger_au_restaurant() {
+    ajouter_a_la_liste_attente();
+    ajouter_a_la_liste_attente();
+    ajouter_a_la_liste_attente();
 }
+# 
 # fn main() {}
 ```
 -->
@@ -340,7 +345,8 @@ pub fn manger_au_restaurant() {
     ajouter_a_la_liste_attente();
     ajouter_a_la_liste_attente();
 }
-<span class="boring">fn main() {}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 7-13: Bringing the `add_to_waitlist` function
@@ -378,6 +384,16 @@ standard dans la portée d'une crate binaire.</p>
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
+<!--
+```rust
+use std::collections::HashMap;
+
+fn main() {
+    let mut map = HashMap::new();
+    map.insert(1, 2);
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">use std::collections::HashMap;
 
 fn main() {
@@ -418,13 +434,13 @@ sont distincts.</p>
 use std::fmt;
 use std::io;
 
-fn function1() -> fmt::Result {
-    // --snip--
+fn fonction1() -> fmt::Result {
+    // -- partie masquée ici --
 #     Ok(())
 }
 
-fn function2() -> io::Result<()> {
-    // --snip--
+fn fonction2() -> io::Result<()> {
+    // -- partie masquée ici --
 #     Ok(())
 }
 ```
@@ -436,12 +452,12 @@ fn function2() -> io::Result<()> {
 use std::io;
 
 fn fonction1() -&gt; fmt::Result {
-    // -- code masqué ici --
+    // -- partie masquée ici --
 <span class="boring">    Ok(())
 </span>}
 
 fn fonction2() -&gt; io::Result&lt;()&gt; {
-    // -- code masqué ici --
+    // -- partie masquée ici --
 <span class="boring">    Ok(())
 </span>}
 <span class="boring">}
@@ -487,13 +503,13 @@ deux types <code>Result</code>.</p>
 use std::fmt::Result;
 use std::io::Result as IoResult;
 
-fn function1() -> Result {
-    // --snip--
+fn fonction1() -> Result {
+    // -- partie masquée ici --
 #     Ok(())
 }
 
-fn function2() -> IoResult<()> {
-    // --snip--
+fn fonction2() -> IoResult<()> {
+    // -- partie masquée ici --
 #     Ok(())
 }
 ```
@@ -505,12 +521,12 @@ fn function2() -> IoResult<()> {
 use std::io::Result as IoResult;
 
 fn fonction1() -&gt; Result {
-    // -- code masqué ici --
+    // -- partie masquée ici --
 <span class="boring">    Ok(())
 </span>}
 
 fn fonction2() -&gt; IoResult&lt;()&gt; {
-    // -- code masqué ici --
+    // -- partie masquée ici --
 <span class="boring">    Ok(())
 </span>}
 <span class="boring">}
@@ -561,19 +577,20 @@ a été remplacé par <code>pub use</code>.</p>
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust
-mod front_of_house {
-    pub mod hosting {
-        pub fn add_to_waitlist() {}
+mod salle_a_manger {
+    pub mod accueil {
+        pub fn ajouter_a_la_liste_attente() {}
     }
 }
 
-pub use crate::front_of_house::hosting;
+pub use crate::salle_a_manger::accueil;
 
-pub fn eat_at_restaurant() {
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
-    hosting::add_to_waitlist();
+pub fn manger_au_restaurant() {
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
+    accueil::ajouter_a_la_liste_attente();
 }
+# 
 # fn main() {}
 ```
 -->
@@ -590,7 +607,8 @@ pub fn manger_au_restaurant() {
     accueil::ajouter_a_la_liste_attente();
     accueil::ajouter_a_la_liste_attente();
 }
-<span class="boring">fn main() {}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 7-17: Making a name available for any code to use
@@ -642,15 +660,23 @@ added this line to *Cargo.toml*:
 utilisait le paquet externe <code>rand</code> afin d'obtenir des nombres aléatoires.
 Pour pouvoir utiliser <code>rand</code> dans notre projet, nous avons ajouté cette ligne
 dans <em>Cargo.toml</em> :</p>
+<!--
 <!-- When updating the version of `rand` used, also update the version of
 `rand` used in these files so they all match:
 * ch02-00-guessing-game-tutorial.md
 * ch14-03-cargo-workspaces.md
+-- >
 -->
 <!--
 <span class="filename">Filename: Cargo.toml</span>
 -->
 <p><span class="filename">Fichier : Cargo.toml</span></p>
+<!--
+```toml
+[dependencies]
+rand = "0.5.5"
+```
+-->
 <pre><code class="language-toml">[dependencies]
 rand = &quot;0.5.5&quot;
 </code></pre>
@@ -677,16 +703,48 @@ chapitre 2, nous avons importé le trait <code>Rng</code> dans la portée, puis 
 appelé la fonction <code>rand::thread_rng</code> :</p>
 <!--
 ```rust,ignore
+# use std::io;
 use rand::Rng;
+
 fn main() {
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+#     println!("Devinez le nombre !");
+# 
+    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#         println!("Votre nombre : {}", supposition);
 }
 ```
 -->
-<pre><code class="language-rust ignore">use rand::Rng;
+<pre><code class="language-rust ignore"><span class="boring">use std::io;
+</span>use rand::Rng;
+
 fn main() {
-    let nombre_secret = rand::thread_rng().gen_range(1, 101);
-}
+<span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span>    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+<span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">        println!(&quot;Votre nombre : {}&quot;, supposition);
+</span>}
 </code></pre>
 <!--
 Members of the Rust community have made many packages available at
@@ -711,6 +769,11 @@ nous n'avons pas à modifier le <em>Cargo.toml</em> pour y inclure <code>std</co
 devons utiliser <code>use</code> pour importer les éléments qu'y se trouvent dans la portée
 de notre paquet. Par exemple, pour <code>HashMap</code> nous pourrions utiliser cette
 ligne :</p>
+<!--
+```rust
+use std::collections::HashMap;
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -743,20 +806,68 @@ avions dans le jeu de devinettes, dans l'encart 2-4, importaient des éléments 
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
-```rust
-use std::io;
+```rust,ignore
+# use rand::Rng;
+// -- partie masquée ici --
 use std::cmp::Ordering;
-// ---snip---
+use std::io;
+// -- partie masquée ici --
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     println!("Votre nombre : {}", supposition);
+# 
+#     match supposition.cmp(&nombre_secret) {
+#         Ordering::Less => println!("C'est plus !"),
+#         Ordering::Greater => println!("C'est moins !"),
+#         Ordering::Equal => println!("Vous avez gagné !");
+#     }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>use std::io;
+<pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
+</span>// -- partie masquée ici --
 use std::cmp::Ordering;
-// --- code masqué ici ---
-<span class="boring">}
-</span></code></pre></pre>
+use std::io;
+// -- partie masquée ici --
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">
+</span><span class="boring">    match supposition.cmp(&amp;nombre_secret) {
+</span><span class="boring">        Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
+</span><span class="boring">        Ordering::Greater =&gt; println!(&quot;C'est moins !&quot;),
+</span><span class="boring">        Ordering::Equal =&gt; println!(&quot;Vous avez gagné !&quot;);
+</span><span class="boring">    }
+</span><span class="boring">}
+</span></code></pre>
 <!--
 Instead, we can use nested paths to bring the same items into scope in one
 line. We do this by specifying the common part of the path, followed by two
@@ -772,18 +883,70 @@ d'accolades autour d'une liste d'éléments du chemin, comme dans l'encart 7-18�
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
-```rust
+```rust,ignore
+# use rand::Rng;
+// -- partie masquée ici --
 use std::{cmp::Ordering, io};
-// ---snip---
+// -- partie masquée ici --
+# 
+# fn main() {
+#     println!("Devinez le nombre !");
+# 
+#     let nombre_secret = rand::thread_rng().gen_range(1, 101);
+# 
+#     println!("Le nombre secret est : {}", nombre_secret);
+# 
+#     println!("Veuillez entrer un nombre.");
+# 
+#     let mut supposition = String::new();
+# 
+#     io::stdin()
+#         .read_line(&mut supposition)
+#         .expect("Échec de la lecture de l'entrée utilisateur");
+# 
+#     let supposition: u32 = supposition.trim().parse().expect("Veuillez saisir un nombre !");
+# 
+#     println!("Votre nombre : {}", supposition);
+# 
+#     match supposition.cmp(&nombre_secret) {
+#         Ordering::Less => println!("C'est plus !"),
+#         Ordering::Greater => println!("C'est moins !"),
+#         Ordering::Equal => println!("Vous avez gagné !");
+#     }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
+</span>// -- partie masquée ici --
+use std::{cmp::Ordering, io};
+// -- partie masquée ici --
+<span class="boring">
 </span><span class="boring">fn main() {
-</span>use std::{cmp::Ordering, io};
-// --- code masqué ici ---
-<span class="boring">}
-</span></code></pre></pre>
+</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">
+</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">
+</span><span class="boring">    io::stdin()
+</span><span class="boring">        .read_line(&amp;mut supposition)
+</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">
+</span><span class="boring">    let supposition: u32 = supposition.trim().parse().expect(&quot;Veuillez saisir un nombre !&quot;);
+</span><span class="boring">
+</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">
+</span><span class="boring">    match supposition.cmp(&amp;nombre_secret) {
+</span><span class="boring">        Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
+</span><span class="boring">        Ordering::Greater =&gt; println!(&quot;C'est moins !&quot;),
+</span><span class="boring">        Ordering::Equal =&gt; println!(&quot;Vous avez gagné !&quot;);
+</span><span class="boring">    }
+</span><span class="boring">}
+</span></code></pre>
 <!--
 <span class="caption">Listing 7-18: Specifying a nested path to bring multiple
 items with the same prefix into scope</span>
@@ -813,6 +976,12 @@ dans la portée.</p>
 <span class="filename">Filename: src/lib.rs</span>
 -->
 <p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust
+use std::io;
+use std::io::Write;
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -838,6 +1007,11 @@ nous pouvons utiliser <code>self</code> dans le chemin imbriqué, comme dans l'e
 <span class="filename">Filename: src/lib.rs</span>
 -->
 <p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
+```rust
+use std::io::{self, Write};
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {

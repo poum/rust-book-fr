@@ -212,14 +212,14 @@ chaînes de caractères.</p>
 > be described in relation to the stack and the heap later in this chapter, so
 > here is a brief explanation in preparation.
 >
-> Both the stack and the heap are parts of memory that are available to your code
-> to use at runtime, but they are structured in different ways. The stack stores
-> values in the order it gets them and removes the values in the opposite order.
-> This is referred to as *last in, first out*. Think of a stack of plates: when
-> you add more plates, you put them on top of the pile, and when you need a
-> plate, you take one off the top. Adding or removing plates from the middle or
-> bottom wouldn’t work as well! Adding data is called *pushing onto the stack*,
-> and removing data is called *popping off the stack*.
+> Both the stack and the heap are parts of memory that are available to your
+> code to use at runtime, but they are structured in different ways. The stack
+> stores values in the order it gets them and removes the values in the
+> opposite order. This is referred to as *last in, first out*. Think of a stack
+> of plates: when you add more plates, you put them on top of the pile, and
+> when you need a plate, you take one off the top. Adding or removing plates
+> from the middle or bottom wouldn’t work as well! Adding data is called
+> *pushing onto the stack*, and removing data is called *popping off the stack*.
 >
 > All data stored on the stack must have a known, fixed size. Data with an
 > unknown size at compile time or a size that might change must be stored on
@@ -381,6 +381,11 @@ have a variable that looks like this:
 <p>Pour le premier exemple de possession, nous allons analyser la <em>portée</em> de
 certaines variables. Une portée est une zone dans un programme dans laquelle un
 élément est en vigueur. Imaginons que nous ayons la variable suivante :</p>
+<!--
+```rust
+let s = "hello";
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -400,21 +405,21 @@ actuelle. L'encart 4-1 a des commentaires pour indiquer quand la variable <code>
 est en vigueur :</p>
 <!--
 ```rust
-{                      // s is not valid here, it’s not yet declared
-    let s = "hello";   // s is valid from this point forward
+# fn main() {
+    {                    // s n'est pas en vigueur ici, elle n'est pas encore déclarée
+        let s = "hello"; // s est en vigueur à partir de ce point
 
-    // do stuff with s
-}                      // this scope is now over, and s is no longer valid
+        // on fait des choses avec s ici
+    }                    // cette portée est maintenant terminée, et s n'est plus en vigueur
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>{            // s n'est pas en vigueur ici, elle n'est pas encore déclarée
-    let s = &quot;hello&quot;;   // s est en vigueur à partir de ce point
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    {                    // s n'est pas en vigueur ici, elle n'est pas encore déclarée
+        let s = &quot;hello&quot;; // s est en vigueur à partir de ce point
 
-    // on fait des choses avec s ici
-}            // cette portée est maintenant terminée, et s n'est plus en vigueur
+        // on fait des choses avec s ici
+    }                    // cette portée est maintenant terminée, et s n'est plus en vigueur
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -496,6 +501,11 @@ second type de chaîne de caractères, <code>String</code>. Ce type est alloué 
 est ainsi capable de stocker une quantité de texte qui nous est inconnue au
 moment de la compilation. Vous pouvez créer une <code>String</code> à partir d'un littéral
 de chaîne de caractères en utilisant la fonction <code>from</code>, comme ceci :</p>
+<!--
+```rust
+let s = String::from("hello");
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -523,21 +533,21 @@ This kind of string *can* be mutated:
 <p>Ce type de chaîne de caractères <em>peut</em> être mutable :</p>
 <!--
 ```rust
-let mut s = String::from("hello");
+# fn main() {
+    let mut s = String::from("hello");
 
-s.push_str(", world!"); // push_str() appends a literal to a String
-
-println!("{}", s); // This will print `hello, world!`
+    s.push_str(", world!"); // push_str() ajoute un littéral de chaîne dans une String
+    
+    println!("{}", s); // Cela va afficher `hello, world!`
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut s = String::from(&quot;hello&quot;);
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let mut s = String::from(&quot;hello&quot;);
 
-s.push_str(&quot;, world!&quot;); // push_str() ajoute un littéral de chaîne dans une String
-
-println!(&quot;{}&quot;, s); // Cela va afficher `hello, world!`
+    s.push_str(&quot;, world!&quot;); // push_str() ajoute un littéral de chaîne dans une String
+    
+    println!(&quot;{}&quot;, s); // Cela va afficher `hello, world!`
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -626,23 +636,23 @@ exemple de portée de l'encart 4-1 qui utilise une <code>String</code> plutôt q
 de chaîne de caractères :</p>
 <!--
 ```rust
-{
-    let s = String::from("hello"); // s is valid from this point forward
-
-    // do stuff with s
-}                                  // this scope is now over, and s is no
-                                   // longer valid
+# fn main() {
+    {
+        let s = String::from("hello"); // s est en vigueur à partir de ce point
+    
+        // on fait des choses avec s ici
+    }                                  // cette portée est désormais terminée, et s
+                                       // n'est plus en vigueur maintenant
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>{
-    let s = String::from(&quot;hello&quot;); // s est en vigueur à partir de ce point
-
-    // on fait des choses avec s ici
-}                                  // cette portée est désormais terminée, et s
-                                   // n'est plus en vigueur maintenant
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    {
+        let s = String::from(&quot;hello&quot;); // s est en vigueur à partir de ce point
+    
+        // on fait des choses avec s ici
+    }                                  // cette portée est désormais terminée, et s
+                                       // n'est plus en vigueur maintenant
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -691,11 +701,17 @@ Let’s look at an example using an integer in Listing 4-2.
 -->
 <p>Plusieurs variables peuvent interagir avec les mêmes données de différentes
 manières en Rust. Regardons un exemple avec un entier dans l'encart 4-2 :</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let x = 5;
-let y = x;
+<!--
+```rust
+# fn main() {
+    let x = 5;
+    let y = x;
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let x = 5;
+    let y = x;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -720,11 +736,17 @@ taille connue et fixée, et ces deux valeurs <code>5</code> sont stockées sur l
 Now let’s look at the `String` version:
 -->
 <p>Maintenant, essayons une nouvelle version avec <code>String</code> :</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let s1 = String::from(&quot;hello&quot;);
-let s2 = s1;
+<!--
+```rust
+# fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let s1 = String::from(&quot;hello&quot;);
+    let s2 = s1;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -853,28 +875,68 @@ allouée, Rust considère que <code>s1</code> n'est plus en vigueur et donc, Rus
 besoin de libérer quoi que ce soit lorsque <code>s1</code> sort de la portée. Regardez ce
 qu'il se passe quand vous essayez d'utiliser <code>s1</code> après que <code>s2</code> est créé,
 cela ne va pas fonctionner :</p>
-<pre><code class="language-rust ignore does_not_compile">let s1 = String::from(&quot;hello&quot;);
-let s2 = s1;
+<!--
+# fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;
 
-println!(&quot;{}, world!&quot;, s1);
-</code></pre>
+    println!("{}, world!", s1);
+# }
+```
+-->
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span>    let s1 = String::from(&quot;hello&quot;);
+    let s2 = s1;
+
+    println!(&quot;{}, world!&quot;, s1);
+<span class="boring">}
+</span></code></pre>
 <!--
 You’ll get an error like this because Rust prevents you from using the
 invalidated reference:
 -->
 <p>Vous allez avoir une erreur comme celle-ci, car Rust vous défend d'utiliser la
 référence qui n'est plus en vigueur :</p>
-<pre><code class="language-text">error[E0382]: use of moved value: `s1`
- -- &gt; src/main.rs:5:28
-  |
+<!--
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0382]: borrow of moved value: `s1`
+ --> src/main.rs:5:28
+<p>|
+2 |     let s1 = String::from(&quot;hello&quot;);
+|         -- move occurs because <code>s1</code> has type <code>std::string::String</code>, which does not implement the <code>Copy</code> trait
 3 |     let s2 = s1;
-  |         -- value moved here
-4 |
+|              -- value moved here
+4 | 
 5 |     println!(&quot;{}, world!&quot;, s1);
-  |                            ^^ value used here after move
+|                            ^^ value borrowed here after move</p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0382</code>.
+error: could not compile <code>ownership</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling ownership v0.1.0 (file:///projects/ownership)
+error[E0382]: borrow of moved value: `s1`
+ --&gt; src/main.rs:5:28
   |
-  = note: move occurs because `s1` has type `std::string::String`, which does
-  not implement the `Copy` trait
+2 |     let s1 = String::from(&quot;hello&quot;);
+  |         -- move occurs because `s1` has type `std::string::String`, which does not implement the `Copy` trait
+3 |     let s2 = s1;
+  |              -- value moved here
+4 | 
+5 |     println!(&quot;{}, world!&quot;, s1);
+  |                            ^^ value borrowed here after move
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `ownership`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 If you’ve heard the terms *shallow copy* and *deep copy* while working with
@@ -938,13 +1000,21 @@ nombreux langages, vous les avez probablement utilisées auparavant.</p>
 Here’s an example of the `clone` method in action:
 -->
 <p>Voici un exemple d'utilisation de la méthode <code>clone</code> :</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let s1 = String::from(&quot;hello&quot;);
-let s2 = s1.clone();
+<!--
+```rust
+# fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
 
-println!(&quot;s1 = {}, s2 = {}&quot;, s1, s2);
+    println!("s1 = {}, s2 = {}", s1, s2);
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let s1 = String::from(&quot;hello&quot;);
+    let s2 = s1.clone();
+
+    println!(&quot;s1 = {}, s2 = {}&quot;, s1, s2);
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -972,13 +1042,21 @@ part of which was shown in Listing 4-2, works and is valid:
 <p>Il y a un autre détail dont on n'a pas encore parlé. Le code suivant utilise
 des entiers, et on en a vu une partie dans l'encart 4-2 ; il fonctionne et
 est correct :</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let x = 5;
-let y = x;
+<!--
+```rust
+# fn main() {
+    let x = 5;
+    let y = x;
 
-println!(&quot;x = {}, y = {}&quot;, x, y);
+    println!("x = {}, y = {}", x, y);
+# }
+```
+-->
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let x = 5;
+    let y = x;
+
+    println!(&quot;x = {}, y = {}&quot;, x, y);
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -1073,51 +1151,50 @@ portée :</p>
 <!--
 ```rust
 fn main() {
-    let s = String::from("hello");  // s comes into scope
+  let s = String::from("hello");  // s rentre dans la portée.
 
-    takes_ownership(s);             // s's value moves into the function...
-                                    // ... and so is no longer valid here
+  prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
+                          // … et n'est plus en vigueur à partir d'ici
 
-    let x = 5;                      // x comes into scope
+  let x = 5;              // x rentre dans la portée.
 
-    makes_copy(x);                  // x would move into the function,
-                                    // but i32 is Copy, so it’s okay to still
-                                    // use x afterward
-
-} // Here, x goes out of scope, then s. But because s's value was moved, nothing
-  // special happens.
-
-fn takes_ownership(some_string: String) { // some_string comes into scope
-    println!("{}", some_string);
-} // Here, some_string goes out of scope and `drop` is called. The backing
-  // memory is freed.
-
-fn makes_copy(some_integer: i32) { // some_integer comes into scope
-    println!("{}", some_integer);
-} // Here, some_integer goes out of scope. Nothing special happens.
-```
--->
-<pre><pre class="playpen"><code class="language-rust">fn main() {
-    let s = String::from(&quot;hello&quot;);  // s rentre dans la portée.
-
-    prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
-                            // … et n'est plus en vigueur à partir d'ici
-
-    let x = 5;              // x rentre dans la portée.
-
-    creer_copie(x);         // x va être déplacée dans la fonction,
-                            // mais i32 est Copy, donc on peut
-                            // utiliser x ensuite.
+  creer_copie(x);         // x va être déplacée dans la fonction,
+                          // mais i32 est Copy, donc on peut
+                          // utiliser x ensuite.
 
 } // Ici, x sort de la portée, puis ensuite s. Mais puisque la valeur de s a
-  // été déplacée, il ne se passe rien de spécial.
+// été déplacée, il ne se passe rien de spécial.
 
 fn prendre_possession(texte: String) { // texte rentre dans la portée.
-    println!(&quot;{}&quot;, texte);
+  println!("{}", texte);
 } // Ici, texte sort de la portée et `drop` est appelé. La mémoire est libérée.
 
 fn creer_copie(entier: i32) { // entier rentre dans la portée.
-    println!(&quot;{}&quot;, entier);
+  println!("{}", entier);
+} // Ici, entier sort de la portée. Il ne se passe rien de spécial.
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+  let s = String::from(&quot;hello&quot;);  // s rentre dans la portée.
+
+  prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
+                          // … et n'est plus en vigueur à partir d'ici
+
+  let x = 5;              // x rentre dans la portée.
+
+  creer_copie(x);         // x va être déplacée dans la fonction,
+                          // mais i32 est Copy, donc on peut
+                          // utiliser x ensuite.
+
+} // Ici, x sort de la portée, puis ensuite s. Mais puisque la valeur de s a
+// été déplacée, il ne se passe rien de spécial.
+
+fn prendre_possession(texte: String) { // texte rentre dans la portée.
+  println!(&quot;{}&quot;, texte);
+} // Ici, texte sort de la portée et `drop` est appelé. La mémoire est libérée.
+
+fn creer_copie(entier: i32) { // entier rentre dans la portée.
+  println!(&quot;{}&quot;, entier);
 } // Ici, entier sort de la portée. Il ne se passe rien de spécial.
 </code></pre></pre>
 <!--
@@ -1154,64 +1231,64 @@ exemple avec des annotations similaires à celles de l'encart 4-3 :</p>
 <!--
 ```rust
 fn main() {
-    let s1 = gives_ownership();         // gives_ownership moves its return
-                                        // value into s1
+  let s1 = donne_possession();     // donne_possession déplace sa valeur de
+                                   // retour dans s1
 
-    let s2 = String::from("hello");     // s2 comes into scope
+  let s2 = String::from("hello");  // s2 rentre dans la portée
 
-    let s3 = takes_and_gives_back(s2);  // s2 is moved into
-                                        // takes_and_gives_back, which also
-                                        // moves its return value into s3
-} // Here, s3 goes out of scope and is dropped. s2 goes out of scope but was
-  // moved, so nothing happens. s1 goes out of scope and is dropped.
-
-fn gives_ownership() -> String {             // gives_ownership will move its
-                                             // return value into the function
-                                             // that calls it
-
-    let some_string = String::from("hello"); // some_string comes into scope
-
-    some_string                              // some_string is returned and
-                                             // moves out to the calling
-                                             // function
-}
-
-// takes_and_gives_back will take a String and return one
-fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
-                                                      // scope
-
-    a_string  // a_string is returned and moves out to the calling function
-}
-```
--->
-<pre><pre class="playpen"><code class="language-rust">fn main() {
-    let s1 = donne_possession();     // donne_possession déplace sa valeur de
-                                     // retour dans s1
-
-    let s2 = String::from(&quot;hello&quot;);  // s2 rentre dans la portée
-
-    let s3 = prend_et_rend(s2);      // s2 est déplacée dans
-                                     // prend_et_rend, qui elle aussi
-                                     // déplace sa valeur de retour dans s3.
+  let s3 = prend_et_rend(s2);      // s2 est déplacée dans
+                                   // prend_et_rend, qui elle aussi
+                                   // déplace sa valeur de retour dans s3.
 } // Ici, s3 sort de la portée et est éliminée. s2 sort de la portée mais a été
   // déplacée donc il ne se passe rien. s1 sort aussi de la portée et est
   // éliminée.
 
-fn donne_possession() -&gt; String {        // donne_possession va déplacer sa
-                                         // valeur de retour dans la
-                                         // fonction qui l'appelle.
+fn donne_possession() -> String {      // donne_possession va déplacer sa
+                                       // valeur de retour dans la
+                                       // fonction qui l'appelle.
 
-    let texte = String::from(&quot;hello&quot;);   // texte rentre dans la portée.
+  let texte = String::from("hello");   // texte rentre dans la portée.
 
-    texte                                // texte est retournée et
-                                         // est déplacée vers le code qui
-                                         // l'appelle.
+  texte                                // texte est retournée et
+                                       // est déplacée vers le code qui
+                                       // l'appelle.
+}
+
+// prend_et_rend va prendre une String et en retourne aussi une.
+fn prend_et_rend(texte: String) -> String { // texte rentre dans la portée.
+
+  texte  // texte est retournée et déplacée vers le code qui l'appelle.
+}
+```
+-->
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+  let s1 = donne_possession();     // donne_possession déplace sa valeur de
+                                   // retour dans s1
+
+  let s2 = String::from(&quot;hello&quot;);  // s2 rentre dans la portée
+
+  let s3 = prend_et_rend(s2);      // s2 est déplacée dans
+                                   // prend_et_rend, qui elle aussi
+                                   // déplace sa valeur de retour dans s3.
+} // Ici, s3 sort de la portée et est éliminée. s2 sort de la portée mais a été
+  // déplacée donc il ne se passe rien. s1 sort aussi de la portée et est
+  // éliminée.
+
+fn donne_possession() -&gt; String {      // donne_possession va déplacer sa
+                                       // valeur de retour dans la
+                                       // fonction qui l'appelle.
+
+  let texte = String::from(&quot;hello&quot;);   // texte rentre dans la portée.
+
+  texte                                // texte est retournée et
+                                       // est déplacée vers le code qui
+                                       // l'appelle.
 }
 
 // prend_et_rend va prendre une String et en retourne aussi une.
 fn prend_et_rend(texte: String) -&gt; String { // texte rentre dans la portée.
 
-    texte  // texte est retournée et déplacée vers le code qui l'appelle.
+  texte  // texte est retournée et déplacée vers le code qui l'appelle.
 }
 </code></pre></pre>
 <!--
@@ -1257,15 +1334,15 @@ It’s possible to return multiple values using a tuple, as shown in Listing 4-5
 fn main() {
     let s1 = String::from("hello");
 
-    let (s2, len) = calculate_length(s1);
+    let (s2, taille) = calculer_taille(s1);
 
-    println!("The length of '{}' is {}.", s2, len);
+    println!("La taille de '{}' est {}.", s2, taille);
 }
 
-fn calculate_length(s: String) -> (String, usize) {
-    let length = s.len(); // len() returns the length of a String
+fn calculer_taille(s: String) -> (String, usize) {
+    let taille = s.len(); // len() retourne la taille d'une String.
 
-    (s, length)
+    (s, taille)
 }
 ```
 -->

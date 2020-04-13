@@ -171,6 +171,11 @@ pour les personnes qui lisent le code source.</p>
 Here’s a simple comment:
 -->
 <p>Voici un simple commentaire :</p>
+<!--
+```rust
+// hello, world
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -178,13 +183,14 @@ Here’s a simple comment:
 <span class="boring">}
 </span></code></pre></pre>
 <!--
-In Rust, comments must start with two slashes and continue until the end of the
-line. For comments that extend beyond a single line, you’ll need to include
-`//` on each line, like this:
+In Rust, the idiomatic comment style starts a comment with two slashes, and the
+comment continues until the end of the line. For comments that extend beyond a
+single line, you’ll need to include `//` on each line, like this:
 -->
-<p>Avec Rust, les commentaires commencent avec deux barres obliques et continuent
-jusqu'à la fin de la ligne. Pour les commentaires qui font plus d'une seule
-ligne, vous aurez besoin d'ajouter <code>//</code> sur chaque ligne, comme ceci :</p>
+<p>Avec Rust, les commentaires classiques commencent avec deux barres obliques et
+continuent jusqu'à la fin de la ligne. Pour les commentaires qui font plus
+d'une seule ligne, vous aurez besoin d'ajouter <code>//</code> sur chaque ligne, comme
+ceci :</p>
 <!--
 ```rust
 // So we’re doing something complicated here, long enough that we need
@@ -212,7 +218,7 @@ contient du code :</p>
 <!--
 ```rust
 fn main() {
-    let lucky_number = 7; // I’m feeling lucky today
+    let nombre_chanceux = 7; // Je me sens chanceux aujourd'hui
 }
 ```
 -->
@@ -233,8 +239,8 @@ commentaire sur une ligne séparée au-dessus du code qu'il annote :</p>
 <!--
 ```rust
 fn main() {
-    // I’m feeling lucky today
-    let lucky_number = 7;
+    // Je me sens chanceux aujourd'hui
+    let nombre_chanceux = 7;
 }
 ```
 -->

@@ -196,20 +196,36 @@ variants of the enum:
 qu'elle peut avoir, <code>V4</code> et <code>V6</code>. Ce sont les variantes de l'énumération :</p>
 <!--
 ```rust
-enum IpAddrKind {
+enum SorteAdresseIp {
     V4,
     V6,
 }
+# 
+# fn main() {
+#     let quatre = SorteAdresseIp::V4;
+#     let six = SorteAdresseIp::V6;
+# 
+#     router(SorteAdresseIp::V4);
+#     router(SorteAdresseIp::V6);
+# }
+# 
+# fn router(sorte_ip: SorteAdresseIp) { }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>enum SorteAdresseIp {
+<pre><pre class="playpen"><code class="language-rust">enum SorteAdresseIp {
     V4,
     V6,
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let quatre = SorteAdresseIp::V4;
+</span><span class="boring">    let six = SorteAdresseIp::V6;
+</span><span class="boring">
+</span><span class="boring">    router(SorteAdresseIp::V4);
+</span><span class="boring">    router(SorteAdresseIp::V6);
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn router(sorte_ip: SorteAdresseIp) { }
 </span></code></pre></pre>
 <!--
 `IpAddrKind` is now a custom data type that we can use elsewhere in our code.
@@ -227,26 +243,36 @@ We can create instances of each of the two variants of `IpAddrKind` like this:
 <code>SorteAdresseIp</code> de cette manière :</p>
 <!--
 ```rust
-# enum IpAddrKind {
+# enum SorteAdresseIp {
 #     V4,
 #     V6,
 # }
-#
-let four = IpAddrKind::V4;
-let six = IpAddrKind::V6;
+# 
+# fn main() {
+    let quatre = SorteAdresseIp::V4;
+    let six = SorteAdresseIp::V6;
+# 
+#     router(SorteAdresseIp::V4);
+#     router(SorteAdresseIp::V6);
+# }
+# 
+# fn router(sorte_ip: SorteAdresseIp) { }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">enum SorteAdresseIp {
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">enum SorteAdresseIp {
 </span><span class="boring">    V4,
 </span><span class="boring">    V6,
 </span><span class="boring">}
 </span><span class="boring">
-</span>let quatre = SorteAdresseIp::V4;
-let six = SorteAdresseIp::V6;
-<span class="boring">}
+</span><span class="boring">fn main() {
+</span>    let quatre = SorteAdresseIp::V4;
+    let six = SorteAdresseIp::V6;
+<span class="boring">
+</span><span class="boring">    router(SorteAdresseIp::V4);
+</span><span class="boring">    router(SorteAdresseIp::V6);
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn router(sorte_ip: SorteAdresseIp) { }
 </span></code></pre></pre>
 <!--
 Note that the variants of the enum are namespaced under its identifier, and we
@@ -263,55 +289,73 @@ pouvons, par exemple, définir une fonction qui accepte n'importe quelle
 <code>SorteAdresseIp</code> :</p>
 <!--
 ```rust
-# enum IpAddrKind {
+# enum SorteAdresseIp {
 #     V4,
 #     V6,
 # }
-#
-fn route(ip_kind: IpAddrKind) { }
+# 
+# fn main() {
+#     let quatre = SorteAdresseIp::V4;
+#     let six = SorteAdresseIp::V6;
+# 
+#     router(SorteAdresseIp::V4);
+#     router(SorteAdresseIp::V6);
+# }
+# 
+fn router(sorte_ip: SorteAdresseIp) { }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">enum SorteAdresseIp {
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">enum SorteAdresseIp {
 </span><span class="boring">    V4,
 </span><span class="boring">    V6,
 </span><span class="boring">}
 </span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let quatre = SorteAdresseIp::V4;
+</span><span class="boring">    let six = SorteAdresseIp::V6;
+</span><span class="boring">
+</span><span class="boring">    router(SorteAdresseIp::V4);
+</span><span class="boring">    router(SorteAdresseIp::V6);
+</span><span class="boring">}
+</span><span class="boring">
 </span>fn router(sorte_ip: SorteAdresseIp) { }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 And we can call this function with either variant:
 -->
 <p>Et nous pouvons appeler cette fonction avec chacune des variantes :</p>
 <!--
 ```rust
-# enum IpAddrKind {
+# enum SorteAdresseIp {
 #     V4,
 #     V6,
 # }
-#
-# fn route(ip_kind: IpAddrKind) { }
-#
-route(IpAddrKind::V4);
-route(IpAddrKind::V6);
+# 
+# fn main() {
+#     let quatre = SorteAdresseIp::V4;
+#     let six = SorteAdresseIp::V6;
+# 
+    router(SorteAdresseIp::V4);
+    router(SorteAdresseIp::V6);
+# }
+# 
+# fn router(sorte_ip: SorteAdresseIp) { }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">enum SorteAdresseIp {
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">enum SorteAdresseIp {
 </span><span class="boring">    V4,
 </span><span class="boring">    V6,
 </span><span class="boring">}
 </span><span class="boring">
-</span><span class="boring">fn router(sorte_ip: SorteAdresseIp) { }
+</span><span class="boring">fn main() {
+</span><span class="boring">    let quatre = SorteAdresseIp::V4;
+</span><span class="boring">    let six = SorteAdresseIp::V6;
 </span><span class="boring">
-</span>router(SorteAdresseIp::V4);
-router(SorteAdresseIp::V6);
+</span>    router(SorteAdresseIp::V4);
+    router(SorteAdresseIp::V6);
 <span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn router(sorte_ip: SorteAdresseIp) { }
 </span></code></pre></pre>
 <!--
 Using enums has even more advantages. Thinking more about our IP address type,
@@ -326,49 +370,49 @@ quelle sorte elle est. Avec ce que vous avez appris au chapitre 5, vous pouvez
 résoudre ce problème comme dans l'encart 6-1.</p>
 <!--
 ```rust
-enum IpAddrKind {
-    V4,
-    V6,
-}
+# fn main() {
+    enum SorteAdresseIp {
+        V4,
+        V6,
+    }
 
-struct IpAddr {
-    kind: IpAddrKind,
-    address: String,
-}
+    struct AdresseIp {
+        sorte: SorteAdresseIp,
+        adresse: String,
+    }
 
-let home = IpAddr {
-    kind: IpAddrKind::V4,
-    address: String::from("127.0.0.1"),
-};
-
-let loopback = IpAddr {
-    kind: IpAddrKind::V6,
-    address: String::from("::1"),
-};
+    let local = AdresseIp {
+        sorte: SorteAdresseIp::V4,
+        adresse: String::from("127.0.0.1"),
+    };
+    
+    let rebouclage = AdresseIp {
+        sorte: SorteAdresseIp::V6,
+        adresse: String::from("::1"),
+    };
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>enum SorteAdresseIp {
-    V4,
-    V6,
-}
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    enum SorteAdresseIp {
+        V4,
+        V6,
+    }
 
-struct AdresseIp {
-    sorte: SorteAdresseIp,
-    adresse: String,
-}
+    struct AdresseIp {
+        sorte: SorteAdresseIp,
+        adresse: String,
+    }
 
-let local = AdresseIp {
-    sorte: SorteAdresseIp::V4,
-    adresse: String::from(&quot;127.0.0.1&quot;),
-};
-
-let rebouclage = AdresseIp {
-    sorte: SorteAdresseIp::V6,
-    adresse: String::from(&quot;::1&quot;),
-};
+    let local = AdresseIp {
+        sorte: SorteAdresseIp::V4,
+        adresse: String::from(&quot;127.0.0.1&quot;),
+    };
+    
+    let rebouclage = AdresseIp {
+        sorte: SorteAdresseIp::V6,
+        adresse: String::from(&quot;::1&quot;),
+    };
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -410,27 +454,27 @@ que chacune des variantes <code>V4</code> et <code>V6</code> auront des valeurs 
 <code>String</code> :</p>
 <!--
 ```rust
-enum IpAddr {
-    V4(String),
-    V6(String),
-}
-
-let home = IpAddr::V4(String::from("127.0.0.1"));
-
-let loopback = IpAddr::V6(String::from("::1"));
+# fn main() {
+    enum AdresseIp {
+        V4(String),
+        V6(String),
+    }
+    
+    let local = AdresseIp::V4(String::from("127.0.0.1"));
+    
+    let rebouclage = AdresseIp::V6(String::from("::1"));
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>enum AdresseIp {
-    V4(String),
-    V6(String),
-}
-
-let local = AdresseIp::V4(String::from(&quot;127.0.0.1&quot;));
-
-let rebouclage = AdresseIp::V6(String::from(&quot;::1&quot;));
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    enum AdresseIp {
+        V4(String),
+        V6(String),
+    }
+    
+    let local = AdresseIp::V4(String::from(&quot;127.0.0.1&quot;));
+    
+    let rebouclage = AdresseIp::V6(String::from(&quot;::1&quot;));
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -457,27 +501,27 @@ le faire avec une structure. Les énumérations permettent de faire cela
 facilement :</p>
 <!--
 ```rust
-enum IpAddr {
-    V4(u8, u8, u8, u8),
-    V6(String),
-}
-
-let home = IpAddr::V4(127, 0, 0, 1);
-
-let loopback = IpAddr::V6(String::from("::1"));
+# fn main() {
+    enum AdresseIp {
+        V4(u8, u8, u8, u8),
+        V6(String),
+    }
+    
+    let local = AdresseIp::V4(127, 0, 0, 1);
+    
+    let rebouclage = AdresseIp::V6(String::from("::1"));
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>enum AdresseIp {
-    V4(u8, u8, u8, u8),
-    V6(String),
-}
-
-let local = AdresseIp::V4(127, 0, 0, 1);
-
-let rebouclage = AdresseIp::V6(String::from(&quot;::1&quot;));
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    enum AdresseIp {
+        V4(u8, u8, u8, u8),
+        V6(String),
+    }
+    
+    let local = AdresseIp::V4(127, 0, 0, 1);
+    
+    let rebouclage = AdresseIp::V6(String::from(&quot;::1&quot;));
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -566,24 +610,30 @@ grande diversité de types dans ses variantes.</p>
 <!--
 ```rust
 enum Message {
-    Quit,
-    Move { x: i32, y: i32 },
-    Write(String),
-    ChangeColor(i32, i32, i32),
+    Quitter,
+    Deplacer { x: i32, y: i32 },
+    Ecrire(String),
+    ChangerCouleur(i32, i32, i32),
 }
+# 
+# fn main() {}
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
+<pre><pre class="playpen"><code class="language-rust">enum Message {
+    Quitter,
+    Deplacer { x: i32, y: i32 },
+    Ecrire(String),
+    ChangerCouleur(i32, i32, i32),
+}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span>enum Message {
     Quitter,
     Deplacer { x: i32, y: i32 },
     Ecrire(String),
     ChangerCouleur(i32, i32, i32),
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 <span class="caption">Listing 6-2: A `Message` enum whose variants each store
 different amounts and types of values</span>
@@ -621,18 +671,26 @@ regroupées ensemble sous le type <code>Message</code>. Les structures suivantes
 stocker les mêmes données que celles stockées par les variantes précédentes :</p>
 <!--
 ```rust
-struct QuitMessage; // unit struct
-struct MoveMessage {
+struct MessageQuitter; // une structure unité
+struct MessageDeplacer {
     x: i32,
     y: i32,
 }
-struct WriteMessage(String); // tuple struct
-struct ChangeColorMessage(i32, i32, i32); // tuple struct
+struct MessageEcrire(String); // une structure tuple
+struct MessageChangerCouleur(i32, i32, i32); // une structure tuple
+# 
+# fn main() {}
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
+<pre><pre class="playpen"><code class="language-rust">struct MessageQuitter; // une structure unité
+struct MessageDeplacer {
+    x: i32,
+    y: i32,
+}
+struct MessageEcrire(String); // une structure tuple
+struct MessageChangerCouleur(i32, i32, i32); // une structure tuple
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span>struct MessageQuitter; // une structure unité
 struct MessageDeplacer {
     x: i32,
@@ -640,8 +698,7 @@ struct MessageDeplacer {
 }
 struct MessageEcrire(String); // une structure tuple
 struct MessageChangerCouleur(i32, i32, i32); // une structure tuple
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 But if we used the different structs, which each have their own type, we
 couldn’t as easily define a function to take any of these kinds of messages as
@@ -663,41 +720,41 @@ peut aussi définir des méthodes sur des énumérations. Voici une méthode app
 <code>appeler</code> que nous pouvons définir sur notre énumération <code>Message</code> :</p>
 <!--
 ```rust
-# enum Message {
-#     Quit,
-#     Move { x: i32, y: i32 },
-#     Write(String),
-#     ChangeColor(i32, i32, i32),
-# }
-#
-impl Message {
-    fn call(&self) {
-        // method body would be defined here
+# fn main() {
+#     enum Message {
+#         Quitter,
+#         Deplacer { x: i32, y: i32 },
+#         Ecrire(String),
+#         ChangerCouleur(i32, i32, i32),
+#     }
+# 
+    impl Message {
+        fn appeler(&self) {
+            // le corps de la méthode sera défini ici
+        }
     }
-}
-
-let m = Message::Write(String::from("hello"));
-m.call();
+    
+    let m = Message::Ecrire(String::from("hello"));
+    m.appeler();
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">enum Message {
-</span><span class="boring">    Quitter,
-</span><span class="boring">    Deplacer { x: i32, y: i32 },
-</span><span class="boring">    Ecrire(String),
-</span><span class="boring">    ChangerCouleur(i32, i32, i32),
-</span><span class="boring">}
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span><span class="boring">    enum Message {
+</span><span class="boring">        Quitter,
+</span><span class="boring">        Deplacer { x: i32, y: i32 },
+</span><span class="boring">        Ecrire(String),
+</span><span class="boring">        ChangerCouleur(i32, i32, i32),
+</span><span class="boring">    }
 </span><span class="boring">
-</span>impl Message {
-    fn appeler(&amp;self) {
-        // le corps de la méthode sera défini ici
+</span>    impl Message {
+        fn appeler(&amp;self) {
+            // le corps de la méthode sera défini ici
+        }
     }
-}
-
-let m = Message::Ecrire(String::from(&quot;hello&quot;));
-m.appeler();
+    
+    let m = Message::Ecrire(String::from(&quot;hello&quot;));
+    m.appeler();
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -814,6 +871,14 @@ standard</a><!-- ignore --> comme ci-dessous :</p>
 <!--
 [option]: ../std/option/enum.Option.html
 -->
+<!--
+```rust
+enum Option<T> {
+    Some(T),
+    None,
+}
+```
+-->
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused_variables)]
 </span><span class="boring">fn main() {
@@ -841,7 +906,7 @@ The `<T>` syntax is a feature of Rust we haven’t talked about yet. It’s a
 generic type parameter, and we’ll cover generics in more detail in Chapter 10.
 For now, all you need to know is that `<T>` means the `Some` variant of the
 `Option` enum can hold one piece of data of any type. Here are some examples of
-using `Option` values to hold number types and string types
+using `Option` values to hold number types and string types:
 -->
 <p>La syntaxe <code>&lt;T&gt;</code> est une fonctionnalité de Rust que nous n'avons pas encore
 abordée. Il s'agit d'un paramètre de type générique, et nous verrons la
@@ -852,19 +917,19 @@ de valeurs de <code>Option</code> pour stocker des types de nombres et des types
 de caractères :</p>
 <!--
 ```rust
-let some_number = Some(5);
-let some_string = Some("a string");
+# fn main() {
+    let un_nombre = Some(5);
+    let une_chaine = Some("une chaîne");
 
-let absent_number: Option<i32> = None;
+    let nombre_absent: Option<i32> = None;
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let un_nombre = Some(5);
-let une_chaine = Some(&quot;une chaîne&quot;);
+<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+</span>    let un_nombre = Some(5);
+    let une_chaine = Some(&quot;une chaîne&quot;);
 
-let nombre_absent: Option&lt;i32&gt; = None;
+    let nombre_absent: Option&lt;i32&gt; = None;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -899,39 +964,59 @@ code suivant ne se compile pas car il essaye d'additionner un <code>i8</code> et
 <code>Option&lt;i8&gt;</code> :</p>
 <!--
 ```rust,ignore,does_not_compile
-let x: i8 = 5;
-let y: Option<i8> = Some(5);
+# fn main() {
+    let x: i8 = 5;
+    let y: Option<i8> = Some(5);
 
-let sum = x + y;
+    let somme = x + y;
+# }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">let x: i8 = 5;
-let y: Option&lt;i8&gt; = Some(5);
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">fn main() {
+</span>    let x: i8 = 5;
+    let y: Option&lt;i8&gt; = Some(5);
 
-let somme = x + y;
-</code></pre>
+    let somme = x + y;
+<span class="boring">}
+</span></code></pre>
 <!--
 If we run this code, we get an error message like this:
 -->
 <p>Si nous lançons ce code, nous aurons un message d'erreur comme celui-ci :</p>
 <!--
 ```text
-error[E0277]: the trait bound `i8: std::ops::Add<std::option::Option<i8>>` is
-not satisfied
- -- >
-  |
-5 |     let sum = x + y;
-  |                 ^ no implementation for `i8 + std::option::Option<i8>`
-  |
-```
--->
-<pre><code class="language-text">error[E0277]: the trait bound `i8: std::ops::Add&lt;std::option::Option&lt;i8&gt;&gt;` is
-not satisfied
- -- &gt;
+$ cargo run
+   Compiling enums v0.1.0 (file:///projects/enums)
+error[E0277]: cannot add `std::option::Option<i8>` to `i8`
+ --> src/main.rs:5:17
+<p>|
+5 |     let somme = x + y;
+|                   ^ no implementation for <code>i8 + std::option::Option&lt;i8&gt;</code>
+|
+= help: the trait <code>std::ops::Add&lt;std::option::Option&lt;i8&gt;&gt;</code> is not implemented for <code>i8</code></p>
+<p>error: aborting due to previous error</p>
+<p>For more information about this error, try <code>rustc --explain E0277</code>.
+error: could not compile <code>enums</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```text
+$ cargo run
+   Compiling enums v0.1.0 (file:///projects/enums)
+error[E0277]: cannot add `std::option::Option&lt;i8&gt;` to `i8`
+ --&gt; src/main.rs:5:17
   |
 5 |     let somme = x + y;
   |                   ^ no implementation for `i8 + std::option::Option&lt;i8&gt;`
   |
+  = help: the trait `std::ops::Add&lt;std::option::Option&lt;i8&gt;&gt;` is not implemented for `i8`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `enums`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 Intense! In effect, this error message means that Rust doesn’t understand how
