@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>🚧 Les traits avancés - Le langage de programmation Rust</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -19,8 +26,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -40,7 +48,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -84,8 +92,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> 🚧 Les erreurs irrécupérables avec panic!</a></li><li class="expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="expanded "><a href="ch19-03-advanced-traits.html" class="active"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html" class="active"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -94,37 +102,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">Le langage de programmation Rust</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -217,8 +224,17 @@ bibliothèque standard. Le type associé <code>Item</code> permet de renseigner 
 valeurs que le type qui implémente le trait <code>Iterator</code> parcours. Dans une
 section du chapitre 13, nous avons mentionné que la définition du trait
 <code>Iterator</code> ressemblait à cet encart 19-12.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<!--
+```rust
+pub trait Iterator {
+    type Item;
+
+    fn next(&mut self) -> Option<Self::Item>;
+}
+```
+-->
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>pub trait Iterator {
     type Item;
@@ -266,27 +282,74 @@ Dans l'encart 13-21, nous avions renseigné que le type <code>Item</code> était
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust,ignore
+# struct Counter {
+#     count: u32,
+# }
+# 
+# impl Counter {
+#     fn new() -> Counter {
+#         Counter { count: 0 }
+#     }
+# }
+# 
 impl Iterator for Counter {
     type Item = u32;
 
     fn next(&mut self) -> Option<Self::Item> {
         // --snip--
+#         if self.count < 5 {
+#             self.count += 1;
+#             Some(self.count)
+#         } else {
+#             None
+#         }
+#     }
+# }
+# 
+# fn main() {}
 ```
 -->
-<pre><code class="language-rust ignore">impl Iterator for Compteur {
+<pre><code class="language-rust ignore"><span class="boring">struct Compteur {
+</span><span class="boring">    compteur: u32,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Compteur {
+</span><span class="boring">    fn new() -&gt; Compteur {
+</span><span class="boring">        Compteur { compteur: 0 }
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>impl Iterator for Compteur {
     type Item = u32;
 
     fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
         // -- partie masquée ici --
-</code></pre>
+<span class="boring">        if self.compteur &lt; 5 {
+</span><span class="boring">            self.compteur += 1;
+</span><span class="boring">            Some(self.compteur)
+</span><span class="boring">        } else {
+</span><span class="boring">            None
+</span><span class="boring">        }
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn main() {}
+</span></code></pre>
 <!--
 This syntax seems comparable to that of generics. So why not just define the
 `Iterator` trait with generics, as shown in Listing 19-13?
 -->
 <p>Cette syntaxe ressemble aux génériques. Donc pourquoi uniquement définir le
 trait <code>Iterator</code> avec les génériques, comme dans l'encart 19-13 ?</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<!--
+```rust
+pub trait Iterator<T> {
+    fn next(&mut self) -> Option<T>;
+}
+```
+-->
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>pub trait Iterator&lt;T&gt; {
     fn next(&amp;mut self) -&gt; Option&lt;T&gt;;
@@ -376,7 +439,36 @@ deux instances de <code>Point</code>. Nous pouvons faire cela en implémentant l
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
-<pre><pre class="playpen"><code class="language-rust">use std::ops::Add;
+<!--
+```rust
+use std::ops::Add;
+
+#[derive(Debug, PartialEq)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Add for Point {
+    type Output = Point;
+
+    fn add(self, other: Point) -> Point {
+        Point {
+            x: self.x + other.x,
+            y: self.y + other.y,
+        }
+    }
+}
+
+fn main() {
+    assert_eq!(
+        Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
+        Point { x: 3, y: 3 }
+    );
+}
+```
+-->
+<pre><pre class="playground"><code class="language-rust">use std::ops::Add;
 
 #[derive(Debug, PartialEq)]
 struct Point {
@@ -396,8 +488,10 @@ impl Add for Point {
 }
 
 fn main() {
-    assert_eq!(Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
-               Point { x: 3, y: 3 });
+    assert_eq!(
+        Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
+        Point { x: 3, y: 3 }
+    );
 }
 </code></pre></pre>
 <!--
@@ -422,53 +516,62 @@ definition:
 -->
 <p>Le type générique par défaut dans ce code est dans le trait <code>Add</code>. Voici sa
 définition :</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>trait Add&lt;RHS=Self&gt; {
+<!--
+```rust
+trait Add<Rhs=Self> {
     type Output;
 
-    fn add(self, rhs: RHS) -&gt; Self::Output;
+    fn add(self, rhs: Rhs) -> Self::Output;
+}
+```
+-->
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Add&lt;Rhs=Self&gt; {
+    type Output;
+
+    fn add(self, rhs: Rhs) -&gt; Self::Output;
 }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
 This code should look generally familiar: a trait with one method and an
-associated type. The new part is `RHS=Self`: this syntax is called *default
-type parameters*. The `RHS` generic type parameter (short for “right hand
+associated type. The new part is `Rhs=Self`: this syntax is called *default
+type parameters*. The `Rhs` generic type parameter (short for “right hand
 side”) defines the type of the `rhs` parameter in the `add` method. If we don’t
-specify a concrete type for `RHS` when we implement the `Add` trait, the type
-of `RHS` will default to `Self`, which will be the type we’re implementing
+specify a concrete type for `Rhs` when we implement the `Add` trait, the type
+of `Rhs` will default to `Self`, which will be the type we’re implementing
 `Add` on.
 -->
 <p>Ce code devrait vous être familier : un trait avec une méthode et un type
-associé. La nouvelle partie concerne <code>RHS=Self</code> : cette syntaxe s'appelle les
-<em>paramètres de types par défaut</em>. Le paramètre de type générique <code>RHS</code>
+associé. La nouvelle partie concerne <code>Rhs=Self</code> : cette syntaxe s'appelle les
+<em>paramètres de types par défaut</em>. Le paramètre de type générique <code>Rhs</code>
 (c'est le raccourci de “Right Hand Side”) qui définit le type du paramètre
 <code>rhs</code> dans la méthode <code>add</code>. Si nous ne renseignons pas de type concret pour
-<code>RHS</code> lorsque nous implémentons le trait <code>Add</code>, le type de <code>RHS</code> sera par
+<code>Rhs</code> lorsque nous implémentons le trait <code>Add</code>, le type de <code>Rhs</code> sera par
 défaut <code>Self</code>, qui sera le type sur lequel nous implémentons <code>Add</code>.</p>
 <!--
-When we implemented `Add` for `Point`, we used the default for `RHS` because we
+When we implemented `Add` for `Point`, we used the default for `Rhs` because we
 wanted to add two `Point` instances. Let’s look at an example of implementing
-the `Add` trait where we want to customize the `RHS` type rather than using the
+the `Add` trait where we want to customize the `Rhs` type rather than using the
 default.
 -->
 <p>Lorsque nous avons implémenté <code>Add</code> sur <code>Point</code>, nous avons utilisé la valeur
-par défaut de <code>RHS</code> car nous voulions additionner deux instances de <code>Point</code>.
+par défaut de <code>Rhs</code> car nous voulions additionner deux instances de <code>Point</code>.
 Voyons un exemple d'implémentation du trait <code>Add</code> dans lequel nous souhaitons
-personnaliser le type <code>RHS</code> plutôt que d'utiliser celui par défaut.</p>
+personnaliser le type <code>Rhs</code> plutôt que d'utiliser celui par défaut.</p>
 <!--
 We have two structs, `Millimeters` and `Meters`, holding values in different
 units. We want to add values in millimeters to values in meters and have the
 implementation of `Add` do the conversion correctly. We can implement `Add` for
-`Millimeters` with `Meters` as the `RHS`, as shown in Listing 19-15.
+`Millimeters` with `Meters` as the `Rhs`, as shown in Listing 19-15.
 -->
 <p>Nous avons deux structures, <code>Millimetres</code> et <code>Metres</code>, qui stockent des valeurs
 dans différentes unités. Nous voulons pouvoir additionner les valeurs en
 millimètres avec les valeurs en mètres et appliquer l'implémentation de <code>Add</code>
 pour pouvoir faire la conversion correctement. Nous pouvons implémenter <code>Add</code>
-sur <code>Millimetres</code> avec <code>Metres</code> comme étant le <code>RHS</code>, comme dans l'encart 19-15.</p>
+sur <code>Millimetres</code> avec <code>Metres</code> comme étant le <code>Rhs</code>, comme dans l'encart 19-15.</p>
 <!--
 <span class="filename">Filename: src/lib.rs</span>
 -->
@@ -489,8 +592,8 @@ impl Add<Meters> for Millimeters {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::ops::Add;
 
@@ -514,10 +617,10 @@ impl Add&lt;Metres&gt; for Milimetres {
 <code>Milimetres</code> pour pouvoir addition <code>Milimetres</code> à <code>Metres</code></span></p>
 <!--
 To add `Millimeters` and `Meters`, we specify `impl Add<Meters>` to set the
-value of the `RHS` type parameter instead of using the default of `Self`.
+value of the `Rhs` type parameter instead of using the default of `Self`.
 -->
 <p>Pour additionner <code>Milimetres</code> et <code>Metres</code>, nous renseignons
-<code>impl Add&lt;Metres&gt;</code> pour régler la valeur du paramètre de type <code>RHS</code> au lieu
+<code>impl Add&lt;Metres&gt;</code> pour régler la valeur du paramètre de type <code>Rhs</code> au lieu
 d'utiliser la valeur par défaut <code>Self</code>.</p>
 <!--
 You’ll use default type parameters in two main ways:
@@ -619,12 +722,11 @@ impl Human {
         println!("*waving arms furiously*");
     }
 }
+# 
+# fn main() {}
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>trait Pilote {
+<pre><pre class="playground"><code class="language-rust">trait Pilote {
     fn voler(&amp;self);
 }
 
@@ -651,7 +753,8 @@ impl Humain {
         println!(&quot;*agite frénétiquement ses bras*&quot;);
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 19-16: Two traits are defined to have a `fly`
@@ -677,38 +780,38 @@ comme le montre l'encart 19-17.</p>
 # trait Pilot {
 #     fn fly(&self);
 # }
-#
+# 
 # trait Wizard {
 #     fn fly(&self);
 # }
-#
+# 
 # struct Human;
-#
+# 
 # impl Pilot for Human {
 #     fn fly(&self) {
 #         println!("This is your captain speaking.");
 #     }
 # }
-#
+# 
 # impl Wizard for Human {
 #     fn fly(&self) {
 #         println!("Up!");
 #     }
 # }
-#
+# 
 # impl Human {
 #     fn fly(&self) {
 #         println!("*waving arms furiously*");
 #     }
 # }
-#
+# 
 fn main() {
     let person = Human;
     person.fly();
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">trait Pilote {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">trait Pilote {
 </span><span class="boring">    fn voler(&amp;self);
 </span><span class="boring">}
 </span><span class="boring">
@@ -771,31 +874,31 @@ nous souhaitons utiliser. L'encart 19-18 montre cette syntaxe.</p>
 # trait Pilot {
 #     fn fly(&self);
 # }
-#
+# 
 # trait Wizard {
 #     fn fly(&self);
 # }
-#
+# 
 # struct Human;
-#
+# 
 # impl Pilot for Human {
 #     fn fly(&self) {
 #         println!("This is your captain speaking.");
 #     }
 # }
-#
+# 
 # impl Wizard for Human {
 #     fn fly(&self) {
 #         println!("Up!");
 #     }
 # }
-#
+# 
 # impl Human {
 #     fn fly(&self) {
 #         println!("*waving arms furiously*");
 #     }
 # }
-#
+# 
 fn main() {
     let person = Human;
     Pilot::fly(&person);
@@ -804,7 +907,7 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">trait Pilote {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">trait Pilote {
 </span><span class="boring">    fn voler(&amp;self);
 </span><span class="boring">}
 </span><span class="boring">
@@ -862,14 +965,22 @@ Running this code prints the following:
 -->
 <p>L'exécution de ce code affiche ceci :</p>
 <!--
-```text
+```console
+$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.46s
+     Running `target/debug/traits-example`
 This is your captain speaking.
-Décolage !
+Up!
 *waving arms furiously*
 ```
 -->
-<pre><code class="language-text">Ici le capitaine qui vous parle.
-Up!
+<pre><code class="language-console">$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.46s
+     Running `target/debug/traits-example`
+Ici le capitaine qui vous parle.
+Décolage !
 *agite frénétiquement ses bras*
 </code></pre>
 <!--
@@ -925,7 +1036,7 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">trait Animal {
+<pre><pre class="playground"><code class="language-rust">trait Animal {
     fn nom_bebe() -&gt; String;
 }
 
@@ -978,11 +1089,19 @@ function defined on `Dog` directly. This code prints the following:
 appel à la fonction associée directement définie sur <code>Chien</code>. Ce code affiche
 ceci :</p>
 <!--
-```text
+```console
+$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.54s
+     Running `target/debug/traits-example`
 A baby dog is called a Spot
 ```
 -->
-<pre><code class="language-text">Un bébé chien s'appelle un Spot
+<pre><code class="language-console">$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.54s
+     Running `target/debug/traits-example`
+A baby dog is called a Spot
 </code></pre>
 <!--
 This output isn’t what we wanted. We want to call the `baby_name` function that
@@ -1003,12 +1122,48 @@ allons avoir une erreur de compilation.</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore,does_not_compile
+# trait Animal {
+#     fn baby_name() -> String;
+# }
+# 
+# struct Dog;
+# 
+# impl Dog {
+#     fn baby_name() -> String {
+#         String::from("Spot")
+#     }
+# }
+# 
+# impl Animal for Dog {
+#     fn baby_name() -> String {
+#         String::from("puppy")
+#     }
+# }
+# 
 fn main() {
     println!("A baby dog is called a {}", Animal::baby_name());
 }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">fn main() {
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">trait Animal {
+</span><span class="boring">    fn nom_bebe() -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">struct Chien;
+</span><span class="boring">
+</span><span class="boring">impl Chien {
+</span><span class="boring">    fn nom_bebe() -&gt; String {
+</span><span class="boring">        String::from(&quot;Spot&quot;)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Animal for Chien {
+</span><span class="boring">    fn nom_bebe() -&gt; String {
+</span><span class="boring">        String::from(&quot;chiot&quot;)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn main() {
     println!(&quot;Un bébé chien s'appelle un {}&quot;, Animal::nom_bebe());
 }
 </code></pre>
@@ -1029,23 +1184,47 @@ qu'elle n'a pas de paramètre <code>self</code>, Rust ne peut pas savoir quelle
 implémentation de <code>Animal::nom_bebe</code> nous souhaitons utiliser. Nous obtenons
 alors cette erreur de compilation :</p>
 <!--
-```text
-error[E0283]: type annotations required: cannot resolve `_: Animal`
+```console
+$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+error[E0283]: type annotations needed
   -- > src/main.rs:20:43
    |
+2  |     fn baby_name() -> String;
+   |     ------------------------- required by `Animal::baby_name`
+...
 20 |     println!("A baby dog is called a {}", Animal::baby_name());
-   |                                           ^^^^^^^^^^^^^^^^^
+   |                                           ^^^^^^^^^^^^^^^^^ cannot infer type
    |
-   = note: required by `Animal::baby_name`
+   = note: cannot resolve `_: Animal`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0283`.
+error: could not compile `traits-example`.
+
+To learn more, run the command again with --verbose.
 ```
 -->
-<pre><code class="language-text">error[E0283]: type annotations required: cannot resolve `_: Animal`
-  -- &gt; src/main.rs:20:43
+<pre><code class="language-console">$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+error[E0283]: type annotations needed
+  --&gt; src/main.rs:20:43
    |
+2  |     fn nom_bebe() -&gt; String;
+   |     ------------------------ required by `Animal::nom_bebe`
+...
 20 |     println!(&quot;Un bébé chien s'appelle un {}&quot;, Animal::nom_bebe());
-   |                                               ^^^^^^^^^^^^^^^^
+   |                                               ^^^^^^^^^^^^^^^^ cannot infer type
    |
-   = note: required by `Animal::nom_bebe`
+   = note: cannot resolve `_: Animal`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0283`.
+error: could not compile `traits-example`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 To disambiguate and tell Rust that we want to use the implementation of
@@ -1064,27 +1243,27 @@ pour <code>Chien</code>, nous devons utiliser la syntaxe totalement définie. L'
 # trait Animal {
 #     fn baby_name() -> String;
 # }
-#
+# 
 # struct Dog;
-#
+# 
 # impl Dog {
 #     fn baby_name() -> String {
 #         String::from("Spot")
 #     }
 # }
-#
+# 
 # impl Animal for Dog {
 #     fn baby_name() -> String {
 #         String::from("puppy")
 #     }
 # }
-#
+# 
 fn main() {
     println!("A baby dog is called a {}", <Dog as Animal>::baby_name());
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">trait Animal {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">trait Animal {
 </span><span class="boring">    fn nom_bebe() -&gt; String;
 </span><span class="boring">}
 </span><span class="boring">
@@ -1126,11 +1305,19 @@ comme elle est implémentée sur <code>Chien</code> en indiquant que nous souhai
 le type <code>Chien</code> comme étant un <code>Animal</code> pour cet appel de fonction. Ce code va
 désormais afficher ce que nous souhaitons :</p>
 <!--
-```text
+```console
+$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.48s
+     Running `target/debug/traits-example`
 A baby dog is called a puppy
 ```
 -->
-<pre><code class="language-text">Un bébé chien s'appelle un chiot
+<pre><code class="language-console">$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.48s
+     Running `target/debug/traits-example`
+Un bébé chien s'appelle un chiot
 </code></pre>
 <!--
 In general, fully qualified syntax is defined as follows:
@@ -1185,6 +1372,15 @@ offre une méthode <code>outline_print</code> affiche une valeur entourée d'ast
 Pour une structure <code>Point</code> qui implémente <code>Display</code> pour afficher <code>(x, y)</code>,
 lorsque nous faisons appel à <code>outline_print</code> sur une instance de <code>Point</code> qui a
 <code>1</code> pour valeur de <code>x</code> et <code>3</code> pour <code>y</code>, cela devrait afficher ceci :</p>
+<!--
+```text
+**********
+*        *
+* (1, 3) *
+*        *
+**********
+```
+-->
 <pre><code class="language-text">**********
 *        *
 * (1, 3) *
@@ -1226,17 +1422,16 @@ trait OutlinePrint: fmt::Display {
         println!("{}", "*".repeat(len + 4));
     }
 }
+# 
+# fn main() {}
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>use std::fmt;
+<pre><pre class="playground"><code class="language-rust">use std::fmt;
 
 trait OutlinePrint: fmt::Display {
     fn outline_print(&amp;self) {
         let valeur = self.to_string();
-        let largeur = output.len();
+        let largeur = valeur.len();
         println!(&quot;{}&quot;, &quot;*&quot;.repeat(largeur + 4));
         println!(&quot;*{}*&quot;, &quot; &quot;.repeat(largeur + 2));
         println!(&quot;* {} *&quot;, valeur);
@@ -1244,7 +1439,8 @@ trait OutlinePrint: fmt::Display {
         println!(&quot;{}&quot;, &quot;*&quot;.repeat(largeur + 4));
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 19-22: Implementing the `OutlinePrint` trait that
@@ -1277,31 +1473,104 @@ un type qui n'implémente pas <code>Display</code>, comme la structure <code>Poi
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span><span class="boring">trait OutlinePrint {}
+<!--
+```rust,ignore,does_not_compile
+# use std::fmt;
+# 
+# trait OutlinePrint: fmt::Display {
+#     fn outline_print(&self) {
+#         let output = self.to_string();
+#         let len = output.len();
+#         println!("{}", "*".repeat(len + 4));
+#         println!("*{}*", " ".repeat(len + 2));
+#         println!("* {} *", output);
+#         println!("*{}*", " ".repeat(len + 2));
+#         println!("{}", "*".repeat(len + 4));
+#     }
+# }
+# 
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl OutlinePrint for Point {}
+# 
+# fn main() {
+#     let p = Point { x: 1, y: 3 };
+#     p.outline_print();
+# }
+```
+-->
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">use std::fmt;
+</span><span class="boring">
+</span><span class="boring">trait OutlinePrint: fmt::Display {
+</span><span class="boring">    fn outline_print(&amp;self) {
+</span><span class="boring">        let valeur = self.to_string();
+</span><span class="boring">        let largeur = valeur.len();
+</span><span class="boring">        println!(&quot;{}&quot;, &quot;*&quot;.repeat(largeur + 4));
+</span><span class="boring">        println!(&quot;*{}*&quot;, &quot; &quot;.repeat(largeur + 2));
+</span><span class="boring">        println!(&quot;* {} *&quot;, valeur);
+</span><span class="boring">        println!(&quot;*{}*&quot;, &quot; &quot;.repeat(largeur + 2));
+</span><span class="boring">        println!(&quot;{}&quot;, &quot;*&quot;.repeat(largeur + 4));
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
 </span>struct Point {
     x: i32,
     y: i32,
 }
 
 impl OutlinePrint for Point {}
-<span class="boring">}
-</span></code></pre></pre>
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let p = Point { x: 1, y: 3 };
+</span><span class="boring">    p.outline_print();
+</span><span class="boring">}
+</span></code></pre>
 <!--
 We get an error saying that `Display` is required but not implemented:
 -->
 <p>Nous obtenons une erreur qui dit que <code>Display</code> est nécessaire mais n'est pas
 implémenté :</p>
-<pre><code class="language-text">error[E0277]: the trait bound `Point: std::fmt::Display` is not satisfied
-  -- &gt; src/main.rs:20:6
+<!--
+```console
+$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+error[E0277]: `Point` doesn't implement `std::fmt::Display`
+  -- > src/main.rs:20:6
    |
 20 | impl OutlinePrint for Point {}
-   |      ^^^^^^^^^^^^ `Point` cannot be formatted with the default formatter;
-try using `:?` instead if you are using a format string
+   |      ^^^^^^^^^^^^ `Point` cannot be formatted with the default formatter
    |
    = help: the trait `std::fmt::Display` is not implemented for `Point`
+   = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `traits-example`.
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
+   Compiling traits-example v0.1.0 (file:///projects/traits-example)
+error[E0277]: `Point` doesn't implement `std::fmt::Display`
+  --&gt; src/main.rs:20:6
+   |
+20 | impl OutlinePrint for Point {}
+   |      ^^^^^^^^^^^^ `Point` cannot be formatted with the default formatter
+   |
+   = help: the trait `std::fmt::Display` is not implemented for `Point`
+   = note: in format strings you may be able to use `{:?}` (or {:#?} for pretty-print) instead
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0277`.
+error: could not compile `traits-example`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 To fix this, we implement `Display` on `Point` and satisfy the constraint that
@@ -1313,13 +1582,59 @@ besoins de <code>OutlinePrint</code>, comme ceci :</p>
 <span class="filename">Filename: src/main.rs</span>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
+<!--
+```rust
+# trait OutlinePrint: fmt::Display {
+#     fn outline_print(&self) {
+#         let output = self.to_string();
+#         let len = output.len();
+#         println!("{}", "*".repeat(len + 4));
+#         println!("*{}*", " ".repeat(len + 2));
+#         println!("* {} *", output);
+#         println!("*{}*", " ".repeat(len + 2));
+#         println!("{}", "*".repeat(len + 4));
+#     }
+# }
+# 
+# struct Point {
+#     x: i32,
+#     y: i32,
+# }
+# 
+# impl OutlinePrint for Point {}
+# 
+use std::fmt;
+
+impl fmt::Display for Point {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "({}, {})", self.x, self.y)
+    }
+}
+# 
+# fn main() {
+#     let p = Point { x: 1, y: 3 };
+#     p.outline_print();
+# }
+```
+-->
+<pre><pre class="playground"><code class="language-rust"><span class="boring">trait OutlinePrint: fmt::Display {
+</span><span class="boring">    fn outline_print(&amp;self) {
+</span><span class="boring">        let valeur = self.to_string();
+</span><span class="boring">        let largeur = valeur.len();
+</span><span class="boring">        println!(&quot;{}&quot;, &quot;*&quot;.repeat(largeur + 4));
+</span><span class="boring">        println!(&quot;*{}*&quot;, &quot; &quot;.repeat(largeur + 2));
+</span><span class="boring">        println!(&quot;* {} *&quot;, valeur);
+</span><span class="boring">        println!(&quot;*{}*&quot;, &quot; &quot;.repeat(largeur + 2));
+</span><span class="boring">        println!(&quot;{}&quot;, &quot;*&quot;.repeat(largeur + 4));
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
 </span><span class="boring">struct Point {
 </span><span class="boring">    x: i32,
 </span><span class="boring">    y: i32,
 </span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl OutlinePrint for Point {}
 </span><span class="boring">
 </span>use std::fmt;
 
@@ -1328,7 +1643,11 @@ impl fmt::Display for Point {
         write!(f, &quot;({}, {})&quot;, self.x, self.y)
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let p = Point { x: 1, y: 3 };
+</span><span class="boring">    p.outline_print();
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 Then implementing the `OutlinePrint` trait on `Point` will compile
@@ -1405,7 +1724,7 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">use std::fmt;
+<pre><pre class="playground"><code class="language-rust">use std::fmt;
 
 struct Enveloppe(Vec&lt;String&gt;);
 
@@ -1505,13 +1824,13 @@ ch10-02-traits.html#traits-defining-shared-behavior
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch19-01-unsafe-rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch19-01-unsafe-rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch19-04-advanced-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch19-04-advanced-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -1524,10 +1843,10 @@ ch10-02-traits.html#traits-defining-shared-behavior
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

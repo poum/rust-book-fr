@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>🚧 Le Rust non sécurisé (unsafe) - Le langage de programmation Rust</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -19,8 +26,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -40,7 +48,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -84,8 +92,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> 🚧 Les erreurs irrécupérables avec panic!</a></li><li class="expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="expanded "><a href="ch19-01-unsafe-rust.html" class="active"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html" class="active"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -94,37 +102,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">Le langage de programmation Rust</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -219,13 +226,13 @@ Voyons ce que nous pouvons faire avec le Rust non sécurisé et comment le faire
 <h3><a class="header" href="#les-super-pouvoirs-du-code-non-sécurisé" id="les-super-pouvoirs-du-code-non-sécurisé">Les super-pouvoirs du code non sécurisé</a></h3>
 <!--
 To switch to unsafe Rust, use the `unsafe` keyword and then start a new block
-that holds the unsafe code. You can take four actions in unsafe Rust, called
+that holds the unsafe code. You can take five actions in unsafe Rust, called
 *unsafe superpowers*, that you can’t in safe Rust. Those superpowers include
 the ability to:
 -->
 <p>Pour pouvoir utiliser le Rust non sécurisé, il faut utiliser le mot-clé <code>unsafe</code>
 et ensuite créer un nouveau bloc qui contient le code non sécurisé. Vous pouvez
-faire quatre actions en Rust non sécurisé, qui s'appellent <em>les super-pouvoirs du
+faire cinq actions en Rust non sécurisé, qui s'appellent <em>les super-pouvoirs du
 non sécurisé</em>, que vous ne pouvez pas faire en Rust sécurisé. Ces super-pouvoirs
 permettent de :</p>
 <!--
@@ -246,13 +253,13 @@ permettent de :</p>
 It’s important to understand that `unsafe` doesn’t turn off the borrow checker
 or disable any other of Rust’s safety checks: if you use a reference in unsafe
 code, it will still be checked. The `unsafe` keyword only gives you access to
-these four features that are then not checked by the compiler for memory
+these five features that are then not checked by the compiler for memory
 safety. You’ll still get some degree of safety inside of an unsafe block.
 -->
 <p>Il est important de comprendre que <code>unsafe</code> ne désactive pas le vérificateur
 d'emprunt et ne désactive pas les autres vérifications de sécurité de Rust : si
 vous utilisez une référence dans du code non sécurisé, elle sera toujours
-vérifiée. Le mot-clé <code>unsafe</code> vous donne seulement accès à ces quatre
+vérifiée. Le mot-clé <code>unsafe</code> vous donne seulement accès à ces cinq
 fonctionnalités qui ne sont alors pas vérifiées par le compilateur pour veiller
 à la sécurité de la mémoire. Vous conservez un certain niveau de sécurité à
 l'intérieur d'un bloc <code>unsafe</code>.</p>
@@ -267,18 +274,17 @@ obligatoirement dangereux ou qu'il va forcément avoir des problèmes de sécuri
 mémoire : le but étant qu'en tant que développeur, vous vous assurez que le code
 à l'intérieur d'un bloc <code>unsafe</code> va accéder correctement à la mémoire.</p>
 <!--
-People are fallible, and mistakes will happen, but by requiring these four
+People are fallible, and mistakes will happen, but by requiring these five
 unsafe operations to be inside blocks annotated with `unsafe` you’ll know that
 any errors related to memory safety must be within an `unsafe` block. Keep
 `unsafe` blocks small; you’ll be thankful later when you investigate memory
 bugs.
 -->
-<p>Les personnes ne sont pas parfaites, les erreurs arrivent, et en nécessitant que
-ces quatre opérations non sécurisés se trouvent dans des blocs marqués d'un
-<code>unsafe</code>, vous saurez que des erreurs liées à la sécurité de la mémoire se
-trouveront dans un bloc <code>unsafe</code>. Essayez de minimiser la taille des blocs
-<code>unsafe</code> ; vous ne le regretterez pas lorsque vous diagnostiquerez des bogues de
-mémoire.</p>
+<p>Personne n'est parfait, les erreurs arrivent, et en nécessitant que ces cinq
+opérations non sécurisés se trouvent dans des blocs marqués d'un <code>unsafe</code>, vous
+saurez que des erreurs liées à la sécurité de la mémoire se trouveront dans un
+bloc <code>unsafe</code>. Essayez de minimiser la taille des blocs <code>unsafe</code> ; vous ne le
+regretterez pas lorsque vous diagnostiquerez des bogues de mémoire.</p>
 <!--
 To isolate unsafe code as much as possible, it’s best to enclose unsafe code
 within a safe abstraction and provide a safe API, which we’ll discuss later in
@@ -300,10 +306,10 @@ endroits où vous ou vos utilisateurs souhaiteraient éviter d'utiliser les
 fonctionnalités du code <code>unsafe</code>, car utiliser une abstraction sécurisée doit
 être sûre.</p>
 <!--
-Let’s look at each of the four unsafe superpowers in turn. We’ll also look at
+Let’s look at each of the five unsafe superpowers in turn. We’ll also look at
 some abstractions that provide a safe interface to unsafe code.
 -->
-<p>Analysons chacun à leur tour les quatre super-pouvoirs. Nous allons aussi
+<p>Analysons chacun à leur tour les cinq super-pouvoirs. Nous allons aussi
 découvrir quelques abstractions qui fournissent une interface sécurisée pour
 faire fonctionner du code non sécurisé.</p>
 <!--
@@ -367,19 +373,19 @@ references.
 de références.</p>
 <!--
 ```rust
-let mut num = 5;
+# fn main() {
+    let mut num = 5;
 
-let r1 = &num as *const i32;
-let r2 = &mut num as *mut i32;
+    let r1 = &num as *const i32;
+    let r2 = &mut num as *mut i32;
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut nombre = 5;
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
+</span>    let mut nombre = 5;
 
-let r1 = &amp;nombre as *const i32;
-let r2 = &amp;mut nombre as *mut i32;
+    let r1 = &amp;nombre as *const i32;
+    let r2 = &amp;mut nombre as *mut i32;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -425,15 +431,15 @@ segmentation. Habituellement, il n'y a pas de bonne raison d'écrire du code
 comme celui-ci, mais c'est possible.</p>
 <!--
 ```rust
-let address = 0x012345usize;
-let r = address as *const i32;
+# fn main() {
+    let address = 0x012345usize;
+    let r = address as *const i32;
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let addresse = 0x012345usize;
-let r = addresse as *const i32;
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
+</span>    let addresse = 0x012345usize;
+    let r = addresse as *const i32;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -454,29 +460,29 @@ l'opérateur de déréférencement <code>*</code> sur un pointeur brut qui néce
 <code>unsafe</code>.</p>
 <!--
 ```rust,unsafe
-let mut num = 5;
+# fn main() {
+    let mut num = 5;
 
-let r1 = &num as *const i32;
-let r2 = &mut num as *mut i32;
+    let r1 = &num as *const i32;
+    let r2 = &mut num as *mut i32;
 
-unsafe {
-    println!("r1 is: {}", *r1);
-    println!("r2 is: {}", *r2);
-}
+    unsafe {
+        println!("r1 is: {}", *r1);
+        println!("r2 is: {}", *r2);
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust unsafe">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut nombre = 5;
+<pre><pre class="playground"><code class="language-rust unsafe"><span class="boring">fn main() {
+</span>    let mut nombre = 5;
 
-let r1 = &amp;nombre as *const i32;
-let r2 = &amp;mut nombre as *mut i32;
+    let r1 = &amp;nombre as *const i32;
+    let r2 = &amp;mut nombre as *mut i32;
 
-unsafe {
-    println!(&quot;r1 vaut : {}&quot;, *r1);
-    println!(&quot;r2 vaut : {}&quot;, *r2);
-}
+    unsafe {
+        println!(&quot;r1 vaut : {}&quot;, *r1);
+        println!(&quot;r2 vaut : {}&quot;, *r2);
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -557,21 +563,21 @@ body:
 <p>Voici une fonction non sécurisée <code>dangereux</code>, qui ne fait rien dans son corps :</p>
 <!--
 ```rust,unsafe
-unsafe fn dangerous() {}
+# fn main() {
+    unsafe fn dangerous() {}
 
-unsafe {
-    dangerous();
-}
+    unsafe {
+        dangerous();
+    }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust unsafe">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>unsafe fn dangereux() {}
+<pre><pre class="playground"><code class="language-rust unsafe"><span class="boring">fn main() {
+</span>    unsafe fn dangereux() {}
 
-unsafe {
-    dangereux();
-}
+    unsafe {
+        dangereux();
+    }
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -582,19 +588,41 @@ try to call `dangerous` without the `unsafe` block, we’ll get an error:
 Si nous essayons d'appeler <code>dangereux</code> sans le bloc <code>unsafe</code>, nous obtenons une
 erreur :</p>
 <!--
-```text
-error[E0133]: call to unsafe function requires unsafe function or block
- -- >
+```console
+$ cargo run
+   Compiling unsafe-example v0.1.0 (file:///projects/unsafe-example)
+error[E0133]: call to unsafe function is unsafe and requires unsafe function or block
+ -- > src/main.rs:4:5
   |
 4 |     dangerous();
   |     ^^^^^^^^^^^ call to unsafe function
+  |
+  = note: consult the function's documentation for information on how to avoid undefined behavior
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0133`.
+error: could not compile `unsafe-example`.
+
+To learn more, run the command again with --verbose.
 ```
 -->
-<pre><code class="language-text">error[E0133]: call to unsafe function requires unsafe function or block
- -- &gt;
+<pre><code class="language-console">$ cargo run
+   Compiling unsafe-example v0.1.0 (file:///projects/unsafe-example)
+error[E0133]: call to unsafe function is unsafe and requires unsafe function or block
+ --&gt; src/main.rs:4:5
   |
 4 |     dangereux();
   |     ^^^^^^^^^^^ call to unsafe function
+  |
+  = note: consult the function's documentation for information on how to avoid undefined behavior
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0133`.
+error: could not compile `unsafe-example`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 By inserting the `unsafe` block around our call to `dangerous`, we’re asserting
@@ -636,17 +664,29 @@ devrions l'implémenter. Cette méthode sécurisée est définie sur des slices
 mutables : elle prend une slice en paramètre et en créée deux autres en divisant
 la slice à l'indice donné en argument. L'encart 19-4 montre comment utiliser
 <code>split_at_mut</code>.</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>let mut v = vec![1, 2, 3, 4, 5, 6];
+<!--
+```rust
+# fn main() {
+    let mut v = vec![1, 2, 3, 4, 5, 6];
 
-let r = &amp;mut v[..];
+    let r = &mut v[..];
 
-let (a, b) = r.split_at_mut(3);
+    let (a, b) = r.split_at_mut(3);
 
-assert_eq!(a, &amp;mut [1, 2, 3]);
-assert_eq!(b, &amp;mut [4, 5, 6]);
+    assert_eq!(a, &mut [1, 2, 3]);
+    assert_eq!(b, &mut [4, 5, 6]);
+# }
+```
+-->
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
+</span>    let mut v = vec![1, 2, 3, 4, 5, 6];
+
+    let r = &amp;mut v[..];
+
+    let (a, b) = r.split_at_mut(3);
+
+    assert_eq!(a, &amp;mut [1, 2, 3]);
+    assert_eq!(b, &amp;mut [4, 5, 6]);
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -666,15 +706,35 @@ sécurisé. Une tentative en ce sens ressemblerait à l'encart 19-5, qui ne se
 compilera pas. Par simplicité, nous allons implémenter <code>split_at_mut</code> comme une
 fonction plutôt qu'une méthode et seulement pour des slices de valeurs <code>i32</code> au
 lieu d'un type générique <code>T</code>.</p>
+<!--
+```rust,ignore,does_not_compile
+fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
+    let len = slice.len();
+
+    assert!(mid <= len);
+
+    (&mut slice[..mid], &mut slice[mid..])
+}
+# 
+# fn main() {
+#     let mut vector = vec![1, 2, 3, 4, 5, 6];
+#     let (left, right) = split_at_mut(&mut vector, 3);
+# }
+```
+-->
 <pre><code class="language-rust ignore does_not_compile">fn split_at_mut(slice: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;mut [i32]) {
     let len = slice.len();
 
     assert!(mid &lt;= len);
 
-    (&amp;mut slice[..mid],
-     &amp;mut slice[mid..])
+    (&amp;mut slice[..mid], &amp;mut slice[mid..])
 }
-</code></pre>
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let mut vector = vec![1, 2, 3, 4, 5, 6];
+</span><span class="boring">    let (left, right) = split_at_mut(&amp;mut vector, 3);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 <span class="caption">Listing 19-5: An attempted implementation of
 `split_at_mut` using only safe Rust</span>
@@ -707,15 +767,52 @@ When we try to compile the code in Listing 19-5, we’ll get an error.
 -->
 <p>Lorsque nous essayons de compiler le code de l'encart 19-5, nous allons obtenir
 une erreur.</p>
-<pre><code class="language-text">error[E0499]: cannot borrow `*slice` as mutable more than once at a time
- -- &gt;
+<!--
+```console
+$ cargo run
+   Compiling unsafe-example v0.1.0 (file:///projects/unsafe-example)
+error[E0499]: cannot borrow `*slice` as mutable more than once at a time
+ -- > src/main.rs:6:30
   |
-6 |     (&amp;mut slice[..mid],
-  |           ----- first mutable borrow occurs here
-7 |      &amp;mut slice[mid..])
-  |           ^^^^^ second mutable borrow occurs here
-8 | }
-  | - first borrow ends here
+1 | fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
+  |                        - let's call the lifetime of this reference `'1`
+...
+6 |     (&mut slice[..mid], &mut slice[mid..])
+  |     -------------------------^^^^^--------
+  |     |     |                  |
+  |     |     |                  second mutable borrow occurs here
+  |     |     first mutable borrow occurs here
+  |     returning this value requires that `*slice` is borrowed for `'1`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0499`.
+error: could not compile `unsafe-example`.
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
+   Compiling unsafe-example v0.1.0 (file:///projects/unsafe-example)
+error[E0499]: cannot borrow `*slice` as mutable more than once at a time
+ --&gt; src/main.rs:6:30
+  |
+1 | fn split_at_mut(slice: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;mut [i32]) {
+  |                        - let's call the lifetime of this reference `'1`
+...
+6 |     (&amp;mut slice[..mid], &amp;mut slice[mid..])
+  |     -------------------------^^^^^--------
+  |     |     |                  |
+  |     |     |                  second mutable borrow occurs here
+  |     |     first mutable borrow occurs here
+  |     returning this value requires that `*slice` is borrowed for `'1`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0499`.
+error: could not compile `unsafe-example`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 Rust’s borrow checker can’t understand that we’re borrowing different parts of
@@ -738,10 +835,31 @@ to unsafe functions to make the implementation of `split_at_mut` work.
 <p>L'encart 19-6 montre comment utiliser un bloc <code>unsafe</code>, un pointeur brut, et
 quelques appels à des fonctions non sécurisées pour construire une
 implémentation de <code>split_at_mut</code> qui fonctionne.</p>
-<pre><pre class="playpen"><code class="language-rust unsafe">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>use std::slice;
+<!--
+```rust,unsafe
+use std::slice;
+
+fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
+    let len = slice.len();
+    let ptr = slice.as_mut_ptr();
+
+    assert!(mid <= len);
+
+    unsafe {
+        (
+            slice::from_raw_parts_mut(ptr, mid),
+            slice::from_raw_parts_mut(ptr.add(mid), len - mid),
+        )
+    }
+}
+# 
+# fn main() {
+#     let mut vector = vec![1, 2, 3, 4, 5, 6];
+#     let (left, right) = split_at_mut(&mut vector, 3);
+# }
+```
+-->
+<pre><pre class="playground"><code class="language-rust unsafe">use std::slice;
 
 fn split_at_mut(slice: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;mut [i32]) {
     let len = slice.len();
@@ -750,11 +868,17 @@ fn split_at_mut(slice: &amp;mut [i32], mid: usize) -&gt; (&amp;mut [i32], &amp;m
     assert!(mid &lt;= len);
 
     unsafe {
-        (slice::from_raw_parts_mut(ptr, mid),
-         slice::from_raw_parts_mut(ptr.offset(mid as isize), len - mid))
+        (
+            slice::from_raw_parts_mut(ptr, mid),
+            slice::from_raw_parts_mut(ptr.add(mid), len - mid),
+        )
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let mut vector = vec![1, 2, 3, 4, 5, 6];
+</span><span class="boring">    let (left, right) = split_at_mut(&amp;mut vector, 3);
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 19-6: Using unsafe code in the implementation of
@@ -781,7 +905,7 @@ type <code>*mut i32</code>, que nous avons stocké dans la variable <code>ptr</c
 We keep the assertion that the `mid` index is within the slice. Then we get to
 the unsafe code: the `slice::from_raw_parts_mut` function takes a raw pointer
 and a length, and it creates a slice. We use this function to create a slice
-that starts from `ptr` and is `mid` items long. Then we call the `offset`
+that starts from `ptr` and is `mid` items long. Then we call the `add`
 method on `ptr` with `mid` as an argument to get a raw pointer that starts at
 `mid`, and we create a slice using that pointer and the remaining number of
 items after `mid` as the length.
@@ -791,15 +915,15 @@ Ensuite, nous utilisons le code non sécurisé : la fonction
 <code>slice::from_raw_parts_mut</code> prend en paramètre un pointeur brut et une longueur,
 et elle créée une slice. Nous utilisons cette fonction pour créer une slice qui
 débute à <code>ptr</code> et qui est long de <code>mid</code> éléments. Ensuite nous faisons appel à
-la méthode <code>offset</code> sur <code>ptr</code> avec <code>mid</code> en argument pour obtenir un pointeur
+la méthode <code>add</code> sur <code>ptr</code> avec <code>mid</code> en argument pour obtenir un pointeur
 brut qui démarre à <code>mid</code>, et nous créons une slice qui utilise ce pointeur et
 le nombre restant d'éléments après <code>mid</code> pour la longueur.</p>
 <!--
 The function `slice::from_raw_parts_mut` is unsafe because it takes a raw
-pointer and must trust that this pointer is valid. The `offset` method on raw
+pointer and must trust that this pointer is valid. The `add` method on raw
 pointers is also unsafe, because it must trust that the offset location is also
 a valid pointer. Therefore, we had to put an `unsafe` block around our calls to
-`slice::from_raw_parts_mut` and `offset` so we could call them. By looking at
+`slice::from_raw_parts_mut` and `add` so we could call them. By looking at
 the code and by adding the assertion that `mid` must be less than or equal to
 `len`, we can tell that all the raw pointers used within the `unsafe` block
 will be valid pointers to data within the slice. This is an acceptable and
@@ -807,10 +931,10 @@ appropriate use of `unsafe`.
 -->
 <p>La fonction <code>slice::from_raw_parts_mut</code> est non sécurisé car elle prend en
 argument un pointeur brut et doit avoir confiance en la validité de ce pointeur.
-La méthode <code>offset</code> sur les pointeurs bruts est aussi non sécurisée, car elle
+La méthode <code>add</code> sur les pointeurs bruts est aussi non sécurisée, car elle
 doit croire que l'emplacement décalé est aussi un pointeur valide. Voilà
 pourquoi nous avons placé un bloc <code>unsafe</code> autour de nos appels à
-<code>slice::from_raw_parts_mut</code> et <code>offset</code> afin que nous puissions les appeler. En
+<code>slice::from_raw_parts_mut</code> et <code>add</code> afin que nous puissions les appeler. En
 analysant le code et en ayant ajouté la vérification que <code>mid</code> doit être
 inférieur ou égal à <code>len</code>, nous pouvons affirmer que tous les pointeurs bruts
 utilisés dans le bloc <code>unsafe</code> sont des pointeurs valides vers les données de la
@@ -838,27 +962,23 @@ location and creates a slice 10,000 items long.
 arbitraire dans la mémoire et crée un slice de 10 000 éléments.</p>
 <!--
 ```rust,unsafe
-use std::slice;
+# fn main() {
+    use std::slice;
 
-let address = 0x01234usize;
-let r = address as *mut i32;
+    let address = 0x01234usize;
+    let r = address as *mut i32;
 
-let slice: &[i32] = unsafe {
-    slice::from_raw_parts_mut(r, 10000)
-};
+    let slice: &[i32] = unsafe { slice::from_raw_parts_mut(r, 10000) };
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust unsafe">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>use std::slice;
+<pre><pre class="playground"><code class="language-rust unsafe"><span class="boring">fn main() {
+</span>    use std::slice;
 
-let addresse = 0x01234usize;
-let r = addresse as *mut i32;
+    let addresse = 0x01234usize;
+    let r = addresse as *mut i32;
 
-let slice: &amp;[i32] = unsafe {
-    slice::from_raw_parts_mut(r, 10000)
-};
+    let slice: &amp;[i32] = unsafe { slice::from_raw_parts_mut(r, 10000) };
 <span class="boring">}
 </span></code></pre></pre>
 <!--
@@ -923,7 +1043,17 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust unsafe">extern &quot;C&quot; {
+<pre><pre class="playground"><code class="language-rust unsafe">extern &quot;C&quot; {
+    fn abs(input: i32) -&gt; i32;
+}
+
+fn main() {
+    unsafe {
+        println!(&quot;La valeur absolue de -3 selon le langage C : {}&quot;, abs(-3));
+    }
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust unsafe">extern &quot;C&quot; {
     fn abs(input: i32) -&gt; i32;
 }
 
@@ -1027,7 +1157,7 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">static HELLO_WORLD: &amp;str = &quot;Hello, world !&quot;;
+<pre><pre class="playground"><code class="language-rust">static HELLO_WORLD: &amp;str = &quot;Hello, world!&quot;;
 
 fn main() {
     println!(&quot;Cela vaut : {}&quot;, HELLO_WORLD);
@@ -1104,7 +1234,7 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust unsafe">static mut COMPTEUR: u32 = 0;
+<pre><pre class="playground"><code class="language-rust unsafe">static mut COMPTEUR: u32 = 0;
 
 fn ajouter_au_compteur(valeur: u32) {
     unsafe {
@@ -1179,20 +1309,20 @@ unsafe trait Foo {
 unsafe impl Foo for i32 {
     // method implementations go here
 }
+
+fn main() {}
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust unsafe">
-<span class="boring">#![allow(unused_variables)]
-</span><span class="boring">fn main() {
-</span>unsafe trait Foo {
+<pre><pre class="playground"><code class="language-rust unsafe">unsafe trait Foo {
     // les méthodes vont ici
 }
 
 unsafe impl Foo for i32 {
     // les implémentations des méthodes vont ici
 }
-<span class="boring">}
-</span></code></pre></pre>
+
+fn main() {}
+</code></pre></pre>
 <!--
 <span class="caption">Listing 19-11: Defining and implementing an unsafe
 trait</span>
@@ -1229,23 +1359,40 @@ les garanties pour que ce type puisse être envoyé en toute sécurité entre de
 tâches ou qu'il puisse être utilisé par plusieurs tâches ; toutefois, nous avons
 besoin de faire ces vérifications manuellement et les signaler avec <code>unsafe</code>.</p>
 <!--
+### Accessing Fields of a Union
+-->
+<h3><a class="header" href="#utiliser-des-champs-dun-union" id="utiliser-des-champs-dun-union">Utiliser des champs d'un Union</a></h3>
+<!--
+A `union` is similar to a `struct`, but only one declared field is used in a
+particular instance at one time. Unions are primarily used to interface with
+unions in C code. Accessing union fields is unsafe because Rust can’t guarantee
+the type of the data currently being stored in the union instance. You can
+learn more about unions in [the reference][reference].
+-->
+<p>Un <code>union</code> ressemble à une <code>struct</code>, mais un seul champ de ceux déclarés est
+utilisé dans une instance précise au même moment. Les unions sont principalement
+utilisés pour s'interfacer avec les unions du code C. L'accès aux champs des
+unions n'est pas sécurisé car Rust ne peut pas garantir le type de données qui
+est actuellement stockée dans l'instance de l'union. Vous pouvez en apprendre
+plus sur les unions dans <a href="https://doc.rust-lang.org/reference/items/unions.html">the reference</a>.</p>
+<!--
 ### When to Use Unsafe Code
 -->
 <h3><a class="header" href="#quand-utiliser-du-code-non-sécurisé" id="quand-utiliser-du-code-non-sécurisé">Quand utiliser du code non sécurisé</a></h3>
 <!--
-Using `unsafe` to take one of the four actions (superpowers) just discussed
+Using `unsafe` to take one of the five actions (superpowers) just discussed
 isn’t wrong or even frowned upon. But it is trickier to get `unsafe` code
 correct because the compiler can’t help uphold memory safety. When you have a
 reason to use `unsafe` code, you can do so, and having the explicit `unsafe`
-annotation makes it easier to track down the source of problems if they occur.
+annotation makes it easier to track down the source of problems when they occur.
 -->
-<p>L'utilisation de <code>unsafe</code> pour s'approprier une des quatre actions (ou
+<p>L'utilisation de <code>unsafe</code> pour s'approprier une des cinq actions (ou
 super-pouvoirs) que nous venons d'aborder n'est pas une mauvaise chose et ne doit
 pas être mal vu. Mais il est plus difficile de sécuriser du code <code>unsafe</code> car le
 compilateur ne peut pas aider à garantir la sécurité de la mémoire. Lorsque vous
 avez une bonne raison d'utiliser du code non sécurisé, vous pouvez le faire, et
 vous aurez l'annotation explicite <code>unsafe</code> pour faciliter la recherche de la
-source de problèmes s'ils surviennent.</p>
+source de problèmes lorsqu'ils surviennent.</p>
 <!--
 [dangling-references]:
 ch04-02-references-and-borrowing.html#dangling-references
@@ -1254,6 +1401,7 @@ ch03-01-variables-and-mutability.html#differences-between-variables-and-constant
 [extensible-concurrency-with-the-sync-and-send-traits]:
 ch16-04-extensible-concurrency-sync-and-send.html#extensible-concurrency-with-the-sync-and-send-traits
 [the-slice-type]: ch04-03-slices.html#the-slice-type
+[reference]: ../reference/items/unions.html
 -->
 
                     </main>
@@ -1279,13 +1427,13 @@ ch16-04-extensible-concurrency-sync-and-send.html#extensible-concurrency-with-th
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch19-00-advanced-features.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch19-00-advanced-features.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch19-03-advanced-traits.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch19-03-advanced-traits.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -1298,10 +1446,10 @@ ch16-04-extensible-concurrency-sync-and-send.html#extensible-concurrency-with-th
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>Qu'est-ce que la possession ? - Le langage de programmation Rust</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -19,8 +26,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -40,7 +48,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -84,8 +92,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html" class="active"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> 🚧 Les erreurs irrécupérables avec panic!</a></li><li class="expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html" class="active"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -94,37 +102,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">Le langage de programmation Rust</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -224,7 +231,7 @@ chaînes de caractères.</p>
 > All data stored on the stack must have a known, fixed size. Data with an
 > unknown size at compile time or a size that might change must be stored on
 > the heap instead. The heap is less organized: when you put data on the heap,
-> you request a certain amount of space. The operating system finds an empty
+> you request a certain amount of space. The memory allocator finds an empty
 > spot in the heap that is big enough, marks it as being in use, and returns a
 > *pointer*, which is the address of that location. This process is called
 > *allocating on the heap* and is sometimes abbreviated as just *allocating*.
@@ -238,9 +245,9 @@ chaînes de caractères.</p>
 > you’ve been seated to find you.
 >
 > Pushing to the stack is faster than allocating on the heap because the
-> operating system never has to search for a place to store new data; that
+> allocator never has to search for a place to store new data; that
 > location is always at the top of the stack. Comparatively, allocating space
-> on the heap requires more work, because the operating system must first find
+> on the heap requires more work, because the allocator must first find
 > a big enough space to hold the data and then perform bookkeeping to prepare
 > for the next allocation.
 >
@@ -290,7 +297,7 @@ une se dit <em>dépiler</em>.</p>
 fixe. Les données avec une taille inconnue au moment de la compilation ou une
 taille qui peut changer doivent plutôt être stockées sur le tas. Le tas est
 moins bien organisé : lorsque vous ajoutez des données sur le tas, vous
-demandez une certaine quantité d'espace mémoire. Le système d'exploitation va
+demandez une certaine quantité d'espace mémoire. Le gestionnaire de mémoire va
 trouver un emplacement dans le tas qui est suffisamment grand, va le marquer
 comme étant en cours d'utilisation, et va retourner un <em>pointeur</em>, qui est
 l'adresse de cet emplacement. Cette procédure est appelée <em>allocation sur le
@@ -303,12 +310,12 @@ indiquez le nombre de personnes dans votre groupe, et le personnel trouve une
 table vide qui peut recevoir tout le monde, et vous y conduit. Si quelqu'un
 dans votre groupe arrive en retard, il peut leur demander où vous êtes assis
 pour vous rejoindre.</p>
-<p>Empiler sur la pile est plus rapide qu'allouer sur le tas car le système
-d'exploitation ne va jamais avoir besoin de chercher un emplacement pour y
-stocker les nouvelles données ; il le fait toujours au sommet de la pile. En
-comparaison, allouer de la place sur le tas demande plus de travail, car le
-système d'exploitation doit d'abord trouver un espace assez grand pour stocker
-les données et mettre à jour son suivi pour préparer la prochaine allocation.</p>
+<p>Empiler sur la pile est plus rapide qu'allouer sur le tas car le gestionnaire
+ne va jamais avoir besoin de chercher un emplacement pour y stocker les
+nouvelles données ; il le fait toujours au sommet de la pile. En comparaison,
+allouer de la place sur le tas demande plus de travail, car le gestionnaire
+doit d'abord trouver un espace assez grand pour stocker les données et mettre
+à jour son suivi pour préparer la prochaine allocation.</p>
 <p>Accéder à des données dans le tas est plus lent que d'accéder aux données sur
 la pile car nous devons suivre un pointeur pour les obtenir. Les processeurs
 modernes sont plus rapides s'ils se déplacent moins dans la mémoire. Pour
@@ -386,8 +393,8 @@ certaines variables. Une portée est une zone dans un programme dans laquelle un
 let s = "hello";
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let s = &quot;hello&quot;;
 <span class="boring">}
@@ -406,15 +413,15 @@ est en vigueur :</p>
 <!--
 ```rust
 # fn main() {
-    {                    // s n'est pas en vigueur ici, elle n'est pas encore déclarée
-        let s = "hello"; // s est en vigueur à partir de ce point
+    {                      // s is not valid here, it’s not yet declared
+        let s = "hello";   // s is valid from this point forward
 
-        // on fait des choses avec s ici
-    }                    // cette portée est maintenant terminée, et s n'est plus en vigueur
+        // do stuff with s
+    }                      // this scope is now over, and s is no longer valid
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    {                    // s n'est pas en vigueur ici, elle n'est pas encore déclarée
         let s = &quot;hello&quot;; // s est en vigueur à partir de ce point
 
@@ -506,8 +513,8 @@ de chaîne de caractères en utilisant la fonction <code>from</code>, comme ceci
 let s = String::from("hello");
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let s = String::from(&quot;hello&quot;);
 <span class="boring">}
@@ -536,13 +543,13 @@ This kind of string *can* be mutated:
 # fn main() {
     let mut s = String::from("hello");
 
-    s.push_str(", world!"); // push_str() ajoute un littéral de chaîne dans une String
-    
-    println!("{}", s); // Cela va afficher `hello, world!`
+    s.push_str(", world!"); // push_str() appends a literal to a String
+
+    println!("{}", s); // This will print `hello, world!`
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    let mut s = String::from(&quot;hello&quot;);
 
     s.push_str(&quot;, world!&quot;); // push_str() ajoute un littéral de chaîne dans une String
@@ -586,15 +593,15 @@ to hold the contents. This means:
 s'agrandir, nous devons allouer une quantité de mémoire sur le tas, inconnue
 au moment de la compilation, pour stocker le contenu. Cela signifie que :</p>
 <!--
-* The memory must be requested from the operating system at runtime.
-* We need a way of returning this memory to the operating system when we’re
+* The memory must be requested from the memory allocator at runtime.
+* We need a way of returning this memory to the allocator when we’re
   done with our `String`.
 -->
 <ul>
-<li>La mémoire doit être demandée auprès du système d'exploitation lors de
+<li>La mémoire doit être demandée auprès du gestionnaire de mémoire lors de
 l'exécution.</li>
-<li>Nous avons besoin d'un moyen de rendre cette mémoire au système
-d'exploitation lorsque nous aurons fini d'utiliser notre <code>String</code>.</li>
+<li>Nous avons besoin d'un moyen de rendre cette mémoire au gestionnaire lorsque
+nous aurons fini d'utiliser notre <code>String</code>.</li>
 </ul>
 <!--
 That first part is done by us: when we call `String::from`, its implementation
@@ -638,15 +645,15 @@ de chaîne de caractères :</p>
 ```rust
 # fn main() {
     {
-        let s = String::from("hello"); // s est en vigueur à partir de ce point
-    
-        // on fait des choses avec s ici
-    }                                  // cette portée est désormais terminée, et s
-                                       // n'est plus en vigueur maintenant
+        let s = String::from("hello"); // s is valid from this point forward
+
+        // do stuff with s
+    }                                  // this scope is now over, and s is no
+                                       // longer valid
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    {
         let s = String::from(&quot;hello&quot;); // s est en vigueur à partir de ce point
     
@@ -657,17 +664,17 @@ de chaîne de caractères :</p>
 </span></code></pre></pre>
 <!--
 There is a natural point at which we can return the memory our `String` needs
-to the operating system: when `s` goes out of scope. When a variable goes out
+to the allocator: when `s` goes out of scope. When a variable goes out
 of scope, Rust calls a special function for us. This function is called `drop`,
 and it’s where the author of `String` can put the code to return the memory.
 Rust calls `drop` automatically at the closing curly bracket.
 -->
 <p>Il y a un moment naturel où nous devons rendre la mémoire de notre
-<code>String</code> au système d'exploitation : quand <code>s</code> sort de la portée. Quand une
-variable sort de la portée, Rust appelle une fonction spéciale pour nous. Cette
-fonction s'appelle <code>drop</code>, et c'est dans celle-ci que l'auteur de <code>String</code> a pu
-mettre le code pour libérer la mémoire. Rust appelle automatiquement <code>drop</code> à
-l'accolade fermante <code>}</code>.</p>
+<code>String</code> au gestionnaire : quand <code>s</code> sort de la portée. Quand une variable sort
+de la portée, Rust appelle une fonction spéciale pour nous. Cette fonction
+s'appelle <code>drop</code>, et c'est dans celle-ci que l'auteur de <code>String</code> a pu mettre le
+code pour libérer la mémoire. Rust appelle automatiquement <code>drop</code> à l'accolade
+fermante <code>}</code>.</p>
 <!--
 > Note: In C++, this pattern of deallocating resources at the end of an item’s
 > lifetime is sometimes called *Resource Acquisition Is Initialization (RAII)*.
@@ -709,7 +716,7 @@ manières en Rust. Regardons un exemple avec un entier dans l'encart 4-2 :</p>
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    let x = 5;
     let y = x;
 <span class="boring">}
@@ -744,7 +751,7 @@ Now let’s look at the `String` version:
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    let s1 = String::from(&quot;hello&quot;);
     let s2 = s1;
 <span class="boring">}
@@ -786,15 +793,15 @@ holding the value `"hello"` bound to `s1`</span>
 <!--
 The length is how much memory, in bytes, the contents of the `String` is
 currently using. The capacity is the total amount of memory, in bytes, that the
-`String` has received from the operating system. The difference between length
+`String` has received from the allocator. The difference between length
 and capacity matters, but not in this context, so for now, it’s fine to ignore
 the capacity.
 -->
 <p>La taille est la quantité de mémoire, en octets, que le contenu de la <code>String</code>
 utilise actuellement. La capacité est la quantité totale de mémoire, en octets,
-que la <code>String</code> a reçue du système d'exploitation. La différence entre la taille
-et la capacité est importante, mais pas pour notre exemple, donc pour l'instant,
-ce n'est pas grave d'ignorer la capacité.</p>
+que la <code>String</code> a reçue du gestionnaire. La différence entre la taille et la
+capacité est importante, mais pas pour notre exemple, donc pour l'instant, ce
+n'est pas grave d'ignorer la capacité.</p>
 <!--
 When we assign `s1` to `s2`, the `String` data is copied, meaning we copy the
 pointer, the length, and the capacity that are on the stack. We do not copy the
@@ -876,6 +883,7 @@ besoin de libérer quoi que ce soit lorsque <code>s1</code> sort de la portée. 
 qu'il se passe quand vous essayez d'utiliser <code>s1</code> après que <code>s2</code> est créé,
 cela ne va pas fonctionner :</p>
 <!--
+```rust,ignore,does_not_compile
 # fn main() {
     let s1 = String::from("hello");
     let s2 = s1;
@@ -898,27 +906,29 @@ invalidated reference:
 <p>Vous allez avoir une erreur comme celle-ci, car Rust vous défend d'utiliser la
 référence qui n'est plus en vigueur :</p>
 <!--
-```text
+```console
 $ cargo run
    Compiling ownership v0.1.0 (file:///projects/ownership)
 error[E0382]: borrow of moved value: `s1`
- --> src/main.rs:5:28
-<p>|
-2 |     let s1 = String::from(&quot;hello&quot;);
-|         -- move occurs because <code>s1</code> has type <code>std::string::String</code>, which does not implement the <code>Copy</code> trait
+ -- > src/main.rs:5:28
+  |
+2 |     let s1 = String::from("hello");
+  |         -- move occurs because `s1` has type `std::string::String`, which does not implement the `Copy` trait
 3 |     let s2 = s1;
-|              -- value moved here
+  |              -- value moved here
 4 | 
-5 |     println!(&quot;{}, world!&quot;, s1);
-|                            ^^ value borrowed here after move</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0382</code>.
-error: could not compile <code>ownership</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+5 |     println!("{}, world!", s1);
+  |                            ^^ value borrowed here after move
 
-```text
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `ownership`.
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling ownership v0.1.0 (file:///projects/ownership)
 error[E0382]: borrow of moved value: `s1`
  --&gt; src/main.rs:5:28
@@ -1010,7 +1020,7 @@ Here’s an example of the `clone` method in action:
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    let s1 = String::from(&quot;hello&quot;);
     let s2 = s1.clone();
 
@@ -1052,7 +1062,7 @@ est correct :</p>
 # }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust"><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">fn main() {
 </span>    let x = 5;
     let y = x;
 
@@ -1151,30 +1161,31 @@ portée :</p>
 <!--
 ```rust
 fn main() {
-  let s = String::from("hello");  // s rentre dans la portée.
+    let s = String::from("hello");  // s comes into scope
 
-  prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
-                          // … et n'est plus en vigueur à partir d'ici
+    takes_ownership(s);             // s's value moves into the function...
+                                    // ... and so is no longer valid here
 
-  let x = 5;              // x rentre dans la portée.
+    let x = 5;                      // x comes into scope
 
-  creer_copie(x);         // x va être déplacée dans la fonction,
-                          // mais i32 est Copy, donc on peut
-                          // utiliser x ensuite.
+    makes_copy(x);                  // x would move into the function,
+                                    // but i32 is Copy, so it’s okay to still
+                                    // use x afterward
 
-} // Ici, x sort de la portée, puis ensuite s. Mais puisque la valeur de s a
-// été déplacée, il ne se passe rien de spécial.
+} // Here, x goes out of scope, then s. But because s's value was moved, nothing
+  // special happens.
 
-fn prendre_possession(texte: String) { // texte rentre dans la portée.
-  println!("{}", texte);
-} // Ici, texte sort de la portée et `drop` est appelé. La mémoire est libérée.
+fn takes_ownership(some_string: String) { // some_string comes into scope
+    println!("{}", some_string);
+} // Here, some_string goes out of scope and `drop` is called. The backing
+  // memory is freed.
 
-fn creer_copie(entier: i32) { // entier rentre dans la portée.
-  println!("{}", entier);
-} // Ici, entier sort de la portée. Il ne se passe rien de spécial.
+fn makes_copy(some_integer: i32) { // some_integer comes into scope
+    println!("{}", some_integer);
+} // Here, some_integer goes out of scope. Nothing special happens.
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">fn main() {
+<pre><pre class="playground"><code class="language-rust">fn main() {
   let s = String::from(&quot;hello&quot;);  // s rentre dans la portée.
 
   prendre_possession(s);  // La valeur de s est déplacée dans la fonction…
@@ -1231,37 +1242,37 @@ exemple avec des annotations similaires à celles de l'encart 4-3 :</p>
 <!--
 ```rust
 fn main() {
-  let s1 = donne_possession();     // donne_possession déplace sa valeur de
-                                   // retour dans s1
+    let s1 = gives_ownership();         // gives_ownership moves its return
+                                        // value into s1
 
-  let s2 = String::from("hello");  // s2 rentre dans la portée
+    let s2 = String::from("hello");     // s2 comes into scope
 
-  let s3 = prend_et_rend(s2);      // s2 est déplacée dans
-                                   // prend_et_rend, qui elle aussi
-                                   // déplace sa valeur de retour dans s3.
-} // Ici, s3 sort de la portée et est éliminée. s2 sort de la portée mais a été
-  // déplacée donc il ne se passe rien. s1 sort aussi de la portée et est
-  // éliminée.
+    let s3 = takes_and_gives_back(s2);  // s2 is moved into
+                                        // takes_and_gives_back, which also
+                                        // moves its return value into s3
+} // Here, s3 goes out of scope and is dropped. s2 goes out of scope but was
+  // moved, so nothing happens. s1 goes out of scope and is dropped.
 
-fn donne_possession() -> String {      // donne_possession va déplacer sa
-                                       // valeur de retour dans la
-                                       // fonction qui l'appelle.
+fn gives_ownership() -> String {             // gives_ownership will move its
+                                             // return value into the function
+                                             // that calls it
 
-  let texte = String::from("hello");   // texte rentre dans la portée.
+    let some_string = String::from("hello"); // some_string comes into scope
 
-  texte                                // texte est retournée et
-                                       // est déplacée vers le code qui
-                                       // l'appelle.
+    some_string                              // some_string is returned and
+                                             // moves out to the calling
+                                             // function
 }
 
-// prend_et_rend va prendre une String et en retourne aussi une.
-fn prend_et_rend(texte: String) -> String { // texte rentre dans la portée.
+// takes_and_gives_back will take a String and return one
+fn takes_and_gives_back(a_string: String) -> String { // a_string comes into
+                                                      // scope
 
-  texte  // texte est retournée et déplacée vers le code qui l'appelle.
+    a_string  // a_string is returned and moves out to the calling function
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">fn main() {
+<pre><pre class="playground"><code class="language-rust">fn main() {
   let s1 = donne_possession();     // donne_possession déplace sa valeur de
                                    // retour dans s1
 
@@ -1334,19 +1345,19 @@ It’s possible to return multiple values using a tuple, as shown in Listing 4-5
 fn main() {
     let s1 = String::from("hello");
 
-    let (s2, taille) = calculer_taille(s1);
+    let (s2, len) = calculate_length(s1);
 
-    println!("La taille de '{}' est {}.", s2, taille);
+    println!("The length of '{}' is {}.", s2, len);
 }
 
-fn calculer_taille(s: String) -> (String, usize) {
-    let taille = s.len(); // len() retourne la taille d'une String.
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
 
-    (s, taille)
+    (s, length)
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">fn main() {
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let s1 = String::from(&quot;hello&quot;);
 
     let (s2, taille) = calculer_taille(s1);
@@ -1404,13 +1415,13 @@ c'est ce qu'on appelle les <em>références</em>.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch04-00-understanding-ownership.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch04-00-understanding-ownership.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch04-02-references-and-borrowing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch04-02-references-and-borrowing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -1423,10 +1434,10 @@ c'est ce qu'on appelle les <em>références</em>.</p>
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 

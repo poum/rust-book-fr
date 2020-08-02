@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>🚧 Définir des comportements partagés avec les traits - Le langage de programmation Rust</title>
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -19,8 +26,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -40,7 +48,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -84,8 +92,8 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> 🚧 Les erreurs irrécupérables avec panic!</a></li><li class="expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="expanded "><a href="ch10-02-traits.html" class="active"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la protection</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 🚧 Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 🚧 La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> 🚧 Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> 🚧 Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html" class="active"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -94,37 +102,36 @@
 
             <div class="page">
                 
-                <div id="menu-bar" class="menu-bar">
-                    <div id="menu-bar-sticky-container">
-                        <div class="left-buttons">
-                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                                <i class="fa fa-paint-brush"></i>
-                            </button>
-                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            </ul>
-                            
-                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            
-                        </div>
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
-                        <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">Le langage de programmation Rust</h1>
 
-                        <div class="right-buttons">
-                            <a href="print.html" title="Print this book" aria-label="Print this book">
-                                <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                        </div>
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -234,8 +241,8 @@ pub trait Summary {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>pub trait Resumable {
     fn resumer(&amp;self) -&gt; String;
@@ -246,7 +253,7 @@ pub trait Summary {
 <span class="caption">Listing 10-12: A `Summary` trait that consists of the
 behavior provided by a `summarize` method</span>
 -->
-<p><span class="caption">Encart 10-12 : Un trait <code>Resumable</code> qui représente le
+<p><span class="caption">Encart 10-12 : un trait <code>Resumable</code> qui représente le
 comportement fourni par une méthode <code>resumer</code></span></p>
 <!--
 Here, we declare a trait using the `trait` keyword and then the trait’s name,
@@ -306,7 +313,7 @@ tweet, en supposant que le contenu du tweet est déjà limité à 280 caractère
 # pub trait Summary {
 #     fn summarize(&self) -> String;
 # }
-#
+# 
 pub struct NewsArticle {
     pub headline: String,
     pub location: String,
@@ -334,8 +341,8 @@ impl Summary for Tweet {
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span><span class="boring">pub trait Resumable {
 </span><span class="boring">    fn resumer(&amp;self) -&gt; String;
@@ -372,7 +379,7 @@ impl Resumable for Tweet {
 <span class="caption">Listing 10-13: Implementing the `Summary` trait on the
 `NewsArticle` and `Tweet` types</span>
 -->
-<p><span class="caption">Encart 10-13 : Implémentation du trait <code>Resumable</code> sur les
+<p><span class="caption">Encart 10-13 : implémentation du trait <code>Resumable</code> sur les
 types <code>ArticleDePresse</code> et <code>Tweet</code></span></p>
 <!--
 Implementing a trait on a type is similar to implementing regular methods. The
@@ -402,25 +409,35 @@ l'instance de <code>ArticleDePresse</code> et <code>Tweet</code> comme si elles 
 classiques, comme ceci :</p>
 <!--
 ```rust,ignore
-let tweet = Tweet {
-    username: String::from("horse_ebooks"),
-    content: String::from("of course, as you probably already know, people"),
-    reply: false,
-    retweet: false,
-};
+# use chapter10::{self, Summary, Tweet};
+# 
+# fn main() {
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
+        reply: false,
+        retweet: false,
+    };
 
-println!("1 new tweet: {}", tweet.summarize());
+    println!("1 new tweet: {}", tweet.summarize());
+# }
 ```
 -->
-<pre><code class="language-rust ignore">let tweet = Tweet {
-    nom_utilisateur: String::from(&quot;jean&quot;),
-    contenu: String::from(&quot;Bien sûr, les amis, comme vous le savez probablement déjà&quot;),
-    reponse: false,
-    retweet: false,
-};
-
-println!(&quot;1 nouveau tweet : {}&quot;, tweet.resume());
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use chapter10::{self, Resumable, Tweet};
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>    let tweet = Tweet {
+        nom_utilisateur: String::from(&quot;jean&quot;),
+        contenu: String::from(&quot;Bien sûr, les amis, comme vous le savez probablement déjà&quot;),
+        reponse: false,
+        retweet: false,
+    };
+    
+    println!(&quot;1 nouveau tweet : {}&quot;, tweet.resumer());
+<span class="boring">}
+</span></code></pre>
 <!--
 This code prints `1 new tweet: horse_ebooks: of course, as you probably already
 know, people`.
@@ -523,23 +540,67 @@ pub trait Summary {
         String::from("(Read more...)")
     }
 }
+# 
+# pub struct NewsArticle {
+#     pub headline: String,
+#     pub location: String,
+#     pub author: String,
+#     pub content: String,
+# }
+# 
+# impl Summary for NewsArticle {}
+# 
+# pub struct Tweet {
+#     pub username: String,
+#     pub content: String,
+#     pub reply: bool,
+#     pub retweet: bool,
+# }
+# 
+# impl Summary for Tweet {
+#     fn summarize(&self) -> String {
+#         format!("{}: {}", self.username, self.content)
+#     }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>pub trait Resumable {
     fn resumer(&amp;self) -&gt; String {
         String::from(&quot;(En savoir plus ...)&quot;)
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">pub struct ArticleDePresse {
+</span><span class="boring">    pub titre: String,
+</span><span class="boring">    pub lieu: String,
+</span><span class="boring">    pub auteur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for ArticleDePresse {}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub nom_utilisateur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">    pub reponse: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for Tweet {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{}: {}&quot;, self.nom_utilisateur, self.contenu)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 <span class="caption">Listing 10-14: Definition of a `Summary` trait with a
 default implementation of the `summarize` method</span>
 -->
-<p><span class="caption">Encart 10-14 : Définition du trait <code>Resumable</code> avec une
+<p><span class="caption">Encart 10-14 : définition du trait <code>Resumable</code> avec une
 implémentation par défaut de la méthode <code>resume</code></span></p>
 <!--
 To use a default implementation to summarize instances of `NewsArticle` instead
@@ -562,27 +623,39 @@ pouvons toujours appeler la méthode <code>resumer</code> sur une instance de
 <code>ArticleDePresse</code>, comme ceci :</p>
 <!--
 ```rust,ignore
-let article = NewsArticle {
-    headline: String::from("Penguins win the Stanley Cup Championship!"),
-    location: String::from("Pittsburgh, PA, USA"),
-    author: String::from("Iceburgh"),
-    content: String::from("The Pittsburgh Penguins once again are the best
-    hockey team in the NHL."),
-};
+# use chapter10::{self, NewsArticle, Summary};
+# 
+# fn main() {
+    let article = NewsArticle {
+        headline: String::from("Penguins win the Stanley Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from(
+            "The Pittsburgh Penguins once again are the best \
+             hockey team in the NHL.",
+        ),
+    };
 
-println!("New article available! {}", article.summarize());
+    println!("New article available! {}", article.summarize());
+# }
 ```
 -->
-<pre><code class="language-rust ignore">let article = ArticleDePresse {
-    titre: String::from(&quot;Les Pinguins ont gagné la Stanley Cup Championship !&quot;),
-    lieu: String::from(&quot;Pittsburgh, PA, USA&quot;),
-    auteur: String::from(&quot;Iceburgh&quot;),
-    contenu: String::from(&quot;Les Pinguins de Pittsburgh sont une nouvelle fois la
-    meilleure équipe de hockey de la NHL.&quot;),
-};
-
-println!(&quot;Nouvel article disponible ! {}&quot;, article.resumer());
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use chapter10::{self, ArticleDePresse, Resumable};
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>    let article = ArticleDePresse {
+        titre: String::from(&quot;Les Pinguins ont gagné la Stanley Cup Championship !&quot;),
+        lieu: String::from(&quot;Pittsburgh, PA, USA&quot;),
+        auteur: String::from(&quot;Iceburgh&quot;),
+        contenu: String::from(
+            &quot;Les Pinguins de Pittsburgh sont une nouvelle fois la meilleure\
+            équipe de hockey de la NHL.&quot;
+        ),
+    };
+    
+    println!(&quot;Nouvel article disponible ! {}&quot;, article.resumer());
+<span class="boring">}
+</span></code></pre>
 <!--
 This code prints `New article available! (Read more...)`.
 -->
@@ -625,10 +698,23 @@ pub trait Summary {
         format!("(Read more from {}...)", self.summarize_author())
     }
 }
+# 
+# pub struct Tweet {
+#     pub username: String,
+#     pub content: String,
+#     pub reply: bool,
+#     pub retweet: bool,
+# }
+# 
+# impl Summary for Tweet {
+#     fn summarize_author(&self) -> String {
+#         format!("@{}", self.username)
+#     }
+# }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>pub trait Resumable {
     fn resumer_auteur(&amp;self) -&gt; String;
@@ -637,7 +723,20 @@ pub trait Summary {
         format!(&quot;(Lire plus d'éléments de {} ...)&quot;, self.resumer_auteur())
     }
 }
-<span class="boring">}
+<span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub nom_utilisateur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">    pub reponse: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for Tweet {
+</span><span class="boring">    fn resumer_auteur(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;@{}&quot;, self.nom_utilisateur)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">}
 </span></code></pre></pre>
 <!--
 To use this version of `Summary`, we only need to define `summarize_author`
@@ -647,6 +746,21 @@ when we implement the trait on a type:
 de définir <code>resumer_auteur</code> lorsqu'on implémente le trait sur le type :</p>
 <!--
 ```rust,ignore
+# pub trait Summary {
+#     fn summarize_author(&self) -> String;
+# 
+#     fn summarize(&self) -> String {
+#         format!("(Read more from {}...)", self.summarize_author())
+#     }
+# }
+# 
+# pub struct Tweet {
+#     pub username: String,
+#     pub content: String,
+#     pub reply: bool,
+#     pub retweet: bool,
+# }
+# 
 impl Summary for Tweet {
     fn summarize_author(&self) -> String {
         format!("@{}", self.username)
@@ -654,7 +768,22 @@ impl Summary for Tweet {
 }
 ```
 -->
-<pre><code class="language-rust ignore">impl Resumable for Tweet {
+<pre><code class="language-rust ignore"><span class="boring">pub trait Resumable {
+</span><span class="boring">    fn resumer_auteur(&amp;self) -&gt; String;
+</span><span class="boring">
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;(Lire plus d'éléments de {} ...)&quot;, self.resumer_auteur())
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub nom_utilisateur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">    pub reponse: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span>impl Resumable for Tweet {
     fn resumer_auteur(&amp;self) -&gt; String {
         format!(&quot;@{}&quot;, self.nom_utilisateur)
     }
@@ -675,25 +804,35 @@ méthode <code>resumer</code> sans avoir besoin d'écrire aucune ligne de code
 supplémentaire.</p>
 <!--
 ```rust,ignore
-let tweet = Tweet {
-    username: String::from("horse_ebooks"),
-    content: String::from("of course, as you probably already know, people"),
-    reply: false,
-    retweet: false,
-};
+# use chapter10::{self, Summary, Tweet};
+# 
+# fn main() {
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
+        reply: false,
+        retweet: false,
+    };
 
-println!("1 new tweet: {}", tweet.summarize());
+    println!("1 new tweet: {}", tweet.summarize());
+# }
 ```
 -->
-<pre><code class="language-rust ignore">let tweet = Tweet {
-    nom_utilisateur: String::from(&quot;jean&quot;),
-    contenu: String::from(&quot;Bien sûr, les amis, comme vous le savez probablement déjà&quot;),
-    reponse: false,
-    retweet: false,
-};
-
-println!(&quot;1 nouveau tweet : {}&quot;, tweet.resume());
-</code></pre>
+<pre><code class="language-rust ignore"><span class="boring">use chapter10::{self, Resumable, Tweet};
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span>    let tweet = Tweet {
+        nom_utilisateur: String::from(&quot;jean&quot;),
+        contenu: String::from(&quot;Bien sûr, les amis, comme vous le savez probablement déjà&quot;),
+        reponse: false,
+        retweet: false,
+    };
+    
+    println!(&quot;1 nouveau tweet : {}&quot;, tweet.resumer());
+<span class="boring">}
+</span></code></pre>
 <!--
 This code prints `1 new tweet: (Read more from @horse_ebooks...)`.
 -->
@@ -729,12 +868,72 @@ type qui implémente le trait <code>Resumable</code>. Pour faire ceci, nous pouv
 la syntaxe <code>impl Trait</code>, comme ceci :</p>
 <!--
 ```rust,ignore
-pub fn notify(item: impl Summary) {
+# pub trait Summary {
+#     fn summarize(&self) -> String;
+# }
+# 
+# pub struct NewsArticle {
+#     pub headline: String,
+#     pub location: String,
+#     pub author: String,
+#     pub content: String,
+# }
+# 
+# impl Summary for NewsArticle {
+#     fn summarize(&self) -> String {
+#         format!("{}, by {} ({})", self.headline, self.author, self.location)
+#     }
+# }
+# 
+# pub struct Tweet {
+#     pub username: String,
+#     pub content: String,
+#     pub reply: bool,
+#     pub retweet: bool,
+# }
+# 
+# impl Summary for Tweet {
+#     fn summarize(&self) -> String {
+#         format!("{}: {}", self.username, self.content)
+#     }
+# }
+# 
+pub fn notify(item: &impl Summary) {
     println!("Breaking news! {}", item.summarize());
 }
 ```
 -->
-<pre><code class="language-rust ignore">pub fn notifier(element: impl Summary) {
+<pre><code class="language-rust ignore"><span class="boring">pub trait Resumable {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct ArticleDePresse {
+</span><span class="boring">    pub titre: String,
+</span><span class="boring">    pub lieu: String,
+</span><span class="boring">    pub auteur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for ArticleDePresse {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{}, par {} ({})&quot;, self.headline, self.author, self.location)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub nom_utilisateur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">    pub reponse: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for Tweet {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{} : {}&quot;, self.nom_utilisateur, self.contenu)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>pub fn notifier(element: impl Resumable) {
     println!(&quot;Flash-info ! {}&quot;, element.resumer());
 }
 </code></pre>
@@ -769,12 +968,12 @@ réalité du sucre syntaxique pour une forme plus longue, qui s'appelle le
 <em>trait lié</em> ; qui ressemble à ceci :</p>
 <!--
 ```rust,ignore
-pub fn notify<T: Summary>(item: T) {
+pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 ```
 -->
-<pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable&gt;(element: T) {
+<pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable&gt;(element: &amp;T) {
     println!(&quot;Flash-info ! {}&quot;, element.resumer());
 }
 </code></pre>
@@ -798,10 +997,10 @@ cas. Par exemple, nous pouvons avoir deux paramètres qui implémentent
 <code>Resumable</code>. En utilisant la syntaxe <code>impl Trait</code>, nous aurons ceci :</p>
 <!--
 ```rust,ignore
-pub fn notify(item1: impl Summary, item2: impl Summary) {
+pub fn notify(item1: &impl Summary, item2: &impl Summary) {
 ```
 -->
-<pre><code class="language-rust ignore">pub fn notifier(element1: impl Resumable, element2: impl Resumable) {
+<pre><code class="language-rust ignore">pub fn notifier(element1: &amp;impl Resumable, element2: &amp;impl Resumable) {
 </code></pre>
 <!--
 If we wanted this function to allow `item1` and `item2` to have different
@@ -816,7 +1015,7 @@ paramètres d'être du même type, cela n'est possible à exprimer qu'avec un tr
 lié, comme ceci :</p>
 <!--
 ```rust,ignore
-pub fn notify<T: Summary>(item1: T, item2: T) {
+pub fn notify<T: Summary>(item1: &T, item2: &T) {
 ```
 -->
 <pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable&gt;(element1: T, element2: T) {
@@ -846,10 +1045,10 @@ que nous souhaitons que <code>notifier</code> utilise le formatage d'affichage s
 pouvons faire ceci avec la syntaxe <code>+</code> :</p>
 <!--
 ```rust,ignore
-pub fn notify(item: impl Summary + Display) {
+pub fn notify(item: &(impl Summary + Display)) {
 ```
 -->
-<pre><code class="language-rust ignore">pub fn notifier(element: impl Resumable + Affichable) {
+<pre><code class="language-rust ignore">pub fn notifier(element: &amp;(impl Resumable + Affichable)) {
 </code></pre>
 <!--
 The `+` syntax is also valid with trait bounds on generic types:
@@ -857,10 +1056,10 @@ The `+` syntax is also valid with trait bounds on generic types:
 <p>La syntaxe <code>+</code> fonctionne aussi avec les traits liés sur des types génériques :</p>
 <!--
 ```rust,ignore
-pub fn notify<T: Summary + Display>(item: T) {
+pub fn notify<T: Summary + Display>(item: &T) {
 ```
 -->
-<pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable + Affichable&gt;(element: T) {
+<pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable + Affichable&gt;(element: &amp;T) {
 </code></pre>
 <!--
 With the two trait bounds specified, the body of `notify` can call `summarize`
@@ -887,13 +1086,26 @@ traits liés entre le nom de la fonction et la liste de ses paramètres, ce qui
 rend la signature de la fonction difficile à lire. Pour cette raison, Rust a une
 syntaxe alternative pour renseigner les traits liés, dans une instruction
 <code>where</code> après la signature de la fonction. Donc, à la place d'écrire ceci ...</p>
-<pre><code class="language-rust ignore">fn some_function&lt;T: Display + Clone, U: Clone + Debug&gt;(t: T, u: U) -&gt; i32 {
+<!--
+```rust,ignore
+fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {
+```
+-->
+<pre><code class="language-rust ignore">fn some_function&lt;T: Display + Clone, U: Clone + Debug&gt;(t: &amp;T, u: &amp;U) -&gt; i32 {
 </code></pre>
 <!--
 we can use a `where` clause, like this:
 -->
-<p>... nous pouvons utiliser l'instruction <code>where</code>, comme cela :</p>
-<pre><code class="language-rust ignore">fn some_function&lt;T, U&gt;(t: T, u: U) -&gt; i32
+<p>... nous pouvons utiliser l'instruction <code>where</code>, comme ceci :</p>
+<!--
+```rust,ignore
+fn some_function<T, U>(t: &T, u: &U) -> i32
+    where T: Display + Clone,
+          U: Clone + Debug
+{
+```
+-->
+<pre><code class="language-rust ignore">fn some_function&lt;T, U&gt;(t: &amp;T, u: &amp;U) -&gt; i32
     where T: Display + Clone,
           U: Clone + Debug
 {
@@ -918,20 +1130,82 @@ value of some type that implements a trait, as shown here:
 de retourner une valeur d'un type qui implémente un trait, comme ci-dessous :</p>
 <!--
 ```rust,ignore
+# pub trait Summary {
+#     fn summarize(&self) -> String;
+# }
+# 
+# pub struct NewsArticle {
+#     pub headline: String,
+#     pub location: String,
+#     pub author: String,
+#     pub content: String,
+# }
+# 
+# impl Summary for NewsArticle {
+#     fn summarize(&self) -> String {
+#         format!("{}, by {} ({})", self.headline, self.author, self.location)
+#     }
+# }
+# 
+# pub struct Tweet {
+#     pub username: String,
+#     pub content: String,
+#     pub reply: bool,
+#     pub retweet: bool,
+# }
+# 
+# impl Summary for Tweet {
+#     fn summarize(&self) -> String {
+#         format!("{}: {}", self.username, self.content)
+#     }
+# }
+# 
 fn returns_summarizable() -> impl Summary {
     Tweet {
         username: String::from("horse_ebooks"),
-        content: String::from("of course, as you probably already know, people"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
         reply: false,
         retweet: false,
     }
 }
 ```
 -->
-<pre><code class="language-rust ignore">fn retourne_resumable() -&gt; impl Resumable {
+<pre><code class="language-rust ignore"><span class="boring">pub trait Resumable {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct ArticleDePresse {
+</span><span class="boring">    pub titre: String,
+</span><span class="boring">    pub lieu: String,
+</span><span class="boring">    pub auteur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for ArticleDePresse {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{}, par {} ({})&quot;, self.titre, self.auteur, self.lieu)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub nom_utilisateur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">    pub reponse: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for Tweet {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{} : {}&quot;, self.nom_utilisateur, self.contenu)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn retourne_resumable() -&gt; impl Resumable {
     Tweet {
         nom_utilisateur: String::from(&quot;jean&quot;),
-        content: String::from(&quot;Bien sûr, les amis, comme vous le savez probablement déjà&quot;),
+        contenu: String::from(&quot;Bien sûr, les amis, comme vous le savez probablement déjà&quot;),
         reponse: false,
         retweet: false,
     }
@@ -975,19 +1249,55 @@ soit un <code>Tweet</code>, alors que le type de retour avec <code>impl Resumabl
 fonctionner :</p>
 <!--
 ```rust,ignore,does_not_compile
+# pub trait Summary {
+#     fn summarize(&self) -> String;
+# }
+# 
+# pub struct NewsArticle {
+#     pub headline: String,
+#     pub location: String,
+#     pub author: String,
+#     pub content: String,
+# }
+# 
+# impl Summary for NewsArticle {
+#     fn summarize(&self) -> String {
+#         format!("{}, by {} ({})", self.headline, self.author, self.location)
+#     }
+# }
+# 
+# pub struct Tweet {
+#     pub username: String,
+#     pub content: String,
+#     pub reply: bool,
+#     pub retweet: bool,
+# }
+# 
+# impl Summary for Tweet {
+#     fn summarize(&self) -> String {
+#         format!("{}: {}", self.username, self.content)
+#     }
+# }
+# 
 fn returns_summarizable(switch: bool) -> impl Summary {
     if switch {
         NewsArticle {
-            headline: String::from("Penguins win the Stanley Cup Championship!"),
+            headline: String::from(
+                "Penguins win the Stanley Cup Championship!",
+            ),
             location: String::from("Pittsburgh, PA, USA"),
             author: String::from("Iceburgh"),
-            content: String::from("The Pittsburgh Penguins once again are the best
-            hockey team in the NHL."),
+            content: String::from(
+                "The Pittsburgh Penguins once again are the best \
+                 hockey team in the NHL.",
+            ),
         }
     } else {
         Tweet {
             username: String::from("horse_ebooks"),
-            content: String::from("of course, as you probably already know, people"),
+            content: String::from(
+                "of course, as you probably already know, people",
+            ),
             reply: false,
             retweet: false,
         }
@@ -995,8 +1305,38 @@ fn returns_summarizable(switch: bool) -> impl Summary {
 }
 ```
 -->
-<pre><code class="language-rust ignore does_not_compile">fn retourne_resumable(estArticle: bool) -&gt; impl Resumable {
-    if switch {
+<pre><code class="language-rust ignore does_not_compile"><span class="boring">pub trait Resumable {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String;
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct ArticleDePresse {
+</span><span class="boring">    pub titre: String,
+</span><span class="boring">    pub lieu: String,
+</span><span class="boring">    pub auteur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for ArticleDePresse {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{}, par {} ({})&quot;, self.titre, self.auteur, self.lieu)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">pub struct Tweet {
+</span><span class="boring">    pub nom_utilisateur: String,
+</span><span class="boring">    pub contenu: String,
+</span><span class="boring">    pub reponse: bool,
+</span><span class="boring">    pub retweet: bool,
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">impl Resumable for Tweet {
+</span><span class="boring">    fn resumer(&amp;self) -&gt; String {
+</span><span class="boring">        format!(&quot;{} : {}&quot;, self.nom_utilisateur, self.contenu)
+</span><span class="boring">    }
+</span><span class="boring">}
+</span><span class="boring">
+</span>fn retourne_resumable(estArticle: bool) -&gt; impl Resumable {
+    if estArticle {
         ArticleDePresse {
             titre: String::from(&quot;Les Pinguins ont gagné la Stanley Cup Championship !&quot;),
             lieu: String::from(&quot;Pittsburgh, PA, USA&quot;),
@@ -1045,22 +1385,44 @@ utilise un paramètre de type générique ! La dernière fois qu'on a essayé d
 lancer ce code, nous avions l'erreur suivante :</p>
 <!--
 ```text
+$ cargo run
+   Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0369]: binary operation `>` cannot be applied to type `T`
- -- > src/main.rs:5:12
+ -- > src/main.rs:5:17
   |
 5 |         if item > largest {
-  |            ^^^^^^^^^^^^^^
+  |            ---- ^ ------- T
+  |            |
+  |            T
   |
-  = note: an implementation of `std::cmp::PartialOrd` might be missing for `T`
+  = note: `T` might need a bound for `std::cmp::PartialOrd`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0369`.
+error: could not compile `chapter10`.
+
+To learn more, run the command again with --verbose.
 ```
 -->
-<pre><code class="language-text">error[E0369]: binary operation `&gt;` cannot be applied to type `T`
- -- &gt; src/main.rs:5:12
+<pre><code class="language-text">$ cargo run
+   Compiling chapter10 v0.1.0 (file:///projects/chapter10)
+error[E0369]: binary operation `&gt;` cannot be applied to type `T`
+ --&gt; src/main.rs:5:17
   |
 5 |         if element &gt; le_plus_grand {
-  |            ^^^^^^^^^^^^^^^^^^^^^^^
+  |            ------- ^ ------------- T
+  |            |
+  |            T
   |
-  = note: an implementation of `std::cmp::PartialOrd` might be missing for `T`
+  = note: `T` might need a bound for `std::cmp::PartialOrd`
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0369`.
+error: could not compile `chapter10`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 In the body of `largest` we wanted to compare two values of type `T` using the
@@ -1083,53 +1445,121 @@ ceci :</p>
 <!--
 ```rust,ignore
 fn largest<T: PartialOrd>(list: &[T]) -> T {
+#     let mut largest = list[0];
+# 
+#     for &item in list {
+#         if item > largest {
+#             largest = item;
+#         }
+#     }
+# 
+#     largest
+# }
+# 
+# fn main() {
+#     let number_list = vec![34, 50, 25, 100, 65];
+# 
+#     let result = largest(&number_list);
+#     println!("The largest number is {}", result);
+# 
+#     let char_list = vec!['y', 'm', 'a', 'q'];
+# 
+#     let result = largest(&char_list);
+#     println!("The largest char is {}", result);
+# }
 ```
 -->
-<pre><code class="language-rust ignore">fn le_plus_grand&lt;T: PartialOrd&gt;(list: &amp;[T]) -&gt; T {
-</code></pre>
+<pre><code class="language-rust ignore">fn le_plus_grand&lt;T: PartialOrd&gt;(liste: &amp;[T]) -&gt; T {
+<span class="boring">    let mut le_plus_grand = liste[0];
+</span><span class="boring">
+</span><span class="boring">    for &amp;element in liste {
+</span><span class="boring">        if element &gt; le_plus_grand {
+</span><span class="boring">            le_plus_grand = element;
+</span><span class="boring">        }
+</span><span class="boring">    }
+</span><span class="boring">
+</span><span class="boring">    le_plus_grand
+</span><span class="boring">}
+</span><span class="boring">
+</span><span class="boring">fn main() {
+</span><span class="boring">    let liste_de_nombres = vec![34, 50, 25, 100, 65];
+</span><span class="boring">
+</span><span class="boring">    let resultat = le_plus_grand(&amp;liste_de_nombres);
+</span><span class="boring">    println!(&quot;Le plus grand nombre est {}&quot;, resultat);
+</span><span class="boring">
+</span><span class="boring">    let liste_de_caracteres = vec!['y', 'm', 'a', 'q'];
+</span><span class="boring">
+</span><span class="boring">    let resultat = le_plus_grand(&amp;liste_de_caracteres);
+</span><span class="boring">    println!(&quot;Le plus grand caractère est {}&quot;, resultat);
+</span><span class="boring">}
+</span></code></pre>
 <!--
 This time when we compile the code, we get a different set of errors:
 -->
 <p>Cette fois, lorsque nous allons compiler le code, nous aurons un ensemble
 d'erreurs différent :</p>
 <!--
-```text
+```console
+$ cargo run
+   Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0508]: cannot move out of type `[T]`, a non-copy slice
  -- > src/main.rs:2:23
-  |
-2 |     let mut largest = list[0];
-  |                       ^^^^^^^
-  |                       |
-  |                       cannot move out of here
-  |                       help: consider using a reference instead: `&list[0]`
-
-error[E0507]: cannot move out of borrowed content
- -- > src/main.rs:4:9
-  |
-4 |     for &item in list.iter() {
-  |         ^----
-  |         ||
-  |         |hint: to prevent move, use `ref item` or `ref mut item`
-  |         cannot move out of borrowed content
-```
--->
-<pre><code class="language-text">error[E0508]: cannot move out of type `[T]`, a non-copy slice
- -- &gt; src/main.rs:2:23
   |
 2 |     let mut le_plus_grand = liste[0];
   |                             ^^^^^^^^
   |                             |
   |                             cannot move out of here
-  |                             help: consider using a reference instead: `&amp;liste[0]`
+  |                             move occurs because `liste[_]` has type `T`, which does not implement the `Copy` trait
+  |                             help: consider borrowing here: `&liste[0]`
 
-error[E0507]: cannot move out of borrowed content
- -- &gt; src/main.rs:4:9
+error[E0507]: cannot move out of a shared reference
+ -- > src/main.rs:4:18
   |
-4 |     for &amp;element in liste.iter() {
-  |         ^-------
+4 |     for &element in liste {
+  |         --------    ^^^^^
   |         ||
-  |         |hint: to prevent move, use `ref element` or `ref mut element`
-  |         cannot move out of borrowed content
+  |         |data moved here
+  |         |move occurs because `element` has type `T`, which does not implement the `Copy` trait
+  |         help: consider removing the `&`: `element`
+
+error: aborting due to 2 previous errors
+
+Some errors have detailed explanations: E0507, E0508.
+For more information about an error, try `rustc --explain E0507`.
+error: could not compile `chapter10`.
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
+   Compiling chapter10 v0.1.0 (file:///projects/chapter10)
+error[E0508]: cannot move out of type `[T]`, a non-copy slice
+ --&gt; src/main.rs:2:23
+  |
+2 |     let mut largest = list[0];
+  |                       ^^^^^^^
+  |                       |
+  |                       cannot move out of here
+  |                       move occurs because `list[_]` has type `T`, which does not implement the `Copy` trait
+  |                       help: consider borrowing here: `&amp;list[0]`
+
+error[E0507]: cannot move out of a shared reference
+ --&gt; src/main.rs:4:18
+  |
+4 |     for &amp;item in list {
+  |         -----    ^^^^
+  |         ||
+  |         |data moved here
+  |         |move occurs because `item` has type `T`, which does not implement the `Copy` trait
+  |         help: consider removing the `&amp;`: `item`
+
+error: aborting due to 2 previous errors
+
+Some errors have detailed explanations: E0507, E0508.
+For more information about an error, try `rustc --explain E0507`.
+error: could not compile `chapter10`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 The key line in this error is `cannot move out of type [T], a non-copy slice`.
@@ -1170,36 +1600,11 @@ fonction implémente les traits <code>PartialOrd</code> <em>et</em> <code>Copy</
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
-    let mut largest = list[0];
-
-    for &item in list.iter() {
-        if item > largest {
-            largest = item;
-        }
-    }
-
-    largest
-}
-
-fn main() {
-    let number_list = vec![34, 50, 25, 100, 65];
-
-    let result = largest(&number_list);
-    println!("The largest number is {}", result);
-
-    let char_list = vec!['y', 'm', 'a', 'q'];
-
-    let result = largest(&char_list);
-    println!("The largest char is {}", result);
-}
-```
--->
-<pre><pre class="playpen"><code class="language-rust">fn le_plus_grand&lt;T: PartialOrd + Copy&gt;(liste: &amp;[T]) -&gt; T {
+fn le_plus_grand<T: PartialOrd + Copy>(liste: &[T]) -> T {
     let mut le_plus_grand = liste[0];
 
-    for &amp;element in liste.iter() {
-        if element &gt; le_plus_grand {
+    for &element in liste {
+        if element > le_plus_grand {
             le_plus_grand = element;
         }
     }
@@ -1210,13 +1615,38 @@ fn main() {
 fn main() {
     let liste_de_nombres = vec![34, 50, 25, 100, 65];
 
-    let resultat = le_plus_grand(&amp;liste_de_nombres);
-    println!(&quot;Le nombre le plus grand est {}&quot;, resultat);
+    let resultat = le_plus_grand(&liste_de_nombres);
+    println!("Le nombre le plus grand est {}", resultat);
 
     let liste_de_caracteres = vec!['y', 'm', 'a', 'q'];
 
-    let resultat = le_plus_grand(&amp;liste_de_caracteres);
-    println!(&quot;Le plus grand caractère est {}&quot;, resultat);
+    let resultat = le_plus_grand(&liste_de_caracteres);
+    println!("Le plus grand caractère est {}", resultat);
+}
+```
+-->
+<pre><pre class="playground"><code class="language-rust">fn largest&lt;T: PartialOrd + Copy&gt;(list: &amp;[T]) -&gt; T {
+    let mut largest = list[0];
+
+    for &amp;item in list {
+        if item &gt; largest {
+            largest = item;
+        }
+    }
+
+    largest
+}
+
+fn main() {
+    let number_list = vec![34, 50, 25, 100, 65];
+
+    let result = largest(&amp;number_list);
+    println!(&quot;The largest number is {}&quot;, result);
+
+    let char_list = vec!['y', 'm', 'a', 'q'];
+
+    let result = largest(&amp;char_list);
+    println!(&quot;The largest char is {}&quot;, result);
 }
 </code></pre></pre>
 <!--
@@ -1224,7 +1654,7 @@ fn main() {
 function that works on any generic type that implements the `PartialOrd` and
 `Copy` traits</span>
 -->
-<p><span class="caption">Encart 10-15 : Une définition de la fonction
+<p><span class="caption">Encart 10-15 : une définition de la fonction
 <code>le_plus_grand</code> qui fonctionne et s'applique sur n'importe quel type générique
 qui implémente les traits <code>PartialOrd</code> et <code>Copy</code></span></p>
 <!--
@@ -1277,6 +1707,10 @@ uniquement la méthode <code>affiche_comparaison</code> que si son type interne 
 implémente le trait <code>PartialOrd</code> qui active la comparaison <em>et</em> le trait
 <code>Display</code> qui permet l'affichage.</p>
 <!--
+<span class="filename">Filename: src/lib.rs</span>
+-->
+<p><span class="filename">Fichier : src/lib.rs</span></p>
+<!--
 ```rust
 use std::fmt::Display;
 
@@ -1287,26 +1721,23 @@ struct Pair<T> {
 
 impl<T> Pair<T> {
     fn new(x: T, y: T) -> Self {
-        Self {
-            x,
-            y,
-        }
+        Self { x, y }
     }
 }
 
 impl<T: Display + PartialOrd> Pair<T> {
-    fn cmp_display(&self) {
+    fn affiche_comparaison(&self) {
         if self.x >= self.y {
-            println!("The largest member is x = {}", self.x);
+            println!("Le plus grand élément est x = {}", self.x);
         } else {
-            println!("The largest member is y = {}", self.y);
+            println!("Le plus grand élément est y = {}", self.y);
         }
     }
 }
 ```
 -->
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::fmt::Display;
 
@@ -1317,19 +1748,16 @@ struct Pair&lt;T&gt; {
 
 impl&lt;T&gt; Pair&lt;T&gt; {
     fn new(x: T, y: T) -&gt; Self {
-        Self {
-            x,
-            y,
-        }
+        Self { x, y }
     }
 }
 
 impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
-    fn affiche_comparaison(&amp;self) {
+    fn cmp_display(&amp;self) {
         if self.x &gt;= self.y {
-            println!(&quot;Le plus grand élément est x = {}&quot;, self.x);
+            println!(&quot;The largest member is x = {}&quot;, self.x);
         } else {
-            println!(&quot;Le plus grand élément est y = {}&quot;, self.y);
+            println!(&quot;The largest member is y = {}&quot;, self.y);
         }
     }
 }
@@ -1339,7 +1767,7 @@ impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
 <span class="caption">Listing 10-16: Conditionally implement methods on a
 generic type depending on trait bounds</span>
 -->
-<p><span class="caption">Encart 10-16 : Implémentation de méthodes sur un type
+<p><span class="caption">Encart 10-16 : implémentation de méthodes sur un type
 générique en fonction du trait lié</span></p>
 <!--
 We can also conditionally implement a trait for any type that implements
@@ -1355,8 +1783,15 @@ est appelée <em>implémentation générale</em> et est largement utilisée dans
 bibliothèque standard Rust. Par exemple, la bibliothèque standard implémente le
 trait <code>ToString</code> sur tous les types qui implémentent le trait <code>Display</code>. Le bloc
 <code>impl</code> de la bibliothèque standard ressemble au code suivant :</p>
-<pre><code class="language-rust ignore">impl&lt;T: Display&gt; ToString for T {
+<!--
+```rust,ignore
+impl<T: Display> ToString for T {
     // --snip--
+}
+```
+-->
+<pre><code class="language-rust ignore">impl&lt;T: Display&gt; ToString for T {
+    // -- partie masquée ici --
 }
 </code></pre>
 <!--
@@ -1370,8 +1805,13 @@ appeler la méthode <code>to_string</code> définie par le trait <code>ToString<
 quel type qui implémente le trait <code>Display</code>. Par exemple, nous pouvons
 transformer les entiers en leur équivalent dans une <code>String</code> comme ci-dessous
 car les entiers implémentent <code>Display</code> :</p>
-<pre><pre class="playpen"><code class="language-rust">
-<span class="boring">#![allow(unused_variables)]
+<!--
+```rust
+let s = 3.to_string();
+```
+-->
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let s = 3.to_string();
 <span class="boring">}
@@ -1388,12 +1828,12 @@ reduce duplication but also specify to the compiler that we want the generic
 type to have particular behavior. The compiler can then use the trait bound
 information to check that all the concrete types used with our code provide the
 correct behavior. In dynamically typed languages, we would get an error at
-runtime if we called a method on a type that the type didn’t implement. But
-Rust moves these errors to compile time so we’re forced to fix the problems
-before our code is even able to run. Additionally, we don’t have to write code
-that checks for behavior at runtime because we’ve already checked at compile
-time. Doing so improves performance without having to give up the flexibility
-of generics.
+runtime if we called a method on a type which didn’t define the method. But Rust
+moves these errors to compile time so we’re forced to fix the problems before
+our code is even able to run. Additionally, we don’t have to write code that
+checks for behavior at runtime because we’ve already checked at compile time.
+Doing so improves performance without having to give up the flexibility of
+generics.
 -->
 <p>Les traits et les traits liés nous permettent d'écrire du code qui utilise des
 paramètres de type générique pour réduire la duplication de code, mais aussi
@@ -1402,9 +1842,9 @@ comportement particulier. Le compilateur peut ensuite utiliser les informations
 liées aux traits pour vérifier que tous les types concrets utilisés dans notre
 code suivent le comportement souhaité. Dans les langages typés dynamiquement,
 nous aurons une erreur à l'exécution si nous appelions une méthode sur un type
-que le type n'implémentait pas. Mais Rust décale l'apparition de ces erreurs au
-moment de la compilation afin de nous forcer à résoudre les problèmes avant même
-que notre code soit capable de s'exécuter. De plus, nous n'avons pas besoin
+qui n'implémentait pas la méthode. Mais Rust décale l'apparition de ces erreurs
+au moment de la compilation afin de nous forcer à résoudre les problèmes avant
+même que notre code soit capable de s'exécuter. De plus, nous n'avons pas besoin
 d'écrire un code qui vérifie le comportement lors de l'exécution car nous
 l'avons déjà vérifié au moment de la compilation. Cela permet d'améliorer les
 performances sans avoir à sacrifier la flexibilité des génériques.</p>
@@ -1451,13 +1891,13 @@ ch17-02-trait-objects.html#using-trait-objects-that-allow-for-values-of-differen
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="ch10-01-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch10-01-syntax.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="ch10-03-lifetime-syntax.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch10-03-lifetime-syntax.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -1470,10 +1910,10 @@ ch17-02-trait-objects.html#using-trait-objects-that-allow-for-values-of-differen
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
