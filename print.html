@@ -6256,7 +6256,7 @@ exécuté :</p>
 -->
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
-```rust,ignore,panics
+```rust,ignore,does_not_compile
 fn main() {
     let a = [1, 2, 3, 4, 5];
     let index = 10;
@@ -6267,7 +6267,7 @@ fn main() {
 }
 ```
 -->
-<pre><code class="language-rust ignore panics">fn main() {
+<pre><code class="language-rust ignore does_not_compile">fn main() {
     let a = [1, 2, 3, 4, 5];
     let indice = 10;
 
@@ -6284,18 +6284,34 @@ Running this code using `cargo run` produces the following result:
 ```console
 $ cargo run
    Compiling arrays v0.1.0 (file:///projects/arrays)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
-     Running `target/debug/arrays`
-thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 10', src/main.rs:5:19
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
-```
--->
-<pre><code class="language-console">$ cargo run
+error: this operation will panic at runtime
+ --> src/main.rs:5:19
+<p>|
+5 |     let element = a[index];
+|                   ^^^^^^^^ index out of bounds: the len is 5 but the index is 10
+|
+= note: <code>#[deny(unconditional_panic)]</code> on by default</p>
+<p>error: aborting due to previous error</p>
+<p>error: could not compile <code>arrays</code>.</p>
+<p>To learn more, run the command again with --verbose.</p>
+<pre><code>--&gt;
+
+```console
+$ cargo run
    Compiling arrays v0.1.0 (file:///projects/arrays)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
-     Running `target/debug/arrays`
-thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 10', src/main.rs:5:19
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+error: this operation will panic at runtime
+ --&gt; src/main.rs:5:19
+  |
+5 |     let element = a[indice];
+  |                   ^^^^^^^^ index out of bounds: the len is 5 but the index is 10
+  |
+  = note: `#[deny(unconditional_panic)]` on by default
+
+error: aborting due to previous error
+
+error: could not compile `arrays`.
+
+To learn more, run the command again with --verbose.
 </code></pre>
 <!--
 The compilation didn’t produce any errors, but the program resulted in a
@@ -9066,11 +9082,11 @@ passe quelque chose de différent.</p>
 -->
 <h4><a class="header" href="#données-uniquement-sur-la-pile--la-copie" id="données-uniquement-sur-la-pile--la-copie">Données uniquement sur la pile : la copie</a></h4>
 <!--
-There’s another wrinkle we haven’t talked about yet. This code using integers,
-part of which was shown in Listing 4-2, works and is valid:
+There’s another wrinkle we haven’t talked about yet. This code using integers – 
+part of which was shown in Listing 4-2 – works and is valid:
 -->
 <p>Il y a un autre détail dont on n'a pas encore parlé. Le code suivant utilise
-des entiers, et on en a vu une partie dans l'encart 4-2 ; il fonctionne et
+des entiers - on en a vu une partie dans l'encart 4-2 - il fonctionne et
 est correct :</p>
 <!--
 ```rust
@@ -29614,6 +29630,9 @@ le test de l'encart 11-1, réécris pour utiliser <code>Result&lt;T, E&gt;</code
 une <code>Err</code> au lieu de paniquer :</p>
 <!--
 ```rust
+# #![allow(unused_variables)]
+# fn main() {}
+# 
 #[cfg(test)]
 mod tests {
     #[test]
@@ -29627,9 +29646,9 @@ mod tests {
 }
 ```
 -->
-<pre><pre class="playground"><code class="language-rust">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {}
+</span><span class="boring">
 </span>#[cfg(test)]
 mod tests {
     #[test]
@@ -29641,8 +29660,7 @@ mod tests {
         }
     }
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 The `it_works` function now has a return type, `Result<(), String>`. In the
 body of the function, rather than calling the `assert_eq!` macro, we return
@@ -29827,6 +29845,8 @@ paramètres et retourne 10, ainsi qu'un test qui réussit et un test qui échoue
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust,panics
+# fn main() {}
+# 
 fn affiche_et_retourne_10(a: i32) -> i32 {
     println!("J'ai obtenu la valeur {}", a);
     10
@@ -29850,9 +29870,8 @@ mod tests {
 }
 ```
 -->
-<pre><pre class="playground"><code class="language-rust panics">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust panics"><span class="boring">fn main() {}
+</span><span class="boring">
 </span>fn affiche_et_retourne_10(a: i32) -&gt; i32 {
     println!(&quot;J'ai obtenu la valeur {}&quot;, a);
     10
@@ -29874,8 +29893,7 @@ mod tests {
         assert_eq!(5, valeur);
     }
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 <span class="caption">Listing 11-10: Tests for a function that calls
 `println!`</span>
@@ -71571,7 +71589,7 @@ pour les aider, ou nous informer de la création d'une nouvelle traduction !</p
 - [Українська](https://github.com/pavloslav/rust-book-uk-ua)
 - [Español](https://github.com/thecodix/book), [alternate](https://github.com/ManRR/rust-book-es)
 - [Italiano](https://github.com/AgeOfWar/rust-book-it)
-- [Русский](https://github.com/ruRust/rust_book_2ed)
+- [Русский](https://github.com/rust-lang-ru/book)
 - [한국어](https://github.com/rinthel/rust-lang-book-ko)
 - [日本語](https://github.com/rust-lang-ja/book-ja)
 - [Français](https://github.com/Jimskapt/rust-book-fr)
@@ -71584,6 +71602,7 @@ pour les aider, ou nous informer de la création d'une nouvelle traduction !</p
 - [Svenska](https://github.com/sebras/book)
 - [Farsi](https://github.com/pomokhtari/rust-book-fa)
 - [Deutsch](https://github.com/rust-lang-de/rustbook-de)
+- [Turkish](https://github.com/RustDili/dokuman/tree/master/ceviriler), [online](https://rustdili.github.io/)
 -->
 <ul>
 <li><a href="https://github.com/rust-lang/book">English</a></li>
@@ -71593,7 +71612,7 @@ pour les aider, ou nous informer de la création d'une nouvelle traduction !</p
 <li><a href="https://github.com/pavloslav/rust-book-uk-ua">Українська</a></li>
 <li><a href="https://github.com/thecodix/book">Español</a>, <a href="https://github.com/ManRR/rust-book-es">alternative</a></li>
 <li><a href="https://github.com/AgeOfWar/rust-book-it">Italiano</a></li>
-<li><a href="https://github.com/ruRust/rust_book_2ed">Русский</a></li>
+<li><a href="https://github.com/rust-lang-ru/book">Русский</a></li>
 <li><a href="https://github.com/rinthel/rust-lang-book-ko">한국어</a></li>
 <li><a href="https://github.com/rust-lang-ja/book-ja">日本語</a></li>
 <li><a href="https://github.com/paytchoo/book-pl">Polski</a></li>
@@ -71605,6 +71624,7 @@ pour les aider, ou nous informer de la création d'une nouvelle traduction !</p
 <li><a href="https://github.com/sebras/book">Svenska</a></li>
 <li><a href="https://github.com/pomokhtari/rust-book-fa">Farsi</a></li>
 <li><a href="https://github.com/rust-lang-de/rustbook-de">Deutsch</a></li>
+<li><a href="https://github.com/RustDili/dokuman/tree/master/ceviriler">Turkish</a>, <a href="https://rustdili.github.io/">online</a></li>
 </ul>
 <blockquote>
 <h1><a class="header" href="#-attention-peinture-fraîche--61" id="-attention-peinture-fraîche--61">🚧 Attention, peinture fraîche !</a></h1>

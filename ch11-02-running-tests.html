@@ -299,6 +299,8 @@ paramètres et retourne 10, ainsi qu'un test qui réussit et un test qui échoue
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust,panics
+# fn main() {}
+# 
 fn affiche_et_retourne_10(a: i32) -> i32 {
     println!("J'ai obtenu la valeur {}", a);
     10
@@ -322,9 +324,8 @@ mod tests {
 }
 ```
 -->
-<pre><pre class="playground"><code class="language-rust panics">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust panics"><span class="boring">fn main() {}
+</span><span class="boring">
 </span>fn affiche_et_retourne_10(a: i32) -&gt; i32 {
     println!(&quot;J'ai obtenu la valeur {}&quot;, a);
     10
@@ -346,8 +347,7 @@ mod tests {
         assert_eq!(5, valeur);
     }
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 <span class="caption">Listing 11-10: Tests for a function that calls
 `println!`</span>

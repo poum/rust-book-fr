@@ -2377,6 +2377,9 @@ le test de l'encart 11-1, réécris pour utiliser <code>Result&lt;T, E&gt;</code
 une <code>Err</code> au lieu de paniquer :</p>
 <!--
 ```rust
+# #![allow(unused_variables)]
+# fn main() {}
+# 
 #[cfg(test)]
 mod tests {
     #[test]
@@ -2390,9 +2393,9 @@ mod tests {
 }
 ```
 -->
-<pre><pre class="playground"><code class="language-rust">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused_variables)]
+</span><span class="boring">fn main() {}
+</span><span class="boring">
 </span>#[cfg(test)]
 mod tests {
     #[test]
@@ -2404,8 +2407,7 @@ mod tests {
         }
     }
 }
-<span class="boring">}
-</span></code></pre></pre>
+</code></pre></pre>
 <!--
 The `it_works` function now has a return type, `Result<(), String>`. In the
 body of the function, rather than calling the `assert_eq!` macro, we return
