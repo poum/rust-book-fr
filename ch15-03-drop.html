@@ -328,9 +328,9 @@ $ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
     Finished dev [unoptimized + debuginfo] target(s) in 0.60s
      Running `target/debug/drop-example`
-PointeurPersos créés.
-Nettoyage d'un PointeurPerso avec la donnée `d'autres trucs`!
-Nettoyage d'un PointeurPerso avec la donnée `des trucs`!
+CustomSmartPointers created.
+Dropping CustomSmartPointer with data `other stuff`!
+Dropping CustomSmartPointer with data `my stuff`!
 ```
 -->
 <pre><code class="language-console">$ cargo run
@@ -394,23 +394,23 @@ aurons une erreur de compilation :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore,does_not_compile
-# struct PointeurPerso {
-#     donnee: String,
+# struct CustomSmartPointer {
+#     data: String,
 # }
 # 
-# impl Drop for PointeurPerso {
+# impl Drop for CustomSmartPointer {
 #     fn drop(&mut self) {
-#         println!("Nettoyage d'un PointeurPerso avec la donnée `{}` !", self.donnee);
+#         println!("Dropping CustomSmartPointer with data `{}`!", self.data);
 #     }
 # }
 # 
 fn main() {
-    let c = PointeurPerso {
-        donnee: String::from("des trucs"),
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
     };
-    println!("PointeurPerso créé.");
+    println!("CustomSmartPointer created.");
     c.drop();
-    println!("PointeurPerso libéré avant la fin du main.");
+    println!("CustomSmartPointer dropped before the end of main.");
 }
 ```
 -->
@@ -448,18 +448,20 @@ When we try to compile this code, we’ll get this error:
 $ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
 error[E0040]: explicit use of destructor method
-  --> src/main.rs:16:7
-<p>|
+  -- > src/main.rs:16:7
+   |
 16 |     c.drop();
-|       ^^^^ explicit destructor calls not allowed</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0040</code>.
-error: could not compile <code>drop-example</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+   |       ^^^^ explicit destructor calls not allowed
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0040`.
+error: could not compile `drop-example`.
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
 error[E0040]: explicit use of destructor method
   --&gt; src/main.rs:16:7
@@ -522,23 +524,23 @@ la fonction <code>drop</code>, comme dans l'encart 15-16 :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-# struct PointeurPerso {
-#     donnee: String,
+# struct CustomSmartPointer {
+#     data: String,
 # }
 # 
-# impl Drop for PointeurPerso {
+# impl Drop for CustomSmartPointer {
 #     fn drop(&mut self) {
-#         println!("Nettoyage d'un PointeurPerso avec la donnée `{}` !", self.donnee);
+#         println!("Dropping CustomSmartPointer with data `{}`!", self.data);
 #     }
 # }
 # 
 fn main() {
-    let c = PointeurPerso {
-        donnee: String::from("des trucs"),
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
     };
-    println!("PointeurPerso créé.");
+    println!("CustomSmartPointer created.");
     drop(c);
-    println!("PointeurPerso libéré avant la fin du main.");
+    println!("CustomSmartPointer dropped before the end of main.");
 }
 ```
 -->
@@ -577,9 +579,9 @@ $ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
     Finished dev [unoptimized + debuginfo] target(s) in 0.73s
      Running `target/debug/drop-example`
-PointeurPerso créé.
-Nettoyage d'un PointeurPerso avec la donnée `some data` !
-PointeurPerso libéré avant la fin du main.
+CustomSmartPointer created.
+Dropping CustomSmartPointer with data `some data`!
+CustomSmartPointer dropped before the end of main.
 ```
 -->
 <pre><code class="language-console">$ cargo run

@@ -302,23 +302,25 @@ Voici le message d'erreur :</p>
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `x` does not live long enough
-  --> src/main.rs:7:17
-<p>|
-7  |             r = &amp;x;
-|                 ^^ borrowed value does not live long enough
+  -- > src/main.rs:7:17
+   |
+7  |             r = &x;
+   |                 ^^ borrowed value does not live long enough
 8  |         }
-|         - <code>x</code> dropped here while still borrowed
+   |         - `x` dropped here while still borrowed
 9  | 
-10 |         println!(&quot;r: {}&quot;, r);
-|                           - borrow later used here</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0597</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+10 |         println!("r: {}", r);
+   |                           - borrow later used here
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0597`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `x` does not live long enough
   --&gt; src/main.rs:7:17
@@ -334,7 +336,7 @@ error[E0597]: `x` does not live long enough
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0597`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -497,8 +499,8 @@ fn main() {
     let string1 = String::from("abcd");
     let string2 = "xyz";
 
-    let resultat = la_plus_longue(string1.as_str(), string2);
-    println!("La plus grande chaîne est {}", resultat);
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
 }
 ```
 -->
@@ -548,11 +550,11 @@ won’t compile.
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La plus grande chaîne est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue(x: &str, y: &str) -> &str {
+fn longest(x: &str, y: &str) -> &str {
     if x.len() > y.len() {
         x
     } else {
@@ -594,33 +596,43 @@ Instead, we get the following error that talks about lifetimes:
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0106]: missing lifetime specifier
- --> src/main.rs:9:33
-<p>|
-9 | fn la_plus_longue(x: &amp;str, y: &amp;str) -&gt; &amp;str {
-|                                        ^ expected lifetime parameter
-|
-= help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from <code>x</code> or <code>y</code></p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0106</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+ -- > src/main.rs:9:33
+  |
+9 | fn longest(x: &str, y: &str) -> &str {
+  |               ----     ----     ^ expected named lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+help: consider introducing a named lifetime parameter
+  |
+9 | fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+  |           ^^^^    ^^^^^^^     ^^^^^^^     ^^^
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0106`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0106]: missing lifetime specifier
  --&gt; src/main.rs:9:33
   |
 9 | fn la_plus_longue(x: &amp;str, y: &amp;str) -&gt; &amp;str {
-  |                                        ^ expected lifetime parameter
+  |                      ----     ----     ^ expected named lifetime parameter
   |
   = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+help: consider introducing a named lifetime parameter
+  |
+9 | fn la_plus_longue&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
+  |                  ^^^^    ^^^^^^^     ^^^^^^^     ^^^
 
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0106`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -759,11 +771,11 @@ dans l'encart 10-22.</p>
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La plus grande chaîne est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue<'a>(x: &'a str, y: &'a str) -> &'a str {
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
     } else {
@@ -882,16 +894,16 @@ concrètement différentes. L'encart 10-23 en est un exemple.</p>
 <!--
 ```rust
 fn main() {
-    let string1 = String::from("une longue chaîne est longue");
+    let string1 = String::from("long string is long");
 
     {
         let string2 = String::from("xyz");
-        let resultat = la_plus_longue(string1.as_str(), string2.as_str());
-        println!("La chaîne la plus longue est {}", resultat);
+        let result = longest(string1.as_str(), string2.as_str());
+        println!("The longest string is {}", result);
     }
 }
 # 
-# fn la_plus_longue<'a>(x: &'a str, y: &'a str) -> &'a str {
+# fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 #     if x.len() > y.len() {
 #         x
 #     } else {
@@ -961,16 +973,16 @@ que la portée soit terminée. Le code de l'encart 10-24 ne va pas se compiler.<
 <!--
 ```rust,ignore,does_not_compile
 fn main() {
-    let string1 = String::from("une longue chaîne est longue");
-    let resultat;
+    let string1 = String::from("long string is long");
+    let result;
     {
         let string2 = String::from("xyz");
-        resultat = la_plus_longue(string1.as_str(), string2.as_str());
+        result = longest(string1.as_str(), string2.as_str());
     }
-    println!("La chaîne la plus longue est {}", resultat);
+    println!("The longest string is {}", result);
 }
 # 
-# fn la_plus_longue<'a>(x: &'a str, y: &'a str) -> &'a str {
+# fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 #     if x.len() > y.len() {
 #         x
 #     } else {
@@ -1012,22 +1024,24 @@ When we try to compile this code, we’ll get this error:
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `string2` does not live long enough
- --> src/main.rs:6:44
-<p>|
-6 |         result = la_plus_longue(string1.as_str(), string2.as_str());
-|                                                   ^^^^^^^ borrowed value does not live long enough
+ -- > src/main.rs:6:44
+  |
+6 |         result = longest(string1.as_str(), string2.as_str());
+  |                                            ^^^^^^^ borrowed value does not live long enough
 7 |     }
-|     - <code>string2</code> dropped here while still borrowed
-8 |     println!(&quot;La chaîne la plus longue est {}&quot;, resultat);
-|                                                 -------- borrow later used here</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0597</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+  |     - `string2` dropped here while still borrowed
+8 |     println!("The longest string is {}", result);
+  |                                          ------ borrow later used here
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0597`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `string2` does not live long enough
  --&gt; src/main.rs:6:44
@@ -1042,7 +1056,7 @@ error[E0597]: `string2` does not live long enough
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0597`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -1115,11 +1129,11 @@ code suivant se compile :</p>
 #     let string1 = String::from("abcd");
 #     let string2 = "efghijklmnopqrstuvwxyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La chaîne la plus longue est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue<'a>(x: &'a str, y: &str) -> &'a str {
+fn longest<'a>(x: &'a str, y: &str) -> &'a str {
     x
 }
 ```
@@ -1170,13 +1184,13 @@ la fonction <code>la_plus_longue</code> qui ne se compile pas :</p>
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La chaîne la plus longue est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue<'a>(x: &str, y: &str) -> &'a str {
-    let resultat = String::from("très longue chaîne");
-    resultat.as_str()
+fn longest<'a>(x: &str, y: &str) -> &'a str {
+    let result = String::from("really long string");
+    result.as_str()
 }
 ```
 -->
@@ -1207,22 +1221,24 @@ Voici le message d'erreur que nous obtenons :</p>
 ```console
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
-error[E0515]: cannot return value referencing local variable `resultat`
-  --> src/main.rs:11:5
-<p>|
-11 |     resultat.as_str()
-|     --------^^^^^^^^^
-|     |
-|     returns a value referencing data owned by the current function
-|     <code>resultat</code> is borrowed here</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0515</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+error[E0515]: cannot return value referencing local variable `result`
+  -- > src/main.rs:11:5
+   |
+11 |     result.as_str()
+   |     ------^^^^^^^^^
+   |     |
+   |     returns a value referencing data owned by the current function
+   |     `result` is borrowed here
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0515`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0515]: cannot return value referencing local variable `resultat`
   --&gt; src/main.rs:11:5
@@ -1236,7 +1252,7 @@ error[E0515]: cannot return value referencing local variable `resultat`
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0515`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -1289,16 +1305,16 @@ structure <code>ExtraitImportant</code> qui stocke une slice de chaîne de carac
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-struct ExtraitImportant<'a> {
-    partie: &'a str,
+struct ImportantExcerpt<'a> {
+    part: &'a str,
 }
 
 fn main() {
-    let roman = String::from("Appelez-moi Ismaël. Il y a quelques années ...");
-    let premiere_phrase = roman.split('.')
-        .next()
-        .expect("Impossible de trouver un '.'");
-    let i = ExtraitImportant { partie: premiere_phrase };
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
 }
 ```
 -->
@@ -1370,11 +1386,11 @@ compilait sans informations de durée de vie.</p>
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust
-fn premier_mot(s: &str) -> &str {
-    let octets = s.as_bytes();
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
 
-    for (i, &element) in octets.iter().enumerate() {
-        if element == b' ' {
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
             return &s[0..i];
         }
     }
@@ -1386,16 +1402,16 @@ fn premier_mot(s: &str) -> &str {
 #     let my_string = String::from("hello world");
 # 
 #     // first_word works on slices of `String`s
-#     let word = premier_mot(&my_string[..]);
+#     let word = first_word(&my_string[..]);
 # 
 #     let my_string_literal = "hello world";
 # 
 #     // first_word works on slices of string literals
-#     let word = premier_mot(&my_string_literal[..]);
+#     let word = first_word(&my_string_literal[..]);
 # 
 #     // Because string literals *are* string slices already,
 #     // this works too, without the slice syntax!
-#     let word = premier_mot(my_string_literal);
+#     let word = first_word(my_string_literal);
 # }
 ```
 -->
@@ -1713,28 +1729,28 @@ est une référence à <code>self</code> et dont la valeur de retour sera un <co
 pas une référence :</p>
 <!--
 ```rust
-# struct ExtraitImportant<'a> {
-#     partie: &'a str,
+# struct ImportantExcerpt<'a> {
+#     part: &'a str,
 # }
 # 
-impl<'a> ExtraitImportant<'a> {
-    fn niveau(&self) -> i32 {
+impl<'a> ImportantExcerpt<'a> {
+    fn level(&self) -> i32 {
         3
     }
 }
 # 
-# impl<'a> ExtraitImportant<'a> {
-#     fn annoncer_et_retourner_partie(&self, annonce: &str) -> &str {
-#         println!("Votre attention s'il vous plaît : {}", annonce);
-#         self.partie
+# impl<'a> ImportantExcerpt<'a> {
+#     fn announce_and_return_part(&self, announcement: &str) -> &str {
+#         println!("Attention please: {}", announcement);
+#         self.part
 #     }
 # }
 # 
 # fn main() {
 #     let novel = String::from("Call me Ishmael. Some years ago...");
 #     let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-#     let i = ExtraitImportant {
-#         partie: first_sentence,
+#     let i = ImportantExcerpt {
+#         part: first_sentence,
 #     };
 # }
 ```
@@ -1778,28 +1794,28 @@ Here is an example where the third lifetime elision rule applies:
 <p>Voici un exemple où la troisième règle d'élision des durées de vie s'applique :</p>
 <!--
 ```rust
-# struct ExtraitImportant<'a> {
-#     partie: &'a str,
+# struct ImportantExcerpt<'a> {
+#     part: &'a str,
 # }
 # 
-# impl<'a> ExtraitImportant<'a> {
-#     fn niveau(&self) -> i32 {
+# impl<'a> ImportantExcerpt<'a> {
+#     fn level(&self) -> i32 {
 #         3
 #     }
 # }
 # 
-impl<'a> ExtraitImportant<'a> {
-    fn annoncer_et_retourner_partie(&self, annonce: &str) -> &str {
-        println!("Votre attention s'il vous plaît : {}", annonce);
-        self.partie
+impl<'a> ImportantExcerpt<'a> {
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please: {}", announcement);
+        self.part
     }
 }
 # 
 # fn main() {
 #     let novel = String::from("Call me Ishmael. Some years ago...");
 #     let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-#     let i = ExtraitImportant {
-#         partie: first_sentence,
+#     let i = ImportantExcerpt {
+#         part: first_sentence,
 #     };
 # }
 ```
@@ -1906,20 +1922,25 @@ génériques, les traits liés, et les durées de vies sur une seule fonction !
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue_avec_annonce(
+#     let result = longest_with_an_announcement(
 #         string1.as_str(),
 #         string2,
-#         "Aujourd'hui, c'est l'anniversaire de quelqu'un !",
+#         "Today is someone's birthday!",
 #     );
-#     println!("La chaîne la plus longue est {}", resultat);
+#     println!("The longest string is {}", result);
 # }
 # 
 use std::fmt::Display;
 
-fn la_plus_longue_avec_annonce<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
-    where T: Display
+fn longest_with_an_announcement<'a, T>(
+    x: &'a str,
+    y: &'a str,
+    ann: T,
+) -> &'a str
+where
+    T: Display,
 {
-    println!("Annonce ! {}", ann);
+    println!("Announcement! {}", ann);
     if x.len() > y.len() {
         x
     } else {

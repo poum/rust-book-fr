@@ -892,7 +892,6 @@ français.</p>
 <tr><td>generics</td><td>génériques / généricité</td><td>-</td></tr>
 <tr><td>generic type parameter</td><td>paramètre de type générique</td><td>-</td></tr>
 <tr><td>getter</td><td>accesseur</td><td>-</td></tr>
-<tr><td>grapheme cluster</td><td>groupe de graphèmes</td><td>-</td></tr>
 <tr><td>glob</td><td>global</td><td>opérateur</td></tr>
 <tr><td>global scope</td><td>portée globale</td><td>-</td></tr>
 <tr><td>grapheme cluster</td><td>groupe de graphèmes</td><td>-</td></tr>
@@ -15468,6 +15467,8 @@ portée. Ces fonctionnalités comprennent :</p>
 tester, et partager des crates ;</li>
 <li><strong>les <em>crates</em> :</strong> une arborescence de modules qui fournit une bibliothèque ou
 un exécutable ;</li>
+<li><strong>les modules</strong> : utilisés avec le mot-clé <code>use</code>, ils vous permettent de
+contrôler l'organisation, la portée et la visibilité des chemins ;</li>
 <li><strong>les chemins :</strong> une façon de nommer un élément, comme une structure, une
 fonction ou un module.</li>
 </ul>
@@ -15500,14 +15501,17 @@ that describes how to build those crates.
 paquets et les <em>crates</em>. Une crate est un binaire ou une bibliothèque. Pour la
 compiler, le compilateur Rust part d'un fichier source, la racine de la <em>crate</em>,
 à partir duquel est alors créé le <em>module racine</em> de votre <em>crate</em> (nous verrons
-les modules plus en détail dans la <a href="ch07-02-defining-modules-to-control-scope-and-privacy.html">section suivante</a><!-- ignore -->).</p>
+les modules plus en détail dans la <a href="ch07-02-defining-modules-to-control-scope-and-privacy.html">section suivante</a><!-- ignore -->).
+Un <em>paquet</em> se compose d'une ou plusieurs crates qui fournissent un ensemble de
+fonctionnalités. Un paquet contient un fichier <em>Cargo.toml</em> qui décrit comment
+construire ces crates.</p>
 <!--
 Several rules determine what a package can contain. A package *must* contain
 zero or one library crates, and no more. It can contain as many binary crates
 as you’d like, but it must contain at least one crate (either library or
 binary).
 -->
-<p>Il y a plusieurs règles qui déterminent ce qu'un paquet peut contenir. il doit
+<p>Il y a plusieurs règles qui déterminent ce qu'un paquet peut contenir. Il doit
 contenir une seule crate de bibliothèque, ou aucune. Il peut contenir autant de
 crates binaires que vous le souhaitez, mais il doit contenir au moins une crate
 (que ce soit une bibliothèque ou un binaire).</p>
@@ -15577,14 +15581,14 @@ projects by bringing the `rand` crate into our project’s scope. All the
 functionality provided by the `rand` crate is accessible through the crate’s
 name, `rand`.
 -->
-<p>Une crate regroupe plusieurs fonctionnalités associées ensemble dans une
-portée afin que les fonctionnalités soient faciles à partager entre plusieurs
-projets. Par exemple, la crate <code>rand</code> que nous avons utilisé dans
-<a href="ch02-00-guessing-game-tutorial.html#g%C3%A9n%C3%A9rer-le-nombre-secret">le chapitre 2</a><!-- ignore --> nous permet de générer
-des nombres aléatoires. Nous pouvons utiliser cette fonctionnalité dans notre
-propre projet en important la crate <code>rand</code> dans la portée de notre projet.
-Toutes les fonctionnalités fournies par la crate <code>rand</code> seront accessibles via
-le nom de la crate, <code>rand</code>.</p>
+<p>Une crate regroupe plusieurs fonctionnalités associées ensemble dans une portée
+afin que les fonctionnalités soient faciles à partager entre plusieurs projets.
+Par exemple, la crate <code>rand</code> que nous avons utilisée dans
+<a href="ch02-00-guessing-game-tutorial.html#g%C3%A9n%C3%A9rer-le-nombre-secret">le chapitre 2</a><!-- ignore --> nous permet de générer des nombres
+aléatoires. Nous pouvons utiliser cette fonctionnalité dans notre propre projet
+en important la crate <code>rand</code> dans la portée de notre projet. Toutes les
+fonctionnalités fournies par la crate <code>rand</code> sont accessibles via le nom de la
+crate, <code>rand</code>.</p>
 <!--
 Keeping a crate’s functionality in its own scope clarifies whether particular
 functionality is defined in our crate or the `rand` crate and prevents
@@ -15607,7 +15611,7 @@ au <em>trait</em> <code>Rng</code> de la crate <code>rand</code> via <code>rand:
 <!--
 Let’s move on and talk about the module system!
 -->
-<p>Continuons d'avancer et parlons maintenant du système de modules !</p>
+<p>Poursuivons et parlons maintenant du système de modules !</p>
 <!--
 [modules]: ch07-02-defining-modules-to-control-scope-and-privacy.html
 [rand]: ch02-00-guessing-game-tutorial.html#generating-a-random-number
@@ -22838,10 +22842,10 @@ fn main() {
 }
 ```
 -->
-<pre><pre class="playground"><code class="language-rust">fn le_plus_grand_i32(liste: &amp;[i32]) -&gt; i32 {
-    let mut le_plus_grand = liste[0];
+<pre><pre class="playground"><code class="language-rust">fn le_plus_grand_i32(liste: &amp;[i32]) -&gt; &amp;i32 {
+    let mut le_plus_grand = &amp;liste[0];
 
-    for &amp;element in liste.iter() {
+    for element in liste.iter() {
         if element &gt; le_plus_grand {
             le_plus_grand = element;
         }
@@ -22850,10 +22854,10 @@ fn main() {
     le_plus_grand
 }
 
-fn le_plus_grand_caractere(liste: &amp;[char]) -&gt; char {
-    let mut le_plus_grand = liste[0];
+fn le_plus_grand_caractere(liste: &amp;[char]) -&gt; &amp;char {
+    let mut le_plus_grand = &amp;liste[0];
 
-    for &amp;element in liste.iter() {
+    for element in liste.iter() {
         if element &gt; le_plus_grand {
             le_plus_grand = element;
         }
@@ -22873,7 +22877,7 @@ fn main() {
 
     let resultat = le_plus_grand_caractere(&amp;liste_de_caracteres);
     println!(&quot;Le plus grand caractère est {}&quot;, resultat);
-<span class="boring">    assert_eq!(resultat, 'y');
+<span class="boring">    assert_eq!(resultat, &amp;'y');
 </span>}
 </code></pre></pre>
 <!--
@@ -22960,7 +22964,7 @@ encore, mais nous allons y remédier plus tard dans ce chapitre.</p>
 <!--
 ```rust,ignore,does_not_compile
 fn largest<T>(list: &[T]) -> &T {
-    let mut largest = list[0];
+    let mut largest = &list[0];
 
     for item in list {
         if item > largest {
@@ -22985,7 +22989,7 @@ fn main() {
 ```
 -->
 <pre><code class="language-rust ignore does_not_compile">fn le_plus_grand&lt;T&gt;(liste: &amp;[T]) -&gt; &amp;T {
-    let mut le_plus_grand = liste[0];
+    let mut le_plus_grand = &amp;liste[0];
 
     for element in liste {
         if element &gt; le_plus_grand {
@@ -23024,40 +23028,46 @@ suivante :</p>
 ```console
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
-error[E0369]: binary operation `>` cannot be applied to type `T`
+error[E0369]: binary operation `>` cannot be applied to type `&T`
  -- > src/main.rs:5:17
   |
 5 |         if item > largest {
-  |            ---- ^ ------- T
+  |            ---- ^ ------- &T
   |            |
-  |            T
+  |            &T
   |
-  = note: `T` might need a bound for `std::cmp::PartialOrd`
+help: consider restricting type parameter `T`
+  |
+1 | fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
+  |             ^^^^^^^^^^^^^^^^^^^^^^
 
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0369`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 ```
 -->
 <pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
-error[E0369]: binary operation `&gt;` cannot be applied to type `T`
+error[E0369]: binary operation `&gt;` cannot be applied to type `&amp;T`
  --&gt; src/main.rs:5:17
   |
 5 |         if element &gt; le_plus_grand {
-  |            ------- ^ ------------- T
+  |            ------- ^ ------------- &amp;T
   |            |
-  |            T
+  |            &amp;T
   |
-  = note: `T` might need a bound for `std::cmp::PartialOrd`
+help: consider restricting type parameter `T`
+  |
+1 | fn le_plus_grand&lt;T: std::cmp::PartialOrd&gt;(liste: &amp;[T]) -&gt; &amp;T {
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
 
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0369`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -23211,7 +23221,7 @@ error[E0308]: mismatched types
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0308`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 ```
@@ -23227,7 +23237,7 @@ error[E0308]: mismatched types
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0308`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -24561,7 +24571,7 @@ pub fn notify(item: &impl Summary) {
 </span><span class="boring">
 </span><span class="boring">impl Resumable for ArticleDePresse {
 </span><span class="boring">    fn resumer(&amp;self) -&gt; String {
-</span><span class="boring">        format!(&quot;{}, par {} ({})&quot;, self.headline, self.author, self.location)
+</span><span class="boring">        format!(&quot;{}, par {} ({})&quot;, self.titre, self.auteur, self.lieu)
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
@@ -24578,7 +24588,7 @@ pub fn notify(item: &impl Summary) {
 </span><span class="boring">    }
 </span><span class="boring">}
 </span><span class="boring">
-</span>pub fn notifier(element: impl Resumable) {
+</span>pub fn notifier(element: &amp;impl Resumable) {
     println!(&quot;Flash-info ! {}&quot;, element.resumer());
 }
 </code></pre>
@@ -24663,7 +24673,7 @@ lié, comme ceci :</p>
 pub fn notify<T: Summary>(item1: &T, item2: &T) {
 ```
 -->
-<pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable&gt;(element1: T, element2: T) {
+<pre><code class="language-rust ignore">pub fn notifier&lt;T: Resumable&gt;(element1: &amp;T, element2: &amp;T) {
 </code></pre>
 <!--
 The generic type `T` specified as the type of the `item1` and `item2`
@@ -25032,40 +25042,46 @@ lancer ce code, nous avions l'erreur suivante :</p>
 ```text
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
-error[E0369]: binary operation `>` cannot be applied to type `T`
+error[E0369]: binary operation `>` cannot be applied to type `&T`
  -- > src/main.rs:5:17
   |
 5 |         if item > largest {
-  |            ---- ^ ------- T
+  |            ---- ^ ------- &T
   |            |
-  |            T
+  |            &T
   |
-  = note: `T` might need a bound for `std::cmp::PartialOrd`
+help: consider restricting type parameter `T`
+  |
+1 | fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
+  |             ^^^^^^^^^^^^^^^^^^^^^^
 
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0369`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 ```
 -->
 <pre><code class="language-text">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
-error[E0369]: binary operation `&gt;` cannot be applied to type `T`
+error[E0369]: binary operation `&gt;` cannot be applied to type `&amp;T`
  --&gt; src/main.rs:5:17
   |
 5 |         if element &gt; le_plus_grand {
-  |            ------- ^ ------------- T
+  |            ------- ^ ------------- &amp;T
   |            |
-  |            T
+  |            &amp;T
   |
-  = note: `T` might need a bound for `std::cmp::PartialOrd`
+help: consider restricting type parameter `T`
+  |
+1 | fn le_plus_grand&lt;T: std::cmp::PartialOrd&gt;(liste: &amp;[T]) -&gt; &amp;T {
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
 
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0369`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -25150,28 +25166,28 @@ $ cargo run
 error[E0508]: cannot move out of type `[T]`, a non-copy slice
  -- > src/main.rs:2:23
   |
-2 |     let mut le_plus_grand = liste[0];
-  |                             ^^^^^^^^
-  |                             |
-  |                             cannot move out of here
-  |                             move occurs because `liste[_]` has type `T`, which does not implement the `Copy` trait
-  |                             help: consider borrowing here: `&liste[0]`
+2 |     let mut largest = list[0];
+  |                       ^^^^^^^
+  |                       |
+  |                       cannot move out of here
+  |                       move occurs because `list[_]` has type `T`, which does not implement the `Copy` trait
+  |                       help: consider borrowing here: `&list[0]`
 
 error[E0507]: cannot move out of a shared reference
  -- > src/main.rs:4:18
   |
-4 |     for &element in liste {
-  |         --------    ^^^^^
+4 |     for &item in list {
+  |         -----    ^^^^
   |         ||
   |         |data moved here
-  |         |move occurs because `element` has type `T`, which does not implement the `Copy` trait
-  |         help: consider removing the `&`: `element`
+  |         |move occurs because `item` has type `T`, which does not implement the `Copy` trait
+  |         help: consider removing the `&`: `item`
 
 error: aborting due to 2 previous errors
 
 Some errors have detailed explanations: E0507, E0508.
 For more information about an error, try `rustc --explain E0507`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 ```
@@ -25179,30 +25195,30 @@ To learn more, run the command again with --verbose.
 <pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0508]: cannot move out of type `[T]`, a non-copy slice
- --&gt; src/main.rs:2:23
+ -- &gt; src/main.rs:2:23
   |
-2 |     let mut largest = list[0];
-  |                       ^^^^^^^
-  |                       |
-  |                       cannot move out of here
-  |                       move occurs because `list[_]` has type `T`, which does not implement the `Copy` trait
-  |                       help: consider borrowing here: `&amp;list[0]`
+2 |     let mut le_plus_grand = liste[0];
+  |                             ^^^^^^^^
+  |                             |
+  |                             cannot move out of here
+  |                             move occurs because `liste[_]` has type `T`, which does not implement the `Copy` trait
+  |                             help: consider borrowing here: `&amp;liste[0]`
 
 error[E0507]: cannot move out of a shared reference
- --&gt; src/main.rs:4:18
+ -- &gt; src/main.rs:4:18
   |
-4 |     for &amp;item in list {
-  |         -----    ^^^^
+4 |     for &amp;element in liste {
+  |         --------    ^^^^^
   |         ||
   |         |data moved here
-  |         |move occurs because `item` has type `T`, which does not implement the `Copy` trait
-  |         help: consider removing the `&amp;`: `item`
+  |         |move occurs because `element` has type `T`, which does not implement the `Copy` trait
+  |         help: consider removing the `&amp;`: `element`
 
 error: aborting due to 2 previous errors
 
 Some errors have detailed explanations: E0507, E0508.
 For more information about an error, try `rustc --explain E0507`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -25245,36 +25261,11 @@ fonction implémente les traits <code>PartialOrd</code> <em>et</em> <code>Copy</
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-fn le_plus_grand<T: PartialOrd + Copy>(liste: &[T]) -> T {
-    let mut le_plus_grand = liste[0];
-
-    for &element in liste {
-        if element > le_plus_grand {
-            le_plus_grand = element;
-        }
-    }
-
-    le_plus_grand
-}
-
-fn main() {
-    let liste_de_nombres = vec![34, 50, 25, 100, 65];
-
-    let resultat = le_plus_grand(&liste_de_nombres);
-    println!("Le nombre le plus grand est {}", resultat);
-
-    let liste_de_caracteres = vec!['y', 'm', 'a', 'q'];
-
-    let resultat = le_plus_grand(&liste_de_caracteres);
-    println!("Le plus grand caractère est {}", resultat);
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn largest&lt;T: PartialOrd + Copy&gt;(list: &amp;[T]) -&gt; T {
+fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
     let mut largest = list[0];
 
-    for &amp;item in list {
-        if item &gt; largest {
+    for &item in list {
+        if item > largest {
             largest = item;
         }
     }
@@ -25285,13 +25276,38 @@ fn main() {
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
-    let result = largest(&amp;number_list);
-    println!(&quot;The largest number is {}&quot;, result);
+    let result = largest(&number_list);
+    println!("The largest number is {}", result);
 
     let char_list = vec!['y', 'm', 'a', 'q'];
 
-    let result = largest(&amp;char_list);
-    println!(&quot;The largest char is {}&quot;, result);
+    let result = largest(&char_list);
+    println!("The largest char is {}", result);
+}
+```
+-->
+<pre><pre class="playground"><code class="language-rust">fn le_plus_grand&lt;T: PartialOrd + Copy&gt;(liste: &amp;[T]) -&gt; T {
+    let mut le_plus_grand = liste[0];
+
+    for &amp;element in liste {
+        if element &gt; le_plus_grand {
+            le_plus_grand = element;
+        }
+    }
+
+    le_plus_grand
+}
+
+fn main() {
+    let liste_de_nombres = vec![34, 50, 25, 100, 65];
+
+    let resultat = le_plus_grand(&amp;liste_de_nombres);
+    println!(&quot;Le nombre le plus grand est {}&quot;, resultat);
+
+    let liste_de_caracteres = vec!['y', 'm', 'a', 'q'];
+
+    let resultat = le_plus_grand(&amp;liste_de_caracteres);
+    println!(&quot;Le plus grand caractère est {}&quot;, resultat);
 }
 </code></pre></pre>
 <!--
@@ -25371,11 +25387,11 @@ impl<T> Pair<T> {
 }
 
 impl<T: Display + PartialOrd> Pair<T> {
-    fn affiche_comparaison(&self) {
+    fn cmp_display(&self) {
         if self.x >= self.y {
-            println!("Le plus grand élément est x = {}", self.x);
+            println!("The largest member is x = {}", self.x);
         } else {
-            println!("Le plus grand élément est y = {}", self.y);
+            println!("The largest member is y = {}", self.y);
         }
     }
 }
@@ -25398,11 +25414,11 @@ impl&lt;T&gt; Pair&lt;T&gt; {
 }
 
 impl&lt;T: Display + PartialOrd&gt; Pair&lt;T&gt; {
-    fn cmp_display(&amp;self) {
+    fn affiche_comparaison(&amp;self) {
         if self.x &gt;= self.y {
-            println!(&quot;The largest member is x = {}&quot;, self.x);
+            println!(&quot;Le plus grand élément est x = {}&quot;, self.x);
         } else {
-            println!(&quot;The largest member is y = {}&quot;, self.y);
+            println!(&quot;Le plus grand élément est y = {}&quot;, self.y);
         }
     }
 }
@@ -25647,23 +25663,25 @@ Voici le message d'erreur :</p>
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `x` does not live long enough
-  --> src/main.rs:7:17
-<p>|
-7  |             r = &amp;x;
-|                 ^^ borrowed value does not live long enough
+  -- > src/main.rs:7:17
+   |
+7  |             r = &x;
+   |                 ^^ borrowed value does not live long enough
 8  |         }
-|         - <code>x</code> dropped here while still borrowed
+   |         - `x` dropped here while still borrowed
 9  | 
-10 |         println!(&quot;r: {}&quot;, r);
-|                           - borrow later used here</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0597</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+10 |         println!("r: {}", r);
+   |                           - borrow later used here
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0597`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `x` does not live long enough
   --&gt; src/main.rs:7:17
@@ -25679,7 +25697,7 @@ error[E0597]: `x` does not live long enough
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0597`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -25842,8 +25860,8 @@ fn main() {
     let string1 = String::from("abcd");
     let string2 = "xyz";
 
-    let resultat = la_plus_longue(string1.as_str(), string2);
-    println!("La plus grande chaîne est {}", resultat);
+    let result = longest(string1.as_str(), string2);
+    println!("The longest string is {}", result);
 }
 ```
 -->
@@ -25893,11 +25911,11 @@ won’t compile.
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La plus grande chaîne est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue(x: &str, y: &str) -> &str {
+fn longest(x: &str, y: &str) -> &str {
     if x.len() > y.len() {
         x
     } else {
@@ -25939,33 +25957,43 @@ Instead, we get the following error that talks about lifetimes:
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0106]: missing lifetime specifier
- --> src/main.rs:9:33
-<p>|
-9 | fn la_plus_longue(x: &amp;str, y: &amp;str) -&gt; &amp;str {
-|                                        ^ expected lifetime parameter
-|
-= help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from <code>x</code> or <code>y</code></p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0106</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+ -- > src/main.rs:9:33
+  |
+9 | fn longest(x: &str, y: &str) -> &str {
+  |               ----     ----     ^ expected named lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+help: consider introducing a named lifetime parameter
+  |
+9 | fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+  |           ^^^^    ^^^^^^^     ^^^^^^^     ^^^
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0106`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0106]: missing lifetime specifier
  --&gt; src/main.rs:9:33
   |
 9 | fn la_plus_longue(x: &amp;str, y: &amp;str) -&gt; &amp;str {
-  |                                        ^ expected lifetime parameter
+  |                      ----     ----     ^ expected named lifetime parameter
   |
   = help: this function's return type contains a borrowed value, but the signature does not say whether it is borrowed from `x` or `y`
+help: consider introducing a named lifetime parameter
+  |
+9 | fn la_plus_longue&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
+  |                  ^^^^    ^^^^^^^     ^^^^^^^     ^^^
 
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0106`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -26104,11 +26132,11 @@ dans l'encart 10-22.</p>
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La plus grande chaîne est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue<'a>(x: &'a str, y: &'a str) -> &'a str {
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
     } else {
@@ -26227,16 +26255,16 @@ concrètement différentes. L'encart 10-23 en est un exemple.</p>
 <!--
 ```rust
 fn main() {
-    let string1 = String::from("une longue chaîne est longue");
+    let string1 = String::from("long string is long");
 
     {
         let string2 = String::from("xyz");
-        let resultat = la_plus_longue(string1.as_str(), string2.as_str());
-        println!("La chaîne la plus longue est {}", resultat);
+        let result = longest(string1.as_str(), string2.as_str());
+        println!("The longest string is {}", result);
     }
 }
 # 
-# fn la_plus_longue<'a>(x: &'a str, y: &'a str) -> &'a str {
+# fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 #     if x.len() > y.len() {
 #         x
 #     } else {
@@ -26306,16 +26334,16 @@ que la portée soit terminée. Le code de l'encart 10-24 ne va pas se compiler.<
 <!--
 ```rust,ignore,does_not_compile
 fn main() {
-    let string1 = String::from("une longue chaîne est longue");
-    let resultat;
+    let string1 = String::from("long string is long");
+    let result;
     {
         let string2 = String::from("xyz");
-        resultat = la_plus_longue(string1.as_str(), string2.as_str());
+        result = longest(string1.as_str(), string2.as_str());
     }
-    println!("La chaîne la plus longue est {}", resultat);
+    println!("The longest string is {}", result);
 }
 # 
-# fn la_plus_longue<'a>(x: &'a str, y: &'a str) -> &'a str {
+# fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 #     if x.len() > y.len() {
 #         x
 #     } else {
@@ -26357,22 +26385,24 @@ When we try to compile this code, we’ll get this error:
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `string2` does not live long enough
- --> src/main.rs:6:44
-<p>|
-6 |         result = la_plus_longue(string1.as_str(), string2.as_str());
-|                                                   ^^^^^^^ borrowed value does not live long enough
+ -- > src/main.rs:6:44
+  |
+6 |         result = longest(string1.as_str(), string2.as_str());
+  |                                            ^^^^^^^ borrowed value does not live long enough
 7 |     }
-|     - <code>string2</code> dropped here while still borrowed
-8 |     println!(&quot;La chaîne la plus longue est {}&quot;, resultat);
-|                                                 -------- borrow later used here</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0597</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+  |     - `string2` dropped here while still borrowed
+8 |     println!("The longest string is {}", result);
+  |                                          ------ borrow later used here
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0597`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0597]: `string2` does not live long enough
  --&gt; src/main.rs:6:44
@@ -26387,7 +26417,7 @@ error[E0597]: `string2` does not live long enough
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0597`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -26460,11 +26490,11 @@ code suivant se compile :</p>
 #     let string1 = String::from("abcd");
 #     let string2 = "efghijklmnopqrstuvwxyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La chaîne la plus longue est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue<'a>(x: &'a str, y: &str) -> &'a str {
+fn longest<'a>(x: &'a str, y: &str) -> &'a str {
     x
 }
 ```
@@ -26515,13 +26545,13 @@ la fonction <code>la_plus_longue</code> qui ne se compile pas :</p>
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue(string1.as_str(), string2);
-#     println!("La chaîne la plus longue est {}", resultat);
+#     let result = longest(string1.as_str(), string2);
+#     println!("The longest string is {}", result);
 # }
 # 
-fn la_plus_longue<'a>(x: &str, y: &str) -> &'a str {
-    let resultat = String::from("très longue chaîne");
-    resultat.as_str()
+fn longest<'a>(x: &str, y: &str) -> &'a str {
+    let result = String::from("really long string");
+    result.as_str()
 }
 ```
 -->
@@ -26552,22 +26582,24 @@ Voici le message d'erreur que nous obtenons :</p>
 ```console
 $ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
-error[E0515]: cannot return value referencing local variable `resultat`
-  --> src/main.rs:11:5
-<p>|
-11 |     resultat.as_str()
-|     --------^^^^^^^^^
-|     |
-|     returns a value referencing data owned by the current function
-|     <code>resultat</code> is borrowed here</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0515</code>.
-error: could not compile <code>chapter10</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+error[E0515]: cannot return value referencing local variable `result`
+  -- > src/main.rs:11:5
+   |
+11 |     result.as_str()
+   |     ------^^^^^^^^^
+   |     |
+   |     returns a value referencing data owned by the current function
+   |     `result` is borrowed here
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0515`.
+error: could not compile `chapter10`
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling chapter10 v0.1.0 (file:///projects/chapter10)
 error[E0515]: cannot return value referencing local variable `resultat`
   --&gt; src/main.rs:11:5
@@ -26581,7 +26613,7 @@ error[E0515]: cannot return value referencing local variable `resultat`
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0515`.
-error: could not compile `chapter10`.
+error: could not compile `chapter10`
 
 To learn more, run the command again with --verbose.
 </code></pre>
@@ -26634,16 +26666,16 @@ structure <code>ExtraitImportant</code> qui stocke une slice de chaîne de carac
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-struct ExtraitImportant<'a> {
-    partie: &'a str,
+struct ImportantExcerpt<'a> {
+    part: &'a str,
 }
 
 fn main() {
-    let roman = String::from("Appelez-moi Ismaël. Il y a quelques années ...");
-    let premiere_phrase = roman.split('.')
-        .next()
-        .expect("Impossible de trouver un '.'");
-    let i = ExtraitImportant { partie: premiere_phrase };
+    let novel = String::from("Call me Ishmael. Some years ago...");
+    let first_sentence = novel.split('.').next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
 }
 ```
 -->
@@ -26715,11 +26747,11 @@ compilait sans informations de durée de vie.</p>
 <p><span class="filename">Fichier : src/lib.rs</span></p>
 <!--
 ```rust
-fn premier_mot(s: &str) -> &str {
-    let octets = s.as_bytes();
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
 
-    for (i, &element) in octets.iter().enumerate() {
-        if element == b' ' {
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
             return &s[0..i];
         }
     }
@@ -26731,16 +26763,16 @@ fn premier_mot(s: &str) -> &str {
 #     let my_string = String::from("hello world");
 # 
 #     // first_word works on slices of `String`s
-#     let word = premier_mot(&my_string[..]);
+#     let word = first_word(&my_string[..]);
 # 
 #     let my_string_literal = "hello world";
 # 
 #     // first_word works on slices of string literals
-#     let word = premier_mot(&my_string_literal[..]);
+#     let word = first_word(&my_string_literal[..]);
 # 
 #     // Because string literals *are* string slices already,
 #     // this works too, without the slice syntax!
-#     let word = premier_mot(my_string_literal);
+#     let word = first_word(my_string_literal);
 # }
 ```
 -->
@@ -27058,28 +27090,28 @@ est une référence à <code>self</code> et dont la valeur de retour sera un <co
 pas une référence :</p>
 <!--
 ```rust
-# struct ExtraitImportant<'a> {
-#     partie: &'a str,
+# struct ImportantExcerpt<'a> {
+#     part: &'a str,
 # }
 # 
-impl<'a> ExtraitImportant<'a> {
-    fn niveau(&self) -> i32 {
+impl<'a> ImportantExcerpt<'a> {
+    fn level(&self) -> i32 {
         3
     }
 }
 # 
-# impl<'a> ExtraitImportant<'a> {
-#     fn annoncer_et_retourner_partie(&self, annonce: &str) -> &str {
-#         println!("Votre attention s'il vous plaît : {}", annonce);
-#         self.partie
+# impl<'a> ImportantExcerpt<'a> {
+#     fn announce_and_return_part(&self, announcement: &str) -> &str {
+#         println!("Attention please: {}", announcement);
+#         self.part
 #     }
 # }
 # 
 # fn main() {
 #     let novel = String::from("Call me Ishmael. Some years ago...");
 #     let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-#     let i = ExtraitImportant {
-#         partie: first_sentence,
+#     let i = ImportantExcerpt {
+#         part: first_sentence,
 #     };
 # }
 ```
@@ -27123,28 +27155,28 @@ Here is an example where the third lifetime elision rule applies:
 <p>Voici un exemple où la troisième règle d'élision des durées de vie s'applique :</p>
 <!--
 ```rust
-# struct ExtraitImportant<'a> {
-#     partie: &'a str,
+# struct ImportantExcerpt<'a> {
+#     part: &'a str,
 # }
 # 
-# impl<'a> ExtraitImportant<'a> {
-#     fn niveau(&self) -> i32 {
+# impl<'a> ImportantExcerpt<'a> {
+#     fn level(&self) -> i32 {
 #         3
 #     }
 # }
 # 
-impl<'a> ExtraitImportant<'a> {
-    fn annoncer_et_retourner_partie(&self, annonce: &str) -> &str {
-        println!("Votre attention s'il vous plaît : {}", annonce);
-        self.partie
+impl<'a> ImportantExcerpt<'a> {
+    fn announce_and_return_part(&self, announcement: &str) -> &str {
+        println!("Attention please: {}", announcement);
+        self.part
     }
 }
 # 
 # fn main() {
 #     let novel = String::from("Call me Ishmael. Some years ago...");
 #     let first_sentence = novel.split('.').next().expect("Could not find a '.'");
-#     let i = ExtraitImportant {
-#         partie: first_sentence,
+#     let i = ImportantExcerpt {
+#         part: first_sentence,
 #     };
 # }
 ```
@@ -27251,20 +27283,25 @@ génériques, les traits liés, et les durées de vies sur une seule fonction !
 #     let string1 = String::from("abcd");
 #     let string2 = "xyz";
 # 
-#     let resultat = la_plus_longue_avec_annonce(
+#     let result = longest_with_an_announcement(
 #         string1.as_str(),
 #         string2,
-#         "Aujourd'hui, c'est l'anniversaire de quelqu'un !",
+#         "Today is someone's birthday!",
 #     );
-#     println!("La chaîne la plus longue est {}", resultat);
+#     println!("The longest string is {}", result);
 # }
 # 
 use std::fmt::Display;
 
-fn la_plus_longue_avec_annonce<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
-    where T: Display
+fn longest_with_an_announcement<'a, T>(
+    x: &'a str,
+    y: &'a str,
+    ann: T,
+) -> &'a str
+where
+    T: Display,
 {
-    println!("Annonce ! {}", ann);
+    println!("Announcement! {}", ann);
     if x.len() > y.len() {
         x
     } else {
@@ -45645,9 +45682,9 @@ $ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
     Finished dev [unoptimized + debuginfo] target(s) in 0.60s
      Running `target/debug/drop-example`
-PointeurPersos créés.
-Nettoyage d'un PointeurPerso avec la donnée `d'autres trucs`!
-Nettoyage d'un PointeurPerso avec la donnée `des trucs`!
+CustomSmartPointers created.
+Dropping CustomSmartPointer with data `other stuff`!
+Dropping CustomSmartPointer with data `my stuff`!
 ```
 -->
 <pre><code class="language-console">$ cargo run
@@ -45711,23 +45748,23 @@ aurons une erreur de compilation :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust,ignore,does_not_compile
-# struct PointeurPerso {
-#     donnee: String,
+# struct CustomSmartPointer {
+#     data: String,
 # }
 # 
-# impl Drop for PointeurPerso {
+# impl Drop for CustomSmartPointer {
 #     fn drop(&mut self) {
-#         println!("Nettoyage d'un PointeurPerso avec la donnée `{}` !", self.donnee);
+#         println!("Dropping CustomSmartPointer with data `{}`!", self.data);
 #     }
 # }
 # 
 fn main() {
-    let c = PointeurPerso {
-        donnee: String::from("des trucs"),
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
     };
-    println!("PointeurPerso créé.");
+    println!("CustomSmartPointer created.");
     c.drop();
-    println!("PointeurPerso libéré avant la fin du main.");
+    println!("CustomSmartPointer dropped before the end of main.");
 }
 ```
 -->
@@ -45765,18 +45802,20 @@ When we try to compile this code, we’ll get this error:
 $ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
 error[E0040]: explicit use of destructor method
-  --> src/main.rs:16:7
-<p>|
+  -- > src/main.rs:16:7
+   |
 16 |     c.drop();
-|       ^^^^ explicit destructor calls not allowed</p>
-<p>error: aborting due to previous error</p>
-<p>For more information about this error, try <code>rustc --explain E0040</code>.
-error: could not compile <code>drop-example</code>.</p>
-<p>To learn more, run the command again with --verbose.</p>
-<pre><code>--&gt;
+   |       ^^^^ explicit destructor calls not allowed
 
-```console
-$ cargo run
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0040`.
+error: could not compile `drop-example`.
+
+To learn more, run the command again with --verbose.
+```
+-->
+<pre><code class="language-console">$ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
 error[E0040]: explicit use of destructor method
   --&gt; src/main.rs:16:7
@@ -45839,23 +45878,23 @@ la fonction <code>drop</code>, comme dans l'encart 15-16 :</p>
 <p><span class="filename">Fichier : src/main.rs</span></p>
 <!--
 ```rust
-# struct PointeurPerso {
-#     donnee: String,
+# struct CustomSmartPointer {
+#     data: String,
 # }
 # 
-# impl Drop for PointeurPerso {
+# impl Drop for CustomSmartPointer {
 #     fn drop(&mut self) {
-#         println!("Nettoyage d'un PointeurPerso avec la donnée `{}` !", self.donnee);
+#         println!("Dropping CustomSmartPointer with data `{}`!", self.data);
 #     }
 # }
 # 
 fn main() {
-    let c = PointeurPerso {
-        donnee: String::from("des trucs"),
+    let c = CustomSmartPointer {
+        data: String::from("some data"),
     };
-    println!("PointeurPerso créé.");
+    println!("CustomSmartPointer created.");
     drop(c);
-    println!("PointeurPerso libéré avant la fin du main.");
+    println!("CustomSmartPointer dropped before the end of main.");
 }
 ```
 -->
@@ -45894,9 +45933,9 @@ $ cargo run
    Compiling drop-example v0.1.0 (file:///projects/drop-example)
     Finished dev [unoptimized + debuginfo] target(s) in 0.73s
      Running `target/debug/drop-example`
-PointeurPerso créé.
-Nettoyage d'un PointeurPerso avec la donnée `some data` !
-PointeurPerso libéré avant la fin du main.
+CustomSmartPointer created.
+Dropping CustomSmartPointer with data `some data`!
+CustomSmartPointer dropped before the end of main.
 ```
 -->
 <pre><code class="language-console">$ cargo run
@@ -70232,7 +70271,7 @@ fn main() {
 }
 
 fn main() {
-    assert!(r#match(&quot;lorem ipsum&quot;, &quot;rem&quot;));
+    assert!(r#match(&quot;rem&quot;, &quot;lorem ipsum&quot;));
 }
 </code></pre></pre>
 <!--

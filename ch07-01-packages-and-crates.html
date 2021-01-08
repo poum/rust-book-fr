@@ -184,14 +184,17 @@ that describes how to build those crates.
 paquets et les <em>crates</em>. Une crate est un binaire ou une bibliothèque. Pour la
 compiler, le compilateur Rust part d'un fichier source, la racine de la <em>crate</em>,
 à partir duquel est alors créé le <em>module racine</em> de votre <em>crate</em> (nous verrons
-les modules plus en détail dans la <a href="ch07-02-defining-modules-to-control-scope-and-privacy.html">section suivante</a><!-- ignore -->).</p>
+les modules plus en détail dans la <a href="ch07-02-defining-modules-to-control-scope-and-privacy.html">section suivante</a><!-- ignore -->).
+Un <em>paquet</em> se compose d'une ou plusieurs crates qui fournissent un ensemble de
+fonctionnalités. Un paquet contient un fichier <em>Cargo.toml</em> qui décrit comment
+construire ces crates.</p>
 <!--
 Several rules determine what a package can contain. A package *must* contain
 zero or one library crates, and no more. It can contain as many binary crates
 as you’d like, but it must contain at least one crate (either library or
 binary).
 -->
-<p>Il y a plusieurs règles qui déterminent ce qu'un paquet peut contenir. il doit
+<p>Il y a plusieurs règles qui déterminent ce qu'un paquet peut contenir. Il doit
 contenir une seule crate de bibliothèque, ou aucune. Il peut contenir autant de
 crates binaires que vous le souhaitez, mais il doit contenir au moins une crate
 (que ce soit une bibliothèque ou un binaire).</p>
@@ -261,14 +264,14 @@ projects by bringing the `rand` crate into our project’s scope. All the
 functionality provided by the `rand` crate is accessible through the crate’s
 name, `rand`.
 -->
-<p>Une crate regroupe plusieurs fonctionnalités associées ensemble dans une
-portée afin que les fonctionnalités soient faciles à partager entre plusieurs
-projets. Par exemple, la crate <code>rand</code> que nous avons utilisé dans
-<a href="ch02-00-guessing-game-tutorial.html#g%C3%A9n%C3%A9rer-le-nombre-secret">le chapitre 2</a><!-- ignore --> nous permet de générer
-des nombres aléatoires. Nous pouvons utiliser cette fonctionnalité dans notre
-propre projet en important la crate <code>rand</code> dans la portée de notre projet.
-Toutes les fonctionnalités fournies par la crate <code>rand</code> seront accessibles via
-le nom de la crate, <code>rand</code>.</p>
+<p>Une crate regroupe plusieurs fonctionnalités associées ensemble dans une portée
+afin que les fonctionnalités soient faciles à partager entre plusieurs projets.
+Par exemple, la crate <code>rand</code> que nous avons utilisée dans
+<a href="ch02-00-guessing-game-tutorial.html#g%C3%A9n%C3%A9rer-le-nombre-secret">le chapitre 2</a><!-- ignore --> nous permet de générer des nombres
+aléatoires. Nous pouvons utiliser cette fonctionnalité dans notre propre projet
+en important la crate <code>rand</code> dans la portée de notre projet. Toutes les
+fonctionnalités fournies par la crate <code>rand</code> sont accessibles via le nom de la
+crate, <code>rand</code>.</p>
 <!--
 Keeping a crate’s functionality in its own scope clarifies whether particular
 functionality is defined in our crate or the `rand` crate and prevents
@@ -291,7 +294,7 @@ au <em>trait</em> <code>Rng</code> de la crate <code>rand</code> via <code>rand:
 <!--
 Let’s move on and talk about the module system!
 -->
-<p>Continuons d'avancer et parlons maintenant du système de modules !</p>
+<p>Poursuivons et parlons maintenant du système de modules !</p>
 <!--
 [modules]: ch07-02-defining-modules-to-control-scope-and-privacy.html
 [rand]: ch02-00-guessing-game-tutorial.html#generating-a-random-number
