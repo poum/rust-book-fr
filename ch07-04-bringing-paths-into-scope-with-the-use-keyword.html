@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Importer des chemins dans la portée via le mot-clé use - Le langage de programmation Rust</title>
+        <title>Bringing Paths Into Scope with the use Keyword - The Rust Programming Language</title>
         
         
 
@@ -43,9 +43,9 @@
 
         <!-- Custom theme stylesheets -->
         
-        <link rel="stylesheet" href="../ferris.css">
+        <link rel="stylesheet" href="ferris.css">
         
-        <link rel="stylesheet" href="../theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
         
 
         
@@ -99,7 +99,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la visibilité</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html" class="active"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">The Rust Programming Language</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programming a Guessing Game</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Common Programming Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Variables and Mutability</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Data Types</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Comments</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Control Flow</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Understanding Ownership</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> What is Ownership?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> References and Borrowing</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> The Slice Type</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Using Structs to Structure Related Data</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Defining and Instantiating Structs</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> An Example Program Using Structs</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> Method Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Enums and Pattern Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Defining an Enum</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> The match Control Flow Operator</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Concise Control Flow with if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Managing Growing Projects with Packages, Crates, and Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Packages and Crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Defining Modules to Control Scope and Privacy</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Paths for Referring to an Item in the Module Tree</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html" class="active"><strong aria-hidden="true">7.4.</strong> Bringing Paths Into Scope with the use Keyword</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Separating Modules into Different Files</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Common Collections</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Storing Lists of Values with Vectors</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Storing UTF-8 Encoded Text with Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Storing Keys with Associated Values in Hash Maps</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> Error Handling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Unrecoverable Errors with panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Recoverable Errors with Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> To panic! or Not To panic!</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Generic Types, Traits, and Lifetimes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Generic Data Types</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Traits: Defining Shared Behavior</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> Validating References with Lifetimes</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Writing Automated Tests</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> How to Write Tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Controlling How Tests Are Run</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> Test Organization</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> An I/O Project: Building a Command Line Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Accepting Command Line Arguments</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> Reading a File</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> Refactoring to Improve Modularity and Error Handling</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> Developing the Library’s Functionality with Test Driven Development</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> Working with Environment Variables</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> Writing Error Messages to Standard Error Instead of Standard Output</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Functional Language Features: Iterators and Closures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Closures: Anonymous Functions that Can Capture Their Environment</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Processing a Series of Items with Iterators</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Improving Our I/O Project</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparing Performance: Loops vs. Iterators</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> More about Cargo and Crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> Customizing Builds with Release Profiles</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Publishing a Crate to Crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo Workspaces</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> Installing Binaries from Crates.io with cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> Extending Cargo with Custom Commands</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> Smart Pointers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Using Box&lt;T&gt; to Point to Data on the Heap</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Treating Smart Pointers Like Regular References with the Deref Trait</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Running Code on Cleanup with the Drop Trait</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc&lt;T&gt;, the Reference Counted Smart Pointer</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell&lt;T&gt; and the Interior Mutability Pattern</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> Reference Cycles Can Leak Memory</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> Fearless Concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> Using Threads to Run Code Simultaneously</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> Using Message Passing to Transfer Data Between Threads</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> Shared-State Concurrency</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> Extensible Concurrency with the Sync and Send Traits</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Object Oriented Programming Features of Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> Characteristics of Object-Oriented Languages</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> Using Trait Objects That Allow for Values of Different Types</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> Implementing an Object-Oriented Design Pattern</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> Patterns and Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> All the Places Patterns Can Be Used</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> Refutability: Whether a Pattern Might Fail to Match</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> Pattern Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> Advanced Features</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> Unsafe Rust</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> Advanced Traits</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> Advanced Types</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> Advanced Functions and Closures</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> Macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> Final Project: Building a Multithreaded Web Server</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> Building a Single-Threaded Web Server</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> Turning Our Single-Threaded Server into a Multithreaded Server</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> Graceful Shutdown and Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - Keywords</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - Operators and Symbols</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - Derivable Traits</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> D - Useful Development Tools</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> E - Editions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> F - Translations of the Book</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - How Rust is Made and “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">The Rust Programming Language</h1>
 
                     <div class="right-buttons">
                         
@@ -139,6 +139,10 @@
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
+                        
+                        <a href="https://github.com/rust-lang/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
                         
                     </div>
                 </div>
@@ -167,44 +171,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!--
-## Bringing Paths into Scope with the `use` Keyword
--->
-<h2><a class="header" href="#importer-des-chemins-dans-la-portée-via-le-mot-clé-use" id="importer-des-chemins-dans-la-portée-via-le-mot-clé-use">Importer des chemins dans la portée via le mot-clé <code>use</code></a></h2>
-<!--
-It might seem like the paths we’ve written to call functions so far are
+                        <h2 id="bringing-paths-into-scope-with-the-use-keyword"><a class="header" href="#bringing-paths-into-scope-with-the-use-keyword">Bringing Paths into Scope with the <code>use</code> Keyword</a></h2>
+<p>It might seem like the paths we’ve written to call functions so far are
 inconveniently long and repetitive. For example, in Listing 7-7, whether we
-chose the absolute or relative path to the `add_to_waitlist` function, every
-time we wanted to call `add_to_waitlist` we had to specify `front_of_house` and
-`hosting` too. Fortunately, there’s a way to simplify this process. We can
+chose the absolute or relative path to the <code>add_to_waitlist</code> function, every
+time we wanted to call <code>add_to_waitlist</code> we had to specify <code>front_of_house</code> and
+<code>hosting</code> too. Fortunately, there’s a way to simplify this process. We can
 bring a path into a scope once and then call the items in that path as if
-they’re local items with the `use` keyword.
--->
-<p>Les chemins que nous avons créés peuvent désormais paraître génants car trop
-longs et répétitifs. Par exemple, dans l'encart 7-7, si nous avions choisi
-d'utiliser le chemin absolu ou relatif pour la fonction
-<code>ajouter_a_la_liste_attente</code>, nous devrions aussi écrire <code>salle_a_manger</code> et
-<code>accueil</code> à chaque fois que nous voullions appeler <code>ajouter_a_la_liste_attente</code>.
-Heureusement, il existe une solution pour simplifier ce cheminement.
-Nous pouvons importer un chemin dans la portée et appeler ensuite les éléments
-de ce chemin comme s'ils étaient des locaux grâce au mot-clé <code>use</code>.</p>
-<!--
-In Listing 7-11, we bring the `crate::front_of_house::hosting` module into the
-scope of the `eat_at_restaurant` function so we only have to specify
-`hosting::add_to_waitlist` to call the `add_to_waitlist` function in
-`eat_at_restaurant`.
--->
-<p>Dans l'encart 7-11, nous importons le module <code>crate::salle_a_manger::accueil</code>
-dans la portée de la fonction <code>manger_au_restaurant</code> afin que nous n'ayons plus
-qu'à utiliser <code>accueil::ajouter_a_la_liste_attente</code> pour appeler la fonction
-<code>ajouter_a_la_liste_attente</code> dans <code>manger_au_restaurant</code>.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust,noplayground,test_harness
-mod front_of_house {
+they’re local items with the <code>use</code> keyword.</p>
+<p>In Listing 7-11, we bring the <code>crate::front_of_house::hosting</code> module into the
+scope of the <code>eat_at_restaurant</code> function so we only have to specify
+<code>hosting::add_to_waitlist</code> to call the <code>add_to_waitlist</code> function in
+<code>eat_at_restaurant</code>.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
+<pre><code class="language-rust noplayground test_harness">mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {}
     }
@@ -217,56 +197,19 @@ pub fn eat_at_restaurant() {
     hosting::add_to_waitlist();
     hosting::add_to_waitlist();
 }
-```
--->
-<pre><code class="language-rust noplayground test_harness">mod salle_a_manger {
-    pub mod accueil {
-        pub fn ajouter_a_la_liste_attente() {}
-    }
-}
-
-use crate::salle_a_manger::accueil;
-
-pub fn manger_au_restaurant() {
-    accueil::ajouter_a_la_liste_attente();
-    accueil::ajouter_a_la_liste_attente();
-    accueil::ajouter_a_la_liste_attente();
-}
 </code></pre>
-<!--
-<span class="caption">Listing 7-11: Bringing a module into scope with
-`use`</span>
--->
-<p><span class="caption">Encart 7-11 : importer un module dans la portée via <code>use</code>
-</span></p>
-<!--
-Adding `use` and a path in a scope is similar to creating a symbolic link in
-the filesystem. By adding `use crate::front_of_house::hosting` in the crate
-root, `hosting` is now a valid name in that scope, just as though the `hosting`
-module had been defined in the crate root. Paths brought into scope with `use`
-also check privacy, like any other paths.
--->
-<p>Dans une portée, utiliser un <code>use</code> et un chemin revient à créer un lien
-symbolique dans le système de fichier. Grâce à l'ajout de
-<code>use crate::salle_a_manger::accueil</code> dans la crate racine, <code>accueil</code> est
-maintenant un nom valide dans cette portée, comme si le module <code>accueil</code> avait
-été défini dans la crate racine. Les chemins importés dans la portée via <code>use</code>
-sont soumis au principe de protection, tout comme les autres chemins.</p>
-<!--
-You can also bring an item into scope with `use` and a relative path. Listing
+<p><span class="caption">Listing 7-11: Bringing a module into scope with
+<code>use</code></span></p>
+<p>Adding <code>use</code> and a path in a scope is similar to creating a symbolic link in
+the filesystem. By adding <code>use crate::front_of_house::hosting</code> in the crate
+root, <code>hosting</code> is now a valid name in that scope, just as though the <code>hosting</code>
+module had been defined in the crate root. Paths brought into scope with <code>use</code>
+also check privacy, like any other paths.</p>
+<p>You can also bring an item into scope with <code>use</code> and a relative path. Listing
 7-12 shows how to specify a relative path to get the same behavior as in
-Listing 7-11.
--->
-<p>Vous pouvez aussi importer un élément dans portée avec <code>use</code> et un chemin
-relatif. L'encart 7-12 nous montre comment utiliser un
-chemin relatif pour obtenir le même résultat que l'encart 7-11.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust,noplayground,test_harness
-mod front_of_house {
+Listing 7-11.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
+<pre><code class="language-rust noplayground test_harness">mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {}
     }
@@ -279,50 +222,15 @@ pub fn eat_at_restaurant() {
     hosting::add_to_waitlist();
     hosting::add_to_waitlist();
 }
-```
--->
-<pre><code class="language-rust noplayground test_harness">mod salle_a_manger {
-    pub mod accueil {
-        pub fn ajouter_a_la_liste_attente() {}
-    }
-}
-
-use salle_a_manger::accueil;
-
-pub fn manger_au_restaurant() {
-    accueil::ajouter_a_la_liste_attente();
-    accueil::ajouter_a_la_liste_attente();
-    accueil::ajouter_a_la_liste_attente();
-}
 </code></pre>
-<!--
-<span class="caption">Listing 7-12: Bringing a module into scope with `use` and
-a relative path</span>
--->
-<p><span class="caption">Encart 7-12 : importer un module dans la portée avec <code>use</code>
-et un chemin relatif</span></p>
-<!--
-### Creating Idiomatic `use` Paths
--->
-<h3><a class="header" href="#créer-des-chemins-idéaux-pour-use" id="créer-des-chemins-idéaux-pour-use">Créer des chemins idéaux pour <code>use</code></a></h3>
-<!--
-In Listing 7-11, you might have wondered why we specified `use
-crate::front_of_house::hosting` and then called `hosting::add_to_waitlist` in
-`eat_at_restaurant` rather than specifying the `use` path all the way out to
-the `add_to_waitlist` function to achieve the same result, as in Listing 7-13.
--->
-<p>Dans l'encart 7-11, vous vous êtes peut-être demandé pourquoi nous avions
-utilisé <code>use crate::salle_a_manger::accueil</code> et appelé ensuite
-<code>accueil::ajouter_a_la_liste_attente</code> dans <code>manger_au_restaurant</code> plutôt que
-d'écrire le chemin du <code>use</code> jusqu'à la fonction <code>ajouter_a_la_liste_attente</code>
-pour avoir le même résultat, comme dans l'encart 7-13.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust,noplayground,test_harness
-mod front_of_house {
+<p><span class="caption">Listing 7-12: Bringing a module into scope with <code>use</code> and
+a relative path</span></p>
+<h3 id="creating-idiomatic-use-paths"><a class="header" href="#creating-idiomatic-use-paths">Creating Idiomatic <code>use</code> Paths</a></h3>
+<p>In Listing 7-11, you might have wondered why we specified <code>use crate::front_of_house::hosting</code> and then called <code>hosting::add_to_waitlist</code> in
+<code>eat_at_restaurant</code> rather than specifying the <code>use</code> path all the way out to
+the <code>add_to_waitlist</code> function to achieve the same result, as in Listing 7-13.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
+<pre><code class="language-rust noplayground test_harness">mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {}
     }
@@ -335,68 +243,20 @@ pub fn eat_at_restaurant() {
     add_to_waitlist();
     add_to_waitlist();
 }
-```
--->
-<pre><code class="language-rust noplayground test_harness">mod salle_a_manger {
-    pub mod accueil {
-        pub fn ajouter_a_la_liste_attente() {}
-    }
-}
-
-use crate::salle_a_manger::accueil::ajouter_a_la_liste_attente;
-
-pub fn manger_au_restaurant() {
-    ajouter_a_la_liste_attente();
-    ajouter_a_la_liste_attente();
-    ajouter_a_la_liste_attente();
-}
 </code></pre>
-<!--
-<span class="caption">Listing 7-13: Bringing the `add_to_waitlist` function
-into scope with `use`, which is unidiomatic</span>
--->
-<p><span class="caption">Encart 7-13 : importer la fonction
-<code>ajouter_a_la_liste_attente</code> dans la portée avec <code>use</code>, ce qui n'est pas idéal
-</span></p>
-<!--
-Although both Listing 7-11 and 7-13 accomplish the same task, Listing 7-11 is
-the idiomatic way to bring a function into scope with `use`. Bringing the
-function’s parent module into scope with `use` so we have to specify the parent
+<p><span class="caption">Listing 7-13: Bringing the <code>add_to_waitlist</code> function
+into scope with <code>use</code>, which is unidiomatic</span></p>
+<p>Although both Listing 7-11 and 7-13 accomplish the same task, Listing 7-11 is
+the idiomatic way to bring a function into scope with <code>use</code>. Bringing the
+function’s parent module into scope with <code>use</code> so we have to specify the parent
 module when calling the function makes it clear that the function isn’t locally
 defined while still minimizing repetition of the full path. The code in Listing
-7-13 is unclear as to where `add_to_waitlist` is defined.
--->
-<p>Bien que l'encart 7-11 et 7-13 accomplissent la même tâche, l'encart 7-11 est la
-façon idéale d'importer une fonction dans la portée via <code>use</code>. Le fait
-d'importer le module parent de la fonction dans notre portée avec <code>use</code>, de
-sorte que nous ayons à préciser le module parent quand nous appelons la fonction
-précise clairement que la fonction n'est pas définie localement, tout en
-minimisant la répétition du chemin complet. Nous ne pouvons pas en déduire
-facilement où est défini <code>ajouter_a_la_liste_attente</code> dans l'encart 7-13.</p>
-<!--
-On the other hand, when bringing in structs, enums, and other items with `use`,
+7-13 is unclear as to where <code>add_to_waitlist</code> is defined.</p>
+<p>On the other hand, when bringing in structs, enums, and other items with <code>use</code>,
 it’s idiomatic to specify the full path. Listing 7-14 shows the idiomatic way
-to bring the standard library’s `HashMap` struct into the scope of a binary
-crate.
--->
-<p>Cela dit, lorsque nous importons des structures, des énumérations, et d'autres
-éléments avec <code>use</code>, il est idéal de préciser le chemin complet. L'encart 7-14
-montre la manière idéale d'importer la structure <code>HashMap</code> de la bibliothèque
-standard dans la portée d'une crate binaire.</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-use std::collections::HashMap;
-
-fn main() {
-    let mut map = HashMap::new();
-    map.insert(1, 2);
-}
-```
--->
+to bring the standard library’s <code>HashMap</code> struct into the scope of a binary
+crate.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
 
 fn main() {
@@ -404,183 +264,78 @@ fn main() {
     map.insert(1, 2);
 }
 </code></pre></pre>
-<!--
-<span class="caption">Listing 7-14: Bringing `HashMap` into scope in an
-idiomatic way</span>
--->
-<p><span class="caption">Encart 7-14 : import de <code>HashMap</code> dans la portée de
-manière idéale</span></p>
-<!--
-There’s no strong reason behind this idiom: it’s just the convention that has
-emerged, and folks have gotten used to reading and writing Rust code this way.
--->
-<p>Il n'y a pas de forte justification à cette pratique : c'est simplement une
-convention qui a germé, et les gens se sont habitués à lire et écrire du code
-Rust de cette façon.</p>
-<!--
-The exception to this idiom is if we’re bringing two items with the same name
-into scope with `use` statements, because Rust doesn’t allow that. Listing 7-15
-shows how to bring two `Result` types into scope that have the same name but
-different parent modules and how to refer to them.
--->
-<p>Il y a une exception à cette pratique : nous ne pouvons pas utiliser
-l'instruction <code>use</code> pour importer deux éléments avec le même nom dans la portée,
-car Rust ne l'autorise pas. L'encart 7-15 nous montre comment importer puis
-utiliser deux types <code>Result</code> ayant le même nom mais dont leurs modules parents
-sont distincts.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust
-use std::fmt;
-use std::io;
-
-fn function1() -> fmt::Result {
-    // --snip--
-#     Ok(())
-}
-
-fn function2() -> io::Result<()> {
-    // --snip--
-#     Ok(())
-}
-```
--->
+<p><span class="caption">Listing 7-14: Bringing <code>HashMap</code> into scope in an
+idiomatic way</span></p>
+<p>There’s no strong reason behind this idiom: it’s just the convention that has
+emerged, and folks have gotten used to reading and writing Rust code this way.</p>
+<p>The exception to this idiom is if we’re bringing two items with the same name
+into scope with <code>use</code> statements, because Rust doesn’t allow that. Listing 7-15
+shows how to bring two <code>Result</code> types into scope that have the same name but
+different parent modules and how to refer to them.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::fmt;
 use std::io;
 
-fn fonction1() -&gt; fmt::Result {
-    // -- partie masquée ici --
+fn function1() -&gt; fmt::Result {
+    // --snip--
 <span class="boring">    Ok(())
 </span>}
 
-fn fonction2() -&gt; io::Result&lt;()&gt; {
-    // -- partie masquée ici --
+fn function2() -&gt; io::Result&lt;()&gt; {
+    // --snip--
 <span class="boring">    Ok(())
 </span>}
 <span class="boring">}
 </span></code></pre></pre>
-<!--
-<span class="caption">Listing 7-15: Bringing two types with the same name into
-the same scope requires using their parent modules.</span>
--->
-<p><span class="caption">Encart 7-15 : l'import de deux types ayant le même nom
-dans la même portée nécessite d'utiliser leurs modules parents.</span></p>
-<!--
-As you can see, using the parent modules distinguishes the two `Result` types.
-If instead we specified `use std::fmt::Result` and `use std::io::Result`, we’d
-have two `Result` types in the same scope and Rust wouldn’t know which one we
-meant when we used `Result`.
--->
-<p>Comme vous pouvez le constater, l'utilisation des modules parents permet de
-distinguer les deux types <code>Result</code>. Si nous avions utilisé
-<code>use std::fmt::Result</code> et <code>use std::io::Result</code>, nous aurions deux types de
-<code>Result</code> dans la même portée et donc Rust ne pourrait pas comprendre lequel nous
-utiliserions en demandant <code>Result</code>.</p>
-<!--
-### Providing New Names with the `as` Keyword
--->
-<h3><a class="header" href="#renommer-des-éléments-avec-le-mot-clé-as" id="renommer-des-éléments-avec-le-mot-clé-as">Renommer des éléments avec le mot-clé <code>as</code></a></h3>
-<!--
-There’s another solution to the problem of bringing two types of the same name
-into the same scope with `use`: after the path, we can specify `as` and a new
+<p><span class="caption">Listing 7-15: Bringing two types with the same name into
+the same scope requires using their parent modules.</span></p>
+<p>As you can see, using the parent modules distinguishes the two <code>Result</code> types.
+If instead we specified <code>use std::fmt::Result</code> and <code>use std::io::Result</code>, we’d
+have two <code>Result</code> types in the same scope and Rust wouldn’t know which one we
+meant when we used <code>Result</code>.</p>
+<h3 id="providing-new-names-with-the-as-keyword"><a class="header" href="#providing-new-names-with-the-as-keyword">Providing New Names with the <code>as</code> Keyword</a></h3>
+<p>There’s another solution to the problem of bringing two types of the same name
+into the same scope with <code>use</code>: after the path, we can specify <code>as</code> and a new
 local name, or alias, for the type. Listing 7-16 shows another way to write the
-code in Listing 7-15 by renaming one of the two `Result` types using `as`.
--->
-<p>Il y a une autre solution au fait d'avoir deux types du même nom dans la même
-portée à cause de <code>use</code> : après le chemin, nous pouvons rajouter <code>as</code> suivi d'un
-nouveau nom local, ou alias, sur le type. L'encart 7-16 nous montre une autre
-façon d'écrire le code de l'encart 7-15 en utilisant <code>as</code> pour renommant un des
-deux types <code>Result</code>.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust
-use std::fmt::Result;
-use std::io::Result as IoResult;
-
-fn function1() -> Result {
-    // --snip--
-#     Ok(())
-}
-
-fn function2() -> IoResult<()> {
-    // --snip--
-#     Ok(())
-}
-```
--->
+code in Listing 7-15 by renaming one of the two <code>Result</code> types using <code>as</code>.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::fmt::Result;
 use std::io::Result as IoResult;
 
-fn fonction1() -&gt; Result {
-    // -- partie masquée ici --
+fn function1() -&gt; Result {
+    // --snip--
 <span class="boring">    Ok(())
 </span>}
 
-fn fonction2() -&gt; IoResult&lt;()&gt; {
-    // -- partie masquée ici --
+fn function2() -&gt; IoResult&lt;()&gt; {
+    // --snip--
 <span class="boring">    Ok(())
 </span>}
 <span class="boring">}
 </span></code></pre></pre>
-<!--
-<span class="caption">Listing 7-16: Renaming a type when it’s brought into
-scope with the `as` keyword</span>
--->
-<p><span class="caption">Encart 7-16 : renommer un type lorsqu'il est importé dans
-la portée, avec le mot-clé <code>as</code></span></p>
-<!--
-In the second `use` statement, we chose the new name `IoResult` for the
-`std::io::Result` type, which won’t conflict with the `Result` from `std::fmt`
+<p><span class="caption">Listing 7-16: Renaming a type when it’s brought into
+scope with the <code>as</code> keyword</span></p>
+<p>In the second <code>use</code> statement, we chose the new name <code>IoResult</code> for the
+<code>std::io::Result</code> type, which won’t conflict with the <code>Result</code> from <code>std::fmt</code>
 that we’ve also brought into scope. Listing 7-15 and Listing 7-16 are
-considered idiomatic, so the choice is up to you!
--->
-<p>Dans la seconde instruction <code>use</code>, nous avons choisi <code>IoResult</code> comme nouveau
-nom du type <code>std::io::Result</code>, qui n'est plus en conflit avec le <code>Result</code> de
-<code>std::fmt</code> que nous avons aussi importé dans la portée. Les encarts 7-15 et 7-16
-sont idéaux, donc le choix vous revient ! </p>
-<!--
-### Re-exporting Names with `pub use`
--->
-<h3><a class="header" href="#re-exporter-des-éléments-avec-pub-use" id="re-exporter-des-éléments-avec-pub-use">Re-exporter des éléments avec <code>pub use</code></a></h3>
-<!--
-When we bring a name into scope with the `use` keyword, the name available in
+considered idiomatic, so the choice is up to you!</p>
+<h3 id="re-exporting-names-with-pub-use"><a class="header" href="#re-exporting-names-with-pub-use">Re-exporting Names with <code>pub use</code></a></h3>
+<p>When we bring a name into scope with the <code>use</code> keyword, the name available in
 the new scope is private. To enable the code that calls our code to refer to
-that name as if it had been defined in that code’s scope, we can combine `pub`
-and `use`. This technique is called *re-exporting* because we’re bringing
+that name as if it had been defined in that code’s scope, we can combine <code>pub</code>
+and <code>use</code>. This technique is called <em>re-exporting</em> because we’re bringing
 an item into scope but also making that item available for others to bring into
-their scope.
--->
-<p>Lorsque nous importons un élément dans la portée avec le mot-clé <code>use</code>, son nom
-dans la nouvelle portée est privé. Pour permettre au code appelant d'utiliser ce
-nom comme s'il était défini dans cette portée, nous pouvons associer <code>pub</code> et
-<code>use</code>. Cette technique est appelée <em>re-exporter</em> car nous importons un
-élément dans la portée, mais nous rendons aussi cet élément disponible aux
-portées des autres.</p>
-<!--
-Listing 7-17 shows the code in Listing 7-11 with `use` in the root module
-changed to `pub use`.
--->
-<p>L'encart 7-17 nous montre le code de l'encart 7-11 où le <code>use</code> du module racine
-a été remplacé par <code>pub use</code>.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust,noplayground,test_harness
-mod front_of_house {
+their scope.</p>
+<p>Listing 7-17 shows the code in Listing 7-11 with <code>use</code> in the root module
+changed to <code>pub use</code>.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
+<pre><code class="language-rust noplayground test_harness">mod front_of_house {
     pub mod hosting {
         pub fn add_to_waitlist() {}
     }
@@ -593,395 +348,162 @@ pub fn eat_at_restaurant() {
     hosting::add_to_waitlist();
     hosting::add_to_waitlist();
 }
-```
--->
-<pre><code class="language-rust noplayground test_harness">mod salle_a_manger {
-    pub mod accueil {
-        pub fn ajouter_a_la_liste_attente() {}
-    }
-}
-
-pub use crate::salle_a_manger::accueil;
-
-pub fn manger_au_restaurant() {
-    accueil::ajouter_a_la_liste_attente();
-    accueil::ajouter_a_la_liste_attente();
-    accueil::ajouter_a_la_liste_attente();
-}
 </code></pre>
-<!--
-<span class="caption">Listing 7-17: Making a name available for any code to use
-from a new scope with `pub use`</span>
--->
-<p><span class="caption">Encart 7-17 : rendre un élément disponible pour n'importe
-quel code qui l'importera dans sa portée, avec <code>pub use</code></span></p>
-<!--
-By using `pub use`, external code can now call the `add_to_waitlist` function
-using `hosting::add_to_waitlist`. If we hadn’t specified `pub use`, the
-`eat_at_restaurant` function could call `hosting::add_to_waitlist` in its
-scope, but external code couldn’t take advantage of this new path.
--->
-<p>Grâce à <code>pub use</code>, le code externe peut maintenant appeler la fonction
-<code>ajouter_a_la_liste_attente</code> en utilisant <code>accueil::ajouter_a_la_liste_attente</code>.
-Si nous n'avions pas utilisé <code>pub use</code>, la fonction <code>manger_au_restaurant</code>
-aurait pu appeler <code>accueil::ajouter_a_la_liste_attente</code> dans sa portée, mais le
-code externe n'aurait pas pu profiter de ce nouveau chemin.</p>
-<!--
-Re-exporting is useful when the internal structure of your code is different
+<p><span class="caption">Listing 7-17: Making a name available for any code to use
+from a new scope with <code>pub use</code></span></p>
+<p>By using <code>pub use</code>, external code can now call the <code>add_to_waitlist</code> function
+using <code>hosting::add_to_waitlist</code>. If we hadn’t specified <code>pub use</code>, the
+<code>eat_at_restaurant</code> function could call <code>hosting::add_to_waitlist</code> in its
+scope, but external code couldn’t take advantage of this new path.</p>
+<p>Re-exporting is useful when the internal structure of your code is different
 from how programmers calling your code would think about the domain. For
 example, in this restaurant metaphor, the people running the restaurant think
 about “front of house” and “back of house.” But customers visiting a restaurant
 probably won’t think about the parts of the restaurant in those terms. With
-`pub use`, we can write our code with one structure but expose a different
+<code>pub use</code>, we can write our code with one structure but expose a different
 structure. Doing so makes our library well organized for programmers working on
-the library and programmers calling the library.
--->
-<p>Re-exporter est utile quand la structure interne de votre code est différente de
-comment les développeurs qui utilisent votre code imaginent le domaine. Par
-exemple, dans cette métaphore du restaurant, les personnes qui font fonctionner
-le restaurant se structurent en fonction de la “salle à manger” et des
-“cuisines”. Mais les clients qui utilisent le restaurant ne vont probablement
-voir les choses ainsi. Avec <code>pub use</code>, nous pouvons écrire notre code selon une
-certaine organisation, mais l'exposer avec une organisation différente. En
-faisant ainsi, la bibliothèque est bien organisée autant pour les développeurs
-qui travaillent dans la bibliothèque que les développeurs qui utilisent la
-bibliothèque.</p>
-<!--
-### Using External Packages
--->
-<h3><a class="header" href="#utiliser-des-paquets-externes" id="utiliser-des-paquets-externes">Utiliser des paquets externes</a></h3>
-<!--
-In Chapter 2, we programmed a guessing game project that used an external
-package called `rand` to get random numbers. To use `rand` in our project, we
-added this line to *Cargo.toml*:
--->
-<p>Dans le chapitre 2, nous avions développé un projet de jeu de devinettes qui
-utilisait le paquet externe <code>rand</code> afin d'obtenir des nombres aléatoires.
-Pour pouvoir utiliser <code>rand</code> dans notre projet, nous avons ajouté cette ligne
-dans <em>Cargo.toml</em> :</p>
-<!--
+the library and programmers calling the library.</p>
+<h3 id="using-external-packages"><a class="header" href="#using-external-packages">Using External Packages</a></h3>
+<p>In Chapter 2, we programmed a guessing game project that used an external
+package called <code>rand</code> to get random numbers. To use <code>rand</code> in our project, we
+added this line to <em>Cargo.toml</em>:</p>
 <!-- When updating the version of `rand` used, also update the version of
 `rand` used in these files so they all match:
 * ch02-00-guessing-game-tutorial.md
 * ch14-03-cargo-workspaces.md
--- >
 -->
-<!--
-<span class="filename">Filename: Cargo.toml</span>
--->
-<p><span class="filename">Fichier : Cargo.toml</span></p>
-<!--
-```toml
-[dependencies]
-rand = "0.5.5"
-```
--->
+<p><span class="filename">Filename: Cargo.toml</span></p>
 <pre><code class="language-toml">[dependencies]
 rand = &quot;0.5.5&quot;
 </code></pre>
-<!--
-Adding `rand` as a dependency in *Cargo.toml* tells Cargo to download the
-`rand` package and any dependencies from [crates.io](https://crates.io/) and
-make `rand` available to our project.
--->
-<p>L'ajout de <code>rand</code> comme dépendance dans <em>Cargo.toml</em> demande à Cargo de
-télécharger le paquet <code>rand</code> et toutes ses dépendances à partir de
-<a href="https://crates.io/">crates.io</a> et rend disponible <code>rand</code> pour notre projet.</p>
-<!--
-Then, to bring `rand` definitions into the scope of our package, we added a
-`use` line starting with the name of the crate, `rand`, and listed the items
-we wanted to bring into scope. Recall that in the [“Generating a Random
-Number”][rand]<!-- ignore -- > section in Chapter 2, we brought the `Rng` trait
-into scope and called the `rand::thread_rng` function:
--->
-<p>Ensuite, pour importer les définitions de <code>rand</code> dans la portée de notre paquet,
-nous avons ajouté une ligne <code>use</code> qui commence avec le nom de la crate, <code>rand</code>,
-et nous avons listé les éléments que nous voulions importer dans notre portée.
-Dans la section <a href="ch02-00-guessing-game-tutorial.html#g%C3%A9n%C3%A9rer-le-nombre-secret">“Générer le nombre secret”</a><!-- ignore --> du chapitre 2,
-nous avons importé le trait <code>Rng</code> dans la portée, puis nous avons appelé la
-fonction <code>rand::thread_rng</code> :</p>
-<!--
-```rust,ignore
-# use std::io;
-use rand::Rng;
-
-fn main() {
-#     println!("Guess the number!");
-# 
-    let secret_number = rand::thread_rng().gen_range(1, 101);
-# 
-#     println!("The secret number is: {}", secret_number);
-# 
-#     println!("Please input your guess.");
-# 
-#     let mut guess = String::new();
-# 
-#     io::stdin()
-#         .read_line(&mut guess)
-#         .expect("Failed to read line");
-# 
-#     println!("You guessed: {}", guess);
-}
-```
--->
+<p>Adding <code>rand</code> as a dependency in <em>Cargo.toml</em> tells Cargo to download the
+<code>rand</code> package and any dependencies from <a href="https://crates.io/">crates.io</a> and
+make <code>rand</code> available to our project.</p>
+<p>Then, to bring <code>rand</code> definitions into the scope of our package, we added a
+<code>use</code> line starting with the name of the crate, <code>rand</code>, and listed the items
+we wanted to bring into scope. Recall that in the <a href="ch02-00-guessing-game-tutorial.html#generating-a-random-number">“Generating a Random
+Number”</a><!-- ignore --> section in Chapter 2, we brought the <code>Rng</code> trait
+into scope and called the <code>rand::thread_rng</code> function:</p>
 <pre><code class="language-rust ignore"><span class="boring">use std::io;
 </span>use rand::Rng;
 
 fn main() {
-<span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+<span class="boring">    println!(&quot;Guess the number!&quot;);
 </span><span class="boring">
-</span>    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span>    let secret_number = rand::thread_rng().gen_range(1, 101);
 <span class="boring">
-</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">    println!(&quot;The secret number is: {}&quot;, secret_number);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">    println!(&quot;Please input your guess.&quot;);
 </span><span class="boring">
-</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">    let mut guess = String::new();
 </span><span class="boring">
 </span><span class="boring">    io::stdin()
-</span><span class="boring">        .read_line(&amp;mut supposition)
-</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">        .read_line(&amp;mut guess)
+</span><span class="boring">        .expect(&quot;Failed to read line&quot;);
 </span><span class="boring">
-</span><span class="boring">        println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">    println!(&quot;You guessed: {}&quot;, guess);
 </span>}
 </code></pre>
-<!--
-Members of the Rust community have made many packages available at
-[crates.io](https://crates.io/), and pulling any of them into your package
-involves these same steps: listing them in your package’s *Cargo.toml* file and
-using `use` to bring items from their crates into scope.
--->
-<p>Les membres de la communauté Rust ont mis à disposition de nombreux paquets
-dans <a href="https://crates.io/">crates.io</a>, et utiliser l'un d'entre eux dans votre
-paquet implique toujours ces mêmes étapes : les lister dans le fichier
-<em>Cargo.toml</em> de votre paquet et utiliser <code>use</code> pour importer certains éléments
-de ces crates dans la portée.</p>
-<!--
-Note that the standard library (`std`) is also a crate that’s external to our
+<p>Members of the Rust community have made many packages available at
+<a href="https://crates.io/">crates.io</a>, and pulling any of them into your package
+involves these same steps: listing them in your package’s <em>Cargo.toml</em> file and
+using <code>use</code> to bring items from their crates into scope.</p>
+<p>Note that the standard library (<code>std</code>) is also a crate that’s external to our
 package. Because the standard library is shipped with the Rust language, we
-don’t need to change *Cargo.toml* to include `std`. But we do need to refer to
-it with `use` to bring items from there into our package’s scope. For example,
-with `HashMap` we would use this line:
--->
-<p>Notez que la bibliothèque standard (<code>std</code>) est aussi une crate qui est externe à
-notre paquet. Comme la bibliothèque standard est livrée avec le langage Rust,
-nous n'avons pas à modifier le <em>Cargo.toml</em> pour y inclure <code>std</code>. Mais nous
-devons utiliser <code>use</code> pour importer les éléments qu'y se trouvent dans la portée
-de notre paquet. Par exemple, pour <code>HashMap</code> nous pourrions utiliser cette
-ligne :</p>
-<!--
-```rust
-use std::collections::HashMap;
-```
--->
+don’t need to change <em>Cargo.toml</em> to include <code>std</code>. But we do need to refer to
+it with <code>use</code> to bring items from there into our package’s scope. For example,
+with <code>HashMap</code> we would use this line:</p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::collections::HashMap;
 <span class="boring">}
 </span></code></pre></pre>
-<!--
-This is an absolute path starting with `std`, the name of the standard library
-crate.
--->
-<p>C'est un chemin absolu qui commence par <code>std</code>, le nom de la crate de la
-bibliothèque standard.</p>
-<!--
-### Using Nested Paths to Clean Up Large `use` Lists
--->
-<h3><a class="header" href="#utiliser-des-chemins-imbriqués-pour-simplifier-les-grandes-listes-de-use" id="utiliser-des-chemins-imbriqués-pour-simplifier-les-grandes-listes-de-use">Utiliser des chemins imbriqués pour simplifier les grandes listes de <code>use</code></a></h3>
-<!--
-If we’re using multiple items defined in the same crate or same module,
+<p>This is an absolute path starting with <code>std</code>, the name of the standard library
+crate.</p>
+<h3 id="using-nested-paths-to-clean-up-large-use-lists"><a class="header" href="#using-nested-paths-to-clean-up-large-use-lists">Using Nested Paths to Clean Up Large <code>use</code> Lists</a></h3>
+<p>If we’re using multiple items defined in the same crate or same module,
 listing each item on its own line can take up a lot of vertical space in our
-files. For example, these two `use` statements we had in the Guessing Game in
-Listing 2-4 bring items from `std` into scope:
--->
-<p>Si vous utilisez de nombreux éléments définis dans une même crate ou dans un
-même module, lister chaque élément sur sa propre ligne prendra beaucoup d'espace
-vertical dans vos fichiers. Par exemple, ces deux instructions <code>use</code>, que nous
-avions dans le jeu de devinettes, dans l'encart 2-4, importaient des éléments de
-<code>std</code> dans la portée :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,ignore
-# use rand::Rng;
-// --snip--
-use std::cmp::Ordering;
-use std::io;
-// --snip--
-# 
-# fn main() {
-#     println!("Guess the number!");
-# 
-#     let secret_number = rand::thread_rng().gen_range(1, 101);
-# 
-#     println!("The secret number is: {}", secret_number);
-# 
-#     println!("Please input your guess.");
-# 
-#     let mut guess = String::new();
-# 
-#     io::stdin()
-#         .read_line(&mut guess)
-#         .expect("Failed to read line");
-# 
-#     println!("You guessed: {}", guess);
-# 
-#     match guess.cmp(&secret_number) {
-#         Ordering::Less => println!("Too small!"),
-#         Ordering::Greater => println!("Too big!"),
-#         Ordering::Equal => println!("You win!"),
-#     }
-# }
-```
--->
+files. For example, these two <code>use</code> statements we had in the Guessing Game in
+Listing 2-4 bring items from <code>std</code> into scope:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
-</span>// -- partie masquée ici --
+</span>// --snip--
 use std::cmp::Ordering;
 use std::io;
-// -- partie masquée ici --
+// --snip--
 <span class="boring">
 </span><span class="boring">fn main() {
-</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">    println!(&quot;Guess the number!&quot;);
 </span><span class="boring">
-</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1, 101);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">    println!(&quot;The secret number is: {}&quot;, secret_number);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">    println!(&quot;Please input your guess.&quot;);
 </span><span class="boring">
-</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">    let mut guess = String::new();
 </span><span class="boring">
 </span><span class="boring">    io::stdin()
-</span><span class="boring">        .read_line(&amp;mut supposition)
-</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">        .read_line(&amp;mut guess)
+</span><span class="boring">        .expect(&quot;Failed to read line&quot;);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">    println!(&quot;You guessed: {}&quot;, guess);
 </span><span class="boring">
-</span><span class="boring">    match supposition.cmp(&amp;nombre_secret) {
-</span><span class="boring">        Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
-</span><span class="boring">        Ordering::Greater =&gt; println!(&quot;C'est moins !&quot;),
-</span><span class="boring">        Ordering::Equal =&gt; println!(&quot;Vous avez gagné !&quot;),
+</span><span class="boring">    match guess.cmp(&amp;secret_number) {
+</span><span class="boring">        Ordering::Less =&gt; println!(&quot;Too small!&quot;),
+</span><span class="boring">        Ordering::Greater =&gt; println!(&quot;Too big!&quot;),
+</span><span class="boring">        Ordering::Equal =&gt; println!(&quot;You win!&quot;),
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
-<!--
-Instead, we can use nested paths to bring the same items into scope in one
+<p>Instead, we can use nested paths to bring the same items into scope in one
 line. We do this by specifying the common part of the path, followed by two
 colons, and then curly brackets around a list of the parts of the paths that
-differ, as shown in Listing 7-18.
--->
-<p>A la place, nous pouvons utiliser des chemins imbriqués afin d'importer les
-mêmes éléments dans la portée en une seule ligne. Nous pouvons faire cela en
-indiquant la partie commune du chemin, suivi de deux double-points, puis
-d'accolades autour d'une liste d'éléments du chemin, comme dans l'encart 7-18 :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,ignore
-# use rand::Rng;
-// --snip--
-use std::{cmp::Ordering, io};
-// --snip--
-# 
-# fn main() {
-#     println!("Guess the number!");
-# 
-#     let secret_number = rand::thread_rng().gen_range(1, 101);
-# 
-#     println!("The secret number is: {}", secret_number);
-# 
-#     println!("Please input your guess.");
-# 
-#     let mut guess = String::new();
-# 
-#     io::stdin()
-#         .read_line(&mut guess)
-#         .expect("Failed to read line");
-# 
-#     let guess: u32 = guess.trim().parse().expect("Please type a number!");
-# 
-#     println!("You guessed: {}", guess);
-# 
-#     match guess.cmp(&secret_number) {
-#         Ordering::Less => println!("Too small!"),
-#         Ordering::Greater => println!("Too big!"),
-#         Ordering::Equal => println!("You win!"),
-#     }
-# }
-```
--->
+differ, as shown in Listing 7-18.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><code class="language-rust ignore"><span class="boring">use rand::Rng;
-</span>// -- partie masquée ici --
+</span>// --snip--
 use std::{cmp::Ordering, io};
-// -- partie masquée ici --
+// --snip--
 <span class="boring">
 </span><span class="boring">fn main() {
-</span><span class="boring">    println!(&quot;Devinez le nombre !&quot;);
+</span><span class="boring">    println!(&quot;Guess the number!&quot;);
 </span><span class="boring">
-</span><span class="boring">    let nombre_secret = rand::thread_rng().gen_range(1, 101);
+</span><span class="boring">    let secret_number = rand::thread_rng().gen_range(1, 101);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Le nombre secret est : {}&quot;, nombre_secret);
+</span><span class="boring">    println!(&quot;The secret number is: {}&quot;, secret_number);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Veuillez entrer un nombre.&quot;);
+</span><span class="boring">    println!(&quot;Please input your guess.&quot;);
 </span><span class="boring">
-</span><span class="boring">    let mut supposition = String::new();
+</span><span class="boring">    let mut guess = String::new();
 </span><span class="boring">
 </span><span class="boring">    io::stdin()
-</span><span class="boring">        .read_line(&amp;mut supposition)
-</span><span class="boring">        .expect(&quot;Échec de la lecture de l'entrée utilisateur&quot;);
+</span><span class="boring">        .read_line(&amp;mut guess)
+</span><span class="boring">        .expect(&quot;Failed to read line&quot;);
 </span><span class="boring">
-</span><span class="boring">    let supposition: u32 = supposition.trim().parse().expect(&quot;Veuillez saisir un nombre !&quot;);
+</span><span class="boring">    let guess: u32 = guess.trim().parse().expect(&quot;Please type a number!&quot;);
 </span><span class="boring">
-</span><span class="boring">    println!(&quot;Votre nombre : {}&quot;, supposition);
+</span><span class="boring">    println!(&quot;You guessed: {}&quot;, guess);
 </span><span class="boring">
-</span><span class="boring">    match supposition.cmp(&amp;nombre_secret) {
-</span><span class="boring">        Ordering::Less =&gt; println!(&quot;C'est plus !&quot;),
-</span><span class="boring">        Ordering::Greater =&gt; println!(&quot;C'est moins !&quot;),
-</span><span class="boring">        Ordering::Equal =&gt; println!(&quot;Vous avez gagné !&quot;),
+</span><span class="boring">    match guess.cmp(&amp;secret_number) {
+</span><span class="boring">        Ordering::Less =&gt; println!(&quot;Too small!&quot;),
+</span><span class="boring">        Ordering::Greater =&gt; println!(&quot;Too big!&quot;),
+</span><span class="boring">        Ordering::Equal =&gt; println!(&quot;You win!&quot;),
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
-<!--
-<span class="caption">Listing 7-18: Specifying a nested path to bring multiple
-items with the same prefix into scope</span>
--->
-<p><span class="caption">Encart 7-18 : utiliser un chemin imbriqué pour importer
-plusieurs éléments avec le même préfixe dans la portée</span></p>
-<!--
-In bigger programs, bringing many items into scope from the same crate or
-module using nested paths can reduce the number of separate `use` statements
-needed by a lot!
--->
-<p>Pour des programmes plus gros, importer plusieurs éléments dans la portée pour
-la même crate ou module en utilisant des chemins imbriqués peut réduire
-considérablement le nombre de <code>use</code> utilisés !</p>
-<!--
-We can use a nested path at any level in a path, which is useful when combining
-two `use` statements that share a subpath. For example, Listing 7-19 shows two
-`use` statements: one that brings `std::io` into scope and one that brings
-`std::io::Write` into scope.
--->
-<p>Nous pouvons utiliser un chemin imbriqué à tous les niveaux d'un chemin, ce qui
-peut être utile lorsqu'on utilise deux instructions <code>use</code> qui partagent un
-sous-chemin. Par exemple, l'encart 7-19 nous montre deux instructions <code>use</code> :
-un qui importe <code>std::io</code> dans la portée et un autre qui importe <code>std::io::Write</code>
-dans la portée.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust
-use std::io;
-use std::io::Write;
-```
--->
+<p><span class="caption">Listing 7-18: Specifying a nested path to bring multiple
+items with the same prefix into scope</span></p>
+<p>In bigger programs, bringing many items into scope from the same crate or
+module using nested paths can reduce the number of separate <code>use</code> statements
+needed by a lot!</p>
+<p>We can use a nested path at any level in a path, which is useful when combining
+two <code>use</code> statements that share a subpath. For example, Listing 7-19 shows two
+<code>use</code> statements: one that brings <code>std::io</code> into scope and one that brings
+<code>std::io::Write</code> into scope.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -989,96 +511,40 @@ use std::io::Write;
 use std::io::Write;
 <span class="boring">}
 </span></code></pre></pre>
-<!--
-<span class="caption">Listing 7-19: Two `use` statements where one is a subpath
-of the other</span>
--->
-<p><span class="caption">Encart 7-19 : deux instructions <code>use</code> où l'une est un
-sous-chemin de l'autre</span></p>
-<!--
-The common part of these two paths is `std::io`, and that’s the complete first
-path. To merge these two paths into one `use` statement, we can use `self` in
-the nested path, as shown in Listing 7-20.
--->
-<p>La partie commune entre ces deux chemins est <code>std::io</code>, et c'est le premier
-chemin complet. Pour imbriquer ces deux chemins en une seule instruction <code>use</code>,
-nous pouvons utiliser <code>self</code> dans le chemin imbriqué, comme dans l'encart 7-20.</p>
-<!--
-<span class="filename">Filename: src/lib.rs</span>
--->
-<p><span class="filename">Fichier : src/lib.rs</span></p>
-<!--
-```rust
-use std::io::{self, Write};
-```
--->
+<p><span class="caption">Listing 7-19: Two <code>use</code> statements where one is a subpath
+of the other</span></p>
+<p>The common part of these two paths is <code>std::io</code>, and that’s the complete first
+path. To merge these two paths into one <code>use</code> statement, we can use <code>self</code> in
+the nested path, as shown in Listing 7-20.</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::io::{self, Write};
 <span class="boring">}
 </span></code></pre></pre>
-<!--
-<span class="caption">Listing 7-20: Combining the paths in Listing 7-19 into
-one `use` statement</span>
--->
-<p><span class="caption">Encart 7-20 : imbrication des chemins de l'encart 7-19
-dans une seule instruction <code>use</code></span></p>
-<!--
-This line brings `std::io` and `std::io::Write` into scope.
--->
-<p>Cette ligne importe <code>std::io</code> et <code>std::io::Write</code> dans la portée.</p>
-<!--
-### The Glob Operator
--->
-<h3><a class="header" href="#lopérateur-global" id="lopérateur-global">L'opérateur global</a></h3>
-<!--
-If we want to bring *all* public items defined in a path into scope, we can
-specify that path followed by `*`, the glob operator:
--->
-<p>Si nous voulons importer, dans la portée, <em>tous</em> les éléments publics définis
-dans un chemin, nous pouvons indiquer ce chemin suivi par <code>*</code>, l'opérateur
-global :</p>
-<!--
-```rust
-use std::collections::*;
-```
--->
+<p><span class="caption">Listing 7-20: Combining the paths in Listing 7-19 into
+one <code>use</code> statement</span></p>
+<p>This line brings <code>std::io</code> and <code>std::io::Write</code> into scope.</p>
+<h3 id="the-glob-operator"><a class="header" href="#the-glob-operator">The Glob Operator</a></h3>
+<p>If we want to bring <em>all</em> public items defined in a path into scope, we can
+specify that path followed by <code>*</code>, the glob operator:</p>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>use std::collections::*;
 <span class="boring">}
 </span></code></pre></pre>
-<!--
-This `use` statement brings all public items defined in `std::collections` into
+<p>This <code>use</code> statement brings all public items defined in <code>std::collections</code> into
 the current scope. Be careful when using the glob operator! Glob can make it
 harder to tell what names are in scope and where a name used in your program
-was defined.
--->
-<p>Cette instruction <code>use</code> va importer tous les éléments publics définis dans
-<code>std::collections</code> dans la portée courante. Mais soyez prudent quand vous
-utilisez l'opérateur global ! L'opérateur global rend difficile à dire quels
-éléments sont dans la portée et où un élément est utilisé dans notre programme.</p>
-<!--
-The glob operator is often used when testing to bring everything under test
-into the `tests` module; we’ll talk about that in the [“How to Write
-Tests”][writing-tests]<!-- ignore -- > section in Chapter 11. The glob operator
-is also sometimes used as part of the prelude pattern: see [the standard
-library documentation](../std/prelude/index.html#other-preludes)<!-- ignore -- >
-for more information on that pattern.
--->
-<p>L'opérateur global est souvent utilisé lorsque nous écrivons des tests, pour
-importer tout ce qui a à tester dans le module <code>tests</code> ; nous verrons cela dans
-une section du <a href="ch11-01-writing-tests.html">chapitre 11</a>. L'opérateur global est parfois
-aussi utilisé pour l'étape préliminaire : rendez-vous dans <a href="https://doc.rust-lang.org/std/prelude/index.html#other-preludes">la documentation de
-la bibliothèque
-standard</a><!--
-ignore --> pour plus d'informations sur cela.</p>
-<!--
-[rand]: ch02-00-guessing-game-tutorial.html#generating-a-random-number
-[writing-tests]: ch11-01-writing-tests.html#how-to-write-tests
--->
+was defined.</p>
+<p>The glob operator is often used when testing to bring everything under test
+into the <code>tests</code> module; we’ll talk about that in the <a href="ch11-01-writing-tests.html#how-to-write-tests">“How to Write
+Tests”</a><!-- ignore --> section in Chapter 11. The glob operator
+is also sometimes used as part of the prelude pattern: see <a href="../std/prelude/index.html#other-preludes">the standard
+library documentation</a><!-- ignore -->
+for more information on that pattern.</p>
 
                     </main>
 
@@ -1143,9 +609,7 @@ ignore --> pour plus d'informations sur cela.</p>
 
         <!-- Custom JS scripts -->
         
-        <script type="text/javascript" src="../ferris.js"></script>
-        
-        <script type="text/javascript" src="github-button.js"></script>
+        <script type="text/javascript" src="ferris.js"></script>
         
 
         

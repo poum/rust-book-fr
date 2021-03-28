@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Les structures de contrôle - Le langage de programmation Rust</title>
+        <title>Control Flow - The Rust Programming Language</title>
         
         
 
@@ -43,9 +43,9 @@
 
         <!-- Custom theme stylesheets -->
         
-        <link rel="stylesheet" href="../ferris.css">
+        <link rel="stylesheet" href="ferris.css">
         
-        <link rel="stylesheet" href="../theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
         
 
         
@@ -99,7 +99,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html" class="active"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la visibilité</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">The Rust Programming Language</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programming a Guessing Game</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Common Programming Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Variables and Mutability</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Data Types</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Comments</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html" class="active"><strong aria-hidden="true">3.5.</strong> Control Flow</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Understanding Ownership</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> What is Ownership?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> References and Borrowing</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> The Slice Type</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Using Structs to Structure Related Data</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Defining and Instantiating Structs</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> An Example Program Using Structs</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> Method Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Enums and Pattern Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Defining an Enum</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> The match Control Flow Operator</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Concise Control Flow with if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Managing Growing Projects with Packages, Crates, and Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Packages and Crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Defining Modules to Control Scope and Privacy</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Paths for Referring to an Item in the Module Tree</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Bringing Paths Into Scope with the use Keyword</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Separating Modules into Different Files</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Common Collections</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Storing Lists of Values with Vectors</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Storing UTF-8 Encoded Text with Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Storing Keys with Associated Values in Hash Maps</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> Error Handling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Unrecoverable Errors with panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Recoverable Errors with Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> To panic! or Not To panic!</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Generic Types, Traits, and Lifetimes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Generic Data Types</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Traits: Defining Shared Behavior</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> Validating References with Lifetimes</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Writing Automated Tests</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> How to Write Tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Controlling How Tests Are Run</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> Test Organization</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> An I/O Project: Building a Command Line Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Accepting Command Line Arguments</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> Reading a File</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> Refactoring to Improve Modularity and Error Handling</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> Developing the Library’s Functionality with Test Driven Development</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> Working with Environment Variables</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> Writing Error Messages to Standard Error Instead of Standard Output</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Functional Language Features: Iterators and Closures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Closures: Anonymous Functions that Can Capture Their Environment</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Processing a Series of Items with Iterators</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Improving Our I/O Project</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparing Performance: Loops vs. Iterators</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> More about Cargo and Crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> Customizing Builds with Release Profiles</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Publishing a Crate to Crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo Workspaces</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> Installing Binaries from Crates.io with cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> Extending Cargo with Custom Commands</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> Smart Pointers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Using Box&lt;T&gt; to Point to Data on the Heap</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Treating Smart Pointers Like Regular References with the Deref Trait</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Running Code on Cleanup with the Drop Trait</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc&lt;T&gt;, the Reference Counted Smart Pointer</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell&lt;T&gt; and the Interior Mutability Pattern</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> Reference Cycles Can Leak Memory</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> Fearless Concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> Using Threads to Run Code Simultaneously</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> Using Message Passing to Transfer Data Between Threads</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> Shared-State Concurrency</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> Extensible Concurrency with the Sync and Send Traits</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Object Oriented Programming Features of Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> Characteristics of Object-Oriented Languages</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> Using Trait Objects That Allow for Values of Different Types</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> Implementing an Object-Oriented Design Pattern</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> Patterns and Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> All the Places Patterns Can Be Used</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> Refutability: Whether a Pattern Might Fail to Match</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> Pattern Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> Advanced Features</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> Unsafe Rust</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> Advanced Traits</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> Advanced Types</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> Advanced Functions and Closures</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> Macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> Final Project: Building a Multithreaded Web Server</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> Building a Single-Threaded Web Server</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> Turning Our Single-Threaded Server into a Multithreaded Server</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> Graceful Shutdown and Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - Keywords</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - Operators and Symbols</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - Derivable Traits</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> D - Useful Development Tools</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> E - Editions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> F - Translations of the Book</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - How Rust is Made and “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">The Rust Programming Language</h1>
 
                     <div class="right-buttons">
                         
@@ -139,6 +139,10 @@
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
+                        
+                        <a href="https://github.com/rust-lang/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
                         
                     </div>
                 </div>
@@ -167,210 +171,87 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!--
-## Control Flow
--->
-<h2><a class="header" href="#les-structures-de-contrôle" id="les-structures-de-contrôle">Les structures de contrôle</a></h2>
-<!--
-Deciding whether or not to run some code depending on if a condition is true
+                        <h2 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h2>
+<p>Deciding whether or not to run some code depending on if a condition is true
 and deciding to run some code repeatedly while a condition is true are basic
 building blocks in most programming languages. The most common constructs that
-let you control the flow of execution of Rust code are `if` expressions and
-loops.
--->
-<p>Choisir d'exécuter ou non du code selon qu'une condition est vérifiée et
-choisir d'exécuter du code de façon répétée tant qu'une condition est vérifiée
-sont des constructions élémentaires dans la plupart des langages de
-programmation. Les structures de contrôle les plus courantes en Rust sont les
-expressions <code>if</code> et les boucles.</p>
-<!--
-### `if` Expressions
--->
-<h3><a class="header" href="#les-expressions-if" id="les-expressions-if">Les expressions <code>if</code></a></h3>
-<!--
-An `if` expression allows you to branch your code depending on conditions. You
+let you control the flow of execution of Rust code are <code>if</code> expressions and
+loops.</p>
+<h3 id="if-expressions"><a class="header" href="#if-expressions"><code>if</code> Expressions</a></h3>
+<p>An <code>if</code> expression allows you to branch your code depending on conditions. You
 provide a condition and then state, “If this condition is met, run this block
-of code. If the condition is not met, do not run this block of code.”
--->
-<p>Une expression <code>if</code> vous permet de diviser votre code en fonction de conditions.
-Vous précisez une condition et vous choisissez ensuite : “Si cette condition est
-remplie, alors exécuter ce bloc de code. Si la condition n'est pas remplie,
-ne pas exécuter ce bloc de code.”</p>
-<!--
-Create a new project called *branches* in your *projects* directory to explore
-the `if` expression. In the *src/main.rs* file, input the following:
--->
-<p>Créez un nouveau projet appelé <em>branches</em> dans votre dossier <em>projects</em> pour
-découvrir les expressions <code>if</code>. Dans le fichier <em>src/main.rs</em>, écrivez ceci :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
+of code. If the condition is not met, do not run this block of code.”</p>
+<p>Create a new project called <em>branches</em> in your <em>projects</em> directory to explore
+the <code>if</code> expression. In the <em>src/main.rs</em> file, input the following:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let number = 3;
 
-    if number < 5 {
-        println!("condition was true");
+    if number &lt; 5 {
+        println!(&quot;condition was true&quot;);
     } else {
-        println!("condition was false");
-    }
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let nombre = 3;
-
-    if nombre &lt; 5 {
-        println!(&quot;La condition est vérifiée&quot;);
-    } else {
-        println!(&quot;La condition n'est pas vérifiée&quot;);
+        println!(&quot;condition was false&quot;);
     }
 }
 </code></pre></pre>
-<!--
-All `if` expressions start with the keyword `if`, which is followed by a
+<p>All <code>if</code> expressions start with the keyword <code>if</code>, which is followed by a
 condition. In this case, the condition checks whether or not the variable
-`number` has a value less than 5. The block of code we want to execute if the
+<code>number</code> has a value less than 5. The block of code we want to execute if the
 condition is true is placed immediately after the condition inside curly
-brackets. Blocks of code associated with the conditions in `if` expressions are
-sometimes called *arms*, just like the arms in `match` expressions that we
-discussed in the [“Comparing the Guess to the Secret
-Number”][comparing-the-guess-to-the-secret-number]<!-- ignore -- > section of
-Chapter 2.
--->
-<p>Une expression <code>if</code> commence par le mot-clé <code>if</code>, suivi d'une condition.
-Dans notre cas, la condition vérifie si oui ou non la variable <code>nombre</code> a une
-valeur inférieure à 5. Le bloc de code que nous voulons exécuter si la condition
-est vérifiée est placé immédiatement après la condition entre des accolades.
-Les blocs de code associés à une condition dans une expression <code>if</code> sont parfois
-appelés des <em>branches</em>, exactement comme les branches dans les expressions
-<code>match</code> que nous avons vu dans la section <a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au
-nombre secret”</a><!-- ignore --> du
-chapitre 2.</p>
-<!--
-Optionally, we can also include an `else` expression, which we chose
+brackets. Blocks of code associated with the conditions in <code>if</code> expressions are
+sometimes called <em>arms</em>, just like the arms in <code>match</code> expressions that we
+discussed in the <a href="ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number">“Comparing the Guess to the Secret
+Number”</a><!-- ignore --> section of
+Chapter 2.</p>
+<p>Optionally, we can also include an <code>else</code> expression, which we chose
 to do here, to give the program an alternative block of code to execute should
-the condition evaluate to false. If you don’t provide an `else` expression and
-the condition is false, the program will just skip the `if` block and move on
-to the next bit of code.
--->
-<p>Éventuellement, vous pouvez aussi ajouter une expression <code>else</code>, ce que nous
-avons fait ici, pour préciser un bloc alternatif de code qui sera exécuté dans
-le cas où la condition est fausse (elle n'est pas vérifiée). Si
-vous ne renseignez pas d'expression <code>else</code> et que la condition n'est pas
-vérifiée, le programme va simplement sauter le bloc de <code>if</code> et passer au
-prochain morceau de code.</p>
-<!--
-Try running this code; you should see the following output:
--->
-<p>Essayez d'exécuter ce code ; vous verrez ceci :</p>
-<!--
-```console
-$ cargo run
+the condition evaluate to false. If you don’t provide an <code>else</code> expression and
+the condition is false, the program will just skip the <code>if</code> block and move on
+to the next bit of code.</p>
+<p>Try running this code; you should see the following output:</p>
+<pre><code class="language-console">$ cargo run
    Compiling branches v0.1.0 (file:///projects/branches)
     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/branches`
 condition was true
-```
--->
-<pre><code class="language-console">$ cargo run
-   Compiling branches v0.1.0 (file:///projects/branches)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
-     Running `target/debug/branches`
-La condition est vérifiée
 </code></pre>
-<!--
-Let’s try changing the value of `number` to a value that makes the condition
-`false` to see what happens:
--->
-<p>Essayons de changer la valeur de <code>nombre</code> pour une valeur qui rend la condition
-non vérifiée pour voir ce qui se passe :</p>
-<!--
-```rust,ignore
-# fn main() {
-    let number = 7;
-# 
-#     if number < 5 {
-#         println!("condition was true");
-#     } else {
-#         println!("condition was false");
-#     }
-# }
-```
--->
+<p>Let’s try changing the value of <code>number</code> to a value that makes the condition
+<code>false</code> to see what happens:</p>
 <pre><code class="language-rust ignore"><span class="boring">fn main() {
-</span>    let nombre = 7;
+</span>    let number = 7;
 <span class="boring">
-</span><span class="boring">    if nombre &lt; 5 {
-</span><span class="boring">        println!(&quot;La condition est vérifiée&quot;);
+</span><span class="boring">    if number &lt; 5 {
+</span><span class="boring">        println!(&quot;condition was true&quot;);
 </span><span class="boring">    } else {
-</span><span class="boring">        println!(&quot;La condition n'est pas vérifiée&quot;);
+</span><span class="boring">        println!(&quot;condition was false&quot;);
 </span><span class="boring">    }
 </span><span class="boring">}
 </span></code></pre>
-<!--
-Run the program again, and look at the output:
--->
-<p>Exécutez à nouveau le programme, et regardez le résultat :</p>
-<!--
-```console
-$ cargo run
+<p>Run the program again, and look at the output:</p>
+<pre><code class="language-console">$ cargo run
    Compiling branches v0.1.0 (file:///projects/branches)
     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/branches`
 condition was false
-```
--->
-<pre><code class="language-console">$ cargo run
-   Compiling branches v0.1.0 (file:///projects/branches)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
-     Running `target/debug/branches`
-La condition n'est pas vérifiée
 </code></pre>
-<!--
-It’s also worth noting that the condition in this code *must* be a `bool`. If
-the condition isn’t a `bool`, we’ll get an error. For example, try running the
-following code:
--->
-<p>Il est aussi intéressant de noter que la condition dans ce code <em>doit</em> être un
-<code>bool</code>. Si la condition n'est pas un <code>bool</code>, nous aurons une erreur. Par
-exemple, essayez d'exécuter le code suivant :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,ignore,does_not_compile
-fn main() {
+<p>It’s also worth noting that the condition in this code <em>must</em> be a <code>bool</code>. If
+the condition isn’t a <code>bool</code>, we’ll get an error. For example, try running the
+following code:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
     let number = 3;
 
     if number {
-        println!("number was three");
-    }
-}
-```
--->
-<pre><code class="language-rust ignore does_not_compile">fn main() {
-    let nombre = 3;
-
-    if nombre {
-        println!(&quot;Le nombre était trois&quot;);
+        println!(&quot;number was three&quot;);
     }
 }
 </code></pre>
-<!--
-The `if` condition evaluates to a value of `3` this time, and Rust throws an
-error:
--->
-<p>La condition <code>if</code> vaut <code>3</code> cette fois, et Rust lève une erreur :</p>
-<!--
-```console
-$ cargo run
+<p>The <code>if</code> condition evaluates to a value of <code>3</code> this time, and Rust throws an
+error:</p>
+<pre><code class="language-console">$ cargo run
    Compiling branches v0.1.0 (file:///projects/branches)
 error[E0308]: mismatched types
- -- > src/main.rs:4:8
+ --&gt; src/main.rs:4:8
   |
 4 |     if number {
   |        ^^^^^^ expected `bool`, found integer
@@ -381,285 +262,104 @@ For more information about this error, try `rustc --explain E0308`.
 error: could not compile `branches`
 
 To learn more, run the command again with --verbose.
-```
--->
-<pre><code class="language-console">$ cargo run
-   Compiling branches v0.1.0 (file:///projects/branches)
-error[E0308]: mismatched types
- --&gt; src/main.rs:4:8
-  |
-4 |     if nombre {
-  |        ^^^^^^ expected bool, found integer
-
-error: aborting due to previous error
-
-For more information about this error, try `rustc --explain E0308`.
-error: could not compile `branches`
-
-To learn more, run the command again with --verbose.
 </code></pre>
-<!--
-The error indicates that Rust expected a `bool` but got an integer. Unlike
+<p>The error indicates that Rust expected a <code>bool</code> but got an integer. Unlike
 languages such as Ruby and JavaScript, Rust will not automatically try to
 convert non-Boolean types to a Boolean. You must be explicit and always provide
-`if` with a Boolean as its condition. If we want the `if` code block to run
-only when a number is not equal to `0`, for example, we can change the `if`
-expression to the following:
--->
-<p>Cette erreur explique que Rust attendait un <code>bool</code> mais a obtenu un entier
-<em>(integer)</em>. Contrairement à des langages comme Ruby et JavaScript, Rust
-ne va pas essayer de convertir automatiquement les types non booléens en
-booléens. Vous devez être précis et toujours fournir un booléen à la condition
-d'un <code>if</code>. Si nous voulons que le bloc de code du <code>if</code> soit exécuté quand le
-nombre est différent de <code>0</code>, par exemple, nous pouvons changer l'expression <code>if</code>
-par la suivante :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier: src/main.rs</span></p>
-<!--
-```rust
-fn main() {
+<code>if</code> with a Boolean as its condition. If we want the <code>if</code> code block to run
+only when a number is not equal to <code>0</code>, for example, we can change the <code>if</code>
+expression to the following:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let number = 3;
 
     if number != 0 {
-        println!("number was something other than zero");
-    }
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let nombre = 3;
-
-    if nombre != 0 {
-        println!(&quot;Le nombre valait autre chose que zéro&quot;);
+        println!(&quot;number was something other than zero&quot;);
     }
 }
 </code></pre></pre>
-<!--
-Running this code will print `number was something other than zero`.
--->
-<p>Exécuter ce code va bien afficher <code>Le nombre valait autre chose que zéro</code>.</p>
-<!--
-#### Handling Multiple Conditions with `else if`
--->
-<h4><a class="header" href="#gérer-plusieurs-conditions-avec-else-if" id="gérer-plusieurs-conditions-avec-else-if">Gérer plusieurs conditions avec <code>else if</code></a></h4>
-<!--
-You can have multiple conditions by combining `if` and `else` in an `else if`
-expression. For example:
--->
-<p>Vous pouvez utiliser plusieurs conditions en combinant <code>if</code> et <code>else</code> dans une
-expression <code>else if</code>. Par exemple :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
+<p>Running this code will print <code>number was something other than zero</code>.</p>
+<h4 id="handling-multiple-conditions-with-else-if"><a class="header" href="#handling-multiple-conditions-with-else-if">Handling Multiple Conditions with <code>else if</code></a></h4>
+<p>You can have multiple conditions by combining <code>if</code> and <code>else</code> in an <code>else if</code>
+expression. For example:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let number = 6;
 
     if number % 4 == 0 {
-        println!("number is divisible by 4");
+        println!(&quot;number is divisible by 4&quot;);
     } else if number % 3 == 0 {
-        println!("number is divisible by 3");
+        println!(&quot;number is divisible by 3&quot;);
     } else if number % 2 == 0 {
-        println!("number is divisible by 2");
+        println!(&quot;number is divisible by 2&quot;);
     } else {
-        println!("number is not divisible by 4, 3, or 2");
-    }
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let nombre = 6;
-
-    if nombre % 4 == 0 {
-        println!(&quot;Le nombre est divisible par 4&quot;);
-    } else if nombre % 3 == 0 {
-        println!(&quot;Le nombre est divisible par 3&quot;);
-    } else if nombre % 2 == 0 {
-        println!(&quot;Le nombre est divisible par 2&quot;);
-    } else {
-        println!(&quot;Le nombre n'est pas divisible par 4, 3 ou 2&quot;);
+        println!(&quot;number is not divisible by 4, 3, or 2&quot;);
     }
 }
 </code></pre></pre>
-<!--
-This program has four possible paths it can take. After running it, you should
-see the following output:
--->
-<p>Ce programme peut choisir entre quatre chemins différents. Après l'avoir
-exécuté, vous devriez voir le résultat suivant :</p>
-<!--
-```console
-$ cargo run
+<p>This program has four possible paths it can take. After running it, you should
+see the following output:</p>
+<pre><code class="language-console">$ cargo run
    Compiling branches v0.1.0 (file:///projects/branches)
     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/branches`
 number is divisible by 3
-```
--->
-<pre><code class="language-console">$ cargo run
-   Compiling branches v0.1.0 (file:///projects/branches)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
-     Running `target/debug/branches`
-Le nombre est divisible par 3
 </code></pre>
-<!--
-When this program executes, it checks each `if` expression in turn and executes
+<p>When this program executes, it checks each <code>if</code> expression in turn and executes
 the first body for which the condition holds true. Note that even though 6 is
-divisible by 2, we don’t see the output `number is divisible by 2`, nor do we
-see the `number is not divisible by 4, 3, or 2` text from the `else` block.
+divisible by 2, we don’t see the output <code>number is divisible by 2</code>, nor do we
+see the <code>number is not divisible by 4, 3, or 2</code> text from the <code>else</code> block.
 That’s because Rust only executes the block for the first true condition, and
-once it finds one, it doesn’t even check the rest.
--->
-<p>Quand ce programme s'exécute, il vérifie chaque expression <code>if</code> à tour de rôle
-et exécute le premier bloc dont la condition est vérifiée. Notez que même si 6
-est divisible par 2, nous ne voyons pas le message <code>Le nombre est divisible par 2</code>, ni le message <code>Le nombre n'est pas divisible par 4, 3 ou 2</code> du bloc <code>else</code>.
-C'est parce que Rust n'exécute que le bloc de la première condition vérifiée,
-et dès lors qu'il en a trouvé une, il ne va pas chercher à vérifier les
-suivantes.</p>
-<!--
-Using too many `else if` expressions can clutter your code, so if you have more
+once it finds one, it doesn’t even check the rest.</p>
+<p>Using too many <code>else if</code> expressions can clutter your code, so if you have more
 than one, you might want to refactor your code. Chapter 6 describes a powerful
-Rust branching construct called `match` for these cases.
--->
-<p>Utiliser trop d'expressions <code>else if</code> peut encombrer votre code, donc si vous
-en avez plus d'une, vous devriez envisager de remanier votre code. Le chapitre 6
-présente une construction puissante appelée <code>match</code> pour de tels cas.</p>
-<!--
-#### Using `if` in a `let` Statement
--->
-<h4><a class="header" href="#utiliser-if-dans-une-instruction-let" id="utiliser-if-dans-une-instruction-let">Utiliser <code>if</code> dans une instruction <code>let</code></a></h4>
-<!--
-Because `if` is an expression, we can use it on the right side of a `let`
-statement, as in Listing 3-2.
--->
-<p>Comme <code>if</code> est une expression, nous pouvons l'utiliser à droite d'une
-instruction <code>let</code>, comme dans l'encart 3-2.</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
+Rust branching construct called <code>match</code> for these cases.</p>
+<h4 id="using-if-in-a-let-statement"><a class="header" href="#using-if-in-a-let-statement">Using <code>if</code> in a <code>let</code> Statement</a></h4>
+<p>Because <code>if</code> is an expression, we can use it on the right side of a <code>let</code>
+statement, as in Listing 3-2.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let condition = true;
     let number = if condition { 5 } else { 6 };
 
-    println!("The value of number is: {}", number);
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let condition = true;
-    let nombre = if condition { 5 } else { 6 };
-
-    println!(&quot;La valeur du nombre est : {}&quot;, nombre);
+    println!(&quot;The value of number is: {}&quot;, number);
 }
 </code></pre></pre>
-<!--
-<span class="caption">Listing 3-2: Assigning the result of an `if` expression
-to a variable</span>
--->
-<p><span class="caption">Encart 3-2 : assigner le résultat d'une expression <code>if</code> à
-une variable</span></p>
-<!--
-The `number` variable will be bound to a value based on the outcome of the `if`
-expression. Run this code to see what happens:
--->
-<p>La variable <code>nombre</code> va avoir la valeur du résultat de l'expression <code>if</code>.
-Exécutez ce code pour découvrir ce qui va se passer :</p>
-<!--
-```console
-$ cargo run
+<p><span class="caption">Listing 3-2: Assigning the result of an <code>if</code> expression
+to a variable</span></p>
+<p>The <code>number</code> variable will be bound to a value based on the outcome of the <code>if</code>
+expression. Run this code to see what happens:</p>
+<pre><code class="language-console">$ cargo run
    Compiling branches v0.1.0 (file:///projects/branches)
     Finished dev [unoptimized + debuginfo] target(s) in 0.30s
      Running `target/debug/branches`
 The value of number is: 5
-```
--->
-<pre><code class="language-console">$ cargo run
-   Compiling branches v0.1.0 (file:///projects/branches)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.30s
-     Running `target/debug/branches`
-La valeur du nombre est : 5
 </code></pre>
-<!--
-Remember that blocks of code evaluate to the last expression in them, and
+<p>Remember that blocks of code evaluate to the last expression in them, and
 numbers by themselves are also expressions. In this case, the value of the
-whole `if` expression depends on which block of code executes. This means the
-values that have the potential to be results from each arm of the `if` must be
-the same type; in Listing 3-2, the results of both the `if` arm and the `else`
-arm were `i32` integers. If the types are mismatched, as in the following
-example, we’ll get an error:
--->
-<p>Souvenez-vous que les blocs de code s'exécutent jusqu'à la dernière expression
-qu'ils contiennent, et que les nombres tout seuls sont aussi des expressions.
-Dans notre cas, la valeur de toute l'expression <code>if</code> dépend de quel bloc de code
-elle va exécuter. Cela veut dire que chaque valeur qui peut être le résultat de
-chaque branche du <code>if</code> doivent être du même type ; dans l'encart 3-2, les
-résultats des branches <code>if</code> et <code>else</code> sont tous deux des entiers <code>i32</code>. Si
-les types ne sont pas identiques, comme dans l'exemple suivant, nous allons
-obtenir une erreur :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,ignore,does_not_compile
-fn main() {
-    let condition = true;
-
-    let number = if condition { 5 } else { "six" };
-
-    println!("The value of number is: {}", number);
-}
-```
--->
+whole <code>if</code> expression depends on which block of code executes. This means the
+values that have the potential to be results from each arm of the <code>if</code> must be
+the same type; in Listing 3-2, the results of both the <code>if</code> arm and the <code>else</code>
+arm were <code>i32</code> integers. If the types are mismatched, as in the following
+example, we’ll get an error:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let condition = true;
 
-    let nombre = if condition { 5 } else { &quot;six&quot; };
+    let number = if condition { 5 } else { &quot;six&quot; };
 
-    println!(&quot;La valeur du nombre est : {}&quot;, nombre);
+    println!(&quot;The value of number is: {}&quot;, number);
 }
 </code></pre>
-<!--
-When we try to compile this code, we’ll get an error. The `if` and `else` arms
+<p>When we try to compile this code, we’ll get an error. The <code>if</code> and <code>else</code> arms
 have value types that are incompatible, and Rust indicates exactly where to
-find the problem in the program:
--->
-<p>Lorsque nous essayons de compiler ce code, nous obtenons une erreur. Les
-branches <code>if</code> et <code>else</code> ont des types de valeurs qui ne sont pas compatibles, et
-Rust indique exactement où trouver le problème dans le programme :</p>
-<!--
-```console
-$ cargo run
-   Compiling branches v0.1.0 (file:///projects/branches)
-error[E0308]: `if` and `else` have incompatible types
- -- > src/main.rs:4:44
-  |
-4 |     let number = if condition { 5 } else { "six" };
-  |                                 -          ^^^^^ expected integer, found `&str`
-  |                                 |
-  |                                 expected because of this
-
-error: aborting due to previous error
-
-For more information about this error, try `rustc --explain E0308`.
-error: could not compile `branches`
-
-To learn more, run the command again with --verbose.
-```
--->
+find the problem in the program:</p>
 <pre><code class="language-console">$ cargo run
    Compiling branches v0.1.0 (file:///projects/branches)
 error[E0308]: `if` and `else` have incompatible types
  --&gt; src/main.rs:4:44
   |
-4 |     let nombre = if condition { 5 } else { &quot;six&quot; };
+4 |     let number = if condition { 5 } else { &quot;six&quot; };
   |                                 -          ^^^^^ expected integer, found `&amp;str`
   |                                 |
   |                                 expected because of this
@@ -671,101 +371,42 @@ error: could not compile `branches`
 
 To learn more, run the command again with --verbose.
 </code></pre>
-<!--
-The expression in the `if` block evaluates to an integer, and the expression in
-the `else` block evaluates to a string. This won’t work because variables must
-have a single type. Rust needs to know at compile time what type the `number`
+<p>The expression in the <code>if</code> block evaluates to an integer, and the expression in
+the <code>else</code> block evaluates to a string. This won’t work because variables must
+have a single type. Rust needs to know at compile time what type the <code>number</code>
 variable is, definitively, so it can verify at compile time that its type is
-valid everywhere we use `number`. Rust wouldn’t be able to do that if the type
-of `number` was only determined at runtime; the compiler would be more complex
+valid everywhere we use <code>number</code>. Rust wouldn’t be able to do that if the type
+of <code>number</code> was only determined at runtime; the compiler would be more complex
 and would make fewer guarantees about the code if it had to keep track of
-multiple hypothetical types for any variable.
--->
-<p>L'expression dans le bloc <code>if</code> donne un entier, et l'expression dans le bloc
-<code>else</code> donne une chaîne de caractères. Ceci ne fonctionne pas car les variables
-doivent avoir un seul type. Rust a besoin de savoir de quel type est la variable
-<code>nombre</code> au moment de la compilation, assurément, afin de vérifier au moment
-de la compilation que son type est valable n'importe où nous utilisons <code>nombre</code>.
-Rust ne serait pas capable de faire cela si le type de <code>nombre</code> était déterminé
-uniquement à l'exécution ; car le compilateur deviendrait plus complexe et nous
-donnerait moins de garanties sur le code s'il devait prendre en compte tous les
-types hypothétiques pour une variable.</p>
-<!--
-### Repetition with Loops
--->
-<h3><a class="header" href="#les-répétitions-avec-les-boucles" id="les-répétitions-avec-les-boucles">Les répétitions avec les boucles</a></h3>
-<!--
-It’s often useful to execute a block of code more than once. For this task,
-Rust provides several *loops*. A loop runs through the code inside the loop
+multiple hypothetical types for any variable.</p>
+<h3 id="repetition-with-loops"><a class="header" href="#repetition-with-loops">Repetition with Loops</a></h3>
+<p>It’s often useful to execute a block of code more than once. For this task,
+Rust provides several <em>loops</em>. A loop runs through the code inside the loop
 body to the end and then starts immediately back at the beginning. To
-experiment with loops, let’s make a new project called *loops*.
--->
-<p>Il est parfois utile d'exécuter un bloc de code plus d'une seule fois. Dans ce
-but, Rust propose plusieurs types de <em>boucles</em>. Une boucle parcourt le code à
-l'intérieur du corps de la boucle jusqu'à la fin et recommence immédiatement du
-début. Pour tester les boucles, créons un nouveau projet appelé <em>loops</em>.</p>
-<!--
-Rust has three kinds of loops: `loop`, `while`, and `for`. Let’s try each one.
--->
-<p>Rust a trois types de boucles : <code>loop</code>, <code>while</code>, et <code>for</code>. Essayons chacune
-d'elles.</p>
-<!--
-#### Repeating Code with `loop`
--->
-<h4><a class="header" href="#répéter-du-code-avec-loop" id="répéter-du-code-avec-loop">Répéter du code avec <code>loop</code></a></h4>
-<!--
-The `loop` keyword tells Rust to execute a block of code over and over again
-forever or until you explicitly tell it to stop.
--->
-<p>Le mot-clé <code>loop</code> demande à Rust d'exécuter un bloc de code encore et encore
-jusqu'à l'infini ou jusqu'à ce que vous lui demandiez explicitement de
-s'arrêter.</p>
-<!--
-As an example, change the *src/main.rs* file in your *loops* directory to look
-like this:
--->
-<p>Par exemple, changez le fichier <em>src/main.rs</em> dans votre dossier <em>loops</em> comme
-ceci :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,ignore
-fn main() {
-    loop {
-        println!("again!");
-    }
-}
-```
--->
+experiment with loops, let’s make a new project called <em>loops</em>.</p>
+<p>Rust has three kinds of loops: <code>loop</code>, <code>while</code>, and <code>for</code>. Let’s try each one.</p>
+<h4 id="repeating-code-with-loop"><a class="header" href="#repeating-code-with-loop">Repeating Code with <code>loop</code></a></h4>
+<p>The <code>loop</code> keyword tells Rust to execute a block of code over and over again
+forever or until you explicitly tell it to stop.</p>
+<p>As an example, change the <em>src/main.rs</em> file in your <em>loops</em> directory to look
+like this:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><code class="language-rust ignore">fn main() {
     loop {
-        println!(&quot;À nouveau !&quot;);
+        println!(&quot;again!&quot;);
     }
 }
 </code></pre>
-<!--
-When we run this program, we’ll see `again!` printed over and over continuously
+<p>When we run this program, we’ll see <code>again!</code> printed over and over continuously
 until we stop the program manually. Most terminals support a keyboard shortcut,
 <span class="keystroke">ctrl-c</span>, to interrupt a program that is stuck in
-a continual loop. Give it a try:
--->
-<p>Quand nous exécutons ce programme, nous voyons <code>À nouveau !</code> s'afficher encore
-et encore en continu jusqu'à ce qu'on arrête le programme manuellement. La
-plupart des terminaux utilisent un raccourci clavier, <span class="keystroke">
-ctrl-c</span>, pour arrêter un programme qui est bloqué dans une boucle infinie.
-Essayons cela :</p>
-<!--
+a continual loop. Give it a try:</p>
 <!-- manual-regeneration
 cd listings/ch03-common-programming-concepts/no-listing-32-loop
 cargo run
 CTRL-C
--- >
 -->
-<!--
-```console
-$ cargo run
+<pre><code class="language-console">$ cargo run
    Compiling loops v0.1.0 (file:///projects/loops)
     Finished dev [unoptimized + debuginfo] target(s) in 0.29s
      Running `target/debug/loops`
@@ -774,64 +415,25 @@ again!
 again!
 again!
 ^Cagain!
-```
--->
-<pre><code class="language-console">$ cargo run
-   Compiling loops v0.1.0 (file:///projects/loops)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.29s
-     Running `target/debug/loops`
-À nouveau !
-À nouveau !
-À nouveau !
-À nouveau !
-^CÀ nouveau !
 </code></pre>
-<!--
-The symbol `^C` represents where you pressed <span class="keystroke">ctrl-c
-</span>. You may or may not see the word `again!` printed after the `^C`,
+<p>The symbol <code>^C</code> represents where you pressed <span class="keystroke">ctrl-c
+</span>. You may or may not see the word <code>again!</code> printed after the <code>^C</code>,
 depending on where the code was in the loop when it received the interrupt
-signal.
--->
-<p>Le symbole <code>^C</code> représente le moment où vous avez appuyé sur
-<span class="keystroke">ctrl-c</span>. Vous devriez voir ou non le texte
-<code>À nouveau !</code> après le <code>^C</code>, en fonction de là où la boucle en était dans votre
-code quand elle a reçu le signal d'arrêt.</p>
-<!--
-Fortunately, Rust provides another, more reliable way to break out of a loop.
-You can place the `break` keyword within the loop to tell the program when to
+signal.</p>
+<p>Fortunately, Rust provides another, more reliable way to break out of a loop.
+You can place the <code>break</code> keyword within the loop to tell the program when to
 stop executing the loop. Recall that we did this in the guessing game in the
-[“Quitting After a Correct Guess”][quitting-after-a-correct-guess]<!-- ignore
--- > section of Chapter 2 to exit the program when the user won the game by
-guessing the correct number.
--->
-<p>Heureusement, Rust fournit un autre moyen, plus fiable, de sortir d'une boucle.
-Vous pouvez ajouter le mot-clé <code>break</code> à l'intérieur de la boucle pour demander
-au programme d'arrêter la boucle. Souvenez-vous que nous avions fait ceci dans
-le jeu de devinettes, dans la section <a href="ch02-00-guessing-game-tutorial.html#arr%C3%AAter-le-programme-apr%C3%A8s-avoir-gagn%C3%A9">“Arrêter le programme après avoir
-gagné”</a><!-- ignore --> du chapitre 2 afin de
-quitter le programme quand l'utilisateur gagne le jeu en devinant le bon nombre.</p>
-<!--
-#### Returning Values from Loops
--->
-<h4><a class="header" href="#retourner-des-valeurs-dune-boucle" id="retourner-des-valeurs-dune-boucle">Retourner des valeurs d'une boucle</a></h4>
-<!--
-One of the uses of a `loop` is to retry an operation you know might fail, such
+<a href="ch02-00-guessing-game-tutorial.html#quitting-after-a-correct-guess">“Quitting After a Correct Guess”</a><!-- ignore
+--> section of Chapter 2 to exit the program when the user won the game by
+guessing the correct number.</p>
+<h4 id="returning-values-from-loops"><a class="header" href="#returning-values-from-loops">Returning Values from Loops</a></h4>
+<p>One of the uses of a <code>loop</code> is to retry an operation you know might fail, such
 as checking whether a thread has completed its job. However, you might need to
 pass the result of that operation to the rest of your code. To do this, you can
-add the value you want returned after the `break` expression you use to stop
+add the value you want returned after the <code>break</code> expression you use to stop
 the loop; that value will be returned out of the loop so you can use it, as
-shown here:
--->
-<p>L'une des utilisations d'une boucle <code>loop</code> est de réessayer une opération qui
-peut échouer, comme vérifier si une tâche a terminé son travail. Cependant, vous
-aurez peut-être besoin de passer le résultat de l'opération au reste de votre
-code. Pour ce faire, vous pouvez ajouter la valeur que vous voulez retourner
-après l'expression <code>break</code> que vous utilisez pour stopper la boucle ; cette
-valeur sera retournée de la boucle pour que vous puissiez l'utiliser, comme
-ci-dessous :</p>
-<!--
-```rust
-fn main() {
+shown here:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let mut counter = 0;
 
     let result = loop {
@@ -842,171 +444,66 @@ fn main() {
         }
     };
 
-    println!("The result is {}", result);
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let mut compteur = 0;
-
-    let resultat = loop {
-        compteur += 1;
-
-        if compteur == 10 {
-            break compteur * 2;
-        }
-    };
-
-    println!(&quot;Le résultat est {}&quot;, resultat);
+    println!(&quot;The result is {}&quot;, result);
 }
 </code></pre></pre>
-<!--
-Before the loop, we declare a variable named `counter` and initialize it to
-`0`. Then we declare a variable named `result` to hold the value returned from
-the loop. On every iteration of the loop, we add `1` to the `counter` variable,
-and then check whether the counter is equal to `10`. When it is, we use the
-`break` keyword with the value `counter * 2`. After the loop, we use a
-semicolon to end the statement that assigns the value to `result`. Finally, we
-print the value in `result`, which in this case is 20.
--->
-<p>Avant la boucle, nous déclarons une variable avec le nom <code>compteur</code> et nous
-l'initialisons à <code>0</code>. Ensuite, nous déclarons une variable <code>resultat</code> pour
-stocker la valeur retournée de la boucle. À chaque itération de la boucle, nous
-ajoutons <code>1</code> à la variable <code>compteur</code>, et ensuite nous vérifions si le compteur
-est égal à <code>10</code>. Lorsque c'est le cas, nous utilisons le mot-clé <code>break</code> avec la
-valeur <code>compteur * 2</code>. Après la boucle, nous utilisons un point-virgule pour
-terminer l'instruction qui assigne la valeur à <code>resultat</code>. Enfin, nous
-affichons la valeur de <code>resultat</code>, qui est 20 dans ce cas-ci.</p>
-<!--
-#### Conditional Loops with `while`
--->
-<h4><a class="header" href="#les-boucles-conditionnelles-avec-while" id="les-boucles-conditionnelles-avec-while">Les boucles conditionnelles avec <code>while</code></a></h4>
-<!--
-It’s often useful for a program to evaluate a condition within a loop. While
+<p>Before the loop, we declare a variable named <code>counter</code> and initialize it to
+<code>0</code>. Then we declare a variable named <code>result</code> to hold the value returned from
+the loop. On every iteration of the loop, we add <code>1</code> to the <code>counter</code> variable,
+and then check whether the counter is equal to <code>10</code>. When it is, we use the
+<code>break</code> keyword with the value <code>counter * 2</code>. After the loop, we use a
+semicolon to end the statement that assigns the value to <code>result</code>. Finally, we
+print the value in <code>result</code>, which in this case is 20.</p>
+<h4 id="conditional-loops-with-while"><a class="header" href="#conditional-loops-with-while">Conditional Loops with <code>while</code></a></h4>
+<p>It’s often useful for a program to evaluate a condition within a loop. While
 the condition is true, the loop runs. When the condition ceases to be true, the
-program calls `break`, stopping the loop. This loop type could be implemented
-using a combination of `loop`, `if`, `else`, and `break`; you could try that
-now in a program, if you’d like.
--->
-<p>Il est souvent utile pour un programme d'évaluer une condition dans une boucle.
-Tant que la condition est vraie, la boucle tourne. Quand la condition arrête
-d'être vraie, le programme appelle <code>break</code>, ce qui arrête la boucle. Ce type de
-boucle peut être implémenté en combinant <code>loop</code>, <code>if</code>, <code>else</code> et <code>break</code> ; vous
-pouvez essayer de le faire, si vous voulez.</p>
-<!--
-However, this pattern is so common that Rust has a built-in language construct
-for it, called a `while` loop. Listing 3-3 uses `while`: the program loops
+program calls <code>break</code>, stopping the loop. This loop type could be implemented
+using a combination of <code>loop</code>, <code>if</code>, <code>else</code>, and <code>break</code>; you could try that
+now in a program, if you’d like.</p>
+<p>However, this pattern is so common that Rust has a built-in language construct
+for it, called a <code>while</code> loop. Listing 3-3 uses <code>while</code>: the program loops
 three times, counting down each time, and then, after the loop, it prints
-another message and exits.
--->
-<p>Cependant, cette utilisation est si fréquente que Rust a une construction pour
-cela, intégrée dans le langage, qui s'appelle une boucle <code>while</code>. L'encart 3-3
-utilise <code>while</code> : le programme va boucler trois fois, en décrémentant à chaque
-fois, et ensuite, après la boucle, il va afficher un message et se fermer.</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
+another message and exits.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let mut number = 3;
 
     while number != 0 {
-        println!("{}!", number);
+        println!(&quot;{}!&quot;, number);
 
         number -= 1;
     }
 
-    println!("LIFTOFF!!!");
-}
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let mut nombre = 3;
-
-    while nombre != 0 {
-        println!(&quot;{} !&quot;, nombre);
-
-        nombre -= 1;
-    }
-
-    println!(&quot;DÉCOLLAGE !!!&quot;);
+    println!(&quot;LIFTOFF!!!&quot;);
 }
 </code></pre></pre>
-<!--
-<span class="caption">Listing 3-3: Using a `while` loop to run code while a
-condition holds true</span>
--->
-<p><span class="caption">Encart 3-3: utiliser une boucle <code>while</code> pour exécuter du
-code tant qu'une condition est vraie</span></p>
-<!--
-This construct eliminates a lot of nesting that would be necessary if you used
-`loop`, `if`, `else`, and `break`, and it’s clearer. While a condition holds
-true, the code runs; otherwise, it exits the loop.
--->
-<p>Cette construction élimine beaucoup d'imbrications qui seraient nécessaires si
-vous utilisiez <code>loop</code>, <code>if</code>, <code>else</code> et <code>break</code>, et c'est aussi plus clair. Tant
-que la condition est vraie, le code est exécuté ; sinon, il quitte la boucle.</p>
-<!--
-#### Looping Through a Collection with `for`
--->
-<h4><a class="header" href="#boucler-dans-une-collection-avec-for" id="boucler-dans-une-collection-avec-for">Boucler dans une collection avec <code>for</code></a></h4>
-<!--
-You could use the `while` construct to loop over the elements of a collection,
-such as an array. For example, let’s look at Listing 3-4.
--->
-<p>Vous pouvez utiliser la construction <code>while</code> pour itérer sur les
-éléments d'une collection, comme les tableaux. Par exemple, analysons l'encart
-3-4.</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
+<p><span class="caption">Listing 3-3: Using a <code>while</code> loop to run code while a
+condition holds true</span></p>
+<p>This construct eliminates a lot of nesting that would be necessary if you used
+<code>loop</code>, <code>if</code>, <code>else</code>, and <code>break</code>, and it’s clearer. While a condition holds
+true, the code runs; otherwise, it exits the loop.</p>
+<h4 id="looping-through-a-collection-with-for"><a class="header" href="#looping-through-a-collection-with-for">Looping Through a Collection with <code>for</code></a></h4>
+<p>You could use the <code>while</code> construct to loop over the elements of a collection,
+such as an array. For example, let’s look at Listing 3-4.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
     let a = [10, 20, 30, 40, 50];
     let mut index = 0;
 
-    while index < 5 {
-        println!("the value is: {}", a[index]);
+    while index &lt; 5 {
+        println!(&quot;the value is: {}&quot;, a[index]);
 
         index += 1;
     }
 }
-```
--->
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    let a = [10, 20, 30, 40, 50];
-    let mut indice = 0;
-
-    while indice &lt; 5 {
-        println!(&quot;La valeur est : {}&quot;, a[indice]);
-
-        indice += 1;
-    }
-}
 </code></pre></pre>
-<!--
-<span class="caption">Listing 3-4: Looping through each element of a collection
-using a `while` loop</span>
--->
-<p><span class="caption">Encart 3-4 : itération sur les éléments d'une collection
-en utilisant une boucle <code>while</code></span></p>
-<!--
-Here, the code counts up through the elements in the array. It starts at index
-`0`, and then loops until it reaches the final index in the array (that is,
-when `index < 5` is no longer true). Running this code will print every element
-in the array:
--->
-<p>Ici, le code parcourt le tableau élément par élément.
-Il commence à l'indice <code>0</code>, et ensuite boucle jusqu'à ce qu'il atteigne l'indice
-final du tableau (ce qui correspond au moment où la condition <code>index &lt; 5</code> n'est
-plus vraie). Exécuter ce code va afficher chaque élément du tableau :</p>
-<!--
-```text
-$ cargo run
+<p><span class="caption">Listing 3-4: Looping through each element of a collection
+using a <code>while</code> loop</span></p>
+<p>Here, the code counts up through the elements in the array. It starts at index
+<code>0</code>, and then loops until it reaches the final index in the array (that is,
+when <code>index &lt; 5</code> is no longer true). Running this code will print every element
+in the array:</p>
+<pre><code class="language-text">$ cargo run
    Compiling loops v0.1.0 (file:///projects/loops)
     Finished dev [unoptimized + debuginfo] target(s) in 0.32s
      Running `target/debug/loops`
@@ -1015,182 +512,66 @@ the value is: 20
 the value is: 30
 the value is: 40
 the value is: 50
-```
--->
-<pre><code class="language-text">$ cargo run
-   Compiling loops v0.1.0 (file:///projects/loops)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.32s
-     Running `target/debug/loops`
-La valeur est : 10
-La valeur est : 20
-La valeur est : 30
-La valeur est : 40
-La valeur est : 50
 </code></pre>
-<!--
-All five array values appear in the terminal, as expected. Even though `index`
-will reach a value of `5` at some point, the loop stops executing before trying
-to fetch a sixth value from the array.
--->
-<p>Les cinq valeurs du tableau s'affichent toutes dans le terminal, comme attendu.
-Même si <code>indice</code> va atteindre la valeur <code>5</code> à un moment, la boucle arrêtera de
-s'exécuter avant d'essayer de récupérer une sixième valeur du tableau.</p>
-<!--
-But this approach is error prone; we could cause the program to panic if the
+<p>All five array values appear in the terminal, as expected. Even though <code>index</code>
+will reach a value of <code>5</code> at some point, the loop stops executing before trying
+to fetch a sixth value from the array.</p>
+<p>But this approach is error prone; we could cause the program to panic if the
 index length is incorrect. It’s also slow, because the compiler adds runtime
 code to perform the conditional check on every element on every iteration
-through the loop.
--->
-<p>Mais cette approche pousse à l'erreur ; nous pourrions faire paniquer le
-programme si l'indice est trop grand. De plus, c'est lent, car le compilateur
-ajoute du code à l'exécution pour effectuer des vérifications sur chaque élément
-à chaque itération de la boucle.</p>
-<!--
-As a more concise alternative, you can use a `for` loop and execute some code
-for each item in a collection. A `for` loop looks like the code in Listing 3-5.
--->
-<p>Pour une alternative plus concise, vous pouvez utiliser une boucle <code>for</code> et
-exécuter du code pour chaque élément dans une collection. Une boucle <code>for</code>
-s'utilise comme dans le code de l'encart 3-5.</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
-    let a = [10, 20, 30, 40, 50];
-
-    for element in a.iter() {
-        println!("the value is: {}", element);
-    }
-}
-```
--->
+through the loop.</p>
+<p>As a more concise alternative, you can use a <code>for</code> loop and execute some code
+for each item in a collection. A <code>for</code> loop looks like the code in Listing 3-5.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let a = [10, 20, 30, 40, 50];
 
     for element in a.iter() {
-        println!(&quot;La valeur est : {}&quot;, element);
+        println!(&quot;the value is: {}&quot;, element);
     }
 }
 </code></pre></pre>
-<!--
-<span class="caption">Listing 3-5: Looping through each element of a collection
-using a `for` loop</span>
--->
-<p><span class="caption">Encart 3-5 : itérer sur chaque élément d'une collection
-en utilisant une boucle <code>for</code></span></p>
-<!--
-When we run this code, we’ll see the same output as in Listing 3-4. More
+<p><span class="caption">Listing 3-5: Looping through each element of a collection
+using a <code>for</code> loop</span></p>
+<p>When we run this code, we’ll see the same output as in Listing 3-4. More
 importantly, we’ve now increased the safety of the code and eliminated the
 chance of bugs that might result from going beyond the end of the array or not
-going far enough and missing some items.
--->
-<p>Lorsque nous exécutons ce code, nous obtenons les mêmes messages que dans
-l'encart 3-4. Mais ce qui est plus important, c'est que nous avons amélioré la
-sécurité de notre code et éliminé le risque de bogues qui pourraient survenir
-si on dépassait la fin du tableau, ou si on n'allait pas jusqu'au bout
-et qu'on ratait quelques éléments.</p>
-<!--
-For example, in the code in Listing 3-4, if you changed the definition of the
-`a` array to have four elements but forgot to update the condition to `while
-index < 4`, the code would panic. Using the `for` loop, you wouldn’t need to
+going far enough and missing some items.</p>
+<p>For example, in the code in Listing 3-4, if you changed the definition of the
+<code>a</code> array to have four elements but forgot to update the condition to <code>while index &lt; 4</code>, the code would panic. Using the <code>for</code> loop, you wouldn’t need to
 remember to change any other code if you changed the number of values in the
-array.
--->
-<p>Par exemple, dans le code de l'encart 3-4, si vous changez la définition du
-tableau <code>a</code> pour qu'il stocle quatre éléments mais que vous oubliez de mettre à
-jour la condition tel que <code>while indice &lt; 4</code>, le code va paniquer. En utilisant
-la boucle <code>for</code>, vous n'aurez pas à vous rappeler de changer le code si vous
-changez le nombre de valeurs dans le tableau.</p>
-<!--
-The safety and conciseness of `for` loops make them the most commonly used loop
+array.</p>
+<p>The safety and conciseness of <code>for</code> loops make them the most commonly used loop
 construct in Rust. Even in situations in which you want to run some code a
-certain number of times, as in the countdown example that used a `while` loop
-in Listing 3-3, most Rustaceans would use a `for` loop. The way to do that
-would be to use a `Range`, which is a type provided by the standard library
+certain number of times, as in the countdown example that used a <code>while</code> loop
+in Listing 3-3, most Rustaceans would use a <code>for</code> loop. The way to do that
+would be to use a <code>Range</code>, which is a type provided by the standard library
 that generates all numbers in sequence starting from one number and ending
-before another number.
--->
-<p>La sécurité et la concision de la boucle <code>for</code> en font la construction de boucle
-la plus utilisée avec Rust. Même dans des situations dans lesquelles vous
-voudriez exécuter du code plusieurs fois, comme l'exemple du décompte qui
-utilisait une boucle <code>while</code> dans l'encart 3-3, la plupart des Rustacés
-utiliseraient une boucle <code>for</code>. Il faut pour cela utiliser un intervalle
-<code>Range</code>, qui est un type fourni par la bibliothèque standard qui génère dans
-l'ordre tous les nombres compris entre un certain nombre et un autre nombre.</p>
-<!--
-Here’s what the countdown would look like using a `for` loop and another method
-we’ve not yet talked about, `rev`, to reverse the range:
--->
-<p>Voici ce que le décompte aurait donné en utilisant une boucle <code>for</code> et une autre
-méthode que nous n'avons pas encore vue, <code>rev</code>, qui inverse l'intervalle :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust
-fn main() {
-    for number in (1..4).rev() {
-        println!("{}!", number);
-    }
-    println!("LIFTOFF!!!");
-}
-```
--->
+before another number.</p>
+<p>Here’s what the countdown would look like using a <code>for</code> loop and another method
+we’ve not yet talked about, <code>rev</code>, to reverse the range:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
-    for nombre in (1..4).rev() {
-        println!(&quot;{} !&quot;, nombre);
+    for number in (1..4).rev() {
+        println!(&quot;{}!&quot;, number);
     }
-    println!(&quot;DÉCOLLAGE !!!&quot;);
+    println!(&quot;LIFTOFF!!!&quot;);
 }
 </code></pre></pre>
-<!--
-This code is a bit nicer, isn’t it?
--->
-<p>Ce code est un peu plus sympa, non ?</p>
-<!--
-## Summary
--->
-<h2><a class="header" href="#résumé" id="résumé">Résumé</a></h2>
-<!--
-You made it! That was a sizable chapter: you learned about variables, scalar
-and compound data types, functions, comments, `if` expressions, and loops! If
+<p>This code is a bit nicer, isn’t it?</p>
+<h2 id="summary"><a class="header" href="#summary">Summary</a></h2>
+<p>You made it! That was a sizable chapter: you learned about variables, scalar
+and compound data types, functions, comments, <code>if</code> expressions, and loops! If
 you want to practice with the concepts discussed in this chapter, try building
-programs to do the following:
--->
-<p>Vous y êtes arrivé ! C'était un chapitre important : vous avez appris les
-variables, les types scalaires et composés, les fonctions, les commentaires, les
-expressions <code>if</code>, et les boucles ! Si vous voulez pratiquer un peu les concepts
-abordés dans ce chapitre, voici quelques programmes que vous pouvez essayer de
-créer :</p>
-<!--
-* Convert temperatures between Fahrenheit and Celsius.
-* Generate the nth Fibonacci number.
-* Print the lyrics to the Christmas carol “The Twelve Days of Christmas,”
-  taking advantage of the repetition in the song.
--->
+programs to do the following:</p>
 <ul>
-<li>Convertir des températures entre les degrés Fahrenheit et Celsius.</li>
-<li>Générer le <em>n</em>-ième nombre de Fibonacci.</li>
-<li>Afficher les paroles de la chanson de Noël <em>The Twelve Days of Christmas</em> en
-profitant de l'aspect répétitif de la chanson.</li>
+<li>Convert temperatures between Fahrenheit and Celsius.</li>
+<li>Generate the nth Fibonacci number.</li>
+<li>Print the lyrics to the Christmas carol “The Twelve Days of Christmas,”
+taking advantage of the repetition in the song.</li>
 </ul>
-<!--
-When you’re ready to move on, we’ll talk about a concept in Rust that *doesn’t*
-commonly exist in other programming languages: ownership.
--->
-<p>Quand vous serez prêt à aller plus loin, nous aborderons une notion de Rust
-qui n'existe <em>pas</em> dans les autres langages de programmation : la possession
-<em>(ownership)</em>.</p>
-<!--
-[comparing-the-guess-to-the-secret-number]:
-ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
-[quitting-after-a-correct-guess]:
-ch02-00-guessing-game-tutorial.html#quitting-after-a-correct-guess
--->
+<p>When you’re ready to move on, we’ll talk about a concept in Rust that <em>doesn’t</em>
+commonly exist in other programming languages: ownership.</p>
 
                     </main>
 
@@ -1255,9 +636,7 @@ ch02-00-guessing-game-tutorial.html#quitting-after-a-correct-guess
 
         <!-- Custom JS scripts -->
         
-        <script type="text/javascript" src="../ferris.js"></script>
-        
-        <script type="text/javascript" src="github-button.js"></script>
+        <script type="text/javascript" src="ferris.js"></script>
         
 
         

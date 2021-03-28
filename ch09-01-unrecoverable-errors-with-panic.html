@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Les erreurs irrécupérables avec panic! - Le langage de programmation Rust</title>
+        <title>Unrecoverable Errors with panic! - The Rust Programming Language</title>
         
         
 
@@ -43,9 +43,9 @@
 
         <!-- Custom theme stylesheets -->
         
-        <link rel="stylesheet" href="../ferris.css">
+        <link rel="stylesheet" href="ferris.css">
         
-        <link rel="stylesheet" href="../theme/2018-edition.css">
+        <link rel="stylesheet" href="theme/2018-edition.css">
         
 
         
@@ -99,7 +99,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la visibilité</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html" class="active"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> Paniquer ou ne pas paniquer, telle est la question ...</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 🚧 Les types génériques, les traits et les durées de vies</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 🚧 Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 🚧 Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 🚧 La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 🚧 Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 🚧 Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 🚧 Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 🚧 L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> 🚧 Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 🚧 Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box<T> pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc<T>, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell<T> et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">The Rust Programming Language</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programming a Guessing Game</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Common Programming Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Variables and Mutability</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Data Types</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Comments</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Control Flow</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Understanding Ownership</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> What is Ownership?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> References and Borrowing</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> The Slice Type</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Using Structs to Structure Related Data</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Defining and Instantiating Structs</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> An Example Program Using Structs</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> Method Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Enums and Pattern Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Defining an Enum</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> The match Control Flow Operator</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Concise Control Flow with if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Managing Growing Projects with Packages, Crates, and Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Packages and Crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Defining Modules to Control Scope and Privacy</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Paths for Referring to an Item in the Module Tree</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Bringing Paths Into Scope with the use Keyword</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Separating Modules into Different Files</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Common Collections</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Storing Lists of Values with Vectors</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Storing UTF-8 Encoded Text with Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Storing Keys with Associated Values in Hash Maps</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> Error Handling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html" class="active"><strong aria-hidden="true">9.1.</strong> Unrecoverable Errors with panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Recoverable Errors with Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> To panic! or Not To panic!</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Generic Types, Traits, and Lifetimes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Generic Data Types</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Traits: Defining Shared Behavior</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> Validating References with Lifetimes</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Writing Automated Tests</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> How to Write Tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Controlling How Tests Are Run</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> Test Organization</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> An I/O Project: Building a Command Line Program</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Accepting Command Line Arguments</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> Reading a File</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> Refactoring to Improve Modularity and Error Handling</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> Developing the Library’s Functionality with Test Driven Development</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> Working with Environment Variables</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> Writing Error Messages to Standard Error Instead of Standard Output</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Functional Language Features: Iterators and Closures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Closures: Anonymous Functions that Can Capture Their Environment</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Processing a Series of Items with Iterators</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Improving Our I/O Project</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparing Performance: Loops vs. Iterators</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> More about Cargo and Crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> Customizing Builds with Release Profiles</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Publishing a Crate to Crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo Workspaces</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> Installing Binaries from Crates.io with cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> Extending Cargo with Custom Commands</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> Smart Pointers</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Using Box&lt;T&gt; to Point to Data on the Heap</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Treating Smart Pointers Like Regular References with the Deref Trait</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Running Code on Cleanup with the Drop Trait</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc&lt;T&gt;, the Reference Counted Smart Pointer</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell&lt;T&gt; and the Interior Mutability Pattern</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> Reference Cycles Can Leak Memory</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> Fearless Concurrency</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> Using Threads to Run Code Simultaneously</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> Using Message Passing to Transfer Data Between Threads</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> Shared-State Concurrency</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> Extensible Concurrency with the Sync and Send Traits</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Object Oriented Programming Features of Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> Characteristics of Object-Oriented Languages</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> Using Trait Objects That Allow for Values of Different Types</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> Implementing an Object-Oriented Design Pattern</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> Patterns and Matching</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> All the Places Patterns Can Be Used</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> Refutability: Whether a Pattern Might Fail to Match</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> Pattern Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> Advanced Features</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> Unsafe Rust</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> Advanced Traits</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> Advanced Types</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> Advanced Functions and Closures</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> Macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> Final Project: Building a Multithreaded Web Server</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> Building a Single-Threaded Web Server</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> Turning Our Single-Threaded Server into a Multithreaded Server</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> Graceful Shutdown and Cleanup</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Appendix</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - Keywords</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - Operators and Symbols</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - Derivable Traits</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> D - Useful Development Tools</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> E - Editions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> F - Translations of the Book</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - How Rust is Made and “Nightly Rust”</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">Le langage de programmation Rust</h1>
+                    <h1 class="menu-title">The Rust Programming Language</h1>
 
                     <div class="right-buttons">
                         
@@ -139,6 +139,10 @@
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
+                        
+                        <a href="https://github.com/rust-lang/book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
                         
                     </div>
                 </div>
@@ -167,93 +171,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <!--
-## Unrecoverable Errors with `panic!`
--->
-<h2><a class="header" href="#les-erreurs-irrécupérables-avec-panic" id="les-erreurs-irrécupérables-avec-panic">Les erreurs irrécupérables avec <code>panic!</code></a></h2>
-<!--
-Sometimes, bad things happen in your code, and there’s nothing you can do about
-it. In these cases, Rust has the `panic!` macro. When the `panic!` macro
+                        <h2 id="unrecoverable-errors-with-panic"><a class="header" href="#unrecoverable-errors-with-panic">Unrecoverable Errors with <code>panic!</code></a></h2>
+<p>Sometimes, bad things happen in your code, and there’s nothing you can do about
+it. In these cases, Rust has the <code>panic!</code> macro. When the <code>panic!</code> macro
 executes, your program will print a failure message, unwind and clean up the
 stack, and then quit. This most commonly occurs when a bug of some kind has
-been detected and it’s not clear to the programmer how to handle the error.
--->
-<p>Parfois, des choses se passent mal dans votre code, et vous ne pouvez rien y
-faire. Pour ces cas-là, Rust a la macro <code>panic!</code>. Quand la macro <code>panic!</code>
-s'exécute, votre programme va afficher un message d'erreur, dérouler et nettoyer
-la pile, et ensuite fermer le programme. Cela se produit fréquemment lorsqu'un
-bogue a été détecté, et que le développeur n'a pas su comment gérer cette
-erreur.</p>
-<!--
-> ### Unwinding the Stack or Aborting in Response to a Panic
->
-> By default, when a panic occurs, the program starts *unwinding*, which
-> means Rust walks back up the stack and cleans up the data from each function
-> it encounters. But this walking back and cleanup is a lot of work. The
-> alternative is to immediately *abort*, which ends the program without
-> cleaning up. Memory that the program was using will then need to be cleaned
-> up by the operating system. If in your project you need to make the resulting
-> binary as small as possible, you can switch from unwinding to aborting upon a
-> panic by adding `panic = 'abort'` to the appropriate `[profile]` sections in
-> your *Cargo.toml* file. For example, if you want to abort on panic in release
-> mode, add this:
->
-> ```toml
-> [profile.release]
-> panic = 'abort'
-> ```
--->
+been detected and it’s not clear to the programmer how to handle the error.</p>
 <blockquote>
-<h3><a class="header" href="#dérouler-la-pile-ou-abandonner-suite-à-un-panic" id="dérouler-la-pile-ou-abandonner-suite-à-un-panic">Dérouler la pile ou abandonner suite à un <code>panic!</code></a></h3>
-<p>Par défaut, quand un <code>panic</code> se produit, le programme commence par
-<em>dérouler</em>, ce qui veut dire que Rust retourne en arrière dans la pile et
-nettoie les données de chaque fonction qu'il rencontre sur son passage. Mais
-cette marche arrière et le nettoyage demande beaucoup de travail. Une
-alternative est <em>d'abandonner</em> immédiatement, ce qui arrête le programme sans
-nettoyage. La mémoire qu'utilisait le programme va devoir ensuite être
-nettoyée par le système d'exploitation. Si dans votre projet vous avez besoin
-de construire un exécutable le plus petit possible, vous pouvez changer du
-dévidage à l'abandon lors d'un panic en ajoutant <code>panic = 'abort'</code> aux
-sections <code>[profile]</code> correspondantes dans votre fichier <em>Cargo.toml</em>. Par
-exemple, si vous souhaitez abandonner lors d'un panic en mode release, ajoutez
-ceci :</p>
+<h3 id="unwinding-the-stack-or-aborting-in-response-to-a-panic"><a class="header" href="#unwinding-the-stack-or-aborting-in-response-to-a-panic">Unwinding the Stack or Aborting in Response to a Panic</a></h3>
+<p>By default, when a panic occurs, the program starts <em>unwinding</em>, which
+means Rust walks back up the stack and cleans up the data from each function
+it encounters. But this walking back and cleanup is a lot of work. The
+alternative is to immediately <em>abort</em>, which ends the program without
+cleaning up. Memory that the program was using will then need to be cleaned
+up by the operating system. If in your project you need to make the resulting
+binary as small as possible, you can switch from unwinding to aborting upon a
+panic by adding <code>panic = 'abort'</code> to the appropriate <code>[profile]</code> sections in
+your <em>Cargo.toml</em> file. For example, if you want to abort on panic in release
+mode, add this:</p>
 <pre><code class="language-toml">[profile.release]
 panic = 'abort'
 </code></pre>
 </blockquote>
-<!--
-Let’s try calling `panic!` in a simple program:
--->
-<p>Essayons d'appeler <code>panic!</code> dans un programme simple :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,should_panic,panics
-fn main() {
-    panic!("crash and burn");
-}
-```
--->
+<p>Let’s try calling <code>panic!</code> in a simple program:</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playground"><code class="language-rust should_panic panics">fn main() {
     panic!(&quot;crash and burn&quot;);
 }
 </code></pre></pre>
-<!--
-When you run the program, you’ll see something like this:
--->
-<p>Lorsque vous lancez le programme, vous allez voir quelque chose comme ceci :</p>
-<!--
-```console
-$ cargo run
-   Compiling panic v0.1.0 (file:///projects/panic)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.25s
-     Running `target/debug/panic`
-thread 'main' panicked at 'crash and burn', src/main.rs:2:5
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-```
--->
+<p>When you run the program, you’ll see something like this:</p>
 <pre><code class="language-console">$ cargo run
    Compiling panic v0.1.0 (file:///projects/panic)
     Finished dev [unoptimized + debuginfo] target(s) in 0.25s
@@ -261,122 +207,47 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 thread 'main' panicked at 'crash and burn', src/main.rs:2:5
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 </code></pre>
-<!--
-The call to `panic!` causes the error message contained in the last two lines.
+<p>The call to <code>panic!</code> causes the error message contained in the last two lines.
 The first line shows our panic message and the place in our source code where
-the panic occurred: *src/main.rs:2:5* indicates that it’s the second line,
-fifth character of our *src/main.rs* file.
--->
-<p>L'utilisation de <code>panic!</code> déclenche le message d'erreur présent dans les deux
-dernières lignes. La première ligne affiche notre message associé au panic et
-l'emplacement dans notre code source où se produit le panic : <em>src/main.rs:2:5</em>
-indique que c'est la seconde ligne et cinquième caractère de notre fichier
-<em>src/main.rs</em>.</p>
-<!--
-In this case, the line indicated is part of our code, and if we go to that
-line, we see the `panic!` macro call. In other cases, the `panic!` call might
+the panic occurred: <em>src/main.rs:2:5</em> indicates that it’s the second line,
+fifth character of our <em>src/main.rs</em> file.</p>
+<p>In this case, the line indicated is part of our code, and if we go to that
+line, we see the <code>panic!</code> macro call. In other cases, the <code>panic!</code> call might
 be in code that our code calls, and the filename and line number reported by
-the error message will be someone else’s code where the `panic!` macro is
-called, not the line of our code that eventually led to the `panic!` call. We
-can use the backtrace of the functions the `panic!` call came from to figure
+the error message will be someone else’s code where the <code>panic!</code> macro is
+called, not the line of our code that eventually led to the <code>panic!</code> call. We
+can use the backtrace of the functions the <code>panic!</code> call came from to figure
 out the part of our code that is causing the problem. We’ll discuss what a
-backtrace is in more detail next.
--->
-<p>Dans cet exemple, la ligne indiquée fait partie de notre code, et si nous
-allons voir cette ligne, nous verrons l'appel à la macro <code>panic!</code>. Dans d'autres
-cas, l'appel de <code>panic!</code> pourrait se produire dans du code que notre
-code utilise. Le nom du fichier et la ligne indiquée par le message d'erreur
-sera alors du code de quelqu'un d'autre où la macro <code>panic!</code> est appelée, et non
-pas la ligne de notre code qui nous a mené à cet appel de <code>panic!</code>. Nous pouvons
-utiliser le re-traçage des fonctions qui appellent le <code>panic!</code> pour comprendre
-la partie de notre code qui pose problème. Nous allons maintenant parler plus
-en détail de ce qu'est le re-traçage.</p>
-<!--
-### Using a `panic!` Backtrace
--->
-<h3><a class="header" href="#utiliser-le-re-traçage-de-panic" id="utiliser-le-re-traçage-de-panic">Utiliser le re-traçage de <code>panic!</code></a></h3>
-<!--
-Let’s look at another example to see what it’s like when a `panic!` call comes
+backtrace is in more detail next.</p>
+<h3 id="using-a-panic-backtrace"><a class="header" href="#using-a-panic-backtrace">Using a <code>panic!</code> Backtrace</a></h3>
+<p>Let’s look at another example to see what it’s like when a <code>panic!</code> call comes
 from a library because of a bug in our code instead of from our code calling
 the macro directly. Listing 9-1 has some code that attempts to access an
-element by index in a vector.
--->
-<p>Analysons un autre exemple pour voir ce qui se passe lors d'un appel de
-<code>panic!</code> qui se produit dans une bibliothèque à cause d'un bug dans notre code plutôt
-qu'un appel à la macro directement. L'encart 9-1 montre du code qui essaye
-d'accéder à un élément d'un vecteur via son indice :</p>
-<!--
-<span class="filename">Filename: src/main.rs</span>
--->
-<p><span class="filename">Fichier : src/main.rs</span></p>
-<!--
-```rust,should_panic,panics
-fn main() {
-    let v = vec![1, 2, 3];
-
-    v[99];
-}
-```
--->
+element by index in a vector.</p>
+<p><span class="filename">Filename: src/main.rs</span></p>
 <pre><pre class="playground"><code class="language-rust should_panic panics">fn main() {
     let v = vec![1, 2, 3];
 
     v[99];
 }
 </code></pre></pre>
-<!--
-<span class="caption">Listing 9-1: Attempting to access an element beyond the
-end of a vector, which will cause a call to `panic!`</span>
--->
-<p><span class="caption">Encart 9-1 : tentative d'accès à un élément qui dépasse de
-l'intervalle d'un vecteur, ce qui provoque un <code>panic!</code></span></p>
-<!--
-Here, we’re attempting to access the 100th element of our vector (which is at
+<p><span class="caption">Listing 9-1: Attempting to access an element beyond the
+end of a vector, which will cause a call to <code>panic!</code></span></p>
+<p>Here, we’re attempting to access the 100th element of our vector (which is at
 index 99 because indexing starts at zero), but it has only 3 elements. In this
-situation, Rust will panic. Using `[]` is supposed to return an element, but if
+situation, Rust will panic. Using <code>[]</code> is supposed to return an element, but if
 you pass an invalid index, there’s no element that Rust could return here that
-would be correct.
--->
-<p>Ici, nous essayons d'accéder au centième élément de notre vecteur (qui est à
-l'indice 99 car l'indexation commence à zéro), mais le vecteur a seulement trois
-éléments. Dans ce cas, Rust va paniquer. Utiliser <code>[]</code> est censé retourner
-un élément, mais si vous lui donnez un indice invalide, Rust ne pourra pas
-retourner un élément acceptable dans ce cas.</p>
-<!--
-In C, attempting to read beyond the end of a data structure is undefined
+would be correct.</p>
+<p>In C, attempting to read beyond the end of a data structure is undefined
 behavior. You might get whatever is at the location in memory that would
 correspond to that element in the data structure, even though the memory
-doesn’t belong to that structure. This is called a *buffer overread* and can
+doesn’t belong to that structure. This is called a <em>buffer overread</em> and can
 lead to security vulnerabilities if an attacker is able to manipulate the index
 in such a way as to read data they shouldn’t be allowed to that is stored after
-the data structure.
--->
-<p>En C, tenter de lire en dehors de la fin d'une structure de donnée suit un
-comportement non défini. Vous pourriez récupérer quelque chose à l'emplacement
-mémoire demandé qui pourrait correspondre à l'élément demandé de la structure
-de données, même si cette partie de la mémoire n'appartient pas à cette
-structure de données. C'est ce qu'on appelle une <em>sur-lecture de tampon</em> et cela
-peut mener à une faille de sécurité si un attaquant a la possibilité de contrôler
-l'indice de telle manière qu'il puisse lire les données qui ne devraient pas
-être lisibles en dehors de la structure de données.</p>
-<!--
-To protect your program from this sort of vulnerability, if you try to read an
+the data structure.</p>
+<p>To protect your program from this sort of vulnerability, if you try to read an
 element at an index that doesn’t exist, Rust will stop execution and refuse to
-continue. Let’s try it and see:
--->
-<p>Afin de protéger votre programme de ce genre de vulnérabilité, si vous essayez
-de lire un élément à un indice qui n'existe pas, Rust va arrêter l'exécution et
-refuser de continuer. Essayez et vous verrez :</p>
-<!--
-```console
-$ cargo run
-   Compiling panic v0.1.0 (file:///projects/panic)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.27s
-     Running `target/debug/panic`
-thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', src/main.rs:4:5
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-```
--->
+continue. Let’s try it and see:</p>
 <pre><code class="language-console">$ cargo run
    Compiling panic v0.1.0 (file:///projects/panic)
     Finished dev [unoptimized + debuginfo] target(s) in 0.27s
@@ -384,75 +255,26 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', src/main.rs:4:5
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 </code></pre>
-<!--
-This error points at a file we didn’t write, *libcore/slice/mod.rs*. That’s the
-implementation of `slice` in the Rust source code. The code that gets run when
-we use `[]` on our vector `v` is in *libcore/slice/mod.rs*, and that is where
-the `panic!` is actually happening.
--->
-<p>Cette erreur se réfère à un fichier que nous n'avons pas écrit,
-<em>libcore/slice/mod.rs</em>. C'est l'implémentation de <code>slice</code> dans la bibliothèque
-standard. Le code qui est lancé quand nous utilisons <code>[]</code> sur notre vecteur <code>v</code>
-est dans <em>libcore/slice/mod.rs</em>, et c'est ici que le <code>panic!</code> se produit dans
-notre cas.</p>
-<!--
-The next note line tells us that we can set the `RUST_BACKTRACE` environment
+<p>This error points at a file we didn’t write, <em>libcore/slice/mod.rs</em>. That’s the
+implementation of <code>slice</code> in the Rust source code. The code that gets run when
+we use <code>[]</code> on our vector <code>v</code> is in <em>libcore/slice/mod.rs</em>, and that is where
+the <code>panic!</code> is actually happening.</p>
+<p>The next note line tells us that we can set the <code>RUST_BACKTRACE</code> environment
 variable to get a backtrace of exactly what happened to cause the error. A
-*backtrace* is a list of all the functions that have been called to get to this
+<em>backtrace</em> is a list of all the functions that have been called to get to this
 point. Backtraces in Rust work as they do in other languages: the key to
 reading the backtrace is to start from the top and read until you see files you
 wrote. That’s the spot where the problem originated. The lines above the lines
 mentioning your files are code that your code called; the lines below are code
 that called your code. These lines might include core Rust code, standard
 library code, or crates that you’re using. Let’s try getting a backtrace by
-setting the `RUST_BACKTRACE` environment variable to any value except 0.
-Listing 9-2 shows output similar to what you’ll see.
--->
-<p>La ligne suivante nous informe que nous pouvons régler la variable
-d'environnement <code>RUST_BACKTRACE</code> pour obtenir le re-traçage de ce qui s'est
-exactement passé pour mener à cette erreur. Un <em>re-traçage</em> consiste à lister
-toutes les fonctions qui ont été appelées pour arriver jusqu'à ce point. Avec
-Rust, le re-traçage fonctionne comme il le fait dans d'autres langages : le
-secret pour lire le re-traçage est de commencer d'en haut et lire jusqu'à ce
-que vous voyiez les fichiers que vous avez écris. C'est l'endroit où s'est
-produit le problème. Les lignes avant celle qui mentionne vos fichiers
-représentent le code qu'à appelé votre code ; les lignes qui suivent
-représentent le code qui a appelé votre code. Ces lignes peuvent être du code
-du coeur de Rust, du code de la bibliothèque standard, ou des crates que vous
-utilisez. Essayons d'obtenir un re-traçage en réglant la variable
-d'environnement <code>RUST_BACKTRACE</code> à n'importe quelle valeur autre que 0. L'encart
-9-2 nous montre un retour similaire à ce que vous devriez voir :</p>
-<!--
+setting the <code>RUST_BACKTRACE</code> environment variable to any value except 0.
+Listing 9-2 shows output similar to what you’ll see.</p>
 <!-- manual-regeneration
 cd listings/ch09-error-handling/listing-09-01
 RUST_BACKTRACE=1 cargo run
 copy the backtrace output below
 check the backtrace number mentioned in the text below the listing
--- >
--->
-<!--
-```console
-$ RUST_BACKTRACE=1 cargo run
-thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', src/main.rs:4:5
-stack backtrace:
-   0: rust_begin_unwind
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/std/src/panicking.rs:483
-   1: core::panicking::panic_fmt
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/core/src/panicking.rs:85
-   2: core::panicking::panic_bounds_check
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/core/src/panicking.rs:62
-   3: <usize as core::slice::index::SliceIndex<[T]>>::index
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/core/src/slice/index.rs:255
-   4: core::slice::index::<impl core::ops::index::Index<I> for [T]>::index
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/core/src/slice/index.rs:15
-   5: <alloc::vec::Vec<T> as core::ops::index::Index<I>>::index
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/alloc/src/vec.rs:1982
-   6: panic::main
-             at ./src/main.rs:4
-   7: core::ops::function::FnOnce::call_once
-             at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/core/src/ops/function.rs:227
-note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
-```
 -->
 <pre><code class="language-console">$ RUST_BACKTRACE=1 cargo run
 thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', src/main.rs:4:5
@@ -475,61 +297,26 @@ stack backtrace:
              at /rustc/7eac88abb2e57e752f3302f02be5f3ce3d7adfb4/library/core/src/ops/function.rs:227
 note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
 </code></pre>
-<!--
-<span class="caption">Listing 9-2: The backtrace generated by a call to
-`panic!` displayed when the environment variable `RUST_BACKTRACE` is set</span>
--->
-<p><span class="caption">Encart 9-2: le re-traçage généré par l'appel de <code>panic!</code>
-est affiché quand la variable d'environnement <code>RUST_BACKTRACE</code> est définie
-</span></p>
-<!--
-That’s a lot of output! The exact output you see might be different depending
+<p><span class="caption">Listing 9-2: The backtrace generated by a call to
+<code>panic!</code> displayed when the environment variable <code>RUST_BACKTRACE</code> is set</span></p>
+<p>That’s a lot of output! The exact output you see might be different depending
 on your operating system and Rust version. In order to get backtraces with this
 information, debug symbols must be enabled. Debug symbols are enabled by
-default when using `cargo build` or `cargo run` without the `--release` flag,
-as we have here.
--->
-<p>Cela fait beaucoup de contenu ! Ce que vous voyez sur votre machine
-peut être différent en fonction de votre système d'exploitation et de votre
-version de Rust. Pour avoir le re-traçage avec ces informations, les instructions
-de déboguage doivent être activées. Les instructions de déboguage sont activées
-par défaut quand on utilise <code>cargo build</code> ou <code>cargo run</code> sans le drapeau
-<code>--release</code>, comme c'est le cas ici.</p>
-<!--
-In the output in Listing 9-2, line 6 of the backtrace points to the line in
-our project that’s causing the problem: line 4 of *src/main.rs*. If we don’t
+default when using <code>cargo build</code> or <code>cargo run</code> without the <code>--release</code> flag,
+as we have here.</p>
+<p>In the output in Listing 9-2, line 6 of the backtrace points to the line in
+our project that’s causing the problem: line 4 of <em>src/main.rs</em>. If we don’t
 want our program to panic, the location pointed to by the first line mentioning
 a file we wrote is where we should start investigating. In Listing 9-1, where
 we deliberately wrote code that would panic in order to demonstrate how to use
 backtraces, the way to fix the panic is to not request an element at index 99
 from a vector that only contains 3 items. When your code panics in the future,
 you’ll need to figure out what action the code is taking with what values to
-cause the panic and what the code should do instead.
--->
-<p>Dans l'encart 9-2, la ligne 6 du re-traçage nous montre la ligne de notre projet
-qui provoque le problème : la ligne 4 de <em>src/main.rs</em>. Si nous ne voulons pas
-que notre programme panique, le premier endroit que nous devrions inspecter est
-l'emplacement cité par la première ligne qui mentionne du code que nous avons
-écrit. Dans l'encart 9-1, où nous avons délibérément écrit du code qui panique
-dans le but de montrer comment utiliser le re-traçage, la solution pour ne pas
-paniquer est de ne pas demander l'élément à l'indice 99 à un vecteur lorsqu'il
-n'en contient que 3. A l'avenir quand votre code paniquera, vous aurez besoin de
-prendre des dispositions dans votre code pour les valeurs qui font paniquer et
-de coder quoi faire lorsque cela se produit.</p>
-<!--
-We’ll come back to `panic!` and when we should and should not use `panic!` to
-handle error conditions in the [“To `panic!` or Not to
-`panic!`”][to-panic-or-not-to-panic]<!-- ignore -- > section later in this
-chapter. Next, we’ll look at how to recover from an error using `Result`.
--->
-<p>Nous reviendrons sur le cas du <code>panic!</code> et sur les cas où nous devrions et ne
-devrions pas utiliser <code>panic!</code> pour gérer les conditions d'erreur plus tard
-à <a href="ch09-03-to-panic-or-not-to-panic.html">la fin de ce chapitre</a><!-- ignore -->. Pour le
-moment, nous allons voir comment gérer une erreur en utilisant <code>Result</code>.</p>
-<!--
-[to-panic-or-not-to-panic]:
-ch09-03-to-panic-or-not-to-panic.html#to-panic-or-not-to-panic
--->
+cause the panic and what the code should do instead.</p>
+<p>We’ll come back to <code>panic!</code> and when we should and should not use <code>panic!</code> to
+handle error conditions in the <a href="ch09-03-to-panic-or-not-to-panic.html#to-panic-or-not-to-panic">“To <code>panic!</code> or Not to
+<code>panic!</code>”</a><!-- ignore --> section later in this
+chapter. Next, we’ll look at how to recover from an error using <code>Result</code>.</p>
 
                     </main>
 
@@ -594,9 +381,7 @@ ch09-03-to-panic-or-not-to-panic.html#to-panic-or-not-to-panic
 
         <!-- Custom JS scripts -->
         
-        <script type="text/javascript" src="../ferris.js"></script>
-        
-        <script type="text/javascript" src="github-button.js"></script>
+        <script type="text/javascript" src="ferris.js"></script>
         
 
         
