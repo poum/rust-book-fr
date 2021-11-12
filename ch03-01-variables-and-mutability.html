@@ -4,37 +4,30 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Les variables et la mutabilité - Le langage de programmation Rust</title>
-                
-
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="favicon.svg">
-                        <link rel="shortcut icon" href="favicon.png">
-                <link rel="stylesheet" href="css/variables.css">
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-                <link rel="stylesheet" href="css/print.css" media="print">
-        
+        <link rel="stylesheet" href="css/print.css" media="print">
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="fonts/fonts.css">
-        
+        <link rel="stylesheet" href="fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-                <link rel="stylesheet" href="../ferris.css">
-                <link rel="stylesheet" href="../theme/2018-edition.css">
-        
-            </head>
+        <link rel="stylesheet" href="../ferris.css">
+        <link rel="stylesheet" href="../theme/2018-edition.css">
+    </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
@@ -84,14 +77,14 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html" class="active"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la visibilité</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> Paniquer ou ne pas paniquer, telle est la question</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Les types génériques, les traits et les durées de vie</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 🚧 Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 🚧 Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 🚧 Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 🚧 Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 🚧 Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box&lt;T&gt; pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc&lt;T&gt;, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell&lt;T&gt; et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="title-page.html">Le langage de programmation Rust</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Avant-propos</a></li><li class="chapter-item expanded affix "><a href="ch00-00-introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="translation-terms.html">Traduction des termes</a></li><li class="chapter-item expanded "><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Prise en main</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, world!</a></li><li class="chapter-item expanded "><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li class="chapter-item expanded "><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Programmer le jeu du plus ou du moins</a></li><li class="chapter-item expanded "><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Les concepts courants de programmation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch03-01-variables-and-mutability.html" class="active"><strong aria-hidden="true">3.1.</strong> Les variables et la mutabilité</a></li><li class="chapter-item expanded "><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Les types de données</a></li><li class="chapter-item expanded "><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> Les fonctions</a></li><li class="chapter-item expanded "><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Les commentaires</a></li><li class="chapter-item expanded "><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Les structures de contrôle</a></li></ol></li><li class="chapter-item expanded "><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Comprendre la possession</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Qu'est-ce que la possession ?</a></li><li class="chapter-item expanded "><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Les références et l'emprunt</a></li><li class="chapter-item expanded "><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Le type slice</a></li></ol></li><li class="chapter-item expanded "><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> Utiliser les structures pour structurer des données apparentées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Définir et instancier des structures</a></li><li class="chapter-item expanded "><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Un exemple de programme qui utilise des structures</a></li><li class="chapter-item expanded "><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> La syntaxe des méthodes</a></li></ol></li><li class="chapter-item expanded "><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Les énumérations et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Définir une énumération</a></li><li class="chapter-item expanded "><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> La structure de contrôle match</a></li><li class="chapter-item expanded "><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> Une structure de contrôle concise : if let</a></li></ol></li><li class="chapter-item expanded "><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Gérer des projets grandissants avec les paquets, crates et modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Les paquets et les crates</a></li><li class="chapter-item expanded "><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Définir des modules pour gérer la portée et la visibilité</a></li><li class="chapter-item expanded "><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Désigner un élément dans l'arborescence de modules</a></li><li class="chapter-item expanded "><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> Importer des chemins dans la portée via le mot-clé use</a></li><li class="chapter-item expanded "><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Séparer les modules dans différents fichiers</a></li></ol></li><li class="chapter-item expanded "><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Les collections standard</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Stocker des listes de valeurs avec des vecteurs</a></li><li class="chapter-item expanded "><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Stocker du texte encodé en UTF-8 avec les Strings</a></li><li class="chapter-item expanded "><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> Stocker des clés associées à des valeurs dans des tables de hachage</a></li></ol></li><li class="chapter-item expanded "><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> La gestion des erreurs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> Les erreurs irrécupérables avec panic!</a></li><li class="chapter-item expanded "><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Des erreurs récupérables avec Result</a></li><li class="chapter-item expanded "><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> Paniquer ou ne pas paniquer, telle est la question</a></li></ol></li><li class="chapter-item expanded "><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Les types génériques, les traits et les durées de vie</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Les types de données génériques</a></li><li class="chapter-item expanded "><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Définir des comportements partagés avec les traits</a></li><li class="chapter-item expanded "><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> La conformité des références avec les durées de vies</a></li></ol></li><li class="chapter-item expanded "><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Ecrire des tests automatisés</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> Comment écrire des tests</a></li><li class="chapter-item expanded "><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Gérer l'exécution des tests</a></li><li class="chapter-item expanded "><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> L'organisation des tests</a></li></ol></li><li class="chapter-item expanded "><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> Un projet d'entrée/sortie : construire un programme en ligne de commande</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Récupérer les arguments de la ligne de commande</a></li><li class="chapter-item expanded "><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> Lire un fichier</a></li><li class="chapter-item expanded "><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> Remanier le code pour améliorer sa modularité et la gestion des erreurs</a></li><li class="chapter-item expanded "><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> Développer les fonctionnalités de la bibliothèque avec le TDD</a></li><li class="chapter-item expanded "><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> Travailler avec des variables d'environnement</a></li><li class="chapter-item expanded "><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> Ecrire les messages d'erreur sur la sortie d'erreurs standard au lieu de la sortie normale</a></li></ol></li><li class="chapter-item expanded "><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Les fermetures : fonctions anonymes qui peuvent utiliser leur environnement</a></li><li class="chapter-item expanded "><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Traiter une série d'éléments avec un itérateur</a></li><li class="chapter-item expanded "><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> Amélioration de notre projet d'entrée/sortie</a></li><li class="chapter-item expanded "><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Comparaison des performances : les boucles et les itérateurs</a></li></ol></li><li class="chapter-item expanded "><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> 🚧 En savoir plus sur cargo et crates.io</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 🚧 Personnaliser les compilations avec les profils de publication</a></li><li class="chapter-item expanded "><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> 🚧 Publier une crate sur crates.io</a></li><li class="chapter-item expanded "><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> 🚧 Les espaces de travail de cargo</a></li><li class="chapter-item expanded "><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> 🚧 Installer des binaires à partir de crates.io avec cargo install</a></li><li class="chapter-item expanded "><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 🚧 Etendre les fonctionnalités de cargo avec des commandes personnalisées</a></li></ol></li><li class="chapter-item expanded "><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 🚧 Les pointeurs intelligents</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> 🚧 Utiliser Box&lt;T&gt; pour pointer sur des données présentes sur le tas</a></li><li class="chapter-item expanded "><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> 🚧 Considérer les pointeurs intelligents comme des références grâce au trait Deref</a></li><li class="chapter-item expanded "><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> 🚧 Exécuter du code au nettoyage avec le trait Drop</a></li><li class="chapter-item expanded "><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> 🚧 Rc&lt;T&gt;, le pointeur intelligent qui compte les références</a></li><li class="chapter-item expanded "><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> 🚧 RefCell&lt;T&gt; et le motif de mutabilité interne</a></li><li class="chapter-item expanded "><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 🚧 Les boucles de références qui peuvent provoquer des fuites de mémoire</a></li></ol></li><li class="chapter-item expanded "><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 🚧 La concurrence sans craintes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 🚧 Utiliser les tâches pour exécuter simultanément du code</a></li><li class="chapter-item expanded "><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 🚧 Utiliser l'envoi de messages pour transférer des données entre les tâches</a></li><li class="chapter-item expanded "><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 🚧 Le partage d'état en concurrence</a></li><li class="chapter-item expanded "><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 🚧 Etendre la concurrence avec les traits Sync et Send</a></li></ol></li><li class="chapter-item expanded "><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Les fonctionnalités orientées objet de Rust</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 🚧 Les caractéristiques des langages orientés objet</a></li><li class="chapter-item expanded "><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 🚧 Utiliser les objets traits qui permettent des valeurs de types différents</a></li><li class="chapter-item expanded "><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 🚧 Implémenter un patron de conception orienté-objet</a></li></ol></li><li class="chapter-item expanded "><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 🚧 Les motifs et le filtrage par motif</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 🚧 Tous les endroits où les motifs peuvent être utilisés</a></li><li class="chapter-item expanded "><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 🚧 La réfutabilité : lorsqu'un motif peut échouer à correspondre</a></li><li class="chapter-item expanded "><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 🚧 La syntaxe des motifs</a></li></ol></li><li class="chapter-item expanded "><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 🚧 Les fonctionnalités avancées</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 🚧 Le Rust non sécurisé (unsafe)</a></li><li class="chapter-item expanded "><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> 🚧 Les traits avancés</a></li><li class="chapter-item expanded "><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> 🚧 Les types avancés</a></li><li class="chapter-item expanded "><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> 🚧 Les fonctions et fermetures avancées</a></li><li class="chapter-item expanded "><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> 🚧 Les macros</a></li></ol></li><li class="chapter-item expanded "><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 🚧 Projet final : construire un serveur web multitâches</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 🚧 Développer un serveur web monotâche</a></li><li class="chapter-item expanded "><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 🚧 Transformer notre serveur monotâche en serveur multitâches</a></li><li class="chapter-item expanded "><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 🚧 Arrêt propre et nettoyage</a></li></ol></li><li class="chapter-item expanded "><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> 🚧 Annexes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> 🚧 A - les mots-clés</a></li><li class="chapter-item expanded "><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> 🚧 B - les opérateurs et les symboles</a></li><li class="chapter-item expanded "><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> 🚧 C - les traits dérivables</a></li><li class="chapter-item expanded "><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> 🚧 D - Des outils de développement utiles</a></li><li class="chapter-item expanded "><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> 🚧 E - Les éditions</a></li><li class="chapter-item expanded "><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> 🚧 F - Les traductions de ce livre</a></li><li class="chapter-item expanded "><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> 🚧 G - Comment Rust est construit, et “Nightly Rust”</a></li></ol></li></ol>
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -108,22 +101,24 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                                            </div>
+                    </div>
 
                     <h1 class="menu-title">Le langage de programmation Rust</h1>
 
                     <div class="right-buttons">
-                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
+                        <a href="https://github.com/Jimskapt/rust-book-fr" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
+                <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
@@ -133,7 +128,6 @@
                         </ul>
                     </div>
                 </div>
-                
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -150,19 +144,21 @@
 -->
 <h2 id="les-variables-et-la-mutabilité"><a class="header" href="#les-variables-et-la-mutabilité">Les variables et la mutabilité</a></h2>
 <!--
-As mentioned in Chapter 2, by default variables are immutable. This is one of
-many nudges Rust gives you to write your code in a way that takes advantage of
-the safety and easy concurrency that Rust offers. However, you still have the
-option to make your variables mutable. Let’s explore how and why Rust
-encourages you to favor immutability and why sometimes you might want to opt
-out.
+As mentioned in the [“Storing Values with
+Variables”][storing-values-with-variables]<!-- ignore -- > section, by default
+variables are immutable. This is one of many nudges Rust gives you to write
+your code in a way that takes advantage of the safety and easy concurrency that
+Rust offers. However, you still have the option to make your variables mutable.
+Let’s explore how and why Rust encourages you to favor immutability and why
+sometimes you might want to opt out.
 -->
-<p>Tel qu'abordé au chapitre 2, par défaut, les variables sont <em>immuables</em>. C'est
-un des nombreux coups de pouce de Rust pour écrire votre code de façon à
-garantir la sécurité et la concurrence sans problème. Cependant, vous avez quand
-même la possibilité de rendre vos variables mutables <em>(modifiables)</em>. Explorons
-comment et pourquoi Rust vous encourage à favoriser l'immuabilité, et pourquoi
-parfois vous pourriez choisir d'y renoncer.</p>
+<p>Tel qu'abordé au <a href="ch02-00-guessing-game-tutorial.html">chapitre 2</a><!-- ignore -->,
+par défaut, les variables sont <em>immuables</em>. C'est un des nombreux coups de pouce
+de Rust pour écrire votre code de façon à garantir la sécurité et la concurrence
+sans problème. Cependant, vous avez quand même la possibilité de rendre vos
+variables mutables <em>(modifiables)</em>. Explorons comment et pourquoi Rust vous
+encourage à favoriser l'immuabilité, et pourquoi parfois vous pourriez choisir
+d'y renoncer.</p>
 <!--
 When a variable is immutable, once a value is bound to a name, you can’t change
 that value. To illustrate this, let’s generate a new project called *variables*
@@ -174,10 +170,12 @@ générons un nouveau projet appelé <em>variables</em> dans votre dossier <em>p
 utilisant <code>cargo new variables</code>.</p>
 <!--
 Then, in your new *variables* directory, open *src/main.rs* and replace its
-code with the following code that won’t compile just yet:
+code with the following code. This code won’t compile just yet, we'll first
+examine the immutability error.
 -->
 <p>Ensuite, dans votre nouveau dossier <em>variables</em>, ouvrez <em>src/main.rs</em> et
-remplacez son code par le code suivant qui ne compile pas pour le moment :</p>
+remplacez son code par le code suivant. Ce code ne se compile pas pour le
+moment, nous allons commencer par étudier l'erreur d'immutabilité.</p>
 <!--
 <span class="filename">Filename: src/main.rs</span>
 -->
@@ -216,17 +214,13 @@ error[E0384]: cannot assign twice to immutable variable `x`
   |         -
   |         |
   |         first assignment to `x`
-  |         help: make this binding mutable: `mut x`
+  |         help: consider making this binding mutable: `mut x`
 3 |     println!("The value of x is: {}", x);
 4 |     x = 6;
   |     ^^^^^ cannot assign twice to immutable variable
 
-error: aborting due to previous error
-
 For more information about this error, try `rustc --explain E0384`.
-error: could not compile `variables`
-
-To learn more, run the command again with --verbose.
+error: could not compile `variables` due to previous error
 ```
 -->
 <pre><code class="language-console">$ cargo run
@@ -238,76 +232,70 @@ error[E0384]: cannot assign twice to immutable variable `x`
   |         -
   |         |
   |         first assignment to `x`
-  |         help: make this binding mutable: `mut x`
+  |         help: consider making this binding mutable: `mut x`
 3 |     println!(&quot;La valeur de x est : {}&quot;, x);
 4 |     x = 6;
   |     ^^^^^ cannot assign twice to immutable variable
 
-error: aborting due to previous error
-
 For more information about this error, try `rustc --explain E0384`.
-error: could not compile `variables`
-
-To learn more, run the command again with --verbose.
+error: could not compile `variables` due to previous error
 </code></pre>
 <!--
 This example shows how the compiler helps you find errors in your programs.
-Even though compiler errors can be frustrating, they only mean your program
+Compiler errors can be frustrating, but really they only mean your program
 isn’t safely doing what you want it to do yet; they do *not* mean that you’re
 not a good programmer! Experienced Rustaceans still get compiler errors.
 -->
 <p>Cet exemple montre comment le compilateur vous aide à trouver les erreurs dans
-vos programmes. Même si les erreurs de compilation peuvent s'avérer frustrantes,
-elles signifient uniquement que, pour le moment, votre programme n'est pas en
+vos programmes. Les erreurs de compilation peuvent s'avérer frustrantes, mais
+elles signifient en réalité que, pour le moment, votre programme n'est pas en
 train de faire ce que vous voulez qu'il fasse en toute sécurité ; elles ne
 signifient <em>pas</em> que vous êtes un mauvais développeur ! Même les Rustacés
 expérimentés continuent d'avoir des erreurs de compilation.</p>
 <!--
-The error message indicates that the cause of the error is that you `cannot
-assign twice to immutable variable x`, because you tried to assign a second
+The error message indicates that the cause of the error is that you `` cannot
+assign twice to immutable variable `x` ``, because you tried to assign a second
 value to the immutable `x` variable.
 -->
-<p>Ce message d'erreur indique que la cause du problème est qu'il est <em>impossible
-d'assigner à deux reprises la variable immuable <code>x</code></em> (<code>cannot assign twice to immutable variable x</code>).</p>
+<p>Ce message d'erreur indique que la cause du problème est qu'il est
+<code>impossible d'assigner à deux reprises la variable immuable `x`</code>
+(<code>cannot assign twice to immutable variable `x`</code>).</p>
 <!--
 It’s important that we get compile-time errors when we attempt to change a
-value that we previously designated as immutable because this very situation
-can lead to bugs. If one part of our code operates on the assumption that a
-value will never change and another part of our code changes that value, it’s
-possible that the first part of the code won’t do what it was designed to do.
-The cause of this kind of bug can be difficult to track down after the fact,
-especially when the second piece of code changes the value only *sometimes*.
+value that’s designated as immutable because this very situation can lead to
+bugs. If one part of our code operates on the assumption that a value will
+never change and another part of our code changes that value, it’s possible
+that the first part of the code won’t do what it was designed to do. The cause
+of this kind of bug can be difficult to track down after the fact, especially
+when the second piece of code changes the value only *sometimes*. The Rust
+compiler guarantees that when you state a value won’t change, it really won’t
+change, so you don’t have to keep track of it yourself. Your code is thus
+easier to reason through.
 -->
 <p>Il est important que nous obtenions des erreurs au moment de la compilation
-lorsque nous essayons de changer une valeur qui a précédemment été déclarée
-comme immuable, car cette situation particulière peut donner lieu à des bogues.
-Si une partie de notre code part du principe qu'une valeur ne changera jamais et
-qu'une autre partie de notre code modifie cette valeur, il est possible que la
-première partie du code ne fasse pas ce pour quoi elle a été conçue. La cause de
-ce genre de bogue peut être difficile à localiser après coup, en particulier
-lorsque la seconde partie du code ne modifie que <em>parfois</em> cette valeur.</p>
+lorsque nous essayons de changer une valeur qui a été déclarée comme immuable,
+car cette situation particulière peut donner lieu à des bogues. Si une partie
+de notre code part du principe qu'une valeur ne changera jamais et qu'une autre
+partie de notre code modifie cette valeur, il est possible que la première
+partie du code ne fasse pas ce pour quoi elle a été conçue. La cause de ce
+genre de bogue peut être difficile à localiser après coup, en particulier
+lorsque la seconde partie du code ne modifie que <em>parfois</em> cette valeur. Le
+compilateur Rust garantit que lorsque vous déclarez qu'une valeur ne change
+pas, il ne va jamais changer, donc vous n'avez pas à en vous soucier. Votre
+code est ainsi plus facile à maîtriser.</p>
 <!--
-In Rust, the compiler guarantees that when you state that a value won’t change,
-it really won’t change. That means that when you’re reading and writing code,
-you don’t have to keep track of how and where a value might change. Your code
-is thus easier to reason through.
+But mutability can be very useful, and can make code more convenient to write.
+Variables are immutable only by default; as you did in Chapter 2, you can make
+them mutable by adding `mut` in front of the variable name. Adding `mut` also
+conveys intent to future readers of the code by indicating that other parts of
+the code will be changing this variable’s value.
 -->
-<p>Avec Rust, le compilateur garantit que lorsque nous déclarons qu'une variable ne
-changera pas, elle ne changera vraiment pas. Cela signifie que lorsque vous
-lisez et écrivez du code, vous n'avez pas à vous soucier d'où et comment la
-valeur pourrait changer. Votre code est ainsi plus facile à comprendre.</p>
-<!--
-But mutability can be very useful. Variables are immutable only by default; as
-you did in Chapter 2, you can make them mutable by adding `mut` in front of the
-variable name. In addition to allowing this value to change, `mut` conveys
-intent to future readers of the code by indicating that other parts of the code
-will be changing this variable’s value.
--->
-<p>Mais la mutabilité peut s'avérer très utile. Les variables sont immuables par
-défaut ; mais comme vous l'avez fait au chapitre 2, vous pouvez les rendre
-mutables en ajoutant <code>mut</code> devant le nom de la variable. En plus de permettre à
-cette valeur de changer, <code>mut</code> va signaler l'intention aux futurs lecteurs de ce
-code que d'autres parties du code vont modifier la valeur de cette variable.</p>
+<p>Mais la mutabilité peut s'avérer très utile, et peut faciliter la rédaction du
+code. Les variables sont immuables par défaut ; mais comme vous l'avez fait au
+chapitre 2, vous pouvez les rendre mutables en ajoutant <code>mut</code> devant le nom de
+la variable. L'ajout de <code>mut</code> va aussi signaler l'intention aux futurs lecteurs
+de ce code que d'autres parties du code vont modifier la valeur de cette
+variable.</p>
 <!--
 For example, let’s change *src/main.rs* to the following:
 -->
@@ -356,63 +344,49 @@ La valeur de x est : 6
 </code></pre>
 <!--
 We’re allowed to change the value that `x` binds to from `5` to `6` when `mut`
-is used. In some cases, you’ll want to make a variable mutable because it makes
-the code more convenient to write than if it had only immutable variables.
+is used. There are multiple trade-offs to consider in addition to the
+prevention of bugs. For example, in cases where you’re using large data
+structures, mutating an instance in place may be faster than copying and
+returning newly allocated instances. With smaller data structures, creating new
+instances and writing in a more functional programming style may be easier to
+think through, so lower performance might be a worthwhile penalty for gaining
+that clarity.
 -->
-<p>En utilisant <code>mut</code>, nous avons permis à la valeur de <code>x</code> de passer de <code>5</code> à <code>6</code>.
-Dans certains cas, on voudra rendre une variable mutable car cela
-rendra le code plus pratique à écrire que s'il n'utilisait que des variables
-immuables.</p>
+<p>En utilisant <code>mut</code>, nous avons permis à la valeur de <code>x</code> de passer de <code>5</code> à
+<code>6</code>. Il y a d'autres compromis à envisager, en plus de la prévention des
+bogues. Par exemple, dans le cas où vous utiliseriez des grosses structures de
+données, muter une instance déjà existante peut être plus rapide que copier et
+retourner une instance nouvellement allouée. Avec des structures de données
+plus petites, créer de nouvelles instances avec un style de programmation
+fonctionnelle peut rendre le code plus facile à comprendre, donc il peut valoir
+le coup de sacrifier un peu de performance pour que le code gagne en clarté.</p>
 <!--
-There are multiple trade-offs to consider in addition to the prevention of
-bugs. For example, in cases where you’re using large data structures, mutating
-an instance in place may be faster than copying and returning newly allocated
-instances. With smaller data structures, creating new instances and writing in
-a more functional programming style may be easier to think through, so lower
-performance might be a worthwhile penalty for gaining that clarity.
+### Constants
 -->
-<p>Il y a d'autres compromis à envisager, en plus de la prévention des bogues. Par
-exemple, dans le cas où vous utiliseriez des grosses structures de données,
-muter une instance déjà existante peut être plus rapide que copier et retourner
-une instance nouvellement allouée. Avec des structures de données plus petites,
-créer de nouvelles instances avec un style de programmation fonctionnelle peut
-rendre le code plus facile à comprendre, donc il peut valoir le coup de
-sacrifier un peu de performance pour que le code gagne en clarté.</p>
+<h3 id="les-constantes"><a class="header" href="#les-constantes">Les constantes</a></h3>
 <!--
-### Differences Between Variables and Constants
+Like immutable variables, *constants* are values that are bound to a name and
+are not allowed to change, but there are a few differences between constants
+and variables.
 -->
-<h3 id="différences-entre-les-variables-et-les-constantes"><a class="header" href="#différences-entre-les-variables-et-les-constantes">Différences entre les variables et les constantes</a></h3>
-<!--
-Being unable to change the value of a variable might have reminded you of
-another programming concept that most other languages have: *constants*. Like
-immutable variables, constants are values that are bound to a name and are not
-allowed to change, but there are a few differences between constants and
-variables.
--->
-<p>Rendre impossible de changer la valeur d'une variable peut vous avoir rappelé un
-autre concept de programmation que de nombreux autres langages possèdent : les
-<em>constantes</em>. Comme les variables immuables, les constantes sont des valeurs qui
-sont liées à un nom et qui ne peuvent être modifiées, mais il y a quelques
-différences entre les constantes et les variables.</p>
+<p>Comme les variables immuables, les <em>constantes</em> sont des valeurs qui sont liées
+à un nom et qui ne peuvent être modifiées, mais il y a quelques différences
+entre les constantes et les variables.</p>
 <!--
 First, you aren’t allowed to use `mut` with constants. Constants aren’t just
-immutable by default—they’re always immutable.
+immutable by default—they’re always immutable. You declare constants using the
+`const` keyword instead of the `let` keyword, and the type of the value *must*
+be annotated. We’re about to cover types and type annotations in the next
+section, [“Data Types,”][data-types]<!-- ignore -- > so don’t worry about the
+details right now. Just know that you must always annotate the type.
 -->
 <p>D'abord, vous ne pouvez pas utiliser <code>mut</code> avec les constantes. Les constantes
-ne sont pas seulement immuables par défaut − elles sont toujours immuables.</p>
-<!--
-You declare constants using the `const` keyword instead of the `let` keyword,
-and the type of the value *must* be annotated. We’re about to cover types and
-type annotations in the next section, [“Data Types,”][data-types]<!-- ignore
--- > so don’t worry about the details right now. Just know that you must always
-annotate the type.
--->
-<p>On déclare les constantes en utilisant le mot-clé <code>const</code> à la place du
-mot-clé <code>let</code>, et le type de la valeur <em>doit</em> être indiqué. Nous allons aborder
-les types et les annotations de types dans la prochaine section,
-<a href="ch03-02-data-types.html#les-types-de-donn%C3%A9es">“Les types de données”</a><!-- ignore -->, donc ne vous souciez pas
-des détails pour le moment. Sachez seulement que vous devez toujours indiquer le
-type.</p>
+ne sont pas seulement immuables par défaut − elles sont toujours immuables. On
+déclare les constantes en utilisant le mot-clé <code>const</code> à la place du mot-clé
+<code>let</code>, et le type de la valeur <em>doit</em> être indiqué. Nous allons aborder les
+types et les annotations de types dans la prochaine section, <a href="ch03-02-data-types.html#les-types-de-donn%C3%A9es">“Les types de
+données”</a><!-- ignore -->, donc ne vous souciez pas des détails pour
+le moment. Sachez seulement que vous devez toujours indiquer le type.</p>
 <!--
 Constants can be declared in any scope, including the global scope, which makes
 them useful for values that many parts of code need to know about.
@@ -422,46 +396,62 @@ compris la portée globale, ce qui les rend très utiles pour des valeurs que de
 nombreuses parties de votre code ont besoin de connaître.</p>
 <!--
 The last difference is that constants may be set only to a constant expression,
-not the result of a function call or any other value that could only be
-computed at runtime.
+not the result of a value that could only be computed at runtime.
 -->
 <p>La dernière différence est que les constantes ne peuvent être définies que par
-une expression constante, et non pas le résultat d'un appel de fonction ou toute
-autre valeur qui ne pourrait être calculée qu'à l'exécution.</p>
+une expression constante, et non pas le résultat d'une valeur qui ne pourrait
+être calculée qu'à l'exécution.</p>
 <!--
-Here’s an example of a constant declaration where the constant’s name is
-`MAX_POINTS` and its value is set to 100,000. (Rust’s naming convention for
-constants is to use all uppercase with underscores between words, and
-underscores can be inserted in numeric literals to improve readability):
+Here’s an example of a constant declaration:
 -->
-<p>Voici un exemple d'une déclaration de constante où le nom de la constante est
-<code>MAX_POINTS</code> et où sa valeur est définie à 100 000. (En Rust, la convention de
-nommage des constantes est de les écrire tout en majuscule avec des tirets bas
-entre les mots, et des tirets bas peuvent être ajoutés entre les nombres pour
-améliorer la lisibilité) :</p>
+<p>Voici un exemple d'une déclaration de constante :</p>
 <!--
 ```rust
-const MAX_POINTS: u32 = 100_000;
+const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 ```
 -->
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>const MAX_POINTS: u32 = 100_000;
+</span>const TROIS_HEURES_EN_SECONDES: u32 = 60 * 60 * 3;
 <span class="boring">}
 </span></code></pre></pre>
 <!--
+The constant’s name is `THREE_HOURS_IN_SECONDS` and its value is set to the
+result of multiplying 60 (the number of seconds in a minute) by 60 (the number
+of minutes in an hour) by 3 (the number of hours we want to count in this
+program). Rust’s naming convention for constants is to use all uppercase with
+underscores between words. The compiler is able to evaluate a limited set of
+operations at compile time, which lets us choose to write out this value in a
+way that’s easier to understand and verify, rather than setting this constant
+to the value 10,800. See the [Rust Reference’s section on constant
+evaluation][const-eval] for more information on what operations can be used
+when declaring constants.
+-->
+<p>Le nom de la constante est <code>TROIS_HEURES_EN_SECONDES</code> et sa valeur est définie
+comme étant le résultat de la multiplication de 60 (le nombre de secondes dans
+une minute) par 60 (le nombre de minutes dans une heure) par 3 (le nombre
+d'heures que nous voulons calculer dans ce programme).
+En Rust, la convention de nommage des constantes est de les écrire tout en
+majuscule avec des tirets bas entre les mots. Le compilateur peut calculer un
+certain nombre d'opérationss à la compilation, ce qui nous permet d'écrire
+cette valeur de façon à la comprendre plus facilement et à la vérifier, plutôt
+que de définir cette valeur à 10 800. Vous pouvez consulter la <a href="https://doc.rust-lang.org/reference/const_eval.html">section de la
+référence Rust à propos des évaluations des constantes</a> pour en
+savoir plus sur les opérations qui peuvent être utilisées pour déclarer des
+constantes.</p>
+<!--
 Constants are valid for the entire time a program runs, within the scope they
-were declared in, making them a useful choice for values in your application
-domain that multiple parts of the program might need to know about, such as the
-maximum number of points any player of a game is allowed to earn or the speed
-of light.
+were declared in. This property makes constants useful for values in your
+application domain that multiple parts of the program might need to know about,
+such as the maximum number of points any player of a game is allowed to earn or
+the speed of light.
 -->
 <p>Les constantes sont valables pendant toute la durée d'exécution du programme
-au sein de la portée dans laquelle elles sont déclarées, ce qui en fait de
-très bons choix lorsque plusieurs parties du programme doivent connaître
-certaines valeurs, comme par exemple le nombre maximum de points qu'un joueur
-est autorisé à gagner ou encore la vitesse de la lumière.</p>
+au sein de la portée dans laquelle elles sont déclarées. Cette caractéristique
+rends les constantes très utiles lorsque plusieurs parties du programme doivent
+connaître certaines valeurs, comme par exemple le nombre maximum de points
+qu'un joueur est autorisé à gagner ou encore la vitesse de la lumière.</p>
 <!--
 Naming hardcoded values used throughout your program as constants is useful in
 conveying the meaning of that value to future maintainers of the code. It also
@@ -478,22 +468,22 @@ doit être mise à jour à l'avenir.</p>
 -->
 <h3 id="le-masquage"><a class="header" href="#le-masquage">Le masquage</a></h3>
 <!--
-As you saw in the guessing game tutorial in the [“Comparing the Guess to the
-Secret Number”][comparing-the-guess-to-the-secret-number]<!-- ignore -- >
-section in Chapter 2, you can declare a new variable with the same name as a
-previous variable. Rustaceans say that the first variable is *shadowed* by the
-second, which means that the second variable’s value is what appears when the
-variable is used. We can shadow a variable by using the same variable’s name
-and repeating the use of the `let` keyword as follows:
+As you saw in the guessing game tutorial in [Chapter
+2][comparing-the-guess-to-the-secret-number]<!-- ignore -- >, you can declare a
+new variable with the same name as a previous variable. Rustaceans say that the
+first variable is *shadowed* by the second, which means that the second
+variable’s value is what the program sees when the variable is used. We can
+shadow a variable by using the same variable’s name and repeating the use of
+the `let` keyword as follows:
 -->
-<p>Comme nous l'avons vu dans la section <a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">“Comparer le nombre saisi au nombre
-secret”</a><!-- ignore --> du jeu de
-devinettes au chapitre 2, on peut déclarer une nouvelle variable avec le même
-nom qu'une variable précédente. Les Rustacés disent que la première variable est
-<em>masquée</em> par la seconde, ce qui signifie que la valeur de la seconde variable
-sera ce que nous obtiendrons lorsque nous utiliserons cette variable. Nous
-pouvons créer un masque d'une variable en utilisant le même nom de variable et
-en réutilisant le mot-clé <code>let</code> comme ci-dessous :</p>
+<p>Comme nous l'avons vu dans le <a href="ch02-00-guessing-game-tutorial.html#comparer-le-nombre-saisi-au-nombre-secret">Chapitre
+2</a><!-- ignore -->, on peut déclarer
+une nouvelle variable avec le même nom qu'une variable précédente. Les Rustacés
+disent que la première variable est <em>masquée</em> par la seconde, ce qui signifie
+que la valeur de la seconde variable sera ce que le programme verra lorsque
+nous utiliserons cette variable. Nous pouvons créer un masque d'une variable en
+utilisant le même nom de variable et en réutilisant le mot-clé <code>let</code> comme
+ci-dessous :</p>
 <!--
 <span class="filename">Filename: src/main.rs</span>
 -->
@@ -505,7 +495,10 @@ fn main() {
 
     let x = x + 1;
 
-    let x = x * 2;
+    {
+        let x = x * 2;
+        println!("The value of x in the inner scope is: {}", x);
+    }
 
     println!("The value of x is: {}", x);
 }
@@ -516,7 +509,10 @@ fn main() {
 
     let x = x + 1;
 
-    let x = x * 2;
+    {
+        let x = x * 2;
+        println!(&quot;La valeur de x dans la portée interne est : {}&quot;, x);
+    }
 
     println!(&quot;La valeur de x est : {}&quot;, x);
 }
@@ -524,30 +520,35 @@ fn main() {
 <!--
 This program first binds `x` to a value of `5`. Then it shadows `x` by
 repeating `let x =`, taking the original value and adding `1` so the value of
-`x` is then `6`. The third `let` statement also shadows `x`, multiplying the
-previous value by `2` to give `x` a final value of `12`. When we run this
-program, it will output the following:
+`x` is then `6`. Then, within an inner scope, the third `let` statement also
+shadows `x`, multiplying the previous value by `2` to give `x` a value of `12`.
+When that scope is over, the inner shadowing ends and `x` returns to being `6`.
+When we run this program, it will output the following:
 -->
 <p>Au début, ce programme lie <code>x</code> à la valeur <code>5</code>. Puis il crée un masque de <code>x</code>
 en répétant <code>let x =</code>, en récupérant la valeur d'origine et lui ajoutant <code>1</code> :
-la valeur de <code>x</code> est désormais <code>6</code>. La troisième instruction <code>let</code> crée un autre
-masque de <code>x</code>, en récupérant la précédente valeur et en la multipliant par <code>2</code>
-pour donner à <code>x</code> la valeur finale de <code>12</code>. Lorsque nous exécutons ce programme,
-nous obtenons ceci :</p>
+la valeur de <code>x</code> est désormais <code>6</code>. Ensuite, à l'intérieur de la portée interne,
+la troisième instruction <code>let</code> crée un autre masque de <code>x</code>, en récupérant la
+précédente valeur et en la multipliant par <code>2</code> pour donner à <code>x</code> la valeur
+finale de <code>12</code>. Dès que nous sortons de cette portée, le masque prends fin, et
+<code>x</code> revient à la valeur <code>6</code>. Lorsque nous exécutons ce programme, nous obtenons
+ceci :</p>
 <!--
 ```console
 $ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/variables`
-The value of x is: 12
+The value of x in the inner scope is: 12
+The value of x is: 6
 ```
 -->
 <pre><code class="language-console">$ cargo run
    Compiling variables v0.1.0 (file:///projects/variables)
     Finished dev [unoptimized + debuginfo] target(s) in 0.31s
      Running `target/debug/variables`
-La valeur de x est : 12
+La valeur de x dans la portée interne est : 12
+La valeur de x est : 6
 </code></pre>
 <!--
 Shadowing is different from marking a variable as `mut`, because we’ll get a
@@ -567,14 +568,15 @@ The other difference between `mut` and shadowing is that because we’re
 effectively creating a new variable when we use the `let` keyword again, we can
 change the type of the value but reuse the same name. For example, say our
 program asks a user to show how many spaces they want between some text by
-inputting space characters, but we really want to store that input as a number:
+inputting space characters, and then we want to store that input as a number:
 -->
 <p>Comme nous créons une nouvelle variable lorsque nous utilisons le mot-clé <code>let</code>
 une nouvelle fois, l'autre différence entre le <code>mut</code> et la création d'un masque
 est que cela nous permet de changer le type de la valeur, mais en réutilisant
 le même nom. Par exemple, imaginons un programme qui demande à l'utilisateur
 le nombre d'espaces qu'il souhaite entre deux portions de texte en saisissant
-des espaces, mais que nous voulons plutôt stocker cela sous forme de nombre :</p>
+des espaces, et ensuite nous voulons stocker cette saisie sous forme de
+nombre :</p>
 <!--
 ```rust
 # fn main() {
@@ -589,20 +591,18 @@ des espaces, mais que nous voulons plutôt stocker cela sous forme de nombre :<
 <span class="boring">}
 </span></code></pre></pre>
 <!--
-This construct is allowed because the first `spaces` variable is a string type
-and the second `spaces` variable, which is a brand-new variable that happens to
-have the same name as the first one, is a number type. Shadowing thus spares us
-from having to come up with different names, such as `spaces_str` and
-`spaces_num`; instead, we can reuse the simpler `spaces` name. However, if we
-try to use `mut` for this, as shown here, we’ll get a compile-time error:
+The first `spaces` variable is a string type and the second `spaces` variable
+is a number type. Shadowing thus spares us from having to come up with
+different names, such as `spaces_str` and `spaces_num`; instead, we can reuse
+the simpler `spaces` name. However, if we try to use `mut` for this, as shown
+here, we’ll get a compile-time error:
 -->
-<p>Cette solution est autorisée car la première variable <code>espaces</code> est du type
-chaîne de caractères <em>(string)</em>, alors que la seconde variable <code>espaces</code>, qui
-est une toute nouvelle variable qui se trouve avoir le même nom que la première,
-est du type nombre. L'utilisation du masquage nous évite ainsi d'avoir à trouver
-des noms différents, comme <code>espaces_str</code> et <code>espaces_num</code> ; nous pouvons plutôt
-simplement réutiliser le nom <code>espaces</code>. Cependant, si nous essayons d'utiliser
-<code>mut</code> pour faire ceci, comme ci-dessous, nous avons une erreur de compilation :</p>
+<p>La première variable <code>espaces</code> est du type chaîne de caractères <em>(string)</em> et
+la seconde variable <code>espaces</code> est du type nombre. L'utilisation du masquage
+nous évite ainsi d'avoir à trouver des noms différents, comme <code>espaces_str</code> et
+<code>espaces_num</code> ; nous pouvons plutôt simplement réutiliser le nom <code>espaces</code>.
+Cependant, si nous essayons d'utiliser <code>mut</code> pour faire ceci, comme ci-dessous,
+nous avons une erreur de compilation :</p>
 <!--
 ```rust,ignore,does_not_compile
 # fn main() {
@@ -630,12 +630,8 @@ error[E0308]: mismatched types
 3 |     spaces = spaces.len();
   |              ^^^^^^^^^^^^ expected `&str`, found `usize`
 
-error: aborting due to previous error
-
 For more information about this error, try `rustc --explain E0308`.
-error: could not compile `variables`
-
-To learn more, run the command again with --verbose.
+error: could not compile `variables` due to previous error
 ```
 -->
 <pre><code class="language-console">$ cargo run
@@ -646,12 +642,8 @@ error[E0308]: mismatched types
 3 |     espaces = espaces.len();
   |               ^^^^^^^^^^^^^ expected `&amp;str`, found `usize`
 
-error: aborting due to previous error
-
 For more information about this error, try `rustc --explain E0308`.
-error: could not compile `variables`
-
-To learn more, run the command again with --verbose.
+error: could not compile `variables` due to previous error
 </code></pre>
 <!--
 Now that we’ve explored how variables work, let’s look at more data types they
@@ -663,57 +655,47 @@ les types de données qu'elles peuvent prendre.</p>
 [comparing-the-guess-to-the-secret-number]:
 ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
 [data-types]: ch03-02-data-types.html#data-types
+[storing-values-with-variables]: ch02-00-guessing-game-tutorial.html#storing-values-with-variables
+[const-eval]: ../reference/const_eval.html
 -->
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="ch03-00-common-programming-concepts.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="ch03-00-common-programming-concepts.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
-                                                    <a rel="next" href="ch03-02-data-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="ch03-02-data-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="ch03-00-common-programming-concepts.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="ch03-00-common-programming-concepts.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
-                                    <a rel="next" href="ch03-02-data-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="ch03-02-data-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                            </nav>
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-                <script type="text/javascript" src="../ferris.js"></script>
-                <script type="text/javascript" src="github-button.js"></script>
-        
-        
+        <script type="text/javascript" src="../ferris.js"></script>
     </body>
 </html>
