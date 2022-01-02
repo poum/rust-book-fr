@@ -38,7 +38,7 @@ search in, like so:
 La première tâche est de faire en sorte que `minigrep` utilise ses deux
 arguments en ligne de commande : le nom du fichier et la chaîne de caractères à
 rechercher. Autrement dit, nous voulons pouvoir exécuter notre programme avec
-`cargo run`, une chaîne de caractères à rechercher, et un chemin vers un
+`cargo run`, une chaîne de caractères à rechercher et un chemin vers un
 fichier dans lequel chercher, comme ceci :
 
 <!--
@@ -89,8 +89,8 @@ retourne un itérateur des arguments de la ligne de commande qui ont été donn�
 [chapitre 13][ch13]<!-- ignore -->. Pour l'instant, vous avez juste à savoir
 deux choses à propos des itérateurs : les itérateurs engendrent une série de
 valeurs, et nous pouvons appeler la méthode `collect` sur un itérateur pour le
-transformer en collection, comme les vecteurs, qui contiennent tous les
-éléments qu'un itérateur engendrent.
+transformer en collection, comme les vecteurs, qui contient tous les
+éléments qu'un itérateur engendre.
 
 <!--
 Use the code in Listing 12-1 to allow your `minigrep` program to read any
@@ -167,7 +167,7 @@ module courant.
 > place. Cette fonction retourne un itérateur qui engendre des valeurs `OsString`
 > plutôt que des valeurs `String`. Nous avons choisi d'utiliser ici
 > `std::env::args` par simplicité, car les valeurs `OsString` diffèrent selon
-> la plateforme et c'est plus complexe de travailler avec par rapport aux
+> la plateforme et c'est plus complexe de travailler qu'avec des
 > valeurs de type `String`.
 
 <!--
@@ -186,7 +186,7 @@ contient toutes les valeurs engendrées par l'itérateur. Nous pouvons utiliser
 la fonction `collect` pour créer n'importe quel genre de collection, donc nous
 avons annoté explicitement le type de `args` pour préciser que nous attendions
 un vecteur de chaînes de caractères. Bien que nous n'ayons que très
-rarement d'annoter les types en Rust, `collect` est une fonction que vous
+rarement besoin d'annoter les types en Rust, `collect` est une fonction que vous
 aurez souvent besoin d'annoter car Rust n'est pas capable de déduire le type
 de collection que vous attendez.
 
@@ -329,10 +329,10 @@ capabilities instead.
 
 Très bien, notre programme fonctionne ! Les valeurs des arguments dont nous
 avons besoin sont enregistrées dans les bonnes variables. Plus tard, nous
-allons ajouter de la gestion d'erreurs pour pallier aux potentielles situations
+allons ajouter de la gestion d'erreurs pour pallier les potentielles situations
 d'erreurs, comme lorsque l'utilisateur ne fournit pas d'arguments ; pour le
-moment, nous allons ignorer ces situations et continuer à travailler pour
-l'ajout d'une capacité de lecture de fichier, à la place.
+moment, nous allons ignorer ces situations et continuer à travailler à la place à
+ajouter la capacité de lecture de fichier.
 
 <!--
 [ch13]: ch13-00-functional-features.html
