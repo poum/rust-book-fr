@@ -64,12 +64,12 @@ Chapter 17!
 Nous allons expérimenter la première situation dans la section [“Pouvoir
 utiliser des types récursifs grâce aux
 boites”](#pouvoir-utiliser-des-types-récursifs-grâce-aux-boites)<!-- ignore -->.
-Pour la seconde situation, le transfert de possession d'une grosse quantité de
+Pour la deuxième situation, le transfert de possession d'une grosse quantité de
 données peut prendre beaucoup de temps car les données sont recopiées sur la
 pile. Pour améliorer les performances dans cette situation, nous pouvons stocker
 ces données sur le tas grâce à une boite. Ainsi, seul le petit pointeur vers les
 données est copié sur la pile, alors que les données qu'il pointe restent à leur
-place sur le tas. La troisième situation décris ce qu'on appelle un
+place sur le tas. La troisième situation décrit ce qu'on appelle un
 *objet de trait* et le [chapitre 17][trait-objects]<!-- ignore --> dédie une
 section entière à ce sujet. Donc ce que vous apprenez ici, vous le retrouverez à
 nouveau au chapitre 17 !
@@ -132,7 +132,7 @@ to (stored on the heap).
 Nous avons défini la variable `b` pour avoir la valeur d'une `Box` qui pointe
 sur la valeur `5`, qui est donc allouée sur le tas. Ce programme va afficher
 `b = 5` ; dans ce cas, nous pouvons accéder à la donnée présente dans la boite
-de la même manière que nous le ferrions si elle était sur la pile. Comme toute
+de la même manière que nous le ferions si elle était sur la pile. Comme toute
 valeur possédée, lorsque une boite sort de la portée, comme lorsque `b` le fait
 à la fin du `main`, elle sera désallouée. Ce sera la boite qui sera désallouée
 en premier (elle est stockée sur la pile), puis ce sera au tour des données sur
@@ -257,7 +257,7 @@ liste d'éléments en Rust, `Vec<T>` s'avère être un meilleur choix à faire.
 Autrement, il existe des types de données récursifs plus complexes *qui sont*
 utiles dans d'autres situations, mais en commençant avec les listes de
 construction, nous pouvons découvrir comment les boites nous permettent de
-définir un type de données récursif sans être trop perturbé par la complexité.
+définir un type de données récursif sans être trop perturbés par la complexité.
 
 <!--
 Listing 15-2 contains an enum definition for a cons list. Note that this code
@@ -389,7 +389,7 @@ type.
 L'erreur explique que ce type “a une taille infinie”. La raison est que nous
 avons défini `List` avec une variante qui est récursive : elle stocke
 directement une autre valeur d'elle-même. Au final, Rust ne peut pas savoir
-combien de place il a besoin pour stocker une valeur `List`. Analysons
+de combien de place il a besoin pour stocker une valeur `List`. Analysons
 pourquoi nous obtenons cette erreur. D'abord, regardons comment Rust décide de
 l'espace dont il a besoin pour stocker une valeur d'un type non récursif.
 
@@ -404,7 +404,7 @@ Recall the `Message` enum we defined in Listing 6-2 when we discussed enum
 definitions in Chapter 6:
 -->
 
-Rappelez-vous de l'énumération `Message` que nous avons défini dans
+Rappelez-vous de l'énumération `Message` que nous avons définie dans
 l'encart 6-2 lorsque nous avons abordé les définitions des énumérations au
 chapitre 6 :
 
@@ -541,7 +541,7 @@ insérer un `Box<T>` à l'intérieur d'une variante `Cons` au lieu d'y mettre
 directement une autre valeur `List`. Le `Box<T>` va pointer sur la prochaine
 valeur `List` qui sera sur le tas plutôt que d'être dans la variante `Cons`.
 Théoriquement, nous avons toujours une liste, créée avec des listes qui
-“contiennent” d'autres listes, mais cette implémentation est ressemble plus
+“contiennent” d'autres listes, mais cette implémentation ressemble davantage
 maintenant à des éléments placés les uns à côté des autres, plutôt que les
 uns dans les autres.
 
@@ -628,7 +628,7 @@ elles n'ont pas d'autres fonctionnalités, comme celles que nous verrons sur
 d'autres types de pointeurs intelligents. Elles n'ont pas non plus de surcoût
 sur les performances autre que ce qu'offrent ces capacités spéciales, donc
 elles sont utiles dans des cas comme les listes de construction où la
-redirection est la seule fonctionnalité que nous avons besoin. Nous verrons
+redirection est la seule fonctionnalité dont nous avons besoin. Nous verrons
 aussi plus de cas d'usages pour les boites dans le chapitre 17.
 
 <!--
@@ -643,8 +643,8 @@ rest of this chapter.
 
 Le type `Box<T>` est un pointeur intelligent car il implémente le trait
 `Deref`, qui permet aux valeurs `Box<T>` d'être traitées comme des
-références. Lorsque une valeur `Box<T>` sort de la portée, les données sur le
-tas que la boite pointait est aussi nettoyé grâce au trait `Drop`. Explorons
+références. Lorsqu'une valeur `Box<T>` sort de la portée, les données sur le
+tas sur lesquelles la boite pointait sont aussi nettoyées grâce au trait `Drop`. Explorons
 plus en détail ces deux traits. Ces deux traits deviendrons encore plus
 importants pour les fonctionnalités offertes par les autres pointeurs
 intelligents que nous verrons dans le reste de ce chapitre.
