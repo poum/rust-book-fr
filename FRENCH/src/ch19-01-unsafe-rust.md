@@ -11,11 +11,11 @@ that doesn’t enforce these memory safety guarantees: it’s called *unsafe Rus
 and works just like regular Rust, but gives us extra superpowers.
 -->
 
-Tout le code Rust que nous avons abordé jusqu'à présent a bénéficié des
-garanties de sécurité de la mémoire, vérifiées à la compilation. Cependant, Rust
-a un second langage caché en son sein qui n'applique pas ces vérifications
-pour la sécurité de la mémoire : il s'appelle le *Rust non sécurisé* et
-fonctionne comme le Rust habituel, mais fournit quelques super-pouvoirs
+Tout le code Rust que nous avons étudié jusqu'à présent bénéficiait des
+garanties de sûreté de la mémoire, vérifiées à la compilation. Cependant, Rust
+possède un second langage caché en son sein qui n'applique pas ces vérifications
+pour la sûreté de la mémoire : il s'appelle le *Rust non sécurisé* et
+fonctionne comme le Rust habituel, mais nous offre quelques super-pouvoirs
 supplémentaires.
 
 <!--
@@ -36,10 +36,10 @@ garanties, il vaut mieux rejeter quelques programmes valides plutôt que
 d'accepter quelques programmes invalides. Bien que le code *puisse* être
 correct, si le compilateur Rust n'a pas assez d'information pour être sûr, il
 va refuser ce code. Dans ce cas, vous pouvez utiliser du code non sécurisé pour
-dire au compilateur “fais-moi confiance, je sais ce que je fait”. La
-contrepartie pour cela est que vous l'utilisez à vos risques et périls : si
-vous écrivez du code non sécurisé de manière incorrecte, des problèmes liés à
-la sécurité de la mémoire peuvent se produire, comme le déréférencement d'un
+dire au compilateur “fais-moi confiance, je sais ce que je fait”. La contrepartie 
+pour cela est que vous l'utilisez à vos risques et périls : si
+vous écrivez du code non sûr de manière incorrecte, des problèmes liés à
+la sûreté de la mémoire peuvent se produire, le déréférencement d'un
 pointeur vide par exemple.
 
 <!--
@@ -53,8 +53,8 @@ Rust and how to do it.
 -->
 
 Une autre raison pour laquelle Rust embarque son alter-ego non sécurisé est que
-le matériel des ordinateurs sur lequel il repose n'est pas sécurisé par essence.
-Si Rust ne vous laisse pas procéder à des opérations non sécurisées, vous ne
+le matériel des ordinateurs sur lequel il repose n'est pas sûr par essence.
+Si Rust ne vous laisse pas procéder à des opérations non sûres, vous ne
 pourrez pas faire certaines choses. Rust doit pouvoir vous permettre de
 développer du code bas-niveau, comme pouvoir interagir directement avec le
 système d'exploitation ou même écrire votre propre système d'exploitation.
@@ -107,7 +107,7 @@ d'emprunt et ne désactive pas les autres vérifications de sécurité de Rust 
 vous utilisez une référence dans du code non sécurisé, elle sera toujours
 vérifiée. Le mot-clé `unsafe` vous donne seulement accès à ces cinq
 fonctionnalités qui ne sont alors pas vérifiées par le compilateur pour veiller
-à la sécurité de la mémoire. Vous conservez un certain niveau de sécurité à
+à la sûreté de la mémoire. Vous conservez un certain niveau de sécurité à
 l'intérieur d'un bloc `unsafe`.
 
 <!--
@@ -118,8 +118,8 @@ access memory in a valid way.
 -->
 
 De plus, `unsafe` ne signifie pas que le code à l'intérieur du bloc est
-obligatoirement dangereux ou qu'il va forcément avoir des problèmes de sécurité
-mémoire : le but étant qu'en tant que développeur, vous vous assurez que le code
+obligatoirement dangereux ou qu'il va forcément présenter des problèmes de sûreté
+mémoire : le but étant qu'en tant que développeur, vous vous assuriez que le code
 à l'intérieur d'un bloc `unsafe` va accéder correctement à la mémoire.
 
 <!--
@@ -130,11 +130,11 @@ any errors related to memory safety must be within an `unsafe` block. Keep
 bugs.
 -->
 
-Personne n'est parfait, les erreurs arrivent, et en nécessitant que ces cinq
-opérations non sécurisés se trouvent dans des blocs marqués d'un `unsafe`, vous
-saurez que des erreurs liées à la sécurité de la mémoire se trouveront dans un
+Personne n'est parfait, les erreurs arrivent, et en exigeant que ces cinq
+opérations non sûres se trouvent dans des blocs marqués d'un `unsafe`, vous
+saurez que toute erreur liée à la sûreté de la mémoire se trouvera dans un
 bloc `unsafe`. Essayez de minimiser la taille des blocs `unsafe` ; vous ne le
-regretterez pas lorsque vous diagnostiquerez des bogues de mémoire.
+regretterez pas lorsque vous rechercherez des bogues de mémoire.
 
 <!--
 To isolate unsafe code as much as possible, it’s best to enclose unsafe code
@@ -147,16 +147,16 @@ the functionality implemented with `unsafe` code, because using a safe
 abstraction is safe.
 -->
 
-Pour isoler autant que possible le code non sécurisé, il vaut mieux intégrer du
-code non sécurisé dans une abstraction et fournir ainsi une API sécurisée, ce
+Pour isoler autant que possible le code non sécurisé, il vaut mieux l'intégrer 
+dans une abstraction et la doter d'une API sure, ce
 que nous verrons plus tard dans ce chapitre lorsque nous examinerons les
-fonctions et méthodes non sécurisées. Certaines parties de la bibliothèque
-standard sont implémentés comme étant des abstractions sécurisées et basées sur
-du code non sécurisé qui a été audité. Envelopper du code non sécurisé dans une
-abstraction sécurisée évite l'utilisation de `unsafe` de se propager dans des
-endroits où vous ou vos utilisateurs souhaiteraient éviter d'utiliser les
-fonctionnalités du code `unsafe`, car utiliser une abstraction sécurisée doit
-être sûre.
+fonctions et méthodes non sûres. Certaines parties de la bibliothèque
+standard sont implémentés sous forme d'abstractions sécurisées autour d'un
+code non sûr qui a été audité. Envelopper du code non sûr dans une
+abstraction sure évite de propager le recours à `unsafe` dans tous les 
+endroits où vous ou vos utilisateurs souhaiteraient utiliser les
+fonctionnalités implémentées avec du code `unsafe`, car utiliser une abstraction 
+sure est évidemment sûr.
 
 <!--
 Let’s look at each of the five unsafe superpowers in turn. We’ll also look at
@@ -164,8 +164,8 @@ some abstractions that provide a safe interface to unsafe code.
 -->
 
 Analysons chacun à leur tour les cinq super-pouvoirs. Nous allons aussi
-découvrir quelques abstractions qui fournissent une interface sécurisée pour
-faire fonctionner du code non sécurisé.
+découvrir quelques abstractions qui fournissent une interface sûre pour
+faire fonctionner du code non sûr.
 
 <!--
 ### Dereferencing a Raw Pointer
